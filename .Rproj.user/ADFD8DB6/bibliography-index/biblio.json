@@ -1,0 +1,1724 @@
+{
+    "sources": [
+        {
+            "DOI": "10.3126/hjs.v3i5.460",
+            "ISSN": "1727-5210",
+            "URL": "http://dx.doi.org/10.3126/hjs.v3i5.460",
+            "author": [
+                {
+                    "family": "Balmford",
+                    "given": "A."
+                },
+                {
+                    "family": "Bennun",
+                    "given": "L."
+                },
+                {
+                    "family": "Brink",
+                    "given": "B. T."
+                }
+            ],
+            "container-title": "Himalayan Journal of Sciences",
+            "id": "Balmford_1970",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        1970,
+                        1
+                    ]
+                ]
+            },
+            "page": "43-45",
+            "publisher": "Nepal Journals Online (JOL)",
+            "title": "The convention on biological diversity’s 2010 target",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "DOI": "10.1371/journal.pbio.1002357",
+            "ISSN": "1545-7885",
+            "URL": "http://dx.doi.org/10.1371/journal.pbio.1002357",
+            "author": [
+                {
+                    "family": "Beaudrot",
+                    "given": "L."
+                },
+                {
+                    "family": "Ahumada",
+                    "given": "J. A."
+                },
+                {
+                    "family": "O’Brien",
+                    "given": "T."
+                },
+                {
+                    "family": "Alvarez-Loayza",
+                    "given": "P."
+                },
+                {
+                    "family": "Boekee",
+                    "given": "K."
+                },
+                {
+                    "family": "Campos-Arceiz",
+                    "given": "A."
+                },
+                {
+                    "family": "Eichberg",
+                    "given": "D."
+                },
+                {
+                    "family": "Espinosa",
+                    "given": "S."
+                },
+                {
+                    "family": "Fegraus",
+                    "given": "E."
+                },
+                {
+                    "family": "Fletcher",
+                    "given": "C."
+                },
+                {
+                    "family": "Gajapersad",
+                    "given": "K."
+                },
+                {
+                    "family": "Hallam",
+                    "given": "C."
+                },
+                {
+                    "family": "Hurtado",
+                    "given": "J."
+                },
+                {
+                    "family": "Jansen",
+                    "given": "P. A."
+                },
+                {
+                    "family": "Kumar",
+                    "given": "A."
+                },
+                {
+                    "family": "Larney",
+                    "given": "E."
+                },
+                {
+                    "family": "Lima",
+                    "given": "M. G. M."
+                },
+                {
+                    "family": "Mahony",
+                    "given": "C."
+                },
+                {
+                    "family": "Martin",
+                    "given": "E. H."
+                },
+                {
+                    "family": "McWilliam",
+                    "given": "A."
+                },
+                {
+                    "family": "Mugerwa",
+                    "given": "B."
+                },
+                {
+                    "family": "Ndoundou-Hockemba",
+                    "given": "M."
+                },
+                {
+                    "family": "Razafimahaimodison",
+                    "given": "J. C."
+                },
+                {
+                    "family": "Romero-Saltos",
+                    "given": "H."
+                },
+                {
+                    "family": "Rovero",
+                    "given": "F."
+                },
+                {
+                    "family": "Salvador",
+                    "given": "J."
+                },
+                {
+                    "family": "Santos",
+                    "given": "F."
+                },
+                {
+                    "family": "Sheil",
+                    "given": "D."
+                },
+                {
+                    "family": "Spironello",
+                    "given": "W. R."
+                },
+                {
+                    "family": "Willig",
+                    "given": "M. R."
+                },
+                {
+                    "family": "Winarni",
+                    "given": "N. L."
+                },
+                {
+                    "family": "Zvoleff",
+                    "given": "A."
+                },
+                {
+                    "family": "Andelman",
+                    "given": "S. J."
+                }
+            ],
+            "container-title": "PLOS Biology",
+            "editor": [
+                {
+                    "family": "Dobson",
+                    "given": "Andy P."
+                }
+            ],
+            "id": "Beaudrot_2016",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        1
+                    ]
+                ]
+            },
+            "page": "e1002357",
+            "publisher": "Public Library of Science (PLoS)",
+            "title": "Standardized assessment of biodiversity trends in tropical forest protected areas: The end is not in sight",
+            "title-short": "Standardized assessment of biodiversity trends in tropical forest protected areas",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "DOI": "10.1017/s0030605318000546",
+            "ISSN": "1365-3008",
+            "URL": "http://dx.doi.org/10.1017/S0030605318000546",
+            "author": [
+                {
+                    "family": "Beaudrot",
+                    "given": "Lydia"
+                },
+                {
+                    "family": "Ahumada",
+                    "given": "Jorge"
+                },
+                {
+                    "family": "O’Brien",
+                    "given": "Timothy G."
+                },
+                {
+                    "family": "Jansen",
+                    "given": "Patrick A."
+                }
+            ],
+            "container-title": "Oryx",
+            "id": "Beaudrot_2018",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        9
+                    ]
+                ]
+            },
+            "page": "126-129",
+            "publisher": "Cambridge University Press (CUP)",
+            "title": "Detecting tropical wildlife declines through camera-trap monitoring: An evaluation of the tropical ecology assessment and monitoring protocol",
+            "title-short": "Detecting tropical wildlife declines through camera-trap monitoring",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bellaver",
+                    "given": "J. M. F."
+                }
+            ],
+            "genre": "Master’s thesis",
+            "id": "Bellaver_2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "publisher": "Universidade Federal do Rio Grande do Sul",
+            "publisher-place": "Porto Alegre, RS",
+            "title": "Efeito de borda e estrutura das comunidades de borboletas frugívoras em fragmentos de mata paludosa na planície costeira norte do rio grande do sul",
+            "type": "thesis"
+        },
+        {
+            "DOI": "10.1098/rstb.2004.1589",
+            "ISSN": "1471-2970",
+            "URL": "http://dx.doi.org/10.1098/rstb.2004.1589",
+            "author": [
+                {
+                    "family": "Buckland",
+                    "given": "S. T."
+                },
+                {
+                    "family": "Magurran",
+                    "given": "A. E."
+                },
+                {
+                    "family": "Green",
+                    "given": "R. E."
+                },
+                {
+                    "family": "Fewster",
+                    "given": "R. M."
+                }
+            ],
+            "container-title": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+            "id": "Buckland_2005",
+            "issue": "1454",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005,
+                        2
+                    ]
+                ]
+            },
+            "page": "243-254",
+            "publisher": "The Royal Society",
+            "title": "Monitoring change in biodiversity through composite indices",
+            "type": "article-journal",
+            "volume": "360"
+        },
+        {
+            "DOI": "10.1890/es11-00186.1",
+            "ISSN": "2150-8925",
+            "URL": "http://dx.doi.org/10.1890/ES11-00186.1",
+            "author": [
+                {
+                    "family": "Buckland",
+                    "given": "S. T."
+                },
+                {
+                    "family": "Studeny",
+                    "given": "A. C."
+                },
+                {
+                    "family": "Magurran",
+                    "given": "A. E."
+                },
+                {
+                    "family": "Illian",
+                    "given": "J. B."
+                },
+                {
+                    "family": "Newson",
+                    "given": "S. E."
+                }
+            ],
+            "container-title": "Ecosphere",
+            "id": "Buckland_2011",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011,
+                        9
+                    ]
+                ]
+            },
+            "page": "art100",
+            "publisher": "Wiley",
+            "title": "The geometric mean of relative abundance indices: A biodiversity measure with a difference",
+            "title-short": "The geometric mean of relative abundance indices",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "DOI": "10.1080/00379271.2009.10697630",
+            "ISSN": "2168-6351",
+            "URL": "http://dx.doi.org/10.1080/00379271.2009.10697630",
+            "author": [
+                {
+                    "family": "Checa",
+                    "given": "M. F."
+                },
+                {
+                    "family": "Barragán",
+                    "given": "A."
+                },
+                {
+                    "family": "Rodríguez",
+                    "given": "J."
+                },
+                {
+                    "family": "Christman",
+                    "given": "M."
+                }
+            ],
+            "container-title": "Annales de la Société entomologique de France (N.S.)",
+            "id": "Checa_2009",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009,
+                        1
+                    ]
+                ]
+            },
+            "page": "470-486",
+            "publisher": "Informa UK Limited",
+            "title": "Temporal abundance patterns of butterfly communities (lepidoptera: Nymphalidae) in the ecuadorian amazonia and their relationship with climate",
+            "title-short": "Temporal abundance patterns of butterfly communities (lepidoptera",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "DOI": "10.1038/nclimate1347",
+            "ISSN": "1758-6798",
+            "URL": "http://dx.doi.org/10.1038/NCLIMATE1347",
+            "author": [
+                {
+                    "family": "Devictor",
+                    "given": "V."
+                },
+                {
+                    "dropping-particle": "van",
+                    "family": "Swaay",
+                    "given": "C."
+                },
+                {
+                    "family": "Brereton",
+                    "given": "T."
+                },
+                {
+                    "family": "Brotons",
+                    "given": "L."
+                },
+                {
+                    "family": "Chamberlain",
+                    "given": "D."
+                },
+                {
+                    "family": "Heliölä",
+                    "given": "J."
+                },
+                {
+                    "family": "Herrando",
+                    "given": "S."
+                },
+                {
+                    "family": "Julliard",
+                    "given": "R."
+                },
+                {
+                    "family": "Kuussaari",
+                    "given": "M."
+                },
+                {
+                    "family": "Lindström",
+                    "given": "Å."
+                },
+                {
+                    "family": "Reif",
+                    "given": "J."
+                },
+                {
+                    "family": "Roy",
+                    "given": "D. B."
+                },
+                {
+                    "family": "Schweiger",
+                    "given": "O."
+                },
+                {
+                    "family": "Settele",
+                    "given": "J."
+                },
+                {
+                    "family": "Stefanescu",
+                    "given": "C."
+                },
+                {
+                    "family": "Van Strien",
+                    "given": "A."
+                },
+                {
+                    "family": "Van Turnhout",
+                    "given": "C."
+                },
+                {
+                    "family": "Vermouzek",
+                    "given": "Z."
+                },
+                {
+                    "family": "WallisDeVries",
+                    "given": "M."
+                },
+                {
+                    "family": "Wynhoff",
+                    "given": "I."
+                },
+                {
+                    "family": "Jiguet",
+                    "given": "F."
+                }
+            ],
+            "container-title": "Nature Climate Change",
+            "id": "Devictor_2012",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        1
+                    ]
+                ]
+            },
+            "page": "121-124",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "Differences in the climatic debts of birds and butterflies at a continental scale",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "DeVries",
+                    "given": "P. J."
+                }
+            ],
+            "id": "DeVries_1987",
+            "issued": {
+                "date-parts": [
+                    [
+                        1987,
+                        6
+                    ]
+                ]
+            },
+            "publisher": "Princeton University Press",
+            "publisher-place": "Princeton, NJ",
+            "title": "The butterflies of costa rica and their natural history, volume I",
+            "type": "book"
+        },
+        {
+            "DOI": "10.7287/peerj.preprints.27882v1",
+            "URL": "http://dx.doi.org/10.7287/peerj.preprints.27882v1",
+            "author": [
+                {
+                    "family": "Green",
+                    "given": "E. J."
+                },
+                {
+                    "family": "McRae",
+                    "given": "L."
+                },
+                {
+                    "family": "Freeman",
+                    "given": "R."
+                },
+                {
+                    "family": "Harfoot",
+                    "given": "M. B. J."
+                },
+                {
+                    "family": "Hill",
+                    "given": "S. L. L."
+                },
+                {
+                    "family": "Baldwin-Cantello",
+                    "given": "W."
+                },
+                {
+                    "family": "Simonson",
+                    "given": "W. D."
+                }
+            ],
+            "id": "Green_2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        8
+                    ]
+                ]
+            },
+            "publisher": "PeerJ",
+            "title": "Below the canopy: Global trends in forest vertebrate populations and their drivers",
+            "title-short": "Below the canopy",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1590/1809-43921998282166",
+            "ISSN": "0044-5967",
+            "URL": "http://dx.doi.org/10.1590/1809-43921998282166",
+            "author": [
+                {
+                    "family": "Higuchi",
+                    "given": "N."
+                },
+                {
+                    "dropping-particle": "dos",
+                    "family": "Santos",
+                    "given": "J."
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "R. J."
+                },
+                {
+                    "family": "Minette",
+                    "given": "L."
+                },
+                {
+                    "family": "Biot",
+                    "given": "Y."
+                }
+            ],
+            "container-title": "Acta Amazonica",
+            "id": "Higuchi_1998",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998,
+                        6
+                    ]
+                ]
+            },
+            "page": "153-153",
+            "publisher": "FapUNIFESP (SciELO)",
+            "title": "Biomassa da parte aérea da vegetação da floresta tropical úmida de terra-firme da amazônia brasileira",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kéry",
+                    "given": "M."
+                },
+                {
+                    "family": "Chandler",
+                    "given": "R."
+                }
+            ],
+            "id": "Kéry_2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "note": "Acesso em: 2024-02-01",
+            "publisher": "https://cran.r-project.org/web/packages/unmarked/vignettes/colext.html",
+            "title": "Dynamic occupancy models in unmarked - r package version 094.",
+            "type": ""
+        },
+        {
+            "DOI": "10.1098/rstb.2004.1584",
+            "ISSN": "1471-2970",
+            "URL": "http://dx.doi.org/10.1098/rstb.2004.1584",
+            "author": [
+                {
+                    "family": "Loh",
+                    "given": "J."
+                },
+                {
+                    "family": "Green",
+                    "given": "R. E."
+                },
+                {
+                    "family": "Ricketts",
+                    "given": "T."
+                },
+                {
+                    "family": "Lamoreux",
+                    "given": "J."
+                },
+                {
+                    "family": "Jenkins",
+                    "given": "M."
+                },
+                {
+                    "family": "Kapos",
+                    "given": "V."
+                },
+                {
+                    "family": "Randers",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+            "id": "Loh_2005",
+            "issue": "1454",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005,
+                        2
+                    ]
+                ]
+            },
+            "page": "289-295",
+            "publisher": "The Royal Society",
+            "title": "The living planet index: Using species population time series to track trends in biodiversity",
+            "title-short": "The living planet index",
+            "type": "article-journal",
+            "volume": "360"
+        },
+        {
+            "author": [
+                {
+                    "family": "MacKenzie",
+                    "given": "D. I."
+                },
+                {
+                    "family": "Nichols",
+                    "given": "J. D."
+                },
+                {
+                    "family": "Lachman",
+                    "given": "G. B."
+                },
+                {
+                    "family": "Droege",
+                    "given": "S."
+                },
+                {
+                    "family": "Royle",
+                    "given": "J. A."
+                },
+                {
+                    "family": "A.",
+                    "given": "Langtimm. C."
+                }
+            ],
+            "container-title": "Ecology",
+            "id": "Mackenzie_2002",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "2248-2255",
+            "title": "Estimating site occupancy rates when detection probabilities are less than one",
+            "type": "article-journal",
+            "volume": "83"
+        },
+        {
+            "author": [
+                {
+                    "family": "Marengo",
+                    "given": "J. A."
+                },
+                {
+                    "family": "Liebmann",
+                    "given": "B."
+                },
+                {
+                    "family": "Kousky",
+                    "given": "V. E."
+                },
+                {
+                    "family": "Filizola",
+                    "given": "N. P."
+                },
+                {
+                    "family": "C.",
+                    "given": "Wainer. I."
+                }
+            ],
+            "container-title": "Journal of Climate",
+            "id": "Marengo_2001",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001
+                    ]
+                ]
+            },
+            "page": "833-852",
+            "title": "Onset and end of the rainy season in the brazilian amazon basin",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "author": [
+                {
+                    "family": "Martins",
+                    "given": "M. B."
+                },
+                {
+                    "family": "Oliveira",
+                    "given": "T. G."
+                }
+            ],
+            "id": "Martins&Oliveira_2011",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "publisher": "Museu Paraense Emílio Goeldi",
+            "publisher-place": "Belém, PA",
+            "title": "Amazônia maranhense diversidade e conservação",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0169156",
+            "ISSN": "1932-6203",
+            "URL": "http://dx.doi.org/10.1371/journal.pone.0169156",
+            "author": [
+                {
+                    "family": "McRae",
+                    "given": "L."
+                },
+                {
+                    "family": "Deinet",
+                    "given": "S."
+                },
+                {
+                    "family": "Freeman",
+                    "given": "R."
+                }
+            ],
+            "container-title": "PLOS ONE",
+            "editor": [
+                {
+                    "family": "Doi",
+                    "given": "Hideyuki"
+                }
+            ],
+            "id": "McRae_2017",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        1
+                    ]
+                ]
+            },
+            "page": "e0169156",
+            "publisher": "Public Library of Science (PLoS)",
+            "title": "The diversity-weighted living planet index: Controlling for taxonomic bias in a global biodiversity indicator",
+            "title-short": "The diversity-weighted living planet index",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sampaio",
+                    "given": "A. B."
+                },
+                {
+                    "family": "Sevilha",
+                    "given": "A. C."
+                },
+                {
+                    "family": "Faria",
+                    "given": "C. C. V."
+                },
+                {
+                    "family": "Tófoli",
+                    "given": "C. F."
+                },
+                {
+                    "family": "Piotto",
+                    "given": "D."
+                },
+                {
+                    "family": "Dantas",
+                    "given": "D. D. F."
+                },
+                {
+                    "family": "Prado",
+                    "given": "F."
+                },
+                {
+                    "family": "Araújo",
+                    "given": "F. F."
+                },
+                {
+                    "family": "Buss",
+                    "given": "G."
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "K. T."
+                },
+                {
+                    "family": "Reis",
+                    "given": "M. L."
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "M."
+                },
+                {
+                    "family": "Fialho",
+                    "given": "M. S."
+                },
+                {
+                    "family": "De Paula",
+                    "given": "M. J."
+                },
+                {
+                    "family": "Marini-Filho",
+                    "given": "O. J."
+                },
+                {
+                    "family": "Sampaio",
+                    "given": "R."
+                },
+                {
+                    "family": "Nobre",
+                    "given": "R. A."
+                },
+                {
+                    "family": "Nienow",
+                    "given": "S. S."
+                },
+                {
+                    "family": "Silva-Júnior",
+                    "given": "U. L."
+                }
+            ],
+            "id": "Monitora_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "number": "ISBN: 978-85-61842-85-7",
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade",
+            "publisher-place": "Brasília, DF",
+            "title": "Monitora – programa nacional de monitoramento da biodiversidade subprograma terrestre componente florestal: Relatório triênio 2014-2016",
+            "title-short": "Monitora – programa nacional de monitoramento da biodiversidade subprograma terrestre componente florestal",
+            "type": "report"
+        },
+        {
+            "DOI": "10.4236/as.2016.76038",
+            "ISSN": "2156-8561",
+            "URL": "http://dx.doi.org/10.4236/as.2016.76038",
+            "author": [
+                {
+                    "family": "Ndakidemi",
+                    "given": "B."
+                },
+                {
+                    "family": "Mtei",
+                    "given": "K."
+                },
+                {
+                    "family": "Ndakidemi",
+                    "given": "P. A."
+                }
+            ],
+            "container-title": "Agricultural Sciences",
+            "id": "Ndakidemi_2016",
+            "issue": "06",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "364-372",
+            "publisher": "Scientific Research Publishing, Inc.",
+            "title": "Impacts of synthetic and botanical pesticides on beneficial insects",
+            "type": "article-journal",
+            "volume": "07"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nobre",
+                    "given": "R. A."
+                },
+                {
+                    "family": "Kinouchi",
+                    "given": "M. R."
+                },
+                {
+                    "family": "Constantino",
+                    "given": "P. A. L."
+                },
+                {
+                    "family": "Pereira",
+                    "given": "R. C."
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "M."
+                }
+            ],
+            "id": "Nobre_2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade",
+            "publisher-place": "Brasília, DF",
+            "title": "Monitoramento da biodiversidade: Roteiro metodológico de aplicação",
+            "title-short": "Monitoramento da biodiversidade",
+            "type": "book"
+        },
+        {
+            "DOI": "10.5902/1980509827065",
+            "ISSN": "0103-9954",
+            "URL": "http://dx.doi.org/10.5902/1980509827065",
+            "author": [
+                {
+                    "family": "Oliveira",
+                    "given": "C. P."
+                },
+                {
+                    "family": "Francelino",
+                    "given": "M. Rocha"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Paula",
+                    "given": "M. D."
+                },
+                {
+                    "family": "Leles",
+                    "given": "P. S. S."
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Andrade",
+                    "given": "F. C."
+                }
+            ],
+            "container-title": "Ciência Florestal",
+            "id": "Oliveira_2019",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        4
+                    ]
+                ]
+            },
+            "page": "255-269",
+            "publisher": "Universidad Federal de Santa Maria",
+            "title": "Comparação de modelos estatísticos para estimativa da biomassa de árvores, e estimativa do estoque de carbono acima do solo em cerrado",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "DOI": "10.1016/j.tree.2005.10.015",
+            "ISSN": "0169-5347",
+            "URL": "http://dx.doi.org/10.1016/j.tree.2005.10.015",
+            "author": [
+                {
+                    "family": "Pereira",
+                    "given": "H."
+                },
+                {
+                    "family": "Davidcooper",
+                    "given": "H."
+                }
+            ],
+            "container-title": "Trends in Ecology and Evolution",
+            "id": "Pereira_2006",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006,
+                        3
+                    ]
+                ]
+            },
+            "page": "123-129",
+            "publisher": "Elsevier BV",
+            "title": "Towards the global monitoring of biodiversity change",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pereira",
+                    "given": "R. C."
+                },
+                {
+                    "family": "Roque",
+                    "given": "F. O."
+                },
+                {
+                    "family": "Constantino",
+                    "given": "P. A. L."
+                },
+                {
+                    "family": "Sabino",
+                    "given": "J. V."
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "M."
+                }
+            ],
+            "id": "Pereira_2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade",
+            "publisher-place": "Brasília, DF",
+            "title": "Monitoramento in situ da biodiversidade: Proposta para um sistema brasileiro de monitoramento da biodiversidade",
+            "title-short": "Monitoramento in situ da biodiversidade",
+            "type": "book"
+        },
+        {
+            "DOI": "10.2307/1311860",
+            "ISSN": "1525-3244",
+            "URL": "http://dx.doi.org/10.2307/1311860",
+            "author": [
+                {
+                    "family": "Redford",
+                    "given": "K. H."
+                }
+            ],
+            "container-title": "BioScience",
+            "id": "Redford_1992",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992,
+                        6
+                    ]
+                ]
+            },
+            "page": "412-422",
+            "publisher": "Oxford University Press (OUP)",
+            "title": "The empty forest",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rezende",
+                    "given": "A. V."
+                },
+                {
+                    "family": "Vale",
+                    "given": "A. T."
+                },
+                {
+                    "family": "Sanquetta",
+                    "given": "C. R."
+                },
+                {
+                    "family": "Figueiredo Filho",
+                    "given": "A."
+                },
+                {
+                    "family": "Felfili",
+                    "given": "J. M"
+                }
+            ],
+            "container-title": "Scientia Forestalis",
+            "id": "Rezende_2006",
+            "issue": "71",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "65-76",
+            "title": "Omparação de modelos matemáticos para estimativa do volume, biomassa e estoque de carbono da vegetação lenhosa de um cerrado sensu stricto em brasília, DF",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1111/j.1744-7429.2010.00648.x",
+            "ISSN": "1744-7429",
+            "URL": "http://dx.doi.org/10.1111/j.1744-7429.2010.00648.x",
+            "author": [
+                {
+                    "family": "Ribeiro",
+                    "given": "D. B."
+                },
+                {
+                    "family": "Prado",
+                    "given": "P. I."
+                },
+                {
+                    "family": "Brown Jr.",
+                    "given": "K. S."
+                },
+                {
+                    "family": "Freitas",
+                    "given": "A. V. L."
+                }
+            ],
+            "container-title": "Biotropica",
+            "id": "Ribeiro_2010",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010,
+                        11
+                    ]
+                ]
+            },
+            "page": "710-716",
+            "publisher": "Wiley",
+            "title": "Temporal diversity patterns and phenology in fruit‐feeding butterflies in the atlantic forest",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ribeiro",
+                    "given": "K. T. (Org.)"
+                }
+            ],
+            "id": "Ribeiro_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade",
+            "publisher-place": "Brasília, DF",
+            "title": "Estratégia do programa nacional de monitoramento da biodiversidade – programa monitora: Estrutura, articulações, perspectivas",
+            "title-short": "Estratégia do programa nacional de monitoramento da biodiversidade – programa monitora",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1016/j.scitotenv.2016.09.146",
+            "ISSN": "0048-9697",
+            "URL": "http://dx.doi.org/10.1016/j.scitotenv.2016.09.146",
+            "author": [
+                {
+                    "family": "Rovero",
+                    "given": "F."
+                },
+                {
+                    "family": "Ahumada",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Science of The Total Environment",
+            "id": "Rovero_2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        1
+                    ]
+                ]
+            },
+            "page": "914-923",
+            "publisher": "Elsevier BV",
+            "title": "The tropical ecology, assessment and monitoring (TEAM) network: An early warning system for tropical rain forests",
+            "title-short": "The tropical ecology, assessment and monitoring (TEAM) network",
+            "type": "article-journal",
+            "volume": "574"
+        },
+        {
+            "author": [
+                {
+                    "literal": "Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio"
+                }
+            ],
+            "id": "SALVE_2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "note": "Accessed: 2024-01-15",
+            "publisher": "https://salve.icmbio.gov.br/#/",
+            "title": "Sistema de avaliação do risco de extinção da biodiversidade – SALVE",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Santos",
+                    "given": "R. S. S."
+                },
+                {
+                    "family": "Pereira",
+                    "given": "A. B."
+                },
+                {
+                    "family": "Pereira",
+                    "given": "T."
+                },
+                {
+                    "family": "Pereira",
+                    "given": "J."
+                },
+                {
+                    "family": "Prado",
+                    "given": "F."
+                },
+                {
+                    "family": "Constantino",
+                    "given": "P. A. L."
+                }
+            ],
+            "id": "Santos_2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade",
+            "publisher-place": "Brasília, DF",
+            "title": "Monitoramento da biodiversidade: Estrutura pedagógica do ciclo de capacitação",
+            "title-short": "Monitoramento da biodiversidade",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1017/s0266467417000323",
+            "ISSN": "1469-7831",
+            "URL": "http://dx.doi.org/10.1017/S0266467417000323",
+            "author": [
+                {
+                    "family": "Santos",
+                    "given": "J. P."
+                },
+                {
+                    "family": "Iserhard",
+                    "given": "C. A."
+                },
+                {
+                    "family": "Carreira",
+                    "given": "J. Y. O."
+                },
+                {
+                    "family": "Freitas",
+                    "given": "A. V. L."
+                }
+            ],
+            "container-title": "Journal of Tropical Ecology",
+            "id": "Santos_2017",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        9
+                    ]
+                ]
+            },
+            "page": "345-355",
+            "publisher": "Cambridge University Press (CUP)",
+            "title": "Monitoring fruit-feeding butterfly assemblages in two vertical strata in seasonal atlantic forest: Temporal species turnover is lower in the canopy",
+            "title-short": "Monitoring fruit-feeding butterfly assemblages in two vertical strata in seasonal atlantic forest",
+            "type": "article-journal",
+            "volume": "33"
+        },
+        {
+            "author": [
+                {
+                    "family": "Scolforo",
+                    "given": "J. R."
+                },
+                {
+                    "family": "Rufini",
+                    "given": "A. L."
+                },
+                {
+                    "family": "Mello",
+                    "given": "J. M."
+                },
+                {
+                    "family": "Trugilho",
+                    "given": "P. F."
+                },
+                {
+                    "family": "Oliveira",
+                    "given": "A. D."
+                },
+                {
+                    "family": "Silva",
+                    "given": "C. P. C."
+                }
+            ],
+            "chapter-number": "3",
+            "id": "Scolforo_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "103-114",
+            "publisher": "Universidade Federal de Lavras",
+            "publisher-place": "Lavras, MG",
+            "title": "Inventário florestal de MG: Equações de volume, peso de matéria seca e carbono para diferentes fitofisionomias da flora nativa",
+            "title-short": "Inventário florestal de MG",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.3390/insects3030616",
+            "ISSN": "2075-4450",
+            "URL": "http://dx.doi.org/10.3390/insects3030616",
+            "author": [
+                {
+                    "family": "Smilanich",
+                    "given": "A. M."
+                },
+                {
+                    "family": "Dyer",
+                    "given": "L. A."
+                }
+            ],
+            "container-title": "Insects",
+            "id": "Smilanich_2012",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        6
+                    ]
+                ]
+            },
+            "page": "616-628",
+            "publisher": "MDPI AG",
+            "title": "Effects of banana plantation pesticides on the immune response of lepidopteran larvae and their parasitoid natural enemies",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "DOI": "10.1111/j.1466-8238.2006.00267.x",
+            "ISSN": "1466-8238",
+            "URL": "http://dx.doi.org/10.1111/j.1466-8238.2006.00267.x",
+            "author": [
+                {
+                    "family": "Uehara‐Prado",
+                    "given": "M."
+                },
+                {
+                    "family": "Brown",
+                    "given": "K. S."
+                },
+                {
+                    "family": "Freitas",
+                    "given": "A. V. L."
+                }
+            ],
+            "container-title": "Global Ecology and Biogeography",
+            "id": "Uehara_Prado_2006",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006,
+                        12
+                    ]
+                ]
+            },
+            "page": "43-54",
+            "publisher": "Wiley",
+            "title": "Species richness, composition and abundance of fruit‐feeding butterflies in the brazilian atlantic forest: Comparison between a fragmented and a continuous landscape",
+            "title-short": "Species richness, composition and abundance of fruit‐feeding butterflies in the brazilian atlantic forest",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Van Swaay",
+                    "given": "C. A. M."
+                },
+                {
+                    "family": "Dennis",
+                    "given": "E. B."
+                },
+                {
+                    "family": "Schmucki",
+                    "given": "R."
+                },
+                {
+                    "family": "Sevilleja",
+                    "given": "C."
+                },
+                {
+                    "family": "Balalaikins",
+                    "given": "M."
+                },
+                {
+                    "family": "Botham",
+                    "given": "M."
+                },
+                {
+                    "family": "Bourn",
+                    "given": "N."
+                },
+                {
+                    "family": "Brereton",
+                    "given": "T."
+                },
+                {
+                    "family": "Cancela",
+                    "given": "J. P."
+                },
+                {
+                    "family": "Carlisle",
+                    "given": "B."
+                },
+                {
+                    "family": "Chambers",
+                    "given": "P."
+                },
+                {
+                    "family": "Collins",
+                    "given": "S."
+                },
+                {
+                    "family": "Dopagne",
+                    "given": "C."
+                },
+                {
+                    "family": "Escobés",
+                    "given": "R."
+                },
+                {
+                    "family": "Feldmann",
+                    "given": "R."
+                },
+                {
+                    "family": "Fernández-García",
+                    "given": "J. M."
+                },
+                {
+                    "family": "Fontaine",
+                    "given": "B."
+                },
+                {
+                    "family": "Gracianteparaluceta",
+                    "given": "A."
+                },
+                {
+                    "family": "Harrower",
+                    "given": "C."
+                },
+                {
+                    "family": "Harpke",
+                    "given": "A."
+                },
+                {
+                    "family": "Heliölä",
+                    "given": "J."
+                },
+                {
+                    "family": "Komac",
+                    "given": "B."
+                },
+                {
+                    "family": "Kühn",
+                    "given": "E."
+                },
+                {
+                    "family": "Lang",
+                    "given": "A."
+                },
+                {
+                    "family": "Maes",
+                    "given": "D."
+                },
+                {
+                    "family": "Mestdagh",
+                    "given": "X."
+                },
+                {
+                    "family": "Middlebrook",
+                    "given": "I."
+                },
+                {
+                    "family": "Monasterio",
+                    "given": "Y."
+                },
+                {
+                    "family": "Munguira",
+                    "given": "M. L."
+                },
+                {
+                    "family": "Murray",
+                    "given": "T. E."
+                },
+                {
+                    "family": "Musche",
+                    "given": "M."
+                },
+                {
+                    "family": "Õunap",
+                    "given": "E."
+                },
+                {
+                    "family": "Paramo",
+                    "given": "F."
+                },
+                {
+                    "family": "Pettersson",
+                    "given": "L. B."
+                },
+                {
+                    "family": "Piqueray",
+                    "given": "J."
+                },
+                {
+                    "family": "Settele",
+                    "given": "J."
+                },
+                {
+                    "family": "Stefanescu",
+                    "given": "C."
+                },
+                {
+                    "family": "Švitra",
+                    "given": "G."
+                },
+                {
+                    "family": "Tiitsaar",
+                    "given": "A."
+                },
+                {
+                    "family": "Verovnik",
+                    "given": "R."
+                },
+                {
+                    "family": "Warren",
+                    "given": "M. S."
+                },
+                {
+                    "family": "Wynhoff",
+                    "given": "I."
+                },
+                {
+                    "family": "Roy",
+                    "given": "D. B."
+                }
+            ],
+            "id": "Van_2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        6
+                    ]
+                ]
+            },
+            "publisher": "Butterfly Conservation Europe & ABLE/eBMS",
+            "title": "The EU butterfly indicator for grassland species: 1990-2017: Technical report",
+            "title-short": "The EU butterfly indicator for grassland species",
+            "type": "report"
+        },
+        {
+            "DOI": "10.1111/j.1365-294x.2012.05687.x",
+            "ISSN": "1365-294X",
+            "URL": "http://dx.doi.org/10.1111/j.1365-294X.2012.05687.x",
+            "author": [
+                {
+                    "family": "Van Strien",
+                    "given": "M. J."
+                },
+                {
+                    "family": "Keller",
+                    "given": "D."
+                },
+                {
+                    "family": "Holderegger",
+                    "given": "R."
+                }
+            ],
+            "container-title": "Molecular Ecology",
+            "id": "Van_Strien_2012",
+            "issue": "16",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        6
+                    ]
+                ]
+            },
+            "page": "4010-4023",
+            "publisher": "Wiley",
+            "title": "A new analytical approach to landscape genetic modelling: Least‐cost transect analysis and linear mixed models",
+            "title-short": "A new analytical approach to landscape genetic modelling",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "author": [
+                {
+                    "family": "Grooten",
+                    "given": "M."
+                },
+                {
+                    "family": "Almond",
+                    "given": "R. E. A (Eds.)"
+                }
+            ],
+            "id": "WWF_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "number": "ISBN: 978-2-940529-90-2",
+            "publisher": "WWF",
+            "publisher-place": "Gland, Switzerland",
+            "title": "Living planet report 2018: Aiming higher",
+            "title-short": "Living planet report 2018",
+            "type": "report"
+        }
+    ],
+    "project_biblios": [
+        "referencias.bib"
+    ]
+}

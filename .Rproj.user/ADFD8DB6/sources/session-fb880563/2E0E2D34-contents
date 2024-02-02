@@ -1,0 +1,70 @@
+project:
+  type: book
+  output-dir: docs
+  
+
+book:
+  title: " "
+  subtitle: " "
+  #author: "Centro Nacional de Pesquisa e Conservação de Aves Silvestres - CEMAVE"
+  #date: "7 June 2023"
+  language: custom.yml
+  search: true
+  sharing: [twitter, facebook, linkedin]
+  # cover-image: "imagens/capa/capafinal.png"
+  # repo-url:
+  repo-actions: [edit]
+  # site-url:
+  sidebar:
+    collapse-level: 4
+    pinned: false
+  chapters:
+    - index.qmd
+    - expediente.qmd
+    - equipe.qmd
+    - agradecimentos.qmd
+    - lista_siglas.qmd
+    - apresentacao.qmd
+    - cap01.qmd
+    - cap02.qmd
+    - cap03.qmd
+    - cap04.qmd
+    - referencias.qmd
+    
+  appendices:
+    - apendice.qmd
+
+bibliography: referencias.bib
+csl: plos.csl
+
+execute: 
+  freese: auto
+  
+format:
+  html:
+    theme: 
+      - cosmo
+      - custom.scss
+    callout-appearance: simple
+    #template-partials: [toc.html, title-block.html]
+    toc: true
+  pdf:
+    documentclass: scrreport
+    # documentclass: krantz
+    # include-in-header: latex/preamble.tex
+    # include-before-body: latex/before_body.tex
+    # include-after-body: latex/after_body.tex
+    # keep-tex: true
+    # callout-appearance: simple
+    include-in-header: 
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body: 
+      text: |
+        \printindex
+  epub:
+    cover-image: "imagens/capa/capa_rel_monitora_2014_22.png"
+
+
+

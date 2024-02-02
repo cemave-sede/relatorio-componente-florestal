@@ -1,0 +1,45 @@
+<style> {
+    margin: auto;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(data.table)
+library(descr)
+library(RColorBrewer)
+library(kableExtra)
+library(knitr)
+library(DT)
+library(plotly)
+library(ggthemes)
+library(forcats)
+library(leaflet)
+library(sf)
+library(rgdal)
+library(treemapify)
+library(reshape2)
+library(randomcoloR)
+library(ggplot2)
+```
+
+<style>
+.html-widget {
+    margin: auto;
+}
+</style>
+
+</br>
+
+
+# Referências bibliográficas {#referencias .unnumbered} 
+
+::: {#refs}
+
+:::
+

@@ -1,0 +1,15 @@
+{
+  "hash": "8982dd089b64dbd7d3fcd3a61786c841",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\\pagestyle{plain}\n\n\n\n\n::: {.cell}\n\n:::\n\n\n# Apresentação {#apresentacao .unnumbered}\n\nSugestão do Fialho:  (inserir texto assinado pela Coordenação Geral de Pesquisa)  \n\n<font color=\"red\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</font>  \n\n\n  **Cecília Cronemberger de Faria**\\\n*Coordenadora Geral de Pesquisa e Monitoramento da Biodiversidade - CGPEQ*\\  \n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

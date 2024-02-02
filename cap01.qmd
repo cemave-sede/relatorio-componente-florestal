@@ -1,0 +1,98 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(data.table)
+library(descr)
+library(RColorBrewer)
+library(kableExtra)
+library(knitr)
+library(DT)
+library(plotly)
+library(ggthemes)
+library(forcats)
+library(leaflet)
+library(sf)
+library(rgdal)
+library(treemapify)
+library(reshape2)
+library(randomcoloR)
+library(ggplot2)
+```
+
+
+
+# O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora {#cap1}
+
+**Dárlison Fernandes Carvalho de Andrade**  
+
+Coordenação de Monitoramento da Biodiversidade - COMOB  
+*Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
+*Complexo Administrativo EQSW 103/104 s/n*  
+*70670-350 Brasília, DF*  
+
+Serviço Florestal Brasileiro - SBF  
+*SCEN Lote 04 - Asa Norte*  
+*70818-900 Brasília, DF*  
+
+
+
+**(Substituir o texto atual por texto novo a ser escrito pelo Dárlison)**  
+
+
+O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora, instituído pela Instrução Normativa ICMBio n.º 3/2017, e, reformulado pela Instrução Normativa ICMBio n.º 2/2022, tem sido aprimorado, desde os primeiros anos de criação da instituição e, atualmente, conta uma estrutura que engloba três subprogramas - Terrestre, Aquático e Continental e o Marinho e Costeiro (@fig-eixos-tematicos-monitora), com participação de mais de 100 Unidades de Conservação Federais dos diferentes biomas brasileiros
+
+
+O Programa Monitora busca fortalecer o diálogo em torno das questões ambientais, com base no compartilhamento de informações e na formulação de questões, envolvendo pesquisadores, gestores das áreas e das comunidades. Tem sido estabelecido um conjunto de procedimentos para levantar dados a partir do emprego de técnicas simples, com baixo custo financeiro e operacional, privilegiando a participação de atores locais, acompanhado do compartilhamento de análises e interpretação coletiva de resultados. Tais atividades requerem a capacitação constante em diversas áreas do conhecimento e permanente processo de animação e articulação de iniciativas.
+
+O cuidado com o estabelecimento de procedimentos padronizados, com conjunto mínimo de variáveis em comum, visa a comparabilidade e o ganho de escala, de modo que o programa gere informações relevantes para as decisões de manejo e uso dos recursos em escala local, mas também para as manifestações em escala regional e nacional.
+
+
+
+```{r}
+#| label: fig-eixos-tematicos-monitora
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Representação esquemática da estrutura do Programa Monitora."
+
+knitr::include_graphics("imagens/cap01/eixos_tematicos_monitora.JPG")
+
+
+```
+
+
+A busca pela excelência na gestão de dados e informações visa também potencializar a capacidade analítica, inclusive para subsidiar a manifestação do instituto e posicionamento da sociedade perante situações complexas como a implementação de grandes empreendimentos.
+
+O Programa Monitora tem como objetivos:
+
+-   gerar informação qualificada para a avaliação continuada da efetividade das UCs federais e do Sistema Nacional de Unidades de Conservação no cumprimento de seus objetivos de conservação da biodiversidade;
+
+-   subsidiar, avaliar e acompanhar "in situ" projeções de alteração na distribuição e locais de ocorrência das espécies em resposta às mudanças climáticas e demais vetores de pressão e ameaça, a fim de atualizar as medidas de conservação, incluindo o manejo;
+
+-   fornecer subsídios para o planejamento do uso sustentável das espécies da fauna e flora em unidades de conservação federais;
+
+-   fornecer subsídios para a avaliação do estado de conservação da fauna e flora brasileira e para implementação das estratégias de conservação das espécies ameaçadas de extinção e com dados insuficientes para a avaliação (categoria DD); e
+
+- fornecer subsídios para o planejamento e a avaliação de programas de controle de espécies exóticas invasoras, especialmente em unidades de conservação federais.
+
+A gestão do Programa Monitora está a cargo da CGPEQ -- Coordenação Geral de Pesquisa e Monitoramento da Biodiversidade, mais especificamente da COMOB -- Coordenação de Monitoramento da Biodiversidade.
+
+As atividades desenvolvidas por essa Coordenação estão previstas no Decreto nº 10.234, de 11 de fevereiro de 2020, que aprova a Estrutura Regimental do ICMBio, e estabelece em seu art. 2º, inciso XXVII, entre as atribuições do instituto: "desenvolver programa de monitoramento da biodiversidade para subsidiar a definição e a implementação de ações de adaptação às mudanças climáticas nas unidades de conservação federais e a análise da efetividade".
+
+Para maiores detalhes sobre os subprogramas, componentes e alvos, enfim, sua estrutura, acesse a [Estratégia do Programa Nacional de Monitoramento da Biodiversidade -- Programa Monitora: estrutura (2018)](https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio/estrategia_geral.pdf) ou sua [tabela resumo](https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/estrutura-do-programa-monitora/2b5210461815403eb185f1aceee3b192.pdf).
+
+## Impacto do Programa no desenvolvimento do conhecimento
+
+O Programa Monitora até o momento foi responsável pela .....
+
+## Os alvos
+
+A seleção de alvos do componente florestal buscou atender........

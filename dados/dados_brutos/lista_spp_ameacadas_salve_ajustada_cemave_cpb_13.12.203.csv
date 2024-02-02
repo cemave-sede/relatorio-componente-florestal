@@ -1,0 +1,415 @@
+﻿classe;ordem;familia;genero;nome_cientifico;nome_comum;categoria;criterio
+Aves;Galliformes;Cracidae;Aburria;Aburria cujubi;cujubi;Vulnerável;A2d
+Aves;Galliformes;Cracidae;Aburria;Aburria cumanensis;cajubi, cujubi-de-barbela-fina, cujubim, jacutinga, jacutinga-de-garganta-azul;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Aburria;Aburria jacutinga;jacutinga;Em Perigo;C2a(i)
+Mammalia;Primates;Atelidae;Alouatta;Alouatta belzebul;Bugio, Guariba, Guariba-de-mãos-ruivas, Guariba-de-mãos-vermelhas;Vulnerável;A2cd
+Mammalia;Primates;Atelidae;Alouatta;Alouatta caraya;Barbado, Bugio-preto, Guariba-preto;Quase Ameaçada;NA
+Mammalia;Primates;Atelidae;Alouatta;Alouatta discolor;Guariba-de-mãos-ruivas, guariba-de-mãos-vermelhas;Vulnerável;A4cd
+Mammalia;Primates;Atelidae;Alouatta;Alouatta guariba guariba;Bugio-ruivo;Vulnerável;"C1+2a(i); D"
+Mammalia;Primates;Atelidae;Alouatta;Alouatta guariba clamitans;Bugio-ruivo;Criticamente em Perigo;A4ce
+Mammalia;Primates;Atelidae;Alouatta;Alouatta macconnelli;Guariba, Guariba-vermelha;Menos Preocupante;NA
+Mammalia;Primates;Atelidae;Alouatta;Alouatta nigerrima;Guariba-de-mãos-ruivas, guariba-preta;Menos Preocupante;NA
+Mammalia;Primates;Atelidae;Alouatta;Alouatta seniculus;Bugio-vermelho, Guariba-vermelho;Menos Preocupante;NA
+Mammalia;Primates;Atelidae;Alouatta;Alouatta ululata;capelão, Guariba, guariba-da-Caatinga;Em Perigo;C2a(i)
+Mammalia;Primates;Aotidae;Aotus;Aotus azarae;Macaco-da-noite, Macaco-da-noite-de-pescoço-vermelho;Dados Insuficientes;NA
+Mammalia;Primates;Aotidae;Aotus;Aotus nancymaae;Macaco-da-noite, Macaco-da-noite-de-pescoço-vermelho;Menos Preocupante;NA
+Mammalia;Primates;Aotidae;Aotus;Aotus nigriceps;Macaco-da-noite, Macaco-da-noite-de-pescoço-vermelho, Quatro-olhos;Menos Preocupante;NA
+Mammalia;Primates;Aotidae;Aotus;Aotus trivirgatus;Macaco-da-noite, Macaco-da-noite-de-pescoço-cinza;Menos Preocupante;NA
+Mammalia;Primates;Aotidae;Aotus;Aotus vociferans;Macaco-da-noite, Macaco-da-noite-de-pescoço-cinza;Menos Preocupante;NA
+Mammalia;Primates;Atelidae;Ateles;Ateles belzebuth;coatá, Macaco-aranha;Vulnerável;A4cd
+Mammalia;Primates;Atelidae;Ateles;Ateles chamek;Coatá, Coatá-preto, Macaco-aranha, Macaco-aranha-da-cara-preta;Vulnerável;A4cd
+Mammalia;Primates;Atelidae;Ateles;Ateles marginatus;Coatá-da-testa-branca, Cuamba (Pará), Guatá (Mato Grosso), Macaco-aranha;Em Perigo;A4cd
+Mammalia;Primates;Atelidae;Ateles;Ateles paniscus;Coatá, Macaco-aranha;Menos Preocupante;NA
+Mammalia;Carnivora;Canidae;Atelocynus;Atelocynus microtis;cachorro-do-mato-de-orelhas-curtas;Vulnerável;A4c
+Mammalia;Carnivora;Procyonidae;Bassaricyon;Bassaricyon alleni;Gatiara, gogó-de-sola, janaú e macaco janauí/janauaí/januí, macaco da noite;Menos Preocupante;NA
+Mammalia;Cetartiodactyla;Cervidae;Blastocerus;Blastocerus dichotomus;NA;Vulnerável;A3bc
+Mammalia;Primates;Atelidae;Brachyteles;Brachyteles arachnoides;Buriqui, Buriquim, Mariquina, Mono, Mono-carvoeiro, Muriqui-do-sul, Muriquina, Muriquinina;Em Perigo;A4cd
+Mammalia;Primates;Atelidae;Brachyteles;Brachyteles hypoxanthus;buriqui, buriquim, mariquina, mono, mono-carvoeiro, mono-da-cara-manchada, muriqui-do-norte, muriquina;Criticamente em Perigo;C2a(i)
+Mammalia;Pilosa;Bradypodidae;Bradypus;Bradypus torquatus;Aí-pixuna, Preguiça-de-coleira, Preguiça-preta;Vulnerável;B2ab(iii)
+Mammalia;Pilosa;Bradypodidae;Bradypus;Bradypus tridactylus;Preguiça-de-bentinho, Preguiça-de-garganta-amarela, Preguiça-de-três-dedos;Menos Preocupante;NA
+Mammalia;Pilosa;Bradypodidae;Bradypus;Bradypus variegatus;Preguiça-comum, Preguiça-de-bentinho, Preguiça-de-óculos, Preguiça-marmota;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Cabassous;Cabassous tatouay;Tatu-de-rabo-mole-grande;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Cabassous;Cabassous unicinctus;cabassú (variação de capacou - tatu em Galibi - grupo indígena da Guiana Francesa, tatu-de-rabo-mole, tatu-de-rabo-mole-pequeno, tatu-rabo-de-couro;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Cacajao;Cacajao ayresi;bicó, Uacari-de-Ayres, uacari-preto;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Cacajao;Cacajao calvus;bicó, Uacari-branco;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Cacajao;Cacajao hosami;bicó, Uacari;Em Perigo;A4d
+Mammalia;Primates;Pitheciidae;Cacajao;Cacajao novaesi;bicó, Uacari, uacari-de-Novaes;Quase Ameaçada;NA
+Mammalia;Primates;Pitheciidae;Cacajao;Cacajao ouakary;Uacari-preto;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Cacajao;Cacajao rubicundus;Uacari, uacari-vermelho;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Cacajao;Cacajao ucayalii;Uacari;Dados Insuficientes;NA
+Mammalia;Primates;Callitrichidae;Callibella;Callibella humilis;Sagui;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Callibella;Callicebus barbarabrownae;guigó, guigó-da-caatinga, pangola, sauá-loiro;Criticamente em Perigo;C2a(i)
+Mammalia;Primates;Pitheciidae;Callicebus;Callicebus bernhardi;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Callicebus;Callicebus brunneus;Zogue-zogue;Quase Ameaçada;NA
+Mammalia;Primates;Pitheciidae;Callicebus;Callicebus coimbrai;Guigó, Guigó-de-Coimbra-Filho, Guigó de Sergipe;Em Perigo;C2a(i)
+Mammalia;Primates;Pitheciidae;Callicebus;Callicebus melanochir;Guigó, Sauá;Vulnerável;A4c
+Mammalia;Primates;Pitheciidae;Callicebus;Callicebus nigrifrons;Guigó, Sauá;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Callicebus;Callicebus personatus;Guigó, Guigó-mascarado, Sauá-de-cara-preta;Vulnerável;C2a(i)
+Mammalia;Primates;Callitrichidae;Callimico;Callimico goeldii;Calimico, Macaco-de-Goeldi, Mico-preto, Sagui-de-Goeldi, Soim-preto, Taboqueiro;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Callistomys;Callistomys pictus;Rato-do-cacau, Saruê-beiju, Saruê-beju;Em Perigo;B1ab(i,ii,iii)
+Mammalia;Primates;Callitrichidae;Callithrix;Callithrix aurita;sagui-caveirinha, Sagui-da-serra-escuro;Em Perigo;A4cde
+Mammalia;Primates;Callitrichidae;Callithrix;Callithrix flaviceps;Sagui-da-serra, Sagui-da-serra-claro, Sagui-taquara;Em Perigo;C1+2a(i)
+Mammalia;Primates;Callitrichidae;Callithrix;Callithrix geoffroyi;Sagui-da-cara-branca;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Callithrix;Callithrix jacchus;mico, mico-estrela, nico, sagui, sagui-comum, sagui-de-tufo-branco, Sagui-do-nordeste;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Callithrix;Callithrix kuhlii;Sagui-de-wied;Quase Ameaçada;NA
+Mammalia;Primates;Callitrichidae;Callithrix;Callithrix penicillata;Mico-estrela, Sagui-de-tufos-pretos;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Caluromys;Caluromys lanatus;Cuíca-lanosa, Gambazinho, Mucura-xixica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Caluromys;Caluromys philander;Cuíca, Cuíca-lanosa, Mucura-xixica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Caluromysiops;Caluromysiops irrupta;Cuíca, Cuíca-amazônica, Cuíca-de-colete;Menos Preocupante;NA
+Aves;Cariamiformes;Cariamidae;Cariama;Cariama cristata;seriema;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Carterodon;Carterodon sulcidens;"Rato-do-mato; Rato-de-espinho";Dados Insuficientes;NA
+Mammalia;Rodentia;Caviidae;Cavia;Cavia aperea;Preá;Menos Preocupante;NA
+Mammalia;Rodentia;Caviidae;Cavia;Cavia fulgida;Preá;Menos Preocupante;NA
+Mammalia;Rodentia;Caviidae;Cavia;Cavia intermedia;Preá, Preá-de-Moleques-do-Sul;Criticamente em Perigo;"B2ab(iii); D"
+Mammalia;Rodentia;Caviidae;Cavia;Cavia magna;Apereá de dorso oscuro, Preá;Quase Ameaçada;NA
+Mammalia;Primates;Callitrichidae;Cebuella;Cebuella niveiventris;Mico-leãozinho, Sagui-leãozinho, Sagui-pigmeu;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Cebuella;Cebuella pygmaea;Mico-leãozinho, Sagui-leãozinho, Sagui-pigmeu;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Cebus;Cebus albifrons;Caiarara;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Cebus;Cebus kaapori;caiarara, caiarara ka’apor, macaco-cara-branca, piticó;Criticamente em Perigo;A2acd
+Mammalia;Primates;Cebidae;Cebus;Cebus olivaceus;Caiarara, Cairara, Macaco-prego;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Cebus;Cebus unicolor;Caiarara;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Cebus;Cebus yuracus;Caiarara;Menos Preocupante;NA
+Mammalia;Carnivora;Canidae;Cerdocyon;Cerdocyon thous;Cachorro do mato, fusquinho, graxaim, graxaim do mato, guancito, guaraxaim, guaraxo, lobete, lobinho, mata-virgem, rabo-fofo, raposa, raposão, raposinha-do-mato;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Chaetomys;Chaetomys subspinosus;Bristle-spined Porcupine, Gandú, Ouriço-preto;Vulnerável;B2ab(ii,iii)
+Mammalia;Primates;Pitheciidae;Cheracebus;Cheracebus lucifer;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Cheracebus;Cheracebus lugens;Sauá-de-colar, zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Cheracebus;Cheracebus purinus;sauá-de-colar, Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Cheracebus;Cheracebus regulus;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Chironectes;Chironectes minimus;Cassaco d´água, Cuíca-d’água, Raposa-d’água;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Chiropotes;Chiropotes albinasus;Cuxiú-de-nariz-vermelho;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Chiropotes;Chiropotes chiropotes;Cuxiú;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Chiropotes;Chiropotes sagulatus;Cuxiú;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Chiropotes;Chiropotes satanas;cuxiú, Cuxiú-preto, cuxuí, macaco-preto;Criticamente em Perigo;A2cd
+Mammalia;Primates;Pitheciidae;Chiropotes;Chiropotes utahickae;Cuxiú;Vulnerável;A2c
+Mammalia;Pilosa;Megalonychidae;Choloepus;Choloepus didactylus;Preguiça-real, Unau;Menos Preocupante;NA
+Mammalia;Pilosa;Megalonychidae;Choloepus;Choloepus hoffmanni;preguiça-real;Quase Ameaçada;NA
+Mammalia;Carnivora;Canidae;Chrysocyon;Chrysocyon brachyurus;Guará, Lobão, Lobo, Lobo-de-crina, Lobo-de-juba, Lobo-guará, Lobo-vermelho;Vulnerável;C1
+Mammalia;Rodentia;Echimyidae;Clyomys;Clyomys laticeps;Broad-headed Spiny-rat, Rato-do-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou baturitensis;Baturite Porcupine, Porco-espinho-de-baturité;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou bicolor;Bicolor-spined Porcupine, Ouriço-cacheiro;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou ichillus;Coandu-pigmeu;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou insidiosus;Bahian Hairy Dwarf Porcupine, Ouriço-cacheiro;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou longicaudatus;ouriço-de-cauda-longa;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou melanurus;Black-tailed Hairy Dwarf Porcupine, Ouriço-cacheiro;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou nycthemera;Black Dwarf Porcupine, Koopman's Porcupine, Ouriço, Porco-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou prehensilis;NA;Quase Ameaçada;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou roosmalenorum;Ouriço-cacheiro, Porcupine, Roosmalen's Dwarf Porcupine, Roosmalen’s Hairy Dwarf, Roosmalen's Porcupine;Menos Preocupante;NA
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou speratus;Coandu-mirim, Ouriço-cacheiro;Em Perigo;B1ab(iii)
+Mammalia;Rodentia;Erethizontidae;Coendou;Coendou spinosus;Ouriço-cacheiro, Paraguay Hairy Dwarf Porcupine, Porcupine, Spiny Tree Porcupine;Menos Preocupante;NA
+Mammalia;Carnivora;Mephitidae;Conepatus;Conepatus chinga;cangambá, gambá, zorrilho;Menos Preocupante;NA
+Mammalia;Carnivora;Mephitidae;Conepatus;Conepatus semistriatus;cangambá, gambá, jatitataca, jirita, tacaca, ticaca, zorrilho;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Crax;Crax alector;mutum-poranga;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Crax;Crax blumenbachii;mutum-de-bico-vermelho, mutum-do-sudeste;Em Perigo;C2a(i)
+Aves;Galliformes;Cracidae;Crax;Crax fasciolata;mutum, mutum-de-penacho, mutum-pinima, mutum-poranga;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Crax;Crax globulosa;mutum-açu, mutum-de-assovio, mutum-de-fava, mutum-fava, mutum-piurí;Em Perigo;A3cd+4cd
+Mammalia;Didelphimorphia;Didelphidae;Cryptonanus;Cryptonanus agricolai;Catita, Guaiquica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Cryptonanus;Cryptonanus chacoensis;Catita, Guaiquica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Cryptonanus;Cryptonanus guahybae;Catita, Guaiquica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Cryptonanus;Cryptonanus unduaviensis;NA;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus atrocapillus;inhambu-de-coroa-preta;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus bartletti;inhambu-anhangaí;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus brevirostris;inhambu-carijó;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus cinereus;Inambu-pixuna;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus duidae;inhambu-de-pé-cinza;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus erythropus;inhambu-de-perna-vermelha;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus noctivagus;jaó-do-sul;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus obsoletus;inhambuguaçu;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus parvirostris;inambu-chororó;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus soui;tururim;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus strigulosus;inambu-relógio;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus tataupa;inambu-chintã;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus undulatus;jaó, juó, macucau, macucaua, macucauá, sururina;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus variegatus;inhambu-anhangá;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Crypturellus;Crypturellus zabele;zabelé;Vulnerável;A2cd
+Mammalia;Rodentia;Cuniculidae;Cuniculus;Cuniculus paca;Paca;Menos Preocupante;NA
+Mammalia;Pilosa;Cyclopedidae;Cyclopes;Cyclopes didactylus;Tamanduá-cigarra, Tamanduá-i, Tamanduaí, Tamanduá-seda;Menos Preocupante;NA
+Mammalia;Pilosa;Cyclopedidae;Cyclopes;Cyclopes ida;Tamanduaí;Menos Preocupante;NA
+Mammalia;Pilosa;Cyclopedidae;Cyclopes;Cyclopes thomasi;Tamanduaí;Menos Preocupante;NA
+Mammalia;Pilosa;Cyclopedidae;Cyclopes;Cyclopes xinguensis;Tamanduaí;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Dactylomys;Dactylomys boliviensis;Bolivian Bamboo Rat, Rato-do-bambu, Toró;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Dactylomys;Dactylomys dactylinus;Amazon Bamboo Rat, Rato-do-bambu, Toró;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta azarae;Azara's Agouti, Cutia;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta catrinae;NA;Dados Insuficientes;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta croconota;Amazon Red-rumped Agouti, Cutia, Orange Agouti;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta fuliginosa;Black Agouti, Cutia;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta iacki;Cutia, Cutia-de-garupa-laranja, Red-rumped Agouti;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta leporina;Cutia;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta nigriclunis;Cutia, Highland Black-rumped Agouti;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Dasyprocta;Dasyprocta prymnolopha;Black-rumped Agouti, Cutia;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Dasypus;Dasypus beniensis;Tatu-quinze-quilos;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Dasypus;Dasypus kappleri;Tatu-açu, Tatu-canastra, Tatu-quinze-quilos, Tatu-tinga, Tatu-verdadeiro;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Dasypus;Dasypus novemcinctus;Tatu-asa-branca, Tatuetê, Tatu-folha, Tatu-galinha, Tatu-nove-bandas, Tatu-veado, Tatu-verdadeiro;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Dasypus;Dasypus pastasae;Tatu-quinze-quilos;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Dasypus;Dasypus septemcinctus;Muleta, Mulita, Tatu-bolinha, Tatu-china, Tatu-í, Tatu-mirim, Tatu-mula;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Didelphis;Didelphis albiventris;Gambá-de-orelha-branca, Mucura, Saruê;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Didelphis;Didelphis aurita;Gambá, Gambá-de-orelha-preta;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Didelphis;Didelphis imperfecta;Gambá, mucura;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Didelphis;Didelphis marsupialis;Gambá-de-orelha-preta, Mucura;Menos Preocupante;NA
+Mammalia;Rodentia;Dinomyidae;Dinomys;Dinomys branickii;Paca de rabo, Pacarana;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Echimys;Echimys chrysurus;Rato-da-árvore, White-faced Spiny Tree-rat, White-faced Tree Rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Echimys;Echimys vieirai;Rato-da-árvore, Vieira’s Spiny Tree-rat;Menos Preocupante;NA
+Mammalia;Carnivora;Mustelidae;Eira;Eira barbara;Irara, papa-mel;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Euphractus;Euphractus sexcinctus;Tatu-papa-defunto, Tatu-peba, Tatu-peludo, Tatu-testa-de-ferro;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Euryzygomatomys;Euryzygomatomys spinosus;Guiara, Guirá, Rata guira, Ratón espinoso;Menos Preocupante;NA
+Mammalia;Rodentia;Caviidae;Galea;Galea spixii;Preá;Menos Preocupante;NA
+Mammalia;Carnivora;Mustelidae;Galictis;Galictis cuja;aracambé, cachorrinho ao, furão, furão pequeno;Menos Preocupante;NA
+Mammalia;Carnivora;Mustelidae;Galictis;Galictis vittata;furão grande, furão maior;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Glironia;Glironia venusta;Cuíca;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Gracilinanus;Gracilinanus agilis;Catita, Cuíca, Cuiquinha, Guaiquica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Gracilinanus;Gracilinanus emiliae;Catita, Cuíca, Guaiquica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Gracilinanus;Gracilinanus microtarsus;Catita, Cuíca, Cuica-graciosa, Guaiquica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Gracilinanus;Gracilinanus peruanus;NA;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Guerlinguetus;Guerlinguetus aestuans;Caxinguelê, Esquilo, Guianan Squirrel, Quatipuru;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Guerlinguetus;Guerlinguetus brasiliensis;Esquilo, Quatipuru-pequeno, Serelepe;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Hadrosciurus;Hadrosciurus ignitus;Esquilo;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Hadrosciurus;Hadrosciurus igniventris;Esquilo, Quatipuru, Southern Amazon Red Squirrel;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Hadrosciurus;Hadrosciurus pyrrhinus;Esquilo, Junín Red Squirrel, Quatipuru;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Hadrosciurus;Hadrosciurus spadiceus;Esquilo, Quatipuru, Southern Amazon Red Squirrel;Menos Preocupante;NA
+Mammalia;Carnivora;Felidae;Herpailurus;Herpailurus yagouaroundi;Gato-azul, Gato-mourisco, Gato-vermelho, Jaguarundi;Vulnerável;A4bcd
+Mammalia;Rodentia;Caviidae;Hydrochoerus;Hydrochoerus hydrochaeris;Capivara;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Hyladelphys;Hyladelphys kalinowskii;Catita, Guaiquica, Peru gracile mouse opossum;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Isothrix;Isothrix bistriata;Rato-coró, Yellow-crowned Brush-tailed Rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Isothrix;Isothrix negrensis;Rato-coró, Rio Negro Brush-tailed Rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Isothrix;Isothrix pagurus;Plain Brush-tailed Rat, Rato-coró;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Isothrix;Isothrix sinnamariensis;Rato coró, Rato do mato;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Kannabateomys;Kannabateomys amblyonyx;Atlantic Bamboo Rat, Rato-da-taquara;Menos Preocupante;NA
+Mammalia;Rodentia;Caviidae;Kerodon;Kerodon acrobata;Climbing Cavy, Mocó;Vulnerável;B1ab(iii)
+Mammalia;Rodentia;Caviidae;Kerodon;Kerodon rupestris;Mocó, Rock cavy;Vulnerável;A2d
+Mammalia;Primates;Atelidae;Lagothrix;Lagothrix lagothricha cana;Macaco-barrigudo;Em Perigo;A4cd
+Mammalia;Primates;Atelidae;Lagothrix;Lagothrix lagothricha lagothricha;Macaco-barrigudo;Vulnerável;A4d
+Mammalia;Primates;Atelidae;Lagothrix;Lagothrix lagothricha poeppigii;Macaco-barrigudo;Vulnerável;A4cd
+Mammalia;Primates;Callitrichidae;Leontocebus;Leontocebus cruzlimai;Sagui-da-cara-suja, Sauim vermelho;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Leontocebus;Leontocebus fuscicollis;Sagui-de-cara-suja;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Leontocebus;Leontocebus fuscus;Sagui-de-cara-suja;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Leontocebus;Leontocebus nigricollis;Sauim;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Leontocebus;Leontocebus weddelli;Sagüi, Sagui-preto, Sauim, Soim, Soim preto, Soim vermelho;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Leontopithecus;Leontopithecus caissara;Mico-leão-da-cara-preta;Em Perigo;"C2a(i); D"
+Mammalia;Primates;Callitrichidae;Leontopithecus;Leontopithecus chrysomelas;Mico-leão-da-cara-dourada;Em Perigo;C2a(i)
+Mammalia;Primates;Callitrichidae;Leontopithecus;Leontopithecus chrysopygus;Mico-leão-preto, Sauim-preto;Em Perigo;B2ab(ii,iii,v)
+Mammalia;Primates;Callitrichidae;Leontopithecus;Leontopithecus rosalia;Mico-leão-dourado, Sauim-piranga;Em Perigo;B2ab(iii)
+Mammalia;Carnivora;Felidae;Leopardus;Leopardus geoffroyi;Gato-do-mato, Gato-do-mato-grande;Vulnerável;A4de
+Mammalia;Carnivora;Felidae;Leopardus;Leopardus guttulus;Gato-do-mato;Vulnerável;C1
+Mammalia;Carnivora;Felidae;Leopardus;Leopardus pardalis;Canguçu, Gato-do-mato-grande, Jaguatirica, Maracajá, meia-malha, Oncinha;Menos Preocupante;NA
+Mammalia;Carnivora;Felidae;Leopardus;Leopardus tigrinus;Gato-do-mato, Gato-maracajá, gato-maracajá-mirim, Pintadinho;Em Perigo;A2b
+Mammalia;Carnivora;Felidae;Leopardus;Leopardus wiedii;Gato-do-mato, Gato-maracajá, Gato-peludo, Maracajá-peludo;Vulnerável;A4b
+Mammalia;Rodentia;Echimyidae;Lonchothrix;Lonchothrix emiliae;Rato-de-espinho, Tuft-tailed Spiny Tree-rat;Menos Preocupante;NA
+Mammalia;Carnivora;Mustelidae;Lontra;Lontra longicaudis;lobinho-de-rio, Lontra, lontra neotropical, lontrinha;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Lutreolina;Lutreolina crassicaudata;Cuíca de cauda grossa, Cuíca-marrom;Menos Preocupante;NA
+Mammalia;Carnivora;Canidae;Lycalopex;Lycalopex gymnocercus;Cachorro do Campo, graxaim-do-campo, raposa-do-campo, Rasposa do Mato;Menos Preocupante;NA
+Mammalia;Carnivora;Canidae;Lycalopex;Lycalopex vetulus;Raposa-do-campo, raposinha, raposinha-do-campo;Vulnerável;A2c+3cd
+Mammalia;Rodentia;Echimyidae;Makalata;Makalata didelphoides;Rato-coró, Red-nosed Armored Tree-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Makalata;Makalata macrura;Long-tailed Armored Tree-rat, Rato-coró;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa constantiae;Cuíca;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa demerarae;Cuíca;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa lepida;Cuíca, Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa macrotarsus;Cuíca, Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa murina;Cuíca, Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa paraguayana;Cuíca, Guaiquica-cinza, Tate’s wooly mouse opossum;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa rapposa;NA;Dados Insuficientes;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa rutteri;Cuíca;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosa;Marmosa waterhousei;Cuíca, Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops bishopi;Cuíca, Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops caucae;Cuíca, Neblina slender opossum;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops incanus;Cuíca, Guaiquica, Opossum-souris gris;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops noctivagus;Cuíca, Marmosa, White-bellied slender opossum;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops ocellatus;Cuíca, Marmosa, Santa Cruz slender opossum;Dados Insuficientes;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops parvidens;Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops paulensis;Brazilian slender opossum, Marmosa;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Marmosops;Marmosops pinheiroi;Cuíca, Marmosa, Pinheiro’s slender opossum;Menos Preocupante;NA
+Mammalia;Cetartiodactyla;Cervidae;Mazama;Mazama americana;Guassu-pará, Guatapará, Suaçupita, Veado-capoeiro, Veado-mateiro, Veado-pardo, Veado-retovado, Veado-vermelho;Dados Insuficientes;NA
+Mammalia;Cetartiodactyla;Cervidae;Mazama;Mazama gouazoubira;Corça, Veado-catingueiro;Menos Preocupante;NA
+Mammalia;Cetartiodactyla;Cervidae;Mazama;Mazama jucunda;Veado-bororó de São Paulo, Veado-mateiro-pequeno, Veado-vermelho;Quase Ameaçada;NA
+Mammalia;Cetartiodactyla;Cervidae;Mazama;Mazama nana;Veado-bororó-do-sul, Veado-mão-curta;Vulnerável;A3cde
+Mammalia;Cetartiodactyla;Cervidae;Mazama;Mazama nemorivaga;Fuboca, Veado-branco, Veado-da-amazônia, Veado-roxo;Dados Insuficientes;NA
+Mammalia;Rodentia;Echimyidae;Mesomys;Mesomys hispidus;Ferreira’s Spiny Tree-rat, Rato-do-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Mesomys;Mesomys occultus;Rato-do-espinho, Tufted-tailed Spiny Tree-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Mesomys;Mesomys stimulax;Pará Spiny Tree-rat, Rato-do-espinho;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Metachirus;Metachirus myosuros;Cuíca-cauda-de-rato;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Metachirus;Metachirus nudicaudatus;Cuíca-de-quatro-olhos, Cuíca-marrom, Cuíca-rabo-de-rato, Jupati;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico acariensis;Sagui-do-rio-Acari;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico argentatus;Sagui-argênteo;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico chrysoleucos;Sagui-de-tufos-brancos;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico emiliae;Sagui-de-snethlage;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico humeralifer;Sagui-de-tufos;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico intermedius;sagui-do-Rio-Aripuanã, Sagui-intermédio;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico leucippe;Sagui-de-orelha-nua-branco, Souim-branco;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico marcai;Sagui-de-marca;Quase Ameaçada;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico mauesi;Sagui-de-Maués, Sagui-de-tufos;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico melanurus;Sagui-marrom;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico munduruku;sagui-dos-Munduruku;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico nigriceps;Sagui-de-cabeça-preta;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Mico;Mico rondoni;Macaquinho-branco, Mico-de-Rondônia, Sagui-branco;Vulnerável;A2ce+4ce
+Mammalia;Primates;Callitrichidae;Mico;Mico saterei;Sagui-dos-saterê;Menos Preocupante;NA
+Mammalia;Rodentia;Sciuridae;Microsciurus;Microsciurus flaviventer;Amazon Dwarf Squirrel, Quatipuruzinho-bigodeiro;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis americana;Catita, Catita de listra, Catita-de-listras;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis arlindoi;Catita;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis brevicaudata;Catita, Northern Red-sided Opossum, Opossum-musaraigne À Pattes Roughes, Red-legged Short-tailed Opossum;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis dimidiata;Catita, Guaiquica-anã;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis domestica;Catita, Cuíca do rabo curto, Mbicuré-í;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis emiliae;Catita;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis glirina;Catita, Cuíca;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis handleyi;NA;Dados Insuficientes;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis iheringi;Catita, Guaiquica listrada;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis kunsi;Catita, Cuica;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis pinocchio;NA;Quase Ameaçada;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis saci;NA;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis scalops;Catita-de-listras;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis touan;Catita;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Monodelphis;Monodelphis unistriata;Catita;Dados Insuficientes;NA
+Mammalia;Carnivora;Mustelidae;Mustela;Mustela africana;Doninha, doninha amazônica;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Myocastor;Myocastor coypus;Coypu, Cujá, Nutria, Pacão, Ratão-do-banhado;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Myoprocta;Myoprocta acouchy;Cotiara, Cutiara;Menos Preocupante;NA
+Mammalia;Rodentia;Dasyproctidae;Myoprocta;Myoprocta pratti;Cotiara, Cutiara, Green Acouchi;Menos Preocupante;NA
+Mammalia;Pilosa;Myrmecophagidae;Myrmecophaga;Myrmecophaga tridactyla;bandeira, Bandurra, Jurumi, jurumim, Papa-formigas, tamanduá-açú, Tamanduá-bandeira;Vulnerável;A2c
+Mammalia;Carnivora;Procyonidae;Nasua;Nasua nasua;Coati, Quati, Quati-de-vara, Quati-mundéo;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Nothocrax;Nothocrax urumutum;urumutum;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Nothura;Nothura boraquira;codorna-do-nordeste;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Nothura;Nothura maculosa;codorna-amarela;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Nothura;Nothura minor;codorna-mineira;Em Perigo;A4cd
+Mammalia;Cetartiodactyla;Cervidae;Odocoileus;Odocoileus virginianus;Veado-da-cara-branca, Veado-galheiro;Dados Insuficientes;NA
+Aves;Galliformes;Odontophoridae;Odontophorus;Odontophorus capueira plumbeicollis;uru;Criticamente em Perigo;C2a(ii)
+Aves;Galliformes;Cracidae;Ortalis;Ortalis araucuan;aracuã-de-barriga-branca;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Ortalis;Ortalis canicollis;aracuã-do-pantanal;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Ortalis;Ortalis guttata;aracuã-pintado;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Ortalis;Ortalis motmot;aracuã-pequeno;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Ortalis;Ortalis remota;aracuã, aracuan;Criticamente em Perigo;C2a(i)
+Aves;Galliformes;Cracidae;Ortalis;Ortalis ruficeps;aracuãzinho;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Ortalis;Ortalis squamata;aracuã-escamoso;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Ortalis;Ortalis superciliaris;aracuã-de-sobrancelhas;Menos Preocupante;NA
+Mammalia;Cetartiodactyla;Cervidae;Ozotoceros;Ozotoceros bezoarticus;Veado-branco, Veado-campeiro, Veado-galheiro;Menos Preocupante;NA
+Mammalia;Cetartiodactyla;Cervidae;Ozotoceros;Ozotoceros bezoarticus bezoarticus;"Veado-campeiro; Veado-branco; Veado-galheiro";Vulnerável;A2c
+Mammalia;Carnivora;Felidae;Panthera;Panthera onca;Canguçu, Onça-pintada, Onça-preta;Vulnerável;A2cd
+Aves;Galliformes;Cracidae;Pauxi;Pauxi mitu;mutum-do-nordeste;Extinta na Natureza;NA
+Aves;Galliformes;Cracidae;Pauxi;Pauxi tomentosa;mutum-do-norte;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Pauxi;Pauxi tuberosa;Mutum-cavalo;Menos Preocupante;NA
+Mammalia;Cetartiodactyla;Tayassuidae;Pecari;Pecari tajacu;Caititu, Cateto;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Penelope;Penelope jacquacu;jacu-de-spix;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Penelope;Penelope jacucaca;jacucaca;Vulnerável;A2b
+Aves;Galliformes;Cracidae;Penelope;Penelope marail;jacumirim;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Penelope;Penelope obscura;jacuaçu;Menos Preocupante;NA
+Aves;Galliformes;Cracidae;Penelope;Penelope ochrogaster;jacu-de-barriga-castanha;Quase Ameaçada;NA
+Aves;Galliformes;Cracidae;Penelope;Penelope pileata;jacupiranga;Vulnerável;A2cd
+Aves;Galliformes;Cracidae;Penelope;Penelope superciliaris;jacupemba;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Philander;Philander andersoni;Anderson's Four-eyed Opossum, Black Four-eyed Opossum, Comadreja negra de cuatro ojos, Cuíca común, Cuíca-de-quatro-olhos, Mucura-de-quatro-olhos, Opossum Noir, Raposa hevera, Zorro;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Philander;Philander canus;NA;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Philander;Philander mcilhennyi;Carachupa, Cucha gris de cuatro ojos, Cuíca-de-quatro-olhos, Guaiki, Mcilhenny's Four-eyed Opossum, Mucura-de-quatro-olhos, Pericote, Quica opossum, Rabipelao, Rajá, Raposa huevera, Zorro;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Philander;Philander opossum;Carachupa, Cucha gris de cuatro ojos, Cuíca-de-quatro-olhos, Gray Four-eyed Opossum, Guaiki, Mucura-de-quatro-olhos, Pericote, Quica opossum, Rabipelao, Rajá, Raposa huevera, Zorro;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Philander;Philander pebas;NA;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Philander;Philander quica;Carachupa, Cucha gris de cuatro ojos, Cuíca-de-quatro-olhos, Guaiki, Mucura-de-quatro-olhos, Pericote, Quica opossum, Rabipelao, Rajá, Raposa huevera, Southeastern Four-eyed Opossum, Zorro;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys blainvilii;Golden Atlantic Tree-rat, Rato-da-árvore;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys brasiliensis;Orange-brown Atlantic tree-rat, Rato-da-árvore;Em Perigo;B1ab(ii,iii)+2ab(ii,iii)
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys dasythrix;Drab Atlantic Tree-rat, Rato-da-árvore;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys kerri;Kerr’s Atlantic Tree-rat, Rato-da-árvore;Quase Ameaçada;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys lamarum;Pallid Atlantic Tree-rat, Rato-da-árvore;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys lundi;Lund’s Atlantic tree-rat, Rato-da-árvore;Em Perigo;B2ab(iii,iv)
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys mantiqueirensis;Mantiqueira Atlantic Tree-rat, Rato-da-árvore;Dados Insuficientes;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys medius;Long-furred Atlantic Tree-rat, Rato-da-árvore;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys nigrispinus;Black-spined Atlantic Tree-rat, Rato-da-árvore;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys pattoni;Rato-da-árvore, Rusty-sided Atlantic Tree-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys sulinus;Rato-da-árvore, Southern Atlantic Tree-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Phyllomys;Phyllomys thomasi;Giant Atlantic Tree-rat, Rato-da-árvore;Em Perigo;B1ab(iii)
+Mammalia;Primates;Pitheciidae;Pithecia;Pithecia albicans;macaco-velho, macaco-voador, Parauacu-branco;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Pithecia;Pithecia chrysocephala;Parauacu-da-cara-branca;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Pithecia;Pithecia irrorata;Macaco-cabeludo, Macaco-velho, Parauacú;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Pithecia;Pithecia monachus;macaco-velho, macaco-voador, parauacu, Parauacu-monge;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Pithecia;Pithecia pithecia;Parauacu-da-cara-branca;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Pithecia;Pithecia vanzolinii;macaco-velho, Parauacu;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus baptista;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus caligatus;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus cinerascens;Zogue-zogue, zogue-zogue cinza escuro;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus cupreus;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus donacophilus;Boca d’água, guigó, sauá, zogue-zogue;Não Aplicável;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus hoffmannsi;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus miltoni;NA;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus moloch;Sauá-de-barriga-vermelha, Sauá-moreno, Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus pallescens;sauá e boca-d’água, Zogue-zogue;Dados Insuficientes;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus stephennashi;Zogue-zogue;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus toppini;NA;Menos Preocupante;NA
+Mammalia;Primates;Pitheciidae;Plecturocebus;Plecturocebus vieirai;Guigó, Sauá, Zogue-zogue;Menos Preocupante;NA
+Mammalia;Carnivora;Procyonidae;Potos;Potos flavus;gatiara, janaú, jupará, Jupará, jurupará e macaco da noite por gogó-de-sola, macaco-janauí/janauaí/januí e miru-miru;Menos Preocupante;NA
+Mammalia;Cingulata;Dasypodidae;Priodontes;Priodontes maximus;Tatu-açú, Tatu-canastra;Vulnerável;A2cd
+Mammalia;Carnivora;Procyonidae;Procyon;Procyon cancrivorus;cachorrinho-guaxinim, cachorro-do-mato-guaxinim, cangrejera, guará, Guaxinim, jaracambeva, mão pelada, mapache lavador, mayuato, meia-noite;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys brevicauda;Huallaga Spiny Rat, Rato-de-espinho, Short-tailed Spiny-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys cuvieri;Cuvier’s Spiny-rat, Rato-de-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys echinothrix;Rato-do-espinho, Stiff-spine Spiny-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys gardneri;Gardner’s Spiny-rat, Rato-de-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys goeldii;NA;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys guyannensis;Soiá;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys kulinae;NA;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys longicaudatus;NA;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys pattoni;Patton’s Spiny-rat, Rato-do-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys quadruplicatus;Napo Spiny-rat, Rato-do-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys roberti;NA;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys simonsi;Rato-do-espinho, Simon’s Spiny-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Proechimys;Proechimys steerei;Rato-do-espinho, Steere’s Spiny-rat;Menos Preocupante;NA
+Aves;Gruiformes;Psophiidae;Psophia;Psophia crepitans;jacamim-de-costas-cinzentas;Menos Preocupante;NA
+Aves;Gruiformes;Psophiidae;Psophia;Psophia dextralis;jacamim-de-costas-marrons;Vulnerável;A2cd
+Aves;Gruiformes;Psophiidae;Psophia;Psophia interjecta;jacamim-do-xingu;Em Perigo;A2cd
+Aves;Gruiformes;Psophiidae;Psophia;Psophia leucoptera;jacamim-de-costas-brancas;Menos Preocupante;NA
+Aves;Gruiformes;Psophiidae;Psophia;Psophia napensis;uru-do-campo;Menos Preocupante;NA
+Aves;Gruiformes;Psophiidae;Psophia;Psophia obscura;jacamim-de-costas-escuras;Criticamente em Perigo;A2cd+3cd
+Aves;Gruiformes;Psophiidae;Psophia;Psophia ochroptera;jacamim-de-costas-amarelas;Menos Preocupante;NA
+Aves;Gruiformes;Psophiidae;Psophia;Psophia viridis;jacamim-de-costas-verdes;Vulnerável;A2c
+Mammalia;Carnivora;Mustelidae;Pteronura;Pteronura brasiliensis;Ariranha, lontra gigante, onça-d’água;Vulnerável;A3cd
+Mammalia;Carnivora;Felidae;Puma;Puma concolor;Bodeira, Leão-baio, Leãozinho-da-cara-suja, Onça-do-lombo-preto, Onça-parda, Onça-vermelha, Suçuarana;Quase Ameaçada;NA
+Aves;Rheiformes;Rheidae;Rhea;Rhea americana;ema;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Rhynchotus;Rhynchotus rufescens;perdiz;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus bicolor;sagui-de-cara-nua, sagui-de-duas-cores, sauim-de-coleira, sauim-de-Manaus;Criticamente em Perigo;A4ace
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus imperator;Bigodeiro, Mono Bigotudo, Mono Nicolás Suárez;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus inustus;Sagui;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus labiatus;Sagui-de-boca-branca;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus martinsi;Morceguinho (rio Nhamundá), Sauim;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus midas;Sagui-da-mão-dourada;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus mystax;Sagui-de-bigode;Menos Preocupante;NA
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus niger;guaribinha, Sagui-una;Vulnerável;A4c
+Mammalia;Primates;Callitrichidae;Saguinus;Saguinus ursulus;NA;Quase Ameaçada;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri boliviensis;Macaco-de-cheiro, Macaco-mão-de-ouro;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri cassiquiarensis;Macaco-de-cheiro;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri collinsi;Macaco-de-cheiro, Macaco-mão-de-ouro;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri macrodon;Macaco-de-cheiro;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri sciureus;Amarelinho, Capijuba, Macaco-de-cheiro, Mão-de-ouro, Mico-de-cheiro;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri ustus;Macaco-de-cheiro, Mico-de-cheiro;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Saimiri;Saimiri vanzolinii;Macaco-de-cheiro-de-cabeça-preta;Vulnerável;D2
+Mammalia;Primates;Cebidae;Sapajus;Sapajus apella;Macaco-prego;Menos Preocupante;NA
+Mammalia;Primates;Cebidae;Sapajus;Sapajus cay;Macaco-prego, macaco-prego-do-papo-amarelo;Vulnerável;A4cd
+Mammalia;Primates;Cebidae;Sapajus;Sapajus flavius;Macaco, Macaco-prego, Macaco-prego-galego;Em Perigo;"B2ab(iii,v); C2a(i)"
+Mammalia;Primates;Cebidae;Sapajus;Sapajus libidinosus;Macaco-prego, Macaco-prego-amarelo;Quase Ameaçada;NA
+Mammalia;Primates;Cebidae;Sapajus;Sapajus nigritus;Macaco-prego, mico;Quase Ameaçada;NA
+Mammalia;Primates;Cebidae;Sapajus;Sapajus robustus;Macaco, Macaco-prego-de crista, Macaco-preto, Mico-topetudo;Em Perigo;A4bcde
+Mammalia;Primates;Cebidae;Sapajus;Sapajus xanthosternos;Macaco prego do peito amarelo, Macaco-prego-do-peito-amarelo;Em Perigo;C2a(i)
+Mammalia;Rodentia;Sciuridae;Sciurillus;Sciurillus pusillus;Neotropical Pygmy Squirrel, Quatipuruzinho;Menos Preocupante;NA
+Mammalia;Carnivora;Canidae;Speothos;Speothos venaticus;cachorro-do-mato-vinagre, cachorro-vinagre;Vulnerável;C1
+Mammalia;Lagomorpha;Leporidae;Sylvilagus;Sylvilagus brasiliensis;Coelho;Dados Insuficientes;NA
+Mammalia;Lagomorpha;Leporidae;Sylvilagus;Sylvilagus minensis;NA;Menos Preocupante;NA
+Mammalia;Lagomorpha;Leporidae;Sylvilagus;Sylvilagus tapetillus;Rio de Janeiro Dwarf Cottontail, Small tapetí;Quase Ameaçada;NA
+Mammalia;Pilosa;Myrmecophagidae;Tamandua;Tamandua tetradactyla;lapichau, Mambira, Meleta, Tamanduá-de-colete, Tamanduá-mirim;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Taoniscus;Taoniscus nanus;codorna-carapé, inhambu-carapé;Em Perigo;B2ab(ii,iii)
+Mammalia;Perissodactyla;Tapiridae;Tapirus;Tapirus terrestris;Anta;Vulnerável;A2cd
+Mammalia;Cetartiodactyla;Tayassuidae;Tayassu;Tayassu pecari;Queixada;Vulnerável;A4cd
+Mammalia;Rodentia;Echimyidae;Thrichomys;Thrichomys apereoides;Common Punaré, Punaré, Rabudo;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Thrichomys;Thrichomys fosteri;Punaré;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Thrichomys;Thrichomys inermis;Highlands Punaré, Jacobina Punaré, Punaré, Rabudo;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Thrichomys;Thrichomys laurentius;Punaré, Rabudo, São Lourenço’s Punaré;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Thrichomys;Thrichomys pachyurus;Punaré, Rabudo;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Thylamys;Thylamys karimii;Catita, Cuíca-de-rabo-grosso, Dwarf Thylamys;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Thylamys;Thylamys macrurus;Catita, Long-tailed Fat-tailed opossum, Opossum-souris À Longue Queue, Paraguayan Fat-tailed mouse opossum;Menos Preocupante;NA
+Mammalia;Didelphimorphia;Didelphidae;Thylamys;Thylamys velutinus;Catita, Dwarf mouse opossum;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Tinamus;Tinamus guttatus;inhambu-galinha;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Tinamus;Tinamus major;inhambu-de-cabeça-vermelha;Menos Preocupante;NA
+Aves;Tinamiformes;Tinamidae;Tinamus;Tinamus solitarius;macuco;Quase Ameaçada;NA
+Aves;Tinamiformes;Tinamidae;Tinamus;Tinamus tao;azulona;Vulnerável;A2cd
+Mammalia;Cingulata;Dasypodidae;Tolypeutes;Tolypeutes matacus;Tatu-bola;Quase Ameaçada;NA
+Mammalia;Cingulata;Dasypodidae;Tolypeutes;Tolypeutes tricinctus;Bola, Bolinha, Tatu-apara, Tatu-bola;Em Perigo;B2ab(i,ii,iii)
+Mammalia;Rodentia;Echimyidae;Toromys;Toromys grandis;Giant Tree-rat, Rato-da-árvore;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys albispinus;Rato-do-espinho, White-spined Atlantic Spiny-rat, White-spined Spiny Rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys bonafidei;Rato-do-espinho, Serra dos Órgãos Atlantic Spiny-rat;Quase Ameaçada;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys dimidiatus;Rato-do-espinho, Rio de Janeiro Spiny Rat, Soft-spined Atlantic Spiny-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys elegans;Rato de Espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys eliasi;Elias Atlantic Spiny-rat, Rato-do-espinho;Vulnerável;B1ab(iii)+2ab(iii)
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys gratiosus;NA;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys iheringi;Ihering’s Atlantic Spiny-rat, Rato-do-espinho, São Paulo Spiny Rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys mirapitanga;Dark-caped Atlantic Spiny-rat, Rato-do-espinho;Em Perigo;B1ab(iii)
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys moojeni;Moojen’s Atlantic Spiny-rat, Rato-de-espinho;Em Perigo;B1ab(iii)+2ab(iii)
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys paratus;Rato-do-espinho, Rigid- spined Atlantic Spiny Rat, Spiked Atlantic Spiny-rat;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys setosus;Elegant- spined Atlantic Spiny rat, Hairy Atlantic Spiny-rat, Hairy Spiny Rat, Rato-do-espinho;Menos Preocupante;NA
+Mammalia;Rodentia;Echimyidae;Trinomys;Trinomys yonenagae;Rato-do-espinho, Yonenaga’s Atlantic Spiny-rat;Em Perigo;B1ab(ii,iii)

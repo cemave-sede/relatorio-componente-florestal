@@ -1,0 +1,15 @@
+{
+  "hash": "18bed4a966bb9bcdda6455fc9b01e048",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n::: {.cell}\n\n:::\n\n\n# Equipe {#equipe .unnumbered}  \n\nSinopse  \n\nO relatório do componente Florestal, subprograma Terrestre do Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, apresenta os resultados para o período de 2014 a 2022 do monitoramento dos protocolos básicos de quatro alvos globais: plantas, borboletas, mamíferos e aves.\n\n\n</br>\n\n**ORGANIZAÇÃO** \n\nArlindo Gomes Filho  \nBruno Lenhaverde Sandy  \nDárlison Fernandes Carvalho de Andrade  \nElildo Alves Ribeiro de Carvalho Junior  \nOnildo João Marini Filho  \nMarcos de Souza Fialho  \n\n**REVISÃO** \n\nDárlison Fernandes Carvalho de Andrade\nJumara Marques Souza ???\nMarcelo Lima Reis ??\n\n\n**TEXTOS**\n\n**Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora**  \nDárlison Fernandes Carvalho de Andrade  \n\n\n **Implementação do componente florestal**  \nJumara Marques Souza\nMarcelo Lima Reis\n\n\n**Plantas** \nAlexandre Bonesso Sampaio  \nBruno Lenhaverde Sandy  \nDárlison Fernandes Carvalho de Andrade  \nJumara Marques Souza \nRafaela Camponstrini Forza  \nHumberto ???? \n\n \n**Borboletas** \nIsabela Oliveira  \nOnildo João Marini Filho  \n???\n \n\n**Mamíferos e aves**\nArlindo Gomes Filho\nElildo Alves Ribeiro de Carvalho Junior  \nGerson Buss  \nMarcelo Lima Reis  \nMarcos de Souza Fialho  \nRafael Suertegaray Rossato  \nRicardo Sampaio  \nRichard Hatakeiama  \nThiago Orsi Laranjeiras  \n????  \n\n\n**Análise da correspondência e complementariedade dos indicadores**\nArlindo Gomes Filho\nIsabela Oliveira\nMarcos de Souza Fialho \nOnildo João Marini Filho\nPlantas ????\nMamíferos ???\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>- 2&nbsp; Implementação do Componente Florestal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cap03.html" rel="next">
+<link href="./cap01.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Implementação do Componente Florestal</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"></a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./expediente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Expediente</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./equipe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Equipe</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agradecimentos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agradecimentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lista_siglas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lista de siglas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apresentacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Implementação do Componente Florestal</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Resultados</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Considerações finais</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./referencias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referências bibliográficas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Apêndices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apendice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(APPENDIX) Apêndices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#métodos" id="toc-métodos" class="nav-link active" data-scroll-target="#métodos"><span class="header-section-number">2.1</span> Métodos</a>
+  <ul class="collapse">
+  <li><a href="#a-estação-amostral" id="toc-a-estação-amostral" class="nav-link" data-scroll-target="#a-estação-amostral"><span class="header-section-number">2.1.1</span> A Estação Amostral</a></li>
+  <li><a href="#unidades-de-conservação" id="toc-unidades-de-conservação" class="nav-link" data-scroll-target="#unidades-de-conservação"><span class="header-section-number">2.1.2</span> Unidades de Conservação</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Implementação do Componente Florestal</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><br></p>
+<p><strong>O texto precisa ser atualizado.</strong></p>
+<p><strong>Jumara Marques de Souza &amp; Marcelo Lima Reis</strong></p>
+<p>Coordenação de Monitoramento da Biodiversidade - COMOB<br>
+<em>Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio</em><br>
+<em>Complexo Administrativo EQSW 103/104 s/n</em><br>
+<em>70670-350 Brasília, DF</em></p>
+<p><br></p>
+<p>A implementação do Programa Nacional de Monitoramento da Biodiversidade - Monitora por uma unidade de conservação federal passa por etapas. Existe um rito ideal a ser seguido, apresentado no documento <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio/guiadeimplementaodomonitora16032023.pdf">Guia de Implementação do Programa Nacional de Monitoramento da Biodiversidade (2023)</a>. Destaca-se nesse processo a necessidade de envolvimento da UC ou do núcleo de gestão integrada (NGI) e dos demais atores envolvidos, que são: os Centros Nacionais de Pesquisa e Conservação (CNPCs), a Coordenação Geral de Pesquisa e Monitoramento da Biodiversidade (CGPEQ) e a Coordenação de Monitoramento da Biodiversidade (COMOB).</p>
+<p>O Monitora está estruturado em subprogramas de acordo com os tipos de ambientes abrangidos. São três subprogramas: Terrestre, Aquático Continental e Marinho e Costeiro. Cada subprograma possui diferentes ecossistemas relacionados, denominados componentes, contendo seus respectivos alvos de monitoramento, que podem ser grupos taxonômicos, grupos funcionais, formas de vida, sistemas ecológicos, hábitats ou ainda processos ecológicos. Os alvos de monitoramento se classificam em dois tipos: globais (<a href="#fig-alvos-globais" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>) ou complementares. Eles estão susceptíveis a sofrerem mudanças ao longo do tempo em resposta às alterações no meio ambiente e seu potencial de resposta a essas mudanças é medido por meio do que chamamos de indicadores. Neste relatório são apresentados os resultados dos protocolos básicos do componente Florestal.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-alvos-globais" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alvos-globais-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/alvos_globais.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alvos-globais-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Representação esquemática da estrutura do Programa Monitora (esta figura precisa ser atualizada!).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="métodos" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="métodos"><span class="header-section-number">2.1</span> Métodos</h2>
+<section id="a-estação-amostral" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="a-estação-amostral"><span class="header-section-number">2.1.1</span> A Estação Amostral</h3>
+<p>Os métodos aplicados podem ser encontrados em detalhe no <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Protocolos-de-Monitoramento/monitoramento_da_biodiversidade_roteiro_metodologico_de_aplicacao_1.pdf">Monitoramento da biodiversidade: roteiro metodológico de aplicação (2014)</a>. Contudo, apresentamos a seguir um breve resumo dos mesmos.</p>
+<p>A aplicação dos protocolos básicos do componente florestal passa ela implementação das estações amostrais (EAs). Cada EA está relacionada ao desenho amostral de unidades amostrais (UAs) desenhadas para atender aos alvos Plantas, Borboletas e Mamíferos e Aves (<a href="#fig-esquema-estacao-amostral" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>). E cada UC ou bloco/mosaico de UC deve implementar ao menos 3 EAs, respeitando a distância mínima preconizada estas, e realizar a coleta de dados para todos os alvos. A periodicidade de coleta é anual para Borboletas, Mamíferos e Aves, e a cada quinquênio para Plantas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-esquema-estacao-amostral" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-esquema-estacao-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/estacao_amostral.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esquema-estacao-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Esquema de uma Estação de Estação Amostral padrão dos alvos globais do Componente Florestal. Transecção de cinco quilômetros (mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas); Transecções secundárias com baterias de quatro armadilhas de atração por isca (borboletas frugívoras) e as parcelas permanentes em forma de cruz de malta (plantas lenhosas).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para Plantas (<a href="#fig-esquema-unidade-amostral" class="quarto-xref">Figura&nbsp;<span>2.3</span></a>), a métrica escolhida para o monitoramento de plantas lenhosas é a biomassa vegetal. Para isso, é preciso obter os dados de diâmetro e altura estimada das plantas lenhosas. A coleta de dados ocorre preferencialmente na estação seca e todos os indivíduos que apresentarem um DAP (diâmetro na altura do peito = 1,30 m) maior ou igual a 10 cm (circunferência de 31 cm) ou a 30cm do solo (CAS) ≥ 15cm, esse último para plantas localizadas no bioma Cerrado, são registrados e mensurados.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-esquema-unidade-amostral" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-esquema-unidade-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/unidade_amostral.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esquema-unidade-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.3: Esquema da Unidade Amostral para monitoramento de Plantas Arbóreas e arborescentes (adaptado de SFB/Embrapa Florestas, 2012).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A métrica de indicação biológica selecionada para borboletas frugívoras (<a href="#fig-esquema-borboletas" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>) é a proporção de indivíduos de cada tribo realizada com o auxílio de guias de campo. A identificação de tribos é muito mais simples e viável que a identificação até espécie das borboletas capturadas. Esse cenário aumenta o potencial de implantação e manutenção do monitoramento. Neste protocolo são utilizadas armadilhas do tipo Van Someren-Rydon (VSR) tendo por iscas banana e caldo de cana. As duas campanhas de coleta de dados se dão preferencialmente ao final da estação chuvosa, em cada campanha são realizadas ao menos três vistorias, intercaladas por até 48 horas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-esquema-borboletas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-esquema-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/esquema_unidades_amostrais.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esquema-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: Esquema das Unidades Amostrais para monitoramento de borboletas frugívoras.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Para Mamíferos e Aves, a coleta de dados é realizada pelo método de transecções lineares, quando percorrendo-se as transecções se registra todos os indivíduos ou grupos das espécies alvo, especialmente sua localização e distância perpendicular da transecção. As amostragens ocorrem sempre nas primeiras horas da manhã a uma velocidade média de 1,5km/h. E o esforço mínimo desejado para cada unidade de conservação é de 150 quilômetros anuais.</p>
+</section>
+<section id="unidades-de-conservação" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="unidades-de-conservação"><span class="header-section-number">2.1.2</span> Unidades de Conservação</h3>
+<p>Três biomas brasileiros, Amazônia, Cerrado e Mata Atlântica, já possuem unidades de conservação que aderiram em algum grau ao monitoramento de alvos do componente florestal do Monitora (<a href="#fig-unidades-conservacao" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>). A adesão ao componente Florestal do Programa Monitora significa que as UCs com representantes capacitados iniciaram a execução do monitoramento, o que incluiu ações como: reunião com o conselho; capacitação local; solicitação da grade do Serviço Florestal Brasileiro (GNPA) e escolha locacional de EAs/UAs. Durante o período de 2013 a 2022, ?? UCs já alcançaram a fase de operação, ou seja, possuem pelo menos um alvo com coleta de dados de campo (<span class="quarto-unresolved-ref">?tbl-numero-ucs</span>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-unidades-conservacao" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unidades-conservacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/mapa_unidades.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unidades-conservacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.5: Unidades de conservação com dados validados para análises no período de 2014 a 2022 do componente Florestal do Programa Monitora. A numeração das UCs corresponde ao seu cadastro no CNUC.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Considera-se que o monitoramento do componente Florestal está consolidado quando as UCs possuem pelo menos três EAs implementadas com todos os alvos de monitoramento com coleta de dados. No final do período de amostragem de 2022, das ?? UCs em operação, ?? já estavam consolidadas (??% – <span class="quarto-unresolved-ref">?tbl-numero-ucs</span>) e, ao todo, o Programa apresentava ?? EAs e ?? UAs com coleta de dados (<span class="quarto-unresolved-ref">?tbl-numero-estacoes</span>).</p>
+<div id="tbl-numero-ucs" class="cell anchored" data-tab-cap="Número de UCs com as etapas operação e consolidação do monitoramento do componente Florestal do Programa Monitora, durante o período de 2014 a 2022.">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Etapa</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2014</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2015</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2016</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2017</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2018</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2019</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2020</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2021</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2022</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Operação&nbsp;</td>
+<td style="text-align: left;">16&nbsp;</td>
+<td style="text-align: left;">13&nbsp;</td>
+<td style="text-align: left;">25&nbsp;</td>
+<td style="text-align: left;">30&nbsp;</td>
+<td style="text-align: left;">34&nbsp;</td>
+<td style="text-align: left;">38&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consolidação&nbsp;</td>
+<td style="text-align: left;">0&nbsp;</td>
+<td style="text-align: left;">0&nbsp;</td>
+<td style="text-align: left;">1&nbsp;</td>
+<td style="text-align: left;">6&nbsp;</td>
+<td style="text-align: left;">7&nbsp;</td>
+<td style="text-align: left;">14&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<p><br></p>
+<div id="tbl-numero-estacoes" class="cell anchored" data-tab-cap="Número de estações e unidades amostrais (EA &amp; UA) em operação no componente Florestal do Programa Monitora, durante o período de 2013 a 2022.">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2014</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2015</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2016</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2017</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2018</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2019</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2020</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2021</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2022</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EA&nbsp;</td>
+<td style="text-align: left;">25&nbsp;</td>
+<td style="text-align: left;">30&nbsp;</td>
+<td style="text-align: left;">51&nbsp;</td>
+<td style="text-align: left;">69&nbsp;</td>
+<td style="text-align: left;">85&nbsp;</td>
+<td style="text-align: left;">95&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UA&nbsp;</td>
+<td style="text-align: left;">44&nbsp;</td>
+<td style="text-align: left;">46&nbsp;</td>
+<td style="text-align: left;">86&nbsp;</td>
+<td style="text-align: left;">143&nbsp;</td>
+<td style="text-align: left;">174&nbsp;</td>
+<td style="text-align: left;">239&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+<td style="text-align: left;">??&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<p>Das UCs que já alcançaram a fase de operação, 42 UCs são do bioma Amazônico, seis da Mata Atlântica e seis do Cerrado, e contemplam 18 das 27 unidades federativas do Brasil. Muitas UCs tiveram problemas que causaram descontinuidade no monitoramento (coleta de dados não realizada em um ou mais anos) durante o período 2014-2022. Algumas situações se justificaram pela inadequabilidade dos métodos para o ambiente da UC, especialmente no Cerrado, outras por problemas de ordem logística, pessoal ou financeira.</p>
+<p>A execução do monitoramento pelas UCs pode ser gradativa, isto é, pode iniciar com apenas a implantação e coleta de dados de uma EA ou UA e, ao longo do tempo, chegar na fase de consolidação, mas com a recomendação de que isso ocorra em até dois anos. Entretanto, verificou-se que a maioria das UCs, principalmente nos primeiros anos do Programa, precisaram de mais tempo (de 3 a 4 anos) para atingir a fase de consolidação. Espera-se que, nos próximos anos, as UCs consigam atingir a consolidação dentro do período recomendado. É importante ressaltar que as UCs podem ter mais de três EAs implantadas e outras podem não atingir essa meta devido a particularidades locais, como algumas unidades do Cerrado e Mata Atlântica, por suas dimensões, e aquelas que estão fazendo o monitoramento em “bloco” (monitoramento espacialmente compartilhado).</p>
+<p>Esse início gradativo do monitoramento também é observado quando comparamos o número de UCs, EAs e UAs em operação ao longo do tempo. No início, a estratégia da maioria das UCs dos biomas Cerrado e Mata Atlântica foi de priorizar a implementação de apenas uma EA com todas as respectivas UAs (alvos), enquanto as UCs amazônicas priorizaram as três EAs, mas não com todos os alvos (trilha ou cruz de malta). A partir de 2016, houve um aumento no esforço de consolidar as EAs com a coleta de dados de todos os alvos, aumentando consideravelmente o número de UAs por UC (Figura x, <span class="quarto-unresolved-ref">?tbl-ucs-componente-florestal</span>). Portanto, da mesma forma espera-se que, nos próximos anos, as UCs consigam aumentar o número de suas EAs e UAs, diminuindo assim a distância entre a linha do acumulado e do esperado.</p>
+<div id="tbl-ucs-componente-florestal" class="cell anchored" data-tab-cap="Relação das UCs com alvos globais do componente Florestal (M/A = Mamíferos e Aves de médio a grande porte; P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras) monitorados durante o período de 2014 a 2022, com a sinalização do ano que a UC alcançou de consolidação (c) no Programa Monitora.">
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Unidades de Conservação</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Nº no mapa (CNUC)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Bioma</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2014</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2015</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2016</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2017</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2018</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2019</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2020</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2021</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2022</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ESEC de Pirapitinga&nbsp;</td>
+<td style="text-align: left;">61&nbsp;</td>
+<td style="text-align: left;">Cerrado&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ESEC Serra Geral do Tocantins&nbsp;</td>
+<td style="text-align: left;">76&nbsp;</td>
+<td style="text-align: left;">Cerrado&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA da Chapada dos Veadeiros&nbsp;</td>
+<td style="text-align: left;">139&nbsp;</td>
+<td style="text-align: left;">Cerrado&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA da Serra da Bodoquena&nbsp;</td>
+<td style="text-align: left;">143&nbsp;</td>
+<td style="text-align: left;">Cerrado&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA da Serra do Cipó&nbsp;</td>
+<td style="text-align: left;">148&nbsp;</td>
+<td style="text-align: left;">Cerrado&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA de Brasília&nbsp;</td>
+<td style="text-align: left;">159&nbsp;</td>
+<td style="text-align: left;">Cerrado&nbsp;</td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">P, B&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA da Serra da Bocaina&nbsp;</td>
+<td style="text-align: left;">142&nbsp;</td>
+<td style="text-align: left;">Mata Atlântica&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA da Serra dos Órgãos&nbsp;</td>
+<td style="text-align: left;">152&nbsp;</td>
+<td style="text-align: left;">Mata Atlântica&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA do Iguaçu&nbsp;</td>
+<td style="text-align: left;">172&nbsp;</td>
+<td style="text-align: left;">Mata Atlântica&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA do Superagui&nbsp;</td>
+<td style="text-align: left;">178&nbsp;</td>
+<td style="text-align: left;">Mata Atlântica&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">REBIO de Una&nbsp;</td>
+<td style="text-align: left;">202&nbsp;</td>
+<td style="text-align: left;">Mata Atlântica&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REBIO Guaribas&nbsp;</td>
+<td style="text-align: left;">196&nbsp;</td>
+<td style="text-align: left;">Mata Atlântica&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ESEC da Terra do Meio&nbsp;</td>
+<td style="text-align: left;">47&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ESEC de Maracá&nbsp;</td>
+<td style="text-align: left;">57&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ESEC do Jari&nbsp;</td>
+<td style="text-align: left;">67&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ESEC Niquiá&nbsp;</td>
+<td style="text-align: left;">60&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ESEC Rio Acre&nbsp;</td>
+<td style="text-align: left;">68&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FLONA do Jamari&nbsp;</td>
+<td style="text-align: left;">118&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FLONA do Tapajós&nbsp;</td>
+<td style="text-align: left;">123&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA Campos Amazônicos&nbsp;</td>
+<td style="text-align: left;">284&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA da Amazônia&nbsp;</td>
+<td style="text-align: left;">136&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA da Serra do Divisor&nbsp;</td>
+<td style="text-align: left;">149&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA da Serra do Pardo&nbsp;</td>
+<td style="text-align: left;">151&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA de Pacaás Novos&nbsp;</td>
+<td style="text-align: left;">163&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA do Cabo Orange&nbsp;</td>
+<td style="text-align: left;">169&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA do Jaú&nbsp;</td>
+<td style="text-align: left;">173&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA do Juruena&nbsp;</td>
+<td style="text-align: left;">281&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA do Monte Roraima&nbsp;</td>
+<td style="text-align: left;">174&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA Nascentes do Lago Jari&nbsp;</td>
+<td style="text-align: left;">1626&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA do Viruá&nbsp;</td>
+<td style="text-align: left;">179&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA Mapinguari&nbsp;</td>
+<td style="text-align: left;">1633&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA Montanhas do Tumucumaque&nbsp;</td>
+<td style="text-align: left;">187&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA Serra da Cutia&nbsp;</td>
+<td style="text-align: left;">188&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA Serra da Mocidade&nbsp;</td>
+<td style="text-align: left;">189&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">REBIO do Gurupi&nbsp;</td>
+<td style="text-align: left;">207&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REBIO do Jaru&nbsp;</td>
+<td style="text-align: left;">208&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">REBIO do Tapirapé&nbsp;</td>
+<td style="text-align: left;">´211&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REBIO do Uatumã&nbsp;</td>
+<td style="text-align: left;">213&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Arapixi&nbsp;</td>
+<td style="text-align: left;">285&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Barreiro das Antas&nbsp;</td>
+<td style="text-align: left;">221&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Chico Mendes&nbsp;</td>
+<td style="text-align: left;">222&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX do Alto Tarauacá&nbsp;</td>
+<td style="text-align: left;">274&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX do Cazumbá-Iracema&nbsp;</td>
+<td style="text-align: left;">232&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">P, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX do Lago do Capanã Grande&nbsp;</td>
+<td style="text-align: left;">242&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX do Rio Cautário&nbsp;</td>
+<td style="text-align: left;">238&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Ipaú-Anilzinho&nbsp;</td>
+<td style="text-align: left;">241&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Renascer&nbsp;</td>
+<td style="text-align: left;">1810&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Rio Iriri&nbsp;</td>
+<td style="text-align: left;">280&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Rio Ouro Preto&nbsp;</td>
+<td style="text-align: left;">256&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Riozinho da Liberdade&nbsp;</td>
+<td style="text-align: left;">257&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Riozinho do Anfrízio&nbsp;</td>
+<td style="text-align: left;">258&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Tapajós-Arapiuns&nbsp;</td>
+<td style="text-align: left;">259&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+<td style="text-align: left;">B, M/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">REBIO do Rio Trombetas&nbsp;</td>
+<td style="text-align: left;">210&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M/A&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Verde Para Sempre&nbsp;</td>
+<td style="text-align: left;">260&nbsp;</td>
+<td style="text-align: left;">Amazônia&nbsp;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P, B, M/A&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<p><br></p>
+<p>Para detalhes da implementação dos diferentes protocolos por UC ao longo dos anos veja Apêndice B (verificar com os pontos focais a viabilidade de apresentação desses dados!).</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cap01.html" class="pagination-link  aria-label=" &lt;span="" programa="" nacional="" de="" monitoramento="" da="" biodiversidade="" -="" monitora&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cap03.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Resultados</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Resultados</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

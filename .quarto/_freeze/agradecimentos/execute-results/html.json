@@ -1,0 +1,15 @@
+{
+  "hash": "ae2e288b8b95d097e758da72a2f44527",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n::: {.cell}\n\n:::\n\n\n# Agradecimentos {#agradecimentos .unnumbered}  \n\n**Parcerias Institucionais**   \n\nConselho Nacional de Desenvolvimento Científico e Tecnológico – CNPq  \n*Deutsche Gesellschaft für Internationale Zusammenarbeit Gmbh – GIZ*  \nFundo Brasileiro para a Biodiversidade – Funbio  \nFundo Clima Global Environment Fund – GEF  \n*Gordon and Betty Moore Foundation*  \nInstituto de Pesquisas Ecológicas – IPÊ  \nPrograma Áreas Protegidas da Amazônia – Arpa  \nPrograma das Nações Unidas para o Desenvolvimento – PNUD  \n*United States Agency for International Development – Usaid*  \n*World Wildlife Fund for Nature* - WWF Brasil \n\n**Participações** \n\nAgradecemos a todos os que viabilizam e defendem o Programa, pessoas e instituições, seja no fomento, na captação de recursos, na coleta de dados, nas análises, nas capacitações, na divulgação de resultados, internalização em suas rotinas e processos de trabalho, bem como na execução de tarefas diversas relacionadas ao Monitora. A seguir uma breve menção das entidades e pessoas que tornaram essa publicação possível. \n\n\n**Coordenação de Monitoramento da Biodiversidade – COMOB** \n\nUgo José Borba Bezerra, Silvia Carla Galuppo, Alberto Costa de Paula, Rachel Klaczko Acosta, Marcelo Lima Reis, Jumara Marques Souza, Laura Shizue Moriga Masuda, Leonardo Kenji Miyashita, Yasmin Carvalho Paniago e Dárlison Fernandes Carvalho de Andrade.\n\n\n**Centros Nacionais de Pesquisa e Conservação - CBC, CEMAVE, CENAP, CPB** \n\nAlexandre Bonesso Sampaio, Arlindo Gomes Filho, Elildo Alves Ribeiro de Carvalho Junior, Gerson Buss, Henrique Gonçalves, Isabela Oliveira, Marcos de Souza Fialho, Onildo Marini Filho, Rafael Suertegaray Rossato e Ricardo Sampaio.  \n\n*Núcleos de Gestão Integrada: ICMBIo Tefé e ICMBio Roraima* \nRichard Hatakeiama  \nThiago Orsi Laranjeiras  \n\n**Jardim Botânico do Rio de Janeiro – JBRJ** \n\nAdriano Lima, Daniel Silva, Edilson Consuelo de Oliveira, Flávio Obermuller, Herison Medeiros, Isaías Brasil, João Cunha, Livia Sousa, Rafaela Campostrini Forzza, Renato Mello-Silva, Wendeson Castro e Marina Crespo Pinto Pimentel Landeiro.  \n\n \n**Embrapa Recursos Genéticos e Biotecnologia** \n\nMarcelo Fragomeni Simon, Aécio Amaral Santos, Bruno Machado Teles Walter, Luciano de Bem Bianchetti, Valdeci Ferreira Gomes e Ismael da Silva Gomes.  \n\n \n**Serviço Florestal Brasileiro** \n\nHumberto Mesquita e Tiago Cruz.  \n\n\nE a todos os envolvidos na coleta de dados nas mais de 50 unidades de conservação federais listados no Apêndice C.\n  ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

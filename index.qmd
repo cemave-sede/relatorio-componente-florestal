@@ -1,0 +1,52 @@
+\pagestyle{plain}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.pos = 'H')
+```
+
+```{r library, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+if(!require(pacman)){install.packages("pacman")}
+pacman::p_load(tidyverse,
+               tibble, 
+               lubridate,
+               janitor,
+               descr,
+               knitr,
+               forcats,
+               treemapify,
+               reshape2,
+               DT,
+               data.table,
+               kableExtra,
+               plotly,
+               viridis,
+               cols4all,
+               ggExtra,
+               ggpubr,
+               patchwork,
+               gridExtra,
+               ggthemes,
+               plotly,
+               leaflet,
+               tmap,
+               mapview,
+               geobr,
+               sf,
+               rgdal,
+               sp,
+               htmltools,
+               htmlwidgets,
+               RColorBrewer,
+               randomcoloR
+               )
+library(geobr)
+
+```
+
+# Capa {#inicio .unnumbered}
+
+<font color="red">**Atenção! Nesta data (`r format(Sys.Date(), "%d de %B de %Y")`),  este documento encontra-se em processo de elaboração. É expressamente proibida a reprodução parcial ou integral de seu conteúdo por qualquer meio ou dispositivo, ficando o infrator sujeito às penalidades dispostas na legislação vigente. Todos os direitos reservados ao Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio.**</font>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/capa/capa_rel_monitora_2014_22.png" alt="painel do relatorio" width="600" height="957" align="center" style="margin: 0 0 0 0"/></a>

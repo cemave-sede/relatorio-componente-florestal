@@ -1,0 +1,21 @@
+{
+  "hash": "0e27f71cc822df1cbe624361da07a93f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "<style> {\n    margin: auto;\n}\n</style>\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n<style>\n.html-widget {\n    margin: auto;\n}\n</style>\n\n</br>\n\n\n# Referências bibliográficas {#referencias .unnumbered} \n\n::: {#refs}\n\n:::\n\n",
+    "supporting": [
+      "referencias_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

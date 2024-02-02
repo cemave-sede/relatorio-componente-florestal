@@ -1,0 +1,21 @@
+{
+  "hash": "090420696cb823cbaa7dad1e72161c27",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n::: {.cell}\n\n:::\n\n\n\n\n<style>\n.html-widget {\n    margin: auto;\n}\n</style>\n\n<br>\n\n\n# Agradecimentos {#agradecimentos .unnumbered}  \n\n**Parcerias Institucionais**   \n\nConselho Nacional de Desenvolvimento Científico e Tecnológico – CNPq  \nDeutsche Gesellschaft für Internationale Zusammenarbeit Gmbh – GIZ  \nFundo Brasileiro para a Biodiversidade – Funbio  \nFundo Clima Global Environment Fund – GEF  \nGordon and Betty Moore Foundation  \nInstituto de Pesquisas Ecológicas – IPÊ  \nPrograma Áreas Protegidas da Amazônia – Arpa  \nPrograma das Nações Unidas para o Desenvolvimento – PNUD  \nUnited States Agency for International Development – Usaid  \nWWF Brasil \n\n**Agradecimentos e participações** \n\nAgradecemos a todos os que viabilizam e defendem o Programa, pessoas e instituições, seja na captação de recursos, na coleta de dados, nas análises, nas capacitações, na divulgação de resultados, internalização em suas rotinas e processos de trabalho, bem como na execução de tarefas diversas relacionadas ao Monitora. Agradecemos em especial, nesta edição, às pesquisadoras Iris Roitman e Alba Rezende, que auxiliaram na escolha das equações de biomassa vegetal, à Rede Nacional de Pesquisa e Conservação de Lepidópteros - REDELEP, que colaborou desde o princípio com a proposição do protocolo de amostragem de borboletas e em várias outras fases do Programa e a Danilo do Carmo Vieira Correa pela elaboração do mapa. Também agradecemos àqueles que validaram tecnicamente os dados coletados: Alexandre Bonesso Sampaio, Gerson Buss, Henrique Santos Gonçalves, Jumara Marques Souza, Marcelo Lima Reis, Marcio Uehara-Prado, Marcos de Souza Fialho, Paloma Marques Santos, Renata Bocorny de Azevedo. Segue abaixo a lista com o nome de algumas pessoas que tornaram essa publicação possível e as demais se encontram identificadas nos dados disponibilizados. \n\n\n**Coordenação de Monitoramento da Biodiversidade – COMOB** \n\nUgo José Borba Bezerra, Silvia Carla Galuppo, Alberto Costa de Paula, Rachel Klaczko Acosta, Marcelo Lima Reis, Jumara Marques Souza, Laura Shizue Moriga Masuda, Leonardo Kenji Miyashita, Yasmin Carvalho Paniago, Dárlison Fernandes Carvalho de Andrade \n\n\n**Jardim Botânico do Rio de Janeiro – JBRJ** \n\nAdriano Lima, Daniel Silva, Edilson Consuelo de Oliveira, Flávio Obermuller, Herison Medeiros, Isaías Brasil, João Cunha, Livia Sousa, Rafaela Campostrini Forzza, Renato Mello-Silva, Wendeson Castro, Marina Crespo Pinto Pimentel Landeiro \n\n \n**Embrapa Recursos Genéticos e Biotecnologia** \n\nMarcelo Fragomeni Simon, Aécio Amaral Santos, Bruno Machado Teles Walter, Luciano de Bem Bianchetti, Valdeci Ferreira Gomes, Ismael da Silva Gomes \n\n \n**Serviço Florestal Brasileiro** \n\nHumberto Mesquita, Tiago Cruz \n\n\nE a todos os envolvidos na coleta de dados nas mais de 50 unidades de conservação federal, listados no anexo ? (ou na plataforma online xxxx) \n  ",
+    "supporting": [
+      "agradecimentos_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}
