@@ -1,0 +1,31 @@
+{
+    "id": "C8C900AD",
+    "path": "~/Projetos/Monitora/relatorio_florestal/cap02.qmd",
+    "project_path": "cap02.qmd",
+    "type": "quarto_markdown",
+    "hash": "2111704108",
+    "contents": "",
+    "dirty": false,
+    "created": 1706915041294.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "236,523",
+        "scrollLine": "219",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "15478:9929"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1706917146,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1706917146281,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -29,6 +29,9 @@ book:
     - cap02.qmd
     - cap03.qmd
     - cap04.qmd
+    - cap05.qmd
+    - cap06.qmd
+    - cap07.qmd
     - referencias.qmd
     
   appendices:
@@ -42,29 +45,34 @@ execute:
   
 format:
   html:
-    theme: 
+    theme:
       - cosmo
       - custom.scss
     callout-appearance: simple
     #template-partials: [toc.html, title-block.html]
     toc: true
-  pdf:
-    documentclass: scrreport
+    
+  
+  pdf: 
+    documentclass: scrbook
+    include-in-header: preamble.tex
+    fontfamily: libertinus
+    #documentclass: scrreport
     # documentclass: krantz
     # include-in-header: latex/preamble.tex
     # include-before-body: latex/before_body.tex
     # include-after-body: latex/after_body.tex
     # keep-tex: true
     # callout-appearance: simple
-    include-in-header: 
-      text: |
-        \usepackage{makeidx}
-        \makeindex
-    include-after-body: 
-      text: |
-        \printindex
-  epub:
-    cover-image: "imagens/capa/capa_rel_monitora_2014_22.png"
+    # include-in-header:
+    #   text: |
+    #     \usepackage{makeidx}
+    #     \makeindex
+    # include-after-body:
+    #   text: |
+    #     \printindex
+  
+  
 
 
 
