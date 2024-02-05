@@ -75,7 +75,7 @@ A taxonomia utilizada para os mamíferos e aves foi a mesma adotada no processo 
 
 Para o período de 2014 a 2022 foram registradas 52 UCs federais e 138 UAs (transecções lineares) em operação, isto é, com amostragens dos alvos mamíferos e aves com o método do protocolo básico (censo diurno em transecção linear), nos biomas Amazônia, Cerrado e Mata Atlântica.
 
-Destas 52 UCs federais com coleta de dados de mamíferos e aves, 34 (67%) já estão consolidadas, isto é, possuem pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs retomaram as amostragens em 2022, sete UCs são consideradas como paradas ou interrompidas (mais de dois anos consecutivos sem amostragem) e duas UCs não fizeram amostragens de 2022 (@fig-esforco-total-uc-bioma).
+Destas 52 UCs federais com coleta de dados de mamíferos e aves, 34 (67%) já estão consolidadas, isto é, possuem pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs retomaram as amostragens em 2022, sete UCs são consideradas como paradas ou interrompidas (mais de dois anos consecutivos sem amostragem) e duas UCs não fizeram amostragens de 2022 (@fig-esforco-total-uc-bioma-script).
 
 ```{r processamento dos dados}
 #| echo: false
@@ -176,12 +176,20 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 
 ```
 
-```{r grafico1 esforço Elildo}
+
+
+O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e de 12.995 aves terrestres cinegéticas (@fig-taxons-acumulados-script). No total, foram identificados ?? táxons de Mamíferos e 38 de Aves entre gêneros e espécies (Apêndice C), ?? e 6 dos quais estão ameaçados de extinção, respectivamente. O esforço por UC, ordenadas por bioma (Mata Atlântica, Cerrado e Amazônia), é apresentado na @fig-esforco-total-uc-bioma-script.  
+
+
+```{r grafico 1 esforço Elildo}
+#| label: fig-esforco-acumulado-script
 #| echo: false
 #| message: false
-#| include: false
 #| warning: false
 #| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos nas unidades de conservação integrantes do Programa Monitora no período de 2014 a 2022."
 
 
 # scripts para produzir 3 graficos para o relatorio florestal
@@ -210,22 +218,24 @@ monitora %>%
   mutate(esf_acumulado = cumsum(esforco_anual)) %>%
   relocate(esf_acumulado, .after = esforco_anual) %>%
   ggplot(aes(x=ano)) +
-  geom_line(aes(y = esf_acumulado), colour = "darkgreen", linewidth = 1) +
-  geom_line(aes(y = esforco_anual), colour = "lightgreen", linewidth = 1) +
+  geom_line(aes(y = esf_acumulado), colour = "cyan4", linewidth = 1) +
+  geom_line(aes(y = esforco_anual), colour = "#BF8120", linewidth = 1) +
   ylab("Esforço (km)") +
   xlab("") +
   theme_classic() +
   #scale_y_continuous(limits = c(0, NA), expand = c(0, 0)) +
-  theme(strip.text.x = element_text(size = 16)) +
+  theme(strip.text.x = element_text(size = 12)) +
   theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 12)) +
-  theme(axis.text.y = element_text(size = 12)) +
-  facet_wrap(~ bioma, scales = "free")
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(axis.text.y = element_text(size = 8)) +
+  facet_wrap(~ bioma, scales = "free") +
+  labs(x = "Ano")
+
 
 
 
 # salvar
-ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
+ggsave("imagens/cap05/ma_esforco_acumulado1.jpg",
        plot = last_plot(),
        device =  "jpeg",
        scale=1.5,
@@ -237,13 +247,17 @@ ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
 ```
 
 
+</br>
 
 ```{r gráfico 2 esforço Elildo}
+#| label: fig-taxons-acumulados-script
 #| echo: false
 #| message: false
-#| include: false
 #| warning: false
 #| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Táxons registrados acumulados e número de unidades de conservação com protocolo básico de masto-aves executado por ano entre 2014 e 2022."
 
 #----- grafico com numero de UCs ativas e numero acumulado de encontros por ano
 monitora %>%
@@ -266,8 +280,8 @@ monitora %>%
                                      .default = taxon_acumulado)) %>%
   ggplot(aes(x=ano)) +
   geom_bar(aes(y = ucs*10), stat = "identity", 
-           fill = "lightgreen", colour = "lightgreen") +
-  geom_line(aes(y = taxon_acumulado), stat = "identity", colour = "darkgreen", linewidth = 0.8) +
+           fill = "cyan4", colour = "cyan4") +
+  geom_line(aes(y = taxon_acumulado), stat = "identity", colour = "#95D8D8", linewidth = 0.8) +
   scale_y_continuous(
     name = "Taxa validados (acumulado)",  # features of first axis
     sec.axis = sec_axis(~.*0.1, name="Número de UCs"), # add second axis and specify its features
@@ -275,13 +289,16 @@ monitora %>%
   ) +
   scale_x_continuous(breaks = seq(2014, 2022, 2)) +
   theme_classic() +
-  theme(strip.text.x = element_text(size = 16)) +
+  theme(strip.text.x = element_text(size = 12)) +
   theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 12)) +
-  theme(axis.text.y = element_text(size = 12)) +
-  facet_wrap(~ bioma, scales = "free")
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(axis.text.y = element_text(size = 8)) +
+  facet_wrap(~ bioma, scales = "free") +
+  # theme(aspect.ratio = 3/4,  # Ajustar o painel para uma relação 3/4 laltura/largura
+  #   plot.background = element_rect(fill = "white")) +
+  labs(x = "Ano")
 
-ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
+ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.jpg",
        plot = last_plot(),
        device =  "jpeg",
        scale=1.5,
@@ -295,12 +312,17 @@ ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
 ```
 
 
+</br>
+
 ```{r gráfico 3 esforço Elildo}
+#| label: fig-esforco-total-uc-bioma-script
 #| echo: false
 #| message: false
-#| include: false
 #| warning: false
 #| cache: true
+#| fig.pos: 'H'
+#| out.width: '80%'
+#| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano."
 
 #----- grafico de esforco total e anual por uc/bioma
 pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
@@ -320,73 +342,80 @@ monitora %>%
   geom_bar(stat = "identity") +
   facet_grid(rows = vars(desc(bioma)), scales = "free", space = "free_y")  +
   coord_flip() +
+    
   theme_classic() +
   xlab("") +
   ylab("Esforço total (km)") +
   theme(
-    strip.background = element_blank(),
+    #strip.background = element_blank(),
     strip.text.x = element_blank()
   ) +
   scale_fill_manual(values = pallete, name = "Ano", 
                     guide = guide_legend(reverse = TRUE)) +
-  theme(strip.text.x = element_text(size = 16)) +
+  theme(strip.text.x = element_text(size = 14)) +
   theme(strip.text.y = element_blank()) +
-  theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 10)) +
-  theme(axis.text.y = element_text(size = 8))
+  #theme(strip.background = element_blank()) +
+  theme(axis.text.x = element_text(size = 7, face = "bold")) +
+  theme(axis.text.y = element_text(size = 6)) +
+  theme(axis.line.x=element_blank()) +
+  theme(panel.grid.major.x = element_line(color = "lightgray")) 
 
-ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
+  
+
+ggsave("imagens/cap05/ma_esforco_total_uc_bioma1.jpg",
        plot = last_plot(),
        device =  "jpeg",
        scale=0.6,
        width = 240,
-       height = 280,
+       height = 300,
        units = "mm",
        dpi = 120)
 
 ```
 
-O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado), resultando em 22.985 registros de mamíferos de médio e grande porte e de 12.995 aves terrestres cinegéticas (@fig-taxons-acumulados). No total, foram identificados ?? táxons de Mamíferos e 38 de Aves entre gêneros e espécies (Apêndice C), ?? e 6 dos quais estão ameaçados de extinção, respectivamente. O esforço por UC, ordenadas por bioma (Mata Atlântica, Cerrado e Amazônia), é apresentado na @fig-esforco-total-uc-bioma.
 
 ```{r grafico esforço acumulado}
 #| label: fig-esforco-acumulado
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '80%'
-#| fig-cap: "Esforço por ano e acumulado em quilômetros percorridos nas unidades de conservação aderidas ao Programa Monitora entre 2014 e 2022."
-
-knitr::include_graphics("imagens/cap05/ma_esforco_acumulado1.JPG")
+# #| fig-cap: "Esforço por ano e acumulado em quilômetros percorridos nas unidades de conservação aderidas ao Programa Monitora entre 2014 e 2022."
+# 
+# knitr::include_graphics("imagens/cap05/ma_esforco_acumulado1.JPG")
 
 ```
 
 ```{r grafico ucs_ativas_taxa_acumulado}
 #| label: fig-taxons-acumulados
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Táxons registrados acumulados e número de unidades de conservação com protocolo básico de masto-aves executado por ano entre 2014 e 2022."
-
-knitr::include_graphics("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.JPG")
+# #| fig-cap: "Táxons registrados acumulados e número de unidades de conservação com protocolo básico de masto-aves executado por ano entre 2014 e 2022."
+# 
+# knitr::include_graphics("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.JPG")
 
 ```
 
 ```{r grafico esforco_total_uc_bioma.jpg}
 #| label: fig-esforco-total-uc-bioma
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| #| fig.pos: 'H'
 #| out.width: '90%'
-#| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano.."
-
-knitr::include_graphics("imagens/cap05/ma_esforco_total_uc_bioma1.JPG")
+# #| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano."
+# 
+# knitr::include_graphics("imagens/cap05/ma_esforco_total_uc_bioma1.JPG")
 ```
 
 </br>
@@ -580,7 +609,7 @@ G_especies_registros_ordem_geral <- numero_especies_por_ordem  |>
     panel.grid.major.y = element_blank(),
     panel.grid.minor.x = element_blank(),
     #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6),
+    axis.text = element_text(size = 6, face = "bold"),
     plot.title = element_text(size = 11),
     legend.position = "none",
     axis.title = element_text(size = 8, margin = margin(t = 10))
@@ -625,7 +654,7 @@ G_especies_registros_ordem_bioma_amazonia <- numero_especies_por_ordem_bioma  |>
     panel.grid.major.y = element_blank(),
     panel.grid.minor.x = element_blank(),
     #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6),
+    axis.text = element_text(size = 6, face = "bold"),
     plot.title = element_text(size = 11),
     legend.position = "none",
     axis.title.x = element_text(size = 11, margin = margin(t = 10))
@@ -671,7 +700,7 @@ G_especies_registros_ordem_bioma_mata_atlantica <- numero_especies_por_ordem_bio
     panel.grid.major.y = element_blank(),
     panel.grid.minor.x = element_blank(),
     #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6),
+    axis.text = element_text(size = 6, face = "bold"),
     plot.title = element_text(size = 11),
     legend.position = "none",
     axis.title.x = element_text(size = 11, margin = margin(t = 10))
@@ -716,7 +745,7 @@ G_especies_registros_ordem_bioma_cerrado <- numero_especies_por_ordem_bioma  |>
     panel.grid.major.y = element_blank(),
     panel.grid.minor.x = element_blank(),
     #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6),
+    axis.text = element_text(size = 6, face = "bold"),
     plot.title = element_text(size = 11),
     
     legend.position = "none",
@@ -738,8 +767,8 @@ G_especies_registros_ordem_bioma_cerrado
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '85%'
-#| fig-cap: "Representatividade das principais ordens de mamíferos amostradas no Programa Monitora, durante o período de 2014 a 2022. As barras em verde escuro representam o número de espécies registradas na ordem e a barras em verde claro o número de registros naquela ordem."
+#| out.width: '80%'
+#| fig-cap: "Representatividade das principais ordens de mamíferos amostradas no Programa Monitora, durante o período de 2014 a 2022. As barras em verde escuro representam o número de espécies registradas na ordem e as barras em verde claro o número de registros."
 
 
 # G_ordem_especies_combinado <- 
@@ -1693,6 +1722,8 @@ G_taxa_encontro_geral_aves_media_IC
 
 </br>
 
+<center>
+
 ```{r mapa taxas de encontro - geral}
 #| label: fig-taxa-encontro-mapa
 #| echo: false
@@ -1758,6 +1789,9 @@ mapa
  
 
 ```
+
+</center>
+
 
 ```{r cálculos registros por espécie, por trilha, por ano e por UC}
 #| echo: false

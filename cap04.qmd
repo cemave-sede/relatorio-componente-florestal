@@ -23,7 +23,7 @@ library(gridExtra)
 # Borboletas  
 
 
-**Isabela Oliveira & Onildo João Marini Filho** 
+**Isabela Freitas Oliveira & Onildo João Marini Filho** 
 
 Centro Nacional de Pesquisa e Conservação da Biodiversidade do Cerrado e Restauração Ecológica - CBC  
 *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  

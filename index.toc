@@ -1,0 +1,30 @@
+\contentsline {chapter}{Capa}{1}{chapter*.2}%
+\contentsline {chapter}{Expediente}{3}{chapter*.3}%
+\contentsline {chapter}{Equipe}{7}{chapter*.4}%
+\contentsline {chapter}{Agradecimentos}{9}{chapter*.5}%
+\contentsline {chapter}{Lista de siglas}{11}{chapter*.6}%
+\contentsline {chapter}{Apresentação}{13}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora}{15}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Impacto do Programa no desenvolvimento do conhecimento}{18}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Os alvos}{18}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Implementação do Componente Florestal}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Métodos}{20}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}A Estação Amostral}{20}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Unidades de Conservação}{23}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Resultados da implementação}{28}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Plantas}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Estado da implementação}{32}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Resultados}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Estrutura}{32}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Biomassa}{35}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Relatório do sistema}{37}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Destaques}{39}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Contraste entre o Inventário Florestal Nacional e os dados do protocolo básico de plantas do componente florestal}{39}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Discussão}{39}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Recomendações}{40}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Borboletas}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estado da implementação}{42}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Considerações sobre as amostragens na Mata Atlântica}{44}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Resultados}{45}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Amazônia}{45}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Síntese por região climática}{45}{subsubsection.4.2.1.1}%
