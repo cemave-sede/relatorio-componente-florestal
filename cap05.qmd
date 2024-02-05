@@ -35,8 +35,8 @@ library(gridExtra)
 
 2. Centro Nacional de Pesquisa e Conservação de Mamíferos Carnívoros – CENAP   
 *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
-*Estrada Municipal Hisaichi Takebayashi, 8600 - Bairro da Usina*
-*12952-011 Atibaia, SP*
+*Estrada Municipal Hisaichi Takebayashi, 8600 - Bairro da Usina*  
+*12952-011 Atibaia, SP*  
 
 
 3. Centro Nacional de Pesquisa e Conservação de Primatas Brasileiros – CPB  
