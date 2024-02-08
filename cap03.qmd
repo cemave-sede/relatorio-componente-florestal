@@ -23,7 +23,7 @@ library(gridExtra)
 # Plantas
 
 
-**Alexandre Bonesso Sampaio^1^, Bruno Lenhaverde Sandy^2^, Jumara Marques Sousa^2^ & Rafaela Campostrini Forzza^3-4^**
+**Alexandre Bonesso Sampaio^1^, Bruno Lenhaverde Sandy^2^, Cecília Cronemberger de Faria^3^, Jumara Marques Sousa^2^, Kátia Torres Ribeiro^4^ & Rafaela Campostrini Forzza^5-6^**
 
 
 1. Centro Nacional de Pesquisa e Conservação da Biodiversidade do Cerrado e Restauração Ecológica - CBC*  
@@ -37,15 +37,27 @@ library(gridExtra)
 *Complexo Administrativo EQSW 103/104 s/n*  
 *70670-350 Brasília, DF*  
 
-3. Jardim Botânico do Rio de Janeiro – JBRJ  
+3. Coordenação Geral de Pesquisa e Monitoramento da Biodiversidade - COMOB  
+*Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
+*Complexo Administrativo EQSW 103/104 s/n*  
+*70670-350 Brasília, DF*  
+
+4. Diretoria de Ações Socioambientais e Consolidação Territorialem UCs - DISAT
+*Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
+*Complexo Administrativo EQSW 103/104 s/n*  
+*70670-350 Brasília, DF*  
+
+5. Parque Nacional do Descobrimento  
+*Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio*  
+*Cumuruxatiba*  
+*45980-000 Prado, BA* 
+
+6. Jardim Botânico do Rio de Janeiro – JBRJ  
 *Rua Jardim Botânico, 1008*  
 *Jardim Botânico*  
 *22460-030 Rio de Janeiro, RJ*  
 
-4. Parque Nacional do Descobrimento  
-*Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio*  
-*Cumuruxatiba*  
-*45980-000 Prado, BA*  
+ 
 
 </br>
 
