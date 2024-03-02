@@ -24,3 +24,7 @@ treemapify
 reshape2
 randomcoloR
 gridExtra
+scales
+permute
+lattice
+vegan

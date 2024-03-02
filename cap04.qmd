@@ -59,6 +59,8 @@ Das 50 UCs federais com coleta de dados de borboletas frugívoras, 33 (66%) já 
 Em 2022, a amostragem de borboletas frugívoras foi realizada em 40 das 50 UCs que aderiram ao Programa Monitora, nos três biomas florestais (Tabela x). O ano de 2022 teve 21 UCs a mais do que 2021, e os números indicam aumento de 26% na quantidade de Estações Amostrais (EAs) implementadas (@fig-evolucao-implementacao). Todas as oito novas UCs que aderiram ao Monitora e iniciaram a amostragem de borboletas são amazônicas e apoiadas pelo Programa ARPA. As <font color="red">?</font> UCs apoiadas pelo ARPA são as que apresentam os melhores índices de implementação dos protocolos de borboletas, sendo que <font color="red">?? delas (??%)</font> já estão consolidadas, com pelo menos três UAs sendo amostradas.  
 
 
+
+
 ```{r grafico ucs_ativas_taxa_acumulado}
 #| label: fig-evolucao-implementacao
 #| echo: false
@@ -69,7 +71,68 @@ Em 2022, a amostragem de borboletas frugívoras foi realizada em 40 das 50 UCs q
 #| out.width: '70%'
 #| fig-cap: "Evolução da implementação das amostragens de borboletas em todas as UCs participantes do Programa Monitora."
 
-knitr::include_graphics("imagens/cap04/bo_evolucao_implementacao.JPG")
+# Numero de UC's e EA's implementadas 214-2022
+# Script: Isabela Freitas Oliveira
+
+library(tidyverse)
+library(ggplot2)
+library(stringr)
+
+dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+dados_borboletas$ano <- factor(dados_borboletas$ano)
+dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+
+# Preparar os dados para o gráfico
+contagem_uc_ea <- dados_borboletas %>%
+  group_by(ano) %>%
+  summarise(
+    num_uc = n_distinct(uc),
+    num_ea = n_distinct(uc_ea)
+  )
+
+dados_long <- contagem_uc_ea %>%
+  pivot_longer(
+    cols = -ano,
+    names_to = "categoria",
+    values_to = "contagem"
+  )
+
+dados_long$categoria <- factor(dados_long$categoria, levels = c("num_uc","num_ea"))
+
+ggplot(dados_long, aes(x = ano, y = contagem, fill = categoria)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_text(
+    aes(label = contagem), 
+    position = position_dodge(width = 0.9), # ajustar 'width' para alinhar com as barras
+    vjust = -0.25, # ajustar 'vjust' para mover o texto um pouco acima das barras
+    size = 3
+  ) +
+  scale_fill_manual(
+    values = c("num_uc" = "#35978f", "num_ea" = "#c7eae5"),
+    labels = c("N˚ de UCs", "N˚ de EAs")) +
+  labs(
+    x = "",
+    y = "",
+    fill = "",
+    title = str_wrap("Número de UC's e EA's implementadas ao longo dos anos", width = 35) # Quebra o título em duas linhas
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, hjust = 0, lineheight = 1.3),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    axis.title.x = element_text(size = 14), 
+    axis.text.x = element_text(size = 12),  
+    legend.position = "bottom",
+    axis.ticks.y = element_blank(), # remove ticks do eixo Y
+    axis.text.y = element_blank(),
+    panel.grid.major = element_blank(),  # remove as linhas principais da grade
+    panel.grid.minor = element_blank()# remove texto do eixo Y
+  )
+
+
+
+#knitr::include_graphics("imagens/cap04/bo_evolucao_implementacao.JPG")
 
 ```
 
@@ -87,7 +150,132 @@ O esforço amostral vem aumentando quase linearmente a uma taxa de 15-20%, ao se
 #| out.width: '70%'
 #| fig-cap: "Variação no número de registros de borboletas frugívoras e esforço amostral (dias*armadilhas) somada para todas as UCs participantes do Programa Monitora."
 
-knitr::include_graphics("imagens/cap04/bo_esforco.JPG")
+
+#Script: Isabela Freitas Oliveira
+
+library(dplyr)
+
+# Ler e limpar dados_borboletas
+dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+dados_borboletas <- dados_borboletas %>%
+  filter(ano != "2023", !is.na(tribo))
+
+
+
+# Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
+esforco_por_expedicao <- dados_borboletas %>%
+  group_by(uc_ea, uc, expedicao, ano) %>%
+  summarize(
+    max_dia_amostragem = max(dia_amostragem) - 1,
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    esforco_amostral = 16 * max_dia_amostragem
+  )
+
+# Agregar o esforço de amostragem para cada uc_ea e ano
+esforco_total_por_ea_ano <- esforco_por_expedicao %>%
+  group_by(uc_ea, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregar o esforço de amostragem para cada uc e ano
+esforco_total_por_uc_ano <- esforco_por_expedicao %>%
+  group_by(uc, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+
+# Agregação para obter o esforço total por ano por uc
+esforco_por_ano_uc <- esforco_total_por_uc_ano %>%
+  group_by(ano,uc) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o esforço total por ano
+esforco_por_ano <- esforco_total_por_uc_ano %>%
+  group_by(ano) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o número total de indivíduos por ano
+num_ind_por_ano <- dados_borboletas %>%
+  group_by(ano) %>%
+  summarize(
+    num_ind = sum(individuos, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+
+# Juntar as duas tabelas agregadas
+tabela_final_esfoco <- left_join(esforco_por_ano, num_ind_por_ano, by = "ano")
+#write.csv(tabela_final_esfoco, "tabela_final_esfoco.csv", row.names = FALSE)
+
+
+#####Fazer o gráfico de Abundancia e esforço
+# Definindo os dados para cada série separadamente
+dados_esforco <- tabela_final_esfoco[, c("ano", "esforco")]
+names(dados_esforco)[2] <- "valor"
+dados_esforco$tipo <- "Esforço"
+
+dados_abundancia <- tabela_final_esfoco[, c("ano", "num_ind")]
+names(dados_abundancia)[2] <- "valor"
+dados_abundancia$tipo <- "Abundância"
+
+# Juntando os dados
+dados_plot <- rbind(dados_esforco, dados_abundancia)
+
+# Criando o gráfico
+grafico <- ggplot(data = dados_plot, aes(x = ano, y = valor, colour = tipo, linetype = tipo, shape = tipo)) +
+  geom_line(size = 1.0) +
+  geom_point(size = 3) +
+  scale_colour_manual(values = c("Esforço" = "#35978f", "Abundância" = "#dfc27d")) +
+  scale_linetype_manual(values = c("Esforço" = "solid", "Abundância" = "solid")) +
+  scale_shape_manual(values = c("Esforço" = 16, "Abundância" = 17)) +
+  scale_y_continuous(
+    "Esforço Amostral e Abundância",
+    labels = scales::label_number(big.mark = ".", decimal.mark = ","),
+    limits = c(0, 25000)
+  ) +
+  scale_x_continuous(breaks = tabela_final_esfoco$ano) +
+  labs(
+    title = "",
+    x = "Ano",
+    y = "Esforço Amostral e Abundância",
+    colour = "",
+    shape = "", # Isso ajuda a garantir que as formas correspondam na legenda
+    linetype = "" # Isso ajuda a garantir que os tipos de linha correspondam na legenda
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = -0.5, size = 18, lineheight = 1.5), # Ajuste o lineheight conforme necessário
+    legend.position = c(0.10, 0.93), # Define a posição da legenda no canto superior esquerdo
+    legend.justification = c(0, 1), # Define a justificação da legenda para o canto superior esquerdo
+    legend.box.just = "left", # Alinha a legenda à esquerda
+    legend.box.background = element_rect(fill = "white", color = "white"),
+    axis.ticks.y = element_line(color = "black"),
+    axis.text.y = element_text(margin = margin(r = 12)),
+    axis.text.x = element_text(margin = margin(r = 12)),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 12),
+    axis.line = element_line(colour = "gray40"),
+    legend.text = element_text(size = 12),
+    axis.line.x = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+
+print(grafico)
+
+
+#knitr::include_graphics("imagens/cap04/bo_esforco.JPG")
 
 ```
 
@@ -121,13 +309,14 @@ Considerando que ainda não temos dados populacionais para borboletas, uma vez q
 
 Mesmo não tendo acesso a dados populacionais, estamos avaliando a possibilidade de uso de um índice no nível de tribos para servir de base para futuras aplicações ao Programa Monitora. Uma proposta será apresentada adiante.
 
-As datas de amostragem propostas para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde temos alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (@Checa_2009). A proposta de regiões amazônicas apresentada a seguir se baseia na caracterização climática associada ao padrão de chuvas em toda a Amazônia (@fig-regioes-climaticas, reproduzida de @Marengo_2001). A partir da determinação dos regimes de chuva regionais, propusemos polígonos que encopassem as UCs participantes do Programa Monitora de forma a podermos estabelecer tanto a melhor época para amostragem (Tabela x), quanto para poder analisar os dados, considerando o regime de chuva como uma característica regional importante para as borboletas frugívoras (@fig-regioes-climaticas).
+As datas de amostragem propostas para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde temos alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (@Checa_2009). A proposta de regiões amazônicas apresentada a seguir se baseia na caracterização climática associada ao padrão de chuvas em toda a Amazônia (@fig-regioes-climaticas, reproduzida de @Marengo_2001). A partir da determinação dos regimes de chuva regionais, propusemos polígonos que encopassem as UCs participantes do Programa Monitora de forma a podermos estabelecer tanto a melhor época para amostragem (Tabela x), quanto para poder analisar os dados, considerando o regime de chuva como uma característica regional importante para as borboletas frugívoras.
 
 
 
 ```{r grafico ucs_ativas_taxa_acumulado}
 #| label: fig-regioes_climaticas
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
@@ -135,7 +324,7 @@ As datas de amostragem propostas para borboletas frugívoras na Amazônia seguem
 #| out.width: '70%'
 #| fig-cap: "Regiões climáticas e regimes de chuva na Amazônia (@Marengo_2001)."
 
-knitr::include_graphics("imagens/cap04/bo_regioes_climaticas.JPG")
+#knitr::include_graphics("imagens/cap04/bo_regioes_climaticas.JPG")
 
 ```
 
@@ -186,6 +375,177 @@ Apenas duas UCs da região climática sudeste amazônica estão coletando dados 
 
 </br>
 
+
+```{r ajustes dos gráficos de assinaturas}
+#| label: ajustes-graficos-assinaturas
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+
+
+# Gráficos de dados Borboletas - Protocolo básico - Regiões da Amazônia - individual
+### Tribos com asterisco estão ausentes nos dados
+## Script: Isabela Freitas Oliveira
+
+# Carregar bibliotecas
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(tools)
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+# Função auxiliar para ajustar o título
+ajustar_titulo <- function(titulo) {
+  palavras <- strsplit(titulo, " ")[[1]]
+
+  # Palavras que necessitam de correção de acentuação
+  correcoes <- list(
+    "leste" = "Região climática Leste Amazônica", "sudoeste" = "Região climática Sudoeste Amazônica", "central" = "Região climática Central Amazônica",
+    "norte" = "Região climática Norte Amazônica", "sudeste" = "Região climática Sudeste Amazônica"
+  )
+
+  palavras <- sapply(palavras, function(palavra) {
+    # Aplicar regras específicas para certas palavras
+    if (tolower(palavra) %in% c("esec", "flona", "rebio", "resex", "parna")) {
+      return(toupper(palavra))
+    } else if (tolower(palavra) %in% c("de", "da", "do", "dos", "das")) {
+      return(tolower(palavra))
+    } else {
+      # Corrigir acentuação, se necessário
+      palavra_corrigida <- tolower(palavra)
+      if (palavra_corrigida %in% names(correcoes)) {
+        return(correcoes[[palavra_corrigida]])
+      } else {
+        return(tools::toTitleCase(palavra))
+      }
+    }
+  })
+
+  return(paste(palavras, collapse = " "))
+}
+
+# Função para gerar o gráfico para cada região
+gerar_grafico_por_regiao <- function(dados, nome_regiao) {
+  # Preparar o título
+  titulo <- ajustar_titulo(nome_regiao)  # Utilizando a função de ajuste de título aqui
+
+  # Filtrar os dados para a região atual
+  dados_regiao <- subset(dados, regiao == nome_regiao & bioma == "Amazonia")
+  dados_regiao <- dados_regiao[!is.na(dados_regiao$tribo), ] #tirar os dados 'NA' que estão na tribo
+
+  # Calcular o total de indivíduos por ano para a região atual
+  total_individuos_por_ano <- dados_regiao %>%
+    group_by(ano) %>%
+    summarise(total = sum(soma_individuos), .groups = 'drop')
+
+  # Agregar dados por ano e tribo
+  dados_agregados <- dados_regiao %>%
+    group_by(ano, tribo) %>%
+    summarize(frequencia = sum(soma_individuos), .groups = 'drop')
+
+  # Calcular totais e proporções
+  total_por_ano <- dados_agregados %>%
+    group_by(ano) %>%
+    summarize(total = sum(frequencia), .groups = 'drop')
+
+  dados_agregados <- left_join(dados_agregados, total_por_ano, by = "ano") %>%
+    mutate(proporcao = frequencia / total * 100)
+
+  # Ajustar proporções
+  dados_agregados <- dados_agregados %>%
+    group_by(ano) %>%
+    mutate(diferenca = 100 - sum(proporcao),
+           proporcao_ajustada = ifelse(proporcao == max(proporcao), proporcao + diferenca, proporcao)) %>%
+    ungroup() %>%
+    dplyr::select(-diferenca, -proporcao) %>%
+    rename(proporcao = proporcao_ajustada)
+
+  # Ordem específica das tribos
+  ordem_tribos <- c(
+    "Brassolini", "Morphini", "Haeterini",
+    "Satyrini", "Coeini", "Epiphilini",
+    "Epicaliini", "Anaeini", "Melanitini",
+    "Preponini", "Callicorini", "Biblidini",
+    "Ageroniini"
+  )
+
+  # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
+  cores_tribos <- c(
+    "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5",
+    "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85",
+    "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70",
+    "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d",
+    "Ageroniini" = "#bf812d"
+  )
+
+  # Ajustar a ordem e as cores das tribos com base nas tribos presentes
+  cores_tribos <- cores_tribos[ordem_tribos]
+
+  # Assegurar que a coluna 'tribo_clean' respeite a ordem definida
+  dados_agregados$tribo <- factor(dados_agregados$tribo, levels = ordem_tribos)
+
+  # Criar um data frame com a frequência agregada por tribo
+  #frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo + ano, dados_agregados, sum)
+
+  # Criar um data frame com a frequência agregada por tribo
+  frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo, dados_agregados, sum)
+
+  # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo
+  adicionar_asterisco <- function(nome_tribo) {
+    # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano
+    if (any(frequencias_por_tribo_ano$tribo == nome_tribo & frequencias_por_tribo_ano$frequencia == 0)) {
+      return(paste0(nome_tribo, "*"))
+    } else {
+      return(nome_tribo)
+    }
+  }
+
+  # Aplicar a função a cada tribo para criar o vetor de rótulos
+  labels_tribos <- sapply(ordem_tribos, adicionar_asterisco)
+
+  # Construir o gráfico
+  gg <- ggplot(dados_agregados) +
+    geom_bar(aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +
+    geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+
+    scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+
+    scale_x_discrete(expand = c(0, 0)) +
+    scale_fill_manual(values = cores_tribos,
+                      labels = labels_tribos,
+                      breaks = ordem_tribos) +
+    labs(title = titulo,
+         x = "Ano",
+         y = "Proporção relativa de ocorrência (%)",
+         fill = "Tribo") +
+    theme_minimal() +
+    theme(legend.position = "right",
+          legend.title = element_text(size = 14),
+          legend.text = element_text(size = 12),
+          plot.title = element_text(hjust = 0.5, size = 16),
+          plot.subtitle = element_text(hjust = 0.5, size = 14),
+          axis.text = element_text(size = 12),
+          axis.title = element_text(size = 13),
+          axis.line = element_line(colour = "gray40"),
+          axis.line.x = element_blank()) +
+    guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
+
+
+  # Exibir o gráfico
+  print(gg)
+}
+
+# Carregar e preparar os dados
+resultado_final <- read_csv("data/resultado_final.csv")
+resultado_final$ano <- factor(resultado_final$ano)
+resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
+#resultado_final <- resultado_final[resultado_final$ano != "2023", ]
+
+
+```
+
 ```{r grafico regiao-climatica-central-amazonica}
 #| label: fig-regiao-climatica-central-amazonica
 #| echo: false
@@ -194,13 +554,19 @@ Apenas duas UCs da região climática sudeste amazônica estão coletando dados 
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 na região climática central da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2022 na região climática central da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_regiao_climatica_central_amazonica.JPG")
+# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
+regiao_interesse <- "central"
+
+# Gerar o gráfico para a região de interesse
+gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 ```
 
+
 </br>
+
 
 ```{r grafico regiao-climatica-norte-amazonica}
 #| label: fig-regiao-climatica-norte-amazonica
@@ -210,13 +576,19 @@ knitr::include_graphics("imagens/cap04/bo_regiao_climatica_central_amazonica.JPG
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 na região climática norte da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2022 na região climática norte da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_regiao_climatica_norte_amazonica.JPG")
+# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
+regiao_interesse <- "norte"
+
+# Gerar o gráfico para a região de interesse
+gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 ```
 
+
 </br>
+
 
 ```{r grafico regiao-climatica-leste-amazonica}
 #| label: fig-regiao-climatica-leste-amazonica
@@ -226,11 +598,16 @@ knitr::include_graphics("imagens/cap04/bo_regiao_climatica_norte_amazonica.JPG")
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 na região climática leste da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2017 a 2022 na região climática leste da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_regiao_climatica_leste_amazonica.JPG")
+# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
+regiao_interesse <- "leste"
+
+# Gerar o gráfico para a região de interesse
+gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 ```
+
 
 </br>
 
@@ -243,11 +620,16 @@ knitr::include_graphics("imagens/cap04/bo_regiao_climatica_leste_amazonica.JPG")
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 na região climática sudoeste da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2022 na região climática sudoeste da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_regiao_climatica_leste_amazonica.JPG")
+# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
+regiao_interesse <- "sudoeste"
+
+# Gerar o gráfico para a região de interesse
+gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 ```
+
 
 </br>
 
@@ -260,9 +642,13 @@ knitr::include_graphics("imagens/cap04/bo_regiao_climatica_leste_amazonica.JPG")
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 na região climática sudeste da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2016 a 2022 na região climática sudeste da Amazônia. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_regiao_climatica_sudoeste_amazonica.JPG")
+# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
+regiao_interesse <- "sudeste"
+
+# Gerar o gráfico para a região de interesse
+gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 ```
 
@@ -272,9 +658,10 @@ knitr::include_graphics("imagens/cap04/bo_regiao_climatica_sudoeste_amazonica.JP
 
 ### Cerrado e Mata Atlântica  
 
-</br>
 
-```{r grafico regiao-cerrado}
+
+
+```{r grafico-assinatura-cerrado}
 #| label: fig-regiao-cerrado
 #| echo: false
 #| message: false
@@ -282,32 +669,308 @@ knitr::include_graphics("imagens/cap04/bo_regiao_climatica_sudoeste_amazonica.JP
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 no bioma Cerrado. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2022 no bioma Cerrado. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_cerrado.JPG")
+##### Gráficos de dados Borboletas - Protocolo básico - Cerrado
+### Tribos com asterisco estão ausentes no gráfico
+## Script: Isabela Freitas Oliveira
+
+# Função auxiliar para ajustar o título
+ajustar_titulo <- function(titulo) {
+  palavras <- strsplit(titulo, " ")[[1]]
+  
+  # Palavras que necessitam de correção de acentuação
+  correcoes <- list(
+    "cerrado" = "Cerrado")
+  
+}
+
+# Função para gerar o gráfico para cada unidade de conservação
+gerar_grafico_por_bioma <- function(dados, nome_bioma) {
+  # Preparar o título com as novas regras
+  titulo <- gsub("_", " ", nome_bioma)
+  titulo <- ajustar_titulo(titulo)  # Utilizando a função de ajuste de título aqui
+  
+  # Filtrar os dados para a unidade de conservação atual
+  dados_bioma <- subset(dados, bioma == nome_bioma & bioma == "Cerrado")
+  dados_bioma <- dados_bioma[!is.na(dados_bioma$tribo), ] #tirar os dados 'NA' que estão na tribo
+  
+  # Calcular o total de indivíduos por ano para a região atual
+  total_individuos_por_ano <- dados_bioma %>%
+    group_by(ano) %>%
+    summarise(total = sum(soma_individuos), .groups = 'drop')
+  
+  # Agregar dados por ano e tribo
+  dados_agregados <- dados_bioma %>%
+    group_by(ano, tribo) %>%
+    summarize(frequencia = sum(soma_individuos), .groups = 'drop')
+  
+  # Calcular totais e proporções
+  total_por_ano <- dados_agregados %>%
+    group_by(ano) %>%
+    summarize(total = sum(frequencia), .groups = 'drop')
+  
+  dados_agregados <- left_join(dados_agregados, total_por_ano, by = "ano") %>%
+    mutate(proporcao = frequencia / total * 100)
+  
+  # Ajustar proporções
+  dados_agregados <- dados_agregados %>%
+    group_by(ano) %>%
+    mutate(diferenca = 100 - sum(proporcao),
+           proporcao_ajustada = ifelse(proporcao == max(proporcao), proporcao + diferenca, proporcao)) %>%
+    ungroup() %>%
+    dplyr::select(-diferenca, -proporcao) %>%
+    rename(proporcao = proporcao_ajustada)
+  
+  # Ordem específica das tribos
+  ordem_tribos <- c(
+    "Brassolini", "Morphini", "Haeterini", 
+    "Satyrini", "Coeini", "Epiphilini", 
+    "Epicaliini", "Anaeini", "Melanitini", 
+    "Preponini", "Callicorini", "Biblidini", 
+    "Ageroniini"
+  )
+  
+  # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
+  cores_tribos <- c(
+    "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", 
+    "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85", 
+    "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70", 
+    "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d", 
+    "Ageroniini" = "#bf812d"
+  )
+  
+  # Ajustar a ordem e as cores das tribos com base nas tribos presentes
+  cores_tribos <- cores_tribos[ordem_tribos]
+  
+  # Assegurar que a coluna 'tribo_clean' respeite a ordem definida
+  dados_agregados$tribo <- factor(dados_agregados$tribo, levels = ordem_tribos)
+  
+  # Criar um data frame com a frequência agregada por tribo
+  #frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo + ano, dados_agregados, sum)
+  
+  # Criar um data frame com a frequência agregada por tribo
+  frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo, dados_agregados, sum)
+  
+  # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo
+  adicionar_asterisco <- function(nome_tribo) {
+    # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano
+    if (any(frequencias_por_tribo_ano$tribo == nome_tribo & frequencias_por_tribo_ano$frequencia == 0)) {
+      return(paste0(nome_tribo, "*"))
+    } else {
+      return(nome_tribo)
+    }
+  }
+  
+  # Aplicar a função a cada tribo para criar o vetor de rótulos
+  labels_tribos <- sapply(ordem_tribos, adicionar_asterisco)
+  
+  # Construir o gráfico
+  gg <- ggplot(dados_agregados) +
+    geom_bar(aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +
+    geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+
+    scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+
+    scale_x_discrete(expand = c(0, 0)) +
+    scale_fill_manual(values = cores_tribos, 
+                      labels = labels_tribos,
+                      breaks = ordem_tribos) +
+    labs(title = titulo,
+         x = "Ano",
+         y = "Proporção relativa de ocorrência (%)",
+         fill = "Tribo") +
+    theme_minimal() +
+    theme(legend.position = "right", 
+          legend.title = element_text(size = 14), 
+          legend.text = element_text(size = 12), 
+          plot.title = element_text(hjust = 0.5, size = 16), 
+          plot.subtitle = element_text(hjust = 0.5, size = 12),
+          axis.text = element_text(size = 12), 
+          axis.title = element_text(size = 12),
+          axis.line = element_line(colour = "gray40"),
+          axis.line.x = element_blank()) +
+    guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
+  
+  
+  # Exibir o gráfico
+  print(gg)
+}
+ 
+# Carregar e preparar os dados
+resultado_final<-read_csv("data/resultado_final.csv")
+resultado_final$ano <- factor(resultado_final$ano)
+resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
+#resultado_final <- resultado_final[resultado_final$ano != "2023", ]
+
+# Obter todas as UC's do bioma Cerrado
+biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Cerrado"])
+
+# Aplicar a função
+#lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+
+gerar_grafico_por_bioma(resultado_final, biomas)
 
 ```
 
-</br>
 
 </br>
 
-```{r grafico regiao-atlantica}
-#| label: fig-regiao-mata_atlantica
+
+
+</br>
+
+
+```{r grafico regiao-mata-atlantica}
+#| label: fig-regiao-mata-atlantica
 #| echo: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2014 a 2018 no bioma Mata Atlântica. Números de indivíduos amostrados são indicados sobre as barras verticais."
+#| fig-cap: "Padrões de bandas de abundância relativa de tribos de borboletas frugívoras para o período de 2015 a 2022 no bioma Mata Atlântica. Números de indivíduos amostrados são indicados sobre as barras verticais."
 
-knitr::include_graphics("imagens/cap04/bo_mata_atlantica.JPG")
+##### Gráficos de dados Borboletas - Protocolo básico - Mata Atlantica
+### Tribos com asterisco estão ausentes no gráfico
+## Script: Isabela Freitas Oliveira
+
+# Função auxiliar para ajustar o título
+ajustar_titulo <- function(titulo) {
+  palavras <- strsplit(titulo, " ")[[1]]
+  
+  # Palavras que necessitam de correção de acentuação
+  correcoes <- list(
+    "mata_atlantica" = "Mata Atlântica")
+  
+}
+
+# Função para gerar o gráfico para cada unidade de conservação
+gerar_grafico_por_bioma <- function(dados, nome_bioma) {
+  # Preparar o título com as novas regras
+  titulo <- gsub("_", " ", nome_bioma)
+  titulo <- ajustar_titulo(titulo)  # Utilizando a função de ajuste de título aqui
+  
+  # Filtrar os dados para a unidade de conservação atual
+  dados_bioma <- subset(dados, bioma == nome_bioma & bioma == "Mata_Atlantica")
+  dados_bioma <- dados_bioma[!is.na(dados_bioma$tribo), ] #tirar os dados 'NA' que estão na tribo
+  
+  # Calcular o total de indivíduos por ano para a região atual
+  total_individuos_por_ano <- dados_bioma %>%
+    group_by(ano) %>%
+    summarise(total = sum(soma_individuos), .groups = 'drop')
+  
+  # Agregar dados por ano e tribo
+  dados_agregados <- dados_bioma %>%
+    group_by(ano, tribo) %>%
+    summarize(frequencia = sum(soma_individuos), .groups = 'drop')
+  
+  # Calcular totais e proporções
+  total_por_ano <- dados_agregados %>%
+    group_by(ano) %>%
+    summarize(total = sum(frequencia), .groups = 'drop')
+  
+  dados_agregados <- left_join(dados_agregados, total_por_ano, by = "ano") %>%
+    mutate(proporcao = frequencia / total * 100)
+  
+  # Ajustar proporções
+  dados_agregados <- dados_agregados %>%
+    group_by(ano) %>%
+    mutate(diferenca = 100 - sum(proporcao),
+           proporcao_ajustada = ifelse(proporcao == max(proporcao), proporcao + diferenca, proporcao)) %>%
+    ungroup() %>%
+    dplyr::select(-diferenca, -proporcao) %>%
+    rename(proporcao = proporcao_ajustada)
+  
+  # Ordem específica das tribos
+  ordem_tribos <- c(
+    "Brassolini", "Morphini", "Haeterini", 
+    "Satyrini", "Coeini", "Epiphilini", 
+    "Epicaliini", "Anaeini", "Melanitini", 
+    "Preponini", "Callicorini", "Biblidini", 
+    "Ageroniini"
+  )
+  
+  # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
+  cores_tribos <- c(
+    "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", 
+    "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85", 
+    "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70", 
+    "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d", 
+    "Ageroniini" = "#bf812d"
+  )
+  
+  # Ajustar a ordem e as cores das tribos com base nas tribos presentes
+  cores_tribos <- cores_tribos[ordem_tribos]
+  
+  # Assegurar que a coluna 'tribo_clean' respeite a ordem definida
+  dados_agregados$tribo <- factor(dados_agregados$tribo, levels = ordem_tribos)
+  
+  # Criar um data frame com a frequência agregada por tribo
+  #frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo + ano, dados_agregados, sum)
+  
+  # Criar um data frame com a frequência agregada por tribo
+  frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo, dados_agregados, sum)
+  
+  # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo
+  adicionar_asterisco <- function(nome_tribo) {
+    # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano
+    if (any(frequencias_por_tribo_ano$tribo == nome_tribo & frequencias_por_tribo_ano$frequencia == 0)) {
+      return(paste0(nome_tribo, "*"))
+    } else {
+      return(nome_tribo)
+    }
+  }
+  
+  # Aplicar a função a cada tribo para criar o vetor de rótulos
+  labels_tribos <- sapply(ordem_tribos, adicionar_asterisco)
+  
+  # Construir o gráfico
+  gg <- ggplot(dados_agregados) +
+    geom_bar(aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +
+    geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+
+    scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+
+    scale_x_discrete(expand = c(0, 0)) +
+    scale_fill_manual(values = cores_tribos, 
+                      labels = labels_tribos,
+                      breaks = ordem_tribos) +
+    labs(title = titulo,
+         x = "Ano",
+         y = "Proporção relativa de ocorrência (%)",
+         fill = "Tribo") +
+    theme_minimal() +
+    theme(legend.position = "right", 
+          legend.title = element_text(size = 12), 
+          legend.text = element_text(size = 12), 
+          plot.title = element_text(hjust = 0.5, size = 16), 
+          plot.subtitle = element_text(hjust = 0.5, size = 14),
+          axis.text = element_text(size = 12), 
+          axis.title = element_text(size = 12),
+          axis.line = element_line(colour = "gray40"),
+          axis.line.x = element_blank()) +
+    guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
+  
+  
+  # Exibir o gráfico
+  print(gg)
+}
+
+# Carregar e preparar os dados
+resultado_final<-read.csv("data/resultado_final.csv")
+resultado_final$ano <- factor(resultado_final$ano)
+resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
+#resultado_final <- resultado_final[resultado_final$ano != "2023", ]
+
+# Obter todas as UC's do bioma Cerrado
+biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Mata_Atlantica"])
+
+# Aplicar a função
+#lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+
+gerar_grafico_por_bioma(resultado_final, biomas)
 
 ```
 
-</br>
 
+</br>
 
 
 ### Índice de abundância de tribos
@@ -347,9 +1010,97 @@ Tabela x. Soma do número de indivíduos e esforço amostral (nº de EAs x nº d
 </br>
 
 
-```{r grafico IA-regiao-climatica-central-amazonica}
+```{r grafico IA-regiao-climatica-central-amazonica-calculos}
 #| label: fig-IA-regiao-climatica-central-amazonica
 #| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+
+
+##### Índices de abundância de tribos ao longo dos anos - Amazonia central
+## Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+library(scales)
+library(vegan)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice <- read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Amazonia", regiao == "central")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_AM_Central.csv", row.names = FALSE)
+
+
+```
+
+
+
+
+
+```{r fig-IA-regiao-climatica-central-amazonica-floresta}
+#| label: fig-IA-regiao-climatica-central-amazonica-floresta
+#| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
@@ -357,17 +1108,153 @@ Tabela x. Soma do número de indivíduos e esforço amostral (nº de EAs x nº d
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática central da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_regiao_climatica_central_amazonica.JPG")
+############
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E", "Haeterini" = "#97D6CD")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed", "Haeterini" = "twodash")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Brassolini", "Morphini", "Haeterini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini", "Haeterini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_color_manual(values = cores_linhas) +
+  scale_y_continuous(limits = c(0, 2))+
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 1, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Região Climática Central Amazônica",
+       subtitle = "Borboletas florestais",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_line(color = "black"),
+        legend.position = c(0.70, 0.90),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+#ggsave(filename = "indice de abundancia AM_Central_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+ #      plot = gg_florestal,  # O objeto ggplot
+  #     device = "png",  # Pode ser "jpeg", "tiff", etc.
+   #    path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+    #   dpi = 300,  # Define a resolução (DPI)
+     #  width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+######
+
 
 ```
 
 
-</br>
 
 
 
-```{r grafico IA-areas-abertas-regiao-climatica-central-amazonica}
-#| label: fig-IA-areas-abertas-regiao-climatica-central-amazonica
+```{r fig-IA-regiao-climatica-central-amazonica-areas-abertas}
+#| label: fig-IA-regiao-climatica-central-amazonica-areas-abertas
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática central da Amazônia, no período de 2014 a 2022."
+
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Callicorini" = "#CFA154", "Biblidini" = "#824B09", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Biblidini" = "dashed", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Biblidini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Biblidini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Biblidini","dashed","twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0, 2))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 1, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic( "i" ) * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        #legend.title = element_text(size = 10),
+        legend.position = c(0.70, 0.90),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_aberto)
+
+# Salvar a imagem usando ggsave()
+#ggsave(filename = "indice de abundancia_AM_Central_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+ #      plot = gg_aberto,  # O objeto ggplot
+  ##     device = "png",  # Pode ser "jpeg", "tiff", etc.
+    #   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+     #  dpi = 300,  # Define a resolução (DPI)
+      # width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+
+```
+
+
+
+
+```{r fig-IA-regiao-climatica-central-amazonica-graficos-juntos}
+#| label: fig-IA-regiao-climatica-central-amazonica-graficos-juntos
 #| echo: false
 #| message: false
 #| warning: false
@@ -376,7 +1263,21 @@ knitr::include_graphics("imagens/cap04/bo_IA_regiao_climatica_central_amazonica.
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática central da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_central_amazonica.JPG")
+######
+#Gráficos juntos
+library(gridExtra)
+# Gráficos combinados
+g <- grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3, 3))
+
+#ggsave("graficos_combinados_indice_AM_Central_linhas.png", 
+ #    grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
+  #     device = "png", 
+   #    width = 12, height = 10, units = "in", 
+    #   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+#g <- grid.arrange(gg_florestal, gg_aberto, nrow = 1)
+
+#knitr::include_graphics("imagens/cap04/bo_IA_regiao_climatica_central_amazonica.JPG")
 
 ```
 
@@ -384,9 +1285,236 @@ knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_cent
 </br>
 
 
+```{r grafico IA-regiao-climatica-norte-amazonica-calculo}
+#| label: fig-IA-regiao-climatica-norte-amazonica-calculo
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
 
-```{r grafico IA-regiao-climatica-norte-amazonica}
-#| label: fig-IA-regiao-climatica-norte-amazonica
+##### Índices de abundância de tribos ao longo dos anos - Amazonia Norte
+## Script: Isabela Freitas Oliveira
+
+# library(dplyr)
+# library(tidyr)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Amazonia", regiao == "norte")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_MataAtlantica.csv", row.names = FALSE)
+
+```
+
+
+
+
+```{r grafico IA-regiao-climatica-norte-amazonica-floresta}
+#| label: fig-IA-regiao-climatica-norte-amazonica-floresta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
+
+
+############
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E", "Haeterini" = "#97D6CD")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed", "Haeterini" = "twodash")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Brassolini", "Morphini", "Haeterini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini", "Haeterini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5,1.5))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Região Climática Norte Amazônica",
+       subtitle = "Borboletas florestais",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black")) +
+        #axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia AM_Norte_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_florestal,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
+
+
+
+
+```{r grafico IA-regiao-climatica-norte-amazonica-area-aberta}
+#| label: fig-IA-regiao-climatica-norte-amazonica-area-aberta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
+
+######
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo # norte nao tem biblidinae
+cores_linhas <- c("Callicorini" = "#CFA154", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Callicorini","dotted", "twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5,1.5))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_aberto) #callicorini só tem 1 registro em 2022, por isso nao tem linha
+
+# Salvar a imagem usando ggsave()
+# ggsave(filename = "indice de abundancia_AM_Norte_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_aberto,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
+
+
+```{r grafico IA-regiao-climatica-norte-amazonica-graficos-juntos}
+#| label: fig-IA-regiao-climatica-norte-amazonica-area-aberta-graficos-juntos
 #| echo: false
 #| message: false
 #| warning: false
@@ -395,37 +1523,255 @@ knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_cent
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_norte_amazonica.JPG")
+######
+#Gráficos juntos
+library(gridExtra)
+
+grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3))
+#ggsave("graficos_combinados_indice_AM_Norte_linhas.png", 
+ #      grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
+  #     device = "png", 
+   #    width = 12, height = 10, units = "in", 
+    #   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+g <- grid.arrange(gg_florestal, gg_aberto, nrow = 1)
+
+# knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_norte_amazonica.JPG")
+
+```
+
+</b>
+
+```{r grafico IA-regiao-climatica-leste-amazonica-calculo}
+#| label: fig-IA-regiao-climatica-leste-amazonica-calculo
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+
+
+##### Índices de abundância de tribos ao longo dos anos - Mata Atlântica
+## Script: Isabela Freitas Oliveira
+
+# library(dplyr)
+# library(tidyr)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Amazonia", regiao == "leste")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_MataAtlantica.csv", row.names = FALSE)
+
 
 ```
 
 
 
-</br>
-
-
-
-```{r grafico IA-areas-abertas-regiao-climatica-norte-amazonica}
-#| label: fig-IA-areas-abertas-regiao-climatica-norte-amazonica
+```{r grafico IA-regiao-climatica-leste-amazonica-floresta}
+#| label: fig-IA-regiao-climatica-leste-amazonica-floresta
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática leste da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_norte_amazonica.JPG")
+############
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E", "Haeterini" = "#97D6CD")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed", "Haeterini" = "twodash")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Brassolini", "Morphini", "Haeterini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini", "Haeterini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5, 2.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Região Climática Leste Amazônica",
+       subtitle = "Borboletas florestais",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia AM_Leste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_florestal,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
 
 ```
 
 
-</br>
+
+```{r grafico IA-regiao-climatica-leste-amazonica-area-aberta}
+#| label: fig-IA-regiao-climatica-leste-amazonica-area-aberta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática leste da Amazônia, no período de 2014 a 2022."
+
+######
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Callicorini" = "#CFA154", "Biblidini" = "#824B09", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Biblidini" = "dashed", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Biblidini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Biblidini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Biblidini","dashed","twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5, 2.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_aberto)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia_AM_Leste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_aberto,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
 
 
 
-```{r grafico IA-regiao-climatica-leste-amazonica}
-#| label: fig-IA-regiao-climatica-leste-amazonica
+```{r grafico IA-regiao-climatica-leste-amazonica-graficos-juntos}
+#| label: fig-IA-regiao-climatica-leste-amazonica-graficos-juntos
 #| echo: false
 #| message: false
 #| warning: false
@@ -434,37 +1780,253 @@ knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_nort
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática leste da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_leste_amazonica.JPG")
+######
+#Gráficos juntos
+library(gridExtra)
+
+grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
+# ggsave("graficos_combinados_indice_AM_Leste_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+
+
+#knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_leste_amazonica.JPG")
+
+```
+
+</br>
+
+
+```{r grafico IA-regiao-climatica-sudoeste-amazonica-calculo}
+#| label: fig-IA-regiao-climatica-sudoeste-amazonica-calculo
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+
+##### Índices de abundância de tribos ao longo dos anos - Sudoeste Amazônico
+## Script: Isabela Freitas Oliveira
+
+# library(dplyr)
+# library(tidyr)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Amazonia", regiao == "sudoeste")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_AM_sudoeste.csv", row.names = FALSE)
 
 ```
 
 
 
-</br>
-
-
-
-```{r grafico IA-areas-abertas-regiao-climatica-leste-amazonica}
-#| label: fig-IA-areas-abertas-regiao-climatica-leste-amazonica
+```{r grafico IA-regiao-climatica-sudoeste-amazonica-floresta}
+#| label: fig-IA-regiao-climatica-sudoeste-amazonica-floresta
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática leste da Amazônia, no período de 2014 a 2022."
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_leste_amazonica.JPG")
+############
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E", "Haeterini" = "#97D6CD")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed", "Haeterini" = "twodash")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Brassolini", "Morphini", "Haeterini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini", "Haeterini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0, 4.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Região Climática Sudoeste Amazônica",
+       subtitle = "Borboletas florestais",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia AM_Sudoeste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_florestal,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
 
 ```
 
 
-</br>
+```{r grafico IA-regiao-climatica-sudoeste-amazonica-area-aberta}
+#| label: fig-IA-regiao-climatica-sudoeste-amazonica-area-aberta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
+
+######
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Callicorini" = "#CFA154", "Biblidini" = "#824B09", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Biblidini" = "dashed", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Biblidini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Biblidini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Biblidini","dashed","twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo))+
+  scale_y_continuous(limits = c(0 , 4.0))+
+  geom_line(size = 0.7) +
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_aberto)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia_AM_Sudoeste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_aberto,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
 
 
 
-```{r grafico IA-regiao-climatica-sudoeste-amazonica}
-#| label: fig-IA-regiao-climatica-sudoeste-amazonica
+```{r grafico IA-regiao-climatica-sudoeste-amazonica-graficos-juntos}
+#| label: fig-IA-regiao-climatica-sudoeste-amazonica-graficos-juntos
 #| echo: false
 #| message: false
 #| warning: false
@@ -473,39 +2035,255 @@ knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_lest
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_norte_amazonica.JPG")
+######
+#Gráficos juntos
+library(gridExtra)
+
+grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
+# ggsave("graficos_combinados_indice_AM_Sudoeste_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+
+#knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_norte_amazonica.JPG")
 
 ```
-
-
 
 </br>
 
 
-
-```{r grafico IA-areas-abertas-regiao-climatica-sudoeste-amazonica}
-#| label: fig-IA-areas-abertas-regiao-climatica-sudoeste-amazonica
+```{r grafico IA-regiao-climatica-sudeste-amazonica-calculo}
+#| label: fig-IA-regiao-climatica-sudeste-amazonica-calculo
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudoeste da Amazônia, no período de 2014 a 2022."
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudeste da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_sudoeste_amazonica.JPG")
+##### Índices de abundância de tribos ao longo dos anos - Mata Atlântica
+## Script: Isabela Freitas Oliveira
+
+# library(dplyr)
+# library(tidyr)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Amazonia", regiao == "sudeste")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_AM_sudeste.csv", row.names = FALSE)
+
 
 ```
 
 
 
 
-</br>
+```{r grafico IA-regiao-climatica-sudeste-amazonica-floresta}
+#| label: fig-IA-regiao-climatica-sudeste-amazonica-floresta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudeste da Amazônia, no período de 2014 a 2022."
+
+############
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E", "Haeterini" = "#97D6CD")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed", "Haeterini" = "twodash")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Brassolini", "Morphini", "Haeterini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini", "Haeterini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5, 2.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Região Climática Sudeste Amazônica",
+       subtitle = "Borboletas florestais",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia AM_Sudeste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_florestal,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+```
 
 
+```{r grafico IA-regiao-climatica-sudeste-amazonica-area-aberta}
+#| label: fig-IA-regiao-climatica-sudeste-amazonica-area-aberta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudeste da Amazônia, no período de 2014 a 2022."
 
-```{r grafico IA-regiao-climatica-sudeste-amazonica}
-#| label: fig-IA-regiao-climatica-sudeste-amazonica
+######
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Callicorini" = "#CFA154", "Biblidini" = "#824B09", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Biblidini" = "dashed", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Biblidini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Biblidini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Biblidini","dashed","twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5, 2.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "Ano",
+       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        axis.ticks.y = element_line(color = "black"),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_aberto)
+
+# Salvar a imagem usando ggsave()
+ggsave(filename = "indice de abundancia_AM_Sudeste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+       plot = gg_aberto,  # O objeto ggplot
+       device = "png",  # Pode ser "jpeg", "tiff", etc.
+       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+       dpi = 300,  # Define a resolução (DPI)
+       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
+
+
+```{r grafico IA-regiao-climatica-sudeste-amazonica-graficos-juntos}
+#| label: fig-IA-regiao-climatica-sudeste-amazonica-graficos-juntos
 #| echo: false
 #| message: false
 #| warning: false
@@ -514,35 +2292,24 @@ knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_sudo
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudeste da Amazônia, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_sudeste_amazonica.JPG")
+
+######
+#Gráficos juntos
+library(gridExtra)
+
+grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
+# ggsave("graficos_combinados_indice_AM_Sudeste_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto,  ncol = 1,  heights = c(3,3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+
+# knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_sudeste_amazonica.JPG")
 
 ```
 
-
-
 </br>
-
-
-
-```{r grafico IA-areas-abertas-regiao-climatica-sudeste-amazonica}
-#| label: fig-IA-areas-abertas-regiao-climatica-sudeste-amazonica
-#| echo: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudeste da Amazônia, no período de 2014 a 2022."
-
-knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_sudeste_amazonica.JPG")
-
-```
-
-
-
-</br>
-
-
 
 ```{r grafico IA-cerrado}
 #| label: fig-IA-cerrado

@@ -18,6 +18,7 @@ library(treemapify)
 library(reshape2)
 library(randomcoloR)
 library(gridExtra)
+library(here)
 ```
 
 
@@ -63,9 +64,12 @@ library(gridExtra)
 
 <br>
 
-Mamíferos e aves florestais de médio e grande porte são animais que sofrem muita pressão com a caça e, portanto, são considerados indicadores de impactos de origem antrópica. A defaunação das florestas acarreta a chamada “síndrome da floresta vazia” (@Redford_1992). A redução das populações animais além de ser uma diminuição direta da biodiversidade, também acomete a própria estrutura e manutenção das florestas, ao perder polinizadores, dispersores de sementes e outros processos ecológicos importantes. Daí a necessidade de realizar o monitoramento desses dois grupos no âmbito do Programa Monitora.
+Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas são animais que sofrem muita pressão com a caça, redução e fragmentação de habitat, sendo considerados bons indicadores de impactos de origem antrópica. A defaunação das florestas acarreta a chamada “síndrome da floresta vazia”, a ausência de muitas espécies de animais causada pela forte pressão antrópica e seus efeitos (@Redford_1992). A redução das populações animais afeta diretamente a biodiversidade e impacta negativamente a própria estrutura e sobrevivência das florestas em razão da perda de polinizadores, dispersores de sementes e outros processos ecológicos essenciais, tornando importante o monitoramento desses dois grupos de animais em programas como o Monitora.  
 
-A taxonomia utilizada para os mamíferos e aves foi a mesma adotada no processo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024).
+Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas, sistematizados até o momento pelo Programa.  
+
+A taxonomia utilizada foi a mesma adotada no processo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024).  
+
 
 </br>
 
@@ -73,9 +77,12 @@ A taxonomia utilizada para os mamíferos e aves foi a mesma adotada no processo 
 
 </br>
 
-Para o período de 2014 a 2022 foram registradas 52 UCs federais e 138 UAs (transecções lineares) em operação, isto é, com amostragens dos alvos mamíferos e aves com o método do protocolo básico (censo diurno em transecção linear), nos biomas Amazônia, Cerrado e Mata Atlântica.
+De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 52 UCs federais, totalizando 138 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
 
-Destas 52 UCs federais com coleta de dados de mamíferos e aves, 34 (67%) já estão consolidadas, isto é, possuem pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs retomaram as amostragens em 2022, sete UCs são consideradas como paradas ou interrompidas (mais de dois anos consecutivos sem amostragem) e duas UCs não fizeram amostragens de 2022 (@fig-esforco-total-uc-bioma-script).
+O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrestres cinegéticas. No total, foram identificados 155 táxons de Mamíferos e 37 de Aves, considerando gêneros e espécies ((@fig-taxons-acumulados-script); Apêndice C), com ?? e 6 táxons de mamíferos e aves ameaçados de extinção, respectivamente.  
+
+Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
+
 
 ```{r processamento dos dados}
 #| echo: false
@@ -155,10 +162,43 @@ mutate(
 masto_aves <- masto_aves %>%
 mutate(
   taxon_validado = case_when(
-    uc == "Esec de Maracá" & taxon_validado == "Ozotocerus bezoarticus" ~ "NA",
+    uc == "Esec de Maracá" & especie == "Ozotocerus bezoarticus" ~ NA_character_,
   TRUE ~ taxon_validado))
 
+# Corrigindo validação de Ortalis gutata para algumas UCs -> Ortalis rucifeps
 
+# guttata <- masto_aves |>
+#   filter(taxon_validado == "Ortalis guttata")
+# 
+# unique(gutata$uc)
+# 
+# unique(masto_aves$uc)
+
+# masto_aves <- masto_aves %>%
+# mutate(
+#   taxon_validado = case_when(
+#     uc == "Esec da Terra do Meio" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#     uc == "Parna da Serra do Pardo" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#     uc == "Rebio do Tapirapé" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#     uc == "Resex Iriri" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#     uc == "Resex Renascer" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#     uc == "Resex Riozinho do Anfrísio" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#     uc == "Resex Verde para Sempre" & taxon_validado == "Ortalis guttata" ~ "Ortalis ruficeps",
+#   TRUE ~ taxon_validado))
+
+
+# Alterando nome da ordem de Artiodactyla para Cetartiodactyla
+
+masto_aves <- masto_aves %>%
+mutate(
+  ordem = case_when(
+    ordem == "Artiodactyla" ~  "Cetartiodactyla",
+  TRUE ~ ordem)) 
+  
+
+unique(masto_aves$ordem)
+  
+  
 # list_primatas <- masto_aves |>
 #   filter(ordem == "Primates")
 # 
@@ -178,7 +218,6 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 
 
 
-O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e de 12.995 aves terrestres cinegéticas (@fig-taxons-acumulados-script). No total, foram identificados ?? táxons de Mamíferos e 38 de Aves entre gêneros e espécies (Apêndice C), ?? e 6 dos quais estão ameaçados de extinção, respectivamente. O esforço por UC, ordenadas por bioma (Mata Atlântica, Cerrado e Amazônia), é apresentado na @fig-esforco-total-uc-bioma-script.  
 
 
 ```{r grafico 1 esforço Elildo}
@@ -189,7 +228,7 @@ O esforço de amostragem nos nove anos considerados neste relatório corresponde
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos nas unidades de conservação integrantes do Programa Monitora no período de 2014 a 2022."
+#| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos nas unidades de conservação integrantes do Programa Monitora de 2014 a 2022."
 
 
 # scripts para produzir 3 graficos para o relatorio florestal
@@ -206,6 +245,68 @@ library(RColorBrewer)
 
 #----- ler dados
 load(here("data", "monitora.RData"))
+
+monitora <- monitora %>%
+mutate(
+  uc = case_when(
+    uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
+    uc  == "Esec de Maracá" ~ "ESEC de Maracá",
+    uc  == "Esec de Niquiá" ~ "ESEC de Niquiá",
+    uc  == "Esec de Pirapitinga" ~ "ESEC de Pirapitinga",
+    uc  == "Esec do Jari" ~ "ESEC do Jari",
+    uc  == "Esec do Rio Acre" ~ "ESEC do Rio Acre",
+    uc  == "Esec Serra Geral do Tocantins" ~ "ESEC Serra Geral do Tocantins",
+    uc  == "Flona de Tapajós" ~ "FLONA de Tapajós",
+    uc  == "Flona do Jamari" ~ "FLONA do Jamari",
+    uc  == "Parna da Amazônia" ~ "PARNA da Amazônia",
+    uc  == "Parna da Chapada dos Veadeiros" ~ "PARNA da Chapada dos Veadeiros",
+    uc  == "Parna da Serra da Bocaina" ~ "PARNA da Serra da Bocaina",
+    uc  == "Parna da Serra da Bodoquena" ~ "PARNA da Serra da Bodoquena",
+    uc  == "Parna da Serra da Cutia" ~ "PARNA da Serra da Cutia",
+    uc  == "Parna da Serra do Cipó" ~ "PARNA da Serra do Cipó",
+    uc  == "Parna da Serra do Divisor" ~ "PARNA da Serra do Divisor",
+    uc  == "Parna da Serra do Pardo" ~ "PARNA da Serra do Pardo",
+    uc  == "Parna da Serra dos Órgãos" ~ "PARNA da Serra dos Órgãos",
+    uc  == "Parna de Pacaás Novos" ~ "PARNA de Pacaás Novos",
+    uc  == "Parna do Cabo Orange" ~ "PARNA do Cabo Orange",
+    uc  == "Parna do Iguaçu" ~ "PARNA do Iguaçu",
+    uc  == "Parna do Jaú" ~ "PARNA do Jaú",
+    uc  == "Parna do Juruena" ~ "PARNA do Juruena",
+    uc  == "Parna do Monte Roraima" ~ "PARNA do Monte Roraima",
+    uc  == "Parna do Superagui" ~ "PARNA do Superagui",
+    uc  == "Parna do Viruá" ~ "PARNA do Viruá",
+    uc  == "Parna dos Campos Amazônicos" ~ "PARNA dos Campos Amazônicos",
+    uc  == "Parna Mapinguari" ~ "PARNA Mapinguari",
+    uc  == "Parna Montanhas do Tumucumaque" ~ "PARNA Montanhas do Tumucumaque",
+    uc  == "Parna Nascentes do Lago Jari" ~ "PARNA Nascentes do Lago Jari",
+    uc  == "Parna Serra da Mocidade" ~ "PARNA Serra da Mocidade",
+    uc  == "Rebio de Una" ~ "REBIO de Una",
+    uc  == "Rebio do Gurupi" ~ "REBIO do Gurupi",
+    uc  == "Rebio do Jaru" ~ "REBIO do Jaru",
+    uc  == "Rebio do Tapirapé" ~ "REBIO do Tapirapé",
+    uc  == "Rebio do Uatumã" ~ "REBIO do Uatumã",
+    uc  == "Rebio Guaribas" ~ "REBIO Guaribas",
+    uc  == "Rebio Trombetas" ~ "REBIO Trombetas",
+    uc  == "Resex Arapixi" ~ "RESEX Arapixi",
+    uc  == "Resex Barreiro das Antas" ~ "RESEX Barreiro das Antas",
+    uc  == "Resex Chico Mendes" ~ "RESEX Chico Mendes",
+    uc  == "Resex do Alto Tarauacá" ~ "RESEX do Alto Tarauacá",
+    uc  == "Resex do Cazumbá-Iracema" ~ "RESEX do Cazumbá-Iracema",
+    uc  == "Resex do Lago do Capanã Grande" ~ "RESEX do Lago do Capanã Grande",
+    uc  == "Resex do Rio do Cautário" ~ "RESEX do Rio do Cautário",
+    uc  == "Resex Ipaú-Anilzinho" ~ "RESEX Ipaú-Anilzinho",
+    uc  == "Resex Renascer" ~ "RESEX Renascer",
+    uc  == "Resex Rio Ouro Preto" ~ "RESEX Rio Ouro Preto",
+    uc  == "Resex Riozinho da Liberdade" ~ "RESEX Riozinho da Liberdade",
+    uc  == "Resex Riozinho do Anfrísio" ~ "RESEX Riozinho do Anfrísio",
+    uc  == "Resex Tapajós-Arapiuns" ~ "RESEX Tapajós-Arapiuns",
+    uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
+      TRUE ~ uc))
+
+
+#unique(monitora$uc)
+  
+  
 
 #----- grafico de esforco anual e acumulado por bioma
 monitora %>%
@@ -257,7 +358,7 @@ ggsave("imagens/cap05/ma_esforco_acumulado1.jpg",
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Táxons registrados acumulados (linha) e número de unidades de conservação (barras) com protocolo básico de masto-aves executado por ano entre 2014 e 2022."
+#| fig-cap: "Táxons registrados acumulados (linha) e número de unidades de conservação (barras verticais) com protocolo básico de mamíferos e aves executado por ano, de 2014 a 2022."
 
 #----- grafico com numero de UCs ativas e numero acumulado de encontros por ano
 monitora %>%
@@ -314,6 +415,10 @@ ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.jpg",
 
 </br>
 
+Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve tanto ao maior número de unidades de conservação integrando o Programa Monitora nesse bioma, quanto ao esforço médio empregado por cada unidade de conservação (@fig-esforco-total-uc-bioma-script). As unidades no Cerrado e na Mata Atlântica são menores e nem sempre comportam a rede recomendada de transecções: três estações amostrais de cinco quilômetros cada. Ademais, geralmente custear as atividades de campo nesses biomas é mais difícil, dada a maior disponibilidade de financiamento internacional para programas de monitoramento na Amazônia.  
+
+
+
 ```{r gráfico 3 esforço Elildo}
 #| label: fig-esforco-total-uc-bioma-script
 #| echo: false
@@ -322,10 +427,12 @@ ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.jpg",
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '80%'
-#| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano."
+#| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano, de 2014 a 2022."
 
 #----- grafico de esforco total e anual por uc/bioma
 pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
+
+
 
 monitora %>%
   filter(ano != 2023) %>%
@@ -428,7 +535,10 @@ ggsave("imagens/cap05/ma_esforco_total_uc_bioma1.jpg",
 
 </br>
 
-A grande maioria dos registros de mamíferos (??%) corresponde a primatas e roedores (@fig-registros-ordem). Esse resultado se deve, em parte, ao fato de a detecção do método ser mais eficiente para o registro desses grupos. Espécies noturnas e esquivas, como a maioria dos carnívoros, são dificilmente registradas.
+
+A maioria dos registros (56%) do protocolo básico de monitoramento de mamíferos e aves correspondeu a primatas e roedores (@fig-registros-ordem). Esse resultado se deve, em parte, ao fato de o método ser mais eficiente na detecção desses grupos. Espécies noturnas e esquivas, como a maior parte dos carnívoros, são pouco registradas.  
+
+
 
 ```{r paletas de cores}
 #| echo: false
@@ -570,12 +680,40 @@ limpeza_registros_numero_especies_por_ordem_bioma <-  masto_aves %>%
   group_by(taxon_validado, ordem, bioma) %>%
   summarise(count = n()) 
 
+
+# Contagem de táxons - aves
+
+# aves <- masto_aves |> 
+#   filter(classe == "Aves") 
+# unique(aves$taxon_validado)
+
+# Contagem de táxons - mamíferos
+
+# mamiferos <- masto_aves |> 
+#   filter(classe == "Aves") 
+# unique(mamiferos$taxon_validado)
+
+
+
 #contagem_numero_especies_por_ordem_bioma
 
 numero_especies_por_ordem_bioma <- limpeza_registros_numero_especies_por_ordem_bioma |> 
   group_by(bioma, ordem) |> 
   count() |> 
   arrange(desc(n))
+
+# Extraindo o número total de espécies de primatas
+n_especies_primatas <- numero_especies_por_ordem$n[1]
+
+# Avaliação das espécies de primatas
+registros_primatas <- limpeza_registros_numero_especies_por_ordem_bioma %>%
+  select(ordem, taxon_validado) |> 
+  filter(!is.na(ordem)) |> 
+  filter(ordem == "Primates")
+ 
+
+especies_primatas <- unique(registros_primatas$taxon_validado)
+especies_primatas
 
 ```
 
@@ -783,8 +921,10 @@ grid.arrange(G_especies_registros_ordem_geral, G_especies_registros_ordem_bioma_
 
 
 ```
+</br>
 
-Em relação aos mamíferos, primatas foram o grupo preponderante. As cinco famílias foram registradas e apenas o gênero *Callibella* sp. não foi observado. Setenta espécies diferentes foram registradas, o que corresponde a 84,7% do total de primatas brasileiros. Destas, 18 espécies são consideradas ameaçadas de extinção e duas possuem deficiência de dados (DD) para avaliação.
+Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto para o gênero Callibella, todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta espécies foram detectadas, o que corresponde a 84,7% dos primatas brasileiros. Dessas, 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.  
+
 
 ```{r tabela mamíferos}
 #| label: tbl-lista-mamiferos
@@ -811,11 +951,12 @@ tab_mamiferos
 
 ```
 
-Com relação as aves, até o momento, 38 táxons, entre gêneros e espécies, foram registrados (Apêndice D). Durante as amostragens busca-se a identificação no nível específico dos indivíduos observados, contudo, em algumas unidades ocorrem em simpatria duas, três ou mais espécies de um mesmo gênero, e, na maioria das vezes, essas espécies são semelhantes entre si. Isso faz com que, por segurança, a validação desses registros seja realizada no nível de gênero. São situações que podem ocorrer com os gêneros *Nothura* (codornas), *Penelope* (jacus), Tinamus (macucos) e *Crypturellus* (inhambus), todos estes gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.
+Com relação às aves, 37 táxons (gêneros e espécies) foram registrados (Apêndice D). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria.  Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar Nothura (codornas), Penelope (jacus), Tinamus (macucos) e Crypturellus (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.  
 
-A grande maioria dos registros de Aves está quase igualmente distribuída entre Galliformes e Tinamídeos. Esse resultado se deve ao fato de a detecção do método ser eficiente para o registro desses grupos, mas também por Gruiformes (jacamins) ocorrerem apenas no bioma Amazônico, e nunca com mais de uma espécie por localidade, enquanto que Cariamiformes são típicos de ambientes abertos (fig-registros-ordem).
+A maioria dos registros de aves distribui-se quase que igualmente entre Galliformes e Tinamídeos. Esse resultado se deve ao fato de o método ser eficiente na detecção desses grupos e em razão dos Gruiformes (jacamins) ocorrerem apenas no bioma Amazônico, nunca com mais de uma espécie por localidade, enquanto os Cariamiformes, com uma única espécie (seriema – Cariama cristata), são típicos de ambientes abertos e praticamente não foram avistados (@fig-registros-ordem).  
 
-A variação entre as proporções de registros registadas para o Cerrado e a Mata Atlântica ao longo dos nove anos de amostragem deve-se ao pequeno número de unidades de conservação aderidas ao Programa Monitora, a inconstância nas amostragens e ao pequeno esforço amostral, seja por unidade de conservação, seja por bioma (@fig-registros-ordem).
+A variação nas proporções de registros no Cerrado e na Mata Atlântica ao longo dos nove anos de amostragem deve-se ao ainda pequeno número de unidades de conservação desses biomas integrando o Programa Monitora, à inconstância nas amostragens e ao pequeno esforço amostral, seja por unidade de conservação, seja por bioma (@fig-registros-ordem). 
+
 
 ```{r tabela aves}
 #| label: tbl-lista-aves
@@ -833,7 +974,7 @@ tabela_aves <- read.csv2("dados/tabelas/tabela_3.4.2.csv", encoding="UTF-8")
 tab_aves <- kbl(tabela_aves,
              booktabs = TRUE,
              longtable = TRUE,
-             # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
+             # caption = "  ",
             col.names = c("Ordem", "Família", "Táxon")) %>%
     column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
@@ -849,7 +990,8 @@ tab_aves
 
 </br>
 
-Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca em relação aos outros dois biomas tratados. Enquanto que Cerrado e Mata Atlântica não parecem divergir de forma relevante (@fig-taxa-encontro-bioma). O valor médio da abundância relativa de mamíferos e aves no bioma Amazônia variou de ?? em 20?? a ?? avistamentos por 10 km percorridos em 20??, para mamíferos e ?? em 20?? a ?? em 20?? para aves.
+Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca por apresentar taxas de avistamento mais altas (9,33 e 5,27 avistamentos/10 km, respectivamente). Os biomas Cerrado e Mata Atlântica apresentaram taxas médias de avistamento inferiores e mais próximas (4,07 e 3,26 no Cerrado e 3,17 e 1,26 na Mata Atlântica) (@fig-taxa-encontro-bioma). Observamos que não foram aplicados testes formais para avaliar a existência de diferenças estatisticamente significativas nas comparações realizadas, sendo apresentada aqui apenas uma análise exploratória e descritiva, com uma interpretação baseada nos valores médios e na inspeção visual dos resultados gerados.  
+
 
 ```{r estimativas_taxas_de_encontro}
 #| echo: false
@@ -875,6 +1017,70 @@ masto_aves_esforco <-
 # View(masto_aves_esforco) 
 
 
+masto_aves_esforco <- masto_aves_esforco %>%
+mutate(
+  uc = case_when(
+    uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
+    uc  == "Esec de Maracá" ~ "ESEC de Maracá",
+    uc  == "Esec de Niquiá" ~ "ESEC de Niquiá",
+    uc  == "Esec de Pirapitinga" ~ "ESEC de Pirapitinga",
+    uc  == "Esec do Jari" ~ "ESEC do Jari",
+    uc  == "Esec do Rio Acre" ~ "ESEC do Rio Acre",
+    uc  == "Esec Serra Geral do Tocantins" ~ "ESEC Serra Geral do Tocantins",
+    uc  == "Flona de Tapajós" ~ "FLONA de Tapajós",
+    uc  == "Flona do Jamari" ~ "FLONA do Jamari",
+    uc  == "Parna da Amazônia" ~ "PARNA da Amazônia",
+    uc  == "Parna da Chapada dos Veadeiros" ~ "PARNA da Chapada dos Veadeiros",
+    uc  == "Parna da Serra da Bocaina" ~ "PARNA da Serra da Bocaina",
+    uc  == "Parna da Serra da Bodoquena" ~ "PARNA da Serra da Bodoquena",
+    uc  == "Parna da Serra da Cutia" ~ "PARNA da Serra da Cutia",
+    uc  == "Parna da Serra do Cipó" ~ "PARNA da Serra do Cipó",
+    uc  == "Parna da Serra do Divisor" ~ "PARNA da Serra do Divisor",
+    uc  == "Parna da Serra do Pardo" ~ "PARNA da Serra do Pardo",
+    uc  == "Parna da Serra dos Órgãos" ~ "PARNA da Serra dos Órgãos",
+    uc  == "Parna de Pacaás Novos" ~ "PARNA de Pacaás Novos",
+    uc  == "Parna do Cabo Orange" ~ "PARNA do Cabo Orange",
+    uc  == "Parna do Iguaçu" ~ "PARNA do Iguaçu",
+    uc  == "Parna do Jaú" ~ "PARNA do Jaú",
+    uc  == "Parna do Juruena" ~ "PARNA do Juruena",
+    uc  == "Parna do Monte Roraima" ~ "PARNA do Monte Roraima",
+    uc  == "Parna do Superagui" ~ "PARNA do Superagui",
+    uc  == "Parna do Viruá" ~ "PARNA do Viruá",
+    uc  == "Parna dos Campos Amazônicos" ~ "PARNA dos Campos Amazônicos",
+    uc  == "Parna Mapinguari" ~ "PARNA Mapinguari",
+    uc  == "Parna Montanhas do Tumucumaque" ~ "PARNA Montanhas do Tumucumaque",
+    uc  == "Parna Nascentes do Lago Jari" ~ "PARNA Nascentes do Lago Jari",
+    uc  == "Parna Serra da Mocidade" ~ "PARNA Serra da Mocidade",
+    uc  == "Rebio de Una" ~ "REBIO de Una",
+    uc  == "Rebio do Gurupi" ~ "REBIO do Gurupi",
+    uc  == "Rebio do Jaru" ~ "REBIO do Jaru",
+    uc  == "Rebio do Tapirapé" ~ "REBIO do Tapirapé",
+    uc  == "Rebio do Uatumã" ~ "REBIO do Uatumã",
+    uc  == "Rebio Guaribas" ~ "REBIO Guaribas",
+    uc  == "Rebio Trombetas" ~ "REBIO Trombetas",
+    uc  == "Resex Arapixi" ~ "RESEX Arapixi",
+    uc  == "Resex Barreiro das Antas" ~ "RESEX Barreiro das Antas",
+    uc  == "Resex Chico Mendes" ~ "RESEX Chico Mendes",
+    uc  == "Resex do Alto Tarauacá" ~ "RESEX do Alto Tarauacá",
+    uc  == "Resex do Cazumbá-Iracema" ~ "RESEX do Cazumbá-Iracema",
+    uc  == "Resex do Lago do Capanã Grande" ~ "RESEX do Lago do Capanã Grande",
+    uc  == "Resex do Rio do Cautário" ~ "RESEX do Rio do Cautário",
+    uc  == "Resex Ipaú-Anilzinho" ~ "RESEX Ipaú-Anilzinho",
+    uc  == "Resex Renascer" ~ "RESEX Renascer",
+    uc  == "Resex Rio Ouro Preto" ~ "RESEX Rio Ouro Preto",
+    uc  == "Resex Riozinho da Liberdade" ~ "RESEX Riozinho da Liberdade",
+    uc  == "Resex Riozinho do Anfrísio" ~ "RESEX Riozinho do Anfrísio",
+    uc  == "Resex Tapajós-Arapiuns" ~ "RESEX Tapajós-Arapiuns",
+    uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
+      TRUE ~ uc))
+
+
+
+
+unique(masto_aves_esforco$uc)
+
+
+    
 # Limpando a planilha - selecionando apenas colunas relevantes
 
 masto_aves_esforco <- masto_aves_esforco |>
@@ -972,6 +1178,18 @@ mutate(
 #   arrange()
 # 
 # cnuc
+
+# Contagem de táxons - aves
+
+aves <- masto_aves_esforco |>
+  filter(classe == "Aves")
+unique(aves$taxon_validado)
+
+# Contagem de táxons - mamíferos
+
+mamiferos <- masto_aves_esforco |>
+  filter(classe == "Mammalia")
+unique(mamiferos$taxon_validado)
   
 ```
 
@@ -1319,14 +1537,13 @@ G_taxa_encontro_geral_bioma_emparelhado_media_IC
 #        height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
-
-O valor médio da abundância relativa de mamíferos e aves no bioma Amazônia variou de ?? em 20?? a ?? avistamentos por 10 km em 20??, para mamíferos e de ?? em 20?? a ?? avistamentos por 10 km em 20??, para aves. Quando se observa como essa abundância total de mamíferos e aves variou entre os anos para os biomas (@fig-taxa-encontro-tempo), verificamos que para a Amazônia os primeiros anos apresentam uma maior dispersão dos resultados obtidos explicada pelo proporcionalmente reduzido de UCs participantes e esforço amostral, e um leve decréscimo nas abundâncias totais entre 2021 e 2022. Para a Mata Atlântica os resultados não são consistentes devido a descontinuidade de amostragem e variação no esforço entre os anos, já para o Cerrado, o padrão observado se justifica...xxxxxxxxx
-
 </br>
 
 ### Taxa de encontro de mamíferos e aves ao longo do tempo - geral e por bioma - 2014 a 2022
 
 </br>
+
+A abundância relativa geral média para mamíferos e aves, considerando todas as unidades de conservação amostradas de 2014 a 2022, foi de 8,27 e 4,87 avistamentos/10 km, respectivamente. O bioma Amazônia apresentou as maiores taxas médias (9,34 e 5,27), seguido pelo Cerrado (4,07 e 3,26) e pela Mata Atlântica (3,26 e 1,24) (@fig-taxa-encontro-tempo).  Considerando a variação da abundância relativa ao longo do tempo, na Amazônia os primeiros anos apresentam uma maior dispersão dos resultados, explicada pelo número proporcionalmente reduzido de UCs participantes e consequente menor esforço amostral na fase inicial do Programa, além de um leve decréscimo nas abundâncias em 2021 e 2022. Para a Mata Atlântica os resultados são irregulares devido à descontinuidade de amostragem e à grande variação no esforço entre os anos. Já para o Cerrado, o padrão observado se justifica pelo fato das duas UCs com dados coletados em 2022, o PARNA da Serra da Bodoquena e a ESEC de Pirapitinga, serem distintas das demais, com matriz florestal e, consequentemente, com maior taxa de avistamento.  
 
 
 ```{r G_taxa_encontro_geral_mamiferos_aves_2014-2022_media_IC}
@@ -1388,7 +1605,7 @@ G_taxa_encontro_geral_periodo_emparelhado_media_IC <- taxa_encontro_total_classe
   labs(title = "Geral", colour = "Geral", x = NULL, y = "Avistamentos/10 km")
 
 
-G_taxa_encontro_geral_periodo_emparelhado_media_IC
+print(G_taxa_encontro_geral_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_encontro_geral_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
@@ -1454,7 +1671,7 @@ G_taxa_encontro_amazonia_periodo_emparelhado_media_IC <- taxa_encontro_total_cla
   labs(title = "Amazônia", colour = "Amazônia", x = NULL, y = NULL)
 
 
-G_taxa_encontro_amazonia_periodo_emparelhado_media_IC
+print(G_taxa_encontro_amazonia_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_encontro_amazonia_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
@@ -1518,7 +1735,7 @@ G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC <- taxa_encontro_tot
         scale_x_continuous(breaks = taxa_encontro_trilha_classe$ano) +
   labs(title = "Mata Atlântica", colour = "Mata Atlântica", x = "Ano", y = "Avistamentos/10 km")
   
-G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC
+print(G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
@@ -1584,7 +1801,7 @@ G_taxa_encontro_cerrado_periodo_emparelhado_media_IC <- taxa_encontro_total_clas
         
   labs(title = "Cerrado", colour = "Cerrado", x = "Ano", y = NULL)
 
-G_taxa_encontro_cerrado_periodo_emparelhado_media_IC
+print(G_taxa_encontro_cerrado_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_encontro_cerrado_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
@@ -1598,7 +1815,7 @@ G_taxa_encontro_cerrado_periodo_emparelhado_media_IC
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '85%'
-#| fig-cap: "Variação anual na taxa de avistamento média de aves e mamíferos no período de 2014 a 2022 (geral e por bioma). As linhas horizontais representam a taxa de avistamento média para cada grupo considerando todo o período amostral."
+#| fig-cap: "Variação anual na taxa de avistamento média de mamíferos e aves de 2014 a 2022 (geral e por bioma). As linhas horizontais representam a taxa de avistamento média para cada grupo considerando todo o período amostral."
 
 # G_taxas_encontro_geral_biomas <- 
 # (G_taxa_encontro_geral_periodo_emparelhado_media_IC + G_taxa_encontro_amazonia_periodo_emparelhado_media_IC) /
@@ -1620,7 +1837,8 @@ grid.arrange(G_taxa_encontro_geral_periodo_emparelhado_media_IC, G_taxa_encontro
 
 </br>
 
-Entre as UCs com maiores taxas totais para mamíferos encontramos a Rebio do Uatumã, a Resex Verde para Sempre e a Esec da Terra do Meio (@fig-taxa-encontro-geral-mamiferos), estas três UCs também estão entre as quatro UCs com maiores taxas totais para aves (@fig-taxa-encontro-geral-aves). Contudo, a posição da Resex Verde para Sempre deve ser tomada com cautela visto que representa um único ano de amostragem (2022). Uma visão espacial da taxa de avistamento média geral, considerando conjuntamente aves e mamíferos, é apresentada na figura @fig-taxa-encontro-mapa.
+Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-se a REBIO do Uatumã, a RESEX Verde para Sempre e a ESEC da Terra do Meio (@fig-taxa-encontro-geral-mamiferos). Essas três UCs também estão entre as quatro UCs com maiores taxas totais de avistamento de aves (@fig-taxa-encontro-geral-aves). Contudo, a posição da RESEX Verde para Sempre deve ser considerada com cautela, visto que representa um único ano de amostragem (2022).   
+
 
 ```{r G_taxa_encontro_geral_mamiferos_media_IC}
 #| label: fig-taxa-encontro-geral-mamiferos
@@ -1630,7 +1848,7 @@ Entre as UCs com maiores taxas totais para mamíferos encontramos a Rebio do Uat
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxa média de avistamento de aves por unidade de conservação, para o período de 2014 a 2022."
+#| fig-cap: "Taxa média de avistamento de mamíferos por unidade de conservação de 2014 a 2022."
 
 # Gráfico da taxa de encontro total - mamíferos média e IC
 
@@ -1678,7 +1896,7 @@ G_taxa_encontro_geral_mamiferos_media_IC
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxa média de avistamento de aves por unidade de conservação, para o período de 2014 a 2022."
+#| fig-cap: "Taxa média de avistamento de aves por unidade de conservação de 2014 a 2022."
 
 # Gráfico da taxa de encontro total 2014 a 2022 - aves média e IC
 
@@ -1722,6 +1940,10 @@ G_taxa_encontro_geral_aves_media_IC
 
 </br>
 
+O tamanho das unidades de conservação do Programa Monitora varia muito entre biomas. No Cerrado e na Mata Atlântica as unidades de conservação são relativamente pequenas, com algumas dezenas de milhares de hectares, enquanto na Amazônia podem ultrapassar um milhão de hectares. Considerando que nas unidades do Cerrado e Mata Atlântica a abundância de mamíferos e de aves, expressas pelas taxas de avistamento médias, são inferiores (@fig-taxa-encontro-geral-mamiferos e @fig-taxa-encontro-geral-aves), é natural considerar que estas populações apresentem, em geral, uma maior vulnerabilidade demográfica comparada àquela das populações amazônicas. A distribuição espacial da taxa de avistamento média geral (considerando conjuntamente mamíferos e aves) é apresentada na @fig-taxa-encontro-mapa. Dentre as unidades de conservação da Amazônia aquelas localizadas entre os rios Tapajós e Xingu apresentam as maiores abundâncias, à exceção da REBIO do Uatumã, localizada ao norte do Rio Amazonas e que também apresenta uma alta taxa média geral de avistamento (@fig-taxa-encontro-mapa).  
+
+</br>
+
 <center>
 
 ```{r mapa taxas de encontro - geral}
@@ -1731,8 +1953,9 @@ G_taxa_encontro_geral_aves_media_IC
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
+#| fig-align: 'center'
 #| out.width: '70%'
-#| fig-cap: "Distribuição espacial das taxas médias de avistamento de mamíferos e aves (taxa geral, consierando conjuntamente os dois grupos) registradas nas unidades de conservação integrantes do Programa Monitora de 2014 a 2022."
+#| fig-cap: "Distribuição espacial das taxas médias de avistamento de mamíferos e aves (taxa geral, considerando conjuntamente os dois grupos) registradas nas unidades de conservação do Programa Monitora de 2014 a 2022."
 
 
 backg <- htmltools::tags$style(".leaflet-container { background: white; }" )
@@ -1780,9 +2003,9 @@ mapa <- leaflet(ucs_comp_florestal_unido) |>
 
     addLayersControl(
         baseGroups = c(#"StamenTonerLite",
-                       "Open Street Map",
-                       "Imágenes de ESRI"),
-                       #"Esri.NatGeoWorldMap"),
+                       "Imágenes de ESRI",
+                       "Open Street Map"),
+                       
         position = "topright")
 
 mapa
@@ -1881,11 +2104,23 @@ taxa_encontro_trilha_taxon_validado_aves <-
 
 </br>
 
-Dentre as espécies de aves alvo deste protocolo, quatorze espécies ameaçadas ocorrem ou poderia ser esperado que ocorressem nas 52 unidades de conservação analisadas. A saber, *Nothura minor*, *Taoniscus nanus*, *Crypturellus zabele*, *Tinamus tao*, *Aburria jacutinga* e *A. cujubi*, *Penelope jacucaca* e *P. pileata*, *Crax blumenbachii* e *C. globulosa*, *Psophia obscura*, *P. interjecta*, *P. viridis* e *P. dextralis*, mais duas subespécies, no caso *Penelope s. alagoensis* e *Crax f. pinima*.
+Do conjunto de táxons da ordem Carnivora deste protocolo, 12 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 52 unidades de conservação analisadas: *Atelocynus microtis*, *Chrysocyon brachyurus*, *Lycalopex vetulus*, *Speothos venaticus*, *Herpailurus yagouaroundi*, *Leopardus colocolo* (*L. braccatus*), *L. guttulus*, *Leopardus tigrinus* (e *L. guttulus*), *L. wiedii*, *Panthera onca* e *Pteronura brasiliensis*. Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (*L. munoai*), não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *Lycalopex vetulus* e *Leopardus colocolo* não foram registrados no Programa Monitora. 
 
-Destes foram registrados *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*. Bem como, a subespécie ameaçada de *Penelope*). No entanto, ressaltamos que *Tinamus tao*, *Penelope pileata*, *P. jacucaca* e *Nothura minor* foram ou poderiam ter sido registrados em campo, porém, como ocorrem em simpatria com espécies semelhantes, seus dados foram validados em nível de gênero.
+Dos táxons da ordem Cetartiodactyla, Perissodactyla, Cingulata e Pilosa, nove espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 52 unidades de conservação analisadas: *Blastocerus dichotomus*, *Mazama nana*, *Ozotocerus bezoarticus*, *Tayassu pecari*, *Priodontes maximus*, *Tolypeutes tricinctus*, *Tapirus terrestris*, *Bradypus torquatus* e *Myrmecophaga tridactyla*. Desses taxa elencados, *Blastocerus dichotomus*, *Mazama nana*, *Priodontes maximus*, *Tolypeutes tricinctus*, *Bradipus torquatus* e *Myrmecophaga tridactyla* não foram registradas no Programa Monitora. 
 
-Importante ressaltar a ausência de registros de *A. jacutinga*, que seria esperada para quatro UCs na Mata Atlântica, na região Sul e Sudeste, dada sua distribuição geográfica original.
+ 
+
+(**faltam primatas e roedores!**) 
+
+ 
+
+Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 52 unidades de conservação analisadas: *Nothura minor*, *Taoniscus nanus*, *Crypturellus zabele*, *Tinamus tao*, *Aburria jacutinga* e *A. cujubi*, *Penelope jacucaca* e *P. pileata*, *Crax blumenbachii* e *C. globulosa*, *Psophia obscura*, *P. interjecta*, *P. viridis* e *P. dextralis*, mais duas subespécies, no caso *Penelope s. alagoensis* e *Crax f. pinima*.  
+
+Desses táxons elencados já foram registrados pelo Programa Monitora *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*, além da subespécie ameaçada de *Penelope*. Ressaltamos que *Tinamus tao*, *Penelope pileata*, *P. jacucaca* e *Nothura minor* foram ou poderiam ter sido registradas em campo. Porém, como ocorrem em simpatria com espécies semelhantes, os registros para esses grupos foram validados em nível de gênero.  
+
+
+Importante destacar a ausência de registros de *A. jacutinga*, que seria esperada para quatro UCs na Mata Atlântica, na região Sul e Sudeste, dada sua distribuição geográfica original.  
+
 
 ```{r preparando os dados de espécies ameaçadas}
 #| echo: false
@@ -1979,7 +2214,7 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_encontro_spp_ameacad
       #axis.line.y = element_line(),
       #axis.ticks.y = element_line(),
       title = element_text(size = 10),
-      legend.text=element_text(size=10),
+      legend.text=element_text(size=10, face = "italic"),
       legend.position = "right",
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas2) +
@@ -2047,7 +2282,7 @@ G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_encontro_spp_ameacadas 
       #axis.line.y = element_line(),
       #axis.ticks.y = element_line(),
       title = element_text(size = 10),
-      legend.text=element_text(size=10),
+      legend.text=element_text(size=10, face = "italic"),
       legend.position = "right",
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas1) +
@@ -2113,7 +2348,7 @@ G_especie_ameacada_ucs_ano_media_tamandua <- taxa_encontro_spp_ameacadas |>
       #axis.line.y = element_line(),
       #axis.ticks.y = element_line(),
       title = element_text(size = 10),
-      legend.text=element_text(size=10),
+      legend.text=element_text(size=10, face = "italic"),
       legend.position = "right",
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas3) +
@@ -2129,6 +2364,24 @@ G_especie_ameacada_ucs_ano_media_tamandua
 # ggsave("imagens/cap05/G_especie_ameacada_ucs_ano_media_tamandua.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
+</b>
+
+No Cerrado eventuais avistamentos de espécies de aves ameaçadas foram, via de regra, agrupados em nível de gênero, dada a existência de espécies congêneres semelhantes. *Taoniscus nanus* (EN), conhecida por codorna-carapé, uma espécie monotípica e exclusiva deste bioma, não foi registrada.  
+
+
+No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros para *Penelope s. alagoensis* (CR), uma subespécie de jacupemba, mas, infelizmente, esta UC interrompeu as amostragens. Ainda neste bioma, eventuais registros de *Crypturellus zabele* (VU), zabelê, podem ter sido atribuídos a *Crypturellus* spp., sendo preocupante que nenhum registro de *Aburria jacutinga* (EN), a jacutinga, tenha sido obtido, a despeito do esforço amostral realizado em ao menos cinco UCs localizadas em sua área de distribuição.  
+
+
+Na Amazônia, avistamentos de *Tinamus tao* (VU), azulona, foram reportados para praticamente todas as UCs para as quais a espécie era esperada, mas por estas áreas normalmente apresentarem outras espécies de *Tinamus*, seus registros foram agrupados para o gênero. 
+
+Na @fig-especies-ameacadas-aves podemos visualizar os valores e suas flutuações para a abundância relativa de cinco espécies de aves amazônicas ameaçadas, um cujubim (*Aburria cujubi*) e quatro jacamins (*Psophia* sp.) para o conjunto de UCs do Programa Monitora. A despeito de se observar uma variação nas abundâncias ao longo dos anos, parece haver uma tendência evidente de estabilidade demográfica das populações para o sistema de 21 unidades de conservação em que essas espécies são encontradas. Dessas UCs 13 apresentam ocorrência de *A. cujubi* (VU), 11 de *Psophia viridis* (VU), oito de *Psophia dextralis* (VU), duas de *Psophia interjecta* (EN) e uma de *Psophia obscura* (CR).  
+
+
+Três unidades de conservação têm reportado observações de *Crax globulosa* (EN), o chamado mutum-de-fava. Mas considerando a raridade desta espécie, a falta de registros prévios próximos e o fato dos ambientes onde ocorreram as visualizações não serem aqueles considerados típicos para a espécie, que é a floresta de várzea, esses dados estão sendo considerados com cautela. Já *Crax f. pinima* (CR), o mutum-de-penacho, que seguramente ocorre na REBIO do Gurupi, não foi observado em qualquer momento. 
+
+
+</b>
+
 
 ```{r figura das espécies ameaçadas no tempo - aves}
 #| label: fig-especies-ameacadas-aves
@@ -2180,7 +2433,7 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_encontro_spp_ameacada
       #axis.line.y = element_line(),
       #axis.ticks.y = element_line(),
       title = element_text(size = 10),
-      legend.text=element_text(size=10),
+      legend.text=element_text(size=10, face = "italic"),
       legend.position = "right",
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas1) +
@@ -2200,15 +2453,19 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas
 
 ### Média Geométrica das populações (Living Planet Index -- LPI)
 
+</b>
 
-A média geométrica das abundâncias relativas é uma medida de escolha para monitoramento de tendências da biodiversidade em diversos programas (Buckland et al., 2005; @Green_2019). Este índice reflete tendências na abundância e equitabilidade entre as populações, e não é afetado pelo ano base escolhido nem por variações inter-populacionais na detectabilidade, por ser baseado em tendências intra-populacionais (@Buckland_2011; @Van_Strien_2012). Para o cálculo da média geométrica, utilizamos dados de 160 populações em 22 UCs. Somente foram incluídas populações com pelo menos cinco anos de monitoramento, taxa de encontro média \> 0.5 encontros a cada 10 km, e com esforço amostral suficiente para atingir um coeficiente de variação da taxa de encontro ≥ 0.25. A média geométrica e seu intervalo de confiança foram estimados por bootstrap seguindo as recomendações de (@Buckland_2005, @Buckland_2011).
+A média geométrica das abundâncias relativas é uma medida de escolha para monitoramento de tendências da biodiversidade em diversos programas (@Buckland_2005, @Green_2019). Este índice reflete tendências na abundância e equitabilidade entre as populações, e não é afetado pelo ano base escolhido nem por variações inter-populacionais na detectabilidade, por ser baseado em tendências intra-populacionais (@Buckland_2011, @Van_Strien_2012). Para o cálculo da média geométrica, utilizamos dados de 160 populações em 22 UCs. Somente foram incluídas populações com pelo menos cinco anos de monitoramento, taxa de encontro média \> 0.5 encontros a cada 10 km, e com esforço amostral suficiente para atingir um coeficiente de variação da taxa de encontro ≥ 0.25. A média geométrica e seu intervalo de confiança foram estimados por *bootstrap* seguindo as recomendações de (@Buckland_2005, @Buckland_2011).
 
 </br>
 
-#### Resultado da Média Geométrica
+
+*Resultado da Média Geométrica*  
 
 
-A média geométrica das abundâncias relativas das populações analisadas permaneceu estável ao longo do monitoramento, com o intervalo de 95% de credibilidade incluindo a linha de base durante todo o período (@fig-media-geometrica). Esse resultado sugere que as UCs monitoradas tem sido efetivas para a conservação das espécies de aves e mamíferos alvo do Programa Monitora. Embora essa seja uma ótima notícia, ela deve ser interpretada em seu devido contexto, em especial considerando que o protocolo foca principalmente espécies relativamente comuns e ecologicamente flexíveis, que a duração do monitoramento foi relativamente curta em relação à longevidade das espécies-alvo, e que a maioria das estações amostrais foi estabelecida em áreas de referência (áreas íntegras no interior das UCs), representando cenários ideais e não necessariamente os gradientes de pressão que atuam sobre a biodiversidade na escala regional e/ou fora das UCs. A continuação do monitoramento e o estabelecimento de estações amostrais em áreas impactadas pode elucidar melhor as tendências da biodiversidade.
+A média geométrica das abundâncias relativas das populações analisadas permaneceu estável ao longo do monitoramento, com o intervalo de 95% de credibilidade incluindo a linha de base durante todo o período (@fig-media-geometrica). Esse resultado sugere que as UCs monitoradas têm sido efetivas para a conservação das espécies de mamíferos e aves alvos do Programa Monitora. Embora essa seja uma ótima notícia, ela deve ser interpretada em seu devido contexto, em especial considerando-se que: o protocolo foca principalmente em espécies relativamente comuns e ecologicamente flexíveis; a duração do monitoramento foi relativamente curta em relação à longevidade das espécies-alvo; e a maioria das estações amostrais foi estabelecida em áreas de referência (áreas íntegras no interior das UCs), representando cenários ideais e não necessariamente os gradientes de pressão que atuam sobre a biodiversidade na escala regional e/ou fora das UCs. Assim, a continuidade do monitoramento e o estabelecimento de estações amostrais em áreas impactadas pode elucidar melhor as tendências da biodiversidade. 
+
+
 
 ```{r média geométrica}
 #| label: fig-media-geometrica
@@ -2218,27 +2475,129 @@ A média geométrica das abundâncias relativas das populações analisadas perm
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Média geométrica das estimativas de abundãncia relativa para 160 populações monitoradas. A linha branca escura corresponde aos valores médios; as faixas azuladasombreadas, ao intervalo de confiança de 90 e 95%."
+#| fig-cap: "Média geométrica das estimativas de abundância relativa para 160 populações monitoradas. A linha azul corresponde aos valores médios; as faixas azuladas sombreadas, ao intervalo de confiança de 90 e 95%."
 
-knitr::include_graphics("imagens/cap05/ma_media_geometrica.JPG")
+# knitr::include_graphics("imagens/cap05/ma_media_geometrica.JPG")
+
+#----- ler dados
+load(here("data", "tabela_Gmean.RData"))
+
+# plotar serie temporal para G
+tabela_Gmean %>%
+  group_by(ano) %>%
+  mutate(G = G/first(G)) %>% # escala 2014=1
+  summarize(media = mean(G),
+            lower10 = quantile(G, prob= 0.1),
+            lower25 =  quantile(G, prob= 0.25),
+            upper90 =  quantile(G, prob= 0.9),
+            upper975 =  quantile(G, prob= 0.975)) %>%
+  ggplot(aes(ano, media)) +
+  geom_line(color = "#00AFBB", size = 1, alpha=1) + 
+  geom_point(shape=21, fill = "white", stroke=1, size = 2, color="cyan4", alpha = 1) +
+  #stat_summary(geom = "line", fun.y = mean) +
+  #stat_summary(geom = "ribbon", fun.data = mean_cl_normal, alpha = 0.3) +
+  geom_ribbon(aes(ymin = lower10, ymax = upper90), fill="cyan4", alpha=0.2) +
+  geom_ribbon(aes(ymin = lower25, ymax = upper975), fill="cyan4", alpha=0.2) +
+  geom_hline(yintercept = 1, linetype = "dashed", alpha=.5) +
+  scale_x_continuous(breaks = tabela_Gmean$ano) +
+  xlab("") +
+  ylab("Média geométrica") +
+  theme_classic() + 
+  theme(axis.title.y = element_text(size = 12))  +
+  theme(axis.text.x = element_text(size = 12)) +
+  theme(axis.text.y = element_text(size = 12)) + 
+  theme(legend.position="none") +
+  #theme(axis.line.x=element_blank()) +
+  coord_cartesian(ylim = c(0.75, 1.25)) 
+
 
 ```
 
 </br>
 
-## Destaques
+## Destaques  
+
+<br>
+
+Os mutuns como indicadores 
 
 </br>
 
-<font color="red">*There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.*</font>
+Mutuns (gêneros *Crax* e *Pauxi*) são as maiores aves florestais terrestres do bioma amazônico. Espécies de ambos os gêneros podem ser encontradas na região, muitas vezes em simpatria. Seu relativo grande tamanho e sua ampla distribuição conferem a este grupo um alto valor cinegético. Sendo assim, parece plausível supor que a frequência relativa deste grupo no total de registros de aves do Programa Monitora possa ser um indicador da intensidade de uso histórico e/ou atual da fauna nas unidades de conservação aqui tratadas.  
+
+
+Considerando que para a maioria das unidades de conservação amostradas o período de monitoramento ainda é pequeno, apresentamos aqui um exercício no sentido de avaliar este indicador (abundância de mutuns) apenas como descritor na dimensão “estado”, não sendo os resultados apresentados na perspectiva de “tendência” populacional.  
+
+
+Nas 42 unidades de conservação amazônicas participantes do Programa Monitora, a frequência relativa dos mutuns variou de 0 a 25,4% do total de registros de aves, com um valor médio de 10% (@tbl-mutuns). Duas unidades de conservação vizinhas no estado do Acre, RESEX Alto Tarauacá e Riozinho da Liberdade, não possuem registros. Em Rondônia, o PARNA de Pacaás Novos é a unidade com maior frequência relativa de mutuns (25,4%), resultante de registros de uma única espécie: Pauxi tuberosa. Curiosamente, esta unidade está inserida em um bloco florestal remanescente, composto também por outras unidades de conservação que apresentaram valores muito inferiores: RESEX Rio Ouro Preto (8,7%), RESEX do Rio Cautário e PARNA da Serra da Cutia (1,2%) e RESEX Barreiro das Antas (0,7%).  
 
 </br>
+
+
+
+```{r}
+#| label: tbl-mutuns
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Frequência relativa de mutuns (Crax spp. e Pauxi spp.) no total de registros de aves das unidades de conservação do Programa Monitora na Amazônia."
+
+tabela_mutuns <- read.csv2("dados/tabelas/mutuns.csv", encoding="UTF-8")
+
+tab_mutuns <- kbl(tabela_mutuns,
+             booktabs = TRUE,
+             longtable = FALSE,
+             #caption = "Frequência relativa de mutuns (Crax spp. e Pauxi spp.) no total de registros de aves das unidades de conservação do Programa Monitora na Amazônia.",
+             col.names = c("Unidade de Conservação", "% de Mutuns")) %>%
+    column_spec(2, italic = F) %>% 
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+tab_mutuns
+
+```
+
 
 ## Discussão
 
 </br>
 
-<font color="red">*There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.*</font>
+Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis*, *Herpailurus yagouaroundi* e *Speothos venaticus* foram registradas menos de dez vezes, e *Chrysocyon brachiurus*, somente uma — aliado à atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* e *Nasua nasua*, conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implementação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação. Ressalta-se que a presença de cachorros domésticos foi registrada apenas quatro vezes e não houve registro de gatos domésticos. Esse resultado pode ser apenas um reflexo da recomendação do protocolo básico de não instalação das estações amostrais em locais sob influência mais direta de atividades humanas, como nas proximidades de áreas urbanas ou núcleos populacionais.  
+
+Assim como para a ordem Carnivora, muitas espécies noturnas e abundantes de outras ordens também foram pouco registradas, especialmente para Lagomorpha (tapitis) e Cingulata (tatus), enquanto espécies da ordem Cetartiodactyla (cervos e porcos-do-mato) estiveram bem representadas.  
+
+
+Em relação à riqueza, alguns estudos na Amazônia também utilizaram transectos lineares para a amostragem de mamíferos alvos do componente Florestal do Programa Monitora (Calouro 1999, Pontes et al. 2010, Abreu-Júnior et al. 2017). Contudo, o protocolo utilizado pelo ICMBio apresenta algumas particularidades e comparações devem ser realizadas com cautela. De forma geral, as espécies amostradas pelo Programa Monitora foram as mesmas registradas nesses estudos, exceto por algumas ausências como *Bassaricyon beddardi* (Pontes et al. 2010, Melo 2012); *Lycalopex vetulus* na ESEC Serra Geral do Tocantins (CarmignottoI & Aires 2011), *Mustela africana* (Emmons & Helgen 2016: distribuição geográfica incerta na Amazônia); *Galictis cuja* no PARNA Serra do Cipó (Oliveira et al. 2009); *Conepatus chinga* no PARNA Iguaçu (Cáceres 2004); *Potos flavus* (Helgen et al. 2016). Já os marsupiais, ordem Didelphimorphia, por serem majoritariamente de hábitos noturnos, de pequeno porte e pouco conhecidos, foram registradas apenas algumas espécies de maior porte pertencentes ao gênero *Didelphis*. Essa observação anterior também se aplica aos roedores, ordem Rodentia, em que famílias inteiras com representantes muito pequenos não foram registradas, tais como Cricetidae, Dinomydae e Echimyidae, os quais exigem a captura para a sua identificação específica. Já os tatus, ordem Cingulata, não foram registrados *Dasypus septemcinctus*, *Euphractus sexcinctus* e *Cabassous tatouay*, os quais têm distribuição provável em várias regiões (Feijó et al. 2018; Abba et al. 2014; Rocha et al. 2022) (e talvez *Dasypus beniensis*?)      ... ... ...  **Faltam só primatas!!!**  
+
+
+Muitas das espécies ausentes têm hábitos noturnos e apresentam baixa detectabilidade pelo método utilizado, voltado a animais diurnos. Apesar de transectos lineares noturnos poderem aumentar a detecção de espécies não diurnas, pode haver pouco benefício nessa abordagem em razão de problemas como a falta de visibilidade, dificuldade de movimentar-se em silêncio pela trilha e dificuldade de discernir auditivamente os animais em movimentação (Munari et al. 2011). Assim, o protocolo avançado com armadilhas fotográficas ainda é a melhor opção para a amostragem de algumas espécies raras e/ou de hábitos noturnos (Munari et al. 2011), mas outros métodos com enfoque em registros indiretos podem elevar consideravelmente a detecção de espécies (Sampaio et al. 2010; Ponce-Martins et al. 2022). 
+
+ 
+
+*Taxas de avistamento* 
+
+ 
+
+Estudos na Amazônia usando transectos lineares registraram taxas de avistamento variando de dois a 20 mamíferos/10 km:  de 4,1 a 5,08 na ESEC Maracá (Pontes 1994; Mourthé 2013; Pontes 2004) e 7,62 no PARNA Viruá (Melo 2012), ambos em Roraima; 5,5 na região do rio Urucu, no Amazonas (Santos & Mendes-Oliveira 2012); 3,42 na RDS Uacari, Amazonas (Munari et al. 2011: exceto primatas); de 6,37 a 8,3 na região do baixo rio Purus (Haugaasen & Peres 2005); 6,77 na REBIO Gurupi, no Pará (Lopes & Ferrari 2000); de 7,65 a 15,82 na ESEC Terra do Meio, no Pará (apenas registros diretos: Ponce-Martins et al. 2022, Andrade et al. 2019); 120,05 na Amazônia Equatoriana (Zapata-Ríos et al. 2006); 5,92 na Amazônia Peruana (Torres-Oyarce et al. 2017). Tais valores são muito semelhantes aos encontrados nas unidades amostradas no Programa Monitora.  
+
+
+Em outras regiões tropicais, como por exemplo a Costa Rica, foram registradas taxas de 7 a 35 avistamentos/10 km (Carrillo et al.  2000).  
+
+
+Já para a Mata Atlântica, em 62 estudos realizados em diversas fitofisionomias usando transectos lineares (Souza et al. 2019) a taxa de avistamentos/10 km variou de 0,01 a 7,29, com uma mediana de 0,47 indivíduos. Esses valores são condizentes com os resultados do Programa Monitora e retratam a reduzida taxa de encontro com mamíferos, em comparação ao bioma Amazônia; 3,81 no Paraguai (Hill et al. 1997: apenas registros diretos) 
+
+DOI: https://doi.org/10.1017/S0266467400010580 
+
+(...)  
+
+
+
+Embora marcados pela ausência de registros importantes (*Taoniscus nanus* no Cerrado, jacutinga na Mata Atlântica e *Crax f pinima* na Amazônia), a despeito do esforço amostral considerável, os resultados parecem apontar para uma estabilidade demográfica no período considerado (2014-2022), inclusive para os táxons ameaçados.  
+
+
+Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monitora, em seu componente Florestal, se propôs a coletar dados no Cerrado, na Mata Atlântica e na Amazônia. Um grande desafio para as unidades de conservação e para o Programa é a continuidade na execução dos protocolos, com coletas anuais contínuas e esforço amostral estável, como recomendado, ao longo dos anos. E, embora os dados para o Cerrado e Mata Atlântica ainda sejam limitados, pelos motivos já mencionados neste relatório, para a Amazônia já é possível traçar um cenário bastante confiável sobre a presença e o estado de conservação de algumas espécies alvo deste protocolo.  
 
 </br>
 
@@ -2246,5 +2605,30 @@ knitr::include_graphics("imagens/cap05/ma_media_geometrica.JPG")
 
 </br>
 
-<font color="red">*There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.*</font>
+
+::: callout-tip
+
+## Boas práticas para aprimorar o Programa
+
+</br>
+
+- Consolidar a implantação do protocolo básico de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas naquelas unidades de conservação ainda não consolidadas, de forma que as UCs contem com pelo menos três estações amostrais implantadas e em operação;  
+
+- Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral e no projeto de amostragem, em especial quanto ao respeito ao esforço amostral;  
+- Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;  
+
+- Para novas unidades de conservação a participarem do Programa, promover a implementação de todas as unidades amostrais em um mesmo ano;  
+
+- Garantir que o método seja aplicado sem erros de procedimento, como por exemplo, assegurar que apenas duas pessoas realizem a amostragem em campo, respeitando os horários estipulados para início e fim das amostragens e medindo corretamente as distâncias dos registros realizados.  
+
+:::
+
+</b>
+
+Sobre a última recomendação, cabe salientar que uma análise possível e esperada para os dados obtidos pelo método empregado é a geração de quantitativos populacionais a partir da estimativa da densidade de grupos ou indivíduos. Esta estimativa seria fruto da taxa de encontro e das distâncias perpendiculares entre o grupo ou indivíduo e a transecção, mensuradas em cada avistamento. Contudo, em análises prévias não apresentadas nesse documento foram observados alguns vícios de amostragem que podem comprometer ou tornar as estimativas de densidade menos precisas. Como exemplo, na figura ????, pode-se observar o efeito *spyke* (número desproporcional de registros sobre a transecção) e o efeito de arredondamento das mensurações (tendência de as medidas serem atribuídas à valores arredondados como 10, 15 ou 20 m) nos dados obtidos para *Psophia crepitans* (jacamin-de-costas-cinzentas) na REBIO do Uatumã.  
+
+
+
+INSERIR FIGURA 
+
 
