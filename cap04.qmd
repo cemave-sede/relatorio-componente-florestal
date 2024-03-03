@@ -104,6 +104,7 @@ dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", h
 dados_borboletas$ano <- factor(dados_borboletas$ano)
 dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
 
+
 # Preparar os dados para o gráfico
 contagem_uc_ea <- dados_borboletas %>%
   group_by(ano) %>%
@@ -120,39 +121,43 @@ dados_long <- contagem_uc_ea %>%
   )
 
 dados_long$categoria <- factor(dados_long$categoria, levels = c("num_uc","num_ea"))
-
-ggplot(dados_long, aes(x = ano, y = contagem, fill = categoria)) +
+grafico_amostragens <- ggplot(dados_long, aes(x = ano, y = contagem, fill = categoria)) +
   geom_bar(stat = "identity", position = "dodge") +
   geom_text(
     aes(label = contagem), 
     position = position_dodge(width = 0.9), # ajustar 'width' para alinhar com as barras
-    vjust = -0.25, # ajustar 'vjust' para mover o texto um pouco acima das barras
+    vjust = -0.40, # ajustar 'vjust' para mover o texto um pouco acima das barras
     size = 3
   ) +
   scale_fill_manual(
     values = c("num_uc" = "#35978f", "num_ea" = "#c7eae5"),
-    labels = c("N˚ de UCs", "N˚ de EAs")) +
+    labels = c("UC", "EA")) +
   labs(
     x = "",
-    y = "",
+    y = "Número de UC's e EA's amostradas",
     fill = "",
-    title = str_wrap("Número de UC's e EA's implementadas ao longo dos anos", width = 35) # Quebra o título em duas linhas
+    title = str_wrap("", width = 35) # Quebra o título em duas linhas
   ) +
   theme_minimal() +
   theme(
-    plot.title = element_text(size = 16, hjust = 0, lineheight = 1.3),
+    plot.title = element_text(size = 14, hjust = 0, lineheight = 1.3),
+    legend.position = c(0.03, 1), # Define a posição da legenda no canto superior esquerdo
+    legend.justification = c(0, 1), # Define a justificação da legenda para o canto superior esquerdo
+    legend.box.just = "left", # Alinha a legenda à esquerda
     legend.title = element_text(size = 12),
-    legend.text = element_text(size = 12),
+    legend.text = element_text(size = 10),
     axis.title.x = element_text(size = 14), 
-    axis.text.x = element_text(size = 12),  
-    legend.position = "bottom",
-    axis.ticks.y = element_blank(), # remove ticks do eixo Y
-    axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 10),  
+    axis.line = element_line(colour = "gray40"),
+    axis.line.x = element_blank(),
+    axis.text.y = element_text(size = 10),
+    axis.ticks.y = element_line(color = "black"),
     panel.grid.major = element_blank(),  # remove as linhas principais da grade
-    panel.grid.minor = element_blank()# remove texto do eixo Y
-  )
+    panel.grid.minor = element_blank() 
+  ) +
+  scale_y_continuous(limits = c(0, 115))
 
-
+print(grafico_amostragens)
 
 #knitr::include_graphics("imagens/cap04/bo_evolucao_implementacao.JPG")
 
@@ -181,7 +186,6 @@ library(dplyr)
 dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
 dados_borboletas <- dados_borboletas %>%
   filter(ano != "2023", !is.na(tribo))
-
 
 
 # Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
@@ -284,12 +288,13 @@ grafico <- ggplot(data = dados_plot, aes(x = ano, y = valor, colour = tipo, line
     legend.box.just = "left", # Alinha a legenda à esquerda
     legend.box.background = element_rect(fill = "white", color = "white"),
     axis.ticks.y = element_line(color = "black"),
-    axis.text.y = element_text(margin = margin(r = 12)),
+    axis.text.y = element_text(margin = margin(r = 5)),
     axis.text.x = element_text(margin = margin(r = 12)),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 12),
+    axis.title.y = element_text(size = 10, margin = margin(r = 10)),
+    axis.title.x = element_text(size = 10, margin = margin(t = 10)),
+    axis.text = element_text(size = 10),
     axis.line = element_line(colour = "gray40"),
-    legend.text = element_text(size = 12),
+    legend.text = element_text(size = 10),
     axis.line.x = element_blank(),
     panel.grid.minor = element_blank()
   )
@@ -363,7 +368,7 @@ Os períodos de amostragem propostos no protocolo do Programa Monitora para borb
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '60%'
 #| fig-cap: "Mapa mostrando a proposta de distribuição das UCs participantes do Programa Monitora nos polígonos das regiões climáticas da Amazônia definidos em função do regime de chuvas."
 
 knitr::include_graphics("imagens/cap04/bo_mapa_ucs.jpeg")
@@ -409,13 +414,13 @@ library(tools)
 # Função auxiliar para ajustar o título
 ajustar_titulo <- function(titulo) {
   palavras <- strsplit(titulo, " ")[[1]]
-
+  
   # Palavras que necessitam de correção de acentuação
   correcoes <- list(
     "leste" = "Região climática Leste Amazônica", "sudoeste" = "Região climática Sudoeste Amazônica", "central" = "Região climática Central Amazônica",
     "norte" = "Região climática Norte Amazônica", "sudeste" = "Região climática Sudeste Amazônica"
   )
-
+  
   palavras <- sapply(palavras, function(palavra) {
     # Aplicar regras específicas para certas palavras
     if (tolower(palavra) %in% c("esec", "flona", "rebio", "resex", "parna")) {
@@ -432,7 +437,7 @@ ajustar_titulo <- function(titulo) {
       }
     }
   })
-
+  
   return(paste(palavras, collapse = " "))
 }
 
@@ -440,29 +445,29 @@ ajustar_titulo <- function(titulo) {
 gerar_grafico_por_regiao <- function(dados, nome_regiao) {
   # Preparar o título
   titulo <- ajustar_titulo(nome_regiao)  # Utilizando a função de ajuste de título aqui
-
+  
   # Filtrar os dados para a região atual
   dados_regiao <- subset(dados, regiao == nome_regiao & bioma == "Amazonia")
   dados_regiao <- dados_regiao[!is.na(dados_regiao$tribo), ] #tirar os dados 'NA' que estão na tribo
-
+  
   # Calcular o total de indivíduos por ano para a região atual
   total_individuos_por_ano <- dados_regiao %>%
     group_by(ano) %>%
     summarise(total = sum(soma_individuos), .groups = 'drop')
-
+  
   # Agregar dados por ano e tribo
   dados_agregados <- dados_regiao %>%
     group_by(ano, tribo) %>%
     summarize(frequencia = sum(soma_individuos), .groups = 'drop')
-
+  
   # Calcular totais e proporções
   total_por_ano <- dados_agregados %>%
     group_by(ano) %>%
     summarize(total = sum(frequencia), .groups = 'drop')
-
+  
   dados_agregados <- left_join(dados_agregados, total_por_ano, by = "ano") %>%
     mutate(proporcao = frequencia / total * 100)
-
+  
   # Ajustar proporções
   dados_agregados <- dados_agregados %>%
     group_by(ano) %>%
@@ -471,37 +476,37 @@ gerar_grafico_por_regiao <- function(dados, nome_regiao) {
     ungroup() %>%
     dplyr::select(-diferenca, -proporcao) %>%
     rename(proporcao = proporcao_ajustada)
-
+  
   # Ordem específica das tribos
   ordem_tribos <- c(
-    "Brassolini", "Morphini", "Haeterini",
-    "Satyrini", "Coeini", "Epiphilini",
-    "Epicaliini", "Anaeini", "Melanitini",
-    "Preponini", "Callicorini", "Biblidini",
-    "Ageroniini"
+    "Brassolini", "Morphini", "Haeterini", 
+    "Preponini", "Melanitini", "Anaeini", 
+    "Epicaliini","Epiphilini", "Coeini",
+    "Satyrini",
+    "Callicorini", "Biblidini","Ageroniini"
   )
-
+  
   # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
   cores_tribos <- c(
-    "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5",
-    "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85",
-    "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70",
-    "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d",
-    "Ageroniini" = "#bf812d"
+    "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", 
+    "Preponini" = "gray65", "Melanitini" = "gray70", "Anaeini" = "gray75", 
+    "Epicaliini" = "gray80", "Epiphilini" = "gray85", "Coeini" = "gray90",
+    "Satyrini" = "gray95",
+    "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d","Ageroniini" = "#bf812d"
   )
-
+  
   # Ajustar a ordem e as cores das tribos com base nas tribos presentes
   cores_tribos <- cores_tribos[ordem_tribos]
-
+  
   # Assegurar que a coluna 'tribo_clean' respeite a ordem definida
   dados_agregados$tribo <- factor(dados_agregados$tribo, levels = ordem_tribos)
-
+  
   # Criar um data frame com a frequência agregada por tribo
   #frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo + ano, dados_agregados, sum)
-
+  
   # Criar um data frame com a frequência agregada por tribo
   frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo, dados_agregados, sum)
-
+  
   # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo
   adicionar_asterisco <- function(nome_tribo) {
     # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano
@@ -511,45 +516,192 @@ gerar_grafico_por_regiao <- function(dados, nome_regiao) {
       return(nome_tribo)
     }
   }
-
+  
   # Aplicar a função a cada tribo para criar o vetor de rótulos
   labels_tribos <- sapply(ordem_tribos, adicionar_asterisco)
-
+  
   # Construir o gráfico
   gg <- ggplot(dados_agregados) +
     geom_bar(aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +
     geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+
     scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+
     scale_x_discrete(expand = c(0, 0)) +
-    scale_fill_manual(values = cores_tribos,
+    scale_fill_manual(values = cores_tribos, 
                       labels = labels_tribos,
                       breaks = ordem_tribos) +
     labs(title = titulo,
          x = "Ano",
-         y = "Proporção relativa de ocorrência (%)",
+         y = "Frequência relativa de ocorrência (%)",
          fill = "Tribo") +
     theme_minimal() +
-    theme(legend.position = "right",
-          legend.title = element_text(size = 14),
-          legend.text = element_text(size = 12),
-          plot.title = element_text(hjust = 0.5, size = 16),
+    theme(legend.position = "right", 
+          legend.title = element_text(size = 12), 
+          legend.text = element_text(size = 10), 
+          plot.title = element_text(hjust = 0.5, size = 16), 
           plot.subtitle = element_text(hjust = 0.5, size = 14),
-          axis.text = element_text(size = 12),
-          axis.title = element_text(size = 13),
+          axis.text = element_text(size = 12), 
+          axis.title = element_text(size = 12),
           axis.line = element_line(colour = "gray40"),
           axis.line.x = element_blank()) +
     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
-
-
+  
+  
   # Exibir o gráfico
   print(gg)
 }
 
 # Carregar e preparar os dados
-resultado_final <- read_csv("data/resultado_final.csv")
+resultado_final <- read.csv("data/resultado_final.csv", header = TRUE)
 resultado_final$ano <- factor(resultado_final$ano)
 resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 #resultado_final <- resultado_final[resultado_final$ano != "2023", ]
+
+
+#------------------------------------------------
+# # Função auxiliar para ajustar o título
+# ajustar_titulo <- function(titulo) {
+#   palavras <- strsplit(titulo, " ")[[1]]
+# 
+#   # Palavras que necessitam de correção de acentuação
+#   correcoes <- list(
+#     "leste" = "Região climática Leste Amazônica", "sudoeste" = "Região climática Sudoeste Amazônica", "central" = "Região climática Central Amazônica",
+#     "norte" = "Região climática Norte Amazônica", "sudeste" = "Região climática Sudeste Amazônica"
+#   )
+# 
+#   palavras <- sapply(palavras, function(palavra) {
+#     # Aplicar regras específicas para certas palavras
+#     if (tolower(palavra) %in% c("esec", "flona", "rebio", "resex", "parna")) {
+#       return(toupper(palavra))
+#     } else if (tolower(palavra) %in% c("de", "da", "do", "dos", "das")) {
+#       return(tolower(palavra))
+#     } else {
+#       # Corrigir acentuação, se necessário
+#       palavra_corrigida <- tolower(palavra)
+#       if (palavra_corrigida %in% names(correcoes)) {
+#         return(correcoes[[palavra_corrigida]])
+#       } else {
+#         return(tools::toTitleCase(palavra))
+#       }
+#     }
+#   })
+# 
+#   return(paste(palavras, collapse = " "))
+# }
+# 
+# # Função para gerar o gráfico para cada região
+# gerar_grafico_por_regiao <- function(dados, nome_regiao) {
+#   # Preparar o título
+#   titulo <- ajustar_titulo(nome_regiao)  # Utilizando a função de ajuste de título aqui
+# 
+#   # Filtrar os dados para a região atual
+#   dados_regiao <- subset(dados, regiao == nome_regiao & bioma == "Amazonia")
+#   dados_regiao <- dados_regiao[!is.na(dados_regiao$tribo), ] #tirar os dados 'NA' que estão na tribo
+# 
+#   # Calcular o total de indivíduos por ano para a região atual
+#   total_individuos_por_ano <- dados_regiao %>%
+#     group_by(ano) %>%
+#     summarise(total = sum(soma_individuos), .groups = 'drop')
+# 
+#   # Agregar dados por ano e tribo
+#   dados_agregados <- dados_regiao %>%
+#     group_by(ano, tribo) %>%
+#     summarize(frequencia = sum(soma_individuos), .groups = 'drop')
+# 
+#   # Calcular totais e proporções
+#   total_por_ano <- dados_agregados %>%
+#     group_by(ano) %>%
+#     summarize(total = sum(frequencia), .groups = 'drop')
+# 
+#   dados_agregados <- left_join(dados_agregados, total_por_ano, by = "ano") %>%
+#     mutate(proporcao = frequencia / total * 100)
+# 
+#   # Ajustar proporções
+#   dados_agregados <- dados_agregados %>%
+#     group_by(ano) %>%
+#     mutate(diferenca = 100 - sum(proporcao),
+#            proporcao_ajustada = ifelse(proporcao == max(proporcao), proporcao + diferenca, proporcao)) %>%
+#     ungroup() %>%
+#     dplyr::select(-diferenca, -proporcao) %>%
+#     rename(proporcao = proporcao_ajustada)
+# 
+#   # Ordem específica das tribos
+#   ordem_tribos <- c(
+#     "Brassolini", "Morphini", "Haeterini",
+#     "Satyrini", "Coeini", "Epiphilini",
+#     "Epicaliini", "Anaeini", "Melanitini",
+#     "Preponini", "Callicorini", "Biblidini",
+#     "Ageroniini"
+#   )
+# 
+#   # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
+#   cores_tribos <- c(
+#     "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5",
+#     "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85",
+#     "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70",
+#     "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d",
+#     "Ageroniini" = "#bf812d"
+#   )
+# 
+#   # Ajustar a ordem e as cores das tribos com base nas tribos presentes
+#   cores_tribos <- cores_tribos[ordem_tribos]
+# 
+#   # Assegurar que a coluna 'tribo_clean' respeite a ordem definida
+#   dados_agregados$tribo <- factor(dados_agregados$tribo, levels = ordem_tribos)
+# 
+#   # Criar um data frame com a frequência agregada por tribo
+#   #frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo + ano, dados_agregados, sum)
+# 
+#   # Criar um data frame com a frequência agregada por tribo
+#   frequencias_por_tribo_ano <- aggregate(frequencia ~ tribo, dados_agregados, sum)
+# 
+#   # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo
+#   adicionar_asterisco <- function(nome_tribo) {
+#     # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano
+#     if (any(frequencias_por_tribo_ano$tribo == nome_tribo & frequencias_por_tribo_ano$frequencia == 0)) {
+#       return(paste0(nome_tribo, "*"))
+#     } else {
+#       return(nome_tribo)
+#     }
+#   }
+# 
+#   # Aplicar a função a cada tribo para criar o vetor de rótulos
+#   labels_tribos <- sapply(ordem_tribos, adicionar_asterisco)
+# 
+#   # Construir o gráfico
+#   gg <- ggplot(dados_agregados) +
+#     geom_bar(aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +
+#     geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+
+#     scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+
+#     scale_x_discrete(expand = c(0, 0)) +
+#     scale_fill_manual(values = cores_tribos,
+#                       labels = labels_tribos,
+#                       breaks = ordem_tribos) +
+#     labs(title = titulo,
+#          x = "Ano",
+#          y = "Proporção relativa de ocorrência (%)",
+#          fill = "Tribo") +
+#     theme_minimal() +
+#     theme(legend.position = "right",
+#           legend.title = element_text(size = 14),
+#           legend.text = element_text(size = 12),
+#           plot.title = element_text(hjust = 0.5, size = 16),
+#           plot.subtitle = element_text(hjust = 0.5, size = 14),
+#           axis.text = element_text(size = 12),
+#           axis.title = element_text(size = 13),
+#           axis.line = element_line(colour = "gray40"),
+#           axis.line.x = element_blank()) +
+#     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
+# 
+# 
+#   # Exibir o gráfico
+#   print(gg)
+# }
+# 
+# # Carregar e preparar os dados
+# resultado_final <- read_csv("data/resultado_final.csv")
+# resultado_final$ano <- factor(resultado_final$ano)
+# resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
+# #resultado_final <- resultado_final[resultado_final$ano != "2023", ]
 
 
 ```
@@ -711,8 +863,8 @@ ajustar_titulo <- function(titulo) {
   palavras <- strsplit(titulo, " ")[[1]]
   
   # Palavras que necessitam de correção de acentuação
-  correcoes <- list(
-    "cerrado" = "Cerrado")
+  #correcoes <- list(
+   # "Cerrado" = "Cerrado")
   
 }
 
@@ -756,19 +908,19 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
   # Ordem específica das tribos
   ordem_tribos <- c(
     "Brassolini", "Morphini", "Haeterini", 
-    "Satyrini", "Coeini", "Epiphilini", 
-    "Epicaliini", "Anaeini", "Melanitini", 
-    "Preponini", "Callicorini", "Biblidini", 
-    "Ageroniini"
+    "Preponini", "Melanitini", "Anaeini", 
+    "Epicaliini","Epiphilini", "Coeini",
+    "Satyrini",
+    "Callicorini", "Biblidini","Ageroniini"
   )
   
   # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
   cores_tribos <- c(
     "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", 
-    "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85", 
-    "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70", 
-    "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d", 
-    "Ageroniini" = "#bf812d"
+    "Preponini" = "gray65", "Melanitini" = "gray70", "Anaeini" = "gray75", 
+    "Epicaliini" = "gray80", "Epiphilini" = "gray85", "Coeini" = "gray90",
+    "Satyrini" = "gray95",
+    "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d","Ageroniini" = "#bf812d"
   )
   
   # Ajustar a ordem e as cores das tribos com base nas tribos presentes
@@ -807,12 +959,12 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
                       breaks = ordem_tribos) +
     labs(title = titulo,
          x = "Ano",
-         y = "Proporção relativa de ocorrência (%)",
+         y = "Frequência relativa de ocorrência (%)",
          fill = "Tribo") +
     theme_minimal() +
     theme(legend.position = "right", 
-          legend.title = element_text(size = 14), 
-          legend.text = element_text(size = 12), 
+          legend.title = element_text(size = 12), 
+          legend.text = element_text(size = 10), 
           plot.title = element_text(hjust = 0.5, size = 16), 
           plot.subtitle = element_text(hjust = 0.5, size = 12),
           axis.text = element_text(size = 12), 
@@ -824,21 +976,26 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
   
   # Exibir o gráfico
   print(gg)
+  
+  # Retorna o gráfico para que possa ser salvo externamente
+  return(gg)
+  
 }
- 
+
 # Carregar e preparar os dados
-resultado_final<-read_csv("data/resultado_final.csv")
+resultado_final<-read.csv("data/resultado_final.csv", header=T)
 resultado_final$ano <- factor(resultado_final$ano)
 resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 #resultado_final <- resultado_final[resultado_final$ano != "2023", ]
+
 
 # Obter todas as UC's do bioma Cerrado
 biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Cerrado"])
 
 # Aplicar a função
-#lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
-
-gerar_grafico_por_bioma(resultado_final, biomas)
+# lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+# 
+ gerar_grafico_por_bioma(resultado_final, biomas)
 
 ```
 
@@ -864,13 +1021,17 @@ gerar_grafico_por_bioma(resultado_final, biomas)
 ### Tribos com asterisco estão ausentes no gráfico
 ## Script: Isabela Freitas Oliveira
 
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
 # Função auxiliar para ajustar o título
 ajustar_titulo <- function(titulo) {
   palavras <- strsplit(titulo, " ")[[1]]
   
   # Palavras que necessitam de correção de acentuação
   correcoes <- list(
-    "mata_atlantica" = "Mata Atlântica")
+    "Mata_Atlantica" = "Mata Atlântica")
   
 }
 
@@ -914,19 +1075,19 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
   # Ordem específica das tribos
   ordem_tribos <- c(
     "Brassolini", "Morphini", "Haeterini", 
-    "Satyrini", "Coeini", "Epiphilini", 
-    "Epicaliini", "Anaeini", "Melanitini", 
-    "Preponini", "Callicorini", "Biblidini", 
-    "Ageroniini"
+    "Preponini", "Melanitini", "Anaeini", 
+    "Epicaliini","Epiphilini", "Coeini",
+    "Satyrini",
+    "Callicorini", "Biblidini","Ageroniini"
   )
   
   # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)
   cores_tribos <- c(
     "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", 
-    "Satyrini" = "gray95", "Coeini" = "gray90", "Epiphilini" = "gray85", 
-    "Epicaliini" = "gray80", "Anaeini" = "gray75", "Melanitini" = "gray70", 
-    "Preponini" = "gray65", "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d", 
-    "Ageroniini" = "#bf812d"
+    "Preponini" = "gray65", "Melanitini" = "gray70", "Anaeini" = "gray75", 
+    "Epicaliini" = "gray80", "Epiphilini" = "gray85", "Coeini" = "gray90",
+    "Satyrini" = "gray95",
+    "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d","Ageroniini" = "#bf812d"
   )
   
   # Ajustar a ordem e as cores das tribos com base nas tribos presentes
@@ -965,12 +1126,12 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
                       breaks = ordem_tribos) +
     labs(title = titulo,
          x = "Ano",
-         y = "Proporção relativa de ocorrência (%)",
+         y = "Frequência relativa de ocorrência (%)",
          fill = "Tribo") +
     theme_minimal() +
     theme(legend.position = "right", 
           legend.title = element_text(size = 12), 
-          legend.text = element_text(size = 12), 
+          legend.text = element_text(size = 10), 
           plot.title = element_text(hjust = 0.5, size = 16), 
           plot.subtitle = element_text(hjust = 0.5, size = 14),
           axis.text = element_text(size = 12), 
@@ -985,7 +1146,7 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
 }
 
 # Carregar e preparar os dados
-resultado_final<-read.csv("data/resultado_final.csv")
+resultado_final<-read.csv("data/resultado_final.csv", header=T)
 resultado_final$ano <- factor(resultado_final$ano)
 resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 #resultado_final <- resultado_final[resultado_final$ano != "2023", ]
@@ -994,9 +1155,11 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Mata_Atlantica"])
 
 # Aplicar a função
-#lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+#graficos<-lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+
 
 gerar_grafico_por_bioma(resultado_final, biomas)
+
 
 ```
 

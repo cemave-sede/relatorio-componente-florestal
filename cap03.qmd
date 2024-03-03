@@ -24,7 +24,7 @@ library(gridExtra)
 
 </br>
 
-**Alexandre Bonesso Sampaio**^1^, **Bruno Lenhaverde Sandy**^2^, **Cecília Cronemberger de Faria**^3^, **Jumara Marques Sousa**^2^, **Kátia Torres Ribeiro**^4^ & **Rafaela Campostrini Forzza**^5-6^
+**Alexandre Bonesso Sampaio**^1^, **Bruno Lenhaverde Sandy**^2^, **Cecília Cronemberger de Faria**^3^, **Dárlison Fernandes Carvalho de Andrade**^2-7^, **Jumara Marques Sousa**^2^, **Kátia Torres Ribeiro**^4^ & **Rafaela Campostrini Forzza**^5-6^ 
 
 
 1. Centro Nacional de Pesquisa e Conservação da Biodiversidade do Cerrado e Restauração Ecológica - CBC  
@@ -57,6 +57,10 @@ library(gridExtra)
 *Rua Jardim Botânico, 1008*  
 *Jardim Botânico*  
 *22460-030 Rio de Janeiro, RJ*  
+
+7. Serviço Florestal Brasileiro - SBF  
+*SCEN Lote 04 - Asa Norte*  
+*70818-900 Brasília, DF*  
 
  
 

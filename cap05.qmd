@@ -384,7 +384,7 @@ monitora %>%
            fill = "cyan4", colour = "cyan4") +
   geom_line(aes(y = taxon_acumulado), stat = "identity", colour = "#95D8D8", linewidth = 0.8) +
   scale_y_continuous(
-    name = "Taxa validados (acumulado)",  # features of first axis
+    name = "Táxons validados (acumulado)",  # features of first axis
     sec.axis = sec_axis(~.*0.1, name="Número de UCs"), # add second axis and specify its features
     expand = c(0, 0)
   ) +

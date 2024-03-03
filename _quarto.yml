@@ -42,7 +42,9 @@ csl: plos.csl
 
 execute: 
   freese: auto
-  
+
+opts_chunk:
+    fig.align: center
 format:
   html:
     theme:
