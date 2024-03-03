@@ -28,30 +28,37 @@ library(ggplot2)
 
 # O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora {#cap1}
 
-**Dárlison Fernandes Carvalho de Andrade**  
+</br>
 
-Coordenação de Monitoramento da Biodiversidade - COMOB  
+**Dárlison Fernandes Carvalho de Andrade**^1-2^ & **Rodrigo Pinto Silva Jorge**^1^
+
+1. Coordenação de Monitoramento da Biodiversidade - COMOB  
 *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
 *Complexo Administrativo EQSW 103/104 s/n*  
 *70670-350 Brasília, DF*  
 
-Serviço Florestal Brasileiro - SBF  
+2. Serviço Florestal Brasileiro - SBF  
 *SCEN Lote 04 - Asa Norte*  
 *70818-900 Brasília, DF*  
 
+</br>
 
+## Impacto do Programa Monitora no desenvolvimento do conhecimento 
 
-**(Substituir o texto atual por texto novo a ser escrito pelo Dárlison)**  
+</br>
 
+O Brasil é um dos países com maior dimensão e biodiversidade do planeta (@Mittermeier2005), responsável por 15-20% da biodiversidade mundial (@CBD2022), e abriga um dos maiores sistemas de áreas protegidas do mundo (@Roque2018). O Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio) é o órgão governamental responsável pela gestão das 334 unidades de conservação (UCs) federais do Brasil, que cobrem 10% do território continental brasileiro e 26% do território marinho. Muitos estudos têm mostrado os efeitos positivos das UCs na conservação de espécies e paisagens (@Blanco2020), sendo importantes para reduzir a perda de habitats (@Jusys2016, @Jusys2016a, @Shah2021) e a extinção de espécies (@Butchart2012). A Lei n. 11.516/2007, que dispõe sobre a criação do ICMBio, em seu artigo primeiro prevê, dentre as suas finalidades, que cabe ao Instituto executar ações da política nacional de unidades de conservação da natureza, referentes às atribuições federais relativas ao monitoramento das unidades de conservação instituídas pela União, assim como fomentar e desenvolver programas de pesquisa sobre a biodiversidade. 
 
-O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora, instituído pela Instrução Normativa ICMBio n.º 3/2017, e, reformulado pela Instrução Normativa ICMBio n.º 2/2022, tem sido aprimorado, desde os primeiros anos de criação da instituição e, atualmente, conta uma estrutura que engloba três subprogramas - Terrestre, Aquático e Continental e o Marinho e Costeiro (@fig-eixos-tematicos-monitora), com participação de mais de 100 Unidades de Conservação Federais dos diferentes biomas brasileiros
+O ICMBio executa o monitoramento da biodiversidade por meio de um Programa contínuo de aferição de indicadores (alvos) do estado de conservação do ecossistema monitorados. Esse esforço sistemático, ao longo do tempo, permite avaliações que sugerem a necessidade, ou não, de medidas por parte do ICMBio. O monitoramento busca respostas para questões simples no longo prazo que, em suma, referem-se a: “o comportamento numérico deste indicador (alvo), do início de sua aferição até os dias atuais, sugere a necessidade de uma ou mais ações”? Por outro lado, a pesquisa, que também é programática, desenvolve-se por meio de projetos com início, meio e fim, a curto prazo. No ICMBio, a pesquisa fomentada pela instituição busca responder questões difusas, que aportem subsídios à tomada de decisão, sob a diretriz de não haver sobreposição com projetos de interesse acadêmico. Existe uma intersecção do monitoramento com a pesquisa, à medida que um subsidia o outro. O Programa de Monitoramento pode ensejar pesquisas assim como os projetos de pesquisa desenvolvidos podem suscitar demandas de monitoramento. 
 
+Conforme disposto em seu regimento interno (Portaria ICMBio nº 1.270/2022), compete ao Instituto Chico Mendes, ainda, em âmbito federal, “fomentar, coordenar e executar programas de pesquisa científica aplicada à gestão e ao desenvolvimento sustentável nas unidades de conservação federais e à conservação da biodiversidade” e “desenvolver programa de monitoramento da biodiversidade para subsidiar a definição e a implementação de ações de adaptação às mudanças climáticas nas unidades de conservação federais e a análise da efetividade”. Com vistas a nortear a pesquisa e a gestão do conhecimento no ICMBio, bem como relacionar as estratégias de pesquisa com as estratégias de conservação da biodiversidade, foi instituído e tem sido implementado o Plano Estratégico de Pesquisa e Gestão do Conhecimento do ICMBio (PEP-ICMBio), o qual traz uma priorização dos conhecimentos-chave para subsidiar as estratégias de conservação conduzidas pelo ICMBio em escala nacional (Portaria ICMBio nº 804/2018). 
 
-O Programa Monitora busca fortalecer o diálogo em torno das questões ambientais, com base no compartilhamento de informações e na formulação de questões, envolvendo pesquisadores, gestores das áreas e das comunidades. Tem sido estabelecido um conjunto de procedimentos para levantar dados a partir do emprego de técnicas simples, com baixo custo financeiro e operacional, privilegiando a participação de atores locais, acompanhado do compartilhamento de análises e interpretação coletiva de resultados. Tais atividades requerem a capacitação constante em diversas áreas do conhecimento e permanente processo de animação e articulação de iniciativas.
+ 
+Além do histórico positivo de estruturação da estratégia de fomento e apoio a pesquisa científica nas unidades de conservação, o ICMBio também se tornou uma referência no monitoramento da biodiversidade ao instituir, em 2017, o Programa Nacional de Monitoramento da Biodiversidade (Monitora) em unidades de conservação federais, iniciativa que utiliza protocolos padronizados de coletas de dados para gerar informações biológicas necessárias à gestão e proposição de medidas adequadas para a conservação dos ambientes monitorados. Os programas de monitoramento da biodiversidade são fundamentais para acompanhar o estado dos ecossistemas alvo, espécies ou processos naturais e fornecer informações baseadas em evidências sobre a resposta dos alvos às mudanças ambientais e ações de manejo (@Lindenmayer2009, Lovett2007). Em um contexto de complexidade social e crise econômica endêmica, a pressão sobre as áreas protegidas é elevada, resultando inclusive em sua redução (@Bernard2014). O Programa Monitora é, portanto, um programa governamental de larga escala, contínuo e de longo prazo, voltado para o monitoramento do estado da biodiversidade e dos serviços ecossistêmicos associados, realizado em UCs administradas pelo ICMBio com o apoio de diversos parceiros. Além de ser um instrumento de avaliação da efetividade das UCs na conservação biológica, é, também, útil ao planejamento e gestão de UCs, proteção de espécies ameaçadas e manejo sustentável da fauna e flora (Monitora, 2018). O Programa Monitora foi concebido a partir de um longo processo iniciado em 2010, envolvendo centenas de instituições, entre pesquisadores, gestores de unidades de conservação, usuários e beneficiários de UCs, como povos tradicionais. Foi construído a partir de um conjunto de lições aprendidas, elaboradas por outras iniciativas de monitoramento (@Monitora2018, @Souza2019). 
 
-O cuidado com o estabelecimento de procedimentos padronizados, com conjunto mínimo de variáveis em comum, visa a comparabilidade e o ganho de escala, de modo que o programa gere informações relevantes para as decisões de manejo e uso dos recursos em escala local, mas também para as manifestações em escala regional e nacional.
+Para abranger os principais ecossistemas brasileiros, o Programa Monitora é dividido em três subprogramas: Terrestre, Aquático Continental e o Marinho e Costeiro, cada um deles subdividido em componentes que compartilham protocolos padronizados para 21 alvos de monitoramento. Atualmente, 113 UCs participam do Programa Monitora (@fig-eixos-tematicos-monitora). Espécies ameaçadas, invasoras e exploradas representam temas transversais monitorados em todos os subprogramas.  
 
-
+</br>
 
 ```{r}
 #| label: fig-eixos-tematicos-monitora
@@ -67,32 +74,6 @@ knitr::include_graphics("imagens/cap01/eixos_tematicos_monitora.JPG")
 
 
 ```
+</br>
 
-
-A busca pela excelência na gestão de dados e informações visa também potencializar a capacidade analítica, inclusive para subsidiar a manifestação do instituto e posicionamento da sociedade perante situações complexas como a implementação de grandes empreendimentos.
-
-O Programa Monitora tem como objetivos:
-
--   gerar informação qualificada para a avaliação continuada da efetividade das UCs federais e do Sistema Nacional de Unidades de Conservação no cumprimento de seus objetivos de conservação da biodiversidade;
-
--   subsidiar, avaliar e acompanhar "in situ" projeções de alteração na distribuição e locais de ocorrência das espécies em resposta às mudanças climáticas e demais vetores de pressão e ameaça, a fim de atualizar as medidas de conservação, incluindo o manejo;
-
--   fornecer subsídios para o planejamento do uso sustentável das espécies da fauna e flora em unidades de conservação federais;
-
--   fornecer subsídios para a avaliação do estado de conservação da fauna e flora brasileira e para implementação das estratégias de conservação das espécies ameaçadas de extinção e com dados insuficientes para a avaliação (categoria DD); e
-
-- fornecer subsídios para o planejamento e a avaliação de programas de controle de espécies exóticas invasoras, especialmente em unidades de conservação federais.
-
-A gestão do Programa Monitora está a cargo da CGPEQ -- Coordenação Geral de Pesquisa e Monitoramento da Biodiversidade, mais especificamente da COMOB -- Coordenação de Monitoramento da Biodiversidade.
-
-As atividades desenvolvidas por essa Coordenação estão previstas no Decreto nº 10.234, de 11 de fevereiro de 2020, que aprova a Estrutura Regimental do ICMBio, e estabelece em seu art. 2º, inciso XXVII, entre as atribuições do instituto: "desenvolver programa de monitoramento da biodiversidade para subsidiar a definição e a implementação de ações de adaptação às mudanças climáticas nas unidades de conservação federais e a análise da efetividade".
-
-Para maiores detalhes sobre os subprogramas, componentes e alvos, enfim, sua estrutura, acesse a [Estratégia do Programa Nacional de Monitoramento da Biodiversidade -- Programa Monitora: estrutura (2018)](https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio/estrategia_geral.pdf) ou sua [tabela resumo](https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/estrutura-do-programa-monitora/2b5210461815403eb185f1aceee3b192.pdf).
-
-## Impacto do Programa no desenvolvimento do conhecimento
-
-O Programa Monitora até o momento foi responsável pela .....
-
-## Os alvos
-
-A seleção de alvos do componente florestal buscou atender........
+O Programa Monitora possui estrutura modular, o que permite implementação gradativa, com complexidade crescente considerando protocolos e desenhos de amostragem. O primeiro nível de complexidade, que é o monitoramento mais básico a ser implementado, é também o mais importante porque pretende ser um programa de monitoramento extenso, através de uma grande extensão espacial com poucos alvos de monitoramento, reunindo informações sobre tendências na abundância e distribuição das espécies (@Lindenmayer2010, @Proenca2017). 

@@ -28,7 +28,7 @@ library(ggplot2)
 **O texto precisa ser atualizado.**  
 
 
-**Jumara Marques de Souza & Marcelo Lima Reis**  
+**Jumara Marques de Souza** & **Marcelo Lima Reis**  
 
 Coordenação de Monitoramento da Biodiversidade - COMOB  
 *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  

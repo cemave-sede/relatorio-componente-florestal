@@ -20,13 +20,14 @@ library(gridExtra)
 ```
 
 
-# Plantas
+# Plantas arbóreas e arborescentes
+
+</br>
+
+**Alexandre Bonesso Sampaio**^1^, **Bruno Lenhaverde Sandy**^2^, **Cecília Cronemberger de Faria**^3^, **Jumara Marques Sousa**^2^, **Kátia Torres Ribeiro**^4^ & **Rafaela Campostrini Forzza**^5-6^
 
 
-**Alexandre Bonesso Sampaio^1^, Bruno Lenhaverde Sandy^2^, Cecília Cronemberger de Faria^3^, Jumara Marques Sousa^2^, Kátia Torres Ribeiro^4^ & Rafaela Campostrini Forzza^5-6^**
-
-
-1. Centro Nacional de Pesquisa e Conservação da Biodiversidade do Cerrado e Restauração Ecológica - CBC*  
+1. Centro Nacional de Pesquisa e Conservação da Biodiversidade do Cerrado e Restauração Ecológica - CBC  
 *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
 *Parque Nacional de Brasília*  
 *Via Epia, BR-450, Km 8,5*  
@@ -61,7 +62,7 @@ library(gridExtra)
 
 </br>
 
-## Estado da implementação
+## Implementação
 
 </br>
 
@@ -203,24 +204,53 @@ Figura semelhante a b para biomassa.
 
 </br>
 
-
-### Contraste entre o Inventário Florestal Nacional e os dados do protocolo básico de plantas do componente florestal
+#### Contraste entre o Inventário Florestal Nacional e os dados do protocolo básico de plantas do componente florestal
 
 </br>
 
-<font color="red">*There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.*</font>
+A realização do Inventário Florestal Nacional no Brasil (IFN-BR) está prevista no novo Código Florestal1 e é coordenada pelo Serviço Florestal Brasileiro (Decreto 8.975/2017 e Resolução nº. 23 de 18 de fevereiro de 2014 que institui o Manual de Campo do IFN-BR como documento de referência nacional).  
+
+
+Com mais da metade do território (55%) coberto por florestas e abrigando a maior extensão de florestas tropicais do planeta, conhecer e monitorar a biodiversidade florestal é uma necessidade e um desafio para o Brasil. Desta forma, a realização do IFN-BR contribui objetivamente para:  
+
+
+- Conhecer o estado de conservação das florestas brasileiras;  
+
+- Gestão dos recursos naturais, com ênfase nos recursos florestais (incluindo a biodiversidade arbórea), cobertura, uso e mudanças da terra;  
+
+- Gerar oportunidades para integrar a conservação da biodiversidade nas políticas e investimentos setoriais;   
+
+- Conhecer o papel e os fatores que afetam as contribuições das florestas para o desenvolvimento sustentável dos territórios;   
+
+- Gerar conhecimento e subsidiar a conservação da biodiversidade em áreas protegidas, bem como na tomada de decisões sobre o uso da terra;   
+
+- Informar sobre estoques e fluxos de carbono florestal e potenciais para redução de emissões através de uma melhor utilização dos recursos florestais e das terras; 
+
+- Conhecer sobre o estado de degradação do solo na paisagem florestal e potenciais de redução. 
+
+O IFN-BR é estratégico para a implementação de políticas públicas para conservação e manejo das florestas do País. O IFN-BR é um instrumento capaz de coletar, analisar e divulgar dados qualitativos e quantitativos sobre os recursos florestais – nativos e plantados, aliados a informações sociais de populações das áreas trabalhadas, possibilitando uma análise integral – ambiental e social, das paisagens florestadas do Brasil.  
+
+Com abrangência nacional e metodologia única para todos os biomas, a coleta de dados é realizada em pontos distribuídos a cada 20 km de distância por todo o país. São produzidas informações detalhadas e de forma regular sobre aspectos socioambientais e biofísicos das florestas relacionados a: (i) extensão dos recursos florestais; (ii) diversidade biológica; (iii) saúde e vitalidade; (iv) estoques; (v) funções socioambientais (uso da floresta e a percepção das populações rurais em relação à existência, uso e conservação dos recursos florestais).  
+
+O IFN-BR é a principal fonte de informações sobre a quantidade e qualidade dos recursos florestais, sendo o fundamento para políticas e programas relacionados à gestão e uso das florestas, produzindo informações que devem ser utilizadas na conservação e no uso de recursos florestais. A estratégia de implementação do IFN-BR contempla a realização de diversos ciclos para acompanhar a dinâmica de uso do solo, da floresta e seus usos.  
+
+Durante a concepção e estruturação do componente Florestal, iniciada em 2010 (@Cronemberger2023) houve um entendimento de que o Programa Monitora adotaria os procedimentos metodológicos do INF-BR para coleta de dados do alvo Plantas arbóreas e arborescentes.  
+
+
+</br>
+
 
 ## Discussão
 
 </br>
 
-<font color="red">*There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.*</font>
+
 
 ## Recomendações
 
 </br>
 
-<font color="red">*There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.*</font>
+
 
 
 

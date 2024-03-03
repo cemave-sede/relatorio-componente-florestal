@@ -13,8 +13,8 @@ Marcos de Souza Fialho
 **REVISÃO** 
 
 Dárlison Fernandes Carvalho de Andrade  
-Jumara Marques Souza ???  
-Marcelo Lima Reis ??  
+Jumara Marques Souza  
+Marcelo Lima Reis  
 
 
 **TEXTOS**  
@@ -26,6 +26,7 @@ Cecília Cronemberger de Faria
 
 **Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora**  
 Dárlison Fernandes Carvalho de Andrade  
+Rodrigo Pinto Silva Jorge  
 
 
  **Implementação do componente florestal**  
@@ -42,10 +43,10 @@ Rafaela Camponstrini Forzza
 Humberto ????  
 
  
-**Borboletas**  
+**Borboletas frugívoras**  
 Isabela Freitas Oliveira  
 Onildo João Marini Filho  
-???  
+Arlindo Gomes Filho 
 
 
 **Mamíferos e aves**  

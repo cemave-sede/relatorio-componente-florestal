@@ -22,11 +22,11 @@ library(here)
 ```
 
 
-# Mamíferos e aves  
+# Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas
 
 </br>
 
-**Arlindo Gomes Filho^1^, Elildo Alves Ribeiro de Carvalho Junior^2^, Gerson Buss^3^, Marcelo Lima Reis^4^, Marcos de Sousa Fialho^1^, Rafael Suertegaray Rossato^3^, Ricardo Sampaio^3^, Richard Hatakeyama^5^, Thiago Orsi Laranjeiras^6^** 
+**Arlindo Gomes Filho**^1^, **Elildo Alves Ribeiro de Carvalho Junior**^2^, **Gerson Buss**^3^, **Marcelo Lima Reis**^4^, **Marcos de Sousa Fialho**^1^, **Rafael Suertegaray Rossato**^3^, **Ricardo Sampaio**^3^, **Richard Hatakeyama**^5^ & **Thiago Orsi Laranjeiras**^6^ 
 
 1. Centro Nacional de Pesquisa e Conservação de Aves Silvestres – CEMAVE  
 *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
@@ -2564,7 +2564,16 @@ tab_mutuns
 
 </br>
 
-Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis*, *Herpailurus yagouaroundi* e *Speothos venaticus* foram registradas menos de dez vezes, e *Chrysocyon brachiurus*, somente uma — aliado à atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* e *Nasua nasua*, conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implementação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação. Ressalta-se que a presença de cachorros domésticos foi registrada apenas quatro vezes e não houve registro de gatos domésticos. Esse resultado pode ser apenas um reflexo da recomendação do protocolo básico de não instalação das estações amostrais em locais sob influência mais direta de atividades humanas, como nas proximidades de áreas urbanas ou núcleos populacionais.  
+Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis*, *Herpailurus yagouaroundi* e *Speothos venaticus* foram registradas menos de dez vezes, e *Chrysocyon brachiurus*, somente uma — aliado à atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* e *Nasua nasua*, conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implementação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação.  
+
+
+:::{.callout-note}
+## Nota
+
+Ressalta-se que a presença de cães domésticos foi registrada apenas quatro vezes e não houve registro de gatos domésticos. Esse resultado pode ser apenas um reflexo da recomendação do protocolo básico de não instalação das estações amostrais em locais sob influência mais direta de atividades humanas, como nas proximidades de áreas urbanas ou núcleos populacionais.  
+
+:::
+  
 
 Assim como para a ordem Carnivora, muitas espécies noturnas e abundantes de outras ordens também foram pouco registradas, especialmente para Lagomorpha (tapitis) e Cingulata (tatus), enquanto espécies da ordem Cetartiodactyla (cervos e porcos-do-mato) estiveram bem representadas.  
 
@@ -2625,10 +2634,25 @@ Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monito
 
 </b>
 
-Sobre a última recomendação, cabe salientar que uma análise possível e esperada para os dados obtidos pelo método empregado é a geração de quantitativos populacionais a partir da estimativa da densidade de grupos ou indivíduos. Esta estimativa seria fruto da taxa de encontro e das distâncias perpendiculares entre o grupo ou indivíduo e a transecção, mensuradas em cada avistamento. Contudo, em análises prévias não apresentadas nesse documento foram observados alguns vícios de amostragem que podem comprometer ou tornar as estimativas de densidade menos precisas. Como exemplo, na figura ????, pode-se observar o efeito *spyke* (número desproporcional de registros sobre a transecção) e o efeito de arredondamento das mensurações (tendência de as medidas serem atribuídas à valores arredondados como 10, 15 ou 20 m) nos dados obtidos para *Psophia crepitans* (jacamin-de-costas-cinzentas) na REBIO do Uatumã.  
+Sobre a última recomendação, cabe salientar que uma análise possível e esperada para os dados obtidos pelo método empregado é a geração de quantitativos populacionais a partir da estimativa da densidade de grupos ou indivíduos. Esta estimativa seria fruto da taxa de encontro e das distâncias perpendiculares entre o grupo ou indivíduo e a transecção, mensuradas em cada avistamento. Contudo, em análises prévias não apresentadas nesse documento foram observados alguns vícios de amostragem que podem comprometer ou tornar as estimativas de densidade menos precisas. Como exemplo, na @fig-analise-psophia, pode-se observar o efeito *spyke* (número desproporcional de registros sobre a transecção) e o efeito de arredondamento das mensurações (tendência de as medidas serem atribuídas à valores arredondados como 10, 15 ou 20 m) nos dados obtidos para *Psophia crepitans* (jacamin-de-costas-cinzentas) na REBIO do Uatumã.  
 
 
+</br>
 
-INSERIR FIGURA 
+```{r}
+#| label: fig-analise-psophia
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Probabilidade de detecção de Psophia crepitans (jacamin-de-costas-cinzentas) na REBIO do Uatumã."
+
+knitr::include_graphics("imagens/cap05/analise_psophia.JPG")
+
+
+```
+
 
 

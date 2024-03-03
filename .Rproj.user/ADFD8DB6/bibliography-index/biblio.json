@@ -292,6 +292,233 @@
             "type": "thesis"
         },
         {
+            "abstract": "Protected areas (PAs) are key elements for biodiversity conservation and ecosystem services. Brazil has the largest PA system in the world, covering approximately 220 million ha. This system expanded rapidly in the mid-1990s to the mid-2000s. Recent events in Brazil, however, have led to an increase in PA downgrading, downsizing, and degazettement (PADDD). Does this reflect a shift in the country’s PA policy? We analyzed the occurrence, frequency, magnitude, type, spatial distribution, and causes of changes in PA boundaries and categories in Brazil. We identified 93 PADDD events from 1981 to 2012. Such events increased in frequency since 2008 and were ascribed primarily to generation and transmission of electricity in Amazonia. In Brazilian parks and reserves, 7.3 million ha were affected by PADDD events, and of these, 5.2 million ha were affected by downsizing or degazetting. Moreover, projects being considered by the Federal Congress may degazette 2.1 million ha of PA in Amazonia alone. Relaxing the protection status of existing PAs is proving to be politically easy in Brazil, and the recent increase in frequency and extension of PADDD reflects a change in governmental policy. By taking advantage of chronic deficiencies in financial and personnel resources and surveillance, disputes over land tenure, and the slowness of the Brazilian justice, government agencies have been implementing PADDD without consultation of civil society. If parks and reserves are to maintain their integrity, there will need to be investments in Brazilian PAs and a better understanding of the benefits PAs provide.",
+            "author": [
+                {
+                    "family": "Bernard",
+                    "given": "E"
+                },
+                {
+                    "family": "Penna",
+                    "given": "L A O"
+                },
+                {
+                    "family": "Araújo",
+                    "given": "E"
+                }
+            ],
+            "container-title": "Conserv. Biol.",
+            "id": "Bernard2014",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        8
+                    ]
+                ]
+            },
+            "keyword": "Amazonia; PADDD; conservación in situ; conservation policy; in situ conservation; national parks; parques nacionales; polı́tica de conservación",
+            "page": "939-950",
+            "publisher": "Wiley",
+            "title": "Downgrading, downsizing, degazettement, and reclassification of protected areas in brazil",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "author": [
+                {
+                    "family": "Butchart",
+                    "given": "Stuart H M"
+                },
+                {
+                    "family": "Scharlemann",
+                    "given": "Jörn P W"
+                },
+                {
+                    "family": "Evans",
+                    "given": "Mike I"
+                },
+                {
+                    "family": "Quader",
+                    "given": "Suhel"
+                },
+                {
+                    "family": "Aricò",
+                    "given": "Salvatore"
+                },
+                {
+                    "family": "Arinaitwe",
+                    "given": "Julius"
+                },
+                {
+                    "family": "Balman",
+                    "given": "Mark"
+                },
+                {
+                    "family": "Bennun",
+                    "given": "Leon A"
+                },
+                {
+                    "family": "Bertzky",
+                    "given": "Bastian"
+                },
+                {
+                    "family": "Besançon",
+                    "given": "Charles"
+                },
+                {
+                    "family": "Boucher",
+                    "given": "Timothy M"
+                },
+                {
+                    "family": "Brooks",
+                    "given": "Thomas M"
+                },
+                {
+                    "family": "Burfield",
+                    "given": "Ian J"
+                },
+                {
+                    "family": "Burgess",
+                    "given": "Neil D"
+                },
+                {
+                    "family": "Chan",
+                    "given": "Simba"
+                },
+                {
+                    "family": "Clay",
+                    "given": "Rob P"
+                },
+                {
+                    "family": "Crosby",
+                    "given": "Mike J"
+                },
+                {
+                    "family": "Davidson",
+                    "given": "Nicholas C"
+                },
+                {
+                    "family": "De Silva",
+                    "given": "Naamal"
+                },
+                {
+                    "family": "Devenish",
+                    "given": "Christian"
+                },
+                {
+                    "family": "Dutson",
+                    "given": "Guy C L"
+                },
+                {
+                    "dropping-particle": "z",
+                    "family": "Fernández",
+                    "given": "David F Dı́a"
+                },
+                {
+                    "family": "Fishpool",
+                    "given": "Lincoln D C"
+                },
+                {
+                    "family": "Fitzgerald",
+                    "given": "Claire"
+                },
+                {
+                    "family": "Foster",
+                    "given": "Matt"
+                },
+                {
+                    "family": "Heath",
+                    "given": "Melanie F"
+                },
+                {
+                    "family": "Hockings",
+                    "given": "Marc"
+                },
+                {
+                    "family": "Hoffmann",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Knox",
+                    "given": "David"
+                },
+                {
+                    "family": "Larsen",
+                    "given": "Frank W"
+                },
+                {
+                    "family": "Lamoreux",
+                    "given": "John F"
+                },
+                {
+                    "family": "Loucks",
+                    "given": "Colby"
+                },
+                {
+                    "family": "May",
+                    "given": "Ian"
+                },
+                {
+                    "family": "Millett",
+                    "given": "James"
+                },
+                {
+                    "family": "Molloy",
+                    "given": "Dominic"
+                },
+                {
+                    "family": "Morling",
+                    "given": "Paul"
+                },
+                {
+                    "family": "Parr",
+                    "given": "Mike"
+                },
+                {
+                    "family": "Ricketts",
+                    "given": "Taylor H"
+                },
+                {
+                    "family": "Seddon",
+                    "given": "Nathalie"
+                },
+                {
+                    "family": "Skolnik",
+                    "given": "Benjamin"
+                },
+                {
+                    "family": "Stuart",
+                    "given": "Simon N"
+                },
+                {
+                    "family": "Upgren",
+                    "given": "Amy"
+                },
+                {
+                    "family": "Woodley",
+                    "given": "Stephen"
+                }
+            ],
+            "container-title": "PLoS One",
+            "id": "Butchart2012",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        3
+                    ]
+                ]
+            },
+            "page": "e32529",
+            "publisher": "Public Library of Science (PLoS)",
+            "title": "Protecting important sites for biodiversity contributes to meeting global conservation targets",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
             "DOI": "10.1098/rstb.2004.1589",
             "ISSN": "1471-2970",
             "URL": "http://dx.doi.org/10.1098/rstb.2004.1589",
@@ -413,6 +640,79 @@
             "title-short": "Temporal abundance patterns of butterfly communities (lepidoptera",
             "type": "article-journal",
             "volume": "45"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cronemberger",
+                    "given": "Cecilia"
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "Katia Torres"
+                },
+                {
+                    "family": "Acosta",
+                    "given": "Rachel Klaczko"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Andrade",
+                    "given": "Dárlison Fernandes Carvalho"
+                },
+                {
+                    "family": "Marini-Filho",
+                    "given": "Onildo João"
+                },
+                {
+                    "family": "Moriga Masuda",
+                    "given": "Laura Shizue"
+                },
+                {
+                    "family": "Rêgo Mendes",
+                    "given": "Keila"
+                },
+                {
+                    "family": "Nienow",
+                    "given": "Samuel dos Santos"
+                },
+                {
+                    "family": "Marcolino Polaz",
+                    "given": "Carla Natacha"
+                },
+                {
+                    "family": "Reis",
+                    "given": "Marcelo Lima"
+                },
+                {
+                    "family": "Sampaio",
+                    "given": "Ricardo"
+                },
+                {
+                    "family": "Souza",
+                    "given": "Jumara Marques"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Tófoli",
+                    "given": "Cristina Farah"
+                }
+            ],
+            "container-title": "Citiz. Sci. Theory Pr.",
+            "id": "Cronemberger2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        6
+                    ]
+                ]
+            },
+            "publisher": "Ubiquity Press, Ltd.",
+            "title": "Social participation in the brazilian national biodiversity monitoring program leads to multiple socioenvironmental outcomes",
+            "type": "article-journal",
+            "volume": "8"
         },
         {
             "DOI": "10.1038/nclimate1347",
@@ -671,6 +971,55 @@
             "volume": "28"
         },
         {
+            "abstract": "This study explores the main direct and underlying causes of deforestation in Brazil’s Legal Amazon region by considering spatial differences. The computation of localized parameters is based on geographically weighted regression (GWR). The novelty of this paper lies in its incorporation of economic, rather than Euclidean, distances into the GWR. Economic distances are measured by travel time, sourced from Google Inc. A global approach revealed several important factors that affect deforestation, including: rural population, GDP (suggesting a U-shaped environmental Kuznets curve), forest stock, cattle ranching, timber value, and road networks (both official and unofficial). Local analysis uncovered patterns not seen under global models, especially in the state of Pará. Most notably, crop cultivation was found to accelerate deforestation in southeastern Pará and northeastern Mato Grosso, while in some regions (especially in the northeastern corner of Pará), the area covered by crop plantations was negatively associated with deforestation. For Pará, rural credit constraints, larger territories designated as sustainable use areas and indigenous lands, and higher levels of precipitation inhibit deforestation. Further, rural population has a very heterogeneous impact on deforestation across Legal Amazon: it is not a significant factor of deforestation in northern Pará and Amapá, but it has a relatively strong effect in the western parts of Mato Grosso and Rondônia. Also, official and illegal roads create significantly more pressure on forests in remote regions compared to developed areas. Finally, the use of economic distances, as opposed to Euclidean distances, leads to notably different GWR results.",
+            "author": [
+                {
+                    "family": "Jusys",
+                    "given": "Tomas"
+                }
+            ],
+            "container-title": "Appl. Geogr.",
+            "id": "Jusys2016a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        10
+                    ]
+                ]
+            },
+            "page": "188-199",
+            "publisher": "Elsevier BV",
+            "title": "Fundamental causes and spatial heterogeneity of deforestation in legal amazon",
+            "type": "article-journal",
+            "volume": "75"
+        },
+        {
+            "abstract": "Percentage of forests saved due to establishment of protected areas is an important piece of information for government institutions and, therefore, is the goal of this study. However, non random location selection bias makes such information directly unobservable. To overcome this problem, propensity score matching was applied. Unlike in previous studies, impact of buffer zone management was assessed by estimating avoided deforestation in buffer zones and park edges. The study area is the state of Pará. Overall results revealed that park protection saved 0.72% of protected surface from deforestation during 2000–2004 year period (∼2900 km2 of forests). The highest percentage of avoided deforestation was recorded in protected areas, situated near deforestation hotspots: central part of Eastern Pará, alongside Trans-Amazonian highway and on the banks of Amazon River. The findings also suggest that buffer zones tend to reduce deforestation where pressure on forests is lower, but substitution effect takes over in areas of high deforestation pressure (since loggers are prevented from deforesting within conservation units, deforestation in surrounding areas increases). Finally, the study does not find evidence of edge effects in the state of Pará.",
+            "author": [
+                {
+                    "family": "Jusys",
+                    "given": "Tomas"
+                }
+            ],
+            "container-title": "J. Nat. Conserv.",
+            "id": "Jusys2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        9
+                    ]
+                ]
+            },
+            "page": "10-17",
+            "publisher": "Elsevier BV",
+            "title": "Quantifying avoided deforestation in pará: Protected areas, buffer zones and edge effects",
+            "title-short": "Quantifying avoided deforestation in pará",
+            "type": "article-journal",
+            "volume": "33"
+        },
+        {
             "author": [
                 {
                     "family": "Kéry",
@@ -693,6 +1042,65 @@
             "publisher": "https://cran.r-project.org/web/packages/unmarked/vignettes/colext.html",
             "title": "Dynamic occupancy models in unmarked - r package version 094.",
             "type": ""
+        },
+        {
+            "abstract": "Long-term research and monitoring can provide important ecological insights and are crucial for the improved management of ecosystems and natural resources. However, many long-term research and monitoring programs are either ineffective or fail completely owing to poor planning and/or lack of focus. Here we propose the paradigm of adaptive monitoring, which aims to resolve many of the problems that have undermined previous attempts to establish long-term research and monitoring. This paradigm is driven by tractable questions, rigorous statistical design at the outset, a conceptual model of the ecosystem or other entity being examined and a human need to know about ecosystem change. An adaptive monitoring framework enables monitoring programs to evolve iteratively as new information emerges and research questions change.",
+            "author": [
+                {
+                    "family": "Lindenmayer",
+                    "given": "David B"
+                },
+                {
+                    "family": "Likens",
+                    "given": "Gene E"
+                }
+            ],
+            "container-title": "Trends Ecol. Evol.",
+            "id": "Lindenmayer2009",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009,
+                        9
+                    ]
+                ]
+            },
+            "page": "482-486",
+            "publisher": "Elsevier BV",
+            "title": "Adaptive monitoring: A new paradigm for long-term research and monitoring",
+            "title-short": "Adaptive monitoring",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "abstract": "We provide a broad overview of the underlying philosophy of ecological monitoring. We argue that the major characteristics of effective monitoring programs typically include: (1) Good questions. (2) A conceptual model of an ecosystem or population. (3) Strong partnerships between scientists, policy-makers and managers. (4) Frequent use of data collected.We classify monitoring programs into three categories – (1) Passive monitoring, which is devoid of specified questions or underlying study design and has limited rationale other than curiosity. (2) Mandated monitoring where environmental data are gathered as a stipulated requirement of government legislation or a political directive. The focus is usually to identify trends. (3) Question-driven monitoring, which is guided by a conceptual model and by a rigorous design that will typically result in a priori predictions that can be tested.There are advantages and disadvantages of mandated monitoring programs, which are typically large-scaled, and generally smaller-scaled, question-driven monitoring programs. For example, while question-driven monitoring programs can provide insights into the ecological processes giving rise to emergent environmental patterns, spatial generalization from them is difficult because results may not extrapolate well to other regions, states or to a national level. Conversely, while mandated monitoring can be useful for producing coarse level summaries of temporal changes in a target population or resource condition they may not identify the mechanism influencing a change in an ecosystem or an entity. A key remaining challenge is to develop much improved mandated monitoring programs through more widespread adoption of the features of successful question-driven monitoring programs in efforts to enhance biodiversity conservation and environmental management.",
+            "author": [
+                {
+                    "family": "Lindenmayer",
+                    "given": "David B"
+                },
+                {
+                    "family": "Likens",
+                    "given": "Gene E"
+                }
+            ],
+            "container-title": "Biol. Conserv.",
+            "id": "Lindenmayer2010",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010,
+                        6
+                    ]
+                ]
+            },
+            "page": "1317-1328",
+            "publisher": "Elsevier BV",
+            "title": "The science and application of ecological monitoring",
+            "type": "article-journal",
+            "volume": "143"
         },
         {
             "DOI": "10.1098/rstb.2004.1584",
@@ -745,6 +1153,62 @@
             "title-short": "The living planet index",
             "type": "article-journal",
             "volume": "360"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lovett",
+                    "given": "Gary M"
+                },
+                {
+                    "family": "Burns",
+                    "given": "Douglas A"
+                },
+                {
+                    "family": "Driscoll",
+                    "given": "Charles T"
+                },
+                {
+                    "family": "Jenkins",
+                    "given": "Jennifer C"
+                },
+                {
+                    "family": "Mitchell",
+                    "given": "Myron J"
+                },
+                {
+                    "family": "Rustad",
+                    "given": "Lindsey"
+                },
+                {
+                    "family": "Shanley",
+                    "given": "James B"
+                },
+                {
+                    "family": "Likens",
+                    "given": "Gene E"
+                },
+                {
+                    "family": "Haeuber",
+                    "given": "Richard"
+                }
+            ],
+            "container-title": "Front. Ecol. Environ.",
+            "id": "Lovett2007",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007,
+                        6
+                    ]
+                ]
+            },
+            "page": "253-260",
+            "publisher": "Wiley",
+            "title": "Who needs environmental monitoring?",
+            "type": "article-journal",
+            "volume": "5"
         },
         {
             "author": [
@@ -891,6 +1355,43 @@
             "title-short": "The diversity-weighted living planet index",
             "type": "article-journal",
             "volume": "12"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mittermeier",
+                    "given": "Russell A"
+                },
+                {
+                    "dropping-particle": "da",
+                    "family": "Fonseca",
+                    "given": "Gustavo A B"
+                },
+                {
+                    "family": "Rylands",
+                    "given": "Anthony B"
+                },
+                {
+                    "family": "Brandon",
+                    "given": "Katrina"
+                }
+            ],
+            "container-title": "Conserv. Biol.",
+            "id": "Mittermeier2005",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005,
+                        6
+                    ]
+                ]
+            },
+            "page": "601-607",
+            "publisher": "Wiley",
+            "title": "A brief history of biodiversity conservation in brazil",
+            "type": "article-journal",
+            "volume": "19"
         },
         {
             "author": [
@@ -1171,6 +1672,92 @@
             "type": "book"
         },
         {
+            "abstract": "Essential Biodiversity Variables (EBVs) consolidate information from varied biodiversity observation sources. Here we demonstrate the links between data sources, EBVs and indicators and discuss how different sources of biodiversity observations can be harnessed to inform EBVs. We classify sources of primary observations into four types: extensive and intensive monitoring schemes, ecological field studies and satellite remote sensing. We characterize their geographic, taxonomic and temporal coverage. Ecological field studies and intensive monitoring schemes inform a wide range of EBVs, but the former tend to deliver short-term data, while the geographic coverage of the latter is limited. In contrast, extensive monitoring schemes mostly inform the population abundance EBV, but deliver long-term data across an extensive network of sites. Satellite remote sensing is particularly suited to providing information on ecosystem function and structure EBVs. Biases behind data sources may affect the representativeness of global biodiversity datasets. To improve them, researchers must assess data sources and then develop strategies to compensate for identified gaps. We draw on the population abundance dataset informing the Living Planet Index (LPI) to illustrate the effects of data sources on EBV representativeness. We find that long-term monitoring schemes informing the LPI are still scarce outside of Europe and North America and that ecological field studies play a key role in covering that gap. Achieving representative EBV datasets will depend both on the ability to integrate available data, through data harmonization and modeling efforts, and on the establishment of new monitoring programs to address critical data gaps.",
+            "author": [
+                {
+                    "family": "Proença",
+                    "given": "Vânia"
+                },
+                {
+                    "family": "Martin",
+                    "given": "Laura Jane"
+                },
+                {
+                    "family": "Pereira",
+                    "given": "Henrique Miguel"
+                },
+                {
+                    "family": "Fernandez",
+                    "given": "Miguel"
+                },
+                {
+                    "family": "McRae",
+                    "given": "Louise"
+                },
+                {
+                    "family": "Belnap",
+                    "given": "Jayne"
+                },
+                {
+                    "family": "Böhm",
+                    "given": "Monika"
+                },
+                {
+                    "family": "Brummitt",
+                    "given": "Neil"
+                },
+                {
+                    "family": "Garcı́a-Moreno",
+                    "given": "Jaime"
+                },
+                {
+                    "family": "Gregory",
+                    "given": "Richard D"
+                },
+                {
+                    "family": "Honrado",
+                    "given": "João Pradinho"
+                },
+                {
+                    "family": "Jürgens",
+                    "given": "Norbert"
+                },
+                {
+                    "family": "Opige",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Schmeller",
+                    "given": "Dirk S"
+                },
+                {
+                    "family": "Tiago",
+                    "given": "Patrı́cia"
+                },
+                {
+                    "dropping-particle": "van",
+                    "family": "Swaay",
+                    "given": "Chris A M"
+                }
+            ],
+            "container-title": "Biol. Conserv.",
+            "id": "Proenca2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        9
+                    ]
+                ]
+            },
+            "page": "256-263",
+            "publisher": "Elsevier BV",
+            "title": "Global biodiversity monitoring: From data sources to essential biodiversity variables",
+            "title-short": "Global biodiversity monitoring",
+            "type": "article-journal",
+            "volume": "213"
+        },
+        {
             "DOI": "10.2307/1311860",
             "ISSN": "1525-3244",
             "URL": "http://dx.doi.org/10.2307/1311860",
@@ -1328,6 +1915,101 @@
             "title": "Dragonflies as indicators of the environmental conditions of veredas in a region of central-western brazil",
             "type": "article-journal",
             "volume": "23"
+        },
+        {
+            "author": [
+                {
+                    "family": "Roque",
+                    "given": "Fabio de Oliveira"
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "Marcio"
+                },
+                {
+                    "family": "Valente-Neto",
+                    "given": "Francisco"
+                },
+                {
+                    "family": "Quintero",
+                    "given": "Jose Manuel Ochoa"
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "Katia Torres"
+                },
+                {
+                    "family": "Martins",
+                    "given": "Marlucia Bonifacio"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Lima",
+                    "given": "Marcelo Gonçalves"
+                },
+                {
+                    "family": "Souza",
+                    "given": "Franco L"
+                },
+                {
+                    "family": "Fischer",
+                    "given": "Erich"
+                },
+                {
+                    "dropping-particle": "da",
+                    "family": "Silva",
+                    "given": "Urbano Lopes",
+                    "suffix": "Jr"
+                },
+                {
+                    "family": "Ishida",
+                    "given": "Françoise Yoko"
+                },
+                {
+                    "family": "Gray-Spence",
+                    "given": "Andrew"
+                },
+                {
+                    "family": "Pinto",
+                    "given": "João Onofre Pereira"
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "Danilo Bandini"
+                },
+                {
+                    "family": "Martins",
+                    "given": "Clarissa de Araujo"
+                },
+                {
+                    "family": "Renaud",
+                    "given": "Pierre Cyril"
+                },
+                {
+                    "family": "Pays",
+                    "given": "Olivier"
+                },
+                {
+                    "family": "Magnusson",
+                    "given": "William E"
+                }
+            ],
+            "container-title": "Perspect. Ecol. Conserv.",
+            "id": "Roque2018",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        10
+                    ]
+                ]
+            },
+            "page": "177-185",
+            "publisher": "Elsevier BV",
+            "title": "A network of monitoring networks for evaluating biodiversity conservation effectiveness in brazilian protected areas",
+            "type": "article-journal",
+            "volume": "16"
         },
         {
             "DOI": "10.1016/j.scitotenv.2016.09.146",
@@ -1502,6 +2184,43 @@
             "title": "Inventário florestal de MG: Equações de volume, peso de matéria seca e carbono para diferentes fitofisionomias da flora nativa",
             "title-short": "Inventário florestal de MG",
             "type": "chapter"
+        },
+        {
+            "abstract": "Abstract More than 15% of global terrestrial area is under some form of protection and there is a growing impetus to increase this coverage to 30% by 2030. But not all protection is effective and the reasons some countries’ protected areas (PAs) are more effective than others’ are poorly understood. We evaluate the effectiveness of national PA networks established between 2000 and 2012 globally in avoiding forest loss, taking into account underlying deforestation threats using a combination of matching methods and cross-sectional regressions. We then assess which demographic, agricultural, economic, and governance factors are most strongly associated with national PA effectiveness using machine learning methods. We estimate that national PAs established between 2000 and 2012 reduced deforestation in those areas by 72%, avoiding 86 062 km2 of forest loss. The effectiveness of national PAs varied by strictness of protection based on International Union for Conservation of Nature category. Strictly PAs reduced forest loss by 81% compared to what would have occurred without protection, while less strictly PAs reduced forest loss by 67%. Thus, the 26% of new PAs that were strictly protected contributed 39% of the total forest loss avoided within PAs between 2000 and 2012. If every country’s PAs were as effective as the country with the most effective PAs within the same region, they would have increased the area of deforestation avoided by 38%, saving a further 119 082 km2 of forest. Part of the variation in PA effectiveness across countries is explained by the placement of PA in areas facing higher deforestation threat. Countries with lower agricultural activity, higher economic growth and better governance are most strongly associated with greater country-level PA effectiveness.",
+            "author": [
+                {
+                    "family": "Shah",
+                    "given": "Payal"
+                },
+                {
+                    "family": "Baylis",
+                    "given": "Kathy"
+                },
+                {
+                    "family": "Busch",
+                    "given": "Jonah"
+                },
+                {
+                    "family": "Engelmann",
+                    "given": "Jens"
+                }
+            ],
+            "container-title": "Environ. Res. Lett.",
+            "id": "Shah2021",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        7
+                    ]
+                ]
+            },
+            "page": "074017",
+            "publisher": "IOP Publishing",
+            "title": "What determines the effectiveness of national protected area networks?",
+            "type": "article-journal",
+            "volume": "16"
         },
         {
             "DOI": "10.3390/insects3030616",
