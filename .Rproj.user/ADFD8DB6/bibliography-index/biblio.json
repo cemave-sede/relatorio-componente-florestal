@@ -87,6 +87,27 @@
             "type": "thesis"
         },
         {
+            "author": [
+                {
+                    "family": "Alves",
+                    "given": "S. L."
+                }
+            ],
+            "genre": "Master’s thesis",
+            "id": "Alves_2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "publisher": "Universidade Federal do Pará/Museu Paraense Emílio Goeldi",
+            "publisher-place": "Belém, PA",
+            "title": "Efeitos do tipo de floresta e da estrutura de habitat em assembleias de primatas no sudoeste da amazônia",
+            "type": "thesis"
+        },
+        {
             "DOI": "10.21829/azm.2019.3501219",
             "ISSN": "0065-1737",
             "URL": "http://dx.doi.org/10.21829/azm.2019.3501219",
@@ -417,6 +438,40 @@
             "type": "thesis"
         },
         {
+            "abstract": "Protected areas (PAs) are key elements for biodiversity conservation and ecosystem services. Brazil has the largest PA system in the world, covering approximately 220 million ha. This system expanded rapidly in the mid-1990s to the mid-2000s. Recent events in Brazil, however, have led to an increase in PA downgrading, downsizing, and degazettement (PADDD). Does this reflect a shift in the country’s PA policy? We analyzed the occurrence, frequency, magnitude, type, spatial distribution, and causes of changes in PA boundaries and categories in Brazil. We identified 93 PADDD events from 1981 to 2012. Such events increased in frequency since 2008 and were ascribed primarily to generation and transmission of electricity in Amazonia. In Brazilian parks and reserves, 7.3 million ha were affected by PADDD events, and of these, 5.2 million ha were affected by downsizing or degazetting. Moreover, projects being considered by the Federal Congress may degazette 2.1 million ha of PA in Amazonia alone. Relaxing the protection status of existing PAs is proving to be politically easy in Brazil, and the recent increase in frequency and extension of PADDD reflects a change in governmental policy. By taking advantage of chronic deficiencies in financial and personnel resources and surveillance, disputes over land tenure, and the slowness of the Brazilian justice, government agencies have been implementing PADDD without consultation of civil society. If parks and reserves are to maintain their integrity, there will need to be investments in Brazilian PAs and a better understanding of the benefits PAs provide.",
+            "author": [
+                {
+                    "family": "Bernard",
+                    "given": "E."
+                },
+                {
+                    "family": "Penna",
+                    "given": "L. A. O."
+                },
+                {
+                    "family": "Araújo",
+                    "given": "E."
+                }
+            ],
+            "container-title": "Conserv. Biol.",
+            "id": "Bernard_2014",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        8
+                    ]
+                ]
+            },
+            "keyword": "Amazonia; PADDD; conservación in situ; conservation policy; in situ conservation; national parks; parques nacionales; polı́tica de conservación",
+            "page": "939-950",
+            "publisher": "Wiley",
+            "title": "Downgrading, downsizing, degazettement, and reclassification of protected areas in brazil",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
             "DOI": "10.1590/s1676-06032010000300019",
             "ISSN": "1676-0603",
             "URL": "http://dx.doi.org/10.1590/S1676-06032010000300019",
@@ -452,38 +507,109 @@
             "volume": "10"
         },
         {
-            "abstract": "Protected areas (PAs) are key elements for biodiversity conservation and ecosystem services. Brazil has the largest PA system in the world, covering approximately 220 million ha. This system expanded rapidly in the mid-1990s to the mid-2000s. Recent events in Brazil, however, have led to an increase in PA downgrading, downsizing, and degazettement (PADDD). Does this reflect a shift in the country’s PA policy? We analyzed the occurrence, frequency, magnitude, type, spatial distribution, and causes of changes in PA boundaries and categories in Brazil. We identified 93 PADDD events from 1981 to 2012. Such events increased in frequency since 2008 and were ascribed primarily to generation and transmission of electricity in Amazonia. In Brazilian parks and reserves, 7.3 million ha were affected by PADDD events, and of these, 5.2 million ha were affected by downsizing or degazetting. Moreover, projects being considered by the Federal Congress may degazette 2.1 million ha of PA in Amazonia alone. Relaxing the protection status of existing PAs is proving to be politically easy in Brazil, and the recent increase in frequency and extension of PADDD reflects a change in governmental policy. By taking advantage of chronic deficiencies in financial and personnel resources and surveillance, disputes over land tenure, and the slowness of the Brazilian justice, government agencies have been implementing PADDD without consultation of civil society. If parks and reserves are to maintain their integrity, there will need to be investments in Brazilian PAs and a better understanding of the benefits PAs provide.",
             "author": [
                 {
-                    "family": "Bernard",
-                    "given": "E."
-                },
-                {
-                    "family": "Penna",
-                    "given": "L. A. O."
-                },
-                {
-                    "family": "Araújo",
-                    "given": "E."
+                    "family": "Borges",
+                    "given": "L. H. M."
                 }
             ],
-            "container-title": "Conserv. Biol.",
-            "id": "Bernard_2014",
-            "issue": "4",
+            "genre": "Master’s thesis",
+            "id": "Borges_2014",
             "issued": {
                 "date-parts": [
                     [
-                        2014,
-                        8
+                        2014
                     ]
                 ]
             },
-            "keyword": "Amazonia; PADDD; conservación in situ; conservation policy; in situ conservation; national parks; parques nacionales; polı́tica de conservación",
-            "page": "939-950",
-            "publisher": "Wiley",
-            "title": "Downgrading, downsizing, degazettement, and reclassification of protected areas in brazil",
+            "publisher": "Universidade Federal do Acre",
+            "publisher-place": "Rio Branco, AC",
+            "title": "Abundância de mamíferos de médio e grande porte em resposta ao grau de distanciamento do rio chandless, parque estadual chandless, acre",
+            "type": "thesis"
+        },
+        {
+            "ISSN": "1676-0603",
+            "author": [
+                {
+                    "family": "Buss",
+                    "given": "G."
+                },
+                {
+                    "family": "Fialho",
+                    "given": "M. S."
+                },
+                {
+                    "family": "Jerusalinsky",
+                    "given": "L."
+                },
+                {
+                    "family": "Azevedo",
+                    "given": "R. B."
+                },
+                {
+                    "family": "Alves. S. L. amd Vidal",
+                    "given": "M. D."
+                },
+                {
+                    "family": "Mendonça",
+                    "given": "E. N."
+                }
+            ],
+            "container-title": "Biodiversidade Brasileira",
+            "id": "Buss_2017",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "title": "Abundância e densidade de primatas na reserva biológica do gurupi, maranhão, brasil",
             "type": "article-journal",
-            "volume": "28"
+            "volume": "7"
+        },
+        {
+            "author": [
+                {
+                    "family": "Buss",
+                    "given": "G."
+                },
+                {
+                    "family": "Cardoso",
+                    "given": "T. S."
+                },
+                {
+                    "family": "Queiroz",
+                    "given": "H."
+                },
+                {
+                    "family": "Oliveira",
+                    "given": "A. C. M."
+                },
+                {
+                    "family": "Melo",
+                    "given": "F. R."
+                },
+                {
+                    "family": "Jerusalinsky",
+                    "given": "L."
+                }
+            ],
+            "chapter-number": "",
+            "id": "Buss_2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "107-109",
+            "publisher": "IUCN SSC Primate Specialist Group, International Primatological Society",
+            "publisher-place": "Washington, DC",
+            "title": "Ka’apor capuchin cebus kaapori queiroz, 1992.",
+            "type": "chapter"
         },
         {
             "author": [
@@ -1176,7 +1302,7 @@
                     ]
                 ]
             },
-            "note": "Accessed: 2024-02-27",
+            "note": "Accesso: 2024-02-27",
             "publisher": "https://dx.doi.org/10.2305/IUCN.UK.2016-1.RLTS.T14025A45200982.en",
             "title": "Mustela africana. The IUCN red list of threatened species 2016: e.T14025A45200982",
             "title-short": "Mustela africana. The IUCN red list of threatened species 2016",
@@ -1325,7 +1451,6 @@
                     ]
                 ]
             },
-            "number": "",
             "publisher": "WWF",
             "publisher-place": "Gland, Switzerland",
             "title": "Living Planet report 2018: Aiming higher",
@@ -1390,6 +1515,33 @@
             },
             "page": "87-101",
             "publisher": "Cambridge University Press (CUP)",
+            "title": "Population abundance and biomass of large-bodied birds in amazonian flooded and unflooded forests",
+            "type": "article-journal",
+            "volume": "18"
+        },
+        {
+            "DOI": "10.1017/S0959270908000130",
+            "author": [
+                {
+                    "family": "Haugaasen",
+                    "given": "T."
+                },
+                {
+                    "family": "Peres",
+                    "given": "C. A."
+                }
+            ],
+            "container-title": "Bird Conservation International",
+            "id": "Haugaasen_Peres_2008",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "87-101",
             "title": "Population abundance and biomass of large-bodied birds in amazonian flooded and unflooded forests",
             "type": "article-journal",
             "volume": "18"
@@ -1589,6 +1741,32 @@
             "publisher": "https://cran.r-project.org/web/packages/unmarked/vignettes/colext.html",
             "title": "Dynamic occupancy models in unmarked - r package version 094.",
             "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Konstant",
+                    "given": "W. R."
+                },
+                {
+                    "family": "Rylands",
+                    "given": "A. B."
+                }
+            ],
+            "container-title": "Handbook of the mammals of the world",
+            "id": "Konstant_2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "536-542",
+            "publisher": "Lynx Edicions",
+            "publisher-place": "Barcelona",
+            "title": "Species accounts of ateles",
+            "type": "chapter"
         },
         {
             "abstract": "Long-term research and monitoring can provide important ecological insights and are crucial for the improved management of ecosystems and natural resources. However, many long-term research and monitoring programs are either ineffective or fail completely owing to poor planning and/or lack of focus. Here we propose the paradigm of adaptive monitoring, which aims to resolve many of the problems that have undermined previous attempts to establish long-term research and monitoring. This paradigm is driven by tractable questions, rigorous statistical design at the outset, a conceptual model of the ecosystem or other entity being examined and a human need to know about ecosystem change. An adaptive monitoring framework enables monitoring programs to evolve iteratively as new information emerges and research questions change.",
@@ -1872,6 +2050,26 @@
             "author": [
                 {
                     "family": "Martins",
+                    "given": "B. A. S. B."
+                }
+            ],
+            "id": "Martins_2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "note": "Universidade Federal de Rondônia",
+            "publisher": "Monografia",
+            "title": "Caracterização da comunidade de mamíferos de médio e grande porte em área ecotonal da amazônia sul-ocidental",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Martins",
                     "given": "M. B."
                 },
                 {
@@ -2106,6 +2304,24 @@
             "title": "Estratégia do programa nacional de monitoramento da biodiversidade – programa monitora: Estrutura, articulações, perspectivas",
             "title-short": "Estratégia do programa nacional de monitoramento da biodiversidade – programa monitora",
             "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "literal": "Ministério do Meio Ambiente, Brasil"
+                }
+            ],
+            "id": "MMA_2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "note": "Accesso: 2024-03-20",
+            "title": "Portaria MMA nº 148",
+            "type": ""
         },
         {
             "author": [
@@ -2619,6 +2835,67 @@
             "title": "Ecology of a community of mammals in a seasonally dry forest in roraima, brazilian amazon",
             "type": "article-journal",
             "volume": "69"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pontes",
+                    "given": "A. R. M."
+                },
+                {
+                    "family": "Layme",
+                    "given": "V. M. G."
+                },
+                {
+                    "family": "Magnusson",
+                    "given": "W. E."
+                },
+                {
+                    "family": "Marigo",
+                    "given": "L. C."
+                }
+            ],
+            "container-title": "Roraima: Homem, ambiente e ecologia",
+            "id": "Pontes_2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "603-629",
+            "publisher": "Femact",
+            "publisher-place": "Boa Bista, RR",
+            "title": "Mamíferos de médio e grande porte de roraima, extremo norte da amazônia brasileira",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.2307/1311860",
+            "ISSN": "1525-3244",
+            "URL": "http://dx.doi.org/10.2307/1311860",
+            "author": [
+                {
+                    "family": "Redford",
+                    "given": "K. H."
+                }
+            ],
+            "container-title": "BioScience",
+            "id": "Redford_1992",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        1992,
+                        6
+                    ]
+                ]
+            },
+            "page": "412-422",
+            "publisher": "Oxford University Press (OUP)",
+            "title": "The empty forest",
+            "type": "article-journal",
+            "volume": "42"
         },
         {
             "abstract": "Essential Biodiversity Variables (EBVs) consolidate information from varied biodiversity observation sources. Here we demonstrate the links between data sources, EBVs and indicators and discuss how different sources of biodiversity observations can be harnessed to inform EBVs. We classify sources of primary observations into four types: extensive and intensive monitoring schemes, ecological field studies and satellite remote sensing. We characterize their geographic, taxonomic and temporal coverage. Ecological field studies and intensive monitoring schemes inform a wide range of EBVs, but the former tend to deliver short-term data, while the geographic coverage of the latter is limited. In contrast, extensive monitoring schemes mostly inform the population abundance EBV, but deliver long-term data across an extensive network of sites. Satellite remote sensing is particularly suited to providing information on ecosystem function and structure EBVs. Biases behind data sources may affect the representativeness of global biodiversity datasets. To improve them, researchers must assess data sources and then develop strategies to compensate for identified gaps. We draw on the population abundance dataset informing the Living Planet Index (LPI) to illustrate the effects of data sources on EBV representativeness. We find that long-term monitoring schemes informing the LPI are still scarce outside of Europe and North America and that ecological field studies play a key role in covering that gap. Achieving representative EBV datasets will depend both on the ability to integrate available data, through data harmonization and modeling efforts, and on the establishment of new monitoring programs to address critical data gaps.",

@@ -24,7 +24,7 @@ library(gridExtra)
 
 </br>
 
-**Isabela Freitas Oliveira**^1-2^, **Onildo João Marini Filho**^1^ & **Arlindo Gomes Filho**^3^ 
+**Isabela Freitas Oliveira**^1-2^ & **Onildo João Marini Filho**^1^
 
 
 1. Centro Nacional de Pesquisa e Conservação da Biodiversidade do Cerrado e Restauração Ecológica - CBC  
@@ -38,15 +38,10 @@ library(gridExtra)
 *Complexo Administrativo EQSW 103/104 s/n*  
 *70670-350 Brasília, DF*  
 
-3. Centro Nacional de Pesquisa e Conservação de Aves Silvestres – CEMAVE  
-*Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*  
-*BR-230 Km 10*  
-*Floresta Nacional da Restinga de Cabedelo*  
-*58108-012 Cabedelo, PB*  
 </br>
 
 
-Em alguns grupos de insetos, a variação na riqueza, abundância e composição de espécies das comunidades ao longo do tempo vem sendo utilizada como indicador de alteração ambiental (@Gerlach_2013, @Arenhardt_2021, @Rodrigues_2019). No caso de borboletas, além desses parâmetros, a frequência relativa de ocorrência em nível de tribo também tem sido usada em estudos pontuais e programas de monitoramento (referencia?). Esse indicador está relacionado tanto a alterações na vegetação (@Uehara_Prado_2006, @Ribeiro_2010) e eventos extremos climáticos, quanto a mudanças menos perceptíveis, como a redução na qualidade do ar (especialmente devido à presença de agrotóxicos) (@Smilanich_2012, @Ndakidemi_2016) e variações graduais do clima (temperatura e umidade) (@Devictor_2012). 
+Em alguns grupos de insetos, a variação na riqueza, abundância e composição de espécies das comunidades ao longo do tempo vem sendo utilizada como indicador de alteração ambiental (@Gerlach_2013, @Arenhardt_2021, @Rodrigues_2019). No caso de borboletas, além desses parâmetros, a frequência relativa de ocorrência em nível de tribo também tem sido usada em estudos pontuais e programas de monitoramento (@Monitora_2018a). Esse indicador está relacionado tanto a alterações na vegetação (@Uehara_Prado_2006, @Ribeiro_2010) e eventos extremos climáticos, quanto a mudanças menos perceptíveis, como a redução na qualidade do ar (especialmente devido à presença de agrotóxicos) (@Smilanich_2012, @Ndakidemi_2016) e variações graduais do clima (temperatura e umidade) (@Devictor_2012). 
 
 A abordagem que vem sendo utilizada no Programa Monitora considera a existência de um gradiente na associação entre as tribos de borboletas frugívoras e a estrutura das formações florestais, variando das florestas mais alteradas e/ou abertas até florestas mais adensadas e fechadas. O protocolo adotado pelo grupo de especialistas em borboletas considera que as tribos registradas estão relacionadas aos seguintes tipos de ambiente: 
 
@@ -91,7 +86,7 @@ Em 2022, a amostragem de borboletas frugívoras foi realizada em 40 das 50 UCs i
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Evolução da implementação das amostragens de borboletas em todas as UCs participantes do Programa Monitora."
+#| fig-cap: "Evolução do número de unidades de conservação (UCs) e de estações amostrais (EAs) com amostragem de borboletas frugívoras no Programa Monitora de 2014 a 2022."
 
 # Numero de UC's e EA's implementadas 214-2022
 # Script: Isabela Freitas Oliveira
@@ -141,7 +136,7 @@ grafico_amostragens <- ggplot(dados_long, aes(x = ano, y = contagem, fill = cate
   theme_minimal() +
   theme(
     plot.title = element_text(size = 14, hjust = 0, lineheight = 1.3),
-    legend.position = c(0.03, 1), # Define a posição da legenda no canto superior esquerdo
+    legend.position = c(0.1, 1), # Define a posição da legenda no canto superior esquerdo
     legend.justification = c(0, 1), # Define a justificação da legenda para o canto superior esquerdo
     legend.box.just = "left", # Alinha a legenda à esquerda
     legend.title = element_text(size = 12),
@@ -331,11 +326,12 @@ Nesse sentido, recomendamos que sejam exploradas outras possibilidades de desenh
 </br>
 
 
-O objetivo dessa seção é apresentar análises integrativas mostrando padrões regionais ou geográficos, indicando alterações na biodiversidade em escala ampla. Neste período inicial do Programa Monitora estão sendo estabelecidos os padrões normais de riqueza, abundância, composição e frequência relativa para cada UC e, possivelmente, para cada região (marco zero). Os primeiros resultados que estamos apresentando são as proporções normais de abundância relativa de tribos por região climática (@fig-regiao-climatica-central-amazonica a @fig-regiao-climatica-sudeste-amazonica). 
+O objetivo dessa seção é apresentar análises integrativas mostrando padrões regionais ou geográficos, indicando alterações na biodiversidade em escala ampla. Neste período inicial do Programa Monitora estão sendo estabelecidos os padrões normais de riqueza, abundância, composição e frequência relativa para cada UC e, possivelmente, para cada região (marco zero). Os primeiros resultados apresentados constituem a abundância relativa, representada pela proporção de registros de cada tribo, por região climática (@fig-regiao-climatica-central-amazonica a @fig-regiao-climatica-sudeste-amazonica). 
 
-Considerando que ainda não temos dados populacionais para borboletas, uma vez que poucas UCs iniciaram a aplicação do protocolo avançado, ainda não é possível gerar tendências nesse nível. Uma das formas pretendidas para apresentação desse tipo de resultado é por meio de um índice de abundância, considerando o esforço amostral para cada população monitorada – igual ou similar ao Índice Planeta Vivo (@Pereira_2006). Para isso, necessitamos de dados populacionais coletados em amostragens anuais consecutivas para cada uma das espécies em cada unidade de conservação ou estação amostral. Com esse tipo de dado, poderemos obter tendências de aumento ou diminuição de populações em EAs, UCs, ou regiões climáticas (@WWF_2018). 
+Ainda não temos dados populacionais para borboletas, uma vez que nas poucas UCs que iniciaram a aplicação do protocolo avançado os indivíduos capturados ainda não foram identificados, não sendo possível gerar tendências em nível de espécie. Uma das formas pretendidas para apresentação desse tipo de resultado é por meio de um índice de abundância, considerando o esforço amostral para cada população monitorada – igual ou similar ao Índice Planeta Vivo (@Pereira_2006). Para isso, necessitamos de dados populacionais coletados em amostragens anuais consecutivas para cada uma das espécies em cada unidade de conservação ou estação amostral. Com esse tipo de dado, poderemos obter tendências de aumento ou diminuição de populações em EAs, UCs ou regiões climáticas (@WWF_2018). 
 
-Mesmo não tendo ainda acesso a dados populacionais, estamos avaliando a viabilidade do uso de um índice no nível de tribos para servir de base para futuras análises no Programa Monitora. Uma proposta será apresentada adiante. 
+Mesmo não tendo ainda acesso a dados populacionais, iremos utilizar o índice de abundância em nível de tribos, para servir de base para futuras análises. Este método já foi utilizado no relatório anterior do Programa Monitora (@Monitora_2018a).  
+
 
 Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde temos alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (@Checa_2009). Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (@fig-regioes-climaticas, reproduzida de @Marengo_2001). A partir da determinação dos regimes de chuva regionais, delimitamos alguns polígonos  contemplando as UCs integrantes do Programa Monitora, possibilitando estabelecer  a melhor época para amostragem (Tabela x),  considerando o regime de chuvas como uma característica regional importante para as borboletas frugívoras (Figura 4.4). 
 
@@ -387,7 +383,256 @@ Tabela x. Localização das UCs em relação às regiões climáticas da Amazôn
 
 </br>
 
-Em sete UCs da região climática central amazônica foram realizadas amostragens de borboletas frugívoras: PARNA da Amazônia, PARNA do Jaú, REBIO do Jaru, REBIO do Uatumã, ESEC da Terra do Meio, FLONA do Jamari e RESEXTapajós-Arapiuns.  Essa é a região em que o Programa está mais consolidado e possui o maior número de registros e de EAs em atividade. Por isso, será a única região climática analisada separadamente.  
+
+A região Amazônica concentra a maior parte do esforço amostral de borboletas frugívoras no Programa Monitora, com um crescimento gradativo de 2014 a 2022 no número de UCs e de EAs em quase todas as regiões climáticas (@fig-numero-ucs-eas-amostradas).  
+
+
+```{r numero-ucs-amostradas}
+#| label: fig-numero-ucs-amostradas
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '60%'
+
+
+
+library(tidyverse)
+library(ggplot2)
+library(stringr)
+
+# Carregar os dados
+dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+
+# Converter o ano para fator
+dados_borboletas$ano <- factor(dados_borboletas$ano)
+
+# Filtrar os dados para incluir apenas regiões da Amazônia
+dados_amazonia <- dados_borboletas %>%
+  filter(regiao %in% c("central", "sudoeste", "sudeste", "norte", "leste"))
+
+# Preparar os dados para o gráfico
+contagem_uc_amazonia <- dados_amazonia %>%
+  group_by(ano, regiao) %>%
+  summarise(num_uc = n_distinct(uc))
+
+# Cores para cada região da Amazônia
+cores_amazonia <- c(
+  "#c7eae5",
+  "#80cdc1",
+  "#35978f",
+  "#01665e",
+  "#003c30"
+)
+
+# Gráfico
+grafico_uc_amazonia <- ggplot(contagem_uc_amazonia, aes(x = ano, y = num_uc, fill = regiao)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = cores_amazonia) + # Definindo as cores manualmente
+  labs(
+    x = "",
+    y = "Número de UCs amostradas",
+    fill = "",
+    title = ""
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, hjust = 0, lineheight = 1.3),
+    legend.position = c(0.1, 0.80), # Define a posição da legenda no canto superior esquerdo
+    #legend.justification = c(0.1, 1), # Define a justificação da legenda para o canto superior esquerdo
+    legend.box.just = "left", # Alinha a legenda à esquerda
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8),
+    axis.title.x = element_text(size = 12), 
+    axis.text.x = element_text(size = 10),  
+    #axis.line = element_line(colour = "gray40"),
+    axis.line.x = element_blank(),
+    #axis.text.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(colour = "gray40"),
+    axis.ticks.y = element_line(color = "black")
+    
+  ) +
+  scale_y_continuous(limits = c(0, 15))
+
+# Exibir o gráfico
+print(grafico_uc_amazonia)
+
+##f1
+grafico_uc_amazonia <- ggplot(contagem_uc_amazonia, aes(x = ano, y = num_uc, fill = regiao)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  #geom_text(aes(label = num_uc), position = position_dodge(width = 0.9), vjust = -0.5, size = 3) + # Adicionando os valores
+  scale_fill_manual(values = cores_amazonia) + # Definindo as cores manualmente
+  labs(
+    x = "",
+    y = "Número de UCs amostradas",
+    fill = "",
+    title = "Número de UCs"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, hjust = 0.5, lineheight = 1.3),
+    legend.position = c(0.1, 0.80), # Define a posição da legenda no canto superior esquerdo
+    #legend.justification = c(0.1, 1), # Define a justificação da legenda para o canto superior esquerdo
+    legend.box.just = "left", # Alinha a legenda à esquerda
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8),
+    axis.title.x = element_text(size = 12), 
+    axis.text.x = element_text(size = 10),  
+    #axis.line = element_line(colour = "gray40"),
+    axis.line.x = element_blank(),
+    #axis.text.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(colour = "gray40"),
+    axis.ticks.y = element_line(color = "black")
+    
+  ) +
+  scale_y_continuous(limits = c(0, 15))
+
+# Exibir o gráfico
+print(grafico_uc_amazonia)
+
+
+# Salvar a imagem usando ggsave()
+# ggsave(
+#   filename = "grafico_numeros_de_uc_amazonia_f1.png",
+#   plot = grafico_uc_amazonia,
+#   device = "png",
+#   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",
+#   dpi = 300,
+#   width = 12,
+#   height = 8,
+#   units = "in"
+# )
+
+
+```
+
+
+
+
+</br>
+
+```{r numero-eas-amostradas}
+#| label: fig-numero-eas-amostradas
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '60%'
+
+
+# Carregar os dados
+dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+
+# Converter o ano para fator
+dados_borboletas$ano <- factor(dados_borboletas$ano)
+
+# Filtrar os dados para incluir apenas regiões da Amazônia
+dados_amazonia <- dados_borboletas %>%
+  filter(regiao %in% c("central", "sudoeste", "sudeste", "norte", "leste"))
+
+# Preparar os dados para o gráfico
+contagem_ea_amazonia <- dados_amazonia %>%
+  group_by(ano, regiao) %>%
+  summarise(num_ea = n_distinct(uc_ea))
+
+# Cores para cada região da Amazônia
+cores_amazonia <- c(
+  "#f6e8c3",
+  "#dfc27d",
+  "#bf812d",
+  "#8c510a",
+  "#543005"
+)
+
+# Gráfico
+grafico_ea_amazonia <- ggplot(contagem_ea_amazonia, aes(x = ano, y = num_ea, fill = regiao)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = cores_amazonia) + # Definindo as cores manualmente
+  labs(
+    x = "Ano",
+    y = "Número de EAs amostradas",
+    fill = "",
+    title = "Número de EAs"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, hjust = 0.5, lineheight = 1.3),
+    legend.position = c(0.1, 0.8),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.text.x = element_text(size = 10),
+    axis.title.y = element_text(size = 10),
+    axis.text.y = element_text(size = 8),
+    axis.line = element_line(colour = "gray40"),
+    axis.line.x = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.ticks.y = element_line(color = "black")
+  ) +
+  scale_y_continuous(limits = c(0, 40))
+
+# Exibir o gráfico
+print(grafico_ea_amazonia)
+
+# Salvar a imagem usando ggsave()
+# ggsave(
+#   filename = "grafico_numeros_de_ea_amazonia.png",
+#   plot = grafico_ea_amazonia,
+#   device = "png",
+#   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",
+#   dpi = 300,
+#   width = 12,
+#   height = 8,
+#   units = "in"
+# )
+
+```
+
+</br>
+
+
+```{r numero-ucs-eas-amostradas}
+#| label: fig-numero-ucs-eas-amostradas
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '75%'
+#| fig-cap: "Número de unidades de conservação (UCs) e estações amostrais (EAs) do Programa Monitora na região amazônica por região climática com amostragem de borboletas frugívoras implementadas de 2014 a 2022."
+
+
+
+library(gridExtra)
+combinado<-grid.arrange (grafico_uc_amazonia, grafico_ea_amazonia, ncol=1)
+
+# ggsave(
+#   filename = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/ucs_eas_combinados.png",
+#   plot = combinado,
+#   device = "png",
+#   dpi = 300,
+#   width = 14,
+#   height = 12,
+#   units = "in"
+# )
+
+```
+
+
+</br>
+
+
+As amostragens de borboletas frugívoras na região climática Central Amazônica foram realizadas em 12 UCs: PARNA da Amazônia, PARNA dos Campos Amazônicos, PARNA do Jaú, PARNA Nascentes do Lago Jari, REBIO do Jaru, REBIO do Uatumã, ESEC da Terra do Meio, FLONA de Tapajós, RESEX do Lago do Capanã Grande, RESEX Riozinho do Anfrísio, RESEX Tapajós-Arapiuns e RESEX Verde para Sempre. Nessa região, 41 EAs foram amostradas de 2014 a 2022.  
 
 ```{r ajustes dos gráficos de assinaturas}
 #| label: ajustes-graficos-assinaturas
@@ -541,6 +786,7 @@ gerar_grafico_por_regiao <- function(dados, nome_regiao) {
           plot.subtitle = element_text(hjust = 0.5, size = 14),
           axis.text = element_text(size = 12), 
           axis.title = element_text(size = 12),
+          axis.ticks.y = element_line(color = "black"),
           axis.line = element_line(colour = "gray40"),
           axis.line.x = element_blank()) +
     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
@@ -706,9 +952,13 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 
 ```
 
-Apesar de termos uma boa representatividade de EAs e um número considerável de borboletas amostradas nos últimos dois anos, ainda observamos grandes variações nas proporções de tribos entre anos (@fig-regiao-climatica-central-amazonica). Considerando as variações na proporção de indivíduos, enquanto a tribo Brassolini apresentou tendência de diminuição de 2014 a 2017, Epicaliini mostrou tendência oposta. Por outro lado, as tribos Satyrini e Coeini tiveram comportamento errático, variando amplamente entre anos nesse período. Satyrini é a tribo com maior contribuição para o total de indivíduos e uma das que sofrem maiores flutuações. As tribos Callicorini, Biblidini e Ageroniini, características de ambientes alterados, tiveram baixíssima representação no conjunto de UCs da região climática central amazônica. Considerando esse conjunto de variações nas proporções das tribos, a assinatura regional sofreu consideráveis alterações de 2014 a 2018 (@fig-regiao-climatica-central-amazonica). 
+</br>
+
+Apesar de termos uma boa representatividade de UCs e um número considerável de borboletas amostradas nos últimos anos, ainda observamos grandes variações nas proporções de tribos entre anos (@fig-regiao-climatica-central-amazonica). Considerando as variações na proporção de indivíduos, enquanto a tribo Brassolini apresentou tendência de diminuição de 2014 a 2017, Epicaliini mostrou tendência oposta. Por outro lado, as tribos Satyrini e Coeini tiveram comportamento errático, variando amplamente entre anos nesse período. Satyrini é a tribo com maior contribuição para o total de indivíduos e uma das que sofrem maiores flutuações. As tribos Callicorini, Biblidini e Ageroniini, características de ambientes alterados, tiveram baixíssima representação no conjunto de UCs da região climática central amazônica. Considerando esse conjunto de variações nas proporções das tribos, a assinatura regional sofreu consideráveis alterações de 2014 a 2018 (@fig-regiao-climatica-central-amazonica). 
+
 
 </br>
+
 
 ```{r grafico regiao-climatica-central-amazonica}
 #| label: fig-regiao-climatica-central-amazonica
@@ -786,7 +1036,7 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 </br>
 
-Na região climática sudoeste amazônico borboletas frugívoras vêm sendo amostradas em sete UCs: PARNA da Serra do Divisor, PARNA Serra da Cutia, PARNA Mapinguari,  RESEXdo Alto Tarauacá, RESEXBarreiro das Antas, RESEXdo Cazumbá-Iracema e RESEXdo Rio Ouro Preto. A região possui um padrão de assinatura de tribos diferente das demais, com maiores proporções das tribos associadas a ambientes perturbados, especialmente Ageroniini. A grande variação na proporção de Satyrini e, em menor grau, Morphini e Brassolini, gerou assinaturas bastante diferentes em anos consecutivos na região. Isso também pode ser um artefato estatístico relacionado ao aumento do número de estações amostrais e de borboletas amostradas no período, uma vez que estas variáveis aumentaram mais de seis vezes nesse período (@fig-regiao-climatica-sudoeste-amazonica).  
+Na região climática sudoeste amazônica, 13 UCs e 41 EAs foram amostradas até 2022: ESEC Rio Acre, FLONA de Jamari, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA Mapinguari, RESEX Arapixi, RESEX Barreiro das Antas, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio Cautário, RESEX Rio Ouro Preto e RESEX Riozinho da Liberdade. A região possui um padrão de assinatura de tribos diferente das demais, com maiores proporções das tribos associadas a ambientes perturbados, especialmente Ageroniini. A grande variação na proporção de Satyrini e, em menor grau, Morphini e Brassolini, gerou assinaturas bastante diferentes em anos consecutivos na região. Isso também pode ser um artefato estatístico relacionado ao aumento do número de estações amostrais e de borboletas amostradas no período, uma vez que estas variáveis aumentaram mais de seis vezes nesse período (@fig-regiao-climatica-sudoeste-amazonica).  
 
 
 </br>
@@ -969,6 +1219,7 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
           plot.subtitle = element_text(hjust = 0.5, size = 12),
           axis.text = element_text(size = 12), 
           axis.title = element_text(size = 12),
+          axis.ticks.y = element_line(color = "black"),
           axis.line = element_line(colour = "gray40"),
           axis.line.x = element_blank()) +
     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
@@ -993,7 +1244,7 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Cerrado"])
 
 # Aplicar a função
-# lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+ #lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
 # 
  gerar_grafico_por_bioma(resultado_final, biomas)
 
@@ -1021,6 +1272,11 @@ biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Cerrado"])
 ### Tribos com asterisco estão ausentes no gráfico
 ## Script: Isabela Freitas Oliveira
 
+# Carregar bibliotecas
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(tools)
 
 # Definir o diretório de trabalho
 #setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
@@ -1133,9 +1389,10 @@ gerar_grafico_por_bioma <- function(dados, nome_bioma) {
           legend.title = element_text(size = 12), 
           legend.text = element_text(size = 10), 
           plot.title = element_text(hjust = 0.5, size = 16), 
-          plot.subtitle = element_text(hjust = 0.5, size = 14),
+          plot.subtitle = element_text(hjust = 0.5, size = 12),
           axis.text = element_text(size = 12), 
           axis.title = element_text(size = 12),
+          axis.ticks.y = element_line(color = "black"),
           axis.line = element_line(colour = "gray40"),
           axis.line.x = element_blank()) +
     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))
@@ -1155,11 +1412,15 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 biomas <- unique(resultado_final$bioma[resultado_final$bioma == "Mata_Atlantica"])
 
 # Aplicar a função
-#graficos<-lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
+graficos<-lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))
 
-
-gerar_grafico_por_bioma(resultado_final, biomas)
-
+# Salvar a imagem usando ggsave()
+# ggsave(filename = "MA.png",  # Escolha um nome adequado para o arquivo
+#        plot = graficos[[1]],  # Especifique qual gráfico da lista deseja salvar
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Tribos por Ano/Relatório/Regional",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 10, height = 8, units = "in")  # Define o tamanho da imagem
 
 ```
 
@@ -1180,7 +1441,7 @@ A análise a seguir está em fase de teste conceitual, tanto do modelo estatíst
 
 </br>
 
-O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo da frequência absoluta de indivíduos por tribo por ano (n), fazemos inicialmente uma correção, somando um número muito pequeno a cada frequência absoluta, de forma a evitar a presença de zeros na matriz. Desta forma é obtida a frequência absoluta corrigida (f = n + 0,00001). Em seguida, é calculada a frequência, corrigida pelo esforço amostral (fe = número de armadilhas * dias de amostragem). Considerando que essa frequência mostra grandes variações, às vezes em duas ordens de grandeza, optamos por realizar uma transformação logarítmica para normalizar os dados. Assim, o próximo passo é calcular o log10 da fe. O índice é finalmente calculado, comparando-se as variações da fe em anos consecutivos, considerando-se sempre o índice igual a 1,0 para o primeiro ano em que aquela “população” foi registrada. A Tabela x mostra o produto desse cálculo. Note que o ano base para algumas tribos difere do ano base da maioria das outras. 
+O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo da frequência absoluta de indivíduos por tribo por ano (*n*), fazemos inicialmente uma correção, somando um número muito pequeno a cada frequência absoluta, de forma a evitar a presença de zeros na matriz. Desta forma é obtida a frequência absoluta corrigida (*f* = *n* + 0,00001). Em seguida, é calculada a frequência, corrigida pelo esforço amostral (*fe* = número de armadilhas * dias de amostragem). Considerando que essa frequência mostra grandes variações, às vezes em duas ordens de grandeza, optamos por realizar uma transformação logarítmica para normalizar os dados. Assim, o próximo passo é calcular o *log10* da *fe*. O índice é finalmente calculado, comparando-se as variações da fe em anos consecutivos, considerando-se sempre o índice igual a 1,0 para o primeiro ano em que aquela “população” foi registrada. A Tabela x mostra o produto desse cálculo. Note que o ano base para algumas tribos difere do ano base da maioria das outras. 
 
 
 </b>
@@ -1235,7 +1496,7 @@ library(vegan)
 
 # Definir o diretório de trabalho
 #setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
-df_indice <- read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
 df_indice <- df_indice[!is.na(df_indice$tribo), ]
 
 dados_regiao_especifica <- df_indice %>%
@@ -1295,7 +1556,6 @@ df_tribo_ano_largo <- df_tribo_ano_largo %>%
   mutate_if(is.numeric, ~ round(., 3))
 #write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_AM_Central.csv", row.names = FALSE)
 
-
 ```
 
 
@@ -1340,25 +1600,22 @@ gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group =
   scale_color_manual(values = cores_linhas) +
   scale_y_continuous(limits = c(0, 2))+
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 1, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "Região Climática Central Amazônica",
-       subtitle = "Borboletas florestais",
+       subtitle = "Borboletas de áreas fechadas",
        x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
-  theme(plot.title = element_text(hjust = 0.5, size = 14),
+   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        axis.ticks.y = element_line(color = "black"),
-        legend.position = c(0.70, 0.90),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
         panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
@@ -1373,8 +1630,6 @@ print(gg_florestal)
    #    path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
     #   dpi = 300,  # Define a resolução (DPI)
      #  width = 12, height = 8, units = "in")  # Define o tamanho da imagem
-######
-
 
 ```
 
@@ -1415,27 +1670,25 @@ dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
 # Crie o gráfico
 gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
   geom_line(size = 0.7) +
-  scale_y_continuous(limits = c(0, 2))+
+  scale_y_continuous(limits = c(0, 2.0))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 1, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "",
        subtitle = "Borboletas de áreas abertas",
-       x = "Ano",
-       y = expression("Índice de Abundância ( " * italic( "i" ) * ")" ),
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
-        #legend.title = element_text(size = 10),
-        legend.position = c(0.70, 0.90),
-        legend.title = element_blank(),
+        legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
         panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
@@ -1474,13 +1727,13 @@ library(gridExtra)
 # Gráficos combinados
 g <- grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3, 3))
 
-#ggsave("graficos_combinados_indice_AM_Central_linhas.png", 
- #    grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
-  #     device = "png", 
-   #    width = 12, height = 10, units = "in", 
-    #   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+# ggsave("graficos_combinados_indice_AM_Central_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
 
-#g <- grid.arrange(gg_florestal, gg_aberto, nrow = 1)
+
 
 #knitr::include_graphics("imagens/cap04/bo_IA_regiao_climatica_central_amazonica.JPG")
 
@@ -1501,8 +1754,8 @@ g <- grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3, 3))
 ##### Índices de abundância de tribos ao longo dos anos - Amazonia Norte
 ## Script: Isabela Freitas Oliveira
 
-# library(dplyr)
-# library(tidyr)
+library(dplyr)
+library(tidyr)
 
 
 # Definir o diretório de trabalho
@@ -1608,40 +1861,40 @@ dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
 # Crie o gráfico
 gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
   geom_line(size = 0.7) +
-  scale_y_continuous(limits = c(0.5,1.5))+
+  scale_y_continuous(limits = c(0.5, 1.5))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "Região Climática Norte Amazônica",
-       subtitle = "Borboletas florestais",
+       subtitle = "Borboletas de áreas fechadas",
        x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
-        axis.line = element_line(color = "black")) +
-        #axis.line.x = element_blank()) +
+        axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
 # Exibir o gráfico
 print(gg_florestal)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia AM_Norte_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_florestal,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
-
-
+# ggsave(filename = "indice de abundancia AM_Norte_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_florestal,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+######
 ```
 
 
@@ -1658,7 +1911,6 @@ ggsave(filename = "indice de abundancia AM_Norte_florestal_linhas_.png",  # Esco
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-######
 #Gráficos Borboletas de areas abertas
 
 # Definir as cores e tipos de linha para cada tribo # norte nao tem biblidinae
@@ -1684,22 +1936,23 @@ gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tr
   scale_y_continuous(limits = c(0.5,1.5))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "",
        subtitle = "Borboletas de áreas abertas",
-       x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -1728,18 +1981,16 @@ print(gg_aberto) #callicorini só tem 1 registro em 2022, por isso nao tem linha
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-######
 #Gráficos juntos
 library(gridExtra)
 
 grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3))
-#ggsave("graficos_combinados_indice_AM_Norte_linhas.png", 
- #      grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
-  #     device = "png", 
-   #    width = 12, height = 10, units = "in", 
-    #   path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+# ggsave("graficos_combinados_indice_AM_Norte_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3,3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
 
-g <- grid.arrange(gg_florestal, gg_aberto, nrow = 1)
 
 # knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_norte_amazonica.JPG")
 
@@ -1759,8 +2010,8 @@ g <- grid.arrange(gg_florestal, gg_aberto, nrow = 1)
 ##### Índices de abundância de tribos ao longo dos anos - Mata Atlântica
 ## Script: Isabela Freitas Oliveira
 
-# library(dplyr)
-# library(tidyr)
+library(dplyr)
+library(tidyr)
 
 
 # Definir o diretório de trabalho
@@ -1841,7 +2092,6 @@ df_tribo_ano_largo <- df_tribo_ano_largo %>%
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática leste da Amazônia, no período de 2014 a 2022."
 
-############
 #Gráficos
 library(ggplot2)
 
@@ -1868,22 +2118,23 @@ gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group =
   scale_y_continuous(limits = c(0.5, 2.0))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "Região Climática Leste Amazônica",
-       subtitle = "Borboletas florestais",
+       subtitle = "Borboletas de áreas fechadas",
        x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -1891,13 +2142,12 @@ gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group =
 print(gg_florestal)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia AM_Leste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_florestal,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
-
+# ggsave(filename = "indice de abundancia AM_Leste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_florestal,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
 
 ```
 
@@ -1940,22 +2190,23 @@ gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tr
   scale_y_continuous(limits = c(0.5, 2.0))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "",
        subtitle = "Borboletas de áreas abertas",
-       x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -1963,12 +2214,12 @@ gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tr
 print(gg_aberto)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia_AM_Leste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_aberto,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+# ggsave(filename = "indice de abundancia_AM_Leste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_aberto,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
 
 
 ```
@@ -1996,8 +2247,6 @@ grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
 #        width = 12, height = 10, units = "in", 
 #        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
 
-
-
 #knitr::include_graphics("imagens/cap04/bo_IA_areas_abertas_regiao_climatica_leste_amazonica.JPG")
 
 ```
@@ -2016,8 +2265,8 @@ grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
 ##### Índices de abundância de tribos ao longo dos anos - Sudoeste Amazônico
 ## Script: Isabela Freitas Oliveira
 
-# library(dplyr)
-# library(tidyr)
+library(dplyr)
+library(tidyr)
 
 
 # Definir o diretório de trabalho
@@ -2081,7 +2330,6 @@ df_tribo_ano_largo <- df_agregado %>%
 df_tribo_ano_largo <- df_tribo_ano_largo %>%
   mutate_if(is.numeric, ~ round(., 3))
 #write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_AM_sudoeste.csv", row.names = FALSE)
-
 ```
 
 
@@ -2097,7 +2345,6 @@ df_tribo_ano_largo <- df_tribo_ano_largo %>%
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-############
 #Gráficos
 library(ggplot2)
 
@@ -2121,25 +2368,26 @@ dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
 # Crie o gráfico
 gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
   geom_line(size = 0.7) +
-  scale_y_continuous(limits = c(0, 4.0))+
+  scale_y_continuous(limits = c(0, 1.5)) +
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "Região Climática Sudoeste Amazônica",
-       subtitle = "Borboletas florestais",
+       subtitle = "Borboletas de áreas fechadas",
        x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -2147,13 +2395,12 @@ gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group =
 print(gg_florestal)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia AM_Sudoeste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_florestal,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
-
+# ggsave(filename = "indice de abundancia AM_Sudoeste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_florestal,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
 
 ```
 
@@ -2169,7 +2416,6 @@ ggsave(filename = "indice de abundancia AM_Sudoeste_florestal_linhas_.png",  # E
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática norte da Amazônia, no período de 2014 a 2022."
 
-######
 #Gráficos Borboletas de areas abertas
 
 # Definir as cores e tipos de linha para cada tribo
@@ -2191,26 +2437,27 @@ dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
 
 # Crie o gráfico
 gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo))+
-  scale_y_continuous(limits = c(0 , 4.0))+
+  scale_y_continuous(limits = c(0, 1.5))+
   geom_line(size = 0.7) +
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "",
        subtitle = "Borboletas de áreas abertas",
-       x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -2218,12 +2465,12 @@ gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tr
 print(gg_aberto)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia_AM_Sudoeste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_aberto,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+# ggsave(filename = "indice de abundancia_AM_Sudoeste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_aberto,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
 
 
 ```
@@ -2273,8 +2520,8 @@ grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
 ##### Índices de abundância de tribos ao longo dos anos - Mata Atlântica
 ## Script: Isabela Freitas Oliveira
 
-# library(dplyr)
-# library(tidyr)
+library(dplyr)
+library(tidyr)
 
 
 # Definir o diretório de trabalho
@@ -2383,22 +2630,23 @@ gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group =
   scale_y_continuous(limits = c(0.5, 2.0))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "Região Climática Sudeste Amazônica",
-       subtitle = "Borboletas florestais",
+       subtitle = "Borboletas de áreas fechadas",
        x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -2406,12 +2654,12 @@ gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group =
 print(gg_florestal)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia AM_Sudeste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_florestal,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+# ggsave(filename = "indice de abundancia AM_Sudeste_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_florestal,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
 
 ```
 
@@ -2427,7 +2675,6 @@ ggsave(filename = "indice de abundancia AM_Sudeste_florestal_linhas_.png",  # Es
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) na região climática sudeste da Amazônia, no período de 2014 a 2022."
 
-######
 #Gráficos Borboletas de areas abertas
 
 # Definir as cores e tipos de linha para cada tribo
@@ -2453,22 +2700,23 @@ gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tr
   scale_y_continuous(limits = c(0.5, 2.0))+
   scale_color_manual(values = cores_linhas) +
   scale_linetype_manual(values = tipos_linhas) +
-  geom_hline(yintercept = 0.7, linetype = "dashed", color = "darkgray", size = 0.7) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
   theme_minimal() +
   labs(title = "",
        subtitle = "Borboletas de áreas abertas",
-       x = "Ano",
-       y = expression("Índice de Abundância ( " * italic("i") * ")" ),
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
        color = "Tribo",
        linetype = "Tribo") +
   theme(plot.title = element_text(hjust = 0.5, size = 14),
         plot.subtitle = element_text(hjust = 0.5, size = 12),
         axis.title = element_text(size = 10),
         axis.text = element_text(size = 8),
-        axis.ticks.y = element_line(color = "black"),
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 10),
         axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
         axis.line.x = element_blank()) +
   guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
 
@@ -2476,13 +2724,12 @@ gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tr
 print(gg_aberto)
 
 # Salvar a imagem usando ggsave()
-ggsave(filename = "indice de abundancia_AM_Sudeste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
-       plot = gg_aberto,  # O objeto ggplot
-       device = "png",  # Pode ser "jpeg", "tiff", etc.
-       path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
-       dpi = 300,  # Define a resolução (DPI)
-       width = 12, height = 8, units = "in")  # Define o tamanho da imagem
-
+# ggsave(filename = "indice de abundancia_AM_Sudeste_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_aberto,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
 
 ```
 
@@ -2516,8 +2763,8 @@ grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
 
 </br>
 
-```{r grafico IA-cerrado}
-#| label: fig-IA-cerrado
+```{r grafico IA-cerrado-calculo}
+#| label: fig-IA-cerrado-calculo
 #| echo: false
 #| message: false
 #| warning: false
@@ -2526,7 +2773,243 @@ grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Cerrado, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_cerrado.JPG")
+##### Índices de abundância de tribos ao longo dos anos - Cerrado
+## Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Cerrado")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_MataAtlantica.csv", row.names = FALSE)
+
+#knitr::include_graphics("imagens/cap04/bo_IA_cerrado.JPG")
+
+```
+
+
+```{r grafico IA-cerrado-floresta}
+#| label: fig-IA-cerrado-floresta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Mata Atlântica, no período de 2014 a 2022."
+
+
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>% #Nao teve captura de Haeterini
+  filter(tribo %in% c("Brassolini", "Morphini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0, 2.5))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Cerrado",
+       subtitle = "Borbletas de áreas fechadas",
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+# ggsave(filename = "indice de abundancia Cerrado_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_florestal,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+```
+
+
+```{r grafico IA-cerrado-area-aberta}
+#| label: fig-IA-cerrado-area-aberta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Mata Atlântica, no período de 2014 a 2022."
+
+
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Callicorini" = "#CFA154", "Biblidini" = "#824B09", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Biblidini" = "dashed", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Biblidini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Biblidini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Biblidini","dashed","twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0, 2.5))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico #só tem 1 registro de callicorini, em 2018.
+print(gg_aberto)
+
+# Salvar a imagem usando ggsave()
+# ggsave(filename = "indice de abundancia Cerrado_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_aberto,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
+
+</br>
+
+```{r grafico IA-cerrado-juntos}
+#| label: fig-IA-cerrado-juntos
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Cerrado, no período de 2014 a 2022."
+
+#Gráficos juntos
+library(gridExtra)
+
+grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3, 3))
+# ggsave("graficos_combinados_indice_Cerrado_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto, ncol = 1, heights = c(3, 3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
 
 ```
 
@@ -2535,8 +3018,8 @@ knitr::include_graphics("imagens/cap04/bo_IA_cerrado.JPG")
 </br>
 
 
-```{r grafico IA-mata-atlantica}
-#| label: fig-IA-mata-atlantica
+```{r grafico IA-mata-atlantica-calculo}
+#| label: fig-IA-mata-atlantica-calculo
 #| echo: false
 #| message: false
 #| warning: false
@@ -2545,23 +3028,256 @@ knitr::include_graphics("imagens/cap04/bo_IA_cerrado.JPG")
 #| out.width: '70%'
 #| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Mata Atlântica, no período de 2014 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_IA_mata_atlantica.JPG")
+
+##### Índices de abundância de tribos ao longo dos anos - Mata Atlântica
+## Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+
+
+# Definir o diretório de trabalho
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+df_indice<-read.csv("data/resultado_final_com_esforco.csv", header=T, sep = ';') # dataframe para fazer os gráficos
+df_indice <- df_indice[!is.na(df_indice$tribo), ]
+
+dados_regiao_especifica <- df_indice %>%
+  filter(bioma == "Mata_Atlantica")
+
+# Agregar soma_individuos por tribo e ano
+soma_individuos_por_tribo_ano <- dados_regiao_especifica %>%
+  filter(soma_individuos > 0 ) %>%
+  group_by(tribo, ano) %>%
+  summarize(soma_individuos = sum(soma_individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Verificar o esforço individual por uc_ea e expedicao
+esforco_individual <- dados_regiao_especifica %>%
+  group_by(uc, uc_ea, ano, expedicao) %>%
+  summarize(esforco_individual = unique(esforco_amostral), na.rm = TRUE) %>%
+  ungroup()
+
+# Somar os esforços por expedicao
+esforco_por_expedicao <- esforco_individual %>%
+  group_by(uc, ano, expedicao) %>%
+  summarize(esforco_total_expedicao = sum(esforco_individual, na.rm = TRUE)) %>%
+  ungroup()
+
+# Calcular o esforço total anual para cada ano
+esforco_total_anual <- esforco_por_expedicao %>%
+  group_by(ano) %>%
+  summarize(esforco_total_anual = sum(esforco_total_expedicao, na.rm = TRUE)) %>%
+  ungroup()
+
+# Juntar com soma_individuos_por_tribo_ano
+df_agregado <- soma_individuos_por_tribo_ano %>%
+  left_join(esforco_total_anual, by = "ano") %>%
+  ungroup()
+
+# Calcular o índice de abundância
+df_agregado <- df_agregado %>%
+  mutate(frequencia_corrigida = (soma_individuos + 0.00001) / esforco_total_anual,
+         log_frequencia_corrigida = log10(frequencia_corrigida)) %>%
+  group_by(tribo) %>%
+  arrange(ano) %>%
+  mutate(indice_abundancia = if_else(row_number() == 1, 1, 
+                                     log_frequencia_corrigida / lag(log_frequencia_corrigida))) %>%
+  ungroup()
+
+# Reestruturar para visualização
+df_tribo_ano_largo <- df_agregado %>%
+  pivot_wider(names_from = ano, values_from = indice_abundancia)
+
+# Reestruturar o dataframe para o formato largo # tabela geral dos índices
+df_tribo_ano_largo <- df_agregado %>%
+  select(tribo, ano, indice_abundancia) %>% # Selecionar as colunas relevantes
+  pivot_wider(names_from = ano, values_from = indice_abundancia) # Transformar para o formato largo
+
+# Limitar os valores a 3 casas decimais
+df_tribo_ano_largo <- df_tribo_ano_largo %>%
+  mutate_if(is.numeric, ~ round(., 3))
+#write.csv(df_tribo_ano_largo, "tabela_índice_tribo_ano_MataAtlantica.csv", row.names = FALSE)
+
+#knitr::include_graphics("imagens/cap04/bo_IA_mata_atlantica.JPG")
 
 ```
 
+
+```{r grafico IA-mata-atlantica-floresta}
+#| label: fig-IA-mata-atlantica-floresta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Mata Atlântica, no período de 2014 a 2022."
+
+
+#Gráficos
+library(ggplot2)
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Brassolini" = "#003C30", "Morphini" = "#23867E")
+tipos_linhas <- c("Brassolini" = "solid", "Morphini" = "dashed")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>% #Nao teve captura de Haeterini
+  filter(tribo %in% c("Brassolini", "Morphini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Brassolini", "Morphini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Brassolini", "solid",
+                                  ifelse(dados_longos$tribo == "Morphini","dashed","twodash"))
+
+# Crie o gráfico
+gg_florestal <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5, 3.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "Mata Atlântica",
+       subtitle = "Borboletas de áreas fechadas",
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico
+print(gg_florestal)
+
+# Salvar a imagem usando ggsave()
+# ggsave(filename = "indice de abundancia MataAtlantica_florestal_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_florestal,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+```
+
+
+```{r grafico IA-mata-atlantica-area-aberta}
+#| label: fig-IA-mata-atlantica-area-aberta
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Mata Atlântica, no período de 2014 a 2022."
+
+
+#Gráficos Borboletas de areas abertas
+
+# Definir as cores e tipos de linha para cada tribo
+cores_linhas <- c("Callicorini" = "#CFA154", "Biblidini" = "#824B09", "Ageroniini" = "#543005")
+tipos_linhas <- c("Callicorini" = "twodash", "Biblidini" = "dashed", "Ageroniini" = "solid")
+
+# Filtrar tribos florestais
+tribos_selecionadas <- df_tribo_ano_largo %>%
+  filter(tribo %in% c("Callicorini", "Biblidini", "Ageroniini")) %>%
+  mutate(tribo = factor(tribo, levels = c("Callicorini", "Biblidini", "Ageroniini")))
+
+# Transformar 'ano' para o formato longo e garantir que é numérico
+dados_longos <- tribos_selecionadas %>%
+  pivot_longer(cols = -tribo, names_to = "ano", values_to = "indice_abundancia")
+
+# Certifique-se de que cada 'tribo' tem um 'tipo_linha' correspondente
+dados_longos$tipo_linha <- ifelse(dados_longos$tribo == "Ageroniini", "solid",
+                                  ifelse(dados_longos$tribo == "Biblidini","dashed","twodash"))
+
+# Crie o gráfico
+gg_aberto <- ggplot(dados_longos, aes(x = ano, y = indice_abundancia, group = tribo, color = tribo, linetype = tribo)) +
+  geom_line(size = 0.7) +
+  scale_y_continuous(limits = c(0.5, 3.0))+
+  scale_color_manual(values = cores_linhas) +
+  scale_linetype_manual(values = tipos_linhas) +
+  geom_hline(yintercept = 1.0, linetype = "dashed", color = "darkgray", size = 0.7) +
+  theme_minimal() +
+  labs(title = "",
+       subtitle = "Borboletas de áreas abertas",
+       x = "",
+       y = expression("Índice de Abundância (" * italic("i") * ")"),
+       color = "Tribo",
+       linetype = "Tribo") +
+  theme(plot.title = element_text(hjust = 0.5, size = 14),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 8),
+        legend.title = element_text(size = 10),
+        legend.text = element_text(size = 10),
+        axis.line = element_line(color = "black"),
+        axis.ticks.y = element_line(color = "black"),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = tipos_linhas)))
+
+# Exibir o gráfico #só tem 1 registro de callicorini, em 2018.
+print(gg_aberto)
+
+# Salvar a imagem usando ggsave()
+# ggsave(filename = "indice de abundancia MataAtlantica_aberto_linhas_.png",  # Escolha um nome adequado para o arquivo
+#        plot = gg_aberto,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela",  # Especifique o diretório onde você deseja salvar o gráfico
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 12, height = 8, units = "in")  # Define o tamanho da imagem
+
+
+```
+
+
+```{r grafico IA-mata-atlantica-juntos}
+#| label: fig-IA-mata-atlantica-juntos
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Variação no índice de abundância das tribos de borboletas frugívoras indicadoras de florestas íntegras (tons de verde) e de florestas perturbadas (tons de laranja) no bioma Cerrado, no período de 2014 a 2022."
+
+#Gráficos juntos
+library(gridExtra)
+
+grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3))
+# ggsave("graficos_combinados_indice_MataAtlantica_linhas.png", 
+#        grid.arrange(gg_florestal, gg_aberto, ncol = 1,  heights = c(3,3)), 
+#        device = "png", 
+#        width = 12, height = 10, units = "in", 
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+
+#knitr::include_graphics("imagens/cap04/bo_IA_cerrado.JPG")
+
+```
 
 ### Destaques
 
 </br>
 
-#### Efeito da seca extrema de 2015 nas UCs da região Central Amazônica**  
 
-
- 
- </br>
- 
-
-#### Efeito da queda dos tabocais na RESEX Cazumbá-Iracema e Riozinho da Liberdade e Serra do Divisor (controle)**
+#### Efeito da queda dos tabocais nas RESEXs do Cazumbá-Iracema, do Alto Tarauacá, Riozinho da Liberdade e Chico Mendes e no PARNA da Serra do Divisor
 
 
 
@@ -2571,33 +3287,358 @@ knitr::include_graphics("imagens/cap04/bo_IA_mata_atlantica.JPG")
 ```{r grafico abundancia-resex-cazumba-iracema}
 #| label: fig-abundancia-resex-cazumba-iracema
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras na RESEX do Cazumbá-Iracema no período de 2016 a 2022."
+#| out.width: '75%'
 
-knitr::include_graphics("imagens/cap04/bo_abundancia_resex_cazumba_iracema.JPG")
+
+# Análise  de efeito da queda do tabocal nas tribos de borboletas frugívoras - AUTOMATIZADO
+# RESEX do Cazumbá-Iracema
+# Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(car)
+
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+dados_borboletas <- read.table("data/dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+dados_borboletas$ano <- as.factor(dados_borboletas$ano)
+dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+dados_borboletas <- dados_borboletas[!is.na(dados_borboletas$tribo), ]
+
+
+dados_regiao_especifica <- dados_borboletas %>%
+  filter(uc == 'Resex_do_Cazumba-Iracema')
+
+# Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
+esforco_por_expedicao <- dados_regiao_especifica %>%
+  group_by(uc_ea, uc, expedicao, ano) %>%
+  summarize(
+    max_dia_amostragem = max(dia_amostragem) - 1,
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    esforco_amostral = 16 * max_dia_amostragem
+  )
+
+# Agregar o esforço de amostragem para cada uc_ea e ano
+esforco_total_por_ea_ano <- esforco_por_expedicao %>%
+  group_by(uc_ea, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregar o esforço de amostragem para cada uc e ano
+esforco_total_por_uc_ano <- esforco_por_expedicao %>%
+  group_by(uc, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o esforço total por ano
+esforco_por_ano <- esforco_total_por_uc_ano %>%
+  group_by(ano,uc) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o número total de indivíduos por ano
+num_ind_por_ano <- dados_regiao_especifica %>%
+  group_by(ano) %>%
+  summarize(
+    num_ind = sum(individuos, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+#criando uma coluna de UA e selecionando somente as colunas interessadas pra analise
+dados_regiao_especifica <- dados_regiao_especifica %>%
+  mutate(ua = paste(uc_ea, transeccao, sep = "_"))
+
+#combinando os dados por UA por ano = 12 (3 ea x 4 parcelas)
+df_abu_ano <- dados_regiao_especifica %>%
+  group_by(tribo, ua, uc_ea,uc, ano) %>%
+  summarise(abundancia = sum(individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Transforma o df para colocar os zeros
+df_tabocal <- df_abu_ano %>%
+  spread(key = tribo, value = abundancia, fill = 0)
+
+# Retorna ao formato longo para as análises
+df_long <- df_tabocal %>%
+  pivot_longer(cols = Ageroniini:Satyrini, names_to = "tribo", values_to = "individuos")
+
+# Agregação para obter a abundância total de cada tribo por ano
+abundancia_por_ano <- df_long %>%
+  group_by(tribo, ano) %>%
+  summarize(
+    abundancia_total = sum(individuos)
+  )
+
+# Juntar as tabelas pela coluna 'ano' e 'uc'
+df_long_com_esforco <- left_join(df_long, esforco_por_ano, by = c("ano", "uc"))
+
+
+# Calcular a abundância padronizada pelo esforço amostral
+df_long <- df_long_com_esforco %>%
+  mutate(abundancia_padronizada = (individuos / esforco) * 100)
+#
+
+library(tidyverse)
+
+# Realizar análise e gerar gráficos para cada tribo
+
+tribos <- unique(df_long$tribo)
+
+for (tribo_atual in tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+}
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Adicione o ano de 2020, mesmo que não haja dados
+  medianas_anuais <- c(medianas_anuais, NA)
+  names(medianas_anuais)[length(medianas_anuais)] <- "2020"
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = as.character(unique(c(names(medianas_anuais), "2020"))), MedianaAnual = c(medianas_anuais, NA))
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- c(erros_padrao, NA)
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup)*1.1
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = .7) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "Ano",
+         y = "Mediana da Abundância / Esforço Amostral") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5.5),
+          axis.text = element_text(size = 6),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Exiba o gráfico ajustado
+  print(p_tribo)
+  
+  # Salvar a imagem usando ggsave()
+#   ggsave(filename = paste("mediana_", gsub(" ", "_", tolower(tribo_atual)), "_ajustado_pontos_linha_2020.png", sep = ""),  # Escolha um nome adequado para o arquivo
+#          plot = p_tribo,  # O objeto ggplot
+#          device = "png",  # Pode ser "jpeg", "tiff", etc.
+#          path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Cazumba-Iracema",  # Especifique o diretório onde você deseja salvar o gráfico
+#          dpi = 300,  # Define a resolução (DPI)
+#          width = 6, height = 5, units = "in")  # Define o tamanho da imagem
+# }
+
+
+library(gridExtra)
+
+# Definir uma lista para armazenar os gráficos
+lista_graficos <- list()
+
+# Defina a ordem das tribos
+ordem_tribos <- c("Brassolini", "Morphini", "Haeterini", "Preponini", "Melanitini", "Anaeini", 
+                  "Epicaliini", "Epiphilini", "Coeini", "Satyrini", "Callicorini", "Biblidini", "Ageroniini")
+
+for (tribo_atual in ordem_tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Adicione o ano de 2020, mesmo que não haja dados
+  medianas_anuais <- c(medianas_anuais, NA)
+  names(medianas_anuais)[length(medianas_anuais)] <- "2020"
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = as.character(unique(c(names(medianas_anuais), "2020"))), MedianaAnual = c(medianas_anuais, NA))
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- c(erros_padrao, NA)
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup) * 1.1
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "",
+         y = "Mediana da Abundância 
+ / Esforço Amostral") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5.5),
+          axis.text = element_text(size = 6),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Adicionar o gráfico atual à lista
+  lista_graficos[[tribo_atual]] <- p_tribo
+}
+
+
 
 ```
 
 
-</br>
-
-
-
-```{r grafico abundancia-resex-riozinho-liberdade}
-#| label: fig-abundancia-resex-riozinho-liberdade
+```{r grafico abundancia-resex-cazumba-iracema-combinada}
+#| label: fig-abundancia-resex-cazumba-iracema-combinada
 #| echo: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras na RESEX do Riozinho da Liberdade no período de 2020 a 2022."
+#| out.width: '90%'
+#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras na RESEX do Cazumbá-Iracema no período de 2020 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_abundancia_resex_riozinho_liberdade.jpg")
+# Combine todos os gráficos em uma única imagem
+imagem_combinada <- grid.arrange(grobs = lista_graficos, ncol = 3)
+
+# Salvar a imagem combinada usando ggsave()
+# ggsave(filename = "todos_graficos_cazumba_iracema.png",  # Escolha um nome adequado para o arquivo
+#        plot = imagem_combinada,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Cazumba-Iracema",  # Especifique o diretório onde você deseja salvar a imagem
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 14, height = 12, units = "in")  # Define o tamanho da imagem
+
+
 
 ```
 
@@ -2605,23 +3646,1432 @@ knitr::include_graphics("imagens/cap04/bo_abundancia_resex_riozinho_liberdade.jp
 </br>
 
 
+
+```{r grafico abundancia-resex-alto-tarauaca}
+#| label: fig-abundancia-resex-alto-tarauaca
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+
+
+
+# Análise  de efeito da queda do tabocal nas tribos de borboletas frugívoras - AUTOMATIZADO
+# RESEX do Alto Taraucá
+# Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(car)
+
+#setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+
+# dados_borboletas <- read.table("dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+# dados_borboletas$ano <- as.factor(dados_borboletas$ano)
+# dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+# dados_borboletas <- dados_borboletas[!is.na(dados_borboletas$tribo), ]
+
+
+dados_regiao_especifica <- dados_borboletas %>%
+  filter(uc == 'Resex_do_Alto_Tarauaca')
+
+# Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
+esforco_por_expedicao <- dados_regiao_especifica %>%
+  group_by(uc_ea, uc, expedicao, ano) %>%
+  summarize(
+    max_dia_amostragem = max(dia_amostragem) - 1,
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    esforco_amostral = 16 * max_dia_amostragem
+  )
+
+# Agregar o esforço de amostragem para cada uc_ea e ano
+esforco_total_por_ea_ano <- esforco_por_expedicao %>%
+  group_by(uc_ea, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregar o esforço de amostragem para cada uc e ano
+esforco_total_por_uc_ano <- esforco_por_expedicao %>%
+  group_by(uc, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o esforço total por ano
+esforco_por_ano <- esforco_total_por_uc_ano %>%
+  group_by(ano,uc) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o número total de indivíduos por ano
+num_ind_por_ano <- dados_regiao_especifica %>%
+  group_by(ano) %>%
+  summarize(
+    num_ind = sum(individuos, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+#criando uma coluna de UA e selecionando somente as colunas interessadas pra analise
+dados_regiao_especifica <- dados_regiao_especifica %>%
+  mutate(ua = paste(uc_ea, transeccao, sep = "_"))
+
+#combinando os dados por UA por ano = 12 (3 ea x 4 parcelas)
+df_abu_ano <- dados_regiao_especifica %>%
+  group_by(tribo, ua, uc_ea,uc, ano) %>%
+  summarise(abundancia = sum(individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Transforma o df para colocar os zeros
+df_tabocal <- df_abu_ano %>%
+  spread(key = tribo, value = abundancia, fill = 0)
+
+# Retorna ao formato longo para as análises
+df_long <- df_tabocal %>%
+  pivot_longer(cols = Ageroniini:Satyrini, names_to = "tribo", values_to = "individuos")
+
+# Agregação para obter a abundância total de cada tribo por ano
+abundancia_por_ano <- df_long %>%
+  group_by(tribo, ano) %>%
+  summarize(
+    abundancia_total = sum(individuos)
+  )
+
+# Juntar as tabelas pela coluna 'ano' e 'uc'
+df_long_com_esforco <- left_join(df_long, esforco_por_ano, by = c("ano", "uc"))
+
+
+# Calcular a abundância padronizada pelo esforço amostral
+df_long <- df_long_com_esforco %>%
+  mutate(abundancia_padronizada = (individuos / esforco) * 100)
+#
+
+library(tidyverse)
+
+# Realizar análise e gerar gráficos para cada tribo
+
+tribos <- unique(df_long$tribo)
+
+for (tribo_atual in tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Adicione o ano de 2020, mesmo que não haja dados
+  medianas_anuais <- c(medianas_anuais, NA)
+  names(medianas_anuais)[length(medianas_anuais)] <- "2020"
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = as.character(unique(c(names(medianas_anuais), "2020"))), MedianaAnual = c(medianas_anuais, NA))
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- c(erros_padrao, NA)
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup)*1.2
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "Ano",
+         y = "Mediana da Abundância / Esforço Amostral") +
+    theme_minimal() +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Exiba o gráfico ajustado
+  print(p_tribo)
+  
+  # Salvar a imagem usando ggsave()
+  ggsave(filename = paste("mediana_", gsub(" ", "_", tolower(tribo_atual)), "_ajustado_pontos_linha_2020.png", sep = ""),  # Escolha um nome adequado para o arquivo
+         plot = p_tribo,  # O objeto ggplot
+         device = "png",  # Pode ser "jpeg", "tiff", etc.
+         path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Alto Tarauaca",  # Especifique o diretório onde você deseja salvar o gráfico
+         dpi = 300,  # Define a resolução (DPI)
+         width = 6, height = 5, units = "in")  # Define o tamanho da imagem
+}
+
+
+library(gridExtra)
+
+# Definir uma lista para armazenar os gráficos
+lista_graficos <- list()
+
+# Defina a ordem das tribos
+ordem_tribos <- c("Brassolini", "Morphini", "Haeterini", "Preponini", "Melanitini", "Anaeini", 
+                  "Epicaliini", "Epiphilini", "Coeini", "Satyrini", "Callicorini", "Biblidini", "Ageroniini")
+
+for (tribo_atual in ordem_tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Adicione o ano de 2020, mesmo que não haja dados
+  medianas_anuais <- c(medianas_anuais, NA)
+  names(medianas_anuais)[length(medianas_anuais)] <- "2020"
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = as.character(unique(c(names(medianas_anuais), "2020"))), MedianaAnual = c(medianas_anuais, NA))
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- c(erros_padrao, NA)
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup) * 1.2
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "",
+         y = "Mediana da Abundância 
+ / Esforço Amostral") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Adicionar o gráfico atual à lista
+  lista_graficos[[tribo_atual]] <- p_tribo
+}
+
+
+```
+
+</br>
+
+
+```{r grafico abundancia-resex-alto-tarauca-combinada}
+#| label: fig-abundancia-resex-alto-tarauaca-combinada
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '75%'
+#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras na RESEX do Alto Tarauacá no período de 2020 a 2022."
+
+# Combine todos os gráficos em uma única imagem
+imagem_combinada <- grid.arrange(grobs = lista_graficos, ncol = 3)
+
+# Salvar a imagem combinada usando ggsave()
+# ggsave(filename = "todos_graficos_alto_tarauaca.png",  # Escolha um nome adequado para o arquivo
+#        plot = imagem_combinada,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Alto Tarauaca",  # Especifique o diretório onde você deseja salvar a imagem
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 14, height = 12, units = "in")  # Define o tamanho da imagem
+
+
+```
+
+</br>
+
+
+```{r grafico abundancia-resex-riozinho-da-liberdade}
+#| label: fig-abundancia-resex-riozinho-da-liberdade
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+
+
+
+# Análise  de efeito da queda do tabocal nas tribos de borboletas frugívoras - AUTOMATIZADO
+# RESEX Riozinho da Liberdade
+# Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(car)
+
+# setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+# 
+# dados_borboletas <- read.table("dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+# dados_borboletas$ano <- as.factor(dados_borboletas$ano)
+# dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+# dados_borboletas <- dados_borboletas[!is.na(dados_borboletas$tribo), ]
+
+
+dados_regiao_especifica <- dados_borboletas %>%
+  filter(uc == 'Resex_Riozinho_da_Liberdade')
+
+# Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
+esforco_por_expedicao <- dados_regiao_especifica %>%
+  group_by(uc_ea, uc, expedicao, ano) %>%
+  summarize(
+    max_dia_amostragem = max(dia_amostragem) - 1,
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    esforco_amostral = 16 * max_dia_amostragem
+  )
+
+# Agregar o esforço de amostragem para cada uc_ea e ano
+esforco_total_por_ea_ano <- esforco_por_expedicao %>%
+  group_by(uc_ea, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregar o esforço de amostragem para cada uc e ano
+esforco_total_por_uc_ano <- esforco_por_expedicao %>%
+  group_by(uc, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o esforço total por ano
+esforco_por_ano <- esforco_total_por_uc_ano %>%
+  group_by(ano,uc) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o número total de indivíduos por ano
+num_ind_por_ano <- dados_regiao_especifica %>%
+  group_by(ano) %>%
+  summarize(
+    num_ind = sum(individuos, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+#criando uma coluna de UA e selecionando somente as colunas interessadas pra analise
+dados_regiao_especifica <- dados_regiao_especifica %>%
+  mutate(ua = paste(uc_ea, transeccao, sep = "_"))
+
+#combinando os dados por UA por ano = 12 (3 ea x 4 parcelas)
+df_abu_ano <- dados_regiao_especifica %>%
+  group_by(tribo, ua, uc_ea,uc, ano) %>%
+  summarise(abundancia = sum(individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Transforma o df para colocar os zeros
+df_tabocal <- df_abu_ano %>%
+  spread(key = tribo, value = abundancia, fill = 0)
+
+# Retorna ao formato longo para as análises
+df_long <- df_tabocal %>%
+  pivot_longer(cols = Ageroniini:Satyrini, names_to = "tribo", values_to = "individuos")
+
+# Agregação para obter a abundância total de cada tribo por ano
+abundancia_por_ano <- df_long %>%
+  group_by(tribo, ano) %>%
+  summarize(
+    abundancia_total = sum(individuos)
+  )
+
+# Juntar as tabelas pela coluna 'ano' e 'uc'
+df_long_com_esforco <- left_join(df_long, esforco_por_ano, by = c("ano", "uc"))
+
+
+# Calcular a abundância padronizada pelo esforço amostral
+df_long <- df_long_com_esforco %>%
+  mutate(abundancia_padronizada = (individuos / esforco) * 100)
+#
+
+library(tidyverse)
+
+# Realizar análise e gerar gráficos para cada tribo
+
+tribos <- unique(df_long$tribo)
+
+for (tribo_atual in tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = names(medianas_anuais), MedianaAnual = medianas_anuais)
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- erros_padrao
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup)*1.1
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "Ano",
+         y = "Mediana da Abundância / Esforço Amostral") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Exiba o gráfico ajustado
+  print(p_tribo)
+  
+  # Salvar a imagem usando ggsave()
+  ggsave(filename = paste("mediana_", gsub(" ", "_", tolower(tribo_atual)), "_ajustado_pontos_linha_2020.png", sep = ""),  # Escolha um nome adequado para o arquivo
+         plot = p_tribo,  # O objeto ggplot
+         device = "png",  # Pode ser "jpeg", "tiff", etc.
+         path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Riozinho da Liberdade",  # Especifique o diretório onde você deseja salvar o gráfico
+         dpi = 300,  # Define a resolução (DPI)
+         width = 6, height = 5, units = "in")  # Define o tamanho da imagem
+}
+
+
+library(gridExtra)
+
+# Definir uma lista para armazenar os gráficos
+lista_graficos <- list()
+
+# Defina a ordem das tribos
+ordem_tribos <- c("Brassolini", "Morphini", "Haeterini", "Preponini", "Melanitini", "Anaeini", 
+                  "Epicaliini", "Epiphilini", "Coeini", "Satyrini", "Callicorini", "Biblidini", "Ageroniini")
+
+for (tribo_atual in ordem_tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = names(medianas_anuais), MedianaAnual = medianas_anuais)
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- erros_padrao
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup) * 1.1
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "",
+         y = "Mediana da Abundância 
+ / Esforço Amostral") +
+    theme_minimal() +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Adicionar o gráfico atual à lista
+  lista_graficos[[tribo_atual]] <- p_tribo
+}
+
+
+```
+
+</br>
+
+
+```{r grafico abundancia-resex-riozinho-da-liberdade-combinada}
+#| label: fig-abundancia-resex-riozinho-da-liberdade-combinada
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '75%'
+#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras na RESEX do Riozinho da Liberdade no período de 2020 a 2022."
+
+# Combine todos os gráficos em uma única imagem
+imagem_combinada <- grid.arrange(grobs = lista_graficos, ncol = 3)
+
+# Salvar a imagem combinada usando ggsave()
+# ggsave(filename = "todos_graficos_riozinho_da_liberdade.png",  # Escolha um nome adequado para o arquivo
+#        plot = imagem_combinada,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Riozinho da Liberdade",  # Especifique o diretório onde você deseja salvar a imagem
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 14, height = 12, units = "in")  # Define o tamanho da imagem
+
+```
+
+</br>
+
+
+```{r grafico abundancia-resex-chico-mendes}
+#| label: fig-abundancia-resex-chico-mendes
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+
+
+
+# Análise  de efeito da queda do tabocal nas tribos de borboletas frugívoras - AUTOMATIZADO
+# RESEX Chico Mendes
+# Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(car)
+
+# setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+# 
+# dados_borboletas <- read.table("dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+# dados_borboletas$ano <- as.factor(dados_borboletas$ano)
+# dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+# dados_borboletas <- dados_borboletas[!is.na(dados_borboletas$tribo), ]
+
+
+dados_regiao_especifica <- dados_borboletas %>%
+  filter(uc == 'Resex_Chico_Mendes')
+
+# Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
+esforco_por_expedicao <- dados_regiao_especifica %>%
+  group_by(uc_ea, uc, expedicao, ano) %>%
+  summarize(
+    max_dia_amostragem = max(dia_amostragem) - 1,
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    esforco_amostral = 16 * max_dia_amostragem
+  )
+
+# Agregar o esforço de amostragem para cada uc_ea e ano
+esforco_total_por_ea_ano <- esforco_por_expedicao %>%
+  group_by(uc_ea, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregar o esforço de amostragem para cada uc e ano
+esforco_total_por_uc_ano <- esforco_por_expedicao %>%
+  group_by(uc, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o esforço total por ano
+esforco_por_ano <- esforco_total_por_uc_ano %>%
+  group_by(ano,uc) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o número total de indivíduos por ano
+num_ind_por_ano <- dados_regiao_especifica %>%
+  group_by(ano) %>%
+  summarize(
+    num_ind = sum(individuos, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+#criando uma coluna de UA e selecionando somente as colunas interessadas pra analise
+dados_regiao_especifica <- dados_regiao_especifica %>%
+  mutate(ua = paste(uc_ea, transeccao, sep = "_"))
+
+#combinando os dados por UA por ano = 12 (3 ea x 4 parcelas)
+df_abu_ano <- dados_regiao_especifica %>%
+  group_by(tribo, ua, uc_ea,uc, ano) %>%
+  summarise(abundancia = sum(individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Transforma o df para colocar os zeros
+df_tabocal <- df_abu_ano %>%
+  spread(key = tribo, value = abundancia, fill = 0)
+
+# Retorna ao formato longo para as análises
+df_long <- df_tabocal %>%
+  pivot_longer(cols = Ageroniini:Satyrini, names_to = "tribo", values_to = "individuos")
+
+# Agregação para obter a abundância total de cada tribo por ano
+abundancia_por_ano <- df_long %>%
+  group_by(tribo, ano) %>%
+  summarize(
+    abundancia_total = sum(individuos)
+  )
+
+# Juntar as tabelas pela coluna 'ano' e 'uc'
+df_long_com_esforco <- left_join(df_long, esforco_por_ano, by = c("ano", "uc"))
+
+
+# Calcular a abundância padronizada pelo esforço amostral
+df_long <- df_long_com_esforco %>%
+  mutate(abundancia_padronizada = (individuos / esforco) * 100)
+#
+
+library(tidyverse)
+
+# Realizar análise e gerar gráficos para cada tribo
+
+tribos <- unique(df_long$tribo)
+
+for (tribo_atual in tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = names(medianas_anuais), MedianaAnual = medianas_anuais)
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- erros_padrao
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup)*1.1
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "Ano",
+         y = "Mediana da Abundância / Esforço Amostral") +
+    theme_minimal() +
+     theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Exiba o gráfico ajustado
+  print(p_tribo)
+  
+  # Salvar a imagem usando ggsave()
+  ggsave(filename = paste("mediana_", gsub(" ", "_", tolower(tribo_atual)), "_ajustado_pontos_linha_2020.png", sep = ""),  # Escolha um nome adequado para o arquivo
+         plot = p_tribo,  # O objeto ggplot
+         device = "png",  # Pode ser "jpeg", "tiff", etc.
+         path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Chico Mendes",  # Especifique o diretório onde você deseja salvar o gráfico
+         dpi = 300,  # Define a resolução (DPI)
+         width = 6, height = 5, units = "in")  # Define o tamanho da imagem
+}
+
+
+library(gridExtra)
+
+# Definir uma lista para armazenar os gráficos
+lista_graficos <- list()
+
+# Defina a ordem das tribos
+ordem_tribos <- c("Brassolini", "Morphini", "Haeterini", "Preponini", "Melanitini", "Anaeini", 
+                  "Epicaliini", "Epiphilini", "Coeini", "Satyrini", "Callicorini", "Biblidini", "Ageroniini")
+
+for (tribo_atual in ordem_tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = names(medianas_anuais), MedianaAnual = medianas_anuais)
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- erros_padrao
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup) * 1.1
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "",
+         y = "Mediana da Abundância 
+ / Esforço Amostral") +
+    theme_minimal() +
+     theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Adicionar o gráfico atual à lista
+  lista_graficos[[tribo_atual]] <- p_tribo
+}
+
+
+```
+
+</br>
+
+
+```{r grafico abundancia-resex-chico-mendes-combinada}
+#| label: fig-abundancia-resex-chico-mendes-combinada
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '75%'
+#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras na RESEX Chico Mendes no período de 2020 a 2022."
+
+# Combine todos os gráficos em uma única imagem
+imagem_combinada <- grid.arrange(grobs = lista_graficos, ncol = 3)
+
+# Salvar a imagem combinada usando ggsave()
+# ggsave(filename = "todos_graficos_chico_mendes.png",  # Escolha um nome adequado para o arquivo
+#        plot = imagem_combinada,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Chico Mendes",  # Especifique o diretório onde você deseja salvar a imagem
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 14, height = 12, units = "in")  # Define o tamanho da imagem
+
+```
+
+</br>
 
 ```{r grafico abundancia-parna-serra-divisor}
 #| label: fig-abundancia-parna-serra-divisor
 #| echo: false
+#| include: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras no PARNA da Serra do Divisor no período de 2018 a 2022."
 
-knitr::include_graphics("imagens/cap04/bo_abundancia_parna_serra_divisor.jpg")
+
+
+# Análise  de efeito da queda do tabocal nas tribos de borboletas frugívoras - AUTOMATIZADO
+# PARANA Serra do Divisor
+# Script: Isabela Freitas Oliveira
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(car)
+
+# setwd("~/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela")
+# 
+# dados_borboletas <- read.table("dados_analise_borboletas_Isabela_V2.txt", header = TRUE)
+# dados_borboletas$ano <- as.factor(dados_borboletas$ano)
+# dados_borboletas <- dados_borboletas[dados_borboletas$ano != "2023", ]
+# dados_borboletas <- dados_borboletas[!is.na(dados_borboletas$tribo), ]
+
+
+dados_regiao_especifica <- dados_borboletas %>%
+  filter(uc == 'Parna_da_Serra_do_Divisor')
+
+# Calcular o esforço amostral para cada combinação de uc_ea, expedicao e ano
+esforco_por_expedicao <- dados_regiao_especifica %>%
+  group_by(uc_ea, uc, expedicao, ano) %>%
+  summarize(
+    max_dia_amostragem = max(dia_amostragem) - 1,
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    esforco_amostral = 16 * max_dia_amostragem
+  )
+
+# Agregar o esforço de amostragem para cada uc_ea e ano
+esforco_total_por_ea_ano <- esforco_por_expedicao %>%
+  group_by(uc_ea, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregar o esforço de amostragem para cada uc e ano
+esforco_total_por_uc_ano <- esforco_por_expedicao %>%
+  group_by(uc, ano) %>%
+  summarize(
+    esforco_total_ano = sum(esforco_amostral),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o esforço total por ano
+esforco_por_ano <- esforco_total_por_uc_ano %>%
+  group_by(ano,uc) %>%
+  summarize(
+    esforco = sum(esforco_total_ano),
+    .groups = 'drop'
+  )
+
+# Agregação para obter o número total de indivíduos por ano
+num_ind_por_ano <- dados_regiao_especifica %>%
+  group_by(ano) %>%
+  summarize(
+    num_ind = sum(individuos, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+#criando uma coluna de UA e selecionando somente as colunas interessadas pra analise
+dados_regiao_especifica <- dados_regiao_especifica %>%
+  mutate(ua = paste(uc_ea, transeccao, sep = "_"))
+
+#combinando os dados por UA por ano = 12 (3 ea x 4 parcelas)
+df_abu_ano <- dados_regiao_especifica %>%
+  group_by(tribo, ua, uc_ea,uc, ano) %>%
+  summarise(abundancia = sum(individuos, na.rm = TRUE)) %>%
+  ungroup()
+
+# Transforma o df para colocar os zeros
+df_tabocal <- df_abu_ano %>%
+  spread(key = tribo, value = abundancia, fill = 0)
+
+# Retorna ao formato longo para as análises
+df_long <- df_tabocal %>%
+  pivot_longer(cols = Ageroniini:Satyrini, names_to = "tribo", values_to = "individuos")
+
+# Agregação para obter a abundância total de cada tribo por ano
+abundancia_por_ano <- df_long %>%
+  group_by(tribo, ano) %>%
+  summarize(
+    abundancia_total = sum(individuos)
+  )
+
+# Juntar as tabelas pela coluna 'ano' e 'uc'
+df_long_com_esforco <- left_join(df_long, esforco_por_ano, by = c("ano", "uc"))
+
+
+# Calcular a abundância padronizada pelo esforço amostral
+df_long <- df_long_com_esforco %>%
+  mutate(abundancia_padronizada = (individuos / esforco) * 100)
+#
+
+library(tidyverse)
+
+# Realizar análise e gerar gráficos para cada tribo
+
+tribos <- unique(df_long$tribo)
+
+for (tribo_atual in tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Adicione o ano de 2020, mesmo que não haja dados
+  medianas_anuais <- c(medianas_anuais, NA)
+  names(medianas_anuais)[length(medianas_anuais)] <- "2020"
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = as.character(unique(c(names(medianas_anuais), "2020"))), MedianaAnual = c(medianas_anuais, NA))
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- c(erros_padrao, NA)
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup)*1.2
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "Ano",
+         y = "Mediana da Abundância / Esforço Amostral") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Exiba o gráfico ajustado
+  print(p_tribo)
+  
+  # Salvar a imagem usando ggsave()
+  ggsave(filename = paste("mediana_", gsub(" ", "_", tolower(tribo_atual)), "_ajustado_pontos_linha_2020.png", sep = ""),  # Escolha um nome adequado para o arquivo
+         plot = p_tribo,  # O objeto ggplot
+         device = "png",  # Pode ser "jpeg", "tiff", etc.
+         path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Serra do Divisor",  # Especifique o diretório onde você deseja salvar o gráfico
+         dpi = 300,  # Define a resolução (DPI)
+         width = 6, height = 5, units = "in")  # Define o tamanho da imagem
+}
+
+
+library(gridExtra)
+
+# Definir uma lista para armazenar os gráficos
+lista_graficos <- list()
+
+# Defina a ordem das tribos
+ordem_tribos <- c("Brassolini", "Morphini", "Haeterini", "Preponini", "Melanitini", "Anaeini", 
+                  "Epicaliini", "Epiphilini", "Coeini", "Satyrini", "Callicorini", "Biblidini", "Ageroniini")
+
+for (tribo_atual in ordem_tribos) {
+  cat("Realizando análise e gerando gráfico para a tribo:", tribo_atual, "\n")
+  
+  # Filtrar os dados para a tribo atual
+  df_tribo <- df_long %>%
+    filter(tribo == tribo_atual)
+  
+  # Verificar se há dados para a tribo atual
+  if (nrow(df_tribo) == 0) {
+    cat("Não há dados para a tribo:", tribo_atual, "\n")
+    cat("Nenhuma análise ou gráfico gerado para a tribo:", tribo_atual, "\n")
+    next
+  }
+  
+  # Calcular a mediana anual para cada ano
+  medianas_anuais <- tapply(df_tribo$abundancia_padronizada, df_tribo$ano, median)
+  
+  # Adicione o ano de 2020, mesmo que não haja dados
+  medianas_anuais <- c(medianas_anuais, NA)
+  names(medianas_anuais)[length(medianas_anuais)] <- "2020"
+  
+  # Calcular a mediana geral das medianas anuais
+  mediana_geral_anual <- median(medianas_anuais, na.rm = TRUE)
+  
+  # Remover os anos com NA das medianas anuais
+  medianas_anuais <- medianas_anuais[!is.na(medianas_anuais)]
+  
+  # Crie um vetor para armazenar os resultados dos testes
+  resultados_teste_anual <- numeric(length(medianas_anuais))
+  
+  # Faça um loop pelos anos e realize o teste de Wilcoxon para cada ano
+  for (ano_atual in names(medianas_anuais)) {
+    # Realiza o teste de Wilcoxon comparando as medianas do ano atual com a mediana geral
+    wilcox_test_resultado <- wilcox.test(df_tribo$abundancia_padronizada[df_tribo$ano == ano_atual], mu = mediana_geral_anual, exact = FALSE)
+    
+    # Armazena o valor p do teste no vetor de resultados
+    resultados_teste_anual[ano_atual] <- wilcox_test_resultado$p.value
+  }
+  
+  # Crie um data frame com as medianas anuais, a mediana geral anual e os valores-p
+  df_plot <- data.frame(Ano = as.character(unique(c(names(medianas_anuais), "2020"))), MedianaAnual = c(medianas_anuais, NA))
+  df_plot$MedianaGeral <- mediana_geral_anual
+  df_plot$ValorP <- resultados_teste_anual[match(df_plot$Ano, names(resultados_teste_anual))]
+  
+  # Calcule os erros padrão para cada ano
+  erros_padrao <- sapply(names(medianas_anuais), function(ano) {
+    dados_ano <- df_tribo$abundancia_padronizada[df_tribo$ano == ano]
+    desvio_padrao_ano <- sd(dados_ano, na.rm = TRUE)
+    erro_padrao_ano <- desvio_padrao_ano / sqrt(length(dados_ano))
+    return(erro_padrao_ano)
+  })
+  
+  # Adicione os intervalos de confiança ao data frame
+  df_plot$ErroPadrao <- c(erros_padrao, NA)
+  df_plot$IntervaloConfiancaInf <- pmax(df_plot$MedianaAnual - 1.96 * df_plot$ErroPadrao, 0)
+  df_plot$IntervaloConfiancaSup <- df_plot$MedianaAnual + 1.96 * df_plot$ErroPadrao
+  
+  # Definir os limites do eixo y de acordo com os valores das medianas
+  y_limit <- max(df_plot$IntervaloConfiancaSup) * 1.2
+  
+  # Definir a cor de acordo com a tribo
+  cor_tribo <- if (tribo_atual %in% c("Brassolini", "Haeterini", "Morphini")) {
+    "#35978f"
+  } else if (tribo_atual %in% c("Satyrini", "Coeini", "Epiphilini", "Epicaliini", "Anaeini", "Melanitini", "Preponini")) {
+    "gray40"
+  } else {
+    "#bf812d"
+  }
+  
+  # Crie o gráfico ajustado com pontos e linhas
+  p_tribo <- ggplot(df_plot, aes(x = Ano, y = MedianaAnual)) +
+    geom_point(color = cor_tribo, size = 1) +
+    geom_line(size = 0.5, group = 1, color = cor_tribo) +  # Use group = 1 para conectar todos os pontos
+    geom_errorbar(aes(ymin = IntervaloConfiancaInf, ymax = IntervaloConfiancaSup), width = 0.2, color = cor_tribo) +
+    geom_hline(yintercept = mediana_geral_anual, linetype = "dashed", color = "red") +
+    labs(title = paste("", tribo_atual),
+         x = "",
+         y = "Mediana da Abundância 
+ / Esforço Amostral") +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.5, size = 8),
+          axis.title = element_text(size = 5),
+          axis.text = element_text(size = 5),
+          axis.line = element_line(color = "black"),
+          axis.ticks.y = element_line(color = "black"),
+          panel.grid.minor = element_blank(),
+          axis.line.x = element_blank(),
+          legend.position = "none") +  # Remover a legenda
+    ylim(0, y_limit) +  # Ajuste os limites conforme necessário
+    geom_text(data = df_plot[df_plot$ValorP < 0.05, ], 
+              aes(x = Ano, y = IntervaloConfiancaSup, label = "*"), 
+              vjust = -0.5,  
+              size = 3)
+  
+  # Adicionar o gráfico atual à lista
+  lista_graficos[[tribo_atual]] <- p_tribo
+}
+
 
 ```
 
-
 </br>
+
+
+```{r grafico abundancia-parna-serra-divisor-combinada}
+#| label: fig-abundancia-parana-serra-divisor-combinada
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '75%'
+#| fig-cap: "Variação na abundância das tribos de borboletas frugívoras no PARNA Serra do Divisor no período de 2020 a 2022."
+
+# Combine todos os gráficos em uma única imagem
+imagem_combinada <- grid.arrange(grobs = lista_graficos, ncol = 3)
+
+# Salvar a imagem combinada usando ggsave()
+# ggsave(filename = "todos_graficos_serra_do_divisor.png",  # Escolha um nome adequado para o arquivo
+#        plot = imagem_combinada,  # O objeto ggplot
+#        device = "png",  # Pode ser "jpeg", "tiff", etc.
+#        path = "/Users/isabelafreitasoliveira/Documents/ICMBIO-COMOB/Dados_Monitora/Análise de dados/Monitora_Borboletas_Isabela/Destaque/Serra do Divisor",  # Especifique o diretório onde você deseja salvar a imagem
+#        dpi = 300,  # Define a resolução (DPI)
+#        width = 14, height = 12, units = "in")  # Define o tamanho da imagem
+
+```
+
 
 
 ## Discussão

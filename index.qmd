@@ -39,8 +39,8 @@ pacman::p_load(tidyverse,
                htmltools,
                htmlwidgets,
                RColorBrewer,
-               randomcoloR
-               )
+               randomcoloR,
+               htmlTable)
 library(geobr)
 
 ```

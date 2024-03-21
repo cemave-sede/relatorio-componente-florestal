@@ -1,0 +1,41 @@
+﻿ordem ;familia;taxon_validado;categoria
+Cariamiformes ;Cariamidae ;Cariama cristata ;
+Galliformes ;Cracidae ;Aburria cujubi;VU
+;;Aburria cumanensis ;
+;;Aburria sp.;
+;;Cracidae;
+;;Crax alector ;
+;;Crax fasciolata ;
+;;Crax globulosa;EN
+;;Crax sp.;
+;;Nothocrax urumutum ;
+;;Ortalis guttata ;
+;;Ortalis motmot ;
+;;Ortalis ruficeps ;
+;;Ortalis superciliaris ;
+;;Pauxi tomentosa ;
+;;Pauxi tuberosa ;
+;;Pauxi sp.;
+;;Penelope jacquacu ;
+;;Penelope marail ;
+;;Penelope obscura ;
+;;Penelope superciliaris alagoensis;CR
+;;Penelope sp.;
+;Odontophoridae ;Odontophorus capueira ;
+;;Odontophorus gujanensis ;
+;;Odontophorus stellatus ;
+;;Odontophorus sp.;
+Gruiformes ;Psophiidae ;Psophia crepitans ;
+;;Psophia dextralis;VU
+;;Psophia interjecta;EN
+;;Psophia leucoptera ;
+;;Psophia obscura;CR
+;;Psophia ochroptera ;
+;;Psophia viridis;VU
+Tinamiformes ;Tinamidae ;Crypturellus sp.;
+;;Nothura sp.;
+;;Rhynchotus rufescens ;
+;;Tinamidae;
+;;Tinamus major ;
+;;Tinamus solitarius ;
+;;Tinamus sp.;

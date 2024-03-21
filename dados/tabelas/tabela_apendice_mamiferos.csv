@@ -1,0 +1,154 @@
+﻿ordem;familia;taxon_validado;categoria
+Carnivora ;Canidae ;Atelocynus microtis;VU
+;;Cerdocyon thous ;
+;;Chrysocyon brachyurus;VU
+;;Speothos venaticus;VU
+;Felidae ;Herpailurus yagouaroundi;VU
+;;Leopardus pardalis ;
+;;Leopardus sp. ;
+;;Leopardus tigrinus;EN
+;;Leopardus wiedii;VU
+;;Panthera onca;VU
+;;Puma concolor ;
+;Mustelidae ;Eira barbara ;
+;;Galictis vittata ;
+;;Lontra longicaudis ;
+;;Pteronura brasiliensis;VU
+;Procyonidae ;Nasua nasua ;
+;;Procyon cancrivorus ;
+Cetartiodactyla ;Cervidae ;Mazama americana ;
+;;Mazama gouazoubira ;
+;;Mazama nemorivaga ;
+;;Mazama sp. ;
+;;Ozotocerus bezoarticus ;
+;Tayassuidae ;Pecari tajacu ;
+;;Tayassu pecari;VU
+Cingulata ;Dasypodidae ;Cabassous unicinctus ;
+;;Dasypus kappleri ;
+;;Dasypus novemcinctus ;
+;;Dasypus sp. ;
+;;Priodontes maximus;VU
+Didelphimorphia ;Didelphidae ;Didelphis albiventris ;
+;;Didelphis aurita ;
+;;Didelphis marsupialis ;
+;;Didelphis sp. ;
+Lagomorpha ;Leporidae ;Sylvilagus brasiliensis ;
+Perissodactyla ;Tapiridae ;Tapirus terrestris;VU
+Pilosa ;Bradypodidae ;Bradypus sp. ;
+;;Bradypus tridactylus ;
+;;Bradypus variegatus ;
+;Cyclopedidae ;Cyclopes didactylus ;
+;Megalonychidae ;Choloepus didactylus ;
+;Myrmecophagidae ;Myrmecophaga tridactyla;VU
+;;Tamandua tetradactyla ;
+Primates ;Aotidae ;Aotus infulatus ;
+;;Aotus nigriceps ;
+;;Aotus trivirgatus ;
+;Atelidae ;Alouatta belzebul;VU
+;;Alouatta caraya ;
+;;Alouatta discolor;VU
+;;Alouatta guariba clamitans;VU
+;;Alouatta juara ;
+;;Alouatta macconnelli ;
+;;Alouatta nigerrima ;
+;;Alouatta puruensis ;
+;;Alouatta sp. ;
+;;Ateles belzebuth;VU
+;;Ateles chamek;VU
+;;Ateles marginatus;EN
+;;Ateles paniscus ;
+;;Brachyteles arachnoides;EN
+;;Lagothrix lagothricha cana;EN
+;;Lagothrix lagothricha poeppigii;VU
+;Callitrichidae ;Callimico goeldii ;
+;;Callithrix aurita;EN
+;;Callithrix jacchus ;
+;;Callithrix penicillata ;
+;;Callithrix sp. ;
+;;Cebuella pygmaea ;
+;;Leontopithecus chrysomelas;EN
+;;Mico argentatus ;
+;;Mico emiliae ;
+;;Mico humeralifer ;
+;;Mico leucippe ;
+;;Mico melanurus ;
+;;Mico rondoni;VU
+;;Mico sp. ;
+;;Saguinus imperator ;
+;;Saguinus midas ;
+;;Saguinus niger;
+;;Saguinus sp. ;
+;;Saguinus weddelli ;
+;Cebidae ;Cebus albifrons ;
+;;Cebus kaapori;CR
+;;Cebus olivaceus ;
+;;Cebus sp. ;
+;;Cebus unicolor ;
+;;Saimiri boliviensis ;
+;;Saimiri cassiquiarensis ;
+;;Saimiri collinsi ;
+;;Saimiri macrodon ;
+;;Saimiri sciureus ;
+;;Saimiri sp. ;
+;;Saimiri ustus ;
+;;Sapajus apella ;
+;;Sapajus cay;VU
+;;Sapajus libidinosus ;
+;;Sapajus macrocephalus ;
+;;Sapajus nigritus ;
+;;Sapajus xanthosternos;EN
+;Pitheciidae ;Cacajao calvus ;
+;;Cacajao melanocephalus ;
+;;Cacajao sp. ;
+;;Callicebus bernhardi ;
+;;Callicebus brunneus ;
+;;Callicebus caligatus ;
+;;Callicebus cupreus ;
+;;Callicebus dubius ;
+;;Callicebus hoffmannsi ;
+;;Callicebus lugens ;
+;;Callicebus moloch ;
+;;Callicebus sp. ;
+;;Callicebus vieirai;DD
+;;Chiropotes albinasus ;
+;;Chiropotes chiropotes ;
+;;Chiropotes sagulatus ;
+;;Chiropotes satanas;CR
+;;Chiropotes utahickae;VU
+;;Pithecia chrysocephala ;
+;;Pithecia irrorata;DD
+;;Pithecia monachus ;
+;;Pithecia pithecia ;
+;;Pithecia vanzolinii ;
+;;Plecturocebus toppini ;
+Rodentia ;Caviidae ;Cavia sp. ;
+;;Galea spii ;
+;;Hydrochoerus hydrochaeris ;
+;Cuniculidae ;Cuniculus paca ;
+;;Dinomys paca ;
+;Dasyproctidae ;Dasyprocta azarae ;
+;;Dasyprocta croconota ;
+;;Dasyprocta fuliginosa ;
+;;Dasyprocta iacki ;
+;;Dasyprocta leporina ;
+;;Dasyprocta prymnolopha ;
+;;Dasyprocta sp. ;
+;;Myoprocta acouchy ;
+;;Myoprocta pratti ;
+;;Myoprocta sp. ;
+;Erethizontidae ;Coendou bicolor ;
+;;Coendou prehensilis ;
+;;Coendou sp. ;
+;Sciuridae ;Guerlinguetus aestuans ;
+;;Guerlinguetus gilvigularis ;
+;;Guerlinguetus ignitus ;
+;;Guerlinguetus ingrami ;
+;;Guerlinguetus sp. ;
+;;Microsciurus flaviventer ;
+;;Microsciurus sp. ;
+;;Sciuridae ;
+;;Sciurillus pusillus ;
+;;Sciurillus sp. ;
+;;Urosciurus igniventris ;
+;;Urosciurus sp. ;
+;;Urosciurus spadiceus ;

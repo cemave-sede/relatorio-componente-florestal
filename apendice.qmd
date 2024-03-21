@@ -23,6 +23,7 @@ library(reshape2)
 library(randomcoloR)
 library(survminer)
 library(renv)
+library(htmlTable)
 ```
 
 # (APPENDIX) Apêndices {- #apendice}
@@ -46,7 +47,7 @@ library(renv)
 
 \hspace{1.5cm}
 
-## Apêndice C - Lista de mamíferos {.appendix}
+## Apêndice C - Lista validada de mamíferos {.appendix}
 
 \hspace{1.5cm}
 
@@ -61,23 +62,58 @@ library(renv)
 #| out.width: '70%'
 #| tab-cap: "Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora, no período de 2014 a 2022. Os números entre parênteses correspondem ao número de espécies registradas para o táxon. Em vermelho estão os táxons ameaçados e sua respectiva categoria de ameaça. As espécies 'Deficientes em Dados (DD)' também estão indicadas."
 
-tabela_mamiferos <- read.csv2("dados/tabelas/tabela_3.4.1.csv", encoding="UTF-8")
+tabela_mamiferos <- read.csv2("dados/tabelas/tabela_apendice_mamiferos.csv", encoding="UTF-8")
 
 tab_mamiferos <- kbl(tabela_mamiferos,
              booktabs = TRUE,
              longtable = TRUE,
              # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-            col.names = c("Ordem", "Família", "Táxon")) %>%
-    column_spec(3, italic = TRUE) %>% 
+            col.names = c("Ordem", "Família", "Táxon", "Categoria")) %>%
+    column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 
+
 tab_mamiferos
+
+
+#----------------------------------------------
+
+
+# tab_mamiferos <- datatable(tabela_mamiferos,
+                           #caption = 'Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora, no período de 2014 a 2022. Os números entre parênteses correspondem ao número de espécies registradas para o táxon. Em vermelho estão os táxons ameaçados e sua respectiva categoria de ameaça. As espécies 'Deficientes em Dados (DD)' também estão indicadas.',
+
+#                            colnames = c("Ordem", "Família", "Táxon", "Categoria"),
+#                           
+#                            extensions = 'Buttons',
+#                            elementId = NULL,
+#                            # extensions= "Scroller",
+#                            style="bootstrap",
+#                            class="stripe hover",
+#                            width="100%",
+#                            rownames = F,
+#                            autoHideNavigation = T,
+#                            escape =FALSE,
+#                            #filter = "top",
+#                            options=list(deferRender=TRUE,
+#                                    pageLength = 5,
+#                                    scrollY=300,
+#                                    dom = 'Bfrtip', 
+#                          buttons = c('copy', 'csv', 'excel', 'pdf'))) %>% 
+#     
+# formatStyle('taxon_validado',  fontWeight = 'italic', fontStyle = 'italic', `text-align` = 'left') %>% 
+#     
+# formatStyle(columns = c("ordem"), `text-align` = 'left') %>%
+# formatStyle(columns = c("familia"), `text-align` = 'left') %>%
+# formatStyle(columns = c("taxon_validado"), `text-align` = 'left') %>%
+# formatStyle(columns = c("categoria"), `text-align` = 'center') 
+# 
+# tab_mamiferos
+
 
 ```
 
 
-
-## Apêndice D - Lista de aves {.appendix}
+## Apêndice D - Lista validada de aves {.appendix}
 
 
 ```{r tabela aves}
@@ -87,21 +123,53 @@ tab_mamiferos
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '100%'
 #| tab-cap: "Táxons (gêneros e espécies) de aves registrados nas unidades de conservação amostradas no período de 2014 a 2022."
 
-tabela_aves <- read.csv2("dados/tabelas/tabela_3.4.2.csv", encoding="UTF-8")
+tabela_aves <- read.csv2("dados/tabelas/tabela_apendice_aves.csv", encoding="UTF-8")
 
 tab_aves <- kbl(tabela_aves,
              booktabs = TRUE,
              longtable = TRUE,
              # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-            col.names = c("Ordem", "Família", "Táxon")) %>%
-    column_spec(3, italic = TRUE) %>% 
+            col.names = c("Ordem", "Família", "Táxon", "Categoria")) %>%
+    column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 
-
 tab_aves
+#----------------------------------------------
+
+
+# tab_aves <- datatable(tabela_aves,
+#                            #caption = 'Táxons (gêneros e espécies) de aves registrados nas unidades de conservação amostradas no período de 2014 a 2022.',
+# 
+#                            colnames = c("Ordem", "Família", "Táxon", "Categoria"),
+#                           
+#                            extensions = 'Buttons',
+#                            elementId = NULL,
+#                            # extensions= "Scroller",
+#                            style="bootstrap",
+#                            class="stripe hover",
+#                            width="100%",
+#                            rownames = F,
+#                            autoHideNavigation = T,
+#                            escape =FALSE,
+#                            #filter = "top",
+#                            options=list(deferRender=TRUE,
+#                                    pageLength = 5,
+#                                    scrollY=300,
+#                                    dom = 'Bfrtip', 
+#                          buttons = c('copy', 'csv', 'excel', 'pdf'))) %>% 
+#     
+# formatStyle('taxon_validado',  fontWeight = 'italic', fontStyle = 'italic', `text-align` = 'left') %>% 
+#     
+# formatStyle(columns = c("ordem."), `text-align` = 'left') %>%
+# formatStyle(columns = c("familia"), `text-align` = 'left') %>%
+# formatStyle(columns = c("taxon_validado"), `text-align` = 'left') %>%
+# formatStyle(columns = c("categoria"), `text-align` = 'center') 
+# 
+# tab_aves
+
 
 ```
 
