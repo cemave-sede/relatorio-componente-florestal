@@ -67,8 +67,8 @@ tabela_mamiferos <- read.csv2("dados/tabelas/tabela_apendice_mamiferos.csv", enc
 tab_mamiferos <- kbl(tabela_mamiferos,
              booktabs = TRUE,
              longtable = TRUE,
-             # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-            col.names = c("Ordem", "Família", "Táxon", "Categoria")) %>%
+             # caption = " ",
+            col.names = c("Ordem", "Família", "Táxon", "Categoria"), align = c("l", "l", "l", "c")) %>%
     column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 
@@ -129,10 +129,11 @@ tab_mamiferos
 tabela_aves <- read.csv2("dados/tabelas/tabela_apendice_aves.csv", encoding="UTF-8")
 
 tab_aves <- kbl(tabela_aves,
+                #"pipe",
              booktabs = TRUE,
              longtable = TRUE,
-             # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-            col.names = c("Ordem", "Família", "Táxon", "Categoria")) %>%
+             # caption = " ",
+            col.names = c("Ordem", "Família", "Táxon", "Categoria"), align = c("l", "l", "l", "c")) %>%
     column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 

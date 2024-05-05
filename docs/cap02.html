@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,7 +69,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -371,6 +373,7 @@ Figura&nbsp;2.5: Unidades de conservação com dados validados para análises no
 <p>Considera-se que o monitoramento do componente Florestal está consolidado quando as UCs possuem pelo menos três EAs implementadas com todos os alvos de monitoramento com coleta de dados. No final do período de amostragem de 2022, das ?? UCs em operação, ?? já estavam consolidadas (??% – <span class="quarto-unresolved-ref">?tbl-numero-ucs</span>) e, ao todo, o Programa apresentava ?? EAs e ?? UAs com coleta de dados (<span class="quarto-unresolved-ref">?tbl-numero-estacoes</span>).</p>
 <div id="tbl-numero-ucs" class="cell anchored" data-tab-cap="Número de UCs com as etapas operação e consolidação do monitoramento do componente Florestal do Programa Monitora, durante o período de 2014 a 2022.">
 <div class="cell-output-display">
+<div>
 <div class="table-responsive">
 <table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
 <thead>
@@ -419,9 +422,11 @@ Figura&nbsp;2.5: Unidades de conservação com dados validados para análises no
 
 </div>
 </div>
+</div>
 <p><br></p>
 <div id="tbl-numero-estacoes" class="cell anchored" data-tab-cap="Número de estações e unidades amostrais (EA &amp; UA) em operação no componente Florestal do Programa Monitora, durante o período de 2013 a 2022.">
 <div class="cell-output-display">
+<div>
 <div class="table-responsive">
 <table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
 <thead>
@@ -470,11 +475,13 @@ Figura&nbsp;2.5: Unidades de conservação com dados validados para análises no
 
 </div>
 </div>
+</div>
 <p>Das UCs que já alcançaram a fase de operação, 42 UCs são do bioma Amazônico, seis da Mata Atlântica e seis do Cerrado, e contemplam 18 das 27 unidades federativas do Brasil. Muitas UCs tiveram problemas que causaram descontinuidade no monitoramento (coleta de dados não realizada em um ou mais anos) durante o período 2014-2022. Algumas situações se justificaram pela inadequabilidade dos métodos para o ambiente da UC, especialmente no Cerrado, outras por problemas de ordem logística, pessoal ou financeira.</p>
 <p>A execução do monitoramento pelas UCs pode ser gradativa, isto é, pode iniciar com apenas a implantação e coleta de dados de uma EA ou UA e, ao longo do tempo, chegar na fase de consolidação, mas com a recomendação de que isso ocorra em até dois anos. Entretanto, verificou-se que a maioria das UCs, principalmente nos primeiros anos do Programa, precisaram de mais tempo (de 3 a 4 anos) para atingir a fase de consolidação. Espera-se que, nos próximos anos, as UCs consigam atingir a consolidação dentro do período recomendado. É importante ressaltar que as UCs podem ter mais de três EAs implantadas e outras podem não atingir essa meta devido a particularidades locais, como algumas unidades do Cerrado e Mata Atlântica, por suas dimensões, e aquelas que estão fazendo o monitoramento em “bloco” (monitoramento espacialmente compartilhado).</p>
 <p>Esse início gradativo do monitoramento também é observado quando comparamos o número de UCs, EAs e UAs em operação ao longo do tempo. No início, a estratégia da maioria das UCs dos biomas Cerrado e Mata Atlântica foi de priorizar a implementação de apenas uma EA com todas as respectivas UAs (alvos), enquanto as UCs amazônicas priorizaram as três EAs, mas não com todos os alvos (trilha ou cruz de malta). A partir de 2016, houve um aumento no esforço de consolidar as EAs com a coleta de dados de todos os alvos, aumentando consideravelmente o número de UAs por UC (Figura x, <span class="quarto-unresolved-ref">?tbl-ucs-componente-florestal</span>). Portanto, da mesma forma espera-se que, nos próximos anos, as UCs consigam aumentar o número de suas EAs e UAs, diminuindo assim a distância entre a linha do acumulado e do esperado.</p>
 <div id="tbl-ucs-componente-florestal" class="cell anchored" data-tab-cap="Relação das UCs com alvos globais do componente Florestal (M/A = Mamíferos e Aves de médio a grande porte; P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras) monitorados durante o período de 2014 a 2022, com a sinalização do ano que a UC alcançou de consolidação (c) no Programa Monitora.">
 <div class="cell-output-display">
+<div>
 <div class="table-responsive">
 <table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
 <thead>
@@ -1299,6 +1306,7 @@ Figura&nbsp;2.5: Unidades de conservação com dados validados para análises no
 
 </div>
 </div>
+</div>
 <p><br></p>
 <p>Para detalhes da implementação dos diferentes protocolos por UC ao longo dos anos veja Apêndice B (verificar com os pontos focais a viabilidade de apresentação desses dados!).</p>
 </section>
@@ -1390,6 +1398,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1424,7 +1450,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1700,12 +1730,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./cap01.html" class="pagination-link  aria-label=" &lt;span="" programa="" nacional="" de="" monitoramento="" da="" biodiversidade="" -="" monitora&lt;="" span&gt;"="">
+      <a href="./cap01.html" class="pagination-link" aria-label="O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap03.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Plantas arbóreas e arborescentes</span>">
+      <a href="./cap03.html" class="pagination-link" aria-label="Plantas arbóreas e arborescentes">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plantas arbóreas e arborescentes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

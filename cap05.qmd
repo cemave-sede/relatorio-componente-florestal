@@ -49,14 +49,16 @@ library(htmlTable)
     *Complexo Administrativo EQSW 103/104 s/n*\
     *70670-350 Brasília, DF*
 
-5.  Núcleo de Gestão Integrada - NGI ICMBio Tefé\
+5.  Núcleo de Gestão Integrada ICMBio Tefé\
     *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*\
     *Estr. do Aeroporto, 725 - Centro*\
-    *69550-101 Tefé, AM*
-
-6.  Parque Nacional do Viruá\
+    *69550-101 Tefé, AM*  
+    
+6.  Núcleo de Gestão Integrada ICMBio Roraima\
     *Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio*\
-    *69360-000 Caracaraí, RR*
+    *Rua Alfredo Cruz, 283 - Centro*\  
+    *69301-140 Boa Vista, RR*  
+    
 
 <br>
 
@@ -77,10 +79,11 @@ Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíf
 
 </br>
 
-De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 53 UCs federais, totalizando 138 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
-O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrestres cinegéticas. No total, foram identificadas 132 espécies espécies e 60 gêneros de mamíferos e 31 esppécies e 13 gêneros de aves ((@fig-taxons-acumulados-script), Apêndices C e D), com 35 táxons ameaçados de extinção: 29 de mamíferos e 6 de aves, respectivamente.
+De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 53 UCs federais^[Para efeito de análise, a RESEX do Rio Iriri e a ESEC da Terra do Meio foram tratadas como um bloco, de forma que os dados das duas UCs foram analisados de  forma integrada. Portanto, ao longo desse capítulo os resultados apresentados para a ESEC Terra do Meio na verdade expressam os dados das duas UCs.], totalizando 138 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
 
-Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
+Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022.  
+
+O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrestres cinegéticas. No total, foram identificadas 131 espécies e 60 gêneros de mamíferos e 29 espécies e 13 gêneros de aves ((@fig-taxons-acumulados-script), Apêndices C e D), com 35 táxons ameaçados de extinção: 29 de mamíferos e 6 de aves, respectivamente. Registros de *Cavia* (preás),  *Crypturellus* (inhambus) e *Nothura* (codornas) foram validados apenas em nível de gênero. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
 
 
 
@@ -94,7 +97,7 @@ Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unida
 # Carregando os dados no formato .csv
 
 masto_aves_csv <-
-  read_csv2("dados/base_masto_aves_esforco_corrigido.csv")
+  read_csv2("dados/mastoaves/base_masto_aves_esforco_corrigido.csv")
 
 # Nesse arquivo "base_masto_aves_eforco_corrigido.csv" a coluna de esforço 
 # foi corrigida, visto que os valores estavam sem o ponto decimal, 
@@ -104,15 +107,15 @@ masto_aves_csv <-
 
 # Convertendo os dados para o formato .rds
 
-saveRDS(masto_aves_csv, file = "dados/masto_aves.rds")
+saveRDS(masto_aves_csv, file = "dados/mastoaves/masto_aves.rds")
 
-masto_aves <- readRDS("dados/masto_aves.rds")
+masto_aves <- readRDS("dados/mastoaves/masto_aves.rds")
 
 # Carregando a planilha com a UCs classificadas por grupo - proteção integral x
 # uso sustentável
 
 ucs_grupos <-
-  read_csv2("dados/dados_brutos/ucs_grupos.csv")
+  read_csv2("dados/ucs/ucs_grupos.csv")
 
 
 # Juntando planilha ucs_grupos com a planilha masto_aves
@@ -179,13 +182,6 @@ mutate(
 # Corrigindo validação de Ortalis motmot para algumas UCs -> Ortalis rucifeps
 
 
-
-motmot <- masto_aves |>
-  filter(taxon_validado == "Ortalis motmot")
-
-unique(motmot$uc)
-
-
 masto_aves <- masto_aves %>%
 mutate(
   taxon_validado = case_when(
@@ -213,7 +209,19 @@ mutate(
 
 unique(masto_aves$ordem)
   
-  
+# Ajustando nomes na coluna "especie" - corrigindo espécies com sp. para sp
+
+masto_aves <- masto_aves %>%
+mutate(
+  especie = case_when(
+    especie == "Aotus sp." ~  "Aotus sp",
+    especie == "Dasyprocta sp." ~  "Dasyprocta sp",
+    especie == "Psophia sp." ~  "Psophia sp",
+    especie == "Galea sp." ~  "Galea sp",
+    especie == "Galictis sp." ~  "Galictis sp",
+  TRUE ~ especie)) 
+
+
 # list_primatas <- masto_aves |>
 #   filter(ordem == "Primates")
 # 
@@ -251,11 +259,12 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 library(here)
 library(tidyverse)
 library(RColorBrewer)
+library(here)
 
 #-----------3 graficos para o relatorio florestal-------------------
 
 #----- ler dados
-load(here("data", "monitora.RData"))
+load(here("dados", "mastoaves", "monitora.RData"))
 
 monitora <- monitora %>%
 mutate(
@@ -347,14 +356,14 @@ monitora %>%
 
 
 # salvar
-ggsave("imagens/cap05/ma_esforco_acumulado1.jpg",
-       plot = last_plot(),
-       device =  "jpeg",
-       scale=1.5,
-       width = 210,
-       height = 70,
-       units = "mm",
-       dpi = 120)
+# ggsave("imagens/cap05/ma_esforco_acumulado1.jpg",
+#        plot = last_plot(),
+#        device =  "jpeg",
+#        scale=1.5,
+#        width = 210,
+#        height = 70,
+#        units = "mm",
+#        dpi = 120)
 
 ```
 
@@ -409,14 +418,14 @@ monitora %>%
   #   plot.background = element_rect(fill = "white")) +
   labs(x = "Ano")
 
-ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.jpg",
-       plot = last_plot(),
-       device =  "jpeg",
-       scale=1.5,
-       width = 210,
-       height = 70,
-       units = "mm",
-       dpi = 120)
+# ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.jpg",
+#        plot = last_plot(),
+#        device =  "jpeg",
+#        scale=1.5,
+#        width = 210,
+#        height = 70,
+#        units = "mm",
+#        dpi = 120)
 
 
 
@@ -477,59 +486,15 @@ monitora %>%
 
   
 
-ggsave("imagens/cap05/ma_esforco_total_uc_bioma1.jpg",
-       plot = last_plot(),
-       device =  "jpeg",
-       scale=0.6,
-       width = 240,
-       height = 300,
-       units = "mm",
-       dpi = 120)
+# ggsave("imagens/cap05/ma_esforco_total_uc_bioma1.jpg",
+#        plot = last_plot(),
+#        device =  "jpeg",
+#        scale=0.6,
+#        width = 240,
+#        height = 300,
+#        units = "mm",
+#        dpi = 120)
 
-```
-
-```{r grafico esforço acumulado}
-#| label: fig-esforco-acumulado
-#| echo: false
-#| include: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '80%'
-# #| fig-cap: "Esforço por ano e acumulado em quilômetros percorridos nas unidades de conservação aderidas ao Programa Monitora entre 2014 e 2022."
-# 
-# knitr::include_graphics("imagens/cap05/ma_esforco_acumulado1.JPG")
-
-```
-
-```{r grafico ucs_ativas_taxa_acumulado}
-#| label: fig-taxons-acumulados
-#| echo: false
-#| include: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-# #| fig-cap: "Táxons registrados acumulados e número de unidades de conservação com protocolo básico de masto-aves executado por ano entre 2014 e 2022."
-# 
-# knitr::include_graphics("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.JPG")
-
-```
-
-```{r grafico esforco_total_uc_bioma.jpg}
-#| label: fig-esforco-total-uc-bioma
-#| echo: false
-#| include: false
-#| message: false
-#| warning: false
-#| cache: true
-#| #| fig.pos: 'H'
-#| out.width: '90%'
-# #| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano."
-# 
-# knitr::include_graphics("imagens/cap05/ma_esforco_total_uc_bioma1.JPG")
 ```
 
 </br>
@@ -929,7 +894,8 @@ grid.arrange(G_especies_registros_ordem_geral, G_especies_registros_ordem_bioma_
 
 </br>
 
-Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto para o gênero *Callibella*, que não ocorre em nenhuma UC do Programa, todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta espécies foram detectadas, o que corresponde a 84,7% dos primatas brasileiros. Dessas, 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.
+Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto para o gênero *Callibella* (sagui-anão), que não ocorre em nenhuma UC do Programa, todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.
+
 
 
 ```{r tabela mamíferos}
@@ -941,25 +907,25 @@ Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em n�
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| tab-cap: "Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora, no período de 2014 a 2022. Os números entre parênteses correspondem ao número de espécies registradas para o táxon. Em vermelho estão os táxons ameaçados e sua respectiva categoria de ameaça. As espécies 'Deficientes em Dados (DD)' também estão indicadas."
+#| tab-cap: "Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora de 2014 a 2022."
 
-tabela_mamiferos <- read.csv2("dados/tabelas/tabela_3.4.1.csv", encoding="UTF-8")
-
-tab_mamiferos <- kbl(tabela_mamiferos,
-             booktabs = TRUE,
-             longtable = TRUE,
-             # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-            col.names = c("Ordem", "Família", "Táxon")) %>%
-    column_spec(3, italic = TRUE) %>%
-kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
-
-tab_mamiferos
+# tabela_mamiferos <- read.csv2("dados/tabelas/tabela_3.4.1.csv", encoding="UTF-8")
+# 
+# tab_mamiferos <- kbl(tabela_mamiferos,
+#              booktabs = TRUE,
+#              longtable = TRUE,
+#              # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
+#             col.names = c("Ordem", "Família", "Táxon")) %>%
+#     column_spec(3, italic = TRUE) %>%
+# kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+# 
+# tab_mamiferos
 
 ```
 
-Com relação às aves, 31 espécies de 13 gêneros foram registradas (Apêndice D). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria. Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar *Nothura* (codornas), *Penelope* (jacus), *Tinamus* (macucos) e *Crypturellus* (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.  
+Com relação às aves, 29 espécies de 13 gêneros foram registradas (Apêndice D). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria. Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar *Nothura* (codornas), *Penelope* (jacus), *Tinamus* (macucos) e *Crypturellus* (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.  
 
-A maioria dos registros de aves distribui-se quase que igualmente entre Galliformes e Tinamídeos. Esse resultado se deve ao fato de o método ser eficiente na detecção desses grupos e em razão dos Gruiformes (jacamins) ocorrerem apenas no bioma Amazônico, nunca com mais de uma espécie por localidade, enquanto os Cariamiformes, com uma única espécie (seriema – *Cariama cristata*), são típicos de ambientes abertos e praticamente não foram avistados (@fig-registros-ordem).
+A maioria dos registros de aves distribui-se quase que igualmente entre as ordens Galliformes e Tinamiformes. Esse resultado se deve ao fato de o método ser eficiente na detecção desses grupos e em razão dos Gruiformes (jacamins) ocorrerem apenas no bioma Amazônico, nunca com mais de uma espécie por localidade, enquanto os Cariamiformes, com uma única espécie (*Cariama cristata* - seriema), são típicos de ambientes abertos e praticamente não foram avistados (@fig-registros-ordem).
 
 A variação nas proporções de registros no Cerrado e na Mata Atlântica ao longo dos nove anos de amostragem deve-se ao ainda pequeno número de unidades de conservação desses biomas integrando o Programa Monitora, à inconstância nas amostragens e ao pequeno esforço amostral, seja por unidade de conservação, seja por bioma (@fig-registros-ordem).
 
@@ -973,20 +939,20 @@ A variação nas proporções de registros no Cerrado e na Mata Atlântica ao lo
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| tab-cap: "Táxons (gêneros e espécies) de aves registrados nas unidades de conservação amostradas no período de 2014 a 2022."
+#| tab-cap: "Táxons de aves registrados nas unidades de conservação amostradas de 2014 a 2022."
 
-tabela_aves <- read.csv2("dados/tabelas/tabela_3.4.2.csv", encoding="UTF-8")
-
-tab_aves <- kbl(tabela_aves,
-             booktabs = TRUE,
-             longtable = TRUE,
-             # caption = "  ",
-            col.names = c("Ordem", "Família", "Táxon")) %>%
-    column_spec(3, italic = TRUE) %>%
-kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
-
-
-tab_aves
+# tabela_aves <- read.csv2("dados/tabelas/tabela_3.4.2.csv", encoding="UTF-8")
+# 
+# tab_aves <- kbl(tabela_aves,
+#              booktabs = TRUE,
+#              longtable = TRUE,
+#              # caption = "  ",
+#             col.names = c("Ordem", "Família", "Táxon")) %>%
+#     column_spec(3, italic = TRUE) %>%
+# kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+# 
+# 
+# tab_aves
 
 ```
 
@@ -1022,6 +988,7 @@ masto_aves_esforco <-
 
 # View(masto_aves_esforco) 
 
+# Alterando o nome das categorias para letras maiúsculas
 
 masto_aves_esforco <- masto_aves_esforco %>%
 mutate(
@@ -1116,7 +1083,7 @@ masto_aves_esforco <- masto_aves_esforco |>
 #glimpse(masto_aves_esforco)
 
 
-#### Ajuste dos códigos CNUC --------------
+#### Ajustando os códigos CNUC para o formato padrão --------------
 
 masto_aves_esforco$cnuc <- as.character(masto_aves_esforco$cnuc)
 
@@ -1338,7 +1305,7 @@ taxa_encontro_geral_uc <- taxa_encontro_geral_uc_ano |>
 
 #View(taxa_encontro_periodo_amostragem)
 
-write.csv(taxa_encontro_geral_uc, "dados/planilhas/taxa_encontro_geral_uc.csv", row.names = FALSE)
+write.csv(taxa_encontro_geral_uc, "dados/mastoaves/taxa_encontro_geral_uc.csv", row.names = FALSE)
 
 ```
 
@@ -1349,7 +1316,7 @@ write.csv(taxa_encontro_geral_uc, "dados/planilhas/taxa_encontro_geral_uc.csv", 
 #| warning: false
 #| cache: true
 
-#ucs_monitora <- read_csv("dados/ucs_federais_cnuc_15.09.2023.csv")
+#ucs_monitora <- read_csv("dados/mastoaves/ucs_federais_cnuc_15.09.2023.csv")
 #
 # ucs_monitora$lat <- as.numeric(ucs_monitora$lat)
 # ucs_monitora$long <- as.numeric(ucs_monitora$long)
@@ -1365,7 +1332,7 @@ ucs_comp_florestal <-  readOGR("shapes/ucs_comp_florestal.shp", verbose = FALSE)
 
 #C_monitora <-  readOGR("shapes/ucs_monitora_jun_23.shp", verbose = FALSE)
 
-taxa_encontro_geral <- read_csv("dados/planilhas/taxa_encontro_geral_uc.csv")
+taxa_encontro_geral <- read_csv("dados/mastoaves/taxa_encontro_geral_uc.csv")
 
 
 #taxa_encontro_geral_cnuc <- taxa_encontro_geral |> rename(Cnuc = cnuc)
@@ -1947,7 +1914,7 @@ G_taxa_encontro_geral_aves_media_IC
 
 </br>
 
-###### Variação espacial na taxa de encontro média - mamíferos e aves conjuntamente
+###### Variação espacial na taxa de avistamento média - mamíferos e aves conjuntamente
 
 </br>
 
@@ -2113,29 +2080,28 @@ taxa_encontro_trilha_taxon_validado_aves <-
 
 </br>
 
-Do conjunto de táxons da ordem Carnivora deste protocolo, 12 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis*, *Chrysocyon brachyurus*, *Lycalopex vetulus*, *Speothos venaticus*, *Herpailurus yagouaroundi*, *Leopardus colocolo*, *L. guttulus*, *Leopardus tigrinus* (e *L. guttulus*), *L. wiedii*, *Panthera onca* e *Pteronura brasiliensis*. Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (*L. munoai*), não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *Lycalopex vetulus* e *Leopardus colocolo* não foram registrados no Programa Monitora.  
+Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Chrysocyon brachyurus* (lobo-guará), *Lycalopex vetulus* (raposa-do-campo), *Speothos venaticus* (cachorro-vinagre), *Herpailurus yagouaroundi* (jaguarundi), *Leopardus colocolo* (gato-palheiro), *L. guttulus* (gato-do-mato), *L. tigrinus* (gato-do-mato), *L. wiedii* (gato-maracajá), *Panthera onca* (onça-pintada) e *Pteronura brasiliensis* (ariranha). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus* (raposa-do-campo), *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora.  
 
 
-Das 13 espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, nove foram registradas: *Blastocerus dichotomus*, *Mazama nana*, *Ozotocerus bezoarticus*, *Tayassu pecari*, *Priodontes maximus*, *Tolypeutes tricinctus*, *Tapirus terrestris*, *Bradypus torquatus* e *Myrmecophaga tridactyla*. Não houve registros para quatro espécies: *Blastocerus dichotomus*, *Mazama nana*, *Tolypeutes tricinctus*, *Bradipus torquatus* e *Myrmecophaga tridactyla*.  
+Das 9 espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros para quatro: *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradipus torquatus* (preguiça-de-coleira).  
 
 
-Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyidae e Erethizontidae não são esperadas para as unidades amostradas. Já as famílias Cricetidae e Echimyidae, apesar de terem ocorrência provável nas unidades, em geral são de porte muito pequeno e de difícil identificação específica.  
-
-Em relação a ordem Primates, 16 espécies ameaçadas já foram registradas: *Alouatta belzebul*, *Alouatta discolor*, *Alouatta guariba clamitans*, *Ateles belzebuth*, *Ateles chamek*, *Ateles marginatus*, *Brachyteles arachnoides*, *Lagothrix lagotricha cana*, *Lagothrix lagotricha poeppigii*, *Callithrix aurita*, *Leontopithecus chrysomelas*, *Mico rondoni*, *Cebus kaapori*, *Saguinus niger*, *Sapajus cay* e *Sapajus xanthosternos*.  
+Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyidae e Erethizontidae não são esperadas para as unidades de conservação amostradas.  
 
 
-Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor*, *Taoniscus nanus*, *Crypturellus zabele*, *Tinamus tao*, *Aburria jacutinga* e *A. cujubi*, *Penelope jacucaca* e *P. pileata*, *Crax blumenbachii* e *C. globulosa*, *Psophia obscura*, *P. interjecta*, *P. viridis* e *P. dextralis*, mais duas subespécies, *Penelope s. alagoensis* e *Crax f. pinima*.
+Para a ordem Primates, 18 espécies ameaçadas já foram registradas: *Alouatta belzebul* (guariba-de-mãos-ruivas), *A. discolor* (guariba-de-mãos-ruivas), *A. guariba clamitans* (bugio-ruivo), *Ateles belzebuth* (macaco-aranha), *A. chamek* (macaco-aranha-da-cara-preta), *A. marginatus* (coatá-da-testa-branca), *Brachyteles arachnoides* (muriqui-do-sul), *Chiropotes satanas* (cuxiú-preto), *C. utahickae* (cuxiú-marrom), *Lagothrix lagotricha cana* (macaco-barrigudo), *L. lagotricha poeppigii* (macaco-barrigudo), *Callithrix aurita* (sagui-da-serra-escuro), *Leontopithecus chrysomelas* (mico-leão-da-cara-dourada), *Mico rondoni* (mico-de-Rondônia), *Cebus kaapori* (cairara), *Saguinus niger* (sagui-una), *Sapajus cay* (macaco-prego) e *S. xanthosternos* (macaco-prego-do-peito-amarelo).  
 
 
-Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas têm sua ocorrência esperada nas 53 unidades de conservação analisadas: Nothura minor, Taoniscus nanus, Crypturellus zabele, Tinamus tao, Aburria jacutinga e A. cujubi, Penelope jacucaca e P. pileata, Crax blumenbachii e C. globulosa, Psophia obscura, P. interjecta, P. viridis e P. dextralis, mais duas subespécies, no caso Penelope s. alagoensis e Crax f. pinima. 
+Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor* (codorna-mineira), *Taoniscus nanus* (codorna-carapé), *Crypturellus zabele* (zabelê), *Tinamus tao* (azulona), *Aburria jacutinga* (jacutinga) e *A. cujubi* (cujubi), *Penelope jacucaca* (jacucaca) e *P. pileata* (jacupiranga), *Crax blumenbachii* (mutum-de-bico-vermelho) e *C. globulosa* (mutum-de-fava), *Psophia obscura* (jacamim-de-costas-escuras), *P. interjecta* (jacamim-do-xingu), *P. viridis* (jacamim-de-costas-verdes) e *P. dextralis* (jacamim-de-costas-marrons), mais duas subespécies, a saber *Penelope s. alagoensis* (jacupemba) e *Crax f. pinima* (mutum-de-penacho).
 
-Desses táxons elencados já foram registrados pelo Programa Monitora *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*, além da subespécie ameaçada de *Penelope*. Ressaltamos que *Tinamus tao*, *Penelope pileata*, *P. jacucaca* e *Nothura minor* foram ou poderiam ter sido registradas em campo. Porém, como ocorrem em simpatria com espécies semelhantes, os registros para esses grupos foram validados em nível de gênero. Na Amazônia, avistamentos de *Tinamus tao* (VU), azulona, foram reportados para praticamente todas as UCs para as quais a espécie era esperada, mas por estas áreas normalmente apresentarem outras espécies de *Tinamus*, seus registros foram agrupados para o gênero.  
 
-Três unidades de conservação registraram *Crax globulosa* (EN), o chamado mutum-de-fava. Mas considerando a raridade desta espécie, a falta de registros prévios em localidades próximas e o fato dos ambientes onde ocorreram as visualizações não serem aqueles considerados típicos para a espécie (floresta de várzea), esses dados estão sendo considerados com cautela. Já Crax f. pinima (CR), o mutum-de-penacho, que seguramente ocorre na REBIO do Gurupi, não foi observado em nenhum momento. 
+Desses táxons elencados já foram registrados pelo Programa Monitora em uma ou mais unidades de conservação *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*, além da subespécie ameaçada de *Penelope*. Ressaltamos que *Penelope jacucaca*, *P. pileata* e *Nothura minor* foram ou podem ter sido registradas em campo, mas como ocorrem em simpatria com espécies semelhantes, os registros foram validados em nível de gênero. A mesma situação ocorre com *Tinamus tao* (VU). Na Amazônia, avistamentos dessa espécie foram reportados para quase todas as UCs em que a espécie era esperada, mas dada a ocorrência de outras espécies de *Tinamus* nessas áreas esses registros também foram validados em nível de gênero. 
 
-*Taoniscus nanus* (EN), conhecida por codorna-carapé, uma espécie monotípica e exclusiva deste bioma, não foi registrada.  
+*Crax globulosa* (EN) foi registrado em três unidades de conservação. Mas considerando a raridade desta espécie, a falta de registros prévios em localidades próximas e o fato dos ambientes onde ocorreram as visualizações não serem aqueles considerados típicos para a espécie (floresta de várzea), esses dados estão sendo considerados com cautela. Já *Crax f. pinima* (CR), que seguramente ocorre na REBIO do Gurupi, não foi observado em nenhum momento. 
 
-No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros para *Penelope s. alagoensis* (CR), uma subespécie de jacupemba. Porém, infelizmente, as amostragens nessa UC foram interrompidas. Ainda neste bioma, eventuais registros de *Crypturellus zabele* (VU), zabelê, podem ter sido atribuídos a *Crypturellus* sp. Importante destacar a ausência de registros de *A. jacutinga*, que seria esperada para unidades de conservação da Mata Atlântica dada sua distribuição geográfica original. 
+*Taoniscus nanus* (EN), uma espécie monotípica e exclusiva deste bioma, não foi registrada.  
+
+No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros para *Penelope s. alagoensis* (CR). Porém, infelizmente as amostragens nessa unidade de conservação foram interrompidas. Ainda neste bioma, eventuais registros de *Crypturellus zabele* (VU) podem ter sido atribuídos a *Crypturellus* spp.(inhambus). Importante destacar a ausência de registros de *A. jacutinga*, que seria esperada para unidades de conservação da Mata Atlântica dada sua distribuição geográfica original. 
 
 
 
@@ -2148,7 +2114,7 @@ No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros 
 
 
 lista_spp_ameacadas_salve <-
-  read_csv2("dados/dados_brutos/lista_spp_ameacadas_salve_ajustada_cemave_cpb_13.12.203.csv")
+  read_csv2("dados/spp_ameacadas/lista_spp_ameacadas_salve_ajustada_cemave_cpb_13.12.203.csv")
 
 #View(lista_spp_ameacadas_salve)
 
@@ -2186,9 +2152,9 @@ taxa_encontro_spp_ameacadas_uc <- taxa_encontro_spp_ameacadas |>
 **Primatas Atelídeos** 
 
 
-O macaco-aranha-da-testa-branca (*Ateles marginatus*) encontra-se ameaçado de extinção na categoria “Em perigo (EN)” (@MMA_2022). Essa espécie ocorre na região do arco do desmatamento, interflúvio Tapajós-Xingu, e no período 2014–2022 foram registrados 110 avistamentos desse táxon em seis unidades de conservação do Programa Monitora: ESEC da Terra do Meio, FLONA do Tapajós, PARNA da Serra do Pardo, RESEX Renascer, RESEX Riozinho do Anfrísio e RESESX Verde para Sempre.  
+*Ateles marginatus* (macaco-aranha-da-testa-branca) encontra-se ameaçado de extinção na categoria “Em perigo (EN)” (@MMA_2022). Essa espécie ocorre na região do arco do desmatamento, interflúvio Tapajós-Xingu, e no período 2014–2022 foram registrados 110 avistamentos desse táxon em seis unidades de conservação do Programa Monitora: ESEC da Terra do Meio, FLONA do Tapajós, PARNA da Serra do Pardo, RESEX Renascer, RESEX Riozinho do Anfrísio e RESESX Verde para Sempre.  
 
-O macaco-aranha-preto (*Ateles chamek*) está ameaçado de extinção na categoria “Vulnerável (VU)” (@MMA_2022), ocorrendo na região da Amazônia ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *Ateles chamek* apresentou uma maior taxa média de avistamentos por ano do que o *Ateles marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *Ateles chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
+*Ateles chamek* (macaco-aranha-preto) está ameaçado de extinção na categoria “Vulnerável (VU)” (@MMA_2022), ocorrendo na região da Amazônia ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *A. chamek* apresentou uma maior taxa média de avistamentos por ano do que o *A. marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *A. chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
 
 </br>
 
@@ -2263,7 +2229,12 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos
 Outros Primatas  
 
 
-Os primatas criticamente ameaçados *Cebus kaapori* e  *Chiropotes satanas* foram registrados em uma única unidade de conservação, a REBIO do Gurupi. Houve apenas nove avistamentos de *Cebus kaapori* e 24 de *Chiropotes satanas* no período de 2014-2022. O esforço total realizado no período em relação a essas espécies foi de apenas 175 km, tendo em vista que somente recentemente as três unidades amostrais do alvo mastoaves foram implementadas na REBIO do Gurupi.  
+Os primatas criticamente ameaçados *Cebus kaapori* e  *C. satanas* foram registrados em uma única unidade de conservação, a REBIO do Gurupi, com apenas nove avistamentos de *C. kaapori* e 24 de *C. satanas* no período de 2014-2022. O esforço total realizado no período em relação a essas espécies foi de apenas 175 km, tendo em vista que somente recentemente as três unidades amostrais do alvo mastoaves foram implementadas na REBIO do Gurupi.  
+
+*Chiropotes utahickae* (cuxiú-marrom) é uma espécie da família Pitheciidae que ocorre nos estados do mato Grosso e Pará e encontra-se ameaçada de extinção na categoria Vulnerável “VU” (@MMA_2022). No Programa Monitora essa espécie tem sido registrada na REBIO Tapirapé, sendo que de 2017 a 2022 ocorreram apenas 13 visualizações, com taxas variando de 0,2 a 0,4 avistamentos/10km  (@fig-especies-ameacadas-outros-primatas).  
+
+
+*Mico rondoni* (sagui-de-rondônia) é um primata de pequeno porte, da família Callitrichidae, que foi descoberto e descrito pela ciência apenas em 2010 (@Ferrari_2010). Está presente apenas no estado de Rondônia e encontra-se ameaçado de extinção, na categoria Vulnerável "VU" (@MMA_2022). Está sendo monitorado em duas unidades de conservação do Programa Monitora, no PARNA de Pacaás Novos e na FLONA do Jamari. Até o momento foram registradas 40 visualizações, de 2015 a 2022, com taxas variando de 0,4 e 0,9 avistamentos/10km (@fig-especies-ameacadas-outros-primatas).  
 
 
 </br>
@@ -2276,12 +2247,11 @@ Os primatas criticamente ameaçados *Cebus kaapori* e  *Chiropotes satanas* fora
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+#| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
 
 
 
 cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
-
 
 
 G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_encontro_spp_ameacadas |>
@@ -2338,7 +2308,7 @@ G_especie_ameacada_ucs_ano_media_outros_primatas
 
 </br>
 
-As taxas de avistamento do tamanduá-bandeira - *Myrmecophaga tridactyla* (categoria VU de ameaça) variaram pouco ao longo dos anos (@fig-especies-ameacadas-tamandua). Em comparação às outras espécies, sua taxa de avistamento pode ser considerada estável. Dos 51 registros, 24 ocorreram nas RESEX Tapajós-Arapiuns e do Cazumbá-Iracema e na ESEC de Maracá, mas por ser uma espécie normalmente associada a ambientes mais abertos, o que vai de encontro a metodologia do componente florestal, poucos registros já eram esperados. 
+As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) variaram pouco ao longo dos anos (@fig-especies-ameacadas-tamandua). Em comparação às outras espécies, sua taxa de avistamento pode ser considerada estável. Dos 51 registros, 24 ocorreram nas RESEX Tapajós-Arapiuns e do Cazumbá-Iracema e na ESEC de Maracá.  
 
 
 </br>
@@ -2352,7 +2322,7 @@ As taxas de avistamento do tamanduá-bandeira - *Myrmecophaga tridactyla* (categ
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada tamanduá-bandeira (*Myrmecophaga tridactyla*). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+#| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
 
 
 
@@ -2412,10 +2382,9 @@ G_especie_ameacada_ucs_ano_media_tamandua
 
 </b>
 
-Na @fig-especies-ameacadas-aves é possível visualizar os valores e suas flutuações para a abundância relativa de cinco espécies de aves amazônicas ameaçadas, um cujubim (*Aburria cujubi*) e quatro jacamins (*Psophia* spp.) para o conjunto de UCs do Programa Monitora.  
+Na @fig-especies-ameacadas-aves é possível visualizar os valores e suas flutuações para a abundância relativa de cinco espécies de aves amazônicas ameaçadas, *Aburria cujubi* (cujubi) e quatro espécies de *Psophia*  (jacamins), para o conjunto de UCs do Programa Monitora. Dessas UCs, 13 apresentam ocorrência de *A. cujubi* (cujubi - VU), 11 de *Psophia viridis* (jacamim-de-costas-verdes - VU), oito de *P. dextralis* (jacamim-de-costas-marrons - VU), duas de *P. interjecta* (jacamim-do-xingu - EN) e uma de *P. obscura* (jacamim-de-costas-escuras - CR). 
 
-A despeito de se observar uma variação nas abundâncias ao longo dos anos, parece haver uma tendência evidente de estabilidade demográfica das populações para o sistema de 21 unidades de conservação do Programa Monitora onde essas espécies são encontradas. Dessas UCs 13 apresentam ocorrência de *A. cujubi* (VU), 11 de *Psophia viridis* (VU), oito de *Psophia dextralis* (VU), duas de *Psophia interjecta* (EN) e uma de *Psophia obscura* (CR).
-
+A taxa média anual de avistamento entre as unidades de conservação para *A. cujubi* variou de 0,27 a 0,71 encontros/10km para o gênero *Psophia*. Essa variação ocorreu entre os limiares de 0,19 para *P. obscura* em 2019 a 1,20 para *P. interjecta* no mesmo ano. A despeito de se observar uma variação nas abundâncias ao longo dos anos, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas. **Dúvida nessa frase... contradiz o texto anterior!*** Considerando que parte da flutuação observada pode ser atribuída à variação no número de unidades de conservação com o protocolo em execução para cada ano.  
 
 </b>
 
@@ -2515,7 +2484,7 @@ A média geométrica das abundâncias relativas das populações analisadas perm
 # knitr::include_graphics("imagens/cap05/ma_media_geometrica.JPG")
 
 #----- ler dados
-load(here("data", "tabela_Gmean.RData"))
+load(here("dados", "mastoaves", "tabela_Gmean.RData"))
 
 # plotar serie temporal para G
 tabela_Gmean %>%
@@ -2550,15 +2519,15 @@ tabela_Gmean %>%
 
 </br>
 
-**Os mutuns como indicadores**
+**Os mutuns como possíveis indicadores**
 
 </br>
 
-Mutuns (gêneros *Crax* e *Pauxi*) são as maiores aves florestais terrestres do bioma amazônico. Espécies de ambos os gêneros podem ser encontradas na região, muitas vezes em simpatria. Seu relativo grande tamanho e sua ampla distribuição conferem a este grupo um alto valor cinegético. Sendo assim, parece plausível supor que a frequência relativa deste grupo no total de registros de aves do Programa Monitora possa ser um indicador da intensidade de uso histórico e/ou atual da fauna nas unidades de conservação aqui tratadas.
+Os mutuns (gêneros *Crax* e *Pauxi*) são as maiores aves florestais terrestres do bioma amazônico. Espécies de ambos os gêneros podem ser encontradas na região, muitas vezes em simpatria. Seu relativo grande tamanho e sua ampla distribuição conferem a este grupo um alto valor cinegético. Sendo assim, parece plausível supor que a frequência relativa deste grupo no total de registros de aves do Programa Monitora possa ser um indicador da intensidade de uso histórico e/ou atual da fauna nas unidades de conservação aqui tratadas.
 
-Considerando que para a maioria das unidades de conservação amostradas o período de monitoramento ainda é pequeno, apresentamos aqui um exercício no sentido de avaliar este indicador (abundância de mutuns) apenas como descritor na dimensão “estado”, não sendo os resultados apresentados na perspectiva de “tendência” populacional.
+Considerando que para a maioria das unidades de conservação amostradas o período de monitoramento ainda é pequeno, apresentamos aqui um exercício no sentido de avaliar este indicador (abundância de mutuns) apenas como descritor na dimensão “estado” de conservação, não sendo os resultados apresentados na perspectiva de “tendência” populacional.
 
-Nas 42 unidades de conservação amazônicas participantes do Programa Monitora, a frequência relativa dos mutuns variou de 0 a 25,4% do total de registros de aves, com um valor médio de 10% (@tbl-mutuns). Duas unidades de conservação vizinhas no estado do Acre, RESEX Alto Tarauacá e Riozinho da Liberdade, não possuem registros. Em Rondônia, o PARNA de Pacaás Novos é a unidade com maior frequência relativa de mutuns (25,4%), resultante de registros de uma única espécie: Pauxi tuberosa. Curiosamente, esta unidade está inserida em um bloco florestal remanescente, composto também por outras unidades de conservação que apresentaram valores muito inferiores: RESEX Rio Ouro Preto (8,7%), RESEX do Rio Cautário e PARNA da Serra da Cutia (1,2%) e RESEX Barreiro das Antas (0,7%).
+Nas 42 unidades de conservação amazônicas participantes do Programa Monitora, a frequência relativa dos mutuns variou de 0 a 25,4% do total de registros de aves, com um valor médio de 10% (@tbl-mutuns). Duas unidades de conservação vizinhas no estado do Acre, as RESEX Alto Tarauacá e Riozinho da Liberdade, não possuem registros. Em Rondônia, o PARNA de Pacaás Novos é a unidade com maior frequência relativa de mutuns (25,4%), resultante de registros de uma única espécie: *Pauxi tuberosa*. Curiosamente, esta unidade está inserida em um bloco florestal remanescente, composto também por outras unidades de conservação que apresentaram valores muito inferiores: RESEX Rio Ouro Preto (8,7%), RESEX do Rio Cautário e PARNA da Serra da Cutia (1,2%) e RESEX Barreiro das Antas (0,7%).
 
 </br>
 
@@ -2577,8 +2546,8 @@ tabela_mutuns <- read.csv2("dados/tabelas/mutuns.csv", encoding="UTF-8")
 tab_mutuns <- kbl(tabela_mutuns,
              booktabs = TRUE,
              longtable = FALSE,
-             caption = "Frequência relativa de mutuns (Crax spp. e Pauxi spp.) no total de registros de aves das unidades de conservação do Programa Monitora na Amazônia.",
-             col.names = c("Unidade de Conservação", "Mutuns (%)")) %>%
+             caption = "Frequência relativa de mutuns no total de registros de aves das unidades de conservação do Programa Monitora na Amazônia.",
+             col.names = c("Unidade de Conservação", "Mutuns (%)"), align = c("l", "c")) %>%
     column_spec(2, italic = F) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 
@@ -2617,12 +2586,19 @@ tab_mutuns
 
 ```
 
+Importante frisar que estes valores são produtos de esforços amostrais pouco uniformes entre as unidades de conservação, seja no número de transecções, seja na extensão da rede formada por essas transecções, ou ainda no seu número de repetições (amostragem), tanto anual quanto para todo o período, o que não torna recomendável a comparação entre unidades de conservação, ao menos neste momento.  
+
+
 
 ## Destaques
 
-Avaliar se a abordagem de DDs não seria um DESTAQUE interessante. 
+Quatro espécies (dois cervídeos e dois primatas) categorizadas como Deficientes de Dados (DDs), ou seja, com informações insuficientes para que seja feita uma avaliação adequada do seu estado de conservação, conforme o último ciclo de avaliação do estado de conservação das espécies da fauna brasileira (**referência**) foram registradas no presente esforço.  
 
-Kaapori vs Gurupi 
+
+*Cebus kaapori* na REBIO do Gurupi  
+
+
+O Programa Monitora tem contribuído regsitros importantes de **Cebus kaapori** (Caiarara), uma espécie de primata Criticamente Ameaçado de Extinção. Essa espécie é endêmica do Brasil e em sua área de distribuição temos apenas uma unidade de conservação de proteção integral, a REBIO do Gurupi.  
 
 
 
@@ -2630,7 +2606,7 @@ Kaapori vs Gurupi
 
 </br>
 
-Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis*, *Herpailurus yagouaroundi* e *Speothos venaticus* foram registradas menos de dez vezes e *Chrysocyon brachiurus*, somente uma — cabendo destacar a atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* e *Nasua nasua*, conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implementação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação.  
+Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Herpailurus yagouaroundi* (jaguarundi) e *Speothos venaticus* (cachorro-vinagre) foram registradas menos de dez vezes e *Chrysocyon brachiurus* (lobo-guará), somente uma — cabendo destacar a atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* (irara) e *Nasua nasua* (quati), conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implantação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação.  
 
 Assim como para a ordem Carnivora, muitas espécies noturnas e abundantes de outras ordens também foram pouco registradas, especialmente para Lagomorpha (tapitis) e Cingulata (tatus), enquanto espécies da ordem Cetartiodactyla (cervos e porcos-do-mato) estiveram bem representadas.  
 
@@ -2648,11 +2624,11 @@ Ressalta-se que a presença de cães domésticos foi registrada apenas quatro ve
 **Riqueza**  
 
 
-Em relação à riqueza, alguns estudos na Amazônia também utilizaram transectos lineares para a amostragem de mamíferos alvos do componente Florestal do Programa Monitora (@Calouro_1999, @Pontes_2010, @Abreu_Junior_2017). Contudo, o protocolo utilizado pelo ICMBio apresenta algumas particularidades e comparações devem ser realizadas com cautela. De forma geral, as espécies amostradas pelo Programa Monitora foram as mesmas registradas nesses estudos, exceto por algumas ausências como *Bassaricyon beddardi* (@Pontes_2010, @Melo_2012); *Lycalopex vetulus* na ESEC Serra Geral do Tocantins (@Carmignotto_2011), *Mustela africana* (@Emmons_2016: distribuição geográfica incerta na Amazônia); *Galictis cuja* no PARNA Serra do Cipó (@Oliveira_2009); *Conepatus chinga* no PARNA Iguaçu (@Caceres_2004); *Potos flavus* (@Helgen_2016). Já os marsupiais, ordem Didelphimorphia, por serem majoritariamente de hábitos noturnos, de pequeno porte e pouco conhecidos, foram registradas apenas algumas espécies de maior porte pertencentes ao gênero *Didelphis*. Essa observação anterior também se aplica aos roedores, ordem Rodentia, em que famílias inteiras com representantes muito pequenos não foram registradas, tais como Cricetidae, Dinomydae e Echimyidae, os quais exigem a captura para a sua identificação específica. Em relação aos tatus, ordem Cingulata, não foram registrados *Dasypus septemcinctus*, *Dasypus beniensis*, *Euphractus sexcinctus* e *Cabassous tatouay*, que têm distribuição provável em várias regiões (@Feijo_2018, @Abba_2014, @Rocha_2022).  
+Em relação à riqueza, alguns estudos na Amazônia também utilizaram transectos lineares para a amostragem de mamíferos alvos do componente Florestal do Programa Monitora (@Calouro_1999, @Pontes_2010, @Abreu_Junior_2017). Contudo, o protocolo utilizado pelo ICMBio apresenta algumas particularidades e comparações devem ser realizadas com cautela. De forma geral, as espécies amostradas pelo Programa Monitora foram as mesmas registradas nesses estudos, exceto por algumas ausências como *Bassaricyon beddardi* (gogó-de-sola) (@Pontes_2010, @Melo_2012); *Lycalopex vetulus* (raposa-do-campo) na ESEC Serra Geral do Tocantins (@Carmignotto_2011), *Mustela africana* (doninha-amazônica) (@Emmons_2016: distribuição geográfica incerta na Amazônia); *Galictis cuja* (furão-pequeno) no PARNA Serra do Cipó (@Oliveira_2009); *Conepatus chinga* (zorrilho) no PARNA Iguaçu (@Caceres_2004); *Potos flavus* (jupará) (@Helgen_2016). Já os marsupiais, ordem Didelphimorphia, por serem majoritariamente de hábitos noturnos, de pequeno porte e pouco conhecidos, foram registradas apenas algumas espécies de maior porte pertencentes ao gênero *Didelphis*. Essa observação anterior também se aplica aos roedores, ordem Rodentia, em que famílias inteiras com representantes muito pequenos não foram registradas, tais como Cricetidae, Dinomydae e Echimyidae, os quais exigem a captura para a sua identificação específica. Em relação aos tatus, ordem Cingulata, não foram registrados *Dasypus septemcinctus* (tatu-galinha-pequeno), *Dasypus beniensis* (tatu-e-quinze-quilos), *Euphractus sexcinctus* (tatupeba) e *Cabassous tatouay* (tatu-de-rabo-mole-grande), que têm distribuição provável em várias regiões (@Feijo_2018, @Abba_2014, @Rocha_2022).  
 
 
 
-Uma importante contribuição do Programa Monitora é o registro de ocorrência e a obtenção de dados de abundância das espécies de primatas ameaçados de extinção. Com relação aos táxons criticamente ameaçados *Cebus kaapori* e *Chiropotes satanas* o esforço de monitoramento deve ser intensificado a fim de gerar dados robustos sobre a abundância dessas espécies na REBIO do Gurupi. Essa unidade de conservação é extremamente importante para conservação dessas espécies de primatas (@Lopes_2000, @Buss_2017), uma vez que *Cebus kaapori* é uma das 25 espécies de primatas mais ameaçados do mundo (@Buss_2022).  
+Uma importante contribuição do Programa Monitora é o registro de ocorrência e a obtenção de dados de abundância das espécies de primatas ameaçados de extinção. Com relação aos táxons criticamente ameaçados *Cebus kaapori* (cairara) e *Chiropotes satanas* (cuxiú-preto) o esforço de monitoramento deve ser intensificado a fim de gerar dados robustos sobre a abundância dessas espécies na REBIO do Gurupi. Essa unidade de conservação é extremamente importante para conservação dessas espécies de primatas (@Lopes_2000, @Buss_2017), uma vez que *Cebus kaapori* é uma das 25 espécies de primatas mais ameaçados do mundo (@Buss_2022).  
 
 
 Muitas das espécies ausentes têm hábitos noturnos e apresentam baixa detectabilidade pelo método utilizado, voltado a animais diurnos. Apesar de transectos lineares noturnos poderem aumentar a detecção de espécies não diurnas, pode haver pouco benefício nessa abordagem em razão de problemas como a falta de visibilidade, dificuldade de movimentar-se em silêncio pela trilha e dificuldade de discernir auditivamente os animais em movimentação (@Munari_2011). Assim, o protocolo avançado com armadilhas fotográficas ainda é a melhor opção para a amostragem de algumas espécies raras e/ou de hábitos noturnos (@Munari_2011), mas outros métodos com enfoque em registros indiretos podem elevar consideravelmente a detecção de espécies (@Sampaio_2010, @Ponce_Martins_2022).  
@@ -2671,9 +2647,9 @@ Já para a Mata Atlântica, em 62 estudos realizados em diversas fitofisionomias
 No Cerrado, as taxas de avistamento de mamíferos também foram no geral menores, embora a ESEC de Pirapitinga tenha apresentado uma taxa bem superior às demais do bioma. Isso se refletiu em alguns estudos no Cerrado que apresentaram taxas também bem distintas: 0,5 na Bahia (@Bocchiglieri_2010); 9,71 no PARNA da Serra do Cipó (@Oliveira_2009); e 16,92 em Minas Gerais (@Alves_2010).  
 
 
-Embora marcados pela ausência de registros importantes (*Taoniscus nanus* no Cerrado, jacutinga na Mata Atlântica e *Crax f pinima* na Amazônia), a despeito do esforço amostral considerável, os resultados parecem apontar para uma estabilidade demográfica no período considerado (2014-2022), inclusive para os táxons ameaçados.  
+Embora marcados pela ausência de registros importantes (*Taoniscus nanus* - codorna-carapé - no Cerrado, *Aburria  jacutinga* - jacutinga - na Mata Atlântica e *Crax f pinima* - mutum-pinima - na Amazônia), a despeito do esforço amostral considerável, os resultados parecem apontar para uma estabilidade demográfica no período considerado (2014-2022), inclusive para os táxons ameaçados.  
 
-Sobre a taxa de avistamento total de aves na Amazônia, os resultados para as unidades de conservação do Programa apresentaram em sua maioria valores superiores ao observado para as florestas do Lago Uauaçú, no baixo Purús, uma região de “água preta”, caracterizada pela baixa produtividade, mas com baixa pressão de caça, ainda que não seja uma área protegida (@Haugaasen_2008). Nesta região, a partir de um esforço de 4.612,45 km, superior ao de qualquer unidade de conservação participante do Programa Monitora, distribuídos nos ambientes de floresta de terra firme, várzea e igapó, foi obtida uma taxa de 2,7 aves/10km percorridos para o conjunto comum de táxons de aves. Na ESEC da Terra do Meio, unidade com a maior abundância de aves, este valor chega a ser superior a 10 encontros para o conjunto de aves das espécies alvo por 10 km percorridos, o que pode ser entendido como um indicativo de que o grupo de aves alvo apresenta nas unidades de conservação, de forma genérica, uma maior abundância. Já a frequência relativa de mutuns (*Crax* e *Pauxi*) foi muito semelhante entre este estudo (25%) e aos maiores valores observados nas unidades de conservação participantes do Programa (25,4%) (@Haugaasen_2008).  
+Sobre a taxa de avistamento total de aves na Amazônia, os resultados para as unidades de conservação do Programa apresentaram em sua maioria valores superiores ao observado para as florestas do Lago Uauaçú, no baixo Purús, uma região de “água preta”, caracterizada pela baixa produtividade, mas com baixa pressão de caça, ainda que não seja uma área protegida (@Haugaasen_2008). Nesta região, a partir de um esforço de 4.612,45 km, superior ao de qualquer unidade de conservação participante do Programa Monitora, distribuídos nos ambientes de floresta de terra firme, várzea e igapó, foi obtida uma taxa de 2,7 aves/10km percorridos para o conjunto comum de táxons de aves. Na ESEC da Terra do Meio, unidade com a maior abundância de aves, este valor chega a ser superior a 10 encontros para o conjunto de aves das espécies alvo por 10 km percorridos, o que pode ser entendido como um indicativo de que o grupo de aves alvo apresenta nas unidades de conservação, de forma genérica, uma maior abundância. Já a frequência relativa de *Crax* e *Pauxi* (mutuns) foi muito semelhante entre este estudo (25%) e aos maiores valores observados nas unidades de conservação participantes do Programa (25,4%) (@Haugaasen_2008).  
 
 É importante destacar que muitas espécies da fauna brasileira não possuem densidades populacionais e/ou taxas de avistamento descritas na literatura e, portanto, os dados obtidos pelo Monitora possibilitarão a construção desta linha de base de dados que servirá de subsídio, inclusive, para avaliação do estado de conservação das espécies.  
 
@@ -2694,13 +2670,14 @@ Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monito
 
 -   Consolidar a implantação do protocolo básico de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas naquelas unidades de conservação ainda não consolidadas, de forma que as UCs contem com pelo menos três estações amostrais implantadas e em operação;
 
--   Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral e no projeto de amostragem, em especial quanto ao respeito ao esforço amostral;\
+-   Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral e no projeto de amostragem, em especial quanto ao respeito ao esforço amostral;
 
 -   Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;
 
--   Para novas unidades de conservação a participarem do Programa, promover a implementação de todas as unidades amostrais em um mesmo ano;
+-   Para novas unidades de conservação a participarem do Programa, promover a implantação de todas as unidades amostrais em um mesmo ano;
+As unidades amostrais do Protocolo Básico, em uma determinada Unidade de Conservação, devem ser instaladas em um mesmo interflúvio, considerando que em diferentes interflúvios podemos ter diferentes comunidades animais. Sugere-se seguir essa mesma recomendação para amostragem em blocos de unidades de conservação;  
 
--   Garantir que o método seja aplicado sem erros de procedimento, como por exemplo, assegurar que apenas duas pessoas realizem a amostragem em campo, respeitando os horários estipulados para início e fim das amostragens e medindo corretamente as distâncias dos registros realizados.
+-   Garantir que o método seja aplicado sem erros de procedimento, como por exemplo, assegurar que apenas duas pessoas realizem a amostragem em campo, em velocidade adequada, respeitando os horários estipulados para início e fim das amostragens e medindo corretamente as distâncias dos registros realizados.
 :::
 
 </b>
