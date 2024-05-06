@@ -654,9 +654,9 @@ Embora ainda pouco disseminada em trabalhos acadêmicos, a assinatura de tribos 
 
 </br>
 
-Na região climática central amazônica 25.481 borboletas frugívoras foram amostradas de 2014 a 2022. Visto que 174 indivíduos não foram identificados em nível de tribo e foram descartados, 25.307 indivíduos foram considerados nas análises. Desses, 43% pertencem à tribo Satyrini, a mais abundante da região, seguidos por 16% de Brassolini e 9% de Coeini. Os anos 2014 e 2020 tiveram um esforço amostral inferior àquele definido como mínimo aceitável para a região. Assim, a interpretação dos resultados nesses anos deve ser feita com cautela.  
+Na região climática central amazônica 25.481 borboletas frugívoras foram amostradas de 2014 a 2022. Visto que 174 não foram identificadas em nível de tribo, 25.307 indivíduos foram considerados nas análises. Desses, 43% pertencem à tribo Satyrini, a mais abundante da região, seguidos por 16% de Brassolini e 9% de Coeini. Os anos 2014 e 2020 tiveram um esforço amostral inferior àquele definido como mínimo aceitável para a região. Assim, a interpretação dos resultados nesses anos deve ser feita com cautela.  
 
-As tribos Satyrini e Brassolini foram predominantes em praticamente todos os anos amostrados na região climática central amazônica. No entanto, em 2017 houve um aumento no número de Coeini, que foi a segunda tribo mais abundante (Figura 4.5.1). As tribos indicadoras de áreas abertas/perturbadas tiveram baixíssima representação. Porém, essas tribos tiveram um aumento no número de indivíduos em 2021 (Figura 4.5.1). 
+As tribos Satyrini e Brassolini foram predominantes em praticamente todos os anos amostrados na região climática central amazônica. No entanto, em 2017 houve um aumento no número de Coeini, que foi a segunda tribo mais abundante (Figura 4.5.1). As tribos indicadoras de áreas abertas/perturbadas tiveram baixíssima representação. Porém, essas tribos tiveram um aumento no número de indivíduos em 2021 (@fig-regiao-climatica-central-amazonica). 
 
 
 
@@ -863,7 +863,7 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 </br>
 
 
-Na região climática sudoeste amazônica, foram amostradaos 34.525 indivíduos de borboletas frugívoras, 354 delas não identificadas e desconsideradas nas análises. Assim, 34.171 indivíduos foram identificados em nível de tribo: 48% Satyrini, 11% Brassolini e 9% Ageroniiini. Apesar de não serem maioria, a região sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini foi responsável por esse padrão, especialmente em 2019. É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, diversas espécies do gênero *Hamadryas* (e.g., *Hamadryas alicia*, *Hamadryas belladonna*, *Hamadryas velutina*) e dos gêneros *Batesia* e *Panacea* estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies na tribo que utilizam regularmente florestas abertas/perturbadas, como por exemplo *Hamadryas februa*, *Hamadryas feronia*, *Hamadryas amphinome* e *Ectima iona*, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (Jenkins, 1983).  
+Na região climática sudoeste amazônica, foram amostradaos 34.525 indivíduos de borboletas frugívoras, 354 delas não identificadas e desconsideradas nas análises. Assim, 34.171 indivíduos foram identificados em nível de tribo: 48% Satyrini, 11% Brassolini e 9% Ageroniiini. Apesar de não serem maioria, a região sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini foi responsável por esse padrão, especialmente em 2019 (@fig-regiao-climatica-sudoeste-amazonica). É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, diversas espécies do gênero *Hamadryas* (e.g., *Hamadryas alicia*, *Hamadryas belladonna*, *Hamadryas velutina*) e dos gêneros *Batesia* e *Panacea* estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies na tribo que utilizam regularmente florestas abertas/perturbadas, como por exemplo *Hamadryas februa*, *Hamadryas feronia*, *Hamadryas amphinome* e *Ectima iona*, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (Jenkins, 1983).  
 
 Seguindo os padrões de diversidade da fauna e flora amazônicas, a região sudoeste apresentou os maiores valores de números de indivíduos por esforço amostral. Apesar de tratar-se de contagem de indivíduos, é de se esperar que a riqueza e diversidade de espécies acompanhem este padrão. Somente a partir de 2017 o esforço amostral foi adequado para representar a região. 
 
@@ -892,7 +892,7 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 Na região climática leste amazônica foram amostradas 7.969 borboletas frugívoras, com 67 indivíduos não identificados em nível de tribo. Assim, dos 7.902 indivíduos de borboletas frugívoras identificados na região leste da Amazônia, 46% corresponderam à tribo Satyrini, a mais representativa, seguida por Brassolini (15%) e Morphini (11%). Os anos 2016, 2017 e 2020 tiveram amostragens abaixo do esforço adequado para representar a região.  
 
-O padrão da proporção da abundância das tribos foi bastante estável, com pouca variação entre anos. 
+O padrão da proporção da abundância das tribos foi bastante estável, com pouca variação entre anos ((@fig-regiao-climatica-leste-amazonica). 
 
 
 
@@ -919,7 +919,7 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 Ao todo, foram amostrados 5.042 indivíduos de borboletas frugívoras na região sudeste amazônica. Desses, 48 indivíduos foram descartados na análise por não terem sido identificados. Assim, 4.994 borboletas frugívoras foram identificadas em nível de tribo. Dentre as mais abundantes destacaram-se Satyrini (58%), Epicaliini (11%) e Morphini (11%).  
 
-Apesar do baixo número de UCs nesta região, o padrão da proporção das tribos ao longo dos anos variou pouco. 
+Apesar do baixo número de UCs nesta região, o padrão da proporção das tribos ao longo dos anos variou pouco (@fig-regiao-climatica-sudeste-amazonica). 
 
 
 </br>
@@ -949,7 +949,7 @@ Na região climática norte amazônica o esforço mínimo para a representação
 
 Ao todo, foram amostradas 3.303 borboletas frugívoras nessa região. Dessas, 190 não foram identificadas em nível de tribo, tendo sido descartadas, de forma que 3.113 indivíduos identificados foram considerados na análise. Dentre as tribos mais abundantes destacam-se Satyrini, Brassolini e Preponini, com 55%, 15% e 6%, respectivamente. 
 
-O padrão da assinatura das tribos nos anos não variou drasticamente. Porém, o número de indivíduos foi bastante influenciado pelo número de estações amostrais (@fig-regiao-climatica-sudeste-amazonica). 
+O padrão da assinatura das tribos nos anos não variou drasticamente. Porém, o número de indivíduos foi bastante influenciado pelo número de estações amostrais (@fig-regiao-climatica-norte-amazonica). 
 
 </br>
 
@@ -1357,32 +1357,33 @@ Para avaliar as flutuações dos índices de abundância ao longo dos anos, fora
 
 </br>
 
-O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo do número de indivíduos por ano (*n*), é feita uma correção, somando um número muito pequeno de forma a evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida (*f* = n + 0.00001). Em seguida, é calculada a frequência absoluta corrigida pelo esforço amostral (*fe*) para padronização: *fe* = *f* / (número de armadilhas * dias de amostragem). O índice de abundância (*i*) é calculado através da divisão da fe do ano específico sobre o valor da fe do primeiro ano em que aquela “população” foi registrada. Foi considerada primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência (*i*0) é padronizado com o valor 1,0. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, foi feita uma transformação logarítmica (log10 + 1) do índice de abundância. Assim, valores acima de 1,0 indicam um aumento "populacional" referente ao primeiro ano e valores abaixo de 1,0 indicam uma redução "populacional".  
+O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo do número de indivíduos por ano (*n*), é feita uma correção, somando um número muito pequeno de forma a evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida (*f* = *n* + 0.00001). Em seguida, é calculada a frequência absoluta corrigida pelo esforço amostral (*fe*) para padronização: *fe* = *f* / (número de armadilhas * dias de amostragem). O índice de abundância (*i*) é calculado através da divisão da fe do ano específico sobre o valor da *fe* do primeiro ano em que aquela “população” foi registrada. Foi considerada primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência (*i*~0~) é padronizado com o valor 1,0. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, foi feita uma transformação logarítmica (*log*~10~ + 1) do índice de abundância. Assim, valores acima de 1,0 indicam um aumento "populacional" referente ao primeiro ano e valores abaixo de 1,0 indicam uma redução "populacional".  
 
 
 Neste relatório, foram feitas duas abordagens do índice de abundância. O primeiro se refere à flutuação do índice de abundância em relação ao ano anterior. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem: 
 
-*f*~3~ = *n* + 000001 
 
-*fe*~3~ = *f*~3~ / esforço anual 
+$$f_{3} = n + 000001$$ 
 
-*i*~3~ = log~10~ (*fe*~3~ / *fe*~2~) + 1 
+$$fe_{3} = f_{3} / \text{esforço} \, \text{anual}$$ 
 
-</b>  
+$$i_{3} = log_{10} (fe_{3} / fe_{2}) + 1$$ 
 
 
-Esta abordagem revela, por exemplo, o quanto a "população" está se 'recuperando' de um declínio no ano anterior. Estes valores podem ser encontrados nas tabelas x,x,x,x,x.  
+</br>  
+
+
+Esta abordagem revela, por exemplo, o quanto a "população" está se 'recuperando' de um declínio no ano anterior. Estes valores podem ser encontrados na @tbl-ind-abund-regiao-central a @tbl-ind_abund_mata_atlantica.  
 
 
 A segunda abordagem segue o princípio do *Live Planet Index* (LPI), no qual os índices de abundância dos anos amostrados fazem referência ao primeiro ano em que a "população" foi registrada. Esta flutuação "populacional" pode ser vista nas figuras abaixo. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem: 
 
+$$f_{3} = n + 000001$$ 
 
-*f*~3~= *n* + 000001 
 
-*fe*~3~ = f~3~ / esforço anual 
+$$fe_{3} = f_{3} / \text{esforço} \, \text{anual}$$ 
 
-*i*~3~ = log~10~ (*fe*~3~ / *fe*~0~) + 1 
-
+$$i_{3} = log_{10} (fe_{3} / fe_{0}) + 1$$ 
 
 </br>
 
