@@ -68,6 +68,48 @@
         {
             "author": [
                 {
+                    "family": "Aduse-Poku",
+                    "given": "Kwaku"
+                },
+                {
+                    "family": "William",
+                    "given": "Oduro"
+                },
+                {
+                    "family": "Oppong",
+                    "given": "Samuel K"
+                },
+                {
+                    "family": "Larsen",
+                    "given": "Torben"
+                },
+                {
+                    "family": "Ofori-Boateng",
+                    "given": "Caleb"
+                },
+                {
+                    "family": "Molleman",
+                    "given": "Freerk"
+                }
+            ],
+            "container-title": "Afr. J. Ecol.",
+            "id": "Aduse-Poku_2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        5
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Spatial and temporal variation in butterfly biodiversity in a west african forest: Lessons for establishing efficient rapid monitoring programmes",
+            "title-short": "Spatial and temporal variation in butterfly biodiversity in a west african forest",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
                     "family": "Alves",
                     "given": "G. B."
                 }
@@ -505,6 +547,44 @@
             "title": "Composição e diversidade de mamíferos de médio e grande porte no cerrado do brasil central",
             "type": "article-journal",
             "volume": "10"
+        },
+        {
+            "abstract": "Roughly 90% of butterfly species live in the tropics. Despite this, we know very little about tropical butterfly ecology particularly when compared to temperate butterfly systems. The relative scarcity of data on tropical butterfly populations hampers our ability to effectively conserve them. In this review we summarize recurring themes from ecological research on tropical butterflies to serve as a framework for understanding their conservation. Key themes include: (1) the tropics represent the evolutionary origins of butterfly diversity, (2) while some tropical butterflies exhibit relatively stable population dynamics, longer-lived adult stages, and more continuous age-specific reproduction compared to temperate zone species, the generality of these patterns is debatable, and (3) complex species interactions (e.g. mimicry, parasitism and predation) can have significantly greater influences on ecological and evolutionary processes in tropical butterflies than in temperate ones. This state of ecological knowledge, combined with scarce resources, has traditionally constrained tropical butterfly conservation efforts to habitat level approaches, unlike the species- and population-specific approaches familiar in North America and Europe. Consequently, much conservation research on butterflies in the tropics has focused on the relationship between habitat quality (e.g. forest fragmentation) and butterfly diversity, though predictive patterns even in this regard remain elusive. We argue that with the increasing threats of habitat destruction, fragmentation and climate change, it is necessary to move beyond this diversity and habitat relationship if we are to improve predictive capabilities when evaluating anthropogenic impacts on tropical butterfly communities. Tropical butterflies are more than just useful indicator species. They represent some of the most spectacular and visually appealing organisms in the world and play many vital roles in tropical ecosystems. We hope that this synthesis will lay the groundwork for future ecological studies of tropical butterfly populations, species, communities and conservation.",
+            "author": [
+                {
+                    "family": "Bonebrake",
+                    "given": "Timothy C"
+                },
+                {
+                    "family": "Ponisio",
+                    "given": "Lauren C"
+                },
+                {
+                    "family": "Boggs",
+                    "given": "Carol L"
+                },
+                {
+                    "family": "Ehrlich",
+                    "given": "Paul R"
+                }
+            ],
+            "container-title": "Biol. Conserv.",
+            "id": "Bonebrake_2010",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010,
+                        8
+                    ]
+                ]
+            },
+            "page": "1831-1841",
+            "publisher": "Elsevier BV",
+            "title": "More than just indicators: A review of tropical butterfly ecology and conservation",
+            "title-short": "More than just indicators",
+            "type": "article-journal",
+            "volume": "143"
         },
         {
             "author": [
@@ -1048,6 +1128,80 @@
         {
             "author": [
                 {
+                    "family": "Costa",
+                    "given": "Flávia Regina Capellotto"
+                },
+                {
+                    "literal": "Instituto Nacional de Pesquisas da Amazônia"
+                },
+                {
+                    "family": "Zuanon",
+                    "given": "Jansen Alfredo Sampaio"
+                },
+                {
+                    "family": "Baccaro",
+                    "given": "Fabricio Beggiato"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Almeida",
+                    "given": "Juliana Schietti"
+                },
+                {
+                    "family": "Menger",
+                    "given": "Juliana da Silva"
+                },
+                {
+                    "family": "Souza",
+                    "given": "Jorge Luiz Pereira"
+                },
+                {
+                    "family": "Borba",
+                    "given": "Gabriel Costa"
+                },
+                {
+                    "family": "Esteban",
+                    "given": "Erick Jonathan Lavado"
+                },
+                {
+                    "family": "Bertin",
+                    "given": "Vinicius Mutti"
+                },
+                {
+                    "family": "Gerolamo",
+                    "given": "Caian Souza"
+                },
+                {
+                    "family": "Nogueira",
+                    "given": "Anselmo"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Castilho",
+                    "given": "Carolina Volkmer"
+                }
+            ],
+            "container-title": "Oecol. Aust.",
+            "id": "Costa_2020",
+            "issue": "02",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        6
+                    ]
+                ]
+            },
+            "page": "317-335",
+            "publisher": "Oecologia Australis",
+            "title": "Effects of climate change on central amazonian forests: A two decades synthesis of monitoring tropical biodiversity",
+            "title-short": "Effects of climate change on central amazonian forests",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "author": [
+                {
                     "family": "Cronemberger",
                     "given": "C."
                 },
@@ -1248,6 +1402,73 @@
             "type": "book"
         },
         {
+            "abstract": "1. Documenting species abundance distributions in natural environments is critical to ecology and conservation biology. Tropical forest insect faunas vary in space and time, and these partitions can differ in their contribution to overall species diversity. 2. In the Neotropics, the Central American butterfly fauna is best known in terms of general natural history, but butterfly community diversity is best documented by studies on South American fruit-feeding butterflies. Here, we present the first long-term study of fruit-feeding nymphalid species diversity from Central America and provide a unique comparison between Central and South American butterfly communities. 3. This study used 60 months of sampling among multiple spatial and temporal partitions to assess species diversity in a Costa Rican rainforest butterfly community. Abundance distributions varied significantly at the species and higher taxonomic group levels, and canopy and understorey samples were found to be composed of distinct species assemblages. 4. Strong similarities in patterns of species diversity were found between this study and one from Ecuador; yet, there was an important difference in how species richness was distributed in vertical space. In contrast to the Ecuadorian site, Costa Rica had significantly higher canopy richness and lower understorey richness. 5. This study affirms that long-term sampling is vital to understanding tropical insect species abundance distributions and points to potential differences in vertical structure among Central and South American forest insect communities that need to be explored.",
+            "author": [
+                {
+                    "family": "Devries",
+                    "given": "Philip J"
+                },
+                {
+                    "family": "Alexander",
+                    "given": "Laura G"
+                },
+                {
+                    "family": "Chacon",
+                    "given": "Isidro A"
+                },
+                {
+                    "family": "Fordyce",
+                    "given": "James A"
+                }
+            ],
+            "container-title": "J. Anim. Ecol.",
+            "id": "DeVries_2012",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        3
+                    ]
+                ]
+            },
+            "page": "472-482",
+            "publisher": "Wiley",
+            "title": "Similarity and difference among rainforest fruit-feeding butterfly communities in central and south america",
+            "type": "article-journal",
+            "volume": "81"
+        },
+        {
+            "author": [
+                {
+                    "family": "DeVries",
+                    "given": "P. J."
+                },
+                {
+                    "family": "Hamm",
+                    "given": "C. A."
+                },
+                {
+                    "family": "Fordyce",
+                    "given": "J. A."
+                }
+            ],
+            "container-title": "Core standardized methods",
+            "id": "DeVries_2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "139-148",
+            "publisher": "Conservation International",
+            "publisher-place": "Arlington, USA",
+            "title": "A standardized sampling protocol for fruit-feeding butterflies (nymphalidae)",
+            "type": "chapter"
+        },
+        {
             "DOI": "10.1007/s10841-013-9565-9",
             "ISSN": "1572-9753",
             "URL": "http://dx.doi.org/10.1007/s10841-013-9565-9",
@@ -1384,6 +1605,65 @@
             "title": "Rondon’s marmoset, mico rondoni sp. N., from southwestern brazilian amazonia",
             "type": "article-journal",
             "volume": "31"
+        },
+        {
+            "author": [
+                {
+                    "family": "Freitas",
+                    "given": "André Victor Lucci"
+                },
+                {
+                    "family": "Gueratto",
+                    "given": "Patrı́cia Eyng"
+                },
+                {
+                    "family": "Carreira",
+                    "given": "Junia Yasmin Oliveira"
+                },
+                {
+                    "family": "Lourenço",
+                    "given": "Giselle Martins"
+                },
+                {
+                    "family": "Shirai",
+                    "given": "Leila Teruko"
+                },
+                {
+                    "family": "Santos",
+                    "given": "Jessie Pereira"
+                },
+                {
+                    "family": "Rosa",
+                    "given": "Augusto Henrique Batista"
+                },
+                {
+                    "family": "Evora",
+                    "given": "Gabriel Banov"
+                },
+                {
+                    "family": "Ramos",
+                    "given": "Renato Rogner"
+                },
+                {
+                    "family": "Uribe",
+                    "given": "Mario Alejandro Marı́n"
+                }
+            ],
+            "container-title": "Insect decline and conservation in the neotropics",
+            "id": "Freitas_2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "205-233",
+            "publisher": "Springer International Publishing",
+            "publisher-place": "Cham",
+            "title": "Fruit-feeding butterfly assemblages: Trends, changes, and the importance of monitoring schemes in neotropical environments",
+            "title-short": "Fruit-feeding butterfly assemblages",
+            "type": "chapter"
         },
         {
             "DOI": "10.1007/s10841-013-9565-9",
@@ -1707,6 +1987,89 @@
             "volume": "11"
         },
         {
+            "abstract": "",
+            "author": [
+                {
+                    "family": "Hughes",
+                    "given": "Jennifer B"
+                },
+                {
+                    "family": "Daily",
+                    "given": "Gretchen C"
+                },
+                {
+                    "family": "Ehrlich",
+                    "given": "Paul R"
+                }
+            ],
+            "container-title": "Rev. Biol. Trop.",
+            "id": "Hughes_1998",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998,
+                        7
+                    ]
+                ]
+            },
+            "page": "697-704",
+            "publisher": "Universidad de Costa Rica",
+            "title": "Use of fruit bait traps for monitoring of butterflies (lepidoptera: nymphalidae)",
+            "title-short": "Use of fruit bait traps for monitoring of butterflies (lepidoptera",
+            "type": "article-journal"
+        },
+        {
+            "abstract": "",
+            "author": [
+                {
+                    "family": "Janzen",
+                    "given": "Daniel H"
+                },
+                {
+                    "family": "Hallwachs",
+                    "given": "Winnie"
+                }
+            ],
+            "container-title": "Proc. Natl. Acad. Sci. U. S. A.",
+            "id": "Janzen_2021",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1
+                    ]
+                ]
+            },
+            "keyword": "BioAlfa; biodevelopment; climate change; conservation by rewilding; insect decline",
+            "publisher": "Proceedings of the National Academy of Sciences",
+            "title": "To us insectometers, it is clear that insect decline in our costa rican tropics is real, so let’s be kind to the survivors",
+            "type": "article-journal",
+            "volume": "118"
+        },
+        {
+            "abstract": "",
+            "author": [
+                {
+                    "family": "Jenkins",
+                    "given": "D. W."
+                }
+            ],
+            "container-title": "Bulletin of the Allyn Museum",
+            "id": "Jenkins_1983",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ]
+            },
+            "page": "",
+            "title": "Neotropical nymphalidae i. Revision of hamadryas",
+            "type": "article-journal",
+            "volume": "81"
+        },
+        {
             "author": [
                 {
                     "family": "Jusys",
@@ -2005,6 +2368,976 @@
         {
             "author": [
                 {
+                    "family": "Lucci Freitas",
+                    "given": "A. V."
+                },
+                {
+                    "family": "Agra Iserhard",
+                    "given": "C."
+                },
+                {
+                    "family": "Pereira Santos",
+                    "given": "J."
+                },
+                {
+                    "family": "Oliveira Carreira",
+                    "given": "J. Y."
+                },
+                {
+                    "family": "Bandini Ribeiro",
+                    "given": "D."
+                },
+                {
+                    "family": "Alves Melo",
+                    "given": "D. H."
+                },
+                {
+                    "family": "Rosa",
+                    "given": "A."
+                },
+                {
+                    "family": "Marini-Filho",
+                    "given": "O. J."
+                },
+                {
+                    "family": "Accacio",
+                    "given": "G."
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "M."
+                }
+            ],
+            "container-title": "Revista Colombiana de Entomología",
+            "id": "LucciFreitas_2014",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "203-212",
+            "title": "Studies with butterfly bait traps: An overview",
+            "title-short": "Studies with butterfly bait traps",
+            "type": "article-journal",
+            "volume": "40"
+        },
+        {
+            "abstract": "AbstractAimAmazonia hosts more tree species from numerous evolutionary lineages, both young and ancient, than any other biogeographic region. Previous studies have shown that tree lineages colonized multiple edaphic environments and dispersed widely across Amazonia, leading to a hypothesis, which we test, that lineages should not be strongly associated with either geographic regions or edaphic forest types.LocationAmazonia.TaxonAngiosperms (Magnoliids; Monocots; Eudicots).MethodsData for the abundance of 5082 tree species in 1989 plots were combined with a mega‐phylogeny. We applied evolutionary ordination to assess how phylogenetic composition varies across Amazonia. We used variation partitioning and Moran’s eigenvector maps (MEM) to test and quantify the separate and joint contributions of spatial and environmental variables to explain the phylogenetic composition of plots. We tested the indicator value of lineages for geographic regions and edaphic forest types and mapped associations onto the phylogeny.ResultsIn the terra firme and várzea forest types, the phylogenetic composition varies by geographic region, but the igapó and white‐sand forest types retain a unique evolutionary signature regardless of region. Overall, we find that soil chemistry, climate and topography explain 24% of the variation in phylogenetic composition, with 79% of that variation being spatially structured (R2 = 19% overall for combined spatial/environmental effects). The phylogenetic composition also shows substantial spatial patterns not related to the environmental variables we quantified (R2 = 28%). A greater number of lineages were significant indicators of geographic regions than forest types.Main ConclusionNumerous tree lineages, including some ancient ones (>66 Ma), show strong associations with geographic regions and edaphic forest types of Amazonia. This shows that specialization in specific edaphic environments has played a long‐standing role in the evolutionary assembly of Amazonian forests. Furthermore, many lineages, even those that have dispersed across Amazonia, dominate within a specific region, likely because of phylogenetically conserved niches for environmental conditions that are prevalent within regions.",
+            "author": [
+                {
+                    "family": "Luize",
+                    "given": "Bruno Garcia"
+                },
+                {
+                    "family": "Bauman",
+                    "given": "David"
+                },
+                {
+                    "dropping-particle": "ter",
+                    "family": "Steege",
+                    "given": "Hans"
+                },
+                {
+                    "family": "Palma-Silva",
+                    "given": "Clarisse"
+                },
+                {
+                    "dropping-particle": "do",
+                    "family": "Amaral",
+                    "given": "Iêda Leão"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Souza Coelho",
+                    "given": "Luiz"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Almeida Matos",
+                    "given": "Francisca Dionı́zia"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Andrade Lima Filho",
+                    "given": "Diógenes"
+                },
+                {
+                    "family": "Salomão",
+                    "given": "Rafael P"
+                },
+                {
+                    "family": "Wittmann",
+                    "given": "Florian"
+                },
+                {
+                    "family": "Castilho",
+                    "given": "Carolina V"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Jesus Veiga Carim",
+                    "given": "Marcelo"
+                },
+                {
+                    "family": "Guevara",
+                    "given": "Juan Ernesto"
+                },
+                {
+                    "family": "Phillips",
+                    "given": "Oliver L"
+                },
+                {
+                    "family": "Magnusson",
+                    "given": "William E"
+                },
+                {
+                    "family": "Sabatier",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Revilla",
+                    "given": "Juan David Cardenas"
+                },
+                {
+                    "family": "Molino",
+                    "given": "Jean-François"
+                },
+                {
+                    "family": "Irume",
+                    "given": "Mariana Victória"
+                },
+                {
+                    "family": "Martins",
+                    "given": "Maria Pires"
+                },
+                {
+                    "dropping-particle": "da",
+                    "family": "Silva Guimarães",
+                    "given": "José Renan"
+                },
+                {
+                    "family": "Ramos",
+                    "given": "José Ferreira"
+                },
+                {
+                    "family": "Bánki",
+                    "given": "Olaf S"
+                },
+                {
+                    "family": "Piedade",
+                    "given": "Maria Teresa Fernandez"
+                },
+                {
+                    "family": "López",
+                    "given": "Dairon Cárdenas"
+                },
+                {
+                    "family": "Pitman",
+                    "given": "Nigel C A"
+                },
+                {
+                    "family": "Demarchi",
+                    "given": "Layon O"
+                },
+                {
+                    "family": "Schöngart",
+                    "given": "Jochen"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Leão Novo",
+                    "given": "Evlyn Márcia Moraes"
+                },
+                {
+                    "family": "Vargas",
+                    "given": "Percy Núñez"
+                },
+                {
+                    "family": "Silva",
+                    "given": "Thiago Sanna Freire"
+                },
+                {
+                    "family": "Venticinque",
+                    "given": "Eduardo Martins"
+                },
+                {
+                    "family": "Manzatto",
+                    "given": "Angelo Gilberto"
+                },
+                {
+                    "family": "Reis",
+                    "given": "Neidiane Farias Costa"
+                },
+                {
+                    "family": "Terborgh",
+                    "given": "John"
+                },
+                {
+                    "family": "Casula",
+                    "given": "Katia Regina"
+                },
+                {
+                    "family": "Honorio Coronado",
+                    "given": "Euridice N"
+                },
+                {
+                    "family": "Mendoza",
+                    "given": "Abel Monteagudo"
+                },
+                {
+                    "family": "Montero",
+                    "given": "Juan Carlos"
+                },
+                {
+                    "family": "Costa",
+                    "given": "Flávia R C"
+                },
+                {
+                    "family": "Feldpausch",
+                    "given": "Ted R"
+                },
+                {
+                    "family": "Quaresma",
+                    "given": "Adriano Costa"
+                },
+                {
+                    "family": "Arboleda",
+                    "given": "Nicolás Castaño"
+                },
+                {
+                    "family": "Zartman",
+                    "given": "Charles Eugene"
+                },
+                {
+                    "family": "Killeen",
+                    "given": "Timothy J"
+                },
+                {
+                    "family": "Marimon",
+                    "given": "Beatriz S"
+                },
+                {
+                    "family": "Marimon-Junior",
+                    "given": "Ben Hur"
+                },
+                {
+                    "family": "Vasquez",
+                    "given": "Rodolfo"
+                },
+                {
+                    "family": "Mostacedo",
+                    "given": "Bonifacio"
+                },
+                {
+                    "family": "Assis",
+                    "given": "Rafael L"
+                },
+                {
+                    "family": "Baraloto",
+                    "given": "Chris"
+                },
+                {
+                    "dropping-particle": "do",
+                    "family": "Amaral",
+                    "given": "Dário Dantas"
+                },
+                {
+                    "family": "Engel",
+                    "given": "Julien"
+                },
+                {
+                    "family": "Petronelli",
+                    "given": "Pascal"
+                },
+                {
+                    "family": "Castellanos",
+                    "given": "Hernán"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Medeiros",
+                    "given": "Marcelo Brilhante"
+                },
+                {
+                    "family": "Simon",
+                    "given": "Marcelo Fragomeni"
+                },
+                {
+                    "family": "Andrade",
+                    "given": "Ana"
+                },
+                {
+                    "family": "Camargo",
+                    "given": "José Luı́s"
+                },
+                {
+                    "family": "Laurance",
+                    "given": "William F"
+                },
+                {
+                    "family": "Laurance",
+                    "given": "Susan G W"
+                },
+                {
+                    "family": "Rincón",
+                    "given": "Lorena Maniguaje"
+                },
+                {
+                    "family": "Schietti",
+                    "given": "Juliana"
+                },
+                {
+                    "family": "Sousa",
+                    "given": "Thaiane R"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Sousa Farias",
+                    "given": "Emanuelle"
+                },
+                {
+                    "family": "Lopes",
+                    "given": "Maria Aparecida"
+                },
+                {
+                    "family": "Magalhães",
+                    "given": "José Leonardo Lima"
+                },
+                {
+                    "family": "Nascimento",
+                    "given": "Henrique Eduardo Mendonça"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Queiroz",
+                    "given": "Helder Lima"
+                },
+                {
+                    "family": "Aymard C",
+                    "given": "Gerardo A"
+                },
+                {
+                    "family": "Brienen",
+                    "given": "Roel"
+                },
+                {
+                    "family": "Stevenson",
+                    "given": "Pablo R"
+                },
+                {
+                    "family": "Araujo-Murakami",
+                    "given": "Alejandro"
+                },
+                {
+                    "family": "Cintra",
+                    "given": "Bruno Barçante Ladvocat"
+                },
+                {
+                    "family": "Baker",
+                    "given": "Tim R"
+                },
+                {
+                    "family": "Feitosa",
+                    "given": "Yuri Oliveira"
+                },
+                {
+                    "family": "Mogollón",
+                    "given": "Hugo F"
+                },
+                {
+                    "family": "Duivenvoorden",
+                    "given": "Joost F"
+                },
+                {
+                    "family": "Peres",
+                    "given": "Carlos A"
+                },
+                {
+                    "family": "Silman",
+                    "given": "Miles R"
+                },
+                {
+                    "family": "Ferreira",
+                    "given": "Leandro Valle"
+                },
+                {
+                    "family": "Lozada",
+                    "given": "José Rafael"
+                },
+                {
+                    "family": "Comiskey",
+                    "given": "James A"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Toledo",
+                    "given": "José Julio"
+                },
+                {
+                    "family": "Damasco",
+                    "given": "Gabriel"
+                },
+                {
+                    "family": "Dávila",
+                    "given": "Nállarett"
+                },
+                {
+                    "family": "Draper",
+                    "given": "Freddie C"
+                },
+                {
+                    "family": "Garcı́a-Villacorta",
+                    "given": "Roosevelt"
+                },
+                {
+                    "family": "Lopes",
+                    "given": "Aline"
+                },
+                {
+                    "family": "Vicentini",
+                    "given": "Alberto"
+                },
+                {
+                    "family": "Valverd",
+                    "given": "Fernando Cornejo"
+                },
+                {
+                    "family": "Alonso",
+                    "given": "Alfonso"
+                },
+                {
+                    "family": "Arroyo",
+                    "given": "Luzmila"
+                },
+                {
+                    "family": "Dallmeier",
+                    "given": "Francisco"
+                },
+                {
+                    "family": "Gomes",
+                    "given": "Vitor H F"
+                },
+                {
+                    "family": "Jimenez",
+                    "given": "Eliana M"
+                },
+                {
+                    "family": "Neill",
+                    "given": "David"
+                },
+                {
+                    "family": "Mora",
+                    "given": "Maria Cristina Peñuela"
+                },
+                {
+                    "family": "Noronha",
+                    "given": "Janaı́na Costa"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Aguiar",
+                    "given": "Daniel P P"
+                },
+                {
+                    "family": "Barbosa",
+                    "given": "Flávia Rodrigues"
+                },
+                {
+                    "family": "Bredin",
+                    "given": "Yennie K"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Sá Carpanedo",
+                    "given": "Rainiellen"
+                },
+                {
+                    "family": "Carvalho",
+                    "given": "Fernanda Antunes"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Souza",
+                    "given": "Fernanda Coelho"
+                },
+                {
+                    "family": "Feeley",
+                    "given": "Kenneth J"
+                },
+                {
+                    "family": "Gribel",
+                    "given": "Rogerio"
+                },
+                {
+                    "family": "Haugaasen",
+                    "given": "Torbjørn"
+                },
+                {
+                    "family": "Hawes",
+                    "given": "Joseph E"
+                },
+                {
+                    "family": "Pansonato",
+                    "given": "Marcelo Petratti"
+                },
+                {
+                    "family": "Paredes",
+                    "given": "Marcos Rı́os"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Jesus Rodrigues",
+                    "given": "Domingos"
+                },
+                {
+                    "family": "Barlow",
+                    "given": "Jos"
+                },
+                {
+                    "family": "Berenguer",
+                    "given": "Erika"
+                },
+                {
+                    "dropping-particle": "da",
+                    "family": "Silva",
+                    "given": "Izaias Brasil"
+                },
+                {
+                    "family": "Ferreira",
+                    "given": "Maria Julia"
+                },
+                {
+                    "family": "Ferreira",
+                    "given": "Joice"
+                },
+                {
+                    "family": "Fine",
+                    "given": "Paul V A"
+                },
+                {
+                    "family": "Guedes",
+                    "given": "Marcelino Carneiro"
+                },
+                {
+                    "family": "Levis",
+                    "given": "Carolina"
+                },
+                {
+                    "family": "Licona",
+                    "given": "Juan Carlos"
+                },
+                {
+                    "family": "Zegarra",
+                    "given": "Boris Eduardo Villa"
+                },
+                {
+                    "family": "Vos",
+                    "given": "Vincent Antoine"
+                },
+                {
+                    "family": "Cerón",
+                    "given": "Carlos"
+                },
+                {
+                    "family": "Durgante",
+                    "given": "Flávia Machado"
+                },
+                {
+                    "family": "Fonty",
+                    "given": "Émile"
+                },
+                {
+                    "family": "Henkel",
+                    "given": "Terry W"
+                },
+                {
+                    "family": "Householder",
+                    "given": "John Ethan"
+                },
+                {
+                    "family": "Huamantupa-Chuquimaco",
+                    "given": "Isau"
+                },
+                {
+                    "family": "Silveira",
+                    "given": "Marcos"
+                },
+                {
+                    "family": "Stropp",
+                    "given": "Juliana"
+                },
+                {
+                    "family": "Thomas",
+                    "given": "Raquel"
+                },
+                {
+                    "family": "Daly",
+                    "given": "Doug"
+                },
+                {
+                    "family": "Millike",
+                    "given": "William"
+                },
+                {
+                    "family": "Molina",
+                    "given": "Guido Pardo"
+                },
+                {
+                    "family": "Pennington",
+                    "given": "Toby"
+                },
+                {
+                    "family": "Vieira",
+                    "given": "Ima Célia Guimarães"
+                },
+                {
+                    "family": "Albuquerque",
+                    "given": "Bianca Weiss"
+                },
+                {
+                    "family": "Campelo",
+                    "given": "Wegliane"
+                },
+                {
+                    "family": "Fuentes",
+                    "given": "Alfredo"
+                },
+                {
+                    "family": "Klitgaard",
+                    "given": "Bente"
+                },
+                {
+                    "family": "Pena",
+                    "given": "José Luis Marcelo"
+                },
+                {
+                    "family": "Tello",
+                    "given": "J Sebastián"
+                },
+                {
+                    "family": "Vriesendorp",
+                    "given": "Corine"
+                },
+                {
+                    "family": "Chave",
+                    "given": "Jerome"
+                },
+                {
+                    "family": "Di Fiore",
+                    "given": "Anthony"
+                },
+                {
+                    "family": "Hilário",
+                    "given": "Renato Richard"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Oliveira Pereira",
+                    "given": "Luciana"
+                },
+                {
+                    "family": "Phillips",
+                    "given": "Juan Fernando"
+                },
+                {
+                    "family": "Rivas-Torres",
+                    "given": "Gonzalo"
+                },
+                {
+                    "dropping-particle": "van",
+                    "family": "Andel",
+                    "given": "Tinde R"
+                },
+                {
+                    "dropping-particle": "von",
+                    "family": "Hildebrand",
+                    "given": "Patricio"
+                },
+                {
+                    "family": "Balee",
+                    "given": "William"
+                },
+                {
+                    "family": "Barbosa",
+                    "given": "Edelcilio Marques"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Matos Bonates",
+                    "given": "Luiz Carlos"
+                },
+                {
+                    "family": "Doza",
+                    "given": "Hilda Paulette Dávila"
+                },
+                {
+                    "family": "Gómez",
+                    "given": "Ricardo Zárate"
+                },
+                {
+                    "family": "Gonzales",
+                    "given": "Therany"
+                },
+                {
+                    "family": "Gonzales",
+                    "given": "George Pepe Gallardo"
+                },
+                {
+                    "family": "Hoffman",
+                    "given": "Bruce"
+                },
+                {
+                    "family": "Junqueira",
+                    "given": "André Braga"
+                },
+                {
+                    "family": "Malhi",
+                    "given": "Yadvinder"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Andrade Miranda",
+                    "given": "Ires Paula"
+                },
+                {
+                    "family": "Pinto",
+                    "given": "Linder Felipe Mozombite"
+                },
+                {
+                    "family": "Prieto",
+                    "given": "Adriana"
+                },
+                {
+                    "family": "Rudas",
+                    "given": "Agustı́n"
+                },
+                {
+                    "family": "Ruschel",
+                    "given": "Ademir R"
+                },
+                {
+                    "family": "Silva",
+                    "given": "Natalino"
+                },
+                {
+                    "family": "Vela",
+                    "given": "César I A"
+                },
+                {
+                    "family": "Zent",
+                    "given": "Stanford"
+                },
+                {
+                    "family": "Zent",
+                    "given": "Egleé L"
+                },
+                {
+                    "family": "Cano",
+                    "given": "Angela"
+                },
+                {
+                    "family": "Márquez",
+                    "given": "Yrma Andreina Carrero"
+                },
+                {
+                    "family": "Correa",
+                    "given": "Diego F"
+                },
+                {
+                    "family": "Costa",
+                    "given": "Janaina Barbosa Pedrosa"
+                },
+                {
+                    "family": "Flores",
+                    "given": "Bernardo Monteiro"
+                },
+                {
+                    "family": "Galbraith",
+                    "given": "David"
+                },
+                {
+                    "family": "Holmgren",
+                    "given": "Milena"
+                },
+                {
+                    "family": "Kalamandeen",
+                    "given": "Michelle"
+                },
+                {
+                    "family": "Lobo",
+                    "given": "Guilherme"
+                },
+                {
+                    "family": "Montenegro",
+                    "given": "Luis Torres"
+                },
+                {
+                    "family": "Nascimento",
+                    "given": "Marcelo Trindade"
+                },
+                {
+                    "family": "Oliveira",
+                    "given": "Alexandre A"
+                },
+                {
+                    "family": "Pombo",
+                    "given": "Maihyra Marina"
+                },
+                {
+                    "family": "Ramirez-Angulo",
+                    "given": "Hirma"
+                },
+                {
+                    "family": "Rocha",
+                    "given": "Maira"
+                },
+                {
+                    "family": "Scudeller",
+                    "given": "Veridiana Vizoni"
+                },
+                {
+                    "family": "Umaña",
+                    "given": "Maria Natalia"
+                },
+                {
+                    "dropping-particle": "van der",
+                    "family": "Heijden",
+                    "given": "Geertje"
+                },
+                {
+                    "family": "Torre",
+                    "given": "Emilio Vilanova"
+                },
+                {
+                    "family": "Reategui",
+                    "given": "Manuel Augusto Ahuite"
+                },
+                {
+                    "family": "Baider",
+                    "given": "Cláudia"
+                },
+                {
+                    "family": "Balslev",
+                    "given": "Henrik"
+                },
+                {
+                    "family": "Cárdenas",
+                    "given": "Sasha"
+                },
+                {
+                    "family": "Casas",
+                    "given": "Luisa Fernanda"
+                },
+                {
+                    "family": "Farfan-Rios",
+                    "given": "William"
+                },
+                {
+                    "family": "Ferreira",
+                    "given": "Cid"
+                },
+                {
+                    "family": "Linares-Palomino",
+                    "given": "Reynaldo"
+                },
+                {
+                    "family": "Mendoza",
+                    "given": "Casimiro"
+                },
+                {
+                    "family": "Mesones",
+                    "given": "Italo"
+                },
+                {
+                    "family": "Parada",
+                    "given": "Germaine Alexander"
+                },
+                {
+                    "family": "Torres-Lezama",
+                    "given": "Armando"
+                },
+                {
+                    "family": "Giraldo",
+                    "given": "Ligia Estela Urrego"
+                },
+                {
+                    "family": "Villarroel",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Zagt",
+                    "given": "Roderick"
+                },
+                {
+                    "family": "Alexiades",
+                    "given": "Miguel N"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Oliveira",
+                    "given": "Edmar Almeida"
+                },
+                {
+                    "family": "Garcia-Cabrera",
+                    "given": "Karina"
+                },
+                {
+                    "family": "Hernandez",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Cuenca",
+                    "given": "Walter Palacios"
+                },
+                {
+                    "family": "Pansini",
+                    "given": "Susamar"
+                },
+                {
+                    "family": "Pauletto",
+                    "given": "Daniela"
+                },
+                {
+                    "family": "Arevalo",
+                    "given": "Freddy Ramirez"
+                },
+                {
+                    "family": "Sampaio",
+                    "given": "Adeilza Felipe"
+                },
+                {
+                    "family": "Valderrama Sandoval",
+                    "given": "Elvis H"
+                },
+                {
+                    "family": "Gamarra",
+                    "given": "Luis Valenzuela"
+                },
+                {
+                    "family": "Dexter",
+                    "given": "Kyle G"
+                }
+            ],
+            "container-title": "J. Biogeogr.",
+            "id": "Luize_2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        2
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Geography and ecology shape the phylogenetic composition of amazonian tree communities",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
                     "family": "MacKenzie",
                     "given": "D. I."
                 },
@@ -2229,6 +3562,87 @@
         {
             "author": [
                 {
+                    "literal": "Ministério do Meio Ambiente, Brasil"
+                }
+            ],
+            "id": "MMA_2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "note": "Accesso: 2024-03-20",
+            "title": "Portaria MMA nº 148",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "dropping-particle": "do",
+                    "family": "Meio Ambiente e Mudança do Clima",
+                    "given": "Ministério"
+                }
+            ],
+            "id": "MMA_2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "number": "ISBN: 978-65-88265-03-1",
+            "publisher": "Ministério do Meio Ambiente e Mudança do Clima",
+            "publisher-place": "Brasília, DF",
+            "title": "Brazil: 6th national report to the convention on biological diversity",
+            "title-short": "Brazil",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Molleman",
+                    "given": "Freerk"
+                },
+                {
+                    "family": "Kop",
+                    "given": "Arjan"
+                },
+                {
+                    "family": "Brakefield",
+                    "given": "Paul M"
+                },
+                {
+                    "family": "De vries",
+                    "given": "Philip J"
+                },
+                {
+                    "family": "Zwaan",
+                    "given": "Bas J"
+                }
+            ],
+            "container-title": "Biodivers. Conserv.",
+            "id": "Molleman_2006",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006,
+                        1
+                    ]
+                ]
+            },
+            "page": "107-121",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "Vertical and temporal patterns of biodiversity of fruit-feeding butterflies in a tropical forest in uganda",
+            "type": "article-journal",
+            "volume": "15"
+        },
+        {
+            "author": [
+                {
                     "family": "Sampaio",
                     "given": "A. B."
                 },
@@ -2340,47 +3754,6 @@
             "title": "Estratégia do programa nacional de monitoramento da biodiversidade – programa monitora: Estrutura, articulações, perspectivas",
             "title-short": "Estratégia do programa nacional de monitoramento da biodiversidade – programa monitora",
             "type": "book"
-        },
-        {
-            "author": [
-                {
-                    "literal": "Ministério do Meio Ambiente, Brasil"
-                }
-            ],
-            "id": "MMA_2022",
-            "issued": {
-                "date-parts": [
-                    [
-                        2022
-                    ]
-                ]
-            },
-            "note": "Accesso: 2024-03-20",
-            "title": "Portaria MMA nº 148",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "dropping-particle": "do",
-                    "family": "Meio Ambiente e Mudança do Clima",
-                    "given": "Ministério"
-                }
-            ],
-            "id": "MMA_2023",
-            "issued": {
-                "date-parts": [
-                    [
-                        2023
-                    ]
-                ]
-            },
-            "number": "ISBN: 978-65-88265-03-1",
-            "publisher": "Ministério do Meio Ambiente e Mudança do Clima",
-            "publisher-place": "Brasília, DF",
-            "title": "Brazil: 6th national report to the convention on biological diversity",
-            "title-short": "Brazil",
-            "type": "report"
         },
         {
             "DOI": "10.1590/s1984-46702013000100016",
@@ -2575,6 +3948,42 @@
             "type": "book"
         },
         {
+            "abstract": "There is scarcity of information pertaining to insect colonisation during forest restoration in the tropics. We investigated the pattern and timescale of butterfly recovery along a gradient of forest restoration in an Afro-tropical moist forest in Kibale National Park, Uganda. The restoration forests ranged from 3 to 16 years of age. We placed five traps in each of the eight forests along the restoration gradient and sampled butterflies for three days monthly for 12 months, beginning in May 2011. We (1) tested for the directional pattern in butterfly species richness, abundance, diversity, dominance and community composition from the youngest restoration to primary forests, (2) assessed the temporal and spatial patterns in butterfly community composition along the restoration gradient, (3) assessed the change in similarity between restoration and primary forests along the gradient, to estimate the time needed for recovery, and (4) determined specialist species characterising each forest age group. We recorded 10,092 individuals, representing 79 species. Butterfly species richness, abundance and diversity increased with age since restoration started. There was a remarkable temporal variation in butterfly community composition. The similarity of the butterfly community to that of primary forests increased linearly with time, without reaching an asymptote. We estimate that fruit-feeding butterfly communities of restored tropical forests can be similar to that of primary forests within 40 years, provided that primary forests are nearby. Our results demonstrate that tropical forest restoration aids the recovery of butterfly communities to their pre-disturbance states and probably aids biodiversity as a whole.",
+            "author": [
+                {
+                    "family": "Nyafwono",
+                    "given": "Margaret"
+                },
+                {
+                    "family": "Valtonen",
+                    "given": "Anu"
+                },
+                {
+                    "family": "Nyeko",
+                    "given": "Philip"
+                },
+                {
+                    "family": "Roininen",
+                    "given": "Heikki"
+                }
+            ],
+            "container-title": "Biol. Conserv.",
+            "id": "Nyafwono_2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        6
+                    ]
+                ]
+            },
+            "page": "75-83",
+            "publisher": "Elsevier BV",
+            "title": "Fruit-feeding butterfly communities as indicators of forest restoration in an afro-tropical rainforest",
+            "type": "article-journal",
+            "volume": "174"
+        },
+        {
             "author": [
                 {
                     "family": "O’Brien",
@@ -2634,6 +4043,38 @@
             "volume": "16"
         },
         {
+            "author": [
+                {
+                    "family": "Oliveira",
+                    "given": "Isabela Freitas"
+                },
+                {
+                    "family": "Lion",
+                    "given": "Marı́lia Bruzzi"
+                },
+                {
+                    "family": "Cardoso",
+                    "given": "Márcio Zikán"
+                }
+            ],
+            "container-title": "Landsc. Urban Plan.",
+            "id": "Oliveira_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        12
+                    ]
+                ]
+            },
+            "page": "207-216",
+            "publisher": "Elsevier BV",
+            "title": "A plaza too far: High contrast in butterfly biodiversity patterns between plazas and an urban reserve in brazil",
+            "title-short": "A plaza too far",
+            "type": "article-journal",
+            "volume": "180"
+        },
+        {
             "DOI": "10.5902/1980509827065",
             "ISSN": "0103-9954",
             "URL": "http://dx.doi.org/10.5902/1980509827065",
@@ -2677,6 +4118,44 @@
             "title": "Comparação de modelos estatísticos para estimativa da biomassa de árvores, e estimativa do estoque de carbono acima do solo em cerrado",
             "type": "article-journal",
             "volume": "29"
+        },
+        {
+            "abstract": "The seasonal flood pulse in Amazonia can be considered a primary driver of community structure in floodplain environments. Although this natural periodic disturbance is part of the landscape dynamics, the seasonal inundation presents a considerable challenge to organisms that inhabit floodplain forests. The present study investigated the effect of seasonal flooding on fruit-feeding butterfly assemblages in different forest types and strata in central Amazonia. We sampled fruit-feeding butterflies in the canopy and the understory using baited traps in adjacent upland (unflooded forests-terra firme), white and blackwater floodplain forests (várzea and igapó, respectively) during the low- and high-water seasons. Butterfly abundance decreased in the high-water season, especially of dominant species in várzea, but the number of species was similar between seasons in the three forest types. Species composition differed between strata in all forest types. However, the flood pulse only affected butterfly assemblages in várzea forest. The \\beta-diversity components also differed only in várzea. Species replacement (turnover) dominated the spatial \\beta-diversity in igapó and terra firme in both seasons and várzea in the high-water season. Nonetheless, nestedness was relatively higher in várzea forests during the low-water season, mainly due to the effect of dominant species. These results emphasize the importance of seasonal flooding to structure butterfly assemblages in floodplain forests and reveal the idiosyncrasy of butterfly community responses to flooding in different forest types. Our results also suggest that any major and rapid changes to the hydrological regime could severely affect floodplain communities adapted to this natural seasonal hydrological cycle, threatening the existence of these unique environments.",
+            "author": [
+                {
+                    "family": "Oliveira",
+                    "given": "Isabela Freitas"
+                },
+                {
+                    "family": "Baccaro",
+                    "given": "Fabricio Beggiato"
+                },
+                {
+                    "family": "Werneck",
+                    "given": "Fernanda P"
+                },
+                {
+                    "family": "Haugaasen",
+                    "given": "Torbjørn"
+                }
+            ],
+            "container-title": "Ecol. Evol.",
+            "id": "Oliveira_2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        1
+                    ]
+                ]
+            },
+            "keyword": "Nymphalidae; beta-diversity; community; inundation; stratification; wetlands",
+            "page": "e9718",
+            "publisher": "Wiley",
+            "title": "Seasonal flooding decreases fruit-feeding butterfly species dominance and increases spatial turnover in floodplain forests of central amazonia",
+            "type": "article-journal",
+            "volume": "13"
         },
         {
             "DOI": "10.1016/j.tree.2005.10.015",
@@ -3084,6 +4563,36 @@
             "type": "article-journal"
         },
         {
+            "abstract": "Amazonia has been a focus of interest since the early days of biogeography as an intrinsically complex and extremely diverse region. This region comprises an intricate mosaic that includes diverse types of forest formations, flooded environments and open vegetation. Increased knowledge about the distribution of species in Amazonia has led to the recognition of complex biogeographic patterns. The confrontation of these biogeographic patterns with information on the geological and climatic history of the region has generated several hypotheses dedicated to explain the origin of the biological diversity. Genomic information, coupled with knowledge of Earth’s history, especially the evolution of the Amazonian landscape, presents fascinating possibilities for understanding the mechanisms that govern the origin and maintenance of diversity patterns in one of the most diverse regions of the world. For this we will increasingly need more intense and coordinated interactions between researchers studying biotic diversification and the evolution of landscapes. From the interaction between these two fields of knowledge that are in full development, an increasingly detailed understanding of the historical mechanisms related to the origin of the species will surely arise.",
+            "author": [
+                {
+                    "family": "Ribas",
+                    "given": "Camila C"
+                },
+                {
+                    "family": "Aleixo",
+                    "given": "Alexandre"
+                }
+            ],
+            "container-title": "An. Acad. Bras. Cienc.",
+            "id": "Ribas_2019",
+            "issue": "suppl 3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        8
+                    ]
+                ]
+            },
+            "page": "e20190218",
+            "publisher": "FapUNIFESP (SciELO)",
+            "title": "Diversity and evolution of amazonian birds: Implications for conservation and biogeography",
+            "title-short": "Diversity and evolution of amazonian birds",
+            "type": "article-journal",
+            "volume": "91"
+        },
+        {
             "DOI": "10.1111/j.1744-7429.2010.00648.x",
             "ISSN": "1744-7429",
             "URL": "http://dx.doi.org/10.1111/j.1744-7429.2010.00648.x",
@@ -3394,6 +4903,84 @@
             "title": "Diversidade de mamíferos de médio e grande porte da região do rio urucu, amazonas, brasil",
             "type": "article-journal",
             "volume": "12"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sampaio",
+                    "given": "A. B."
+                },
+                {
+                    "family": "Alonso",
+                    "given": "A. C."
+                },
+                {
+                    "family": "Agra Iserhard",
+                    "given": "C."
+                },
+                {
+                    "family": "Bandini Ribeiro",
+                    "given": "D."
+                },
+                {
+                    "family": "Carvalho de Andrade",
+                    "given": "D. F."
+                },
+                {
+                    "family": "Carvalho Junior",
+                    "given": "E. A. R."
+                },
+                {
+                    "family": "Buss",
+                    "given": "G."
+                },
+                {
+                    "family": "Souza",
+                    "given": "J. M."
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "K T."
+                },
+                {
+                    "family": "Mendes",
+                    "given": "K. R."
+                },
+                {
+                    "family": "Reis",
+                    "given": "M. L."
+                },
+                {
+                    "family": "Fialho",
+                    "given": "M. S."
+                },
+                {
+                    "family": "Marini Filho",
+                    "given": "O. J."
+                },
+                {
+                    "family": "Galuppo",
+                    "given": "S. C."
+                },
+                {
+                    "family": "Souza",
+                    "given": "T. C."
+                }
+            ],
+            "id": "Monitora_2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        6
+                    ]
+                ]
+            },
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio",
+            "publisher-place": "Brasília, DF",
+            "title": "Programa nacional de monitoramento da biodiversidade: Programa monitora, subprograma terrestre, componente florestal: Relatório 2014-2018",
+            "title-short": "Programa nacional de monitoramento da biodiversidade",
+            "type": "report"
         },
         {
             "author": [
@@ -4076,6 +5663,95 @@
             "type": "report"
         },
         {
+            "author": [
+                {
+                    "family": "Van Swaay",
+                    "given": "C."
+                },
+                {
+                    "family": "Regan",
+                    "given": "E."
+                },
+                {
+                    "family": "Ling",
+                    "given": "M."
+                },
+                {
+                    "family": "Bozhinovska",
+                    "given": "E."
+                },
+                {
+                    "family": "Fernandez",
+                    "given": "M."
+                },
+                {
+                    "family": "Marini-Filho",
+                    "given": "O. J."
+                },
+                {
+                    "family": "Huertas",
+                    "given": "B."
+                },
+                {
+                    "family": "Phon",
+                    "given": "C.-K."
+                },
+                {
+                    "family": "K”orösi",
+                    "given": "A."
+                },
+                {
+                    "family": "Meerman",
+                    "given": "J."
+                },
+                {
+                    "family": "Pe’er",
+                    "given": "G."
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "M."
+                },
+                {
+                    "family": "Sáfián",
+                    "given": "S."
+                },
+                {
+                    "family": "Sam",
+                    "given": "L."
+                },
+                {
+                    "family": "Shuey",
+                    "given": "J."
+                },
+                {
+                    "family": "Taron",
+                    "given": "D."
+                },
+                {
+                    "family": "Terblanche",
+                    "given": "R."
+                },
+                {
+                    "family": "Underhill",
+                    "given": "L."
+                }
+            ],
+            "id": "VanSwaay_2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "32",
+            "publisher": "Group on Earth Observations Biodiversity Observation Network",
+            "publisher-place": "Leipzig, Germany",
+            "title": "Guidelines for standardised global butterfly monitoring",
+            "type": "book"
+        },
+        {
             "DOI": "10.1111/j.1365-294x.2012.05687.x",
             "ISSN": "1365-294X",
             "URL": "http://dx.doi.org/10.1111/j.1365-294X.2012.05687.x",
@@ -4110,6 +5786,33 @@
             "title-short": "A new analytical approach to landscape genetic modelling",
             "type": "article-journal",
             "volume": "21"
+        },
+        {
+            "DOI": "10.1146/annurev-ento-011019-025151",
+            "ISSN": "1545-4487",
+            "URL": "http://dx.doi.org/10.1146/annurev-ento-011019-025151",
+            "author": [
+                {
+                    "family": "Wagner",
+                    "given": "David L."
+                }
+            ],
+            "container-title": "Annual Review of Entomology",
+            "id": "Wagner_2020",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        1
+                    ]
+                ]
+            },
+            "page": "457-480",
+            "publisher": "Annual Reviews",
+            "title": "Insect declines in the anthropocene",
+            "type": "article-journal",
+            "volume": "65"
         },
         {
             "author": [

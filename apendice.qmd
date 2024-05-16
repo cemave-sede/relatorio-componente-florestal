@@ -62,13 +62,13 @@ library(htmlTable)
 #| out.width: '70%'
 #| tab-cap: "Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora, no período de 2014 a 2022. Os números entre parênteses correspondem ao número de espécies registradas para o táxon. Em vermelho estão os táxons ameaçados e sua respectiva categoria de ameaça. As espécies 'Deficientes em Dados (DD)' também estão indicadas."
 
-tabela_mamiferos <- read.csv2("dados/tabelas/tabela_apendice_mamiferos.csv", encoding="UTF-8")
+tabela_mamiferos <- read.csv2("dados/tabelas/tabela_apendice_mamiferos_nome_comum.csv", encoding="UTF-8")
 
 tab_mamiferos <- kbl(tabela_mamiferos,
              booktabs = TRUE,
              longtable = TRUE,
              # caption = " ",
-            col.names = c("Ordem", "Família", "Táxon", "Categoria"), align = c("l", "l", "l", "c")) %>%
+            col.names = c("Ordem", "Família", "Táxon", "Nome comum", "Categoria"), align = c("l", "l", "l", "l", "c")) %>%
     column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 

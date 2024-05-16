@@ -41,7 +41,11 @@ library(gridExtra)
 </br>
 
 
-Em alguns grupos de insetos, a variação na riqueza, abundância e composição de espécies das comunidades ao longo do tempo vem sendo utilizada como indicador de alteração ambiental (@Gerlach_2013, @Arenhardt_2021, @Rodrigues_2019). No caso de borboletas, além desses parâmetros, a frequência relativa de ocorrência em nível de tribo também tem sido usada em estudos pontuais e programas de monitoramento (@Monitora_2018a). Esse indicador está relacionado tanto a alterações na vegetação (@Uehara_Prado_2006, @Ribeiro_2010) e eventos extremos climáticos, quanto a mudanças menos perceptíveis, como a redução na qualidade do ar (especialmente devido à presença de agrotóxicos) (@Smilanich_2012, @Ndakidemi_2016) e variações graduais do clima (temperatura e umidade) (@Devictor_2012). 
+Os insetos estão entre os organismos mais diversos e ameaçados do mundo (@Wagner_2020; @Janzen_2021). Entender como essa diversidade está distribuída no tempo e no espaço é crucial, visto que muitas espécies estão sendo extintas antes mesmo de serem descobertas pela ciência (**referências**). O Brasil, um país extenso e megadiverso, conta com poucos projetos de longo prazo (mais de cinco anos) voltados a investigar padrões de diversidade locais e regionais,  especialmente em grupos de invertebrados como insetos (@Costa_2020). A maioria das pesquisas abrange escalas locais e curtos períodos de tempo (**referências**), contribuindo significativamente para a compreensão de padrões de diversidade específicos, mas ressaltando a importância da implementação de projetos de longa duração em diversas áreas do país. 
+
+Nas últimas décadas, as borboletas frugívoras têm sido utilizadas como organismos modelo em monitoramentos de fauna em diversos países da região tropical (@Hughes_1998; @Molleman_2006; @DeVries_2012; @Aduse-Poku_2012; @Nyafwono_2014; @VanSwaay_2015; @Freitas_2024). A seleção deste grupo se deve à sua grande diversidade e significância ecológica, aliada à facilidade de amostragem por meio de armadilhas atrativas (@LucciFreitas_2014). O uso dessas armadilhas possibilita a amostragem simultânea em várias áreas, padronizando o esforço amostral e reduzindo a chance de viés nos dados. Além disso, as borboletas frugívoras são altamente sensíveis a alterações ambientais, o que as torna indicadoras valiosas de perturbações nos *habitat* (@Bonebrake_2010; @Oliveira_2018). Variações no número de espécies e indivíduos dessas borboletas, bem como mudanças na composição da comunidade, frequentemente refletem as alterações ambientais ocorridas naquele local ou região (@Oliveira_2023). Assim, devido ao seu curto ciclo de vida, estas mudanças na comunidade de borboletas são observadas relativamente rápido. Outros fatores determinantes para a escolha de borboletas frugívoras em estudos de monitoramento são a relativa facilidade na identificação e sua boa resolução taxônomica, quando comparadas a outros grupos de insetos. 
+
+Neste capítulo, serão apresentados os resultados da aplicação do protocolo básico de borboletas frugívoras, focados nas tribos capturadas de 2014 a 2022 em 50 unidades de conservação (UCs) federais. Alguns resultados por UC poderão ser encontrados no **Apêndice X** deste relatório. 
 
 </br>
 
@@ -50,7 +54,7 @@ Em alguns grupos de insetos, a variação na riqueza, abundância e composição
 </br>
 
 
-De 2014 a 2022 o protocolo amostral de borboletas frugívoras foi aplicado de forma integral ou parcial em 50 UCs federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo *Van Someren-Rydon*). A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) já estão consolidadas com as três EAs e 12 UAs implantadas (Tabela X). Estas UCs são: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (Cap. 2, Tabela xx).  
+De 2014 a 2022 o protocolo amostral de borboletas frugívoras foi aplicado de forma integral ou parcial em 50 UCs federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo *Van Someren-Rydon*). A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) estão consolidadas, com pelo menos três EAs e 12 UAs implantadas: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (ver Tabela xx do Cap. 2 para lista completa das UCs).  
 
 
 A partir de xxxx, xx UCs (XX%) adotaram o *Open Data Kit* (ODK), um aplicativo Android de código aberto que possibilita a coleta de dados em campo de forma mais eficiente e confiável, substituindo os formulários em papel. Ele armazena diversos tipos de informação como textos, dados numéricos, coordenadas geográficas, áudio, imagens, vídeo e códigos de barras, sendo projetado para funcionar mesmo sem conectividade à *internet*. O ODK favorece o registro de armadilhas com zero capturas, informação muitas vezes desconsiderada quando a amostragem é feita com formulários tradicionais. Além disso, só é possível adicionar as fotos das borboletas no sistema quando as coordenadas da unidade amostral de cada EA são registradas, certificando que a coleta foi, de fato, feita no local correto. Com as fotos das borboletas no sistema, especialistas podem identificar os indivíduos em nível de espécie ou morfoespécie, possibilitando a análise dos dados de acordo com o protocolo avançado.  
@@ -153,7 +157,7 @@ grafico_amostragens
 ```
 </br>
 
-Para verificar se as amostragens de borboletas frugívoras nas UCs da Amazônia seguiram o protocolo de coleta adequadamente, os dados foram submetidos a um *script* em R para validação automatizada das campanhas realizadas. Três regras de validação do protocolo foram aplicadas às EAs em cada campanha: (1) A amostragem ter sido realizada no período do ano correto para a região, (2) terem sido realizados seis dias de amostragem e (3) ter sido respeitado o intervalo mínimo de 15 dias entre campanhas. Todos os 846 registros (estação amostral de uma UC por campanha por ano) foram avaliados. Dessas, 230 (27%) violaram alguma regra do protocolo. Seis registros violaram duas regras, sendo estas expedições para locais de difícil acesso (i.e., PARNA do Monte Roraima). Em apenas um registro (EA-4 do PARNA Mapinguari na segunda campanha de 2022) as três regras foram violadas.  A coleta fora do período indicado para a região correspondeu a 85% das violações. O número correto de dias de amostragem por campanha não foi cumprido em 13% das EAs,  havendo tanto EAs com mais quanto com menos dias de coleta. O intervalo mínimo de 15 dias entre campanhas não foi respeitado em 7% das EAs.  
+Para verificar se as amostragens de borboletas frugívoras nas UCs da Amazônia seguiram o protocolo de coleta adequadamente, os dados foram submetidos a um *script* em R para validação automatizada das campanhas realizadas. Três regras de validação do protocolo foram aplicadas às EAs em cada campanha: (1) A amostragem ter sido realizada no período do ano correto para a região, (2) terem sido realizados seis dias de amostragem e (3) ter sido respeitado o intervalo mínimo de 15 dias entre campanhas. Todos os 846 registros (estação amostral de uma UC por campanha por ano) foram avaliados. Dessas, 230 (27%) violaram alguma regra do protocolo. Seis registros violaram duas regras, sendo estas expedições para locais de difícil acesso (i.e., PARNA do Monte Roraima). Em apenas um registro (EA-4 do PARNA Mapinguari na segunda campanha de 2022) as três regras foram violadas (**Tabela X no Apêndice X**).  A coleta fora do período indicado para a região correspondeu a 85% das violações. O número correto de dias de amostragem por campanha não foi cumprido em 13% das EAs,  havendo tanto EAs com mais quanto com menos dias de coleta. O intervalo mínimo de 15 dias entre campanhas não foi respeitado em 7% das EAs.  
 
 O esforço amostral de borboletas frugívoras vem aumentando desde o início da implementação do Programa Monitora (exceto em 2020). Em relação a 2014, o ano de 2015 apresentou um aumento de 121% no esforço amostral. Em 2016, houve um aumento de 134%, em 2017 o esforço aumentou 67%, em 2018 houve um crescimento de 43% e em 2019 o aumento foi de 23%. Em 2020, ano com maior impacto da pandemia, houve uma queda de 74% em relação ao ano anterior. No entanto, em 2021 o esforço amostral cresceu 234%, e em 2022 o aumento foi de 36% (@fig-esforco-amostral).  
 
@@ -308,7 +312,7 @@ grafico
 
 </br>
 
-Após a correção, limpeza e validação dos dados foram contabilizadas 85.386 borboletas frugívoras capturadas de 2014 a 2022. Desse total, 915 indivíduos (1%) foram registrados como ‘NA’ em sua tribo, sem a chance de verificação por falta de fotografias. Outras 604 borboletas (0.8%), registradas como recapturas, foram desconsideradas na contagem. Na Amazônia, foram capturados 76.309 indivíduos, no Cerrado 6.378 e na Mata Atlântica 2.700 indivíduos.  
+Após a correção, limpeza e verificação dos dados foram contabilizadas 85.386 borboletas frugívoras capturadas de 2014 a 2022. Desse total, 915 indivíduos (1%) foram registrados como ‘NA’ em sua tribo, sem a chance de verificação por falta de fotografias. Outras 604 borboletas (0.8%), registradas como recapturas, foram desconsideradas na contagem. Na Amazônia, foram capturados 76.309 indivíduos, no Cerrado 6.378 e na Mata Atlântica 2.700 indivíduos.  
 
 
 ### Regiões climáticas
@@ -316,7 +320,7 @@ Após a correção, limpeza e validação dos dados foram contabilizadas 85.386 
 </br>
 
 
-Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde há alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (@Checa_2009). Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (conforme @Marengo_2001). Com base na identificação dos padrões de chuva em cada região, foram definidas seis regiões climáticas que englobam as Unidades de Conservação participantes do Programa Monitora (@fig-regioes-climaticas). As regiões climáticas são: Central, Sudoeste, Leste, Sudeste, Norte e Noroeste. Isso permite determinar o período mais adequado para a amostragem (Tabela x), considerando que o regime de chuvas é uma característica regional relevante para as borboletas frugívoras (**referência**). 
+Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde há alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (@Checa_2009). Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (@Monitora_2021). Com base na identificação dos padrões de chuva em cada região, foram definidas seis regiões climáticas que englobam as Unidades de Conservação participantes do Programa Monitora (@fig-regioes-climaticas). As regiões climáticas são: Central, Sudoeste, Leste, Sudeste, Norte e Noroeste. Isso permite determinar o período mais adequado para a amostragem (**Tabela X**), considerando que o regime de chuvas é uma característica regional relevante para as borboletas frugívoras (**referência**). 
 
 
 O número de UCs e EAs amostradas varia bastante entre as regiões (@fig-regioes-climaticas). Atualmente, nenhuma UC da região Noroeste da Amazônia participa do Programa Monitora aplicando o protocolo de borboletas frugívoras. No entanto, seria de extrema importância implementar esse protocolo em pelo menos três UCs nessa região: ESEC Juami-Japurá, PARNA do Pico da Neblina e RESEX Auatí-Paraná.  
@@ -628,7 +632,7 @@ knitr::include_graphics("imagens/cap04/bo-ucs-eas-combinados.png")
 </br>
 
 
-Para que os dados e informações neste relatório possam ser interpretados de forma adequada e com maior confiabilidade, foi estabelecido um esforço amostral mínimo para os biomas. Para cada região Amazônica, foi considerado o esforço amostral de 1.728 armadilhas/dia. Isso significa pelo menos três UCs consolidadas (i.e., 9 EAs) em que tenham sido executadas as duas campanhas (6 dias cada) no ano.  
+Para que os dados e informações neste relatório possam ser interpretados de forma adequada e com maior confiabilidade, foi estabelecido um esforço amostral mínimo para os biomas. Para cada região Amazônica, foi considerado o esforço amostral de 1.728 armadilhas/dia. Isso significa pelo menos 9 EAs amostradas por campanha ou 18 EAs amostradas no ano. Cada EA será contabilizada por campanha. Dessa forma, se uma mesma EA amostrar nas duas campanhas do ano, serão contabilizadas duas EAs.  
 
 
 
@@ -649,18 +653,6 @@ As tribos Preponini, Melanitini, Anaeini, Epicaliini, Epiphilini, Coeini e Satyr
 
 Embora ainda pouco disseminada em trabalhos acadêmicos, a assinatura de tribos de borboletas tem um papel importante em relatórios técnicos de iniciativas de monitoramento de fauna. É uma maneira viável de analisar e apresentar dados de um grupo com grande riqueza de espécies de uma região megadiversa, amostrado em uma escala tão ampla como o Brasil. 
 
-
-### Amazônia 
-
-</br>
-
-Na região climática central amazônica 25.481 borboletas frugívoras foram amostradas de 2014 a 2022. Visto que 174 não foram identificadas em nível de tribo, 25.307 indivíduos foram considerados nas análises. Desses, 43% pertencem à tribo Satyrini, a mais abundante da região, seguidos por 16% de Brassolini e 9% de Coeini. Os anos 2014 e 2020 tiveram um esforço amostral inferior àquele definido como mínimo aceitável para a região. Assim, a interpretação dos resultados nesses anos deve ser feita com cautela.  
-
-As tribos Satyrini e Brassolini foram predominantes em praticamente todos os anos amostrados na região climática central amazônica. No entanto, em 2017 houve um aumento no número de Coeini, que foi a segunda tribo mais abundante (Figura 4.5.1). As tribos indicadoras de áreas abertas/perturbadas tiveram baixíssima representação. Porém, essas tribos tiveram um aumento no número de indivíduos em 2021 (@fig-regiao-climatica-central-amazonica). 
-
-
-
-</br>
 
 ```{r preparação gráficos assinaturas}
 #| label: prep-graficos-assinaturas
@@ -833,6 +825,49 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 
 
 
+### Amazônia 
+
+
+</br>
+
+
+Na região climática sudoeste amazônica, foram amostradaos 34.525 indivíduos de borboletas frugívoras, 354 delas não identificadas e desconsideradas nas análises. Assim, 34.171 indivíduos foram identificados em nível de tribo: 48% Satyrini, 11% Brassolini e 9% Ageroniiini. Apesar de não serem maioria, a região sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini foi responsável por esse padrão, especialmente em 2019 (@fig-regiao-climatica-sudoeste-amazonica). É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, diversas espécies do gênero *Hamadryas* (e.g., *Hamadryas alicia*, *Hamadryas belladonna*, *Hamadryas velutina*) e dos gêneros *Batesia* e *Panacea* estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies na tribo que utilizam regularmente florestas abertas/perturbadas, como por exemplo *Hamadryas februa*, *Hamadryas feronia*, *Hamadryas amphinome* e *Ectima iona*, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (@Jenkins_1983).  
+
+Seguindo os padrões de diversidade da fauna e flora amazônicas (@Ribas_2019; @Luize_2024), a região sudoeste apresentou os maiores valores de números de indivíduos por esforço amostral. Apesar de tratar-se de contagem de indivíduos, é de se esperar que a riqueza e diversidade de espécies acompanhem este padrão (@DeVries_2016). Somente a partir de 2017 o esforço amostral foi adequado para representar a região (@fig-regiao-climatica-sudoeste-amazonica). 
+
+</br>
+
+```{r grafico regiao-climatica-sudoeste-amazonica}
+#| label: fig-regiao-climatica-sudoeste-amazonica
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática sudoeste. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano."
+
+# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
+regiao_interesse <- "sudoeste"
+
+# Gerar o gráfico para a região de interesse
+gerar_grafico_por_regiao(resultado_final, regiao_interesse)
+
+```
+
+
+
+</br>
+
+Na região climática central amazônica 25.481 borboletas frugívoras foram amostradas de 2014 a 2022. Visto que 174 não foram identificadas em nível de tribo, 25.307 indivíduos foram considerados nas análises. Desses, 43% pertencem à tribo Satyrini, a mais abundante da região, seguidos por 16% de Brassolini e 9% de Coeini. Os anos 2014 e 2020 tiveram um esforço amostral inferior àquele definido como mínimo aceitável para a região. Assim, a interpretação dos resultados nesses anos deve ser feita com cautela.  
+
+As tribos Satyrini e Brassolini foram predominantes em praticamente todos os anos amostrados na região climática central amazônica. No entanto, em 2017 houve um aumento no número de Coeini, que foi a segunda tribo mais abundante (Figura 4.5.1). As tribos indicadoras de áreas abertas/perturbadas tiveram baixíssima representação. Porém, essas tribos tiveram um aumento no número de indivíduos em 2021 (@fig-regiao-climatica-central-amazonica). 
+
+
+
+</br>
+
+
 ```{r grafico regiao-climatica-central-amazonica}
 #| label: fig-regiao-climatica-central-amazonica
 #| echo: false
@@ -841,7 +876,7 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática central amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática central amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "central"
@@ -863,32 +898,6 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 </br>
 
 
-Na região climática sudoeste amazônica, foram amostradaos 34.525 indivíduos de borboletas frugívoras, 354 delas não identificadas e desconsideradas nas análises. Assim, 34.171 indivíduos foram identificados em nível de tribo: 48% Satyrini, 11% Brassolini e 9% Ageroniiini. Apesar de não serem maioria, a região sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini foi responsável por esse padrão, especialmente em 2019 (@fig-regiao-climatica-sudoeste-amazonica). É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, diversas espécies do gênero *Hamadryas* (e.g., *Hamadryas alicia*, *Hamadryas belladonna*, *Hamadryas velutina*) e dos gêneros *Batesia* e *Panacea* estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies na tribo que utilizam regularmente florestas abertas/perturbadas, como por exemplo *Hamadryas februa*, *Hamadryas feronia*, *Hamadryas amphinome* e *Ectima iona*, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (Jenkins, 1983).  
-
-Seguindo os padrões de diversidade da fauna e flora amazônicas, a região sudoeste apresentou os maiores valores de números de indivíduos por esforço amostral. Apesar de tratar-se de contagem de indivíduos, é de se esperar que a riqueza e diversidade de espécies acompanhem este padrão. Somente a partir de 2017 o esforço amostral foi adequado para representar a região. 
-
-</br>
-
-```{r grafico regiao-climatica-sudoeste-amazonica}
-#| label: fig-regiao-climatica-sudoeste-amazonica
-#| echo: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática sudoeste. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano."
-
-# Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
-regiao_interesse <- "sudoeste"
-
-# Gerar o gráfico para a região de interesse
-gerar_grafico_por_regiao(resultado_final, regiao_interesse)
-
-```
-
-
-</br>
 
 Na região climática leste amazônica foram amostradas 7.969 borboletas frugívoras, com 67 indivíduos não identificados em nível de tribo. Assim, dos 7.902 indivíduos de borboletas frugívoras identificados na região leste da Amazônia, 46% corresponderam à tribo Satyrini, a mais representativa, seguida por Brassolini (15%) e Morphini (11%). Os anos 2016, 2017 e 2020 tiveram amostragens abaixo do esforço adequado para representar a região.  
 
@@ -904,7 +913,7 @@ O padrão da proporção da abundância das tribos foi bastante estável, com po
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática leste amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. "
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática leste amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano. "
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "leste"
@@ -917,9 +926,11 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 </br>
 
 
-Ao todo, foram amostrados 5.042 indivíduos de borboletas frugívoras na região sudeste amazônica. Desses, 48 indivíduos foram descartados na análise por não terem sido identificados. Assim, 4.994 borboletas frugívoras foram identificadas em nível de tribo. Dentre as mais abundantes destacaram-se Satyrini (58%), Epicaliini (11%) e Morphini (11%).  
 
-Apesar do baixo número de UCs nesta região, o padrão da proporção das tribos ao longo dos anos variou pouco (@fig-regiao-climatica-sudeste-amazonica). 
+Na região climática sudeste amazônica a amostragem não atingiu o valor mínimo do esforço amostral estabelecido para as análises. Esta é uma região com somente duas UCs aplicando o protocolo de borboletas frugívoras e se faz necessário o aumento no número de UCs participantes.  
+
+
+Ao todo, foram amostrados 5.042 indivíduos de borboletas frugívoras na região sudeste amazônica. Desses, 48 indivíduos foram descartados na análise por não terem sido identificados. Assim, 4.994 borboletas frugívoras foram identificadas em nível de tribo. Dentre as mais abundantes destacaram-se Satyrini (58%), Epicaliini (11%) e Morphini (11%). O padrão da proporção das tribos ao longo dos anos variou pouco (@fig-regiao-climatica-sudeste-amazonica), provavelmente pelo baixo número de UCs, visto que amostragens em diferentes UCs tendem a capturar diferentes padrões, mesmo numa mesma região (e.g., região sudoeste).  
 
 
 </br>
@@ -932,7 +943,7 @@ Apesar do baixo número de UCs nesta região, o padrão da proporção das tribo
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática sudeste amazônica. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática sudeste amazônica. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "sudeste"
@@ -961,7 +972,7 @@ O padrão da assinatura das tribos nos anos não variou drasticamente. Porém, o
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2017 a 2022 na região climática norte amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem. "
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2017 a 2022 na região climática norte amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano. O asterisco indica tribo ausente na amostragem. "
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "norte"
@@ -980,7 +991,7 @@ gerar_grafico_por_regiao(resultado_final, regiao_interesse)
 
 Até o momento, poucas UCs dos biomas Cerrado e Mata Atlântica aplicaram o protocolo de amostragem de borboletas frugívoras. Dessa forma, os resultados apresentados aqui requerem cautela na interpretação. 
 
-No Cerrado foram amostrados 6.378 indivíduos (67 deles não identificados em nível de tribo), sendo 6.311 considerados nas análises. As tribos mais representativas no Cerrado foram Satyrini, Ageroniini e Biblidini com 40%, 14% e 8%, respectivamente. 
+No Cerrado foram amostrados 6.378 indivíduos (67 deles não identificados em nível de tribo), sendo 6.311 considerados nas análises. As tribos mais representativas no Cerrado foram Satyrini, Ageroniini e Biblidini com 40%, 14% e 8%, respectivamente. É importante ressaltar que as amostragens no Cerrado foram feitas em ambientes mésicos, ou seja, em ambientes florestais úmidos imersos no ambiente savânico. Estes ambientes podem ser capões de mata ou matas ripárias. Dessa forma, é de se esperar que tribos indicadoras tanto de florestas úmidas quanto de florestas abertas sejam representadas.
 
 Os padrões anuais apresentaram grandes variações na proporção das tribos indicadoras, especialmente de Brassolini, Morphini, Biblidini e Ageroniini (@fig-regiao-cerrado). 
 
@@ -996,7 +1007,7 @@ Os padrões anuais apresentaram grandes variações na proporção das tribos in
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano. O asterisco indica tribo ausente na amostragem."
 
 # Gráficos de dados Borboletas - Protocolo básico - Cerrado -
 ### Tribos com asterisco estão ausentes nos dados
@@ -1163,7 +1174,7 @@ graficos <- lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_fin
 
 Na Mata Atlântica 2.700 borboletas frugívoras foram amostradas. Dessas, 16 não foram identificadaos no nível de tribo, de modo que 2.684 indivíduos amostrados foram considerados na análise. A tribo Satyrini foi a mais representativa, com 27% dos indivíduos, seguida por Anaeini, com 24% e Epicaliini, com 14%. 
 
-Houve uma grande variação das tribos entre anos, especialmente de Brassolini, Anaeini, Coeini e Satyrini (@fig-regiao-mata-atlantica). Verificou-se também grande variação no número de indivíduos, mesmo quando com um mesmo esforço amostral, indicando haver de fato diferenças na abundância entre regiões. Assim, é de extrema importância que as amostragens sejam feitas continuamente nas mesmas UCs e que, com a adesão de novas unidades de conservação da região ao programa de monitoramento, as amostragens nas UCs com protocolo de borboletas frugívoras já implementado sejam mantidas. 
+Houve uma grande variação das tribos entre anos, especialmente de Brassolini, Anaeini, Coeini e Satyrini (@fig-regiao-mata-atlantica). Verificou-se também grande variação no número de indivíduos, mesmo quando com um mesmo esforço amostral, indicando haver de fato diferenças na abundância entre regiões no bioma. O padrão das tribos do bioma reflete, principalmente, o padrão registrado no Parque Nacional do Iguaçu. Assim, é de extrema importância que as amostragens sejam feitas continuamente nas mesmas UCs e que, com a adesão de novas unidades de conservação da região ao programa de monitoramento, as amostragens nas UCs com protocolo de borboletas frugívoras já implementado sejam mantidas. 
 
 
 
@@ -1357,13 +1368,13 @@ Para avaliar as flutuações dos índices de abundância ao longo dos anos, fora
 
 </br>
 
-O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo do número de indivíduos por ano (*n*), é feita uma correção, somando um número muito pequeno de forma a evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida (*f* = *n* + 0.00001). Em seguida, é calculada a frequência absoluta corrigida pelo esforço amostral (*fe*) para padronização: *fe* = *f* / (número de armadilhas * dias de amostragem). O índice de abundância (*i*) é calculado através da divisão da fe do ano específico sobre o valor da *fe* do primeiro ano em que aquela “população” foi registrada. Foi considerada primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência (*i*~0~) é padronizado com o valor 1,0. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, foi feita uma transformação logarítmica (*log*~10~ + 1) do índice de abundância. Assim, valores acima de 1,0 indicam um aumento "populacional" referente ao primeiro ano e valores abaixo de 1,0 indicam uma redução "populacional".  
+O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo do número de indivíduos por ano (*n*), é feita uma correção, somando um número muito pequeno de forma a evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida (*f* = *n* + 0,00001). Em seguida, é calculada a frequência absoluta corrigida pelo esforço amostral (*fe*) para padronização: *fe* = *f* / (número de armadilhas * dias de amostragem). O índice de abundância (*i*) é calculado através da divisão da fe do ano específico sobre o valor da *fe* do primeiro ano em que aquela “população” foi registrada. Foi considerada primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência (*i*~0~) é padronizado com o valor 1,0. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, foi feita uma transformação logarítmica (*log*~10~ + 1) do índice de abundância. Assim, valores acima de 1,0 indicam um aumento "populacional" referente ao primeiro ano e valores abaixo de 1,0 indicam uma redução "populacional".  
 
 
 Neste relatório, foram feitas duas abordagens do índice de abundância. O primeiro se refere à flutuação do índice de abundância em relação ao ano anterior. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem: 
 
 
-$$f_{3} = n + 000001$$ 
+$$f_{3} = n + 0,00001$$ 
 
 $$fe_{3} = f_{3} / \text{esforço} \, \text{anual}$$ 
 
@@ -1378,7 +1389,7 @@ Esta abordagem revela, por exemplo, o quanto a "população" está se 'recuperan
 
 A segunda abordagem segue o princípio do *Live Planet Index* (LPI), no qual os índices de abundância dos anos amostrados fazem referência ao primeiro ano em que a "população" foi registrada. Esta flutuação "populacional" pode ser vista nas figuras abaixo. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem: 
 
-$$f_{3} = n + 000001$$ 
+$$f_{3} = n + 0,00001$$ 
 
 
 $$fe_{3} = f_{3} / \text{esforço} \, \text{anual}$$ 
@@ -1392,54 +1403,12 @@ $$i_{3} = log_{10} (fe_{3} / fe_{0}) + 1$$
 
 </br>
 
-Na primeira abordagem utilizada para o índice de abundância, comparamos os valores de cada ano referente ao ano anterior. Na região climática central Amazônica, as tribos indicadoras de florestas abertas/perturbadas tiveram um aumento 'populacional' em 2017 referente a 2016, porém, houve uma redução nos anos de 2018 e 2019 (Tabela xx). Em 2020 e 2021, os valores aumentaram consecutivamente, mas em 2022 houve uma grande redução 'populacional' (Tabela xx). No caso das borboletas de florestas fechadas/preservadas, notou-se uma oscilação de crescimento e redução 'populacional' ao longo dos anos, com crescimento nos anos de 2020 e 2021 (Tabela xx). 
+Na primeira abordagem utilizada para o índice de abundância, os valores de cada ano foram comparados ao valor do ano anterior. Na região climática sudoeste amazônica foi observada uma redução de Ageroniini (a única tribo representante das borboletas indicadoras de florestas abertas/perturbadas na região) nos anos de 2017 e 2018, mas um aumento considerável da tribo em 2019. Devido a este grande crescimento populacional de Ageroniini e do esforço amostral na região em 2019 (2.122 indivíduos amostrados em 76 EAs)o ano de 2020 apresentou uma redução drástica no índice, tanto devido ao baixo número de indivíduos de Ageroniini (n = 42), quanto à redução do esforço amostral para 26 EAs. No ano de 2021 houve um aumento do índice em relação ao ano anterior, e uma pequena redução em 2022 (Tabela 1).  
 
-
-</br>
-
-
-Na região climática central amazônica.... 
+As borboletas indicadoras de florestas fechadas/preservadas, por outro lado, seguiram o padrão inverso apresentado pelas borboletas indicadoras de florestas abertas/perturbadas, exceto em 2018, quando também sofreu uma redução do índice (Tabela 1). Esta é uma dinâmica "populacional" esperada, visto que as borboletas indicadoras de florestas fechadas e florestas abertas possuem requerimentos ambientais e climáticos contrastantes. 
 
 </br>
 
-```{r tab_ind_abund_regiao_central}
-#| label: tbl-ind-abund-regiao-central
-#| echo: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| fig.align: "center"
-#| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano da Região Climática Central Amazônica."
-
-
-# tab_ind_abund_regiao_central <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_regiao_central.csv")
-# 
-# tabela_indice_abund_regiao_central <- kbl(tab_ind_abund_regiao_central,
-#              booktabs = TRUE,
-#              longtable = TRUE, 
-#              caption = "Índice de abundância das tribos indicadoras de cada ano da Região Climática Central Amazônica. Os valores dos índices estão em referência ao ano anterior. Nos anos em negrito, o esforço amostral foi menor que 1.728 armadilhas/dia e os dados devem ser interpretados com cautela. 'NA' indica que a primeira ocorrência apresentou uma abundância < 20 indivíduos no ano e assim não foi considerada na análise.",
-#              col.names = c(" ", "[2014]", "2015", "2016", "2017", "2018", "2019", "[2020]", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
-#   #row_spec(0, bold = F) |> 
-#     # column_spec(3, italic = TRUE) %>%
-# kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}") 
-# 
-# 
-# tabela_indice_abund_regiao_central
-
-
-knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-central-amazonica.png")
-
-
-```
-</br>
-</br>
-</br>
-
-Na região climática sudoeste amazônica.... 
-
-</br>
 
 ```{r tab_ind_abund_regiao_sudoeste}
 #| label: tbl-ind_abund_regiao_sudoeste
@@ -1450,7 +1419,7 @@ Na região climática sudoeste amazônica....
 #| fig.pos: 'H'
 #| fig.align: "center"
 #| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano da Região Climática Sudoeste Amazônica."
+#| tbl-cap: "Índice de abundância das tribos indicadoras na Região Climática Sudoeste Amazônica."
 
 
 # tab_ind_abund_regiao_sudoeste <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_regiao_sudoeste.csv")
@@ -1468,18 +1437,54 @@ Na região climática sudoeste amazônica....
 # tabela_indice_abund_regiao_sudoeste
 
 
-knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-sudoeste-amazonica.png")
+knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-sudoeste-amazonica.JPG")
 
 ```
 
-
-</br>
-</br>
 </br>
 
-Na região climática leste amazônica.... 
+Na região climática central amazônica, as tribos indicadoras de florestas abertas/perturbadas, representadas somente por Ageroniini, tiveram  um aumento “populacional” em 2017 em relação a 2016, com uma subsequente redução nos anos de 2018 e 2019 (Tabela 2). A partir de 2020, houve um pequeno aumento em relação ao ano anterior e em 2021 esta tribo apresentou um grande aumento “populacional”. Porém, no ano seguinte, houve uma grande redução “populacional” desse grupo de borboletas (Tabela 2). No caso das borboletas de florestas fechadas/preservadas, notou-se uma oscilação de crescimento e redução “populacional” ao longo dos anos, com crescimento nos anos de 2020 e 2021 (Tabela 2). Os grupos indicadores tiveram o mesmo padrão de crescimento "populacional" em relação ao ano anterior em 2019, 2020 e 2021, ambos com diminuição "populacional " em 2022 (Tabela 2). 
 
 </br>
+
+```{r tab_ind_abund_regiao_central}
+#| label: tbl-ind-abund-regiao-central
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| fig.align: "center"
+#| out.width: '70%'
+#| tbl-cap: "Índice de abundância das tribos indicadoras na Região Climática Central Amazônica."
+
+
+# tab_ind_abund_regiao_central <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_regiao_central.csv")
+# 
+# tabela_indice_abund_regiao_central <- kbl(tab_ind_abund_regiao_central,
+#              booktabs = TRUE,
+#              longtable = TRUE, 
+#              caption = "Índice de abundância das tribos indicadoras de cada ano da Região Climática Central Amazônica. Os valores dos índices estão em referência ao ano anterior. Nos anos em negrito, o esforço amostral foi menor que 1.728 armadilhas/dia e os dados devem ser interpretados com cautela. 'NA' indica que a primeira ocorrência apresentou uma abundância < 20 indivíduos no ano e assim não foi considerada na análise.",
+#              col.names = c(" ", "[2014]", "2015", "2016", "2017", "2018", "2019", "[2020]", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
+#   #row_spec(0, bold = F) |> 
+#     # column_spec(3, italic = TRUE) %>%
+# kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}") 
+# 
+# 
+# tabela_indice_abund_regiao_central
+
+
+knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-central-amazonica.JPG")
+
+
+```
+
+</br>
+
+Na região climática leste amazônica as tribos indicadoras de florestas fechadas e abertas apresentaram padrões de crescimento e diminuição "populacional" similares ao longo dos anos, com exceção de 2022, quando borboletas indicadoras de florestas abertas tiveram um aumento "populacional” em relação ao ano anterior, enquanto as borboletas indicadoras de florestas fechadas apresentaram uma redução (Tabela 3). Apesar dos mesmos padrões, as proporções das mudanças "populacionais" de um ano para o outro entre os dois grupos indicadores foram diferentes. 
+
+</br>
+
 
 ```{r tab_ind_abund_regiao_leste}
 #| label: tbl-ind_abund_regiao_leste
@@ -1490,7 +1495,7 @@ Na região climática leste amazônica....
 #| fig.pos: 'H'
 #| fig.align: "center"
 #| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano da Região Climática Leste Amazônica."
+#| tbl-cap: "Índice de abundância das tribos indicadoras na Região Climática Leste Amazônica."
 
 
 # tab_ind_abund_regiao_leste <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_regiao_leste.csv")
@@ -1507,17 +1512,15 @@ Na região climática leste amazônica....
 # 
 # tabela_indice_abund_regiao_leste
 
-knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-leste-amazonica.png")
+knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-leste-amazonica.JPG")
 
 
 ```
 
 
 </br>
-</br>
-</br>
 
-Na região climática sudeste amazônica.... 
+A região climática sudeste amazônica não apresentou, em nenhum ano amostrado, o número mínimo de borboletas indicadoras de florestas abertas/perturbadas para que o índice fosse calculado (Tabela 4). No entanto, as borboletas indicadoras de florestas fechadas/preservadas mostraram uma oscilação "populacional" entre os anos (Tabela 4).  
 
 </br>
 
@@ -1530,7 +1533,7 @@ Na região climática sudeste amazônica....
 #| fig.pos: 'H'
 #| fig.align: "center"
 #| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano da Região Climática Sudeste Amazônica."
+#| tbl-cap: "Índice de abundância das tribos indicadoras na Região Climática Sudeste Amazônica."
 
 
 # tab_ind_abund_regiao_sudeste <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_regiao_sudeste.csv")
@@ -1547,17 +1550,15 @@ Na região climática sudeste amazônica....
 # 
 # tabela_indice_abund_regiao_sudeste
 
-knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-sudeste-amazonica.png")
+knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-sudeste-amazonica.JPG")
 
 
 ```
 
 
 </br>
-</br>
-</br>
 
-Na região climática norte amazônica.... 
+Na região climática norte amazônica os grupos indicadores apresentaram um número mínimo de indivíduos para o cálculo do índice apenas a partir de 2018. Os padrões dos dois grupos foram congruentes em todos os anos, exceto em 2022, quando a abundância de borboletas indicadoras de florestas abertas/perturbadas aumentou em relação ao ano anterior e as borboletas indicadoras de florestas fechadas/preservadas mostraram uma pequena redução (Tabela 5). 
 
 </br>
 
@@ -1570,7 +1571,7 @@ Na região climática norte amazônica....
 #| fig.pos: 'H'
 #| fig.align: "center"
 #| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano da Região Climática Norte Amazônica."
+#| tbl-cap: "Índice de abundância das tribos indicadoras na Região Climática Norte Amazônica."
 
 
 # tab_ind_abund_regiao_norte <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_regiao_norte.csv")
@@ -1588,7 +1589,7 @@ Na região climática norte amazônica....
 # tabela_indice_abund_regiao_norte
 
 
-knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-norte-amazonica.png")
+knitr::include_graphics("imagens/cap04/tbl-IA-regiao-climatica-norte-amazonica.JPG")
 
 ```
 
@@ -1610,7 +1611,7 @@ No cerrado....
 #| fig.pos: 'H'
 #| fig.align: "center"
 #| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano no Cerrado."
+#| tbl-cap: "Índice de abundância das tribos indicadoras no Cerrado."
 
 
 # tab_ind_abund_cerrado <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_cerrado.csv")
@@ -1627,7 +1628,7 @@ No cerrado....
 # 
 # tabela_indice_abund_cerrado
 
-knitr::include_graphics("imagens/cap04/tbl-IA-cerrado.png")
+knitr::include_graphics("imagens/cap04/tbl-IA-cerrado.JPG")
 
 
 ```
@@ -1650,7 +1651,7 @@ Na Mata Atlântica....
 #| fig.pos: 'H'
 #| fig.align: "center"
 #| out.width: '70%'
-#| tbl-cap: "Índice de abundância das tribos indicadoras de cada ano na Mata Atlântica."
+#| tbl-cap: "Índice de abundância das tribos indicadoras na Mata Atlântica."
 
 
 # tab_ind_abund_mata_atlantica <- read_csv2("dados/tabelas/borboletas/tab_ind_abund_mata_atlantica.csv")
@@ -1667,7 +1668,7 @@ Na Mata Atlântica....
 # 
 # tabela_indice_abund_mata_atlantica
 
-knitr::include_graphics("imagens/cap04/tbl-IA-mata-atlantica.png")
+knitr::include_graphics("imagens/cap04/tbl-IA-mata-atlantica.JPG")
 
 
 ```
@@ -1678,7 +1679,14 @@ knitr::include_graphics("imagens/cap04/tbl-IA-mata-atlantica.png")
 </br>
 
 
-De forma geral, qualquer variação na quantidade de borboletas capturadas causou grandes variações no índice de abundância. Portanto, concluímos que o uso desse índice para “populações” pequenas não é aconselhável. Cabe avaliar se, com o aumento no esforço amostral e uma suposta ampliação na quantidade de dados acumulados, com reflexos no tamanho das populações analisadas, o método nos permitirá discriminar variações biologicamente significativas, associadas a algum tipo de alteração ambiental, de meras pequenas oscilações naturais casuais e erráticas nessas populações. 
+Na segunda abordagem utilizada  o índice de abundância é calculado em relação à primeira ocorrência do grupo indicador com número de capturas ≥ 20 indivíduos. Os resultados dessa abordagem são apresentados graficamente na Figura 4 e os valores dos índices para cada tribo encontram-se na **tabela X** do **Apêndice Y**. 
+
+Os resultados obtidos para os grupos de borboletas indicadoras não foram uniformes nas diferentes regiões climáticas da Amazônia ao longo dos anos. Enquanto nas regiões central, sudoeste e norte o índice de abundância indicou um aumento ou estabilidade na abundância das borboletas de florestas fechadas/preservadas, uma diminuição "populacional" foi indicada nas regiões leste e sudeste. Este é um resultado interessante, visto que as regiões sudeste e leste da Amazônia fazem parte do chamado "arco do desmatamento" e sofrem com os avanços de intervenções humanas como a pecuária, plantações de soja e construções de estradas (**referências**). Dessa forma, a diminuição de borboletas indicadoras de florestas fechadas/preservadas nessas regiões pode ser um indicativo da diminuição da cobertura florestal em  nível regional, visto que as amostragens são executadas em UCs que não sofrem diretamente com estas ameaças. Porém, para que esta hipótese seja avaliada adequadamente faz-se necessário obter e incluir em futuras análises dados ambientais e climáticos na escala da região.  
+
+
+As tribos indicadoras de florestas abertas/perturbadas apresentaram, em sua maioria, redução "populacional", especialmente após de 2020. Os únicos picos de aumento "populacional" deste grupo ocorreram em 2019, na região sudoeste da Amazônia, e em 2021, na região central. As regiões norte, leste e sudoeste (a partir de 2020) se destacaram pelas reduções e na região sudeste não foi obtido o número mínimo de 20 indivíduos para o cálculo do índice. Para entender este resultado serão necessárias análises mais refinadas utilizando imagens de satélite, dados climáticos e ambientais. No entanto, a diminuição populacional desse grupo deve, idealmente, ser avaliada num nível taxonômico mais fino, preferencialmente de espécie, para que a interpretação seja mais adequada, especialmente em relação à tribo Ageroniini.  
+
+ 
 
 </br>
 
@@ -3305,9 +3313,17 @@ knitr::include_graphics("imagens/cap04/bo-indice-abundancia-mata-atlantica.png")
 </br>
 
 
-#### Efeito da queda dos tabocais nas RESEXs do Cazumbá-Iracema, do Alto Tarauacá, Riozinho da Liberdade e Chico Mendes e no PARNA da Serra do Divisor
+#### Efeito da queda dos tabocais na abundância das tribos de borboletas frugívoras no sudoeste da Amazônia  
 
+</br>
 
+Na região sudoeste da Amazônia, especialmente no estado do Acre, encontra-se uma vasta área de florestas de bambuzais do gênero *Guadua*, chamadas localmente de 'tabocal'. Estas florestas se estendem por uma superfície de aproximadamente 162.000 km^2^, na qual uma única população de bambu pode ocupar uma área de 330 km^2^ (@Carvalho_2013). Essas populações de taboca têm um ciclo de vida que varia de 27-28 anos (@Carvalho_2013). A população entra em senescência após sua reprodução sexuada, inicialmente com a perda de folhas dos indivíduos e, no fim, com sua sua morte e queda. As manchas de bambu são densas e altas e, ao morrerem, deixam uma grande porção de floresta aberta. 
+
+Algumas UCs do Acre possuem extensas manchas florestas de tabocal e,  nos últimos anos, foram relatadas mortes de diversas dessas populações (Silveira, comm. pers.). Porém, essa mortalidade não é imediata e a senescência dessas manchas pode levar mais de um ano. Há relatos da mortalidade de extensas áreas de tabocal de 2017 a 2021 nas seguintes UCs do Programa Monitora: RESEX do Cazumbá-Iracema (2017 e 2018), RESEX do Alto Tarauacá e RESEX Chico Mendes (2018) e RESEX Riozinho da Liberdade (2021). 
+
+Para avaliar se a mortalidade das manchas de tabocal influenciou a abundância das tribos de borboletas frugívoras em cada UC, foi feito uma comparação entre anos para cada tribo, por meio do teste de Wilcoxon (ou teste U de Mann-Whitney). Este teste compara as medianas das abundâncias padronizadas pelo esforço amostral dos anos específicos com a mediana geral (a soma das medianas dos anos específicos dividida pelo número de anos). Um valor de *p* ≤ 0.01 indica que houve diferença significativa entre a mediana do ano específico e a mediana geral. Admitindo-se  que um evento de distúrbio na floresta pode influenciar a comunidade de borboletas tanto no mesmo ano quanto no ano seguinte, essas duas possibilidades foram consideradas na interpretação dos resultados. O valor de *p* considerado foi de 0.01, para que apenas efeitos mais fortes fossem detectados nos testes. As análises também foram aplicadas às tribos de borboletas do PARNA Serra do Divisor, local considerado "controle", por não apresentar florestas de taboca. 
+
+Na RESEX do Cazumbá-Iracema, as tribos Brassolini e Morphini, indicadoras de florestas fechadas/preservadas, mostraram um aumento significativo na mediana da abundância no ano seguinte à mortalidade dos tabocais (@fig-abundancia-resex-cazumba-iracema-combinada). Este resultado é oposto ao esperado, pois com a morte dos tabocais a floresta fica mais aberta e menos propícia às espécies das tribos de floresta fechada. No entanto, a tribo Ageroniini, indicadora de florestas abertas/perturbadas, parece ter respondido à esta perturbação ambiental, visto que o aumento da mediana da abundância foi expressivo, resultando num valor quase 20 vezes maior do que o da mediana geral (@fig-abundancia-resex-cazumba-iracema-combinada). Outra tribo que também pode ter respondido à queda dos tabocais foi Coeini (@fig-abundancia-resex-cazumba-iracema-combinada) que, apesar de não ser uma tribo indicadora, têm espécies que são comuns no dossel e florestas abertas. 
 
 </br>
 
@@ -5121,18 +5137,20 @@ imagem_combinada <- grid.arrange(grobs = lista_graficos, ncol = 3)
 
 </br>
 
-- Ampliar o número de unidades de conservação com aplicação do protocolo de borboletas frugívoras (Básico e Avançado) nos biomas Mata Atlântica e Cerrado; 
+- Ampliar o número de unidades de conservação com aplicação do protocolo de borboletas frugívoras (Básico e Avançado) nos biomas Mata Atlântica e Cerrado, dado que esses biomas não chegaram a atingir a suficiência amostral em nenhum ano desde o início do Programa; 
 
-- Na Região Climática Noroeste da Amazônia, implementar o protocolo de borboletas frugívoras em pelo menos três UCs, preferencialmente na ESEC Juami-Japurá, no PARNA do Pico da Neblina e na RESEX Auatí-Paraná;  
+- Na Região Climática Noroeste da Amazônia, implementar o protocolo de borboletas frugívoras em pelo menos três UCs (9 EAs), preferencialmente na ESEC Juami-Japurá, no PARNA do Pico da Neblina e na RESEX Auatí-Paraná;  
 
 - Ampliar o número de UCs com aplicação do protocolo de borboletas frugívoras nas regiões do médio e baixo rio Juruá, regiões carentes de amostragem de borboletas e de extrema importância biológica. É sugerida a implementação nas RESEX Médio e Baixo Juruá e na FLONA de Tefé;  
 
-- Ampliar o número de UCs com aplicação do protocolo de borboletas frugívoras na Região Climática Sudeste Amazônica. Sugere-se a implementação na FLONA de Carajás, na REBIO Nascentes da Serra do Cachimbo e na ESEC Iquê; 
+- Ampliar o número de UCs com aplicação do protocolo de borboletas frugívoras na Região Climática Sudeste Amazônica de forma que seja alcançada a suficiência amostral de 9 EAs. Sugere-se a implementação na FLONA de Carajás, na REBIO Nascentes da Serra do Cachimbo e na ESEC Iquê;  
 
 - Consolidar a implantação do protocolo de borboletas frugívoras naquelas unidades de conservação ainda não consolidadas, de forma que as UCs contem com pelo menos três estações amostrais implantadas e em operação; 
 
 - Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral, em especial quanto ao respeito aos períodos de coleta definidos para cada região e em relação ao esforço amostral (número de dias de amostragens em cada EA); 
 
-- Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo. 
+- Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;  
+
+- A COMOB deve divulgar novamente os períodos indicados para amostragem nas diferentes regiões, dado que ainda há várias UCs amostrando for a desse período. 
 
 ::: 

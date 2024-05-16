@@ -1,4 +1,9 @@
-```{r library, echo=FALSE, message=FALSE, warning=FALSE}
+```{r pacotes}
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
 
 library(tidyverse)
 library(data.table)
@@ -19,6 +24,7 @@ library(randomcoloR)
 library(gridExtra)
 library(here)
 library(htmlTable)
+
 ```
 
 # Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas
@@ -87,7 +93,7 @@ O esforço de amostragem nos nove anos considerados neste relatório corresponde
 
 
 
-```{r processamento dos dados}
+```{r carregamento e processamento dos dados}
 #| echo: false
 #| include: false
 #| message: false
@@ -96,14 +102,11 @@ O esforço de amostragem nos nove anos considerados neste relatório corresponde
 
 # Carregando os dados no formato .csv
 
-masto_aves_csv <-
-  read_csv2("dados/mastoaves/base_masto_aves_esforco_corrigido.csv")
+masto_aves_csv <- read_csv2("dados/mastoaves/base_masto_aves_esforco_corrigido.csv")
 
-# Nesse arquivo "base_masto_aves_eforco_corrigido.csv" a coluna de esforço 
+# No arquivo "base_masto_aves_eforco_corrigido.csv" a coluna de esforço 
 # foi corrigida, visto que os valores estavam sem o ponto decimal, 
 # indicando quantidades 10 vezes superiores ao valor real (ex.: 45 km e vez de 4.5 km)
-
-
 
 # Convertendo os dados para o formato .rds
 
@@ -114,18 +117,16 @@ masto_aves <- readRDS("dados/mastoaves/masto_aves.rds")
 # Carregando a planilha com a UCs classificadas por grupo - proteção integral x
 # uso sustentável
 
-ucs_grupos <-
-  read_csv2("dados/ucs/ucs_grupos.csv")
+ucs_grupos <- read_csv2("dados/ucs/ucs_grupos.csv")
 
 
-# Juntando planilha ucs_grupos com a planilha masto_aves
+# Juntando a planilha ucs_grupos com a planilha masto_aves
 
-masto_aves <-
-  left_join(masto_aves, ucs_grupos, by = "cnuc")
+masto_aves <- left_join(masto_aves, ucs_grupos, by = "cnuc")
 
 #View(masto_aves)
 
-# Criando a coluna biomas
+# Corrigindo os nomes dos biomas
 
 masto_aves <- masto_aves %>% 
 mutate(
@@ -147,6 +148,13 @@ mutate(
 
 #unique(masto_aves$bioma)
 
+# Contando o número de UCs por bioma
+
+ucs_bioma <- masto_aves |> 
+  group_by(bioma) |> 
+  distinct(uc) |> 
+  summarise(ucs = n())
+
 # Corrigindo a lista de primatas - alterando registros na coluna "taxon_validado": 
 # Mico spp para Mico sp e "Callicebus spp" para "Callicebus sp"
 
@@ -160,7 +168,8 @@ mutate(
     TRUE ~ taxon_validado))
 
 
-# Alterando o nome da espécie de veado de Ozotocerus para Mazama na ESEC Maracá
+
+# Alterando o nome da espécie de veado na ESEC de Maracá de Ozotocerus para Mazama
 
 masto_aves <- masto_aves %>% 
 mutate(
@@ -170,17 +179,7 @@ mutate(
 
 
 
-# Corrigindo validação de Ozotocerus em Roraima
-
-masto_aves <- masto_aves %>%
-mutate(
-  taxon_validado = case_when(
-    uc == "Esec de Maracá" & especie == "Ozotocerus bezoarticus" ~ NA_character_,
-  TRUE ~ taxon_validado))
-
-
 # Corrigindo validação de Ortalis motmot para algumas UCs -> Ortalis rucifeps
-
 
 masto_aves <- masto_aves %>%
 mutate(
@@ -193,12 +192,17 @@ mutate(
     uc == "Resex Verde para Sempre" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
   TRUE ~ taxon_validado))
 
-aves1 <- masto_aves |>
-  filter(classe == "Aves")
 
-unique(aves1$taxon_validado)
+# Checando o ajuste de Ortalis ruficeps
 
-# Alterando nome da ordem de Artiodactyla para Cetartiodactyla
+# aves1 <- masto_aves |>
+#   filter(classe == "Aves")
+# 
+# unique(aves1$taxon_validado)
+
+
+
+# Alterando o nome da ordem de Artiodactyla para Cetartiodactyla
 
 masto_aves <- masto_aves %>%
 mutate(
@@ -209,6 +213,8 @@ mutate(
 
 unique(masto_aves$ordem)
   
+
+
 # Ajustando nomes na coluna "especie" - corrigindo espécies com sp. para sp
 
 masto_aves <- masto_aves %>%
@@ -221,6 +227,8 @@ mutate(
     especie == "Galictis sp." ~  "Galictis sp",
   TRUE ~ especie)) 
 
+
+# Checando táxons de primatas
 
 # list_primatas <- masto_aves |>
 #   filter(ordem == "Primates")
@@ -239,7 +247,9 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 
 ```
 
-```{r grafico 1 esforço Elildo}
+
+
+```{r grafico 1 de esforço 1 - Elildo}
 #| label: fig-esforco-acumulado-script
 #| echo: false
 #| message: false
@@ -250,20 +260,16 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 #| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos nas unidades de conservação integrantes do Programa Monitora de 2014 a 2022."
 
 
-# scripts para produzir 3 graficos para o relatorio florestal
-# Elildo Carvalho Jr & Marcos Fialho
-
-# Obs 1: outros graficos produzidos anteriormente (incluindo taxas de crescimento de populacoes,
-# media geometrica das tendencias etc ja foram entregues, Rmarkdown para gera-los esta em outro arquivo 
+# Scripts Gráfico 1 de esforço 
+# Autores: Elildo Carvalho Jr & Marcos Fialho
 
 library(here)
 library(tidyverse)
 library(RColorBrewer)
-library(here)
 
-#-----------3 graficos para o relatorio florestal-------------------
 
 #----- ler dados
+
 load(here("dados", "mastoaves", "monitora.RData"))
 
 monitora <- monitora %>%
@@ -326,9 +332,9 @@ mutate(
 
 #unique(monitora$uc)
   
-  
 
-#----- grafico de esforco anual e acumulado por bioma
+#----- gráfico de esforco anual e acumulado por bioma
+
 monitora %>%
   filter(ano != 2023) %>%
   distinct(bioma, uc, ano, ea, data, esforco) %>%
@@ -352,24 +358,22 @@ monitora %>%
   facet_wrap(~ bioma, scales = "free") +
   labs(x = "Ano")
 
+# Salvando o gráfico
 
-
-
-# salvar
-# ggsave("imagens/cap05/ma_esforco_acumulado1.jpg",
-#        plot = last_plot(),
-#        device =  "jpeg",
-#        scale=1.5,
-#        width = 210,
-#        height = 70,
-#        units = "mm",
-#        dpi = 120)
+ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
+       #plot = last_plot(),
+       device =  "jpeg",
+       scale=1.5,
+       width = 210,
+       height = 70,
+       units = "mm",
+       dpi = 120)
 
 ```
 
 </br>
 
-```{r gráfico 2 esforço Elildo}
+```{r gráfico de esforço 2 - Elildo}
 #| label: fig-taxons-acumulados-script
 #| echo: false
 #| message: false
@@ -380,6 +384,7 @@ monitora %>%
 #| fig-cap: "Táxons registrados acumulados (linha) e número de unidades de conservação (barras verticais) com protocolo básico de mamíferos e aves executado por ano, de 2014 a 2022."
 
 #----- grafico com numero de UCs ativas e numero acumulado de encontros por ano
+
 monitora %>%
   filter(ano != 2023) %>%
   distinct(bioma, uc, ano, ea, data, esforco) %>%
@@ -418,16 +423,17 @@ monitora %>%
   #   plot.background = element_rect(fill = "white")) +
   labs(x = "Ano")
 
-# ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado1.jpg",
-#        plot = last_plot(),
-#        device =  "jpeg",
-#        scale=1.5,
-#        width = 210,
-#        height = 70,
-#        units = "mm",
-#        dpi = 120)
 
+# Salvando o gráfico
 
+ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
+       #plot = last_plot(),
+       device =  "jpeg",
+       scale=1.5,
+       width = 210,
+       height = 70,
+       units = "mm",
+       dpi = 120)
 
 ```
 
@@ -436,7 +442,7 @@ monitora %>%
 Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve tanto ao maior número de unidades de conservação integrando o Programa Monitora nesse bioma, quanto ao esforço médio empregado por cada unidade de conservação (@fig-esforco-total-uc-bioma-script). As unidades no Cerrado e na Mata Atlântica são menores e nem sempre comportam a rede recomendada de transecções: três estações amostrais de cinco quilômetros cada. Ademais, custear as atividades de campo nesses biomas geralmente é mais difícil, dada a maior disponibilidade de financiamento internacional para programas de monitoramento na Amazônia.
 
 
-```{r gráfico 3 esforço Elildo}
+```{r gráfico de esforço 3 - Elildo}
 #| label: fig-esforco-total-uc-bioma-script
 #| echo: false
 #| message: false
@@ -447,6 +453,7 @@ Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve 
 #| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano, de 2014 a 2022."
 
 #----- grafico de esforco total e anual por uc/bioma
+
 pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
 
 
@@ -484,16 +491,17 @@ monitora %>%
   theme(axis.line.x=element_blank()) +
   theme(panel.grid.major.x = element_line(color = "lightgray")) 
 
-  
 
-# ggsave("imagens/cap05/ma_esforco_total_uc_bioma1.jpg",
-#        plot = last_plot(),
-#        device =  "jpeg",
-#        scale=0.6,
-#        width = 240,
-#        height = 300,
-#        units = "mm",
-#        dpi = 120)
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
+       #plot = last_plot(),
+       device =  "jpeg",
+       scale=0.6,
+       width = 240,
+       height = 300,
+       units = "mm",
+       dpi = 120)
 
 ```
 
@@ -519,11 +527,6 @@ A maioria dos registros (56%) do protocolo básico de monitoramento de mamífero
 
 # Criando paletas de cores
 
-# cores = viridis(13)
-# cores <- brewer.pal(12, "Set3")
-# cores <- colorRampPalette(c("darkblue","lightblue"))
-# cores(13)
-
 cor1 <- c(Primates = "#008B8B",
       Rodentia = "#4AB1B1",
       Tinamiformes = "#70C4C4",
@@ -546,8 +549,7 @@ cor2 <- c("#008B8B",
           "#666666"
           )
 
-cor3 <-
-  c(
+cor3 <-c(
     "#008B8B",
     "#129494",
     "#008B8B",
@@ -568,17 +570,18 @@ cor4 <- c("#008B8B", "#BAEBEB", "#259E9E", "#E0FFFF", "#38A8A8", "#95D8D8")
 
 ```
 
-```{r contagem_especies_por_ordem}
+
+
+```{r contagem_especies_por_ordem_global}
 #| echo: false
 #| include: false
 #| message: false
 #| warning: false
 #| cache: true
 
-# Limpando dados da coluna taxon-validado para a contagem de número de 
-# espécies por ordem
-# Foram excluídos alguns regitros "gênero sp", para os casos em que todas
-# as espécies do gênero já tenham sido registradas
+# Limpando dados da coluna taxon-validado para a contagem do número de 
+# espécies por ordem (foram excluídos alguns regitros "gênero sp", para os casos
+# em que todas as espécies do gênero já tinham sido registradas)
 
 
 limpeza_registros_numero_especies_por_ordem <-  masto_aves %>%
@@ -606,15 +609,16 @@ limpeza_registros_numero_especies_por_ordem <-  masto_aves %>%
   group_by(taxon_validado, ordem) |> 
   summarise(count = n()) 
 
-#contagem_numero_especies_por_ordem
+# Contagem do número de espécies por ordem
 
 numero_especies_por_ordem <- limpeza_registros_numero_especies_por_ordem |> 
   group_by(ordem) |> 
   count() |> 
   arrange(desc(n))
 
-
 ```
+
+
 
 ```{r limpeza_registros_numero_especies_por_ordem_bioma}
 #| echo: false
@@ -623,7 +627,7 @@ numero_especies_por_ordem <- limpeza_registros_numero_especies_por_ordem |>
 #| warning: false
 #| cache: true
 
-#limpeza_registros_numero_especies_por_ordem_bioma
+# Limpeza de registros do número de espécies por ordem por bioma
 
 limpeza_registros_numero_especies_por_ordem_bioma <-  masto_aves %>%
   filter(!(masto_aves$taxon_validado  == "Aburria sp" |
@@ -651,43 +655,48 @@ limpeza_registros_numero_especies_por_ordem_bioma <-  masto_aves %>%
   summarise(count = n()) 
 
 
-# Contagem de táxons - aves
-
-# aves <- masto_aves |> 
-#   filter(classe == "Aves") 
-# unique(aves$taxon_validado)
-
-# Contagem de táxons - mamíferos
-
-mamiferos <- masto_aves |>
-  filter(classe == "Mammalia")
-unique(mamiferos$taxon_validado)
-
-
-
-#contagem_numero_especies_por_ordem_bioma
+# Contagem do número de espécies por ordem por bioma
 
 numero_especies_por_ordem_bioma <- limpeza_registros_numero_especies_por_ordem_bioma |> 
   group_by(bioma, ordem) |> 
   count() |> 
   arrange(desc(n))
 
+
 # Extraindo o número total de espécies de primatas
+
 n_especies_primatas <- numero_especies_por_ordem$n[1]
 
 # Avaliação das espécies de primatas
+
 registros_primatas <- limpeza_registros_numero_especies_por_ordem_bioma %>%
   select(ordem, taxon_validado) |> 
   filter(!is.na(ordem)) |> 
   filter(ordem == "Primates")
  
-
 especies_primatas <- unique(registros_primatas$taxon_validado)
 especies_primatas
 
+# Contagem de táxons - aves
+
+# aves <- masto_aves |> 
+#   filter(classe == "Aves")
+
+# unique(aves$taxon_validado)
+
+# Contagem de táxons - mamíferos
+
+# mamiferos <- masto_aves |>
+#   filter(classe == "Mammalia")
+
+# unique(mamiferos$taxon_validado)
+
+
 ```
 
-```{r G_especies_registros_ordem_geral}
+
+
+```{r gráfico do número de espécies e registros por ordem - geral}
 #| echo: false
 #| include: false
 #| message: false
@@ -730,7 +739,7 @@ G_especies_registros_ordem_geral
 
 ```
 
-```{r G_especies_registros_ordem_bioma_amazonia}
+```{r grafico do número de espécies e registros por bioma - amazônia}
 #| echo: false
 #| include: false
 #| message: false
@@ -776,13 +785,13 @@ G_especies_registros_ordem_bioma_amazonia
 
 ```
 
-```{r G_especies_registros_ordem_bioma_mata_atlantica}
+```{r gráfico do número de registros e espécies por bioma - mata atlântica}
 #| echo: false
 #| include: false
 #| message: false
 #| warning: false
 #| cache: true
-#| 
+
 # Gráfico do número de espécies e de registros por ordem - bioma mata atlântica
 
 registros_especies_mata_atlantica <- masto_aves %>%
@@ -821,7 +830,7 @@ G_especies_registros_ordem_bioma_mata_atlantica
 
 ```
 
-```{r G_especies_registros_ordem_bioma_cerrado}
+```{r gráfico do número de registros e espécies por bioma - cerrado}
 #| echo: false
 #| include: false
 #| message: false
@@ -868,7 +877,8 @@ G_especies_registros_ordem_bioma_cerrado
 
 ```
 
-```{r juntanto os gráficos de ordem e espécies, echo = FALSE}
+
+```{r juntanto os gráficos de ordem e espécies}
 #| label: fig-registros-ordem
 #| echo: false
 #| message: false
@@ -878,83 +888,29 @@ G_especies_registros_ordem_bioma_cerrado
 #| out.width: '80%'
 #| fig-cap: "Representatividade das principais ordens de mamíferos amostradas no Programa Monitora, durante o período de 2014 a 2022. As barras em verde escuro representam o número de espécies registradas na ordem e as barras em verde claro o número de registros."
 
+# Juntando os 4 gráficos numa única figura
 
-# G_ordem_especies_combinado <- 
-# (G_especies_registros_ordem_geral + G_especies_registros_ordem_bioma_amazonia) /
-# (G_especies_registros_ordem_bioma_mata_atlantica  + G_especies_registros_ordem_bioma_cerrado)
-# 
-# G_ordem_especies_combinado 
-
-grid.arrange(G_especies_registros_ordem_geral, G_especies_registros_ordem_bioma_amazonia, G_especies_registros_ordem_bioma_mata_atlantica, G_especies_registros_ordem_bioma_cerrado,
+grafico_composto_ordens <- grid.arrange(G_especies_registros_ordem_geral, G_especies_registros_ordem_bioma_amazonia, G_especies_registros_ordem_bioma_mata_atlantica, G_especies_registros_ordem_bioma_cerrado,
              layout_matrix = matrix(c(1, 2, 3, 4), 
                                     byrow = TRUE, nrow = 2, ncol = 2))
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_grafico_composto_ordens.jpg", plot = grafico_composto_ordens, height = 4.5, width = 6, units = "in", dpi = 300)
+
 
 
 ```
 
 </br>
 
-Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto para o gênero *Callibella* (sagui-anão), que não ocorre em nenhuma UC do Programa, todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.
-
-
-
-```{r tabela mamíferos}
-#| label: tbl-lista-mamiferos
-#| echo: false
-#| include: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| tab-cap: "Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora de 2014 a 2022."
-
-# tabela_mamiferos <- read.csv2("dados/tabelas/tabela_3.4.1.csv", encoding="UTF-8")
-# 
-# tab_mamiferos <- kbl(tabela_mamiferos,
-#              booktabs = TRUE,
-#              longtable = TRUE,
-#              # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-#             col.names = c("Ordem", "Família", "Táxon")) %>%
-#     column_spec(3, italic = TRUE) %>%
-# kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
-# 
-# tab_mamiferos
-
-```
+Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto para o gênero *Callibella* (sagui-anão), que não ocorre em nenhuma UC do Programa, todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.  
 
 Com relação às aves, 29 espécies de 13 gêneros foram registradas (Apêndice D). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria. Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar *Nothura* (codornas), *Penelope* (jacus), *Tinamus* (macucos) e *Crypturellus* (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.  
 
 A maioria dos registros de aves distribui-se quase que igualmente entre as ordens Galliformes e Tinamiformes. Esse resultado se deve ao fato de o método ser eficiente na detecção desses grupos e em razão dos Gruiformes (jacamins) ocorrerem apenas no bioma Amazônico, nunca com mais de uma espécie por localidade, enquanto os Cariamiformes, com uma única espécie (*Cariama cristata* - seriema), são típicos de ambientes abertos e praticamente não foram avistados (@fig-registros-ordem).
 
-A variação nas proporções de registros no Cerrado e na Mata Atlântica ao longo dos nove anos de amostragem deve-se ao ainda pequeno número de unidades de conservação desses biomas integrando o Programa Monitora, à inconstância nas amostragens e ao pequeno esforço amostral, seja por unidade de conservação, seja por bioma (@fig-registros-ordem).
-
-
-```{r tabela aves}
-#| label: tbl-lista-aves
-#| echo: false
-#| include: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| tab-cap: "Táxons de aves registrados nas unidades de conservação amostradas de 2014 a 2022."
-
-# tabela_aves <- read.csv2("dados/tabelas/tabela_3.4.2.csv", encoding="UTF-8")
-# 
-# tab_aves <- kbl(tabela_aves,
-#              booktabs = TRUE,
-#              longtable = TRUE,
-#              # caption = "  ",
-#             col.names = c("Ordem", "Família", "Táxon")) %>%
-#     column_spec(3, italic = TRUE) %>%
-# kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
-# 
-# 
-# tab_aves
-
-```
+A variação nas proporções de registros no Cerrado e na Mata Atlântica ao longo dos nove anos de amostragem deve-se ao ainda pequeno número de unidades de conservação desses biomas integrando o Programa Monitora, à inconstância nas amostragens e ao pequeno esforço amostral, seja por unidade de conservação, seja por bioma (@fig-registros-ordem).  
 
 </br>
 
@@ -962,10 +918,10 @@ A variação nas proporções de registros no Cerrado e na Mata Atlântica ao lo
 
 </br>
 
-Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca por apresentar taxas de avistamento mais altas (9,33 e 5,27 avistamentos/10 km, respectivamente), com grande variação tanto para mamíferos (1,76 a 20,12) quanto para aves (2,60 a 10,05). No Cerrado as taxas de avistamento variaram de 1,34 a 9,83 e 0,97 a 8,10 para mamíferos e aves, respectivamente (taxas médias de 4,07 e 3,26). Já na Mata atlântica os resultados variaram de 0,63 a 7,50 mamíferos e de 0,63 a 3,32 aves avistadas a cada 10 km, com valores médios de 3,17 e 1,26 (@fig-taxa-encontro-bioma).  Observamos que não foram aplicados testes formais para avaliar a existência de diferenças estatisticamente significativas nas comparações realizadas, sendo apresentada aqui apenas uma análise exploratória e descritiva, com uma interpretação baseada nos valores médios e na inspeção visual dos resultados gerados.  
+Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca por apresentar taxas de avistamento mais altas (9,33 e 5,27 avistamentos/10 km, respectivamente), com grande variação tanto para mamíferos (1,76 a 20,12) quanto para aves (2,60 a 10,05). No Cerrado as taxas de avistamento variaram de 1,34 a 9,83 e 0,97 a 8,10 para mamíferos e aves, respectivamente (taxas médias de 4,07 e 3,26). Já na Mata atlântica os resultados variaram de 0,63 a 7,50 mamíferos e de 0,63 a 3,32 aves avistadas a cada 10 km, com valores médios de 3,17 e 1,26 (@fig-taxa-avistamento-bioma).  Observamos que não foram aplicados testes formais para avaliar a existência de diferenças estatisticamente significativas nas comparações realizadas, sendo apresentada aqui apenas uma análise exploratória e descritiva, com uma interpretação baseada nos valores médios e na inspeção visual dos resultados gerados.  
 
 
-```{r estimativas_taxas_de_encontro}
+```{r estimativas das taxas de avistamento}
 #| echo: false
 #| include: false
 #| message: false
@@ -973,7 +929,7 @@ Em termos de abundância total de mamíferos e aves, o bioma Amazônico se desta
 #| cache: true
 
 
-#### Cálculo das taxas de encontro 
+#### Cálculo das taxas de avistamento 
 
 # Checando os nomes das colunas
 
@@ -981,16 +937,16 @@ Em termos de abundância total de mamíferos e aves, o bioma Amazônico se desta
 
 # Preenchendo as linhas vazias da coluna esforço
 
-masto_aves_esforco <-
+masto_aves <-
   masto_aves |> 
   arrange(uc, ano, ea) |>
   fill(esforco)
 
-# View(masto_aves_esforco) 
+# View(masto_aves) 
 
 # Alterando o nome das categorias para letras maiúsculas
 
-masto_aves_esforco <- masto_aves_esforco %>%
+masto_aves <- masto_aves %>%
 mutate(
   uc = case_when(
     uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
@@ -1047,16 +1003,14 @@ mutate(
     uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
       TRUE ~ uc))
 
+# Checando nomes alterados
+
+#unique(masto_aves$uc)
 
 
-
-unique(masto_aves_esforco$uc)
-
-
-    
 # Limpando a planilha - selecionando apenas colunas relevantes
 
-masto_aves_esforco <- masto_aves_esforco |>
+masto_aves <- masto_aves |>
   select(
     cnuc,
     uc,
@@ -1080,14 +1034,14 @@ masto_aves_esforco <- masto_aves_esforco |>
     )
    )
 
-#glimpse(masto_aves_esforco)
+#glimpse(masto_aves)
 
 
 #### Ajustando os códigos CNUC para o formato padrão --------------
 
-masto_aves_esforco$cnuc <- as.character(masto_aves_esforco$cnuc)
+masto_aves$cnuc <- as.character(masto_aves$cnuc)
 
-masto_aves_esforco <- masto_aves_esforco %>% 
+masto_aves <- masto_aves %>% 
 mutate(
   Cnuc = case_when(
     cnuc == "284" ~ "0000.00.0284",
@@ -1143,10 +1097,10 @@ mutate(
     cnuc == "1633" ~ "0000.00.1633",
     cnuc == "1810" ~ "0000.00.1810"))
     
-#unique(masto_aves_esforco$Cnuc)
-#View(masto_aves_esforco)
+#unique(masto_aves$Cnuc)
+#View(masto_aves)
 
-# cnuc <- masto_aves_esforco |>
+# cnuc <- masto_aves |>
 #   distinct(uc, Cnuc) |>
 #   arrange()
 # 
@@ -1154,19 +1108,23 @@ mutate(
 
 # Contagem de táxons - aves
 
-aves <- masto_aves_esforco |>
+aves <- masto_aves |>
   filter(classe == "Aves")
+
 unique(aves$taxon_validado)
 
 # Contagem de táxons - mamíferos
 
-mamiferos <- masto_aves_esforco |>
+mamiferos <- masto_aves |>
   filter(classe == "Mammalia")
+
 unique(mamiferos$taxon_validado)
   
 ```
 
-```{r calculando_esforço_por_trilha}
+
+
+```{r calculando o esforço por trilha}
 #| echo: false
 #| include: false
 #| message: false
@@ -1179,15 +1137,15 @@ unique(mamiferos$taxon_validado)
 
 # Visualizando o esforço por trilha por dia em cada ano e UC
 
-#unique(masto_aves_esforco$esforco) # Valores únicos de esforço
+#unique(masto_aves$esforco) # Valores únicos de esforço
 
-esforco_dia_trilha <- masto_aves_esforco  |> 
+esforco_dia_trilha <- masto_aves  |> 
   distinct(uc, bioma, grupo, ano, ea, data, esforco) 
   
 #View(esforco_dia_trilha)
 
 
-esforco_dia_trilha_rep <- masto_aves_esforco  |> # número amostragens por trilha
+esforco_dia_trilha_rep <- masto_aves  |> # número amostragens por trilha
   distinct(uc, bioma, grupo, ano, ea, data, esforco) |> 
   count(uc, bioma, grupo, ano, ea, esforco)
 
@@ -1211,7 +1169,10 @@ trilhas_esforco_total_maior_50km <- esforco_total_trilha |>
 
 ```
 
-```{r taxa_encontro_total}
+
+
+
+```{r calculando a taxa de avistamento geral}
 #| echo: false
 #| include: false
 #| message: false
@@ -1221,42 +1182,47 @@ trilhas_esforco_total_maior_50km <- esforco_total_trilha |>
 
 #### Calculando o número de registros total
 
-registros_total_trilha <- masto_aves_esforco |>
+registros_total_trilha <- masto_aves |>
   group_by(uc, bioma, grupo, ano, ea)  |>
   count() |>
   drop_na()
 
 #View(registros_total)
 
-# juntanto tabelas esforco_total + registros_total
+# Juntanto as tabelas esforco_total_trilha + registros_total_trilha
 
-taxa_encontro_trilha_total <-
+taxa_avistamento_trilha <-
   left_join(registros_total_trilha, esforco_total_trilha, c("uc", "bioma", "grupo", "ano", "ea"))
 
-#View(taxa_encontro_trilha_total)
+#View(taxa_avistamento_trilha)
 
-taxa_encontro_trilha_total <- taxa_encontro_trilha_total |>
-  mutate(taxa_encontro = (n/extensao) * 10)
+# Obs.: A taxa_avistamento_trilha considera todos os registros (aves e mamíferos conjuntamente)
 
-#View(taxa_encontro_trilha_total)
+taxa_avistamento_trilha <- taxa_avistamento_trilha |>
+  mutate(taxa_avistamento = (n/extensao) * 10)
+
+#View(taxa_avistamento_trilha_total)
 
 
-# Taxa de encontro média/UC/ano
+# Taxa de avistamento média por UC por ano
 
-taxa_encontro_trilha_total_media <- taxa_encontro_trilha_total |>
+taxa_avistamento_trilha_media_uc_ano <- taxa_avistamento_trilha |>
   group_by(uc, bioma, grupo, ano) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n))
   )
 
-#View(taxa_encontro_trilha_total_media)
+#View(taxa_avistamento_trilha_media_uc_ano)
 
 ```
 
-```{r cálculo da taxa de encontro média do período - 2014-2022}
+
+
+
+```{r cálculo da taxa de avistamento média do período - 2014-2022}
 #| echo: false
 #| include: false
 #| message: false
@@ -1265,148 +1231,138 @@ taxa_encontro_trilha_total_media <- taxa_encontro_trilha_total |>
 
 ## Calculando o número de registros total
 
-registros_total_uc_ano <- masto_aves_esforco |>
+registros_total_uc_ano <- masto_aves |>
   group_by(uc, Cnuc, bioma, grupo, ano)  |>
   count() |>
   drop_na()
 
-#View(registros_periodo_amostragem)
+#View(registros_total_uc_ano)
 
 esforco_total_uc_ano <- esforco_total_trilha |> 
   group_by(uc, bioma, grupo, ano) |>
   summarise(extensao_total = sum(extensao))
 
-#View(esforco_total_uc)
+#View(esforco_total_uc_ano)
   
 
-# juntanto tabelas esforco + registros_total
+# Juntanto tabelas esforco_total_uc_ano + registros_total_uc_ano
 
-taxa_encontro_geral_uc_ano <-
+taxa_avistamento_geral_uc_ano <-
   left_join(registros_total_uc_ano, esforco_total_uc_ano, c("uc", "bioma", "grupo", "ano"))
 
-#View(taxa_encontro_periodo_amostragem)
+#View(taxa_avistamento_geral_uc_ano)
 
-taxa_encontro_geral_uc_ano <- taxa_encontro_geral_uc_ano |>
-  mutate(taxa_encontro = (n / extensao_total) * 10)
+taxa_avistamento_geral_uc_ano <- taxa_avistamento_geral_uc_ano |>
+  mutate(taxa_avistamento = (n / extensao_total) * 10)
 
-#View(taxa_encontro_periodo_amostragem)
+#View(taxa_avistamento_geral_uc_ano)
 
 
-taxa_encontro_geral_uc <- taxa_encontro_geral_uc_ano |>
+# Calculando a taxa de avistamento geral média para cada UC - média das taxas anuais
+
+taxa_avistamento_geral_uc <- taxa_avistamento_geral_uc_ano |>
   group_by(uc, Cnuc, bioma, grupo) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975)*ep,
   )
 
 
-#View(taxa_encontro_periodo_amostragem)
+#View(taxa_avistamento_geral_uc)
 
-write.csv(taxa_encontro_geral_uc, "dados/mastoaves/taxa_encontro_geral_uc.csv", row.names = FALSE)
+write.csv(taxa_avistamento_geral_uc, "dados/mastoaves/taxa_avistamento_geral_uc.csv", row.names = FALSE)
 
 ```
 
-```{r processamento dados - mapa taxa de encontro geral}
+
+
+```{r processamento dos dados para elaboração do mapa da taxa geral de avistamento por UC}
 #| echo: false
 #| include: false
 #| message: false
 #| warning: false
 #| cache: true
 
-#ucs_monitora <- read_csv("dados/mastoaves/ucs_federais_cnuc_15.09.2023.csv")
-#
-# ucs_monitora$lat <- as.numeric(ucs_monitora$lat)
-# ucs_monitora$long <- as.numeric(ucs_monitora$long)
-
-#UC <-  readOGR("shapes/LimiteUCsFederais_jun_23.shp", verbose = FALSE)
-
-#brasil <- read_country()
-
-#brasil_regioes <- read_region()
 brasil_regioes <- readOGR("shapes/regioes_2010.shp", verbose = FALSE)
 
 ucs_comp_florestal <-  readOGR("shapes/ucs_comp_florestal.shp", verbose = FALSE)
 
-#C_monitora <-  readOGR("shapes/ucs_monitora_jun_23.shp", verbose = FALSE)
+taxa_avistamento_geral_mapa <- read_csv("dados/mastoaves/taxa_avistamento_geral_uc.csv")
 
-taxa_encontro_geral <- read_csv("dados/mastoaves/taxa_encontro_geral_uc.csv")
+#View(taxa_avistamento_geral_mapa)
 
-
-#taxa_encontro_geral_cnuc <- taxa_encontro_geral |> rename(Cnuc = cnuc)
-
-#View(taxa_encontro_geral_cnuc)
-
-ucs_comp_florestal_unido <- sp::merge(ucs_comp_florestal, taxa_encontro_geral, by = "Cnuc")
-
-
-#ucs_comp_florestal_unido
-ucs_comp_florestal_unido$taxa_enc_media <- round(ucs_comp_florestal_unido$taxa_enc_media, 2)
+ucs_comp_florestal_unido <- sp::merge(ucs_comp_florestal, taxa_avistamento_geral_mapa, by = "Cnuc")
 
 #ucs_comp_florestal_unido
 
-# ucs <- st_read("shapes/ucs_comp_florestal.shp")
-# brasil <- st_read("shapes/lim_pais_a.shp")
-#
-# library(sf)
-# library(ggplot2)
+ucs_comp_florestal_unido$taxa_avist_media <- round(ucs_comp_florestal_unido$taxa_avist_media, 2)
+
+#ucs_comp_florestal_unido
+
 
 ```
 
-```{r taxa de encontro geral por classe - mamíferos e aves - 2014 a 2022}
+
+
+
+```{r taxa de avistamento geral por classe - mamíferos e aves - 2014 a 2022}
 #| echo: false
 #| include: false
 #| message: false
 #| warning: false
 #| cache: true
 
-## Calculando o número de registros total
+## Calculando o número de registros por classe por ano
 
-registros_total_classe_ano <- masto_aves_esforco |>
+registros_total_classe_ano <- masto_aves |>
   group_by(uc, bioma, grupo, ano, classe)  |>
   count() |>
   drop_na()
 
-#View(registros_periodo_amostragem_classe)
+#View(registros_total_classe_ano)
 
 esforco_total_uc_ano <- esforco_total_trilha |> 
   group_by(uc, bioma, grupo, ano) |>
   summarise(extensao_total = sum(extensao))
 
-#View(esforco_total_uc)
+#View(esforco_total_uc_ano)
   
 
-# juntanto tabelas esforco + registros_total
+# Juntanto as tabelas esforco_total_uc_ano + registros_total_classe_ano
 
-taxa_encontro_total_classe_ano <-
+taxa_avistamento_total_classe_ano <-
   left_join(registros_total_classe_ano, esforco_total_uc_ano, c("uc", "bioma", "grupo", "ano"))
 
-#View(taxa_encontro_periodo_amostragem_classe)
+#View(taxa_avistamento_total_classe_ano)
 
-taxa_encontro_total_classe_ano <- taxa_encontro_total_classe_ano |>
-  mutate(taxa_encontro = (n / extensao_total) * 10)
+taxa_avistamento_total_classe_ano <- taxa_avistamento_total_classe_ano |>
+  mutate(taxa_avistamento = (n / extensao_total) * 10)
 
-#View(taxa_encontro_periodo_amostragem_classe)
+#View(taxa_avistamento_total_classe_ano)
 
+# Calculando a taxa de avistamento por classe por uc
 
-taxa_encontro_total_classe <- taxa_encontro_total_classe_ano |>
+taxa_avistamento_total_classe_uc <- taxa_avistamento_total_classe_ano |>
   group_by(uc, bioma, grupo, classe) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975)*ep 
   )
 
 
-#View(taxa_encontro_periodo_amostragem_classe)
+#View(taxa_avistamento_total_classe_uc)
 
 ```
 
-```{r cálculo da taxa de encontro por classe}
+
+
+```{r cálculo da taxa de avistamento por trilha classe}
 #| echo: false
 #| include: false
 #| message: false
@@ -1416,7 +1372,7 @@ taxa_encontro_total_classe <- taxa_encontro_total_classe_ano |>
 
 ## Calculando o número de registros por classe, por trilha, por ano e por UC
 
-registros_classe <- masto_aves_esforco |>
+registros_classe <- masto_aves |>
   group_by(uc, ano, bioma, ea, classe)  |>
   count() |>
   drop_na(classe)
@@ -1424,34 +1380,40 @@ registros_classe <- masto_aves_esforco |>
 #View(registros_classe)
 
 
-# juntanto tabelas esforco + registros_classe
+# Juntanto as tabelas esforco_total_trilha + registros_classe
 
-taxa_encontro_trilha_classe <-
+taxa_avistamento_trilha_classe <-
   left_join(registros_classe, esforco_total_trilha, c("uc", "bioma", "ano", "ea"))
 
-#View(taxa_encontro_trilha_classe)
+#View(taxa_avistamento_trilha_classe)
 
-taxa_encontro_trilha_classe <- taxa_encontro_trilha_classe |>
-  mutate(taxa_encontro = (n / extensao) * 10)
+taxa_avistamento_trilha_classe <- taxa_avistamento_trilha_classe |>
+  mutate(taxa_avistamento = (n / extensao) * 10)
 
-#View(taxa_encontro_trilha_classe)
+#View(taxa_avistamento_trilha_classe)
 
 
-taxa_encontro_trilha_classe <- taxa_encontro_trilha_classe |>
+
+# Cálculo da taxa de avistamento por classe por ano
+
+taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
   group_by(uc, bioma, ano, classe) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
   
-#View(taxa_encontro_trilha_classe)
+#View(taxa_avistamento_classe_ano)
 
 ```
 
-```{r G_taxa_encontro_geral_bioma_emparelhado_media_IC A}
-#| label: fig-taxa-encontro-bioma
+
+
+
+```{r G_taxa_avistamento_geral_bioma_emparelhado_media_IC}
+#| label: fig-taxa-avistamento-bioma
 #| echo: false
 #| message: false
 #| warning: false
@@ -1462,24 +1424,23 @@ taxa_encontro_trilha_classe <- taxa_encontro_trilha_classe |>
 
 # Taxa de encontro geral mamíferos e aves por bioma - emparelhado
 
-G_taxa_encontro_geral_bioma_emparelhado_media_IC <- taxa_encontro_total_classe |> 
+G_taxa_avistamento_geral_bioma_emparelhado_media_IC <- taxa_avistamento_total_classe_uc |> 
  group_by(bioma, classe) |> 
  summarise(
      n = n(),
-     taxa_enc_media_bioma = mean(taxa_enc_media),
-       dp = sd(taxa_enc_media, na.rm = TRUE),
+     taxa_avist_media_bioma = mean(taxa_avist_media),
+       dp = sd(taxa_avist_media, na.rm = TRUE),
        ep = dp / sqrt(n),
        IC_95 = qnorm(.975) * ep,
-       minimo = min(taxa_enc_media, na.rm = TRUE),
-       maximo = max(taxa_enc_media, na.rm = TRUE)) |> 
+       minimo = min(taxa_avist_media, na.rm = TRUE),
+       maximo = max(taxa_avist_media, na.rm = TRUE)) |> 
 
-   #View(G_taxa_encontro_geral_bioma_emparelhado_media_IC)
-
-  ggplot(aes(
-    x = fct_reorder(bioma, taxa_enc_media_bioma, .desc = T),
-    y = taxa_enc_media_bioma), color = classe) +
+ 
+ggplot(aes(
+    x = fct_reorder(bioma, taxa_avist_media_bioma, .desc = T),
+    y = taxa_avist_media_bioma), color = classe) +
   geom_pointrange(
-    aes(color = classe, ymin = taxa_enc_media_bioma - IC_95, ymax =             taxa_enc_media_bioma + IC_95), 
+    aes(color = classe, ymin = taxa_avist_media_bioma - IC_95, ymax =             taxa_avist_media_bioma + IC_95), 
     position = position_dodge2(width = 0.5),
     width = 0.5,
     #size = 0.5,
@@ -1506,10 +1467,12 @@ G_taxa_encontro_geral_bioma_emparelhado_media_IC <- taxa_encontro_total_classe |
   labs(title = " ", x = " ", y = "Avistamentos/10 km")
 
 
-G_taxa_encontro_geral_bioma_emparelhado_media_IC
+G_taxa_avistamento_geral_bioma_emparelhado_media_IC
 
-# ggsave("imagens/cap05/G_taxa_encontro_geral_bioma_emparelhado_media_IC.png", 
-#        height = 4.5, width = 6, units = "in", dpi = 300)
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_avistamento_media_bioma.jpg",
+       height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -1522,7 +1485,7 @@ G_taxa_encontro_geral_bioma_emparelhado_media_IC
 Considerando a variação da abundância relativa ao longo do tempo, na Amazônia os primeiros anos apresentam uma maior dispersão dos resultados, explicada pelo número proporcionalmente reduzido de UCs participantes e consequente menor esforço amostral na fase inicial do Programa, além de um leve decréscimo nas abundâncias em 2021 e 2022 (@fig-taxa-encontro-tempo). Para a Mata Atlântica os resultados são irregulares devido à descontinuidade de amostragem e à grande variação no esforço entre os anos. Já para o Cerrado, o padrão observado se justifica pelo fato das duas UCs com dados coletados em 2022, o PARNA da Serra da Bodoquena e a ESEC de Pirapitinga, serem distintas das demais, com matriz florestal e, consequentemente, com maior taxa de avistamento. 
 
 
-```{r G_taxa_encontro_geral_mamiferos_aves_2014-2022_media_IC}
+```{r G_taxa_avistamento_geral_mamiferos_aves_2014-2022_media_IC}
 #| echo: false
 #| include: false
 #| message: false
@@ -1530,23 +1493,23 @@ Considerando a variação da abundância relativa ao longo do tempo, na Amazôni
 #| cache: true
 
 
-# Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
+# Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 
-G_taxa_encontro_geral_periodo_emparelhado_media_IC <- taxa_encontro_total_classe_ano |> 
+G_taxa_avistamento_geral_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
  filter(ano != 2023) |> 
  group_by(ano, classe) |> 
  summarise(
      n = n(),
-     taxa_encontro_media = mean(taxa_encontro),
-       dp = sd(taxa_encontro, na.rm = TRUE),
+     taxa_avist_media = mean(taxa_avistamento),
+       dp = sd(taxa_avistamento, na.rm = TRUE),
        ep = dp / sqrt(n),
        IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_encontro_media), color = classe) +
+    y = taxa_avist_media), color = classe) +
   geom_pointrange(
-    aes(color = classe, ymin = taxa_encontro_media - IC_95, ymax = taxa_encontro_media + IC_95), 
+    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
     position = position_dodge2(width = 0.5),
     width = 0.5,
     #size = 1.5,
@@ -1581,37 +1544,41 @@ G_taxa_encontro_geral_periodo_emparelhado_media_IC <- taxa_encontro_total_classe
   labs(title = "Geral", colour = "Geral", x = NULL, y = "Avistamentos/10 km")
 
 
-print(G_taxa_encontro_geral_periodo_emparelhado_media_IC)
+print(G_taxa_avistamento_geral_periodo_emparelhado_media_IC)
 
-# ggsave("imagens/cap05/G_taxa_encontro_geral_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# ggsave("imagens/cap05/G_taxa_avistamento_geral_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
 
 ```
 
-```{r G_taxa_encontro_mamiferos_aves_amazonia_2014-2022_media_IC}
+
+
+
+
+```{r G_taxa_avist_mamiferos_aves_amazonia_2014-2022_media_IC}
 #| echo: false
 #| include: false
 #| message: false
 #| warning: false
 #| cache: true
 
-# Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
+# Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 
-G_taxa_encontro_amazonia_periodo_emparelhado_media_IC <- taxa_encontro_total_classe_ano |> 
+G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
  filter(bioma == "Amazônia" & ano != 2023) |> 
  group_by(ano, classe) |> 
  summarise(
      n = n(),
-     taxa_encontro_media = mean(taxa_encontro),
-       dp = sd(taxa_encontro, na.rm = TRUE),
+     taxa_avist_media = mean(taxa_avistamento),
+       dp = sd(taxa_avistamento, na.rm = TRUE),
        ep = dp / sqrt(n),
        IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_encontro_media)) +
+    y = taxa_avist_media)) +
   geom_pointrange(
-    aes(color = classe, ymin = taxa_encontro_media - IC_95, ymax = taxa_encontro_media + IC_95), 
+    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
     #position = "dodge2",
     position = position_dodge2(width = 0.5),
     width = 0.5,
@@ -1647,36 +1614,36 @@ G_taxa_encontro_amazonia_periodo_emparelhado_media_IC <- taxa_encontro_total_cla
   labs(title = "Amazônia", colour = "Amazônia", x = NULL, y = NULL)
 
 
-print(G_taxa_encontro_amazonia_periodo_emparelhado_media_IC)
+print(G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC)
 
-# ggsave("imagens/cap05/G_taxa_encontro_amazonia_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# ggsave("imagens/cap05/G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
-```{r  G_taxa_encontro_mamiferos_aves_mata_atlantica_2014-2022_media_IC}
+```{r  G_taxa_avistamento_mamiferos_aves_mata_atlantica_2014-2022_media_IC}
 #| echo: false
 #| include: false
 #| message: false
 #| warning: false
 #| cache: true
 
-# Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
+# Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 
-G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC <- taxa_encontro_total_classe_ano |> 
+G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
  filter(bioma == "Mata Atlântica" & ano != 2023) |> 
  group_by(ano, classe) |> 
  summarise(
      n = n(),
-     taxa_encontro_media = mean(taxa_encontro),
-       dp = sd(taxa_encontro, na.rm = TRUE),
+     taxa_avist_media = mean(taxa_avistamento),
+       dp = sd(taxa_avistamento, na.rm = TRUE),
        ep = dp / sqrt(n),
        IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_encontro_media)) +
+    y = taxa_avist_media)) +
   geom_pointrange(
-    aes(color = classe, ymin = taxa_encontro_media - IC_95, ymax = taxa_encontro_media + IC_95), 
+    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
     #position = "dodge2",
     position = position_dodge2(width = 0.5),
     width = 0.5,
@@ -1708,16 +1675,16 @@ G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC <- taxa_encontro_tot
         axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
         #scale_x_discrete(name = " ") +
         scale_y_continuous(limits = c(-5, 15)) +
-        scale_x_continuous(breaks = taxa_encontro_trilha_classe$ano) +
+        scale_x_continuous(breaks = taxa_avistamento_trilha_classe$ano) +
   labs(title = "Mata Atlântica", colour = "Mata Atlântica", x = "Ano", y = "Avistamentos/10 km")
   
-print(G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC)
+print(G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC)
 
-# ggsave("imagens/cap05/G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# ggsave("imagens/cap05/G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
-```{r G_taxa_encontro_mamiferos_aves_cerrado_2014-2022_media_IC}
+```{r G_taxa_avistamento_mamiferos_aves_cerrado_2014-2022_media_IC}
 #| echo: false
 #| include: false
 #| message: false
@@ -1726,21 +1693,21 @@ print(G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC)
 
 # Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
 
-G_taxa_encontro_cerrado_periodo_emparelhado_media_IC <- taxa_encontro_total_classe_ano |>
+G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |>
  filter(bioma == "Cerrado" & ano != 2023) |>
  group_by(ano, classe) |>
  summarise(
      n = n(),
-     taxa_encontro_media = mean(taxa_encontro),
-       dp = sd(taxa_encontro, na.rm = TRUE),
+     taxa_avist_media = mean(taxa_avistamento),
+       dp = sd(taxa_avistamento, na.rm = TRUE),
        ep = dp / sqrt(n),
        IC_95 = qnorm(.975) * ep) |>
   
     ggplot(aes(
     x = ano,
-    y = taxa_encontro_media)) +
+    y = taxa_avist_media)) +
   geom_pointrange(
-    aes(color = classe, ymin = taxa_encontro_media - IC_95, ymax = taxa_encontro_media + IC_95), 
+    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
     #position = "dodge2",
     position = position_dodge2(width = 0.5),
     width = 0.5,
@@ -1773,18 +1740,18 @@ G_taxa_encontro_cerrado_periodo_emparelhado_media_IC <- taxa_encontro_total_clas
         axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
         #scale_x_discrete(name = " ") +
         scale_y_continuous(limits = c(-5, 15)) +
-        scale_x_continuous(breaks = taxa_encontro_trilha_classe$ano) +
+        scale_x_continuous(breaks = taxa_avistamento_trilha_classe$ano) +
         
   labs(title = "Cerrado", colour = "Cerrado", x = "Ano", y = NULL)
 
-print(G_taxa_encontro_cerrado_periodo_emparelhado_media_IC)
+print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
 
-# ggsave("imagens/cap05/G_taxa_encontro_cerrado_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# ggsave("imagens/cap05/G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
 ```{r juntanto os gráficos taxas de encontro ao longo do tempo por bioma}
-#| label: fig-taxa-encontro-tempo
+#| label: fig-taxa-avistamento-tempo
 #| echo: false
 #| message: false
 #| warning: false
@@ -1793,18 +1760,14 @@ print(G_taxa_encontro_cerrado_periodo_emparelhado_media_IC)
 #| out.width: '85%'
 #| fig-cap: "Variação anual na taxa de avistamento média de mamíferos e aves de 2014 a 2022 (geral e por bioma). As linhas horizontais representam a taxa de avistamento média para cada grupo considerando todo o período amostral."
 
-# G_taxas_encontro_geral_biomas <- 
-# (G_taxa_encontro_geral_periodo_emparelhado_media_IC + G_taxa_encontro_amazonia_periodo_emparelhado_media_IC) /
-# (G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC  + G_taxa_encontro_cerrado_periodo_emparelhado_media_IC)
-# 
-# G_taxas_encontro_geral_biomas 
-
-# ggsave("imagens/cap05/G_taxas_encontro_geral_biomas.png", height = 4.5, width = 6, units = "in", dpi = 300)
-
-
-grid.arrange(G_taxa_encontro_geral_periodo_emparelhado_media_IC, G_taxa_encontro_amazonia_periodo_emparelhado_media_IC, G_taxa_encontro_mata_atlantica_periodo_emparelhado_media_IC, G_taxa_encontro_cerrado_periodo_emparelhado_media_IC,
+grafico_taxas_biomas_tempo <- grid.arrange(G_taxa_avistamento_geral_periodo_emparelhado_media_IC, G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC, G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC, G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC,
              layout_matrix = matrix(c(1, 2, 3, 4), 
                                     byrow = TRUE, nrow = 2, ncol = 2))
+
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxas_biomas_tempo.jpg", plot = grafico_taxas_biomas_tempo, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -1814,11 +1777,11 @@ grid.arrange(G_taxa_encontro_geral_periodo_emparelhado_media_IC, G_taxa_encontro
 
 </br>
 
-Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-se a REBIO do Uatumã, a RESEX Verde para Sempre e a ESEC da Terra do Meio (@fig-taxa-encontro-geral-mamiferos). Essas três UCs também estão entre as quatro com maiores taxas totais de avistamento de aves (@fig-taxa-encontro-geral-aves). Contudo, a posição da RESEX Verde para Sempre deve ser considerada com cautela, visto que representa um único ano de amostragem (2022).  
+Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-se a REBIO do Uatumã, a RESEX Verde para Sempre e a ESEC da Terra do Meio (@fig-taxa-avistamento-geral-mamiferos). Essas três UCs também estão entre as quatro com maiores taxas totais de avistamento de aves (@fig-taxa-avistamento-geral-aves). Contudo, a posição da RESEX Verde para Sempre deve ser considerada com cautela, visto que representa um único ano de amostragem (2022).  
 
 
-```{r G_taxa_encontro_geral_mamiferos_media_IC}
-#| label: fig-taxa-encontro-geral-mamiferos
+```{r G_taxa_avistamento_geral_mamiferos_media_IC}
+#| label: fig-taxa-avistamento-geral-mamiferos
 #| echo: false
 #| message: false
 #| warning: false
@@ -1827,19 +1790,19 @@ Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-s
 #| out.width: '70%'
 #| fig-cap: "Taxa média de avistamento de mamíferos por unidade de conservação de 2014 a 2022."
 
-# Gráfico da taxa de encontro total - mamíferos média e IC
+# Gráfico da taxa de avistamento total de mamíferos - média e IC
 
 cores_biomas <- c("cyan4", "#BF8120", "#95D8D8")
 
-G_taxa_encontro_geral_mamiferos_media_IC <- taxa_encontro_total_classe |>
+G_taxa_avistamento_geral_mamiferos_media_IC <- taxa_avistamento_total_classe_uc |>
   filter(classe == "Mammalia") |> 
 
   ggplot(aes(
-    x = fct_reorder(uc, taxa_enc_media, .desc = F),
-    y = taxa_enc_media)) +
+    x = fct_reorder(uc, taxa_avist_media, .desc = F),
+    y = taxa_avist_media)) +
   geom_point(size = 1) +
   geom_pointrange(
-    aes(color = bioma, ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+    aes(color = bioma, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
     size = 0.3,
     linewidth = 0.4) +
     #colour = "#BF8120") +
@@ -1859,14 +1822,17 @@ G_taxa_encontro_geral_mamiferos_media_IC <- taxa_encontro_total_classe |>
         
   labs(title = "Mamíferos", col = NULL)
 
-G_taxa_encontro_geral_mamiferos_media_IC
+G_taxa_avistamento_geral_mamiferos_media_IC
 
-# ggsave("imagens/cap05/G_taxa_encontro_geral_mamiferos_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg", plot =  G_taxa_avistamento_geral_mamiferos_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
-```{r G_taxa_encontro_geral_aves_media_IC}
-#| label: fig-taxa-encontro-geral-aves
+```{r G_taxa_avistamento_geral_aves_media_IC}
+#| label: fig-taxa-avistamento-geral-aves
 #| echo: false
 #| message: false
 #| warning: false
@@ -1875,19 +1841,19 @@ G_taxa_encontro_geral_mamiferos_media_IC
 #| out.width: '70%'
 #| fig-cap: "Taxa média de avistamento de aves por unidade de conservação de 2014 a 2022."
 
-# Gráfico da taxa de encontro total 2014 a 2022 - aves média e IC
+# Gráfico da taxa de avistamento total de aves - média e IC
 
 
-G_taxa_encontro_geral_aves_media_IC <- taxa_encontro_total_classe |>
+G_taxa_avistamento_geral_aves_media_IC <- taxa_avistamento_total_classe_uc |>
   filter(classe == "Aves") |>
 
     ggplot(aes(
-    x = fct_reorder(uc, taxa_enc_media, .desc = F),
-    y = taxa_enc_media
+    x = fct_reorder(uc, taxa_avist_media, .desc = F),
+    y = taxa_avist_media
   )) +
   geom_point(size = 1) +
   geom_pointrange(
-    aes(color = bioma, ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+    aes(color = bioma, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
     size = 0.3,
     linewidth = 0.4) +
     
@@ -1906,9 +1872,12 @@ G_taxa_encontro_geral_aves_media_IC <- taxa_encontro_total_classe |>
   
   labs(title = "Aves", col = NULL)
 
-G_taxa_encontro_geral_aves_media_IC
+G_taxa_avistamento_geral_aves_media_IC
 
-# ggsave("imagens/cap05/G_taxa_encontro_geral_aves_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_geral_aves_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -1918,13 +1887,13 @@ G_taxa_encontro_geral_aves_media_IC
 
 </br>
 
-O tamanho das unidades de conservação do Programa Monitora varia muito entre biomas. No Cerrado e na Mata Atlântica as unidades de conservação são relativamente pequenas, com algumas dezenas de milhares de hectares, enquanto na Amazônia podem ultrapassar um milhão de hectares. Considerando-se que nas unidades do Cerrado e Mata Atlântica a abundância de mamíferos e de aves, expressas pelas taxas de avistamento médias, são inferiores (@fig-taxa-encontro-geral-mamiferos e @fig-taxa-encontro-geral-aves), é natural se considerar que essas populações apresentem, em geral, uma maior vulnerabilidade demográfica comparada àquela das populações amazônicas. A distribuição espacial da taxa de avistamento média geral (considerando-se conjuntamente mamíferos e aves) é apresentada na @fig-taxa-encontro-mapa. Dentre as unidades de conservação da Amazônia aquelas localizadas entre os rios Tapajós e Xingu apresentam as maiores abundâncias, à exceção da REBIO do Uatumã, localizada ao norte do Rio Amazonas e que também apresenta uma alta taxa média geral de avistamento (@fig-taxa-encontro-mapa).
+O tamanho das unidades de conservação do Programa Monitora varia muito entre biomas. No Cerrado e na Mata Atlântica as unidades de conservação são relativamente pequenas, com algumas dezenas de milhares de hectares, enquanto na Amazônia podem ultrapassar um milhão de hectares. Considerando-se que nas unidades do Cerrado e Mata Atlântica a abundância de mamíferos e de aves, expressas pelas taxas de avistamento médias, são inferiores (@fig-taxa-avistamento-geral-mamiferos e @fig-taxa-avistamento-geral-aves), é natural se considerar que essas populações apresentem, em geral, uma maior vulnerabilidade demográfica comparada àquela das populações amazônicas. A distribuição espacial da taxa de avistamento média geral (considerando-se conjuntamente mamíferos e aves) é apresentada na @fig-taxa-encontro-mapa. Dentre as unidades de conservação da Amazônia aquelas localizadas entre os rios Tapajós e Xingu apresentam as maiores abundâncias, à exceção da REBIO do Uatumã, localizada ao norte do Rio Amazonas e que também apresenta uma alta taxa média geral de avistamento (@fig-taxa-avistamento-mapa).
 
 
 <center>
 
-```{r mapa taxas de encontro - geral}
-#| label: fig-taxa-encontro-mapa
+```{r mapa taxas de avistamento por uc - taxa geral}
+#| label: fig-taxa-avistamento-mapa
 #| echo: false
 #| message: false
 #| warning: false
@@ -1959,19 +1928,19 @@ mapa <- leaflet(ucs_comp_florestal_unido) |>
               fillColor = "white") |>
   
   addPolygons(data = ucs_comp_florestal_unido,
-    fillColor = ~ colours_red(ucs_comp_florestal_unido$taxa_enc_media),
+    fillColor = ~ colours_red(ucs_comp_florestal_unido$taxa_avist_media),
     fillOpacity = 1,
     weight = 0.3,
     color = "black",
     popup = paste("Nome: ", ucs_comp_florestal_unido$uc, "<br>",
                   "Bioma: ", ucs_comp_florestal_unido$BiomaCRL, "<br>",
-                  "Taxa de avistamento: ", ucs_comp_florestal_unido$taxa_enc_media, "<br>")) |>
+                  "Taxa de avistamento: ", ucs_comp_florestal_unido$taxa_avist_media, "<br>")) |>
   
   htmlwidgets::prependContent(backg) |> 
 
   addLegend(
     pal = colours_red,
-    values = ~ ucs_comp_florestal_unido$taxa_enc_media,
+    values = ~ ucs_comp_florestal_unido$taxa_avist_media,
     title = "Taxa de avistamento",
     position = "bottomleft"
   ) |>
@@ -1992,7 +1961,7 @@ mapa
 
 </center>
 
-```{r cálculos registros por espécie, por trilha, por ano e por UC}
+```{r cálculo dos registros por espécie, por trilha, por ano e por UC}
 #| echo: false
 #| include: false
 #| message: false
@@ -2002,7 +1971,7 @@ mapa
 
 ## Calculando o número de registros por espécie, por trilha, por ano e por UC
 
-registros_taxon_validado <- masto_aves_esforco |>
+registros_taxon_validado <- masto_aves |>
   group_by(uc, ano, ea, classe, taxon_validado) |>
   count() |>
   drop_na(taxon_validado)
@@ -2010,67 +1979,74 @@ registros_taxon_validado <- masto_aves_esforco |>
 # View(registros_taxon_validado)
 
 
-# Juntanto tabelas esforco + registros_taxon_validado
+# Juntanto as tabelas esforco_total_trilha + registros_taxon_validado
 
-taxa_encontro_trilha_taxon_validado <-
+taxa_avistamento_trilha_taxon_validado <-
   left_join(registros_taxon_validado,
             esforco_total_trilha,
             c("uc", "ano", "ea"))
 
-#View(taxa_encontro_trilha_taxon_validado)
-
-taxa_encontro_trilha_taxon_validado <-
-  taxa_encontro_trilha_taxon_validado |>
-  mutate(taxa_encontro = (n / extensao) * 10)
-
-#View(taxa_encontro_trilha_taxon_validado)
+#View(taxa_avistamento_trilha_taxon_validado)
 
 
-# Taxa de encontro de espécies por UC e por ano
 
-taxa_encontro_trilha_taxon_validado_ano <-
-  taxa_encontro_trilha_taxon_validado |>
+# Calculando a taxa de avistamento
+
+taxa_avistamento_trilha_taxon_validado <-
+  taxa_avistamento_trilha_taxon_validado |>
+  mutate(taxa_avistamento = (n / extensao) * 10)
+
+#View(taxa_avistamento_trilha_taxon_validado)
+
+
+# Taxa de avistamento de espécies por UC e por ano
+
+taxa_avistamento_trilha_taxon_validado_ano <-
+  taxa_avistamento_trilha_taxon_validado |>
   group_by(uc, ano, classe, taxon_validado) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
 
 
-#View(taxa_encontro_trilha_taxon_validado_ano)
+#View(taxa_avistamento_trilha_taxon_validado_ano)
 
 
-# Taxa de encontro de espécies de mamíferos por UC
+# Taxa de avistamento de espécies de mamíferos por UC
 
-taxa_encontro_trilha_taxon_validado_mamiferos <-
-  taxa_encontro_trilha_taxon_validado |>
+taxa_avistamento_trilha_taxon_validado_mamiferos <-
+  taxa_avistamento_trilha_taxon_validado |>
   filter(classe == "Mammalia") |>
   group_by(uc, taxon_validado) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
 
-#View(taxa_encontro_trilha_taxon_validado_mamiferos)
+#View(taxa_avistamento_trilha_taxon_validado_mamiferos)
+
+
+
 
 # Taxa de encontro de espécies de aves por UC
 
-taxa_encontro_trilha_taxon_validado_aves <-
-  taxa_encontro_trilha_taxon_validado |>
+taxa_avistamento_trilha_taxon_validado_aves <-
+  taxa_avistamento_trilha_taxon_validado |>
   filter(classe == "Aves") |>
   group_by(uc, taxon_validado) |>
   summarise(
     n = n(),
-    taxa_enc_media = mean(taxa_encontro),
-    dp = sd(taxa_encontro),
+    taxa_avist_media = mean(taxa_avistamento),
+    dp = sd(taxa_avistamento),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
 
-#View(taxa_encontro_trilha_taxon_validado_aves)
+#View(taxa_avistamento_trilha_taxon_validado_aves)
 
 ```
 
@@ -2113,32 +2089,39 @@ No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros 
 #| cache: true
 
 
-lista_spp_ameacadas_salve <-
-  read_csv2("dados/spp_ameacadas/lista_spp_ameacadas_salve_ajustada_cemave_cpb_13.12.203.csv")
+lista_spp_ameacadas_salve <- read_csv2("dados/spp_ameacadas/lista_spp_ameacadas_salve_ajustada_cemave_cpb_13.12.2023.csv")
 
 #View(lista_spp_ameacadas_salve)
+
+
+# Alterando do nome da coluna nome_cientifico para taxon_validado
 
 lista_spp_ameacadas_salve <- lista_spp_ameacadas_salve |>
   rename(taxon_validado = nome_cientifico)
 
-taxa_encontro_spp_ameacadas <- left_join(taxa_encontro_trilha_taxon_validado, lista_spp_ameacadas_salve, by = "taxon_validado")
+# Juntando as tabelas taxa_avistamento_trilha_taxon_validado + lista_spp_ameacadas_salve e gerando a planilha de taxa de avistamento das espécies ameaçadas
 
-#View(taxa_encontro_spp_ameacadas)
+taxa_avistamento_spp_ameacadas <- left_join(taxa_avistamento_trilha_taxon_validado, lista_spp_ameacadas_salve, by = "taxon_validado")
 
-taxa_encontro_spp_ameacadas <- taxa_encontro_spp_ameacadas |>
+#View(taxa_avistamento_spp_ameacadas)
+
+# Limpando a planilha
+
+taxa_avistamento_spp_ameacadas <- taxa_avistamento_spp_ameacadas |>
   select(-classe.y) |> 
   rename(classe = classe.x) |> 
   filter(!is.na(categoria))
 
 
-#View(taxa_encontro_spp_ameacadas)
+#View(taxa_avistamento_spp_ameacadas)
 
+# Obtendo o total de registros de espécies ameaçadas por uc
 
-taxa_encontro_spp_ameacadas_uc <- taxa_encontro_spp_ameacadas |>
+taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
   group_by(uc, taxon_validado) |> 
   count()
 
-#View(taxa_encontro_spp_ameacadas_uc)
+#View(taxa_avistamento_spp_ameacadas_uc)
 
 ```
 
@@ -2158,7 +2141,7 @@ taxa_encontro_spp_ameacadas_uc <- taxa_encontro_spp_ameacadas |>
 
 </br>
 
-```{r figura das espécies ameaçadas no tempo - primatas Atelídeos}
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos}
 #| label: fig-especies-ameacadas-atelideos
 #| echo: false
 #| message: false
@@ -2172,20 +2155,20 @@ cor_ameacadas2 <- c("#008B8B", "#666666", "#BF8120", "brown")
 
 
 
-G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_encontro_spp_ameacadas |>
+G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_ameacadas |>
   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
   filter(taxon_validado %in% c("Ateles chamek", "Ateles marginatus")) |>
   summarise(n = n(),
-            taxa_enc_media = mean(taxa_encontro),
-            sd = sd(taxa_encontro),
+            taxa_avist_media = mean(taxa_avistamento),
+            sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_enc_media, color = taxon_validado, shape = categoria)) +
+    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
   # geom_errorbar(
-  #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+  #   aes(ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
   #   size = 0.8,
   #   linewidth = 0.5,
   #   width = 0.1,
@@ -2212,7 +2195,7 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_encontro_spp_ameacad
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas2) +
       scale_y_continuous(limits = c(0, 1.5)) +
-      scale_x_continuous(breaks = taxa_encontro_spp_ameacadas$ano) +
+      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
       labs(title = "Primatas - Atelídeos",
        x = "Ano",
        y = "Avistamentos/10 km",
@@ -2220,7 +2203,9 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_encontro_spp_ameacad
 
 G_especie_ameacada_ucs_ano_media_primatas_atelideos
 
-# ggsave("imagens/cap05/G_especie_ameacada_ucs_ano_media_primatas_atelideos.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -2239,7 +2224,7 @@ Os primatas criticamente ameaçados *Cebus kaapori* e  *C. satanas* foram regist
 
 </br>
 
-```{r figura das espécies ameaçadas no tempo - Outros primatas}
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas}
 #| label: fig-especies-ameacadas-outros-primatas
 #| echo: false
 #| message: false
@@ -2254,18 +2239,18 @@ Os primatas criticamente ameaçados *Cebus kaapori* e  *C. satanas* foram regist
 cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
 
 
-G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_encontro_spp_ameacadas |>
+G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacadas |>
   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
   filter(taxon_validado %in% c("Mico rondoni", "Chiropotes utahickae")) |>
   summarise(n = n(),
-            taxa_enc_media = mean(taxa_encontro),
-            sd = sd(taxa_encontro),
+            taxa_avist_media = mean(taxa_avistamento),
+            sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_enc_media, color = taxon_validado, shape = categoria)) +
+    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
   # geom_errorbar(
   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
   #   size = 0.8,
@@ -2294,7 +2279,7 @@ G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_encontro_spp_ameacadas 
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas1) +
       scale_y_continuous(limits = c(0, 1.5)) +
-      scale_x_continuous(breaks = taxa_encontro_spp_ameacadas$ano) +
+      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
       labs(title = "Outros Primatas",
        x = "Ano",
        y = "Avistamentos/10 km",
@@ -2302,7 +2287,10 @@ G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_encontro_spp_ameacadas 
 
 G_especie_ameacada_ucs_ano_media_outros_primatas
 
-# ggsave("imagens/cap05/G_especie_ameacada_ucs_ano_media_outros_primatas.png", height = 4.5, width = 6, units = "in", dpi = 300)
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas,  height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -2314,7 +2302,7 @@ As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) v
 </br>
 
 
-```{r figura das espécies ameaçadas no tempo - Tamanduá}
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá}
 #| label: fig-especies-ameacadas-tamandua
 #| echo: false
 #| message: false
@@ -2328,18 +2316,18 @@ As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) v
 
 cor_ameacadas3 <- c("cyan4")
 
-G_especie_ameacada_ucs_ano_media_tamandua <- taxa_encontro_spp_ameacadas |>
+G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
   filter(taxon_validado %in% c("Myrmecophaga tridactyla")) |>
   summarise(n = n(),
-            taxa_enc_media = mean(taxa_encontro),
-            sd = sd(taxa_encontro),
+            taxa_avist_media = mean(taxa_avistamento),
+            sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_enc_media, color = taxon_validado, shape = categoria)) +
+    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
   # geom_errorbar(
   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
   #   size = 0.8,
@@ -2368,7 +2356,7 @@ G_especie_ameacada_ucs_ano_media_tamandua <- taxa_encontro_spp_ameacadas |>
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas3) +
       scale_y_continuous(limits = c(0, 0.5)) +
-      scale_x_continuous(breaks = taxa_encontro_spp_ameacadas$ano) +
+      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
       labs(title = "Outros mamíferos",
        x = "Ano",
        y = "Avistamentos/10 km",
@@ -2376,7 +2364,10 @@ G_especie_ameacada_ucs_ano_media_tamandua <- taxa_encontro_spp_ameacadas |>
 
 G_especie_ameacada_ucs_ano_media_tamandua
 
-# ggsave("imagens/cap05/G_especie_ameacada_ucs_ano_media_tamandua.png", height = 4.5, width = 6, units = "in", dpi = 300)
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -2388,7 +2379,7 @@ A taxa média anual de avistamento entre as unidades de conservação para *A. c
 
 </b>
 
-```{r figura das espécies ameaçadas no tempo - aves}
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo - aves}
 #| label: fig-especies-ameacadas-aves
 #| echo: false
 #| message: false
@@ -2403,18 +2394,18 @@ cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
 
 
 
-G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_encontro_spp_ameacadas |>
+G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameacadas |>
   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
   filter(taxon_validado %in% c("Aburria cujubi", "Psophia obscura", "Psophia dextralis", "Psophia interjecta", "Psophia viridis")) |>
   summarise(n = n(),
-            taxa_enc_media = mean(taxa_encontro),
-            sd = sd(taxa_encontro),
+            taxa_avist_media = mean(taxa_avistamento),
+            sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
 
   ggplot(aes(
     x = ano,
-    y = taxa_enc_media, color = taxon_validado, shape = categoria)) +
+    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
   # geom_errorbar(
   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
   #   size = 0.8,
@@ -2443,7 +2434,7 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_encontro_spp_ameacada
       legend.title = element_blank()) +
       scale_color_manual(values = cor_ameacadas1) +
       scale_y_continuous(limits = c(0, 1.5)) +
-      scale_x_continuous(breaks = taxa_encontro_spp_ameacadas$ano) +
+      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
       labs(title = "Aves ameaçadas",
        x = "Ano",
        y = "Avistamentos/10 km",
@@ -2451,7 +2442,10 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_encontro_spp_ameacada
 
 G_especie_ameacada_ucs_ano_media_aves_selecionadas
 
-# ggsave("imagens/cap05/G_especie_ameacada_ucs_ano_media_aves_selecionadas.png", height = 4.5, width = 6, units = "in", dpi = 300)
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_spp_ameacadas_aves.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas,  height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 
@@ -2514,6 +2508,17 @@ tabela_Gmean %>%
   #theme(axis.line.x=element_blank()) +
   coord_cartesian(ylim = c(0.75, 1.25)) 
 
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_media_geometrica.jpg",
+       #plot = last_plot(),
+       device =  "jpeg",
+       scale=1.5,
+       width = 210,
+       height = 70,
+       units = "mm",
+       dpi = 300)
 
 ```
 

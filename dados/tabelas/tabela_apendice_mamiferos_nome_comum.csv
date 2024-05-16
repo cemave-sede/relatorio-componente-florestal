@@ -1,0 +1,154 @@
+﻿ordem;familia;taxon_validado;nome_comum;categoria
+Carnivora ;Canidae ;Atelocynus microtis;cachorro-do-mato-de-orelhas-curtas ;VU
+Carnivora ;Canidae ;Cerdocyon thous ;cachorro do mato, fusquinho, graxaim, graxaim do mato, guancito, guaraxaim, guaraxo, lobete, lobinho, mata-virgem, rabo-fofo, raposa, raposão, raposinha-do-mato ;
+Carnivora ;Canidae ;Chrysocyon brachyurus;guará, lobão, lobo, lobo-de-crina, lobo-de-juba, lobo-guará, lobo-vermelho ;VU
+Carnivora ;Canidae ;Speothos venaticus;cachorro-do-mato-vinagre, cachorro-vinagre ;VU
+Carnivora ;Felidae ;Herpailurus yagouaroundi;gato-azul, gato-mourisco, gato-vermelho, jaguarundi ;VU
+Carnivora ;Felidae ;Leopardus pardalis ;canguçu, gato-do-mato-grande, jaguatirica, maracajá, meia-malha, oncinha ;
+Carnivora ;Felidae ;Leopardus sp. ;gatos-do-mato ;
+Carnivora ;Felidae ;Leopardus tigrinus;gato-do-mato, gato-maracajá, gato-maracajá-mirim, pintadinho ;EN
+Carnivora ;Felidae ;Leopardus wiedii;gato-do-mato, gato-maracajá, gato-peludo, maracajá-peludo ;VU
+Carnivora ;Felidae ;Panthera onca;canguçu, onça-pintada, onça-preta ;VU
+Carnivora ;Felidae ;Puma concolor ;bodeira, leão-baio, leãozinho-da-cara-suja, onça-do-lombo-preto, onça-parda, onça-vermelha, suçuarana ;
+Carnivora ;Mustelidae ;Eira barbara ;irara, papa-mel ;
+Carnivora ;Mustelidae ;Galictis vittata ;furão grande, furão maior ;
+Carnivora ;Mustelidae ;Lontra longicaudis ;lobinho-de-rio, lontra, lontra neotropical, lontrinha ;
+Carnivora ;Mustelidae ;Pteronura brasiliensis;ariranha, lontra gigante, onça-d’água ;VU
+Carnivora ;Procyonidae ;Nasua nasua ;coati, quati, quati-de-vara, quati-mundéo ;
+Carnivora ;Procyonidae ;Procyon cancrivorus ;cachorrinho-guaxinim, cachorro-do-mato-guaxinim, cangrejera, guará, guaxinim, jaracambeva, mão-pelada, mapache, lavador, mayuato, meia-noite ;
+Cetartiodactyla ;Cervidae ;Mazama americana ;guassu-pará, guatapará, suaçupita, veado-capoeiro, veado-mateiro, veado-pardo, veado-retovado, veado-vermelho ;DD
+Cetartiodactyla ;Cervidae ;Mazama gouazoubira ;corça, veado-catingueiro ;
+Cetartiodactyla ;Cervidae ;Mazama nemorivaga ;fuboca, veado-branco, veado-da-amazônia, veado-roxo ;DD
+Cetartiodactyla ;Cervidae ;Mazama sp. ;cervos;
+Cetartiodactyla ;Cervidae ;Ozotocerus bezoarticus ;veado-branco, veado-campeiro, veado-galheiro ;
+Cetartiodactyla ;Tayassuidae ;Pecari tajacu ;caititu, cateto ;
+Cetartiodactyla ;Tayassuidae ;Tayassu pecari;queixada ;VU
+Cingulata ;Dasypodidae ;Cabassous unicinctus ;cabassú (variação de capacou - tatu em galibi - grupo indígena da guiana francesa), tatu-de-rabo-mole, tatu-de-rabo-mole-pequeno, tatu-rabo-de-couro ;
+Cingulata ;Dasypodidae ;Dasypus kappleri ;tatu-açu, tatu-canastra, tatu-quinze-quilos, tatu-tinga, tatu-verdadeiro ;
+Cingulata ;Dasypodidae ;Dasypus novemcinctus ;tatu-asa-branca, tatuetê, tatu-folha, tatu-galinha, tatu-nove-bandas, tatu-veado, tatu-verdadeiro ;
+Cingulata ;Dasypodidae ;Dasypus sp. ;tatus;
+Cingulata ;Dasypodidae ;Priodontes maximus;tatu-açú, tatu-canastra ;VU
+Didelphimorphia ;Didelphidae ;Didelphis albiventris ;gambá-de-orelha-branca, mucura, saruê ;
+Didelphimorphia ;Didelphidae ;Didelphis aurita ;gambá, gambá-de-orelha-preta ;
+Didelphimorphia ;Didelphidae ;Didelphis marsupialis ;gambá-de-orelha-preta, mucura ;
+Didelphimorphia ;Didelphidae ;Didelphis sp. ;gambás;
+Lagomorpha ;Leporidae ;Sylvilagus brasiliensis ;coelho ;
+Perissodactyla ;Tapiridae ;Tapirus terrestris;anta;VU
+Pilosa ;Bradypodidae ;Bradypus sp. ;preguiças;
+Pilosa ;Bradypodidae ;Bradypus tridactylus ;preguiça-de-bentinho, preguiça-de-garganta-amarela, preguiça-de-três-dedos ;
+Pilosa ;Bradypodidae ;Bradypus variegatus ;preguiça-comum, preguiça-de-bentinho, preguiça-de-óculos, preguiça-marmota ;
+Pilosa ;Cyclopedidae ;Cyclopes didactylus ;tamanduá-cigarra, tamanduá-i, tamanduaí, tamanduá-seda ;
+Pilosa ;Megalonychidae ;Choloepus didactylus ;preguiça-real, unau ;
+Pilosa ;Myrmecophagidae ;Myrmecophaga tridactyla;bandeira, bandurra, jurumi, jurumim, papa-formigas, tamanduá-açú, tamanduá-bandeira ;VU
+Pilosa ;Myrmecophagidae ;Tamandua tetradactyla ;lapichau, mambira, meleta, tamanduá-de-colete, tamanduá-mirim ;
+Primates ;Aotidae ;Aotus infulatus ;macaco-da-noite, macaco-da-noite-de-pescoço-vermelho ;
+Primates ;Aotidae ;Aotus nigriceps ;macaco-da-noite, macaco-da-noite-de-pescoço-vermelho, quatro-olhos ;
+Primates ;Aotidae ;Aotus trivirgatus ;macaco-da-noite, macaco-da-noite-de-pescoço-cinza ;
+Primates ;Atelidae ;Alouatta belzebul;bugio, guariba, guariba-de-mãos-ruivas, guariba-de-mãos-vermelhas ;VU
+Primates ;Atelidae ;Alouatta caraya ;barbado, bugio-preto, guariba-preto ;
+Primates ;Atelidae ;Alouatta discolor;guariba-de-mãos-ruivas, guariba-de-mãos-vermelhas ;VU
+Primates ;Atelidae ;Alouatta guariba clamitans;barbado, bugio, bugio-ruivo, guariba ;VU
+Primates ;Atelidae ;Alouatta juara ;;
+Primates ;Atelidae ;Alouatta macconnelli ;guariba, guariba-vermelha ;
+Primates ;Atelidae ;Alouatta nigerrima ;guariba-de-mãos-ruivas, guariba-preta ;
+Primates ;Atelidae ;Alouatta puruensis ;;
+Primates ;Atelidae ;Alouatta sp. ;bugios, guaribas;
+Primates ;Atelidae ;Ateles belzebuth;coatá, macaco-aranha ;VU
+Primates ;Atelidae ;Ateles chamek;coatá, coatá-preto, macaco-aranha, macaco-aranha-da-cara-preta ;VU
+Primates ;Atelidae ;Ateles marginatus;coatá-da-testa-branca, cuamba, guatá, macaco-aranha ;EN
+Primates ;Atelidae ;Ateles paniscus ;coatá, macaco-aranha ;
+Primates ;Atelidae ;Brachyteles arachnoides;buriqui, buriquim, mariquina, mono, mono-carvoeiro, muriqui-do-sul, muriquina, muriquinina ;EN
+Primates ;Atelidae ;Lagothrix lagothricha cana;macaco-barrigudo ;EN
+Primates ;Atelidae ;Lagothrix lagothricha poeppigii;macaco-barrigudo ;VU
+Primates ;Callitrichidae ;Callimico goeldii ;calimico, macaco-de-goeldi, mico-preto, sagui-de-goeldi, soim-preto, taboqueiro ;
+Primates ;Callitrichidae ;Callithrix aurita;sagui-caveirinha, sagui-da-serra-escuro ;EN
+Primates ;Callitrichidae ;Callithrix jacchus ;mico, mico-estrela, nico, sagui, sagui-comum, sagui-de-tufo-branco, sagui-do-nordeste ;
+Primates ;Callitrichidae ;Callithrix penicillata ;mico-estrela, sagui-de-tufos-pretos ;
+Primates ;Callitrichidae ;Callithrix sp. ;micos;
+Primates ;Callitrichidae ;Cebuella pygmaea ;mico-leãozinho, sagui-leãozinho, sagui-pigmeu ;
+Primates ;Callitrichidae ;Leontopithecus chrysomelas;mico-leão-da-cara-dourada ;EN
+Primates ;Callitrichidae ;Mico argentatus ;sagui-argênteo ;
+Primates ;Callitrichidae ;Mico emiliae ;sagui-de-snethlage ;
+Primates ;Callitrichidae ;Mico humeralifer ;sagui-de-tufos ;
+Primates ;Callitrichidae ;Mico leucippe ;sagui-de-orelha-nua-branco, souim-branco ;
+Primates ;Callitrichidae ;Mico melanurus ;sagui-marrom ;
+Primates ;Callitrichidae ;Mico rondoni;macaquinho-branco, mico-de-rondônia, sagui-branco ;VU
+Primates ;Callitrichidae ;Mico sp. ;saguis;
+Primates ;Callitrichidae ;Saguinus imperator ;bigodeiro, mono-bigotudo, mono-nicolás-suárez ;
+Primates ;Callitrichidae ;Saguinus midas ;sagui-da-mão-dourada ;
+Primates ;Callitrichidae ;Saguinus niger;guaribinha, sagui-una ;
+Primates ;Callitrichidae ;Saguinus sp. ;saguis;
+Primates ;Callitrichidae ;Saguinus weddelli ;sagüi, sagui-preto, sauim, soim, soim preto, soim-vermelho ;
+Primates ;Cebidae ;Cebus albifrons ;caiarara ;
+Primates ;Cebidae ;Cebus kaapori;caiarara, caiarara-ka’apor, macaco-cara-branca, piticó ;CR
+Primates ;Cebidae ;Cebus olivaceus ;caiarara, cairara, macaco-prego ;
+Primates ;Cebidae ;Cebus sp. ;cairaras;
+Primates ;Cebidae ;Cebus unicolor ;caiarara ;
+Primates ;Cebidae ;Saimiri boliviensis ;macaco-de-cheiro, macaco-mão-de-ouro ;
+Primates ;Cebidae ;Saimiri cassiquiarensis ;macaco-de-cheiro ;
+Primates ;Cebidae ;Saimiri collinsi ;macaco-de-cheiro, macaco-mão-de-ouro ;
+Primates ;Cebidae ;Saimiri macrodon ;macaco-de-cheiro ;
+Primates ;Cebidae ;Saimiri sciureus ;amarelinho, capijuba, macaco-de-cheiro, mão-de-ouro, mico-de-cheiro ;
+Primates ;Cebidae ;Saimiri sp. ;macacos-de-cheiro;
+Primates ;Cebidae ;Saimiri ustus ;macaco-de-cheiro, mico-de-cheiro ;
+Primates ;Cebidae ;Sapajus apella ;macaco-prego ;
+Primates ;Cebidae ;Sapajus cay;macaco-prego, macaco-prego-do-papo-amarelo ;VU
+Primates ;Cebidae ;Sapajus libidinosus ;macaco-prego, macaco-prego-amarelo ;
+Primates ;Cebidae ;Sapajus macrocephalus ;macaco-prego ;
+Primates ;Cebidae ;Sapajus nigritus ;macaco-prego, mico ;
+Primates ;Cebidae ;Sapajus xanthosternos;macaco-de-bando, macaco-prego, macaco-prego-do-peito-amarelo ;EN
+Primates ;Pitheciidae ;Cacajao calvus ;bicó, uacari-branco ;
+Primates ;Pitheciidae ;Cacajao melanocephalus ;bicó, uacari ;
+Primates ;Pitheciidae ;Cacajao sp. ;uacaris;
+Primates ;Pitheciidae ;Callicebus bernhardi ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus brunneus ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus caligatus ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus cupreus ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus dubius ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus hoffmannsi ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus lugens ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus moloch ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus sp. ;zogue-zogue ;
+Primates ;Pitheciidae ;Callicebus vieirai;guigó, sauá, zogue-zogue;DD
+Primates ;Pitheciidae ;Chiropotes albinasus ;cuxiú-de-nariz-vermelho ;
+Primates ;Pitheciidae ;Chiropotes chiropotes ;cuxiú;
+Primates ;Pitheciidae ;Chiropotes sagulatus ;cuxiú;
+Primates ;Pitheciidae ;Chiropotes satanas;cuxiú, cuxiú-preto, cuxuí, macaco-preto ;CR
+Primates ;Pitheciidae ;Chiropotes utahickae;cuxiú;VU
+Primates ;Pitheciidae ;Pithecia chrysocephala ;parauacu-da-cara-branca ;
+Primates ;Pitheciidae ;Pithecia irrorata;macaco-cabeludo, macaco-velho, parauacú ;DD
+Primates ;Pitheciidae ;Pithecia monachus ;macaco-velho, macaco-voador, parauacu, parauacu-monge ;
+Primates ;Pitheciidae ;Pithecia pithecia ;parauacu-da-cara-branca ;
+Primates ;Pitheciidae ;Pithecia vanzolinii ;macaco-velho, parauacu ;
+Primates ;Pitheciidae ;Plecturocebus toppini ;;
+Rodentia ;Caviidae ;Cavia sp. ;preás;
+Rodentia ;Caviidae ;Galea spii ;preá;
+Rodentia ;Caviidae ;Hydrochoerus hydrochaeris ;capivara;
+Rodentia ;Cuniculidae ;Cuniculus paca ;paca;
+Rodentia ;Cuniculidae ;Dinomys paca ;paca-de-rabo, pacarana ;
+Rodentia ;Dasyproctidae ;Dasyprocta azarae ;azara's agouti, cutia ;
+Rodentia ;Dasyproctidae ;Dasyprocta croconota ;amazon red-rumped agouti, cutia, orange agouti ;
+Rodentia ;Dasyproctidae ;Dasyprocta fuliginosa ;black agouti, cutia ;
+Rodentia ;Dasyproctidae ;Dasyprocta iacki ;cutia, cutia-de-garupa-laranja, red-rumped agouti ;
+Rodentia ;Dasyproctidae ;Dasyprocta leporina ;;
+Rodentia ;Dasyproctidae ;Dasyprocta prymnolopha ;black-rumped agouti, cutia ;
+Rodentia ;Dasyproctidae ;Dasyprocta sp. ;cutias;
+Rodentia ;Dasyproctidae ;Myoprocta acouchy ;cotiara, cutiara ;
+Rodentia ;Dasyproctidae ;Myoprocta pratti ;cotiara, cutiara, green acouchi ;
+Rodentia ;Dasyproctidae ;Myoprocta sp. ;cutiaras;
+Rodentia ;Erethizontidae ;Coendou bicolor ;bicolor-spined porcupine, ouriço-cacheiro ;
+Rodentia ;Erethizontidae ;Coendou prehensilis ;;
+Rodentia ;Erethizontidae ;Coendou sp. ;ouriços;
+Rodentia ;Sciuridae ;Guerlinguetus aestuans ;caxinguelê, esquilo, guianan squirrel, quatipuru ;
+Rodentia ;Sciuridae ;Guerlinguetus gilvigularis ;;
+Rodentia ;Sciuridae ;Guerlinguetus ignitus ;esquilo ;
+Rodentia ;Sciuridae ;Guerlinguetus ingrami ;;
+Rodentia ;Sciuridae ;Guerlinguetus sp. ;esquilos;
+Rodentia ;Sciuridae ;Microsciurus flaviventer ;amazon dwarf squirrel, quatipuruzinho-bigodeiro ;
+Rodentia ;Sciuridae ;Microsciurus sp. ;esquilos;
+Rodentia ;Sciuridae ;Sciuridae ;;
+Rodentia ;Sciuridae ;Sciurillus pusillus ;neotropical pygmy squirrel, quatipuruzinho ;
+Rodentia ;Sciuridae ;Sciurillus sp. ;esquilos;
+Rodentia ;Sciuridae ;Urosciurus igniventris ;esquilo, quatipuru, southern amazon red squirrel ;
+Rodentia ;Sciuridae ;Urosciurus sp. ;esquilos;
+Rodentia ;Sciuridae ;Urosciurus spadiceus ;esquilo, quatipuru, southern amazon red squirrel ;
