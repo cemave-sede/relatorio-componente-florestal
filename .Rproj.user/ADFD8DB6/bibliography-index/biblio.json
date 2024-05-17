@@ -1086,6 +1086,53 @@
             "volume": "14"
         },
         {
+            "abstract": "We map the extent, infer the life-cycle length and describe spatial and temporal patterns of flowering of sarmentose bamboos (Guadua spp) in upland forests of the southwest Amazon. We first examine the spectra and the spectral separation of forests with different bamboo life stages. False-color composites from orbital sensors going back to 1975 are capable of distinguishing life stages. These woody bamboos flower produce massive quantities of seeds and then die. Life stage is synchronized, forming a single cohort within each population. Bamboo dominates at least 161,500 km(2) of forest, coincident with an area of recent or ongoing tectonic uplift, rapid mechanical erosion and poorly drained soils rich in exchangeable cations. Each bamboo population is confined to a single spatially continuous patch or to a core patch with small outliers. Using spatial congruence between pairs of mature-stage maps from different years, we estimate an average life cycle of 27-28 y. It is now possible to predict exactly where and approximately when new bamboo mortality events will occur. We also map 74 bamboo populations that flowered between 2001 and 2008 over the entire domain of bamboo-dominated forest. Population size averaged 330 km(2). Flowering events of these populations are temporally and/or spatially separated, restricting or preventing gene exchange. Nonetheless, adjacent populations flower closer in time than expected by chance, forming flowering waves. This may be a consequence of allochronic divergence from fewer ancestral populations and suggests a long history of widespread bamboo in the southwest Amazon.",
+            "author": [
+                {
+                    "dropping-particle": "de",
+                    "family": "Carvalho",
+                    "given": "Anelena L"
+                },
+                {
+                    "family": "Nelson",
+                    "given": "Bruce W"
+                },
+                {
+                    "family": "Bianchini",
+                    "given": "Milton C"
+                },
+                {
+                    "family": "Plagnol",
+                    "given": "Daniela"
+                },
+                {
+                    "family": "Kuplich",
+                    "given": "Tatiana M"
+                },
+                {
+                    "family": "Daly",
+                    "given": "Douglas C"
+                }
+            ],
+            "container-title": "PLoS One",
+            "id": "Carvalho_2013",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        1
+                    ]
+                ]
+            },
+            "page": "e54852",
+            "publisher": "Public Library of Science (PLoS)",
+            "title": "Bamboo-dominated forests of the southwest amazon: Detection, spatial extent, life cycle length and flowering waves",
+            "title-short": "Bamboo-dominated forests of the southwest amazon",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
             "DOI": "10.1080/00379271.2009.10697630",
             "ISSN": "2168-6351",
             "URL": "http://dx.doi.org/10.1080/00379271.2009.10697630",
