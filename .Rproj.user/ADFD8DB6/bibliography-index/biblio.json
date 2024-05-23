@@ -189,6 +189,43 @@
             "volume": "35"
         },
         {
+            "abstract": "ABSTRACT Rainfall is one of the most influential factors driving insect seasonality in the Amazon region. However, few studies have analyzed the temporal dynamics of fruit-feeding butterflies in the Brazilian Amazon, specially in its eastern portion. Here, we evaluated the diversity patterns and temporal distribution of fruit-feeding butterflies in a remnant of eastern Amazon forest in the Baixada Maranhense, northeastern Brazil. Specifically, we tested whether fruit-feeding butterflies are temporally structured and whether rainfall influences species richness and abundance. Butterflies were collected with baited traps in both the rainy and dry seasons for two consecutive years. In total, we captured 493 butterflies belonging to 28 species, 15 genera and eight tribes. Three species comprised about half of the overall abundance, and Satyrinae was the most representative subfamily. The fruit-feeding butterfly assemblage showed a strong temporal structure during the second year of sampling, but not during the first year. Species composition and richness did not differ between rainy and dry seasons, and neither abundance nor richness was influenced by rainfall. Our results indicate that seasonality is not a strong environmental filter in this region, and that other biotic and abiotic factors are probably driving the community structure. The predominance of palms in the Baixada Maranhense, which are used as host plants by larvae of several lepidopteran species (specially satyrines) and are available year-round, might have contributed to the observed patterns of temporal diversity.",
+            "author": [
+                {
+                    "family": "Araujo",
+                    "given": "Elias da Costa"
+                },
+                {
+                    "family": "Martins",
+                    "given": "Lucas Pereira"
+                },
+                {
+                    "family": "Duarte",
+                    "given": "Marcelo"
+                },
+                {
+                    "family": "Azevedo",
+                    "given": "Gisele Garcia"
+                }
+            ],
+            "container-title": "Acta Amazon.",
+            "id": "Araujo_2020",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        3
+                    ]
+                ]
+            },
+            "page": "12-23",
+            "publisher": "FapUNIFESP (SciELO)",
+            "title": "Temporal distribution of fruit-feeding butterflies (lepidoptera, nymphalidae) in the eastern extreme of the amazon region",
+            "type": "article-journal",
+            "volume": "50"
+        },
+        {
             "DOI": "10.1590/2179-8087-floram-2021-0008",
             "ISSN": "1415-0980",
             "URL": "http://dx.doi.org/10.1590/2179-8087-FLORAM-2021-0008",
@@ -461,6 +498,46 @@
         {
             "author": [
                 {
+                    "family": "Beirão",
+                    "given": "Marina V"
+                },
+                {
+                    "family": "Neves",
+                    "given": "Frederico S"
+                },
+                {
+                    "family": "Penz",
+                    "given": "Carla M"
+                },
+                {
+                    "family": "DeVries",
+                    "given": "Philip J"
+                },
+                {
+                    "family": "Fernandes",
+                    "given": "G Wilson"
+                }
+            ],
+            "container-title": "J. Insect Conserv.",
+            "id": "Beirao_2017",
+            "issue": "5-6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        12
+                    ]
+                ]
+            },
+            "page": "849-860",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "High butterfly beta diversity between brazilian cerrado and cerrado–caatinga transition zones",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "author": [
+                {
                     "family": "Bellaver",
                     "given": "J. M. F."
                 }
@@ -478,6 +555,40 @@
             "publisher-place": "Porto Alegre, RS",
             "title": "Efeito de borda e estrutura das comunidades de borboletas frugívoras em fragmentos de mata paludosa na planície costeira norte do rio grande do sul",
             "type": "thesis"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bellaver",
+                    "given": "Juliane"
+                },
+                {
+                    "family": "Romanowski",
+                    "given": "Helena Piccoli"
+                },
+                {
+                    "family": "Richter",
+                    "given": "Aline"
+                },
+                {
+                    "family": "Iserhard",
+                    "given": "Cristiano Agra"
+                }
+            ],
+            "container-title": "Austral Ecol.",
+            "id": "Bellaver_2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        11
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Living on the edge: The use of fruit‐feeding butterflies to evaluate edge effect on subtropical assemblages",
+            "title-short": "Living on the edge",
+            "type": "article-journal"
         },
         {
             "abstract": "Protected areas (PAs) are key elements for biodiversity conservation and ecosystem services. Brazil has the largest PA system in the world, covering approximately 220 million ha. This system expanded rapidly in the mid-1990s to the mid-2000s. Recent events in Brazil, however, have led to an increase in PA downgrading, downsizing, and degazettement (PADDD). Does this reflect a shift in the country’s PA policy? We analyzed the occurrence, frequency, magnitude, type, spatial distribution, and causes of changes in PA boundaries and categories in Brazil. We identified 93 PADDD events from 1981 to 2012. Such events increased in frequency since 2008 and were ascribed primarily to generation and transmission of electricity in Amazonia. In Brazilian parks and reserves, 7.3 million ha were affected by PADDD events, and of these, 5.2 million ha were affected by downsizing or degazetting. Moreover, projects being considered by the Federal Congress may degazette 2.1 million ha of PA in Amazonia alone. Relaxing the protection status of existing PAs is proving to be politically easy in Brazil, and the recent increase in frequency and extension of PADDD reflects a change in governmental policy. By taking advantage of chronic deficiencies in financial and personnel resources and surveillance, disputes over land tenure, and the slowness of the Brazilian justice, government agencies have been implementing PADDD without consultation of civil society. If parks and reserves are to maintain their integrity, there will need to be investments in Brazilian PAs and a better understanding of the benefits PAs provide.",
@@ -606,6 +717,55 @@
             "publisher-place": "Rio Branco, AC",
             "title": "Abundância de mamíferos de médio e grande porte em resposta ao grau de distanciamento do rio chandless, parque estadual chandless, acre",
             "type": "thesis"
+        },
+        {
+            "author": [
+                {
+                    "family": "Brito Freire",
+                    "given": "Geraldo",
+                    "suffix": "Jr"
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "Danilo Bandini"
+                },
+                {
+                    "family": "Carvalho Santos",
+                    "given": "Andréia"
+                },
+                {
+                    "family": "Silva",
+                    "given": "Thayane"
+                },
+                {
+                    "family": "Dias",
+                    "given": "Joao Paulo"
+                },
+                {
+                    "family": "Rodrigues",
+                    "given": "Hanna Pâmela"
+                },
+                {
+                    "family": "Diniz",
+                    "given": "Ivone Rezende"
+                }
+            ],
+            "container-title": "Insect Conserv. Divers.",
+            "id": "Brito_Freire_2022",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        3
+                    ]
+                ]
+            },
+            "page": "226-235",
+            "publisher": "Wiley",
+            "title": "Horizontal and vertical variation in the structure of fruit‐feeding butterfly (nymphalidae) assemblages in the brazilian cerrado",
+            "type": "article-journal",
+            "volume": "15"
         },
         {
             "ISSN": "1676-0603",
@@ -1018,6 +1178,126 @@
             "title": "Riqueza de mamíferos de grande e médio porte do parque nacional da serra do divisor (acre, brasil)",
             "type": "article-journal",
             "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cardoso",
+                    "given": "Pedro"
+                },
+                {
+                    "family": "Barton",
+                    "given": "Philip S"
+                },
+                {
+                    "family": "Birkhofer",
+                    "given": "Klaus"
+                },
+                {
+                    "family": "Chichorro",
+                    "given": "Filipe"
+                },
+                {
+                    "family": "Deacon",
+                    "given": "Charl"
+                },
+                {
+                    "family": "Fartmann",
+                    "given": "Thomas"
+                },
+                {
+                    "family": "Fukushima",
+                    "given": "Caroline S"
+                },
+                {
+                    "family": "Gaigher",
+                    "given": "René"
+                },
+                {
+                    "family": "Habel",
+                    "given": "Jan C"
+                },
+                {
+                    "family": "Hallmann",
+                    "given": "Caspar A"
+                },
+                {
+                    "family": "Hill",
+                    "given": "Matthew J"
+                },
+                {
+                    "family": "Hochkirch",
+                    "given": "Axel"
+                },
+                {
+                    "family": "Kwak",
+                    "given": "Mackenzie L"
+                },
+                {
+                    "family": "Mammola",
+                    "given": "Stefano"
+                },
+                {
+                    "family": "Ari Noriega",
+                    "given": "Jorge"
+                },
+                {
+                    "family": "Orfinger",
+                    "given": "Alexander B"
+                },
+                {
+                    "family": "Pedraza",
+                    "given": "Fernando"
+                },
+                {
+                    "family": "Pryke",
+                    "given": "James S"
+                },
+                {
+                    "family": "Roque",
+                    "given": "Fabio O"
+                },
+                {
+                    "family": "Settele",
+                    "given": "Josef"
+                },
+                {
+                    "family": "Simaika",
+                    "given": "John P"
+                },
+                {
+                    "family": "Stork",
+                    "given": "Nigel E"
+                },
+                {
+                    "family": "Suhling",
+                    "given": "Frank"
+                },
+                {
+                    "family": "Vorster",
+                    "given": "Carlien"
+                },
+                {
+                    "family": "Samways",
+                    "given": "Michael J"
+                }
+            ],
+            "container-title": "Biol. Conserv.",
+            "id": "Cardoso_2020",
+            "issue": "108426",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        2
+                    ]
+                ]
+            },
+            "page": "108426",
+            "publisher": "Elsevier BV",
+            "title": "Scientists’ warning to humanity on insect extinctions",
+            "type": "article-journal",
+            "volume": "242"
         },
         {
             "DOI": "10.1590/s1676-06032011000100029",
@@ -1516,40 +1796,29 @@
             "type": "chapter"
         },
         {
-            "DOI": "10.1007/s10841-013-9565-9",
-            "ISSN": "1572-9753",
-            "URL": "http://dx.doi.org/10.1007/s10841-013-9565-9",
+            "abstract": "This article reviews the present state of insects, describing their taxonomic position, cost, and value as well as the threats to their well-being. Insects are an important source of both ecosystem services and ecosystem disservices. Recent studies have indicated a worrying decline in insect species, especially in flying insects in the northern temperate region, and this has spawned much media attention. Some decline has occurred, it is clear, due to agricultural intensification, urbanization, overuse of pesticides, and global climate change. A decline would seriously affect the ecosystem services that insects provide. However, there is too little data to warrant the belief that all insects are declining everywhere. There is a pressing need for more basic research on insect diversity in the context of a changing world.",
             "author": [
                 {
-                    "family": "Gerlach",
-                    "given": "J."
-                },
-                {
-                    "family": "Samways",
-                    "given": "M."
-                },
-                {
-                    "family": "Pryke",
-                    "given": "J."
+                    "family": "Eggleton",
+                    "given": "Paul"
                 }
             ],
-            "container-title": "Journal of Insect Conservation",
-            "id": "Gerlach_2013",
-            "issue": "4",
+            "container-title": "Annu. Rev. Environ. Resour.",
+            "id": "Eggleton_2020",
+            "issue": "1",
             "issued": {
                 "date-parts": [
                     [
-                        2013,
-                        4
+                        2020,
+                        10
                     ]
                 ]
             },
-            "page": "831-850",
-            "publisher": "Springer Science; Business Media LLC",
-            "title": "Terrestrial invertebrates as bioindicators: An overview of available taxonomic groups",
-            "title-short": "Terrestrial invertebrates as bioindicators",
+            "page": "61-82",
+            "publisher": "Annual Reviews",
+            "title": "The state of the world’s insects",
             "type": "article-journal",
-            "volume": "17"
+            "volume": "45"
         },
         {
             "author": [
@@ -1575,6 +1844,31 @@
             "title": "Mustela africana. The IUCN red list of threatened species 2016: e.T14025A45200982",
             "title-short": "Mustela africana. The IUCN red list of threatened species 2016",
             "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Fearnside",
+                    "given": "Philip M"
+                }
+            ],
+            "container-title": "Ambio",
+            "id": "Fearnside_2022",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        6
+                    ]
+                ]
+            },
+            "page": "1367-1370",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "Amazon environmental services: Why brazil’s highway BR-319 is so damaging",
+            "title-short": "Amazon environmental services",
+            "type": "article-journal",
+            "volume": "51"
         },
         {
             "DOI": "10.1371/journal.pone.0195084",
@@ -1747,6 +2041,52 @@
             "title-short": "Terrestrial invertebrates as bioindicators",
             "type": "article-journal",
             "volume": "17"
+        },
+        {
+            "abstract": "This study investigated the spatial distribution of an Amazonian fruit-feeding butterfly assemblage by linking species taxonomic and functional approaches. We hypothesized that: 1) vegetation richness (i.e., resources) and abundance of insectivorous birds (i.e., predators) should drive changes in butterfly taxonomic composition, 2) larval diet breadth should decrease with increase of plant species richness, 3) small-sized adults should be favored by higher abundance of birds, and 4) communities with eyespot markings should be able to exploit areas with higher predation pressure. Fruit-feeding butterflies were sampled with bait traps and insect nets across 25 km(2) of an Amazonian ombrophilous forest in Brazil. We measured larval diet breadth, adult body size, and wing marking of all butterflies. Our results showed that plant species richness explained most of the variation in butterfly taxonomic turnover. Also, community average diet breadth decreased with increase of plant species richness, which supports our expectations. In contrast, community average body size increased with the abundance of birds, refuting our hypothesis. We detected no influence of environmental gradients on the occurrence of species with eyespot markings. The association between butterfly taxonomic and functional composition points to a mediator role of the functional traits in the environmental filtering of butterflies. The incorporation of the functional approach into the analyses allowed for the detection of relationships that were not observed using a strictly taxonomic perspective and provided an extra insight into comprehending the potential adaptive strategies of butterflies.",
+            "author": [
+                {
+                    "family": "Graça",
+                    "given": "Márlon B"
+                },
+                {
+                    "family": "Morais",
+                    "given": "José W"
+                },
+                {
+                    "family": "Franklin",
+                    "given": "Elizabeth"
+                },
+                {
+                    "family": "Pequeno",
+                    "given": "Pedro A C L"
+                },
+                {
+                    "family": "Souza",
+                    "given": "Jorge L P"
+                },
+                {
+                    "family": "Bueno",
+                    "given": "Anderson Saldanha"
+                }
+            ],
+            "container-title": "Environ. Entomol.",
+            "id": "Graca_2016",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        4
+                    ]
+                ]
+            },
+            "keyword": "body size; environmental filtering; larval diet breadth; plant species richness; predation pressure",
+            "page": "301-309",
+            "publisher": "Oxford University Press (OUP)",
+            "title": "Combining taxonomic and functional approaches to unravel the spatial distribution of an amazonian butterfly community",
+            "type": "article-journal",
+            "volume": "45"
         },
         {
             "DOI": "10.7287/peerj.preprints.27882v1",
@@ -2066,6 +2406,46 @@
             "type": "article-journal"
         },
         {
+            "author": [
+                {
+                    "family": "Jakimow",
+                    "given": "Benjamin"
+                },
+                {
+                    "family": "Baumann",
+                    "given": "Matthias"
+                },
+                {
+                    "family": "Salomão",
+                    "given": "Caroline"
+                },
+                {
+                    "family": "Bendini",
+                    "given": "Hugo"
+                },
+                {
+                    "family": "Hostert",
+                    "given": "Patrick"
+                }
+            ],
+            "container-title": "J. Land Use Sci.",
+            "id": "Jakimow_2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        12
+                    ]
+                ]
+            },
+            "page": "176-195",
+            "publisher": "Informa UK Limited",
+            "title": "Deforestation and agricultural fires in South-West pará, brazil, under political changes from 2014 to 2020",
+            "type": "article-journal",
+            "volume": "18"
+        },
+        {
             "abstract": "",
             "author": [
                 {
@@ -2215,6 +2595,46 @@
             "type": "chapter"
         },
         {
+            "author": [
+                {
+                    "family": "Levy",
+                    "given": "Samuel A"
+                },
+                {
+                    "family": "Cammelli",
+                    "given": "Federico"
+                },
+                {
+                    "family": "Munger",
+                    "given": "Jacob"
+                },
+                {
+                    "family": "Gibbs",
+                    "given": "Holly K"
+                },
+                {
+                    "family": "Garrett",
+                    "given": "Rachael D"
+                }
+            ],
+            "container-title": "Glob. Environ. Change",
+            "id": "@Levy_2023",
+            "issue": "102671",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        5
+                    ]
+                ]
+            },
+            "page": "102671",
+            "publisher": "Elsevier BV",
+            "title": "Deforestation in the brazilian amazon could be halved by scaling up the implementation of zero-deforestation cattle commitments",
+            "type": "article-journal",
+            "volume": "80"
+        },
+        {
             "abstract": "Long-term research and monitoring can provide important ecological insights and are crucial for the improved management of ecosystems and natural resources. However, many long-term research and monitoring programs are either ineffective or fail completely owing to poor planning and/or lack of focus. Here we propose the paradigm of adaptive monitoring, which aims to resolve many of the problems that have undermined previous attempts to establish long-term research and monitoring. This paradigm is driven by tractable questions, rigorous statistical design at the outset, a conceptual model of the ecosystem or other entity being examined and a human need to know about ecosystem change. An adaptive monitoring framework enables monitoring programs to evolve iteratively as new information emerges and research questions change.",
             "author": [
                 {
@@ -2272,6 +2692,42 @@
             "title": "The science and application of ecological monitoring",
             "type": "article-journal",
             "volume": "143"
+        },
+        {
+            "abstract": "AbstractNewly discovered species are often threatened with extinction but in many cases have received limited conservation effort. To guide future conservation, it is important to determine the extinction risk of newly described species. Here, we test how time since formal description of a species is linked to its threat status to obtain a better insight into the possible threat status of newly described species and as yet undescribed species. We compiled IUCN Red List data for 53,808 species from five vertebrate groups described since 1758. Extinction risk for more recently described species has increased significantly over time; the proportion of threatened species among newly described species has increased from 11.9% for species described between 1758 and 1767 to 30.0% for those described between 2011 and 2020. Based on projections from our analysis, this could further increase to 47.1% by 2050. The pattern is consistent across vertebrate taxonomic groups and biomes. Current species extinction rates estimated from data of all known species are therefore highly likely to be underestimated. Intensive fieldwork to boost discovery of new species and immediate conservation action for newly described species, especially in tropical areas, is urgently required.",
+            "author": [
+                {
+                    "family": "Liu",
+                    "given": "Jiajia"
+                },
+                {
+                    "family": "Slik",
+                    "given": "Ferry"
+                },
+                {
+                    "family": "Zheng",
+                    "given": "Shilu"
+                },
+                {
+                    "family": "Lindenmayer",
+                    "given": "David B"
+                }
+            ],
+            "container-title": "Conserv. Lett.",
+            "id": "Liu_2022",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        5
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Undescribed species have higher extinction risk than known species",
+            "type": "article-journal",
+            "volume": "15"
         },
         {
             "DOI": "10.1098/rstb.2004.1584",
@@ -3958,6 +4414,56 @@
             "volume": "07"
         },
         {
+            "abstract": "Abstract Hydropower in the Brazilian Amazon is a prevalent form of development, but dams have widespread and long-term environmental impacts that include deforestation in the areas surrounding the dams. Small hydropower plants (SHPs) are often perceived as having reduced environmental impacts compared to the large ones. In Brazil, SHPs are licensed by state governments, which have less strict requirements than the federal environmental agency. Brazil’s definition of “small” dams has grown with successive increases in the maximum installed capacity from 10 to 30 to 50 megawatts (MW). This expanding loophole has increased the attractiveness of investing in multiple small dams rather than a single large dam, with resulting proliferation of SHPs. Forest dynamics surrounding the clustered SHPs when compared to single large dams are not well documented. In this study, we capitalized on a dense time series of satellite images to quantify and compare forest loss in the regions (over 110 000 km2 in area) surrounding 15 SHPs and 7 large dams at multiple watershed and buffer scales in the Brazilian Amazon for nearly two decades (2000–2018). The landscapes containing SHP clusters had lower cumulative forest loss as compared to those with large dams. However, when deforestation and hydroelectric generating capacity were jointly considered (i.e. forest loss per megawatt installed), we discovered an opposite trend. The regions surrounding the SHP clusters exhibited significant impacts ranging from 1.9 to 2.5 times that of the regions surrounding large dams across 5 km to sub-basin scales. Due to the considerable consequences of SHPs on deforestation, we argue that the rapid expansion of small hydropower should be approached with caution and requires more stringent environmental assessments.",
+            "author": [
+                {
+                    "family": "Nickerson",
+                    "given": "Samuel"
+                },
+                {
+                    "family": "Chen",
+                    "given": "Gang"
+                },
+                {
+                    "family": "Fearnside",
+                    "given": "Philip M"
+                },
+                {
+                    "family": "Allan",
+                    "given": "Craig J"
+                },
+                {
+                    "family": "Hu",
+                    "given": "Tongxi"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Carvalho",
+                    "given": "Luis M T"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "Kaiguang"
+                }
+            ],
+            "container-title": "Environ. Res. Lett.",
+            "id": "Nickerson_2022",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        8
+                    ]
+                ]
+            },
+            "page": "084026",
+            "publisher": "IOP Publishing",
+            "title": "Forest loss is significantly higher near clustered small dams than single large dams per megawatt of hydroelectricity installed in the brazilian amazon",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
             "author": [
                 {
                     "family": "Nobre",
@@ -4165,6 +4671,47 @@
             "title": "Comparação de modelos estatísticos para estimativa da biomassa de árvores, e estimativa do estoque de carbono acima do solo em cerrado",
             "type": "article-journal",
             "volume": "29"
+        },
+        {
+            "abstract": "Amazonia comprises a mosaic of contrasting habitats, with wide environmental heterogeneity at local and regional scales. In central Amazonia, upland forest (terra firme) is the predominant forest type and seasonally flooded forests inundated by white- and black-water rivers (várzea and igapó, respectively) represent around 20% of the forested areas. In this work, we took advantage of a natural spatial arrangement of the main vegetation types in central Amazonia to investigate butterfly assemblage structure in terra firme, várzea and igapó forests at the local scale. We sampled in the low- and high-water seasons, combining active and passive sampling with traps placed in both the understory and canopy. Terra firme supported the highest number of butterfly species, whereas várzea forest provided the highest number of butterfly captures. The high species richness in terra firme may reflect that this forest type is floristically richer than várzea and igapó. Várzea is a very productive environment and may thus support a higher number of butterfly individuals than terra firme and igapó. Most butterfly species (80.2%) were unique to a single forest type and 17 can be considered forest type indicator species in this landscape. Floodplain forest environments are therefore an important complement to terra firme in terms of butterfly species richness and conservation in Amazonia.",
+            "author": [
+                {
+                    "family": "Oliveira",
+                    "given": "Isabela Freitas"
+                },
+                {
+                    "family": "Baccaro",
+                    "given": "Fabricio Beggiato"
+                },
+                {
+                    "family": "Werneck",
+                    "given": "Fernanda P"
+                },
+                {
+                    "family": "Zacca",
+                    "given": "Thamara"
+                },
+                {
+                    "family": "Haugaasen",
+                    "given": "Torbjørn"
+                }
+            ],
+            "container-title": "Forests",
+            "id": "Oliveira_2021",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        7
+                    ]
+                ]
+            },
+            "page": "942",
+            "publisher": "MDPI AG",
+            "title": "Marked differences in butterfly assemblage composition between forest types in central amazonia, brazil",
+            "type": "article-journal",
+            "volume": "12"
         },
         {
             "abstract": "The seasonal flood pulse in Amazonia can be considered a primary driver of community structure in floodplain environments. Although this natural periodic disturbance is part of the landscape dynamics, the seasonal inundation presents a considerable challenge to organisms that inhabit floodplain forests. The present study investigated the effect of seasonal flooding on fruit-feeding butterfly assemblages in different forest types and strata in central Amazonia. We sampled fruit-feeding butterflies in the canopy and the understory using baited traps in adjacent upland (unflooded forests-terra firme), white and blackwater floodplain forests (várzea and igapó, respectively) during the low- and high-water seasons. Butterfly abundance decreased in the high-water season, especially of dominant species in várzea, but the number of species was similar between seasons in the three forest types. Species composition differed between strata in all forest types. However, the flood pulse only affected butterfly assemblages in várzea forest. The \\beta-diversity components also differed only in várzea. Species replacement (turnover) dominated the spatial \\beta-diversity in igapó and terra firme in both seasons and várzea in the high-water season. Nonetheless, nestedness was relatively higher in várzea forests during the low-water season, mainly due to the effect of dominant species. These results emphasize the importance of seasonal flooding to structure butterfly assemblages in floodplain forests and reveal the idiosyncrasy of butterfly community responses to flooding in different forest types. Our results also suggest that any major and rapid changes to the hydrological regime could severely affect floodplain communities adapted to this natural seasonal hydrological cycle, threatening the existence of these unique environments.",

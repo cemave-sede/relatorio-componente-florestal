@@ -41,11 +41,11 @@ library(gridExtra)
 </br>
 
 
-Os insetos estão entre os organismos mais diversos e ameaçados do mundo (@Wagner_2020; @Janzen_2021). Entender como essa diversidade está distribuída no tempo e no espaço é crucial, visto que muitas espécies estão sendo extintas antes mesmo de serem descobertas pela ciência (**referências**). O Brasil, um país extenso e megadiverso, conta com poucos projetos de longo prazo (mais de cinco anos) voltados a investigar padrões de diversidade locais e regionais,  especialmente em grupos de invertebrados como insetos (@Costa_2020). A maioria das pesquisas abrange escalas locais e curtos períodos de tempo (**referências**), contribuindo significativamente para a compreensão de padrões de diversidade específicos, mas ressaltando a importância da implementação de projetos de longa duração em diversas áreas do país. 
+Os insetos estão entre os organismos mais diversos e ameaçados do mundo (@Cardoso_2020; @Wagner_2020; @Janzen_2021). Entender como essa diversidade está distribuída no tempo e no espaço é crucial, visto que muitas espécies estão sendo extintas antes mesmo de serem descobertas pela ciência (@Eggleton_2020; @Liu_2022). O Brasil, um país extenso e megadiverso, conta com poucos projetos de longo prazo (mais de cinco anos) voltados a investigar padrões de diversidade locais e regionais,  especialmente em grupos de invertebrados como insetos (@Costa_2020). A maioria das pesquisas abrange escalas locais e curtos períodos de tempo (@Ribeiro_2010; @Graca_2016; @Beirao_2017; @Araujo_2020;  @Oliveira_2021; @Bellaver_2022; @Brito_Freire_2022), contribuindo significativamente para a compreensão de padrões de diversidade específicos, mas ressaltando a importância da implementação de projetos de longa duração em diversas áreas do país. 
 
-Nas últimas décadas, as borboletas frugívoras têm sido utilizadas como organismos modelo em monitoramentos de fauna em diversos países da região tropical (@Hughes_1998; @Molleman_2006; @DeVries_2012; @Aduse-Poku_2012; @Nyafwono_2014; @VanSwaay_2015; @Freitas_2024). A seleção deste grupo se deve à sua grande diversidade e significância ecológica, aliada à facilidade de amostragem por meio de armadilhas atrativas (@LucciFreitas_2014). O uso dessas armadilhas possibilita a amostragem simultânea em várias áreas, padronizando o esforço amostral e reduzindo a chance de viés nos dados. Além disso, as borboletas frugívoras são altamente sensíveis a alterações ambientais, o que as torna indicadoras valiosas de perturbações nos *habitat* (@Bonebrake_2010; @Oliveira_2018). Variações no número de espécies e indivíduos dessas borboletas, bem como mudanças na composição da comunidade, frequentemente refletem as alterações ambientais ocorridas naquele local ou região (@Oliveira_2023). Assim, devido ao seu curto ciclo de vida, estas mudanças na comunidade de borboletas são observadas relativamente rápido. Outros fatores determinantes para a escolha de borboletas frugívoras em estudos de monitoramento são a relativa facilidade na identificação e sua boa resolução taxônomica, quando comparadas a outros grupos de insetos. 
+Nas últimas décadas, as borboletas frugívoras têm sido utilizadas como organismos modelo em monitoramentos de fauna em diversos países da região tropical (@Hughes_1998; @Molleman_2006; @DeVries_2012; @Aduse-Poku_2012; @Nyafwono_2014; @VanSwaay_2015; @Freitas_2024). A seleção deste grupo se deve à sua grande diversidade e significância ecológica, aliada à facilidade de amostragem por meio de armadilhas atrativas (@LucciFreitas_2014). O uso dessas armadilhas possibilita a amostragem simultânea em várias áreas, padronizando o esforço amostral e reduzindo a chance de viés nos dados. Além disso, as borboletas frugívoras são altamente sensíveis a alterações ambientais, o que as torna indicadoras valiosas de perturbações nos *habitat* (@Bonebrake_2010; @Oliveira_2018). Variações no número de espécies e indivíduos dessas borboletas, bem como mudanças na composição da comunidade, frequentemente estão associadas ou resultam de alterações ambientais ocorridas naquele local ou região (@Oliveira_2023). Assim, devido ao seu curto ciclo de vida, estas mudanças na comunidade de borboletas são observadas relativamente rápido. Outros fatores determinantes para a escolha de borboletas frugívoras em estudos de monitoramento são a relativa facilidade na identificação e sua boa resolução taxônomica, quando comparadas a outros grupos de insetos. 
 
-Neste capítulo, serão apresentados os resultados da aplicação do protocolo básico de borboletas frugívoras, focados nas tribos capturadas de 2014 a 2022 em 50 unidades de conservação (UCs) federais. Alguns resultados por UC poderão ser encontrados no **Apêndice X** deste relatório. 
+Neste capítulo, serão apresentados os resultados gerais da aplicação do protocolo básico de borboletas frugívoras em unidades de conservação (UCs) federais do Programa Monitora. Alguns resultados por UC poderão ser encontrados no **Apêndice X** deste relatório.  
 
 </br>
 
@@ -54,7 +54,7 @@ Neste capítulo, serão apresentados os resultados da aplicação do protocolo b
 </br>
 
 
-De 2014 a 2022 o protocolo amostral de borboletas frugívoras foi aplicado de forma integral ou parcial em 50 UCs federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo *Van Someren-Rydon*). A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) estão consolidadas, com pelo menos três EAs e 12 UAs implantadas: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (ver Tabela xx do Cap. 2 para lista completa das UCs).  
+O protocolo amostral básico de borboletas frugívoras (com identificação taxonômica no nível de tribo) foi aplicado de 2014 a 2022, de forma integral ou parcial, em 50 Unidades de Conservação (UCs) federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo *Van Someren-Rydon*). A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) estão consolidadas, com pelo menos três EAs e 12 UAs implantadas: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (ver Tabela xx do Cap. 2 para lista completa das UCs).  
 
 
 A partir de xxxx, xx UCs (XX%) adotaram o *Open Data Kit* (ODK), um aplicativo Android de código aberto que possibilita a coleta de dados em campo de forma mais eficiente e confiável, substituindo os formulários em papel. Ele armazena diversos tipos de informação como textos, dados numéricos, coordenadas geográficas, áudio, imagens, vídeo e códigos de barras, sendo projetado para funcionar mesmo sem conectividade à *internet*. O ODK favorece o registro de armadilhas com zero capturas, informação muitas vezes desconsiderada quando a amostragem é feita com formulários tradicionais. Além disso, só é possível adicionar as fotos das borboletas no sistema quando as coordenadas da unidade amostral de cada EA são registradas, certificando que a coleta foi, de fato, feita no local correto. Com as fotos das borboletas no sistema, especialistas podem identificar os indivíduos em nível de espécie ou morfoespécie, possibilitando a análise dos dados de acordo com o protocolo avançado.  
@@ -1359,7 +1359,8 @@ graficos <- lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_fin
 
 </br>
 
-Para avaliar as flutuações dos índices de abundância ao longo dos anos, foram utilizadas somente as tribos indicadoras de ambientes preservados e perturbados. Dessa forma, foram somados os números de indivíduos das tribos Brassolini, Morphini e Haeterini para cada ano, representando as borboletas indicadoras de ambientes fechados/preservados e o número de indivíduos das tribos Callicorini, Biblidini e Ageroniini, tribos de borboletas de florestas abertas/perturbadas. Os valores de índice de abundância de cada tribo por ano são apresentados no **Apêndice xx**.  
+
+Para avaliar flutuações na abundância das tribos de borboletas ao longo dos anos foi usado um índice considerando somente as tribos indicadoras de florestas preservadas e perturbadas. Para isso, os indivíduos das tribos Brassolini, Morphini e Haeterini registrados em cada ano foram somados, com os totais resultantes representando conjuntamente as borboletas de ambientes fechados/preservados. O mesmo foi feito para as borboletas de florestas abertas/perturbadas: Callicorini, Biblidini e Ageroniini. Os valores do índice de abundância de cada tribo por ano são apresentados no **Apêndice xx**.  
 
 
 </br>
@@ -1368,33 +1369,46 @@ Para avaliar as flutuações dos índices de abundância ao longo dos anos, fora
 
 </br>
 
-O índice de abundância tem como base o número acumulado de indivíduos de cada tribo em cada ano numa dada área. Partindo do número de indivíduos por ano (*n*), é feita uma correção, somando um número muito pequeno de forma a evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida (*f* = *n* + 0,00001). Em seguida, é calculada a frequência absoluta corrigida pelo esforço amostral (*fe*) para padronização: *fe* = *f* / (número de armadilhas * dias de amostragem). O índice de abundância (*i*) é calculado através da divisão da fe do ano específico sobre o valor da *fe* do primeiro ano em que aquela “população” foi registrada. Foi considerada primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência (*i*~0~) é padronizado com o valor 1,0. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, foi feita uma transformação logarítmica (*log*~10~ + 1) do índice de abundância. Assim, valores acima de 1,0 indicam um aumento "populacional" referente ao primeiro ano e valores abaixo de 1,0 indicam uma redução "populacional".  
+Neste relatório, foram adotadas duas abordagens no cálculo do índice de abundância. Na primeira, o índice possibilita a detecção de flutuações de abundância de um ano em relação ao ano anterior. Na segunda, oscilações “populacionais” podem ser detectadas comparando-se o valor do índice de um dado ano ao valor do primeiro ano de ocorrência da “população” sob análise.  
+
+
+O índice de abundância *(i)* tem como base o número acumulado de indivíduos de cada tribo em cada ano *(t)* numa dada área. A partir do número de indivíduos registrados por ano *(n)* para cada grupo de borboletas indicadoras, é feita uma correção, somando-se um valor muito pequeno para evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida *(f~t~* = *n* + 0,00001*)*. Em seguida, para obtenção de um valor padronizado *(fe)*, a frequência absoluta corrigida é dividida pelo *esforço amostral* = número de armadilhas * dias de amostragem. O índice de abundância *(i~t~)* é calculado por meio da divisão da fe do ano específico *(fe~t~)* pelo valor da *fe* do ano anterior *(fe~t-1~)*. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, aplicou-se uma transformação logarítmica (log~10~ + 1). Assim, valores acima de 1,0 indicam um aumento e abaixo de 1,0 uma redução "populacional" em relação ao ano anterior.  
+
+
+ Exemplo dessa forma de cálculo do índice de abundância para o terceiro ano de amostragem: 
+
 
 
 Neste relatório, foram feitas duas abordagens do índice de abundância. O primeiro se refere à flutuação do índice de abundância em relação ao ano anterior. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem: 
 
 
+
 $$f_{3} = n + 0,00001$$ 
-
 $$fe_{3} = f_{3} / \text{esforço} \, \text{anual}$$ 
-
 $$i_{3} = log_{10} (fe_{3} / fe_{2}) + 1$$ 
 
 
 </br>  
 
+Esta abordagem pode revelar, por exemplo, o quanto uma "população" está se 'recuperando' de um declínio no ano anterior (@tbl-ind-abund-regiao-central a @tbl-ind_abund_mata_atlantica).  
 
-Esta abordagem revela, por exemplo, o quanto a "população" está se 'recuperando' de um declínio no ano anterior. Estes valores podem ser encontrados na @tbl-ind-abund-regiao-central a @tbl-ind_abund_mata_atlantica.  
 
 
-A segunda abordagem segue o princípio do *Live Planet Index* (LPI), no qual os índices de abundância dos anos amostrados fazem referência ao primeiro ano em que a "população" foi registrada. Esta flutuação "populacional" pode ser vista nas figuras abaixo. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem: 
+A segunda abordagem segue o princípio do *Live Planet Index (LPI)* e o índice de abundância de um dado ano *(i~t~)* é calculado considerando sempre a frequência absoluta corrigida e padronizada daquele ano *(fe~t~)* em relação ao  valor da primeira ocorrência *(fe~0~)*, ou seja, do primeiro ano em que a "população" sob análise foi registrada.  Considerou-se primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência *(i~0~)* é padronizado como 1,0 e nesse caso também foi aplicada a transformação logarítmica. Valores acima de 1,0 indicam um aumento e abaixo de 1,0 uma redução "populacional” em relação ao primeiro ano de ocorrência.   
+
+A seguir, um exemplo do cálculo do índice de abundância neste formato para o terceiro ano de amostragem: 
+
+
 
 $$f_{3} = n + 0,00001$$ 
 
 
 $$fe_{3} = f_{3} / \text{esforço} \, \text{anual}$$ 
 
-$$i_{3} = log_{10} (fe_{3} / fe_{0}) + 1$$ 
+$$i_{3} = log_{10} (fe_{3} / fe_{0}) + 1$$  
+
+
+Flutuações "populacionais" detectadas por meio dessa abordagem são apresentadas na @fig-regioes-amazonia a @fig-ind-abund-cerrado. 
 
 </br>
 
@@ -1681,7 +1695,7 @@ knitr::include_graphics("imagens/cap04/tbl-IA-mata-atlantica.JPG")
 
 Na segunda abordagem utilizada  o índice de abundância é calculado em relação à primeira ocorrência do grupo indicador com número de capturas ≥ 20 indivíduos. Os resultados dessa abordagem são apresentados graficamente na Figura 4 e os valores dos índices para cada tribo encontram-se na **tabela X** do **Apêndice Y**. 
 
-Os resultados obtidos para os grupos de borboletas indicadoras não foram uniformes nas diferentes regiões climáticas da Amazônia ao longo dos anos. Enquanto nas regiões central, sudoeste e norte o índice de abundância indicou um aumento ou estabilidade na abundância das borboletas de florestas fechadas/preservadas, uma diminuição "populacional" foi indicada nas regiões leste e sudeste. Este é um resultado interessante, visto que as regiões sudeste e leste da Amazônia fazem parte do chamado "arco do desmatamento" e sofrem com os avanços de intervenções humanas como a pecuária, plantações de soja e construções de estradas (**referências**). Dessa forma, a diminuição de borboletas indicadoras de florestas fechadas/preservadas nessas regiões pode ser um indicativo da diminuição da cobertura florestal em  nível regional, visto que as amostragens são executadas em UCs que não sofrem diretamente com estas ameaças. Porém, para que esta hipótese seja avaliada adequadamente faz-se necessário obter e incluir em futuras análises dados ambientais e climáticos na escala da região.  
+Os resultados obtidos para os grupos de borboletas indicadoras não foram uniformes nas diferentes regiões climáticas da Amazônia ao longo dos anos. Enquanto nas regiões central, sudoeste e norte o índice de abundância indicou um aumento ou estabilidade na abundância das borboletas de florestas fechadas/preservadas, uma diminuição "populacional" foi indicada nas regiões leste e sudeste. Este é um resultado interessante, visto que as regiões sudeste e leste da Amazônia fazem parte do chamado "arco do desmatamento" e sofrem com os avanços de intervenções humanas como a pecuária, plantações de soja, construções de barragens, hidrelétricas e estradas (@Fearnside_2022; @Nickerson_2022; @Jakimow_2023; @Levy_2023). Dessa forma, a diminuição de borboletas indicadoras de florestas fechadas/preservadas nessas regiões pode ser um indicativo da diminuição da cobertura florestal em  nível regional, visto que as amostragens são executadas em UCs que não sofrem diretamente com estas ameaças. Porém, para que esta hipótese seja avaliada adequadamente faz-se necessário obter e incluir em futuras análises dados ambientais e climáticos na escala da região.  
 
 
 As tribos indicadoras de florestas abertas/perturbadas apresentaram, em sua maioria, redução "populacional", especialmente após de 2020. Os únicos picos de aumento "populacional" deste grupo ocorreram em 2019, na região sudoeste da Amazônia, e em 2021, na região central. As regiões norte, leste e sudoeste (a partir de 2020) se destacaram pelas reduções e na região sudeste não foi obtido o número mínimo de 20 indivíduos para o cálculo do índice. Para entender este resultado serão necessárias análises mais refinadas utilizando imagens de satélite, dados climáticos e ambientais. No entanto, a diminuição populacional desse grupo deve, idealmente, ser avaliada num nível taxonômico mais fino, preferencialmente de espécie, para que a interpretação seja mais adequada, especialmente em relação à tribo Ageroniini.  
@@ -1692,7 +1706,7 @@ As tribos indicadoras de florestas abertas/perturbadas apresentaram, em sua maio
 
 
 ```{r graficos IA-regiões_climaticas_amazonia_calculos}
-#| label: fig-IA-regioes-climaticas-amazonia_calculos
+#| label: fig-regioes-amazonia
 #| echo: false
 #| message: false
 #| warning: false

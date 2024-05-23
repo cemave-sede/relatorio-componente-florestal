@@ -942,6 +942,8 @@ masto_aves <-
   arrange(uc, ano, ea) |>
   fill(esforco)
 
+
+
 # View(masto_aves) 
 
 # Alterando o nome das categorias para letras maiúsculas
@@ -1143,6 +1145,9 @@ esforco_dia_trilha <- masto_aves  |>
   distinct(uc, bioma, grupo, ano, ea, data, esforco) 
   
 #View(esforco_dia_trilha)
+
+
+
 
 
 esforco_dia_trilha_rep <- masto_aves  |> # número amostragens por trilha
