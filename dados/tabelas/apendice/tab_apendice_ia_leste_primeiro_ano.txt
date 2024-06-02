@@ -1,0 +1,16 @@
+"tribo"	"2016"	"2017"	"2018"	"2019"	"2020"	"2021"	"2022"
+"Ageroniini"	NA	NA	NA	NA	NA	NA	1
+"Anaeini"	1	0.319	-0.093	0.433	0.796	0.25	0.193
+"Biblidini"	NA	NA	NA	NA	NA	NA	NA
+"Borboletas_abertas"	NA	1	0.287	0.512	0.477	0.488	0.784
+"Borboletas_fechadas"	1	1.069	0.945	0.946	0.642	1.079	0.77
+"Brassolini"	1	1.019	0.969	0.921	0.642	1.057	0.759
+"Callicorini"	NA	NA	NA	NA	NA	NA	NA
+"Coeini"	1	1.382	0.915	0.935	0.814	0.847	0.779
+"Epicaliini"	1	1.222	1.135	1.021	0	1.021	1.065
+"Epiphilini"	NA	NA	NA	NA	NA	NA	NA
+"Haeterini"	NA	NA	NA	NA	NA	NA	NA
+"Melanitini"	NA	NA	NA	NA	NA	NA	NA
+"Morphini"	1	1.138	0.908	0.993	0.658	1.109	0.772
+"Preponini"	1	1.033	0.876	0.718	0.938	0.874	0.655
+"Satyrini"	1	1.127	0.904	0.885	0.887	0.917	0.708

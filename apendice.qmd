@@ -26,9 +26,442 @@ library(renv)
 library(htmlTable)
 ```
 
-# (APPENDIX) Apêndices {- #apendice}
+# (APPENDIX) Apêndices {- #apendice}  
 
 \pagestyle{headings}
+
+## Apêndice B1 - Unidades de conservação do Componente Florestal do Programa Monitora com alvos globais monitorados de 2014 a 2022. {.appendix}
+
+\hspace{1.5cm}
+
+```{r tabela implementacao}
+#| label: tbl-implementacao
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Unidades de conservação do componente Florestal com alvos globais (MA = Mamíferos e Aves de médio a grande porte; P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras) monitorados de 2014 a 2022."
+
+tabela_implementacao <- read.csv2("dados/tabelas/apendice/tab_implementacao.csv", fileEncoding='UTF-8', check.names=F)
+
+tab_implementacao <- kbl(tabela_implementacao,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Unidades de conservação do componente Florestal com alvos globais (P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras e M = Mamíferos e Aves de médio a grande porte) monitorados de 2014 a 2022.",
+            col.names = c("Unidade de Conservação", "CNUC", "Bioma", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_implementacao
+
+```
+
+
+</br>
+
+\pagestyle{headings}
+
+## Apêndice B2 - Resultados da análise de validação das campanhas de amostragem de borboletas frugívoras no Programa Monitora {.appendix}
+
+\hspace{1.5cm}
+
+```{r tabela violacoes}
+#| label: tbl-violacaoes
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Validação das campanhas de amostragem de borboletas frugívoras no Programa Monitora"
+
+tabela_violacoes <- read.csv2("dados/tabelas/apendice/tab_apendice_violacoes.csv", fileEncoding='latin1', check.names=F)
+
+tab_violacoes <- kbl(tabela_violacoes,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Resultados da análise para validação das campanhas de amostragem de borboletas frugívoras no Programa Monitora. As células marcadas com X indicam que o critério indicado naquela coluna foi violado durante o processo de amostragem.",
+            col.names = c("UC-EA", "Campanha", "Início", "Fim", "Região", "Duração da coleta", "Período indicado", "Intervalo entre amostragens"), align = c("l", "l", "l", "l", "l", "c", "c", "c")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_violacoes
+
+```
+
+
+
+## Apêndice B3 - Valores do índice de abundância de cada tribo por ano (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano)
+
+\hspace{1.5cm}
+
+```{r tabela borboletas IA primeiro ano sudoeste}
+#| label: tbl-borboletas-IA-primeiro-ano-sudoeste
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Sudoeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice)."
+
+tabela_IA_sudoeste_primeiro_ano <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_sudoeste_primeiro_ano.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_sudoeste_primeiro_ano <- kbl(tabela_IA_sudoeste_primeiro_ano,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Sudoeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice).",
+            col.names = c("Tribo", "2014", "2015", "2016", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_sudoeste_primeiro_ano
+
+```
+
+
+</br>
+
+
+```{r tabela borboletas IA primeiro ano central}
+#| label: tbl-borboletas-IA-primeiro-ano-central
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Central Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice)."
+
+tabela_IA_central_primeiro_ano <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_central_primeiro_ano.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_central_primeiro_ano <- kbl(tabela_IA_central_primeiro_ano,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Central Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice).",
+            col.names = c("Tribo", "2014", "2015", "2016", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_central_primeiro_ano
+
+```
+
+
+</br>
+
+
+```{r tabela borboletas IA primeiro ano leste}
+#| label: tbl-borboletas-IA-primeiro-ano-leste
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Leste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice)."
+
+tabela_IA_leste_primeiro_ano <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_leste_primeiro_ano.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_leste_primeiro_ano <- kbl(tabela_IA_leste_primeiro_ano,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Leste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice).",
+            col.names = c("Tribo", "2016", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_leste_primeiro_ano
+
+```
+
+
+</br>
+
+
+
+```{r tabela borboletas IA primeiro ano sudeste}
+#| label: tbl-borboletas-IA-primeiro-ano-sudeste
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Sudeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice)."
+
+tabela_IA_sudeste_primeiro_ano <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_sudeste_primeiro_ano.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_sudeste_primeiro_ano <- kbl(tabela_IA_sudeste_primeiro_ano,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Sudeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice).",
+            col.names = c("Tribo", "2016", "2017", "2018", "2019", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_sudeste_primeiro_ano
+
+```
+
+
+</br>
+
+
+
+```{r tabela borboletas IA primeiro ano norte}
+#| label: tbl-borboletas-IA-primeiro-ano-norte
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Norte Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice)."
+
+tabela_IA_norte_primeiro_ano <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_norte_primeiro_ano.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_norte_primeiro_ano <- kbl(tabela_IA_norte_primeiro_ano,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Norte Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice).",
+            col.names = c("Tribo", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_norte_primeiro_ano
+
+```
+
+
+
+</br>
+
+
+```{r tabela borboletas IA primeiro ano mata atlantica}
+#| label: tbl-borboletas-IA-primeiro-ano-mata-atlantica
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - Mata Atlântica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice)."
+
+tabela_IA_mata_atlantica_primeiro_ano <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_mata_atlantica_primeiro_ano.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_mata_atlantica_primeiro_ano <- kbl(tabela_IA_mata_atlantica_primeiro_ano,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - Mata Atlântica (índice calculado considerando os valores de abundância do ano em questão em relação ao primeiro ano de amostragem com valor de abundância considerado válido para estimativa do índice).",
+            col.names = c("Tribo", "2015", "2016", "2017", "2018", "2019", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_mata_atlantica_primeiro_ano
+
+```
+
+
+</br>
+
+
+## Apêndice C - Valores do índice de abundância de cada tribo por ano (índice calculado considerando os valores de abundância do ano em relação ao ano anterior)
+
+\hspace{1.5cm}
+
+```{r tabela borboletas IA ano anterior sudoeste}
+#| label: tbl-borboletas-IA-ano-anterior-sudoeste
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Sudoeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior)."
+
+tabela_IA_sudoeste_ano_anterior <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_sudoeste_ano_anterior.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_sudoeste_ano_anterior <- kbl(tabela_IA_sudoeste_ano_anterior,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Sudoeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior).",
+            col.names = c("Tribo", "2014", "2015", "2016", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_sudoeste_ano_anterior
+
+```
+
+
+</br>
+
+
+```{r tabela borboletas IA ano anterior central}
+#| label: tbl-borboletas-IA-ano-anterior-central
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Central Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior)."
+
+tabela_IA_central_ano_anterior <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_central_ano_anterior.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_central_ano_anterior <- kbl(tabela_IA_central_ano_anterior,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Central Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior).",
+            col.names = c("Tribo", "2014", "2015", "2016", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_central_ano_anterior
+
+```
+
+
+
+
+</br>
+
+
+```{r tabela borboletas IA ano anterior leste}
+#| label: tbl-borboletas-IA-ano-anterior-leste
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Leste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior)."
+
+tabela_IA_leste_ano_anterior <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_leste_ano_anterior.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_leste_ano_anterior <- kbl(tabela_IA_leste_ano_anterior,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Leste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior).",
+            col.names = c("Tribo", "2016", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_leste_ano_anterior
+
+```
+
+
+
+</br>
+
+
+```{r tabela borboletas IA ano anterior sudeste}
+#| label: tbl-borboletas-IA-ano-anterior-sudeste
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Sudeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior)."
+
+tabela_IA_sudeste_ano_anterior <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_sudeste_ano_anterior.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_sudeste_ano_anterior <- kbl(tabela_IA_sudeste_ano_anterior,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Sudeste Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior).",
+            col.names = c("Tribo", "2016", "2017", "2018", "2019", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_sudeste_ano_anterior
+
+```
+
+
+
+</br>
+
+
+
+```{r tabela borboletas IA ano anterior norte}
+#| label: tbl-borboletas-IA-ano-anterior-norte
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - região climática Norte Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior)."
+
+tabela_IA_norte_ano_anterior <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_norte_ano_anterior.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_norte_ano_anterior <- kbl(tabela_IA_norte_ano_anterior,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - região climática Norte Amazônica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior).",
+            col.names = c("Tribo", "2017", "2018", "2019", "2010", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_norte_ano_anterior
+
+```
+
+
+
+
+</br>
+
+
+```{r tabela borboletas IA ano anterior mata atlântica}
+#| label: tbl-borboletas-IA-ano-anterior-mata-atlantica
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Valores do índice de abundância de cada tribo por ano - Mata Atlântica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior)."
+
+tabela_IA_mata_atlantica_ano_anterior <- read.delim2("dados/tabelas/apendice/tab_apendice_ia_mata_atlantica_ano_anterior.txt", fileEncoding='latin1', check.names=F)
+
+tab_IA_mata_atlantica_ano_anterior <- kbl(tabela_IA_mata_atlantica_ano_anterior,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Valores do índice de abundância de cada tribo por ano - Mata Atlântica (índice calculado considerando os valores de abundância do ano em questão em relação ao ano anterior).",
+            col.names = c("Tribo", "2015", "2016", "2017", "2018", "2019", "2021", "2022"), align = c("l", "l", "l", "l", "l", "l", "l", "l")) %>%
+    #column_spec(3, italic = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_IA_mata_atlantica_ano_anterior
+
+```
+
+
+
+\pagestyle{headings}
+
+
 
 ## Apêndice A - Lista de coletores {.appendix}
 
@@ -41,9 +474,6 @@ library(htmlTable)
 **Mata Atlântica**: Ademar Martins,  Adrianne Araújo Pires, Adriano Lima, Afonso Henrique Leal, Alex da Costa Picoli, Alexandre Araújo Pires, Alexandre Voglioti, Alexsandro Correa da Silva, Aline Cristina Gonçalves Martins Kuck, Amanda Cristina Lopes, Amanda Devide, Amanda Souza Lopes, Ana Caroline Pereira, Ana do N. de Araujo, Ananda Graf Mourão, Anderson de Souza Ferreira, Anderson Miranda da Graça, Andressa Aparecida Carboni, Apolonio Rodrigues, Bernardo da Silva Costa, Bernardo Eckhardt, Bruna de Oliveira Romanzini, Bruno Alencar Rodrigues, Cainã Hutter, Camila Cristina de Jesus Castro, Camila Gervásio, Camila Santos da Silva, Candice Moutte, Carlos Alexandre Fortuna, Carlos Antônio Izidoro Athanazio, Cecilia Cronemberger de Faria, Christopher Jasper, Cíntia Mazon Parola, Cleldson D´Almeida Basílio, Cristina Bordin Nascimento, Damião Pedro da Silva, Daniel Cesário Baesso, Daniela Cleide Azevedo de Abreu, Danielle Goulart, David Lucas Amorim Lopes, Denis Barbosa, Dervaldo de Souza, Diego Sass, Dinarte da Silva Squenine, Douglas, Ederaldo Muniz Squenine, Edivaldo Amaral Junior, Edivaldo Luis Dias Santana, Emily dos Santos Pereira, Esther Bordim Lupion, Esther de Mattos Maia, Fabiane Aguiar, Fabiano Rodrigues de Souza, Fabio Salomão, Fernanda Costa, Fernanda Oliveira Campiolo, Flavio Obermuller, Gabriel Esteves, Gabriel Rosas Amaral, Gabriela Nakano, Gerlaine de Souza Costa, Getúlio Luis de Freitas, Gregório Marco, Guadalupe Vivekananda, Hannah Luisa Anton, Hellen José Florez Rocha, Helloise da Silva Campos, Herison Medeiros, Isabela de Farias Deiss, Isabella Carmo, Ivair Barbosa Colombes, Jailson Pires Araújo, Janaína Matinc Claro, Janderson James Barbosa, Janine Soares Maffei, Jeronimo Pinheiro, Jéssica Pereira Rita de Souza, João Castelani, João Luiz de Almeida Camargo, João Marcos Vital Francisco, Jobson Oliveira, Jorge Luis do Nascimento, José Guilherme Carvalho, Josemar Gonçalves Ribeiro, Joseph Bartram, Júlia Mara Silva, Julia Silva Seixas, Juliana Silva Barbosa, Junia Yasmin O. Carreira, Lenilda do Nascimento, Leonardo G. Pacheco de Sá, Leonardo Gomes, Letícia Andrade Camara, Letícia Paschoaletto Dias, Luciara Pires Castanho Cunha, Lucicleia Castanho Corrêa, Luiz de Paula, Luiz Fernando Gonçalves, Luiz Henrique Condrati, Luiz Valdevino Gomes, Maíla Brandão Couto, Manuela Catharina Twardowschy, Marcela Figueiredo Moraes, Marcelo da Silva Squenine, Marcelo Lourenço Junior, Marcia Virginia Santos, Márcio Uehara-Prado, Marcus Gomes, Maria Cecilia Ferreira, Maria del Carmen Rojas Carrizo, Mariana Martins, Mariana Uhrigshardt, Mariano Sant’Anna, Marina Duarte, Marina Xavier da Silva, Michele Siqueira  Muzy, Monique Zajdenwerg, Naiana dos Santos Costa, Nathan Nicolls, Odair Rodrigues, Oliver Van Sluys Menck, Paul Colas, Paulo Rodrigo Dias, Pedro Ivo, Pheterson Godinho, Rafael Firmino, Rafael Petrucci Marques Pinto, Ramon Correa, Raphael da Silva Teixeira, Raphael Xavier, Raquel Junger, Rebecca Hinchcliffe, Renata Lopes, Ricardo de Barros Mello Filho, Roberta Boss Ademar Martins, Roberto Greve, Roger Cardoso dos Santos, Rogério Reis Palácio, Ronan Freitas, Sara Ghazale, Sergio Casertano, Tânia de Souza Honorato, Severino Manuel Gomes, Shanna Bittencourt, Silvana Freitas, Tamyris Tavares da Silva, Thainá Seabra, Thamara Arão Feletti, Thamirys Domingues, Thathiane, Thatyanne Silva do Prado, Thayna Antunes, Thiago Coutinho Pavelkievicz, Thomas Canedo Alves, Uelquel Ribeiro, Ulisses Abel Xaia de Oliveira, Valdemir Matias Gomes, Victor Lima, Victoria Mary Ribeiro Leon, Vinicius Netto, Vitor Guniel Cunha, Vitória Caron Alves Pinto, Vittória Speranza, Viviane Formiga, Wellinton Luis de Souza, Willyam Nakano, Yasmin Cristine de Mello, Yuri de Castro Azevedo, entre outros.  
 
 
-
-
-## Apêndice B - Evolução do estágio de implementação do Programa {.appendix}
 
 \hspace{1.5cm}
 
@@ -60,14 +490,14 @@ library(htmlTable)
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| tab-cap: "Mamíferos registrados nas amostragens diurnas em transecções lineares do Programa Monitora, no período de 2014 a 2022. Os números entre parênteses correspondem ao número de espécies registradas para o táxon. Em vermelho estão os táxons ameaçados e sua respectiva categoria de ameaça. As espécies 'Deficientes em Dados (DD)' também estão indicadas."
+#| tab-cap: "Táxons de mamíferos registrados nas amostragens diurnas em transecções lineares do Componente Florestal do Programa Monitora de 2014 a 2022."
 
-tabela_mamiferos <- read.csv2("dados/tabelas/tabela_apendice_mamiferos_nome_comum.csv", encoding="UTF-8")
+tabela_mamiferos <- read.csv2("dados/tabelas/apendice/tabela_apendice_mamiferos_nome_comum.csv", encoding="UTF-8")
 
 tab_mamiferos <- kbl(tabela_mamiferos,
              booktabs = TRUE,
              longtable = TRUE,
-             # caption = " ",
+             caption = "Táxons de mamíferos registrados nas amostragens diurnas em transecções lineares do Componente Florestal do Programa Monitora de 2014 a 2022.",
             col.names = c("Ordem", "Família", "Táxon", "Nome comum", "Categoria"), align = c("l", "l", "l", "l", "c")) %>%
     column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
@@ -124,16 +554,16 @@ tab_mamiferos
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '100%'
-#| tab-cap: "Táxons (gêneros e espécies) de aves registrados nas unidades de conservação amostradas no período de 2014 a 2022."
+#| tab-cap: "Táxons de aves registrados registrados nas amostragens diurnas em transecções lineares do Componente Florestal do Programa Monitora de 2014 a 2022."
 
-tabela_aves <- read.csv2("dados/tabelas/tabela_apendice_aves.csv", encoding="UTF-8")
+tabela_aves <- read.csv2("dados/tabelas/apendice/tabela_apendice_aves_nome_comum.csv", encoding="UTF-8")
 
 tab_aves <- kbl(tabela_aves,
                 #"pipe",
              booktabs = TRUE,
              longtable = TRUE,
-             # caption = " ",
-            col.names = c("Ordem", "Família", "Táxon", "Categoria"), align = c("l", "l", "l", "c")) %>%
+             caption = "Táxons de aves registrados nas unidades de conservação do Componente Floretal do Programa Monitora de 2014 a 2022.",
+            col.names = c("Ordem", "Família", "Táxon", "Nome comum", "Categoria"), align = c("l", "l", "l", "l", "c")) %>%
     column_spec(3, italic = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 

@@ -294,6 +294,47 @@
             "volume": "3"
         },
         {
+            "abstract": "SummarySecondary forests growing on cleared lands and tree plantations are becoming increasingly widespread land‐uses in the tropics. Previous studies are divided on the conservation importance of these habitats for tropical forest butterflies.We use a robust sampling design, accounting for both seasonality and vertical stratification, to examine fruit‐feeding butterflies (Nymphalidae) in patches of secondary forest andEucalyptusplantation 2–3 orders of magnitude larger than those previously sampled.We recorded 10 587 butterflies and 128 species in 3200 trap‐days. Species richness was highest in primary forest and lowest in plantations, while butterfly abundance showed the opposite response. All habitats were distinct in terms of community structure.There was a significant interaction between habitat and season based on richness and abundance metrics, although not based on community structure. Secondary forest exhibited higher observed richness than primary forest in the peak of the dry‐season, but not at other times of the year. This observation could explain the lack of consensus in previous studies, as those reporting higher richness in secondary forest only sampled during the dry‐season.In general, habitat quality appeared to be more important than the surrounding landscape in determining butterfly community structure. However, the community structure of the strong‐flying Charaxinae was related to the amount of primary forest in surrounding landscape. There was very poor congruence between the response patterns of richness and abundance among different butterfly subfamilies.Linear regressions between resource availability and butterfly abundance showed a strong influence of leaf phenology in both primary and secondary forest, but no influence of fruit phenology.Synthesis and applications: A lack of seasonal replication and small sampling sizes may have led previous studies to over‐emphasize the conservation importance of secondary forest and plantations for butterflies. We show that these habitats are significantly poorer than primary forest in terms of number of species, and hold distinct butterfly communities. Although quantifying the number of species restricted to primary forest remains difficult, these results cast doubt on the presumption that secondary habitats will provide refuge for many of the species being lost through deforestation. We therefore strongly urge measures that prioritize the conservation of remaining primary forests where they still exist.",
+            "author": [
+                {
+                    "family": "Barlow",
+                    "given": "Jos"
+                },
+                {
+                    "family": "Overal",
+                    "given": "William L"
+                },
+                {
+                    "family": "Araujo",
+                    "given": "Ivanei S"
+                },
+                {
+                    "family": "Gardner",
+                    "given": "Toby A"
+                },
+                {
+                    "family": "Peres",
+                    "given": "Carlos A"
+                }
+            ],
+            "container-title": "J. Appl. Ecol.",
+            "id": "Barlow_2007",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007,
+                        10
+                    ]
+                ]
+            },
+            "page": "1001-1012",
+            "publisher": "Wiley",
+            "title": "The value of primary, secondary and plantation forests for fruit‐feeding butterflies in the brazilian amazon",
+            "type": "article-journal",
+            "volume": "44"
+        },
+        {
             "DOI": "10.1371/journal.pbio.1002357",
             "ISSN": "1545-7885",
             "URL": "http://dx.doi.org/10.1371/journal.pbio.1002357",

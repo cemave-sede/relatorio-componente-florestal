@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -87,6 +121,10 @@ div.csl-indent {
     "search-label": "Procurar"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -290,7 +328,7 @@ window.Quarto = {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#implementação-e-validação-protocolar" id="toc-implementação-e-validação-protocolar" class="nav-link active" data-scroll-target="#implementação-e-validação-protocolar"><span class="header-section-number">4.1</span> Implementação e validação protocolar</a></li>
+  <li><a href="#métodos-implementação-e-validação-protocolar" id="toc-métodos-implementação-e-validação-protocolar" class="nav-link active" data-scroll-target="#métodos-implementação-e-validação-protocolar"><span class="header-section-number">4.1</span> Métodos, implementação e validação protocolar</a></li>
   <li><a href="#resultados" id="toc-resultados" class="nav-link" data-scroll-target="#resultados"><span class="header-section-number">4.2</span> Resultados</a>
   <ul class="collapse">
   <li><a href="#regiões-climáticas" id="toc-regiões-climáticas" class="nav-link" data-scroll-target="#regiões-climáticas"><span class="header-section-number">4.2.1</span> Regiões climáticas</a></li>
@@ -344,16 +382,16 @@ window.Quarto = {
 </ol>
 <p><br></p>
 <p>Os insetos estão entre os organismos mais diversos e ameaçados do mundo (<span class="citation" data-cites="Cardoso_2020">[<a href="referencias.html#ref-Cardoso_2020" role="doc-biblioref">1</a>]</span>; <span class="citation" data-cites="Wagner_2020">[<a href="referencias.html#ref-Wagner_2020" role="doc-biblioref">2</a>]</span>; <span class="citation" data-cites="Janzen_2021">[<a href="referencias.html#ref-Janzen_2021" role="doc-biblioref">3</a>]</span>). Entender como essa diversidade está distribuída no tempo e no espaço é crucial, visto que muitas espécies estão sendo extintas antes mesmo de serem descobertas pela ciência (<span class="citation" data-cites="Eggleton_2020">[<a href="referencias.html#ref-Eggleton_2020" role="doc-biblioref">4</a>]</span>; <span class="citation" data-cites="Liu_2022">[<a href="referencias.html#ref-Liu_2022" role="doc-biblioref">5</a>]</span>). O Brasil, um país extenso e megadiverso, conta com poucos projetos de longo prazo (mais de cinco anos) voltados a investigar padrões de diversidade locais e regionais, especialmente em grupos de invertebrados como insetos (<span class="citation" data-cites="Costa_2020">[<a href="referencias.html#ref-Costa_2020" role="doc-biblioref">6</a>]</span>). A maioria das pesquisas abrange escalas locais e curtos períodos de tempo (<span class="citation" data-cites="Ribeiro_2010">[<a href="referencias.html#ref-Ribeiro_2010" role="doc-biblioref">7</a>]</span>; <span class="citation" data-cites="Graca_2016">[<a href="referencias.html#ref-Graca_2016" role="doc-biblioref">8</a>]</span>; <span class="citation" data-cites="Beirao_2017">[<a href="referencias.html#ref-Beirao_2017" role="doc-biblioref">9</a>]</span>; <span class="citation" data-cites="Araujo_2020">[<a href="referencias.html#ref-Araujo_2020" role="doc-biblioref">10</a>]</span>; <span class="citation" data-cites="Oliveira_2021">[<a href="referencias.html#ref-Oliveira_2021" role="doc-biblioref">11</a>]</span>; <span class="citation" data-cites="Bellaver_2022">[<a href="referencias.html#ref-Bellaver_2022" role="doc-biblioref">12</a>]</span>; <span class="citation" data-cites="Brito_Freire_2022">[<a href="referencias.html#ref-Brito_Freire_2022" role="doc-biblioref">13</a>]</span>), contribuindo significativamente para a compreensão de padrões de diversidade específicos, mas ressaltando a importância da implementação de projetos de longa duração em diversas áreas do país.</p>
-<p>Nas últimas décadas, as borboletas frugívoras têm sido utilizadas como organismos modelo em monitoramentos de fauna em diversos países da região tropical (<span class="citation" data-cites="Hughes_1998">[<a href="referencias.html#ref-Hughes_1998" role="doc-biblioref">14</a>]</span>; <span class="citation" data-cites="Molleman_2006">[<a href="referencias.html#ref-Molleman_2006" role="doc-biblioref">15</a>]</span>; <span class="citation" data-cites="DeVries_2012">[<a href="referencias.html#ref-DeVries_2012" role="doc-biblioref">16</a>]</span>; <span class="citation" data-cites="Aduse-Poku_2012">[<a href="referencias.html#ref-Aduse-Poku_2012" role="doc-biblioref">17</a>]</span>; <span class="citation" data-cites="Nyafwono_2014">[<a href="referencias.html#ref-Nyafwono_2014" role="doc-biblioref">18</a>]</span>; <span class="citation" data-cites="VanSwaay_2015">[<a href="referencias.html#ref-VanSwaay_2015" role="doc-biblioref">19</a>]</span>; <span class="citation" data-cites="Freitas_2024">[<a href="referencias.html#ref-Freitas_2024" role="doc-biblioref">20</a>]</span>). A seleção deste grupo se deve à sua grande diversidade e significância ecológica, aliada à facilidade de amostragem por meio de armadilhas atrativas (<span class="citation" data-cites="LucciFreitas_2014">[<a href="referencias.html#ref-LucciFreitas_2014" role="doc-biblioref">21</a>]</span>). O uso dessas armadilhas possibilita a amostragem simultânea em várias áreas, padronizando o esforço amostral e reduzindo a chance de viés nos dados. Além disso, as borboletas frugívoras são altamente sensíveis a alterações ambientais, o que as torna indicadoras valiosas de perturbações nos <em>habitat</em> (<span class="citation" data-cites="Bonebrake_2010">[<a href="referencias.html#ref-Bonebrake_2010" role="doc-biblioref">22</a>]</span>; <span class="citation" data-cites="Oliveira_2018">[<a href="referencias.html#ref-Oliveira_2018" role="doc-biblioref">23</a>]</span>). Variações no número de espécies e indivíduos dessas borboletas, bem como mudanças na composição da comunidade, frequentemente estão associadas ou resultam de alterações ambientais ocorridas naquele local ou região (<span class="citation" data-cites="Oliveira_2023">[<a href="referencias.html#ref-Oliveira_2023" role="doc-biblioref">24</a>]</span>). Assim, devido ao seu curto ciclo de vida, estas mudanças na comunidade de borboletas são observadas relativamente rápido. Outros fatores determinantes para a escolha de borboletas frugívoras em estudos de monitoramento são a relativa facilidade na identificação e sua boa resolução taxônomica, quando comparadas a outros grupos de insetos.</p>
+<p>Nas últimas décadas, as borboletas frugívoras têm sido utilizadas como organismos modelo em monitoramentos de fauna em diversos países da região tropical (<span class="citation" data-cites="Hughes_1998">[<a href="referencias.html#ref-Hughes_1998" role="doc-biblioref">14</a>]</span>; <span class="citation" data-cites="Molleman_2006">[<a href="referencias.html#ref-Molleman_2006" role="doc-biblioref">15</a>]</span>; <span class="citation" data-cites="DeVries_2012">[<a href="referencias.html#ref-DeVries_2012" role="doc-biblioref">16</a>]</span>; <span class="citation" data-cites="Aduse-Poku_2012">[<a href="referencias.html#ref-Aduse-Poku_2012" role="doc-biblioref">17</a>]</span>; <span class="citation" data-cites="Nyafwono_2014">[<a href="referencias.html#ref-Nyafwono_2014" role="doc-biblioref">18</a>]</span>; <span class="citation" data-cites="VanSwaay_2015">[<a href="referencias.html#ref-VanSwaay_2015" role="doc-biblioref">19</a>]</span>; <span class="citation" data-cites="Freitas_2024">[<a href="referencias.html#ref-Freitas_2024" role="doc-biblioref">20</a>]</span>). A seleção deste grupo se deve à sua grande diversidade e significância ecológica, aliada à facilidade de amostragem por meio de armadilhas atrativas (<span class="citation" data-cites="LucciFreitas_2014">[<a href="referencias.html#ref-LucciFreitas_2014" role="doc-biblioref">21</a>]</span>). O uso dessas armadilhas possibilita a amostragem simultânea em várias áreas, padronizando o esforço amostral e reduzindo a chance de viés nos dados. Além disso, as borboletas frugívoras são altamente sensíveis a alterações ambientais, o que as torna indicadoras valiosas de perturbações nos <em>habitat</em> (<span class="citation" data-cites="Bonebrake_2010">[<a href="referencias.html#ref-Bonebrake_2010" role="doc-biblioref">22</a>]</span>; <span class="citation" data-cites="Oliveira_2018">[<a href="referencias.html#ref-Oliveira_2018" role="doc-biblioref">23</a>]</span>). Essas transformações ambientais em escala local ou regional podem influenciar nas variações no número de espécies e indivíduos das borboletas, bem como nas mudanças de composição da comunidade (<span class="citation" data-cites="Oliveira_2023">[<a href="referencias.html#ref-Oliveira_2023" role="doc-biblioref">24</a>]</span>). Assim, devido ao seu curto ciclo de vida, estas mudanças na comunidade de borboletas são observadas relativamente rápido. Outros fatores determinantes para a escolha de borboletas frugívoras em estudos de monitoramento são a relativa facilidade na identificação e sua boa resolução taxônomica, quando comparadas a outros grupos de insetos.</p>
 <p>Neste capítulo, serão apresentados os resultados gerais da aplicação do protocolo básico de borboletas frugívoras em unidades de conservação (UCs) federais do Programa Monitora. Alguns resultados por UC poderão ser encontrados no <strong>Apêndice X</strong> deste relatório.</p>
 <p><br></p>
-<section id="implementação-e-validação-protocolar" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="implementação-e-validação-protocolar"><span class="header-section-number">4.1</span> Implementação e validação protocolar</h2>
+<section id="métodos-implementação-e-validação-protocolar" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="métodos-implementação-e-validação-protocolar"><span class="header-section-number">4.1</span> Métodos, implementação e validação protocolar</h2>
 <p><br></p>
-<p>O protocolo amostral básico de borboletas frugívoras (com identificação taxonômica no nível de tribo) foi aplicado de 2014 a 2022, de forma integral ou parcial, em 50 Unidades de Conservação (UCs) federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo <em>Van Someren-Rydon</em>). A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) estão consolidadas, com pelo menos três EAs e 12 UAs implantadas: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (ver Tabela xx do Cap. 2 para lista completa das UCs).</p>
+<p>Os métodos de amostragem das borboletas frugívoras seguiram o Roteiro Metodológico do Programa Monitora (<span class="citation" data-cites="Nobre_2014">[<a href="referencias.html#ref-Nobre_2014" role="doc-biblioref">25</a>]</span>) e uma breve descrição geral dos procedimentos adotados é apresentada no capítulo 2 deste relatório. O protocolo amostral básico de borboletas frugívoras (com identificação taxonômica no nível de tribo - <span class="citation" data-cites="Nobre_2014">[<a href="referencias.html#ref-Nobre_2014" role="doc-biblioref">25</a>]</span>) foi aplicado de 2014 a 2022, de forma integral ou parcial, em 50 Unidades de Conservação (UCs) federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo <em>Van Someren-Rydon</em>). A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) estão consolidadas, com pelo menos três EAs e 12 UAs implantadas: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (ver <strong>Tabela xx do Cap. 2 para lista completa das UCs</strong>).</p>
 <p>A partir de xxxx, xx UCs (XX%) adotaram o <em>Open Data Kit</em> (ODK), um aplicativo Android de código aberto que possibilita a coleta de dados em campo de forma mais eficiente e confiável, substituindo os formulários em papel. Ele armazena diversos tipos de informação como textos, dados numéricos, coordenadas geográficas, áudio, imagens, vídeo e códigos de barras, sendo projetado para funcionar mesmo sem conectividade à <em>internet</em>. O ODK favorece o registro de armadilhas com zero capturas, informação muitas vezes desconsiderada quando a amostragem é feita com formulários tradicionais. Além disso, só é possível adicionar as fotos das borboletas no sistema quando as coordenadas da unidade amostral de cada EA são registradas, certificando que a coleta foi, de fato, feita no local correto. Com as fotos das borboletas no sistema, especialistas podem identificar os indivíduos em nível de espécie ou morfoespécie, possibilitando a análise dos dados de acordo com o protocolo avançado.</p>
 <p>Conforme mencionado no capítulo 2, as amostragens de borboleta frugívoras foram paralisadas ou reduzidas no período mais intenso da pandemia de COVID (2020-21). Em 2020, 13 UCs fizeram coletas, porém, somente o PARNA da Amazônia, PARNA Serra da Cutia, PARNA de Pacaás Novos, PARNA Mapinguari, REBIO do Uatumã e RESEX Barreiro das Antas coletaram nas três EAs. Em 2021, as atividades foram retomadas em 31 UCs (<a href="#fig-evolucao-implementacao" class="quarto-xref">Figura&nbsp;<span>4.1</span></a> e <a href="#fig-esforco-amostral" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>).</p>
-<p>Ao longo dos anos, houve uma progressão no número de UCs e EAs amostradas (exceto em 2020). Em 2022, a amostragem de borboletas frugívoras foi realizada em 39 das 50 UCs do Programa Monitora – Protocolo de Borboletas frugívoras, nos três biomas florestais (Tabela x). O ano de 2022 teve oito UCs a mais do que 2021, com um aumento de 35.4% no número de EAs implementadas (<a href="#fig-evolucao-implementacao" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>).</p>
+<p>Ao longo dos anos, houve uma progressão no número de UCs e EAs amostradas (exceto em 2020). Em 2022, a amostragem de borboletas frugívoras ocorreu nos três biomas florestais e foi realizada em 39 das 50 UCs do Componente Florestal do Programa Monitora, oito a mais do que 2021, representando um aumento de 35.4% no número de EAs implementadas (<a href="#fig-evolucao-implementacao" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>; Apêndice B1).</p>
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
@@ -370,7 +408,7 @@ Figura&nbsp;4.1: Evolução do número de unidades de conservação (UCs) e de e
 </div>
 </div>
 <p><br></p>
-<p>Para verificar se as amostragens de borboletas frugívoras nas UCs da Amazônia seguiram o protocolo de coleta adequadamente, os dados foram submetidos a um <em>script</em> em R para validação automatizada das campanhas realizadas. Três regras de validação do protocolo foram aplicadas às EAs em cada campanha: (1) A amostragem ter sido realizada no período do ano correto para a região, (2) terem sido realizados seis dias de amostragem e (3) ter sido respeitado o intervalo mínimo de 15 dias entre campanhas. Todos os 846 registros (estação amostral de uma UC por campanha por ano) foram avaliados. Dessas, 230 (27%) violaram alguma regra do protocolo. Seis registros violaram duas regras, sendo estas expedições para locais de difícil acesso (i.e., PARNA do Monte Roraima). Em apenas um registro (EA-4 do PARNA Mapinguari na segunda campanha de 2022) as três regras foram violadas (<strong>Tabela X no Apêndice X</strong>). A coleta fora do período indicado para a região correspondeu a 85% das violações. O número correto de dias de amostragem por campanha não foi cumprido em 13% das EAs, havendo tanto EAs com mais quanto com menos dias de coleta. O intervalo mínimo de 15 dias entre campanhas não foi respeitado em 7% das EAs.</p>
+<p>Para verificar se as amostragens de borboletas frugívoras nas UCs da Amazônia seguiram o protocolo de coleta adequadamente, os dados foram submetidos a um <em>script</em> em R para validação automatizada das campanhas realizadas. Três regras de validação do protocolo foram aplicadas às EAs em cada campanha: (1) A amostragem ter sido realizada no período do ano correto para a região, (2) terem sido realizados seis dias de amostragem e (3) ter sido respeitado o intervalo mínimo de 15 e máximo de 30 dias entre campanhas. Todos os 846 registros (estação amostral de uma UC por campanha por ano) foram avaliados. Dessas, 238 (28%) violaram alguma regra do protocolo. Seis registros violaram duas regras, sendo estas expedições para locais de difícil acesso (i.e., PARNA do Monte Roraima). Em apenas um registro (EA-4 do PARNA Mapinguari na segunda campanha de 2022) as três regras foram violadas (<strong>Tabela X no Apêndice X</strong>). A coleta fora do período indicado para a região correspondeu a 84% das violações. O número correto de dias de amostragem por campanha não foi cumprido em 16% das EAs, havendo tanto EAs com mais quanto com menos dias de coleta. O intervalo mínimo de 15 dias entre campanhas não foi respeitado em 8% das EAs.</p>
 <p>O esforço amostral de borboletas frugívoras vem aumentando desde o início da implementação do Programa Monitora (exceto em 2020). Em relação a 2014, o ano de 2015 apresentou um aumento de 121% no esforço amostral. Em 2016, houve um aumento de 134%, em 2017 o esforço aumentou 67%, em 2018 houve um crescimento de 43% e em 2019 o aumento foi de 23%. Em 2020, ano com maior impacto da pandemia, houve uma queda de 74% em relação ao ano anterior. No entanto, em 2021 o esforço amostral cresceu 234%, e em 2022 o aumento foi de 36% (<a href="#fig-esforco-amostral" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>).</p>
 <p>De maneira geral, observou-se que o número de indivíduos amostrados acompanhou o esforço amostral, havendo um aumento na abundância de borboletas com o aumento do esforço amostral (<a href="#fig-esforco-amostral" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>). Ao todo, foram capturados 85.386 indivíduos de borboletas, com um esforço amostral de 90.320 armadilhas/dia (<a href="#fig-esforco-amostral" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>).</p>
 <p><br></p>
@@ -397,8 +435,239 @@ Figura&nbsp;4.2: Variação no número de registros de borboletas frugívoras e 
 <section id="regiões-climáticas" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="regiões-climáticas"><span class="header-section-number">4.2.1</span> Regiões climáticas</h3>
 <p><br></p>
-<p>Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde há alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (<span class="citation" data-cites="Checa_2009">[<a href="referencias.html#ref-Checa_2009" role="doc-biblioref">25</a>]</span>). Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (<span class="citation" data-cites="Monitora_2021">[<a href="referencias.html#ref-Monitora_2021" role="doc-biblioref">26</a>]</span>). Com base na identificação dos padrões de chuva em cada região, foram definidas seis regiões climáticas que englobam as Unidades de Conservação participantes do Programa Monitora (<a href="#fig-regioes-climaticas" class="quarto-xref">Figura&nbsp;<span>4.3</span></a>). As regiões climáticas são: Central, Sudoeste, Leste, Sudeste, Norte e Noroeste. Isso permite determinar o período mais adequado para a amostragem (<strong>Tabela X</strong>), considerando que o regime de chuvas é uma característica regional relevante para as borboletas frugívoras (<strong>referência</strong>).</p>
-<p>O número de UCs e EAs amostradas varia bastante entre as regiões (<a href="#fig-regioes-climaticas" class="quarto-xref">Figura&nbsp;<span>4.3</span></a>). Atualmente, nenhuma UC da região Noroeste da Amazônia participa do Programa Monitora aplicando o protocolo de borboletas frugívoras. No entanto, seria de extrema importância implementar esse protocolo em pelo menos três UCs nessa região: ESEC Juami-Japurá, PARNA do Pico da Neblina e RESEX Auatí-Paraná.</p>
+<p>Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde há alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas (<span class="citation" data-cites="Checa_2009">[<a href="referencias.html#ref-Checa_2009" role="doc-biblioref">26</a>]</span>). Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (<span class="citation" data-cites="Marengo_2001">[<a href="referencias.html#ref-Marengo_2001" role="doc-biblioref">27</a>]</span>; <span class="citation" data-cites="Monitora_2021">[<a href="referencias.html#ref-Monitora_2021" role="doc-biblioref">28</a>]</span>). Com base na identificação dos padrões de chuva em cada região, foram definidas seis regiões climáticas que englobam as Unidades de Conservação participantes do Programa Monitora (<a href="#fig-regioes-climaticas" class="quarto-xref">Figura&nbsp;<span>4.3</span></a>). As regiões climáticas são: Sudoeste, Central, Leste, Sudeste, Norte e Noroeste. Isso permite determinar o período mais adequado para a amostragem (<a href="#tbl-periodos-amostragem" class="quarto-xref">Tabela&nbsp;<span>4.1</span></a>), considerando que o regime de chuvas é uma característica regional relevante para as borboletas frugívoras (<span class="citation" data-cites="Barlow_2007">[<a href="referencias.html#ref-Barlow_2007" role="doc-biblioref">29</a>]</span>; <span class="citation" data-cites="Checa_2009">[<a href="referencias.html#ref-Checa_2009" role="doc-biblioref">26</a>]</span>).</p>
+<p><br></p>
+<div class="cell" data-tab-cap="Unidades de conservação por região climática da Amazônia e períodos indicados para amostragens de borboletas (final das chuvas). UCs com * situam-se em duas ou mais regiões climáticas (q. = quinzena).">
+<div id="tbl-periodos-amostragem" class="cell quarto-float anchored" data-tab-cap="Unidades de conservação por região climática da Amazônia e períodos indicados para amostragens de borboletas (final das chuvas). UCs com * situam-se em duas ou mais regiões climáticas (q. = quinzena).">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-periodos-amostragem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.1: Unidades de conservação por região climática da Amazônia e períodos indicados para amostragens de borboletas (final das chuvas). UCs com * situam-se em duas ou mais regiões climáticas (q. = quinzena).
+</figcaption>
+<div aria-describedby="tbl-periodos-amostragem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Unidade de Conservação</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Região</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Período de Amostragem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ESEC Rio Acre&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FLONA do Jamari&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA da Serra da Cutia&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA da Serra do Divisor&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA de Pacaás Novos&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA Maringuari&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">REBIO do Jaru</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Arapixi&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Barreiro das Antas&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Chico Mendes</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX do Alto Tarauacá&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX do Cazumbá-Iracema&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX do Rio Cautário* &nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX do Rio Ouro Preto&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Riozinho da Liberdade&nbsp;</td>
+<td style="text-align: center;">Sudoeste</td>
+<td style="text-align: center;">2ª q. de abril a 1ª q. de junho</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ESEC da Terra do Meio&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FLONA de Tapajós&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA da Amazônia&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA do Jaú&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA dos Campos Amazônicos&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA Nascentes do Lago Jari&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REBIO do Uatumã&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX do Lago do Capanã Grande&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Riozinho do Anfrísio&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Tapajós-Arapiuns&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Verde para Sempre&nbsp;</td>
+<td style="text-align: center;">Central</td>
+<td style="text-align: center;">1ª q. de junho a&nbsp;2ª quizena julho&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ESEC do Jari&nbsp;</td>
+<td style="text-align: center;">Leste</td>
+<td style="text-align: center;">1ª q. de julho a 2ª q. de agosto</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA do Cabo Orange&nbsp;</td>
+<td style="text-align: center;">Leste</td>
+<td style="text-align: center;">1ª q. de julho a 2ª q. de agosto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA Montanhas do Tumucumaque&nbsp;</td>
+<td style="text-align: center;">Leste</td>
+<td style="text-align: center;">1ª q. de julho a 2ª q. de agosto</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REBIO do Gurupi&nbsp;</td>
+<td style="text-align: center;">Leste</td>
+<td style="text-align: center;">1ª q. de julho a 2ª q. de agosto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESEX Ipaú-Anilzinho&nbsp;</td>
+<td style="text-align: center;">Leste</td>
+<td style="text-align: center;">1ª q. de julho a 2ª q. de agosto</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RESEX Renascer&nbsp;</td>
+<td style="text-align: center;">Leste</td>
+<td style="text-align: center;">1ª q. de julho a 2ª q. de agosto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA do Juruena&nbsp;</td>
+<td style="text-align: center;">Sudeste</td>
+<td style="text-align: center;">1ª q. de abril a 2ª q. de maio</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REBIO do Tapirapé&nbsp;</td>
+<td style="text-align: center;">Sudeste</td>
+<td style="text-align: center;">1ª q. de abril a 2ª q. de maio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ESEC Maracá&nbsp;</td>
+<td style="text-align: center;">Norte</td>
+<td style="text-align: center;">2ª q. de agosto a&nbsp;1ª q. de outubro&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ESEC Niquiá&nbsp;</td>
+<td style="text-align: center;">Norte</td>
+<td style="text-align: center;">2ª q. de agosto a&nbsp;1ª q. de outubro&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA do Monte Roraima&nbsp;</td>
+<td style="text-align: center;">Norte</td>
+<td style="text-align: center;">2ª q. de agosto a&nbsp;1ª q. de outubro&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARNA do Viruá&nbsp;</td>
+<td style="text-align: center;">Norte</td>
+<td style="text-align: center;">2ª q. de agosto a&nbsp;1ª q. de outubro&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PARNA Serra da Mocidade&nbsp;</td>
+<td style="text-align: center;">Norte</td>
+<td style="text-align: center;">2ª q. de agosto a&nbsp;1ª q. de outubro&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">-</td>
+<td style="text-align: center;">Noroeste</td>
+<td style="text-align: center;">1ª q. de maio a&nbsp;2ª q. de agosto&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
 <p>O número de UCs e EAs amostradas varia bastante entre as regiões (<a href="#fig-regioes-climaticas" class="quarto-xref">Figura&nbsp;<span>4.3</span></a>). Atualmente, nenhuma UC da região Noroeste da Amazônia participa do Programa Monitora aplicando o protocolo de borboletas frugívoras. No entanto, seria de extrema importância implementar esse protocolo em pelo menos três UCs nessa região: ESEC Juami-Japurá, PARNA do Pico da Neblina e RESEX Auatí-Paraná. Outra região climática em que se faz necessária a inclusão de mais UCs para o protocolo de borboletas frugívoras é a sudeste amazônica. Esta região é de extrema importância por abrigar uma rica diversidade de espécies e estar constantemente ameaçada pelo agronegócio e mineração. Sugere-se a inclusão da ESEC Iquê, REBIO Nascentes da Serra do Cachimbo, FLONA Jamanxim, PARNA Rio Novo e FLONA de Carajás. Além dessas regiões, é importante também a inclusão de UCs mais ao norte da região climática sudoeste. Assim, sugere-se a inclusão de UCs no médio e baixo rio Juruá, como as RESEX Médio Juruá, Baixo Juruá e FLONA de Tefé.</p>
 <p><br></p>
 <div class="cell">
@@ -416,10 +685,8 @@ Figura&nbsp;4.3: Mapa mostrando a proposta de distribuição das UCs participant
 </div>
 </div>
 <p><br></p>
-<p>Tabela x. Localização das UCs em relação às regiões climáticas da Amazônia, incluindo o período sugerido de amostragens de borboletas indicado como o final das chuvas. As UCs com * situam-se entre duas ou mais regiões climáticas (q. = quinzena). As UCs marcadas com # ainda não iniciaram a amostragem de borboletas.</p>
-<p><br></p>
-<p>De 2014 a 2022 as amostragens de borboletas frugívoras na região climática central amazônica foram realizadas em 41 EAs em 12 UCs (<a href="#fig-ucs-eas-combinado" class="quarto-xref">Figura&nbsp;<span>4.4</span></a>): ESEC da Terra do Meio, FLONA de Tapajós, PARNA da Amazônia, PARNA dos Campos Amazônicos, PARNA do Jaú, PARNA Nascentes do Lago Jari, REBIO do Jaru, REBIO do Uatumã, RESEX do Lago do Capanã Grande, RESEX Riozinho do Anfrísio, RESEX Tapajós-Arapiuns e RESEX Verde para Sempre.</p>
 <p>O sudoeste amazônico foi a região com o maior número de UCs aplicando o protocolo de borboletas no período de 2014 a 2022, com 14 UCs amostradas: ESEC Rio Acre, FLONA do Jamari, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA Mapinguari, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Rio Ouro Preto e RESEX Riozinho da Liberdade. Nesta região, as coletas foram realizadas em 44 EAs (<a href="#fig-ucs-eas-combinado" class="quarto-xref">Figura&nbsp;<span>4.4</span></a>).</p>
+<p>De 2014 a 2022 as amostragens de borboletas frugívoras na região climática central amazônica foram realizadas em 41 EAs em 12 UCs (<a href="#fig-ucs-eas-combinado" class="quarto-xref">Figura&nbsp;<span>4.4</span></a>): ESEC da Terra do Meio, FLONA de Tapajós, PARNA da Amazônia, PARNA dos Campos Amazônicos, PARNA do Jaú, PARNA Nascentes do Lago Jari, REBIO do Jaru, REBIO do Uatumã, RESEX do Lago do Capanã Grande, RESEX Riozinho do Anfrísio, RESEX Tapajós-Arapiuns e RESEX Verde para Sempre.</p>
 <p>Na região leste amazônica, as amostragens se iniciaram em 2016. Até 2022, seis UCs e 17 EAs foram amostradas (<a href="#fig-ucs-eas-combinado" class="quarto-xref">Figura&nbsp;<span>4.4</span></a>): ESEC do Jari, PARNA do Cabo Orange, PARNA Montanhas do Tumucumaque, REBIO do Gurupi, RESEX Ipaú-Anilzinho e RESEX Renascer.</p>
 <p>Na região sudeste amazônica, as amostragens de borboletas frugívoras também se iniciaram em 2016 e ocorreram em seis EAs, contemplando apenas duas UCs: PARNA do Juruena e REBIO do Tapirapé.</p>
 <p>Finalmente, na região norte da Amazônia, a aplicação do protocolo de borboletas frugívoras se iniciou em 2017, com cinco UCs e nove EAs amostradas até 2022 (<a href="#fig-ucs-eas-combinado" class="quarto-xref">Figura&nbsp;<span>4.4</span></a>): ESEC de Maracá, ESEC de Niquiá, PARNA da Serra da Mocidade, PARNA do Monte Roraima e PARNA do Viruá.</p>
@@ -441,7 +708,8 @@ Figura&nbsp;4.4: Número de unidades de conservação (UCs) e estações amostra
 </div>
 </div>
 <p><br></p>
-<p>Para que os dados e informações neste relatório possam ser interpretados de forma adequada e com maior confiabilidade, foi estabelecido um esforço amostral mínimo para os biomas. Para cada região Amazônica, foi considerado o esforço amostral de 1.728 armadilhas/dia. Isso significa pelo menos 9 EAs amostradas por campanha ou 18 EAs amostradas no ano. Cada EA será contabilizada por campanha. Dessa forma, se uma mesma EA amostrar nas duas campanhas do ano, serão contabilizadas duas EAs.</p>
+<p>Para maior confiabilidade das informações apresentadas neste relatório, foi estabelecido um esforço amostral mínimo por ano para os biomas. Para cada região Amazônica foi considerada uma boa amostragem um esforço amostral de 1.728 armadilhas/dia, equivalendo a pelo menos 18 EAs amostradas no ano (9 por campanha). Dessa forma, uma mesma EA devidamente amostrada nas duas campanhas do ano foi contabilizada duas vezes. Por exemplo, a REBIO do Uatumã foi a única UC da região da Amazônia Central com amostragens em 2014, totalizando seis EAs amostradas (três por campanha). Porém, houve casos em que o protocolo amostral não foi atendido, com uma ou mais EAs amostradas apenas uma vez no ano (uma campanha).</p>
+<p><br></p>
 </section>
 </section>
 <section id="assinatura-das-tribos-de-borboletas-ao-longo-dos-anos" class="level2" data-number="4.3">
@@ -455,11 +723,177 @@ Figura&nbsp;4.4: Número de unidades de conservação (UCs) e estações amostra
 </ul>
 <p>As tribos Preponini, Melanitini, Anaeini, Epicaliini, Epiphilini, Coeini e Satyrini não apresentam associação clara com ambientes florestais ou não demonstram tendência definida. A abundância dessas tribos pode aumentar ou diminuir em resposta a perturbações da floresta, como abertura de clareiras ou eventuais alterações no dossel.</p>
 <p>Embora ainda pouco disseminada em trabalhos acadêmicos, a assinatura de tribos de borboletas tem um papel importante em relatórios técnicos de iniciativas de monitoramento de fauna. É uma maneira viável de analisar e apresentar dados de um grupo com grande riqueza de espécies de uma região megadiversa, amostrado em uma escala tão ampla como o Brasil.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># #| label: prep-graficos-assinaturas</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># #| echo: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># #| include: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># #| message: false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># #| warning: false</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># #| cache: true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># # Gráficos de dados Borboletas - Protocolo básico - Amazônia regional - individual</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">###</span><span class="co"> Tribos com asterisco estão ausentes nos dados</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ## Script: Isabela Freitas Oliveira</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># library(dplyr)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># library(scales)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tools)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># # Função auxiliar para ajustar o título</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ajustar_titulo &lt;- function(titulo) {</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#   palavras &lt;- strsplit(titulo, " ")[[1]]</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Palavras que necessitam de correção de acentuação</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#   correcoes &lt;- list(</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     "leste" = "Região climática Leste Amazônica", "sudoeste" = "Região climática Sudoeste Amazônica", "central" = "Região climática Central Amazônica",</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#     "norte" = "Região climática Norte Amazônica", "sudeste" = "Região climática Sudeste Amazônica"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   palavras &lt;- sapply(palavras, function(palavra) {</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Aplicar regras específicas para certas palavras</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#     if (tolower(palavra) %in% c("esec", "flona", "rebio", "resex", "parna")) {</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#       return(toupper(palavra))</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">#     } else if (tolower(palavra) %in% c("de", "da", "do", "dos", "das")) {</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">#       return(tolower(palavra))</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">#     } else {</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">#       # Corrigir acentuação, se necessário</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">#       palavra_corrigida &lt;- tolower(palavra)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">#       if (palavra_corrigida %in% names(correcoes)) {</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">#         return(correcoes[[palavra_corrigida]])</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">#       } else {</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">#         return(tools::toTitleCase(palavra))</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">#       }</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">#     }</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">#   })</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">#   return(paste(palavras, collapse = " "))</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co"># # Função para gerar o gráfico para cada região</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># gerar_grafico_por_regiao &lt;- function(dados, nome_regiao) {</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Preparar o título</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   titulo &lt;- ajustar_titulo(nome_regiao)  # Utilizando a função de ajuste de título aqui</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Filtrar os dados para a região atual</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_regiao &lt;- subset(dados, regiao == nome_regiao &amp; bioma == "Amazonia")</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_regiao &lt;- dados_regiao[!is.na(dados_regiao$tribo), ] #tirar os dados 'NA' que estão na tribo</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Calcular o total de indivíduos por ano para a região atual</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co">#   total_individuos_por_ano &lt;- dados_regiao %&gt;%</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarise(total = sum(soma_individuos), .groups = 'drop')</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Agregar dados por ano e tribo</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados &lt;- dados_regiao %&gt;%</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano, tribo) %&gt;%</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarize(frequencia = sum(soma_individuos), .groups = 'drop')</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Calcular totais e proporções</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co">#   total_por_ano &lt;- dados_agregados %&gt;%</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarize(total = sum(frequencia), .groups = 'drop')</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados &lt;- left_join(dados_agregados, total_por_ano, by = "ano") %&gt;%</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="co">#     mutate(proporcao = frequencia / total * 100)</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Ajustar proporções</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados &lt;- dados_agregados %&gt;%</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co">#     mutate(diferenca = 100 - sum(proporcao),</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="co">#            proporcao_ajustada = ifelse(proporcao == max(proporcao), proporcao + diferenca, proporcao)) %&gt;%</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co">#     ungroup() %&gt;%</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">#     dplyr::select(-diferenca, -proporcao) %&gt;%</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="co">#     rename(proporcao = proporcao_ajustada)</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Ordem específica das tribos</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co">#   ordem_tribos &lt;- c(</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Brassolini", "Morphini", "Haeterini", </span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Preponini", "Melanitini", "Anaeini", </span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Epicaliini","Epiphilini", "Coeini",</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Satyrini",</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Callicorini", "Biblidini","Ageroniini"</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="co">#   cores_tribos &lt;- c(</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", </span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Preponini" = "gray65", "Melanitini" = "gray70", "Anaeini" = "gray75", </span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Epicaliini" = "gray80", "Epiphilini" = "gray85", "Coeini" = "gray90",</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Satyrini" = "gray95",</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d","Ageroniini" = "#bf812d"</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Ajustar a ordem e as cores das tribos com base nas tribos presentes</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="co">#   cores_tribos &lt;- cores_tribos[ordem_tribos]</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Assegurar que a coluna 'tribo_clean' respeite a ordem definida</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados$tribo &lt;- factor(dados_agregados$tribo, levels = ordem_tribos)</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Criar um data frame com a frequência agregada por tribo</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="co">#   frequencias_por_tribo_ano &lt;- aggregate(frequencia ~ tribo, dados_agregados, sum)</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="co">#   adicionar_asterisco &lt;- function(nome_tribo) {</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="co">#     if (any(frequencias_por_tribo_ano$tribo == nome_tribo &amp; frequencias_por_tribo_ano$frequencia == 0)) {</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="co">#       return(paste0(nome_tribo, "*"))</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="co">#     } else {</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="co">#       return(nome_tribo)</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="co">#     }</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Aplicar a função a cada tribo para criar o vetor de rótulos</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="co">#   labels_tribos &lt;- sapply(ordem_tribos, adicionar_asterisco)</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Criar um data frame com o número único de 'uc_ea' por ano</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="co">#   numero_ea_por_ano &lt;- dados_regiao %&gt;%</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co">#     distinct(ano, uc_ea) %&gt;%</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarize(num_ea = n_distinct(uc_ea))</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Construir o gráfico</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="co">#   gg &lt;- ggplot() +</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_bar(data = dados_agregados, aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_text(data = numero_ea_por_ano, aes(x = ano, y = 0, label = paste0("(", num_ea, ")")), vjust = 1.5, size = 3, hjust = 0.5, color = "gray40") +</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co">#     scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co">#     scale_x_discrete(expand = c(0, 0)) +</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co">#     scale_fill_manual(values = cores_tribos, </span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="co">#                       labels = labels_tribos,</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="co">#                       breaks = ordem_tribos) +</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="co">#     labs(title = titulo,</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="co">#          x = " ",</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="co">#          y = "Frequência relativa de ocorrência (%)",</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="co">#          fill = "Tribo") +</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme_minimal() +</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme(legend.position = "right", </span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="co">#           legend.title = element_text(size = 12), </span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="co">#           legend.text = element_text(size = 10), </span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="co">#           plot.title = element_text(hjust = 0.5, size = 16), </span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="co">#           plot.subtitle = element_text(hjust = 0.5, size = 14),</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.ticks.y = element_line(color = "black"),</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.text = element_text(size = 10), </span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.title = element_text(size = 10),</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.line = element_line(colour = "gray40"),</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.line.x = element_blank()) +</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="co">#     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Exibir o gráfico</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(gg)</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="co"># # Carregar e preparar os dados</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado_final &lt;- read.csv("dados/borboletas/resultado_final.csv", header = TRUE)</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado_final$ano &lt;- factor(resultado_final$ano)</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado_final$tribo &lt;- gsub("\\*", "", resultado_final$tribo)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="amazônia" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="amazônia"><span class="header-section-number">4.3.1</span> Amazônia</h3>
 <p><br></p>
-<p>Na região climática sudoeste amazônica, foram amostradaos 34.525 indivíduos de borboletas frugívoras, 354 delas não identificadas e desconsideradas nas análises. Assim, 34.171 indivíduos foram identificados em nível de tribo: 48% Satyrini, 11% Brassolini e 9% Ageroniiini. Apesar de não serem maioria, a região sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini foi responsável por esse padrão, especialmente em 2019 (<a href="#fig-regiao-climatica-sudoeste-amazonica" class="quarto-xref">Figura&nbsp;<span>4.5</span></a>). É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, diversas espécies do gênero <em>Hamadryas</em> (e.g., <em>Hamadryas alicia</em>, <em>Hamadryas belladonna</em>, <em>Hamadryas velutina</em>) e dos gêneros <em>Batesia</em> e <em>Panacea</em> estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies na tribo que utilizam regularmente florestas abertas/perturbadas, como por exemplo <em>Hamadryas februa</em>, <em>Hamadryas feronia</em>, <em>Hamadryas amphinome</em> e <em>Ectima iona</em>, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (<span class="citation" data-cites="Jenkins_1983">[<a href="referencias.html#ref-Jenkins_1983" role="doc-biblioref">27</a>]</span>).</p>
-<p>Seguindo os padrões de diversidade da fauna e flora amazônicas (<span class="citation" data-cites="Ribas_2019">[<a href="referencias.html#ref-Ribas_2019" role="doc-biblioref">28</a>]</span>; <span class="citation" data-cites="Luize_2024">[<a href="referencias.html#ref-Luize_2024" role="doc-biblioref">29</a>]</span>), a região sudoeste apresentou os maiores valores de números de indivíduos por esforço amostral. Apesar de tratar-se de contagem de indivíduos, é de se esperar que a riqueza e diversidade de espécies acompanhem este padrão (<span class="citation" data-cites="DeVries_2016">[<a href="referencias.html#ref-DeVries_2016" role="doc-biblioref">30</a>]</span>). Somente a partir de 2017 o esforço amostral foi adequado para representar a região (<a href="#fig-regiao-climatica-sudoeste-amazonica" class="quarto-xref">Figura&nbsp;<span>4.5</span></a>).</p>
+<p>Na região climática sudoeste amazônica, foram amostradaos 34.525 indivíduos de borboletas frugívoras, 354 delas não identificadas e desconsideradas nas análises. Assim, 34.171 indivíduos foram identificados em nível de tribo: 48% Satyrini, 11% Brassolini e 9% Ageroniiini. Apesar de não serem maioria, a região sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini foi responsável por esse padrão, especialmente em 2019 (<a href="#fig-regiao-climatica-sudoeste-amazonica" class="quarto-xref">Figura&nbsp;<span>4.5</span></a>). É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, diversas espécies do gênero <em>Hamadryas</em> (e.g., <em>Hamadryas alicia</em>, <em>Hamadryas belladonna</em>, <em>Hamadryas velutina</em>) e dos gêneros <em>Batesia</em> e <em>Panacea</em> estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies na tribo que utilizam regularmente florestas abertas/perturbadas, como por exemplo <em>Hamadryas februa</em>, <em>Hamadryas feronia</em>, <em>Hamadryas amphinome</em> e <em>Ectima iona</em>, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (<span class="citation" data-cites="Jenkins_1983">[<a href="referencias.html#ref-Jenkins_1983" role="doc-biblioref">30</a>]</span>).</p>
+<p>Seguindo os padrões de diversidade da fauna e flora amazônicas (<span class="citation" data-cites="Ribas_2019">[<a href="referencias.html#ref-Ribas_2019" role="doc-biblioref">31</a>]</span>; <span class="citation" data-cites="Luize_2024">[<a href="referencias.html#ref-Luize_2024" role="doc-biblioref">32</a>]</span>), a região sudoeste apresentou os maiores valores de números de indivíduos por esforço amostral. Apesar de tratar-se de contagem de indivíduos, é de se esperar que a riqueza e diversidade de espécies acompanhem este padrão (<span class="citation" data-cites="DeVries_2016">[<a href="referencias.html#ref-DeVries_2016" role="doc-biblioref">33</a>]</span>). Somente a partir de 2017 o esforço amostral foi adequado para representar a região (<a href="#fig-regiao-climatica-sudoeste-amazonica" class="quarto-xref">Figura&nbsp;<span>4.5</span></a>).</p>
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
@@ -469,7 +903,7 @@ Figura&nbsp;4.4: Número de unidades de conservação (UCs) e estações amostra
 <img src="cap04_files/figure-html/fig-regiao-climatica-sudoeste-amazonica-1.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regiao-climatica-sudoeste-amazonica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.5: Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática sudoeste. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano.
+Figura&nbsp;4.5: Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática sudoeste. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano.
 </figcaption>
 </figure>
 </div>
@@ -487,7 +921,7 @@ Figura&nbsp;4.5: Abundância relativa de tribos de borboletas frugívoras de 201
 <img src="cap04_files/figure-html/fig-regiao-climatica-central-amazonica-1.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regiao-climatica-central-amazonica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.6: Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática central amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano.
+Figura&nbsp;4.6: Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática central amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano.
 </figcaption>
 </figure>
 </div>
@@ -504,7 +938,7 @@ Figura&nbsp;4.6: Abundância relativa de tribos de borboletas frugívoras de 201
 <img src="cap04_files/figure-html/fig-regiao-climatica-leste-amazonica-1.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regiao-climatica-leste-amazonica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.7: Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática leste amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano.
+Figura&nbsp;4.7: Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática leste amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano.
 </figcaption>
 </figure>
 </div>
@@ -522,7 +956,7 @@ Figura&nbsp;4.7: Abundância relativa de tribos de borboletas frugívoras de 201
 <img src="cap04_files/figure-html/fig-regiao-climatica-sudeste-amazonica-1.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regiao-climatica-sudeste-amazonica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.8: Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática sudeste amazônica. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano.
+Figura&nbsp;4.8: Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática sudeste amazônica. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano.
 </figcaption>
 </figure>
 </div>
@@ -541,7 +975,7 @@ Figura&nbsp;4.8: Abundância relativa de tribos de borboletas frugívoras de 201
 <img src="cap04_files/figure-html/fig-regiao-climatica-norte-amazonica-1.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regiao-climatica-norte-amazonica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.9: Abundância relativa de tribos de borboletas frugívoras de 2017 a 2022 na região climática norte amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano. O asterisco indica tribo ausente na amostragem.
+Figura&nbsp;4.9: Abundância relativa de tribos de borboletas frugívoras de 2017 a 2022 na região climática norte amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem.
 </figcaption>
 </figure>
 </div>
@@ -564,12 +998,182 @@ Figura&nbsp;4.9: Abundância relativa de tribos de borboletas frugívoras de 201
 <img src="cap04_files/figure-html/fig-regiao-cerrado-1.png" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regiao-cerrado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.10: Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas por campanha naquele ano. O asterisco indica tribo ausente na amostragem.
+Figura&nbsp;4.10: Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># #| label: fig-regiao-cerrado</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># #| echo: false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># #| message: false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># #| warning: false</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># #| cache: true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># #| fig.pos: 'H'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># #| out.width: '70%'</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># #| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># # Gráficos de dados Borboletas - Protocolo básico - Cerrado -</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">###</span><span class="co"> Tribos com asterisco estão ausentes nos dados</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ## Script: Isabela Freitas Oliveira</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># library(dplyr)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># library(scales)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tools)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># # Função auxiliar para ajustar o título</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ajustar_titulo &lt;- function(titulo) {</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#   palavras &lt;- strsplit(titulo, " ")[[1]]</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Palavras que necessitam de correção de acentuação</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#   #correcoes &lt;- list(</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#    # "Cerrado" = "Cerrado")</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># # Função para gerar o gráfico para cada unidade de conservação</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># gerar_grafico_por_bioma &lt;- function(dados, nome_bioma) {</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Preparar o título com as novas regras</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">#   titulo &lt;- gsub("_", " ", nome_bioma)</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">#   titulo &lt;- ajustar_titulo(titulo)  # Utilizando a função de ajuste de título aqui</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Filtrar os dados para a unidade de conservação atual</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_bioma &lt;- subset(dados, bioma == nome_bioma &amp; bioma == "Cerrado")</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_bioma &lt;- dados_bioma[!is.na(dados_bioma$tribo), ] #tirar os dados 'NA' que estão na tribo</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Calcular o total de indivíduos por ano para a região atual</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">#   total_individuos_por_ano &lt;- dados_bioma %&gt;%</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarise(total = sum(soma_individuos), .groups = 'drop')</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Agregar dados por ano e tribo</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados &lt;- dados_bioma %&gt;%</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano, tribo) %&gt;%</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarize(frequencia = sum(soma_individuos), .groups = 'drop')</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Calcular totais e proporções</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   total_por_ano &lt;- dados_agregados %&gt;%</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarize(total = sum(frequencia), .groups = 'drop')</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados &lt;- left_join(dados_agregados, total_por_ano, by = "ano") %&gt;%</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">#     mutate(proporcao = frequencia / total * 100)</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Ajustar proporções</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados &lt;- dados_agregados %&gt;%</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co">#     mutate(diferenca = 100 - sum(proporcao),</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">#            proporcao_ajustada = ifelse(proporcao == max(proporcao), proporcao + diferenca, proporcao)) %&gt;%</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co">#     ungroup() %&gt;%</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co">#     dplyr::select(-diferenca, -proporcao) %&gt;%</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">#     rename(proporcao = proporcao_ajustada)</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Ordem específica das tribos</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="co">#   ordem_tribos &lt;- c(</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Brassolini", "Morphini", "Haeterini", </span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Preponini", "Melanitini", "Anaeini", </span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Epicaliini","Epiphilini", "Coeini",</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Satyrini",</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Callicorini", "Biblidini","Ageroniini"</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Cores correspondentes às tribos - BLINDSAFE colors (3 categorias de verde, 7 categorias de cinza e 3 categorias de marrom)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="co">#   cores_tribos &lt;- c(</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Brassolini" = "#35978f", "Morphini" = "#80cdc1", "Haeterini" = "#c7eae5", </span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Preponini" = "gray65", "Melanitini" = "gray70", "Anaeini" = "gray75", </span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Epicaliini" = "gray80", "Epiphilini" = "gray85", "Coeini" = "gray90",</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Satyrini" = "gray95",</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Callicorini" = "#f6e8c3", "Biblidini" = "#dfc27d","Ageroniini" = "#bf812d"</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Ajustar a ordem e as cores das tribos com base nas tribos presentes</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="co">#   cores_tribos &lt;- cores_tribos[ordem_tribos]</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Assegurar que a coluna 'tribo_clean' respeite a ordem definida</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="co">#   dados_agregados$tribo &lt;- factor(dados_agregados$tribo, levels = ordem_tribos)</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Criar um data frame com a frequência agregada por tribo</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="co">#   frequencias_por_tribo_ano &lt;- aggregate(frequencia ~ tribo, dados_agregados, sum)</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Criar uma função para determinar se um asterisco deve ser adicionado ao nome da tribo</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="co">#   adicionar_asterisco &lt;- function(nome_tribo) {</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co">#     # Verificar se existe alguma frequência igual a zero para essa tribo em qualquer ano</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="co">#     if (any(frequencias_por_tribo_ano$tribo == nome_tribo &amp; frequencias_por_tribo_ano$frequencia == 0)) {</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co">#       return(paste0(nome_tribo, "*"))</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="co">#     } else {</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">#       return(nome_tribo)</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="co">#     }</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Aplicar a função a cada tribo para criar o vetor de rótulos</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="co">#   labels_tribos &lt;- sapply(ordem_tribos, adicionar_asterisco)</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Criar um data frame com o número único de 'uc_ea' por ano</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="co">#   numero_ea_por_ano &lt;- dados_bioma %&gt;%</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="co">#     distinct(ano, uc_ea) %&gt;%</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="co">#     group_by(ano) %&gt;%</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co">#     summarize(num_ea = n_distinct(uc_ea))</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Construir o gráfico</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co">#   gg &lt;- ggplot() +</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_bar(data = dados_agregados, aes(x = ano, y = proporcao, fill = tribo), stat = "identity", position = position_stack(reverse = FALSE)) +</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_text(data = total_individuos_por_ano, aes(x = ano, y = 100, label = total), vjust = -0.5, size = 3, hjust = 0.5)+</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="co">#     geom_text(data = numero_ea_por_ano, aes(x = ano, y = 0, label = paste0("(", num_ea, ")")), vjust = 1.5, size = 3, hjust = 0.5, color = "gray40") +</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="co">#     scale_y_continuous(labels = scales::number_format(scale = 1, accuracy = 1), limits = c(0, 100))+</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="co">#     scale_x_discrete(expand = c(0, 0)) +</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="co">#     scale_fill_manual(values = cores_tribos, </span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="co">#                       labels = labels_tribos,</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="co">#                       breaks = ordem_tribos) +</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="co">#     labs(title = titulo,</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="co">#          x = "",</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="co">#          y = "Frequência relativa de ocorrência (%)",</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="co">#          fill = "Tribo") +</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme_minimal() +</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="co">#     theme(legend.position = "right", </span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="co">#           legend.title = element_text(size = 12), </span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="co">#           legend.text = element_text(size = 10), </span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="co">#           plot.title = element_text(hjust = 0.5, size = 16), </span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="co">#           plot.subtitle = element_text(hjust = 0.5, size = 14),</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.ticks.y = element_line(color = "black"),</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.text = element_text(size = 10), </span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.title = element_text(size = 10),</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.line = element_line(colour = "gray40"),</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="co">#           axis.line.x = element_blank()) +</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="co">#     guides(fill = guide_legend(title = "Tribos", reverse = FALSE))</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Exibir o gráfico</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(gg)</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="co">#   # Retorna o gráfico para que possa ser salvo externamente</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="co">#   return(gg)</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="co"># # Carregar e preparar os dados</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado_final &lt;- read.csv("dados/borboletas/resultado_final.csv", header = TRUE)</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado_final$ano &lt;- factor(resultado_final$ano)</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado_final$tribo &lt;- gsub("\\*", "", resultado_final$tribo)</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a><span class="co"># # Obter todas as UC's do bioma Cerrado</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a><span class="co"># biomas &lt;- unique(resultado_final$bioma[resultado_final$bioma == "Cerrado"])</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="co"># # Aplicar a função</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="co"># graficos &lt;- lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_final, bioma))</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="co"># # Salvar a imagem usando ggsave()</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="co"># ggsave(filename = "CE.png",  # Escolha um nome adequado para o arquivo</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="co">#        plot = graficos[[1]],  # Especifique qual gráfico da lista deseja salvar</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="co">#        device = "png",  # Pode ser "jpeg", "tiff", etc.</span></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="co">#        path = "/imagens/cap04",  # Especifique o diretório onde você deseja salvar o gráfico</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="co">#        dpi = 300,  # Define a resolução (DPI)</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="co">#        width = 10, height = 8, units = "in")  # Define o tamanho da imagem</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
 <p>Na Mata Atlântica 2.700 borboletas frugívoras foram amostradas. Dessas, 16 não foram identificadaos no nível de tribo, de modo que 2.684 indivíduos amostrados foram considerados na análise. A tribo Satyrini foi a mais representativa, com 27% dos indivíduos, seguida por Anaeini, com 24% e Epicaliini, com 14%.</p>
 <p>Houve uma grande variação das tribos entre anos, especialmente de Brassolini, Anaeini, Coeini e Satyrini (<a href="#fig-regiao-mata-atlantica" class="quarto-xref">Figura&nbsp;<span>4.11</span></a>). Verificou-se também grande variação no número de indivíduos, mesmo quando com um mesmo esforço amostral, indicando haver de fato diferenças na abundância entre regiões no bioma. O padrão das tribos do bioma reflete, principalmente, o padrão registrado no Parque Nacional do Iguaçu. Assim, é de extrema importância que as amostragens sejam feitas continuamente nas mesmas UCs e que, com a adesão de novas unidades de conservação da região ao programa de monitoramento, as amostragens nas UCs com protocolo de borboletas frugívoras já implementado sejam mantidas.</p>
 <p><br></p>
@@ -588,6 +1192,7 @@ Figura&nbsp;4.11: Abundância relativa de tribos de borboletas frugívoras de 20
 </div>
 </div>
 <p><br></p>
+<p><br></p>
 </section>
 <section id="índices-de-abundância-de-tribos" class="level3" data-number="4.3.3">
 <h3 data-number="4.3.3" class="anchored" data-anchor-id="índices-de-abundância-de-tribos"><span class="header-section-number">4.3.3</span> Índices de abundância de tribos</h3>
@@ -597,174 +1202,24 @@ Figura&nbsp;4.11: Abundância relativa de tribos de borboletas frugívoras de 20
 <section id="cálculo-do-índice" class="level4" data-number="4.3.3.1">
 <h4 data-number="4.3.3.1" class="anchored" data-anchor-id="cálculo-do-índice"><span class="header-section-number">4.3.3.1</span> Cálculo do índice</h4>
 <p><br></p>
-<p>Neste relatório, foram adotadas duas abordagens no cálculo do índice de abundância. Na primeira, o índice possibilita a detecção de flutuações de abundância de um ano em relação ao ano anterior. Na segunda, oscilações “populacionais” podem ser detectadas comparando-se o valor do índice de um dado ano ao valor do primeiro ano de ocorrência da “população” sob análise.</p>
-<p>O índice de abundância <em>(i)</em> tem como base o número acumulado de indivíduos de cada tribo em cada ano <em>(t)</em> numa dada área. A partir do número de indivíduos registrados por ano <em>(n)</em> para cada grupo de borboletas indicadoras, é feita uma correção, somando-se um valor muito pequeno para evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida <em>(f<sub>t</sub></em> = <em>n</em> + 0,00001<em>)</em>. Em seguida, para obtenção de um valor padronizado <em>(fe)</em>, a frequência absoluta corrigida é dividida pelo esforço amostral = número de armadilhas * dias de amostragem. O índice de abundância <em>(i<sub>t</sub>)</em> é calculado por meio da divisão da fe do ano específico <em>(fe<sub>t</sub>)</em> pelo valor da <em>fe</em> do ano anterior <em>(fe<sub>t-1</sub>)</em>. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, aplicou-se uma transformação logarítmica (log<sub>10</sub> + 1). Assim, valores acima de 1,0 indicam um aumento e abaixo de 1,0 uma redução “populacional” em relação ao ano anterior.</p>
-<p>Exemplo dessa forma de cálculo do índice de abundância para o terceiro ano de amostragem:</p>
-<p>Neste relatório, foram feitas duas abordagens do índice de abundância. O primeiro se refere à flutuação do índice de abundância em relação ao ano anterior. Exemplo do cálculo do índice de abundância no terceiro ano de amostragem:</p>
-<p><span class="math display">\[f_{3} = n + 0,00001\]</span> <span class="math display">\[fe_{3} = f_{3} / \text{esforço} \, \text{anual}\]</span> <span class="math display">\[i_{3} = log_{10} (fe_{3} / fe_{2}) + 1\]</span></p>
-<p><br></p>
-<p>Esta abordagem pode revelar, por exemplo, o quanto uma “população” está se ‘recuperando’ de um declínio no ano anterior (<a href="#tbl-ind-abund-regiao-central" class="quarto-xref">Tabela&nbsp;<span>4.2</span></a> a <a href="#tbl-ind_abund_mata_atlantica" class="quarto-xref">Tabela&nbsp;<span>4.7</span></a>).</p>
-<p>A segunda abordagem segue o princípio do <em>Live Planet Index (LPI)</em> e o índice de abundância de um dado ano <em>(i<sub>t</sub>)</em> é calculado considerando sempre a frequência absoluta corrigida e padronizada daquele ano <em>(fe<sub>t</sub>)</em> em relação ao valor da primeira ocorrência <em>(fe<sub>0</sub>)</em>, ou seja, do primeiro ano em que a “população” sob análise foi registrada. Considerou-se primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência <em>(i<sub>0</sub>)</em> é padronizado como 1,0 e nesse caso também foi aplicada a transformação logarítmica. Valores acima de 1,0 indicam um aumento e abaixo de 1,0 uma redução “populacional” em relação ao primeiro ano de ocorrência.</p>
+<p>Neste relatório, foram adotadas duas abordagens no cálculo do índice de abundância. Na primeira, o índice segue o princípio do Live Planet Index (LPI), no qual oscilações “populacionais” podem ser detectadas comparando-se o valor do índice de um dado ano ao valor do primeiro ano de ocorrência da “população” sob análise. Na segunda, o índice possibilita a detecção de flutuações de abundância de um ano em relação ao ano anterior.</p>
+<p>O índice de abundância <em>(i)</em> tem como base o número acumulado de indivíduos de cada tribo em cada ano <em>(t)</em> numa dada área. A partir do número de indivíduos registrados por ano <em>(n)</em> para cada grupo de borboletas indicadoras, é feita uma correção, somando-se um valor muito pequeno para evitar a presença de zeros na matriz. Desta forma, é obtida a frequência absoluta corrigida <em>(f<sub>t</sub>)</em> = <em>n</em> + 0,00001. Em seguida, para obtenção de um valor padronizado <em>(fe)</em>, a frequência absoluta corrigida é dividida pelo esforço amostral (número de armadilhas * número de dias de amostragem). O índice de abundância <em>(i<sub>t</sub>)</em> é calculado por meio da divisão da fe do ano específico <em>(fe<sub>t</sub>)</em> pelo valor da <em>fe</em> do primeiro ano em que a “população” sob análise foi registrada ou primeira ocorrência <em>(fe<sub>0</sub>)</em>. Considerando que a frequência corrigida apresenta grandes variações de abundância e esforço amostral entre anos, aplicou-se uma transformação logarítmica (log<sub>10</sub> + 1). Considerou-se primeira ocorrência quando a abundância da “população” no ano foi ≥ 20 indivíduos. O índice de abundância da primeira ocorrência <em>(i<sub>0</sub>)</em> é padronizado como 1,0. Dessa forma, valores acima de 1,0 indicam um aumento e abaixo de 1,0 uma redução “populacional” em relação ao primeiro ano de ocorrência.</p>
 <p>A seguir, um exemplo do cálculo do índice de abundância neste formato para o terceiro ano de amostragem:</p>
 <p><span class="math display">\[f_{3} = n + 0,00001\]</span></p>
 <p><span class="math display">\[fe_{3} = f_{3} / \text{esforço} \, \text{anual}\]</span></p>
 <p><span class="math display">\[i_{3} = log_{10} (fe_{3} / fe_{0}) + 1\]</span></p>
 <p>Flutuações “populacionais” detectadas por meio dessa abordagem são apresentadas na <span class="quarto-unresolved-ref">?fig-regioes-amazonia</span> a <a href="#fig-ind-abund-cerrado" class="quarto-xref">Figura&nbsp;<span>4.13</span></a>.</p>
+<p>Na segunda abordagem, o índice de abundância de um dado ano <em>(i<sub>t</sub>)</em> é calculado por meio da divisão da <em>fe</em> do ano específico <em>(fe<sub>t</sub>)</em> pelo valor da <em>fe</em> do ano anterior <em>(fe<sub>t-1</sub>)</em>. Nesta abordagem, também se aplicou uma transformação logarítmica (log10 + 1) no índice.</p>
+<p>Exemplo dessa forma de cálculo do índice de abundância para o terceiro ano de amostragem:</p>
+<p><span class="math display">\[f_{3} = n + 0,00001\]</span> <span class="math display">\[fe_{3} = f_{3} / \text{esforço} \, \text{anual}\]</span> <span class="math display">\[i_{3} = log_{10} (fe_{3} / fe_{2}) + 1\]</span></p>
+<p>Esta abordagem pode revelar, por exemplo, o quanto uma “população” está se ‘recuperando’ de um declínio no ano anterior (<a href="#tbl-ind-abund-regiao-central" class="quarto-xref">Tabela&nbsp;<span>4.3</span></a> a <a href="#tbl-ind_abund_mata_atlantica" class="quarto-xref">Tabela&nbsp;<span>4.8</span></a>).</p>
 <p><br></p>
 </section>
 <section id="regional-amazônica" class="level4" data-number="4.3.3.2">
 <h4 data-number="4.3.3.2" class="anchored" data-anchor-id="regional-amazônica"><span class="header-section-number">4.3.3.2</span> Regional Amazônica</h4>
 <p><br></p>
-<p>Na primeira abordagem utilizada para o índice de abundância, os valores de cada ano foram comparados ao valor do ano anterior. Na região climática sudoeste amazônica foi observada uma redução de Ageroniini (a única tribo representante das borboletas indicadoras de florestas abertas/perturbadas na região) nos anos de 2017 e 2018, mas um aumento considerável da tribo em 2019. Devido a este grande crescimento populacional de Ageroniini e do esforço amostral na região em 2019 (2.122 indivíduos amostrados em 76 EAs)o ano de 2020 apresentou uma redução drástica no índice, tanto devido ao baixo número de indivíduos de Ageroniini (n = 42), quanto à redução do esforço amostral para 26 EAs. No ano de 2021 houve um aumento do índice em relação ao ano anterior, e uma pequena redução em 2022 (Tabela 1).</p>
-<p>As borboletas indicadoras de florestas fechadas/preservadas, por outro lado, seguiram o padrão inverso apresentado pelas borboletas indicadoras de florestas abertas/perturbadas, exceto em 2018, quando também sofreu uma redução do índice (Tabela 1). Esta é uma dinâmica “populacional” esperada, visto que as borboletas indicadoras de florestas fechadas e florestas abertas possuem requerimentos ambientais e climáticos contrastantes.</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind_abund_regiao_sudoeste" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_sudoeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.1: Índice de abundância das tribos indicadoras na Região Climática Sudoeste Amazônica.
-</figcaption>
-<div aria-describedby="tbl-ind_abund_regiao_sudoeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-regiao-climatica-sudoeste-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br></p>
-<p>Na região climática central amazônica, as tribos indicadoras de florestas abertas/perturbadas, representadas somente por Ageroniini, tiveram um aumento “populacional” em 2017 em relação a 2016, com uma subsequente redução nos anos de 2018 e 2019 (Tabela 2). A partir de 2020, houve um pequeno aumento em relação ao ano anterior e em 2021 esta tribo apresentou um grande aumento “populacional”. Porém, no ano seguinte, houve uma grande redução “populacional” desse grupo de borboletas (Tabela 2). No caso das borboletas de florestas fechadas/preservadas, notou-se uma oscilação de crescimento e redução “populacional” ao longo dos anos, com crescimento nos anos de 2020 e 2021 (Tabela 2). Os grupos indicadores tiveram o mesmo padrão de crescimento “populacional” em relação ao ano anterior em 2019, 2020 e 2021, ambos com diminuição “populacional” em 2022 (Tabela 2).</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind-abund-regiao-central" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind-abund-regiao-central-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.2: Índice de abundância das tribos indicadoras na Região Climática Central Amazônica.
-</figcaption>
-<div aria-describedby="tbl-ind-abund-regiao-central-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-regiao-climatica-central-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br></p>
-<p>Na região climática leste amazônica as tribos indicadoras de florestas fechadas e abertas apresentaram padrões de crescimento e diminuição “populacional” similares ao longo dos anos, com exceção de 2022, quando borboletas indicadoras de florestas abertas tiveram um aumento “populacional” em relação ao ano anterior, enquanto as borboletas indicadoras de florestas fechadas apresentaram uma redução (Tabela 3). Apesar dos mesmos padrões, as proporções das mudanças “populacionais” de um ano para o outro entre os dois grupos indicadores foram diferentes.</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind_abund_regiao_leste" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_leste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.3: Índice de abundância das tribos indicadoras na Região Climática Leste Amazônica.
-</figcaption>
-<div aria-describedby="tbl-ind_abund_regiao_leste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-regiao-climatica-leste-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br></p>
-<p>A região climática sudeste amazônica não apresentou, em nenhum ano amostrado, o número mínimo de borboletas indicadoras de florestas abertas/perturbadas para que o índice fosse calculado (Tabela 4). No entanto, as borboletas indicadoras de florestas fechadas/preservadas mostraram uma oscilação “populacional” entre os anos (Tabela 4).</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind_abund_regiao_sudeste" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_sudeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.4: Índice de abundância das tribos indicadoras na Região Climática Sudeste Amazônica.
-</figcaption>
-<div aria-describedby="tbl-ind_abund_regiao_sudeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-regiao-climatica-sudeste-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br></p>
-<p>Na região climática norte amazônica os grupos indicadores apresentaram um número mínimo de indivíduos para o cálculo do índice apenas a partir de 2018. Os padrões dos dois grupos foram congruentes em todos os anos, exceto em 2022, quando a abundância de borboletas indicadoras de florestas abertas/perturbadas aumentou em relação ao ano anterior e as borboletas indicadoras de florestas fechadas/preservadas mostraram uma pequena redução (Tabela 5).</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind_abund_regiao_norte" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_norte-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.5: Índice de abundância das tribos indicadoras na Região Climática Norte Amazônica.
-</figcaption>
-<div aria-describedby="tbl-ind_abund_regiao_norte-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-regiao-climatica-norte-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br> <br> <br></p>
-<p>No cerrado….</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind_abund_cerrado" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_cerrado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.6: Índice de abundância das tribos indicadoras no Cerrado.
-</figcaption>
-<div aria-describedby="tbl-ind_abund_cerrado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-cerrado.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br> <br> <br></p>
-<p>Na Mata Atlântica….</p>
-<p><br></p>
-<div class="cell" data-layout-align="center">
-<div id="tbl-ind_abund_mata_atlantica" class="cell quarto-float anchored" data-layout-align="center">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_mata_atlantica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabela&nbsp;4.7: Índice de abundância das tribos indicadoras na Mata Atlântica.
-</figcaption>
-<div aria-describedby="tbl-ind_abund_mata_atlantica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imagens/cap04/tbl-IA-mata-atlantica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
-</figure>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><br> <br> <br></p>
-<p>Na segunda abordagem utilizada o índice de abundância é calculado em relação à primeira ocorrência do grupo indicador com número de capturas ≥ 20 indivíduos. Os resultados dessa abordagem são apresentados graficamente na Figura 4 e os valores dos índices para cada tribo encontram-se na <strong>tabela X</strong> do <strong>Apêndice Y</strong>.</p>
-<p>Os resultados obtidos para os grupos de borboletas indicadoras não foram uniformes nas diferentes regiões climáticas da Amazônia ao longo dos anos. Enquanto nas regiões central, sudoeste e norte o índice de abundância indicou um aumento ou estabilidade na abundância das borboletas de florestas fechadas/preservadas, uma diminuição “populacional” foi indicada nas regiões leste e sudeste. Este é um resultado interessante, visto que as regiões sudeste e leste da Amazônia fazem parte do chamado “arco do desmatamento” e sofrem com os avanços de intervenções humanas como a pecuária, plantações de soja, construções de barragens, hidrelétricas e estradas (<span class="citation" data-cites="Fearnside_2022">[<a href="referencias.html#ref-Fearnside_2022" role="doc-biblioref">31</a>]</span>; <span class="citation" data-cites="Nickerson_2022">[<a href="referencias.html#ref-Nickerson_2022" role="doc-biblioref">32</a>]</span>; <span class="citation" data-cites="Jakimow_2023">[<a href="referencias.html#ref-Jakimow_2023" role="doc-biblioref">33</a>]</span>; <span class="citation" data-cites="Levy_2023">[<a href="referencias.html#ref-Levy_2023" role="doc-biblioref"><strong>Levy_2023?</strong></a>]</span>). Dessa forma, a diminuição de borboletas indicadoras de florestas fechadas/preservadas nessas regiões pode ser um indicativo da diminuição da cobertura florestal em nível regional, visto que as amostragens são executadas em UCs que não sofrem diretamente com estas ameaças. Porém, para que esta hipótese seja avaliada adequadamente faz-se necessário obter e incluir em futuras análises dados ambientais e climáticos na escala da região.</p>
+<p>Na primeira abordagem utilizada, o índice de abundância é calculado em relação à primeira ocorrência do grupo indicador com número de capturas ≥ 20 indivíduos. Os resultados dessa abordagem são apresentados na <span class="quarto-unresolved-ref">?fig-regioes-amazonia</span> e os valores dos índices para cada tribo encontram-se na <strong>tabela X</strong> do <strong>Apêndice Y</strong>.</p>
+<p>Os resultados obtidos para os grupos de borboletas indicadoras não foram uniformes nas diferentes regiões climáticas da Amazônia ao longo dos anos. Enquanto nas regiões central, sudoeste e norte o índice de abundância indicou um aumento ou estabilidade na abundância das borboletas de florestas fechadas/preservadas, uma diminuição “populacional” foi indicada nas regiões leste e sudeste. Este é um resultado interessante, visto que as regiões sudeste e leste da Amazônia fazem parte do chamado “arco do desmatamento” e sofrem com os avanços de intervenções humanas como a pecuária, plantações de soja, construções de barragens, hidrelétricas e estradas (<span class="citation" data-cites="Fearnside_2022">[<a href="referencias.html#ref-Fearnside_2022" role="doc-biblioref">34</a>]</span>; <span class="citation" data-cites="Nickerson_2022">[<a href="referencias.html#ref-Nickerson_2022" role="doc-biblioref">35</a>]</span>; <span class="citation" data-cites="Jakimow_2023">[<a href="referencias.html#ref-Jakimow_2023" role="doc-biblioref">36</a>]</span>; <span class="citation" data-cites="Levy_2023">[<a href="referencias.html#ref-Levy_2023" role="doc-biblioref"><strong>Levy_2023?</strong></a>]</span>). Dessa forma, a diminuição de borboletas indicadoras de florestas fechadas/preservadas nessas regiões pode ser um indicativo da diminuição da cobertura florestal em nível regional, visto que as amostragens são executadas em UCs que não sofrem diretamente com estas ameaças. Porém, para que esta hipótese seja avaliada adequadamente faz-se necessário obter e incluir em futuras análises dados ambientais e climáticos na escala da região.</p>
 <p>As tribos indicadoras de florestas abertas/perturbadas apresentaram, em sua maioria, redução “populacional”, especialmente após de 2020. Os únicos picos de aumento “populacional” deste grupo ocorreram em 2019, na região sudoeste da Amazônia, e em 2021, na região central. As regiões norte, leste e sudoeste (a partir de 2020) se destacaram pelas reduções e na região sudeste não foi obtido o número mínimo de 20 indivíduos para o cálculo do índice. Para entender este resultado serão necessárias análises mais refinadas utilizando imagens de satélite, dados climáticos e ambientais. No entanto, a diminuição populacional desse grupo deve, idealmente, ser avaliada num nível taxonômico mais fino, preferencialmente de espécie, para que a interpretação seja mais adequada, especialmente em relação à tribo Ageroniini.</p>
 <p><br></p>
 <p><br></p>
@@ -814,6 +1269,153 @@ Figura&nbsp;4.14: Variação no índice de abundância das tribos de borboletas 
 </div>
 </div>
 </div>
+<p>Na segunda abordagem utilizada para o índice de abundância, os valores de cada ano foram comparados ao valor do ano anterior. Na região climática sudoeste amazônica foi observada uma redução de Ageroniini (a única tribo representante das borboletas indicadoras de florestas abertas/perturbadas na região) nos anos de 2017 e 2018, mas um aumento considerável da tribo em 2019. Devido a este grande crescimento populacional de Ageroniini e do esforço amostral na região em 2019 (2.122 indivíduos amostrados em 76 EAs)o ano de 2020 apresentou uma redução drástica no índice, tanto devido ao baixo número de indivíduos de Ageroniini (n = 42), quanto à redução do esforço amostral para 26 EAs. No ano de 2021 houve um aumento do índice em relação ao ano anterior, e uma pequena redução em 2022 (Tabela 1).</p>
+<p>As borboletas indicadoras de florestas fechadas/preservadas, por outro lado, seguiram o padrão inverso apresentado pelas borboletas indicadoras de florestas abertas/perturbadas, exceto em 2018, quando também sofreu uma redução do índice (Tabela 1). Esta é uma dinâmica “populacional” esperada, visto que as borboletas indicadoras de florestas fechadas e florestas abertas possuem requerimentos ambientais e climáticos contrastantes.</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind_abund_regiao_sudoeste" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_sudoeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.2: Índice de abundância das tribos indicadoras na Região Climática Sudoeste Amazônica.
+</figcaption>
+<div aria-describedby="tbl-ind_abund_regiao_sudoeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-regiao-climatica-sudoeste-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Na região climática central amazônica, as tribos indicadoras de florestas abertas/perturbadas, representadas somente por Ageroniini, tiveram um aumento “populacional” em 2017 em relação a 2016, com uma subsequente redução nos anos de 2018 e 2019 (Tabela 2). A partir de 2020, houve um pequeno aumento em relação ao ano anterior e em 2021 esta tribo apresentou um grande aumento “populacional”. Porém, no ano seguinte, houve uma grande redução “populacional” desse grupo de borboletas (Tabela 2). No caso das borboletas de florestas fechadas/preservadas, notou-se uma oscilação de crescimento e redução “populacional” ao longo dos anos, com crescimento nos anos de 2020 e 2021 (Tabela 2). Os grupos indicadores tiveram o mesmo padrão de crescimento “populacional” em relação ao ano anterior em 2019, 2020 e 2021, ambos com diminuição “populacional” em 2022 (Tabela 2).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind-abund-regiao-central" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind-abund-regiao-central-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.3: Índice de abundância das tribos indicadoras na Região Climática Central Amazônica.
+</figcaption>
+<div aria-describedby="tbl-ind-abund-regiao-central-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-regiao-climatica-central-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Na região climática leste amazônica as tribos indicadoras de florestas fechadas e abertas apresentaram padrões de crescimento e diminuição “populacional” similares ao longo dos anos, com exceção de 2022, quando borboletas indicadoras de florestas abertas tiveram um aumento “populacional” em relação ao ano anterior, enquanto as borboletas indicadoras de florestas fechadas apresentaram uma redução (Tabela 3). Apesar dos mesmos padrões, as proporções das mudanças “populacionais” de um ano para o outro entre os dois grupos indicadores foram diferentes.</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind_abund_regiao_leste" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_leste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.4: Índice de abundância das tribos indicadoras na Região Climática Leste Amazônica.
+</figcaption>
+<div aria-describedby="tbl-ind_abund_regiao_leste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-regiao-climatica-leste-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>A região climática sudeste amazônica não apresentou, em nenhum ano amostrado, o número mínimo de borboletas indicadoras de florestas abertas/perturbadas para que o índice fosse calculado (Tabela 4). No entanto, as borboletas indicadoras de florestas fechadas/preservadas mostraram uma oscilação “populacional” entre os anos (Tabela 4).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind_abund_regiao_sudeste" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_sudeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.5: Índice de abundância das tribos indicadoras na Região Climática Sudeste Amazônica.
+</figcaption>
+<div aria-describedby="tbl-ind_abund_regiao_sudeste-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-regiao-climatica-sudeste-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Na região climática norte amazônica os grupos indicadores apresentaram um número mínimo de indivíduos para o cálculo do índice apenas a partir de 2018. Os padrões dos dois grupos foram congruentes em todos os anos, exceto em 2022, quando a abundância de borboletas indicadoras de florestas abertas/perturbadas aumentou em relação ao ano anterior e as borboletas indicadoras de florestas fechadas/preservadas mostraram uma pequena redução (Tabela 5).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind_abund_regiao_norte" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_regiao_norte-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.6: Índice de abundância das tribos indicadoras na Região Climática Norte Amazônica.
+</figcaption>
+<div aria-describedby="tbl-ind_abund_regiao_norte-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-regiao-climatica-norte-amazonica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br> <br> <br></p>
+<p>No cerrado….</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind_abund_cerrado" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_cerrado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.7: Índice de abundância das tribos indicadoras no Cerrado.
+</figcaption>
+<div aria-describedby="tbl-ind_abund_cerrado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-cerrado.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br> <br> <br></p>
+<p>Na Mata Atlântica….</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ind_abund_mata_atlantica" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ind_abund_mata_atlantica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.8: Índice de abundância das tribos indicadoras na Mata Atlântica.
+</figcaption>
+<div aria-describedby="tbl-ind_abund_mata_atlantica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap04/tbl-IA-mata-atlantica.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 <p><br></p>
 </section>
 </section>
@@ -823,8 +1425,8 @@ Figura&nbsp;4.14: Variação no índice de abundância das tribos de borboletas 
 <section id="efeito-da-queda-dos-tabocais-na-abundância-das-tribos-de-borboletas-frugívoras-no-sudoeste-da-amazônia" class="level4" data-number="4.3.4.1">
 <h4 data-number="4.3.4.1" class="anchored" data-anchor-id="efeito-da-queda-dos-tabocais-na-abundância-das-tribos-de-borboletas-frugívoras-no-sudoeste-da-amazônia"><span class="header-section-number">4.3.4.1</span> Efeito da queda dos tabocais na abundância das tribos de borboletas frugívoras no sudoeste da Amazônia</h4>
 <p><br></p>
-<p>Na região sudoeste da Amazônia, especialmente no estado do Acre, encontra-se uma vasta área de florestas de bambuzais do gênero <em>Guadua</em>, chamadas localmente de ‘tabocal’. Estas florestas se estendem por uma superfície de aproximadamente 162.000 km<sup>2</sup>, na qual uma única população de bambu pode ocupar uma área de 330 km<sup>2</sup> (<span class="citation" data-cites="Carvalho_2013">[<a href="referencias.html#ref-Carvalho_2013" role="doc-biblioref">34</a>]</span>). Essas populações de taboca têm um ciclo de vida que varia de 27-28 anos (<span class="citation" data-cites="Carvalho_2013">[<a href="referencias.html#ref-Carvalho_2013" role="doc-biblioref">34</a>]</span>). A população entra em senescência após sua reprodução sexuada, inicialmente com a perda de folhas dos indivíduos e, no fim, com sua sua morte e queda. As manchas de bambu são densas e altas e, ao morrerem, deixam uma grande porção de floresta aberta.</p>
-<p>Algumas UCs do Acre possuem extensas manchas florestas de tabocal e, nos últimos anos, foram relatadas mortes de diversas dessas populações (Silveira, comm. pers.). Porém, essa mortalidade não é imediata e a senescência dessas manchas pode levar mais de um ano. Há relatos da mortalidade de extensas áreas de tabocal de 2017 a 2021 nas seguintes UCs do Programa Monitora: RESEX do Cazumbá-Iracema (2017 e 2018), RESEX do Alto Tarauacá e RESEX Chico Mendes (2018) e RESEX Riozinho da Liberdade (2021).</p>
+<p>Na região sudoeste da Amazônia, especialmente no estado do Acre, encontra-se uma vasta área de florestas de bambuzais do gênero <em>Guadua</em>, chamadas localmente de ‘tabocal’. Estas florestas se estendem por uma superfície de aproximadamente 162.000 km<sup>2</sup>, na qual uma única população de bambu pode ocupar uma área de 330 km<sup>2</sup> (<span class="citation" data-cites="Carvalho_2013">[<a href="referencias.html#ref-Carvalho_2013" role="doc-biblioref">37</a>]</span>). Essas populações de taboca têm um ciclo de vida que varia de 27-28 anos (<span class="citation" data-cites="Carvalho_2013">[<a href="referencias.html#ref-Carvalho_2013" role="doc-biblioref">37</a>]</span>). A população entra em senescência após sua reprodução sexuada, inicialmente com a perda de folhas dos indivíduos e, no fim, com sua sua morte e queda. As manchas de bambu são densas e altas e, ao morrerem, deixam uma grande porção de floresta aberta.</p>
+<p>Algumas UCs do Acre possuem extensas manchas florestas de tabocal e, nos últimos anos, foram relatadas mortes de diversas dessas populações (<strong>Silveira, comunicação pessoal</strong>). Porém, essa mortalidade não é imediata e a senescência dessas manchas pode levar mais de um ano. Há relatos da mortalidade de extensas áreas de tabocal de 2017 a 2021 nas seguintes UCs do Programa Monitora: RESEX do Cazumbá-Iracema (2017 e 2018), RESEX do Alto Tarauacá e RESEX Chico Mendes (2018) e RESEX Riozinho da Liberdade (2021).</p>
 <p>Para avaliar se a mortalidade das manchas de tabocal influenciou a abundância das tribos de borboletas frugívoras em cada UC, foi feito uma comparação entre anos para cada tribo, por meio do teste de Wilcoxon (ou teste U de Mann-Whitney). Este teste compara as medianas das abundâncias padronizadas pelo esforço amostral dos anos específicos com a mediana geral (a soma das medianas dos anos específicos dividida pelo número de anos). Um valor de <em>p</em> ≤ 0.01 indica que houve diferença significativa entre a mediana do ano específico e a mediana geral. Admitindo-se que um evento de distúrbio na floresta pode influenciar a comunidade de borboletas tanto no mesmo ano quanto no ano seguinte, essas duas possibilidades foram consideradas na interpretação dos resultados. O valor de <em>p</em> considerado foi de 0.01, para que apenas efeitos mais fortes fossem detectados nos testes. As análises também foram aplicadas às tribos de borboletas do PARNA Serra do Divisor, local considerado “controle”, por não apresentar florestas de taboca.</p>
 <p>Na RESEX do Cazumbá-Iracema, as tribos Brassolini e Morphini, indicadoras de florestas fechadas/preservadas, mostraram um aumento significativo na mediana da abundância no ano seguinte à mortalidade dos tabocais (<a href="#fig-abundancia-resex-cazumba-iracema-combinada" class="quarto-xref">Figura&nbsp;<span>4.15</span></a>). Este resultado é oposto ao esperado, pois com a morte dos tabocais a floresta fica mais aberta e menos propícia às espécies das tribos de floresta fechada. No entanto, a tribo Ageroniini, indicadora de florestas abertas/perturbadas, parece ter respondido à esta perturbação ambiental, visto que o aumento da mediana da abundância foi expressivo, resultando num valor quase 20 vezes maior do que o da mediana geral (<a href="#fig-abundancia-resex-cazumba-iracema-combinada" class="quarto-xref">Figura&nbsp;<span>4.15</span></a>). Outra tribo que também pode ter respondido à queda dos tabocais foi Coeini (<a href="#fig-abundancia-resex-cazumba-iracema-combinada" class="quarto-xref">Figura&nbsp;<span>4.15</span></a>) que, apesar de não ser uma tribo indicadora, têm espécies que são comuns no dossel e florestas abertas.</p>
 <p><br></p>
@@ -912,6 +1514,9 @@ Figura&nbsp;4.19: Variação na abundância das tribos de borboletas frugívoras
 <section id="discussão" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="discussão"><span class="header-section-number">4.4</span> Discussão</h2>
 <p><br></p>
+<p>O Programa Monitora vem se estabelecendo como um dos maiores programas de monitoramento da biodiversidade do mundo. O Brasil, por sua extensão continental e diversos biomas ainda carentes em estudos a longo prazo, necessita, cada vez mais, do apoio federal (ARPA, FUNBIO, CNPq,…) e de ONGs nacionais (IPE, ECOPORÉ, FEST….) e internacionais (PNUD, Gordon and Betty MOORE Foundation….), para a sua continuidade. Somente dessa forma é possível acumular esforços para que a biodiversidade brasileira seja conhecida e protegida.</p>
+<p>As amostragens de borboletas frugívoras do Protocolo Básico do Programa Monitora foram, em sua maioria, bem executadas, cumprindo com o Protocolo e amostrando importantes dados para o país. Especialmente na Amazônia, pela sua dificuldade logística, novas áreas têm sido inventariadas, proporcionando, mesmo que inicialmente, um panorama da diversidade neste bioma. No entanto, também se faz necessário a continuidade e compromisso das UCs participantes e a adesão de novas áreas, como relatado ao longo do capítulo. Em 2022, o último ano de dados analisados, apresentou a maior participação de UCs, destacando não somente a recuperação causada pela baixa amostragem nos anos da pandemia de COVID-19, mas também a superação dos números. É de se esperar que o número de UCs consolidadas tendem a crescer, não somente na Amazônia, mas também nos outros biomas participantes, Cerrado e Mata Atlântica. Este aumento espacial do esforço amostral se faz necessário devido à grande relação entre esforço e número de capturas. Sendo assim, quanto maior o número de locais amostrados, maior a abundância, riqueza e diversidade conhecidas (ref).</p>
+<p>Outro fator indispensável para um programa de monitoramento é a sua amostragem temporal (ref). As amostragens ao longo do tempo (anos) possibilitam detectar mudanças ou manutenções de padrões de abundância e composição em uma determinado local ou região (ref).</p>
 </section>
 <section id="recomendações" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="recomendações"><span class="header-section-number">4.5</span> Recomendações</h2>
@@ -931,11 +1536,11 @@ Boas práticas para aprimorar o Programa
 <li><p>Ampliar o número de unidades de conservação com aplicação do protocolo de borboletas frugívoras (Básico e Avançado) nos biomas Mata Atlântica e Cerrado, dado que esses biomas não chegaram a atingir a suficiência amostral em nenhum ano desde o início do Programa;</p></li>
 <li><p>Na Região Climática Noroeste da Amazônia, implementar o protocolo de borboletas frugívoras em pelo menos três UCs (9 EAs), preferencialmente na ESEC Juami-Japurá, no PARNA do Pico da Neblina e na RESEX Auatí-Paraná;</p></li>
 <li><p>Ampliar o número de UCs com aplicação do protocolo de borboletas frugívoras nas regiões do médio e baixo rio Juruá, regiões carentes de amostragem de borboletas e de extrema importância biológica. É sugerida a implementação nas RESEX Médio e Baixo Juruá e na FLONA de Tefé;</p></li>
-<li><p>Ampliar o número de UCs com aplicação do protocolo de borboletas frugívoras na Região Climática Sudeste Amazônica de forma que seja alcançada a suficiência amostral de 9 EAs. Sugere-se a implementação na FLONA de Carajás, na REBIO Nascentes da Serra do Cachimbo e na ESEC Iquê;</p></li>
+<li><p>Ampliar o número de UCs com aplicação do protocolo de borboletas frugívoras na Região Climática Sudeste Amazônica de forma que seja alcançada a suficiência amostral de 18 EAs no ano. Sugere-se a implementação na FLONA de Carajás, na REBIO Nascentes da Serra do Cachimbo e na ESEC Iquê;</p></li>
 <li><p>Consolidar a implantação do protocolo de borboletas frugívoras naquelas unidades de conservação ainda não consolidadas, de forma que as UCs contem com pelo menos três estações amostrais implantadas e em operação;</p></li>
 <li><p>Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral, em especial quanto ao respeito aos períodos de coleta definidos para cada região e em relação ao esforço amostral (número de dias de amostragens em cada EA);</p></li>
-<li><p>Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;</p></li>
-<li><p>A COMOB deve divulgar novamente os períodos indicados para amostragem nas diferentes regiões, dado que ainda há várias UCs amostrando for a desse período.</p></li>
+<li><p>Assegurar que os dados coletados sejam repassados à Coordenação de acordo com as orientações definidas e num prazo razoável após a realização da campanha de campo;</p></li>
+<li><p>Divulgar novamente às UCs os períodos indicados para amostragem nas diferentes regiões, dado que ainda há várias unidades amostrando fora desse período.</p></li>
 </ul>
 </div>
 </div>
@@ -1014,35 +1619,44 @@ Boas práticas para aprimorar o Programa
 <div id="ref-Oliveira_2023" class="csl-entry" role="listitem">
 <div class="csl-left-margin">24. </div><div class="csl-right-inline">Oliveira IF, Baccaro FB, Werneck FP, Haugaasen T. Seasonal flooding decreases fruit-feeding butterfly species dominance and increases spatial turnover in floodplain forests of central amazonia. Ecol Evol. 2023;13: e9718. </div>
 </div>
+<div id="ref-Nobre_2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Nobre RA, Kinouchi MR, Constantino PAL, Pereira RC, Uehara-Prado M. Monitoramento da biodiversidade: Roteiro metodológico de aplicação. Brasília, DF: Instituto Chico Mendes de Conservação da Biodiversidade; 2014. </div>
+</div>
 <div id="ref-Checa_2009" class="csl-entry" role="listitem">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline">Checa MF, Barragán A, Rodríguez J, Christman M. Temporal abundance patterns of butterfly communities (lepidoptera: Nymphalidae) in the ecuadorian amazonia and their relationship with climate. Annales de la Société entomologique de France (NS). 2009;45: 470–486. doi:<a href="https://doi.org/10.1080/00379271.2009.10697630">10.1080/00379271.2009.10697630</a></div>
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Checa MF, Barragán A, Rodríguez J, Christman M. Temporal abundance patterns of butterfly communities (lepidoptera: Nymphalidae) in the ecuadorian amazonia and their relationship with climate. Annales de la Société entomologique de France (NS). 2009;45: 470–486. doi:<a href="https://doi.org/10.1080/00379271.2009.10697630">10.1080/00379271.2009.10697630</a></div>
+</div>
+<div id="ref-Marengo_2001" class="csl-entry" role="listitem">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Marengo JA, Liebmann B, Kousky VE, Filizola NP, C. WainerI. Onset and end of the rainy season in the brazilian amazon basin. Journal of Climate. 2001;14: 833–852. </div>
 </div>
 <div id="ref-Monitora_2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">26. </div><div class="csl-right-inline">Sampaio AB, Alonso AC, Agra Iserhard C, Bandini Ribeiro D, Carvalho de Andrade DF, Carvalho Junior EAR, et al. Programa nacional de monitoramento da biodiversidade: Programa monitora, subprograma terrestre, componente florestal: Relatório 2014-2018. Brasília, DF: Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio; 2021 Jun. </div>
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Sampaio AB, Alonso AC, Agra Iserhard C, Bandini Ribeiro D, Carvalho de Andrade DF, Carvalho Junior EAR, et al. Programa nacional de monitoramento da biodiversidade: Programa monitora, subprograma terrestre, componente florestal: Relatório 2014-2018. Brasília, DF: Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio; 2021 Jun. </div>
+</div>
+<div id="ref-Barlow_2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Barlow J, Overal WL, Araujo IS, Gardner TA, Peres CA. The value of primary, secondary and plantation forests for fruit‐feeding butterflies in the brazilian amazon. J Appl Ecol. 2007;44: 1001–1012. </div>
 </div>
 <div id="ref-Jenkins_1983" class="csl-entry" role="listitem">
-<div class="csl-left-margin">27. </div><div class="csl-right-inline">Jenkins DW. Neotropical nymphalidae i. Revision of hamadryas. Bulletin of the Allyn Museum. 1983;81. </div>
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Jenkins DW. Neotropical nymphalidae i. Revision of hamadryas. Bulletin of the Allyn Museum. 1983;81. </div>
 </div>
 <div id="ref-Ribas_2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">28. </div><div class="csl-right-inline">Ribas CC, Aleixo A. Diversity and evolution of amazonian birds: Implications for conservation and biogeography. An Acad Bras Cienc. 2019;91: e20190218. </div>
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Ribas CC, Aleixo A. Diversity and evolution of amazonian birds: Implications for conservation and biogeography. An Acad Bras Cienc. 2019;91: e20190218. </div>
 </div>
 <div id="ref-Luize_2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">29. </div><div class="csl-right-inline">Luize BG, Bauman D, Steege H ter, Palma-Silva C, Amaral IL do, Souza Coelho L de, et al. Geography and ecology shape the phylogenetic composition of amazonian tree communities. J Biogeogr. 2024. </div>
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Luize BG, Bauman D, Steege H ter, Palma-Silva C, Amaral IL do, Souza Coelho L de, et al. Geography and ecology shape the phylogenetic composition of amazonian tree communities. J Biogeogr. 2024. </div>
 </div>
 <div id="ref-DeVries_2016" class="csl-entry" role="listitem">
-<div class="csl-left-margin">30. </div><div class="csl-right-inline">DeVries PJ, Hamm CA, Fordyce JA. A standardized sampling protocol for fruit-feeding butterflies (nymphalidae). Core standardized methods. Arlington, USA: Conservation International; 2016. pp. 139–148. </div>
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">DeVries PJ, Hamm CA, Fordyce JA. A standardized sampling protocol for fruit-feeding butterflies (nymphalidae). Core standardized methods. Arlington, USA: Conservation International; 2016. pp. 139–148. </div>
 </div>
 <div id="ref-Fearnside_2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline">Fearnside PM. Amazon environmental services: Why brazil’s highway <span>BR-319</span> is so damaging. Ambio. 2022;51: 1367–1370. </div>
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">Fearnside PM. Amazon environmental services: Why brazil’s highway <span>BR-319</span> is so damaging. Ambio. 2022;51: 1367–1370. </div>
 </div>
 <div id="ref-Nickerson_2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">32. </div><div class="csl-right-inline">Nickerson S, Chen G, Fearnside PM, Allan CJ, Hu T, Carvalho LMT de, et al. Forest loss is significantly higher near clustered small dams than single large dams per megawatt of hydroelectricity installed in the brazilian amazon. Environ Res Lett. 2022;17: 084026. </div>
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">Nickerson S, Chen G, Fearnside PM, Allan CJ, Hu T, Carvalho LMT de, et al. Forest loss is significantly higher near clustered small dams than single large dams per megawatt of hydroelectricity installed in the brazilian amazon. Environ Res Lett. 2022;17: 084026. </div>
 </div>
 <div id="ref-Jakimow_2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">33. </div><div class="csl-right-inline">Jakimow B, Baumann M, Salomão C, Bendini H, Hostert P. Deforestation and agricultural fires in <span>South-West</span> par<span>á</span>, brazil, under political changes from 2014 to 2020. J Land Use Sci. 2023;18: 176–195. </div>
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">Jakimow B, Baumann M, Salomão C, Bendini H, Hostert P. Deforestation and agricultural fires in <span>South-West</span> par<span>á</span>, brazil, under political changes from 2014 to 2020. J Land Use Sci. 2023;18: 176–195. </div>
 </div>
 <div id="ref-Carvalho_2013" class="csl-entry" role="listitem">
-<div class="csl-left-margin">34. </div><div class="csl-right-inline">Carvalho AL de, Nelson BW, Bianchini MC, Plagnol D, Kuplich TM, Daly DC. Bamboo-dominated forests of the southwest amazon: Detection, spatial extent, life cycle length and flowering waves. PLoS One. 2013;8: e54852. </div>
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">Carvalho AL de, Nelson BW, Bianchini MC, Plagnol D, Kuplich TM, Daly DC. Bamboo-dominated forests of the southwest amazon: Detection, spatial extent, life cycle length and flowering waves. PLoS One. 2013;8: e54852. </div>
 </div>
 </div>
 </section>

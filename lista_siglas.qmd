@@ -14,7 +14,7 @@ library(tidyverse)
 library(DT)
 library(kableExtra)
 
-siglas <- read.csv2("dados/tabelas/siglas.csv", encoding="UTF-8")
+siglas <- read.csv2("dados/tabelas/siglas/siglas.csv", encoding="UTF-8")
 
 tab_siglas <- kbl(siglas,
              booktabs = TRUE,

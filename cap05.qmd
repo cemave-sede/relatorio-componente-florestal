@@ -24,6 +24,8 @@ library(randomcoloR)
 library(gridExtra)
 library(here)
 library(htmlTable)
+library(png)
+library(grid)
 
 ```
 
@@ -257,7 +259,7 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos nas unidades de conservação integrantes do Programa Monitora de 2014 a 2022."
+#| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos de 2014 a 2022 nas unidades de conservação do Programa Monitora."
 
 
 # Scripts Gráfico 1 de esforço 
@@ -381,7 +383,7 @@ ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Táxons registrados acumulados (linha) e número de unidades de conservação (barras verticais) com protocolo básico de mamíferos e aves executado por ano, de 2014 a 2022."
+#| fig-cap: "Táxons registrados acumulados (linha) e número de unidades de conservação (barras verticais) com protocolo básico de mamíferos e aves executado de 2014 a 2022."
 
 #----- grafico com numero de UCs ativas e numero acumulado de encontros por ano
 
@@ -1121,7 +1123,44 @@ mamiferos <- masto_aves |>
   filter(classe == "Mammalia")
 
 unique(mamiferos$taxon_validado)
-  
+
+
+
+
+# masto_aves_2014_2022 <- masto_aves |> 
+#   filter(ano != 2023)
+
+# names(masto_aves)
+# 
+# unique(masto_aves_2014_2022$uc)
+# unique(masto_aves_2014_2022$cnuc)
+# unique(masto_aves_2014_2022$Cnuc)
+# unique(masto_aves_2014_2022$bioma)
+# unique(masto_aves_2014_2022$ano)
+# unique(masto_aves_2014_2022$ea)
+# unique(masto_aves_2014_2022$esforco)
+# unique(masto_aves_2014_2022$data)
+# unique(masto_aves_2014_2022$estacao)
+# unique(masto_aves_2014_2022$classe)
+# unique(masto_aves_2014_2022$ordem)
+# unique(masto_aves_2014_2022$genero)
+# unique(masto_aves_2014_2022$especie)
+# unique(masto_aves_2014_2022$nivel_taxon)
+# unique(masto_aves_2014_2022$taxon_validado)
+# unique(masto_aves_2014_2022$n_animais)
+# unique(masto_aves_2014_2022$cont_tot_par)
+# unique(masto_aves_2014_2022$distancia)
+# unique(masto_aves_2014_2022$plaqueta)
+
+# Busca por valores NA e registros n_animais = 0
+
+# masto_aves_2014_2022_uc <- masto_aves |> 
+#    filter(is_NA(ordem))
+# 
+# masto_aves_2014_2022_uc <- masto_aves |> 
+#    filter(n_animais == 0)
+
+
 ```
 
 
@@ -1425,7 +1464,7 @@ taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxa de avistamento média de aves e mamíferos por bioma para o período de 2014 a 2022."
+#| fig-cap: "Taxa de avistamento média de aves e mamíferos por bioma para o período de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
 # Taxa de encontro geral mamíferos e aves por bioma - emparelhado
 
@@ -1487,7 +1526,7 @@ ggsave("imagens/cap05/ma_taxa_avistamento_media_bioma.jpg",
 
 </br>
 
-Considerando a variação da abundância relativa ao longo do tempo, na Amazônia os primeiros anos apresentam uma maior dispersão dos resultados, explicada pelo número proporcionalmente reduzido de UCs participantes e consequente menor esforço amostral na fase inicial do Programa, além de um leve decréscimo nas abundâncias em 2021 e 2022 (@fig-taxa-encontro-tempo). Para a Mata Atlântica os resultados são irregulares devido à descontinuidade de amostragem e à grande variação no esforço entre os anos. Já para o Cerrado, o padrão observado se justifica pelo fato das duas UCs com dados coletados em 2022, o PARNA da Serra da Bodoquena e a ESEC de Pirapitinga, serem distintas das demais, com matriz florestal e, consequentemente, com maior taxa de avistamento. 
+Considerando a variação da abundância relativa ao longo do tempo, na Amazônia os primeiros anos apresentam uma maior dispersão dos resultados, explicada pelo número proporcionalmente reduzido de UCs participantes e consequente menor esforço amostral na fase inicial do Programa, além de um leve decréscimo nas abundâncias em 2021 e 2022 (@fig-taxa-avistamento-tempo). Para a Mata Atlântica os resultados são irregulares devido à descontinuidade de amostragem e à grande variação no esforço entre os anos. Já para o Cerrado, o padrão observado se justifica pelo fato das duas UCs com dados coletados em 2022, o PARNA da Serra da Bodoquena e a ESEC de Pirapitinga, serem distintas das demais, com matriz florestal e, consequentemente, com maior taxa de avistamento. 
 
 
 ```{r G_taxa_avistamento_geral_mamiferos_aves_2014-2022_media_IC}
@@ -1763,7 +1802,7 @@ print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '85%'
-#| fig-cap: "Variação anual na taxa de avistamento média de mamíferos e aves de 2014 a 2022 (geral e por bioma). As linhas horizontais representam a taxa de avistamento média para cada grupo considerando todo o período amostral."
+#| fig-cap: "Variação anual na taxa de avistamento média de mamíferos e aves de 2014 a 2022 (geral e por bioma). As linhas verticais indicam o intervalo de confiança de 95% e as linhas horizontais representam a taxa de avistamento média para cada grupo considerando todo o período amostral."
 
 grafico_taxas_biomas_tempo <- grid.arrange(G_taxa_avistamento_geral_periodo_emparelhado_media_IC, G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC, G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC, G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC,
              layout_matrix = matrix(c(1, 2, 3, 4), 
@@ -1793,7 +1832,7 @@ Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-s
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxa média de avistamento de mamíferos por unidade de conservação de 2014 a 2022."
+#| fig-cap: "Taxa média de avistamento de mamíferos por unidade de conservação de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
 # Gráfico da taxa de avistamento total de mamíferos - média e IC
 
@@ -1844,7 +1883,7 @@ ggsave("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg", plot =  G_taxa_avistam
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxa média de avistamento de aves por unidade de conservação de 2014 a 2022."
+#| fig-cap: "Taxa média de avistamento de aves por unidade de conservação de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
 # Gráfico da taxa de avistamento total de aves - média e IC
 
@@ -1892,10 +1931,19 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 
 </br>
 
-O tamanho das unidades de conservação do Programa Monitora varia muito entre biomas. No Cerrado e na Mata Atlântica as unidades de conservação são relativamente pequenas, com algumas dezenas de milhares de hectares, enquanto na Amazônia podem ultrapassar um milhão de hectares. Considerando-se que nas unidades do Cerrado e Mata Atlântica a abundância de mamíferos e de aves, expressas pelas taxas de avistamento médias, são inferiores (@fig-taxa-avistamento-geral-mamiferos e @fig-taxa-avistamento-geral-aves), é natural se considerar que essas populações apresentem, em geral, uma maior vulnerabilidade demográfica comparada àquela das populações amazônicas. A distribuição espacial da taxa de avistamento média geral (considerando-se conjuntamente mamíferos e aves) é apresentada na @fig-taxa-encontro-mapa. Dentre as unidades de conservação da Amazônia aquelas localizadas entre os rios Tapajós e Xingu apresentam as maiores abundâncias, à exceção da REBIO do Uatumã, localizada ao norte do Rio Amazonas e que também apresenta uma alta taxa média geral de avistamento (@fig-taxa-avistamento-mapa).
+O tamanho das unidades de conservação do Programa Monitora varia muito entre biomas. No Cerrado e na Mata Atlântica as unidades de conservação são relativamente pequenas, com algumas dezenas de milhares de hectares, enquanto na Amazônia podem ultrapassar um milhão de hectares. Considerando-se que nas unidades do Cerrado e Mata Atlântica a abundância de mamíferos e de aves, expressas pelas taxas de avistamento médias, são inferiores (@fig-taxa-avistamento-geral-mamiferos e @fig-taxa-avistamento-geral-aves), é natural considerar que essas populações apresentem, em geral, uma maior vulnerabilidade demográfica comparada àquela das populações amazônicas. A distribuição espacial da taxa de avistamento média geral (considerando-se conjuntamente mamíferos e aves) é apresentada na @fig-taxa-avistamento-mapa. Dentre as unidades de conservação da Amazônia aquelas localizadas entre os rios Tapajós e Xingu apresentam as maiores abundâncias, à exceção da REBIO do Uatumã, localizada ao norte do Rio Amazonas e que também apresenta uma alta taxa média geral de avistamento (@fig-taxa-avistamento-mapa).
 
 
-<center>
+<!-- <style> -->
+<!--   #mapa { -->
+<!--     display: flex; -->
+<!--     justify-content: center; -->
+<!--     align-items: center; -->
+<!--     height: 500px; /* Ajuste conforme necessário */ -->
+<!--   } -->
+<!-- </style> -->
+
+</br>
 
 ```{r mapa taxas de avistamento por uc - taxa geral}
 #| label: fig-taxa-avistamento-mapa
@@ -1906,6 +1954,7 @@ O tamanho das unidades de conservação do Programa Monitora varia muito entre b
 #| fig.pos: 'H'
 #| fig-align: center
 #| out.width: '70%'
+#| layout-nrow: 1
 #| fig-cap: "Distribuição espacial das taxas médias de avistamento de mamíferos e aves (taxa geral, considerando conjuntamente os dois grupos) registradas nas unidades de conservação do Programa Monitora de 2014 a 2022."
 
 
@@ -1960,11 +2009,15 @@ mapa <- leaflet(ucs_comp_florestal_unido) |>
         position = "topright")
 
 mapa
- 
+
 
 ```
 
-</center>
+
+
+
+
+</br>
 
 ```{r cálculo dos registros por espécie, por trilha, por ano e por UC}
 #| echo: false
@@ -2073,7 +2126,7 @@ Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyid
 Para a ordem Primates, 18 espécies ameaçadas já foram registradas: *Alouatta belzebul* (guariba-de-mãos-ruivas), *A. discolor* (guariba-de-mãos-ruivas), *A. guariba clamitans* (bugio-ruivo), *Ateles belzebuth* (macaco-aranha), *A. chamek* (macaco-aranha-da-cara-preta), *A. marginatus* (coatá-da-testa-branca), *Brachyteles arachnoides* (muriqui-do-sul), *Chiropotes satanas* (cuxiú-preto), *C. utahickae* (cuxiú-marrom), *Lagothrix lagotricha cana* (macaco-barrigudo), *L. lagotricha poeppigii* (macaco-barrigudo), *Callithrix aurita* (sagui-da-serra-escuro), *Leontopithecus chrysomelas* (mico-leão-da-cara-dourada), *Mico rondoni* (mico-de-Rondônia), *Cebus kaapori* (cairara), *Saguinus niger* (sagui-una), *Sapajus cay* (macaco-prego) e *S. xanthosternos* (macaco-prego-do-peito-amarelo).  
 
 
-Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor* (codorna-mineira), *Taoniscus nanus* (codorna-carapé), *Crypturellus zabele* (zabelê), *Tinamus tao* (azulona), *Aburria jacutinga* (jacutinga) e *A. cujubi* (cujubi), *Penelope jacucaca* (jacucaca) e *P. pileata* (jacupiranga), *Crax blumenbachii* (mutum-de-bico-vermelho) e *C. globulosa* (mutum-de-fava), *Psophia obscura* (jacamim-de-costas-escuras), *P. interjecta* (jacamim-do-xingu), *P. viridis* (jacamim-de-costas-verdes) e *P. dextralis* (jacamim-de-costas-marrons), mais duas subespécies, a saber *Penelope s. alagoensis* (jacupemba) e *Crax f. pinima* (mutum-de-penacho).
+Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor* (codorna-mineira), *Taoniscus nanus* (codorna-carapé), *Crypturellus zabele* (zabelê), *Tinamus tao* (azulona), *Aburria jacutinga* (jacutinga) e *A. cujubi* (cujubi), *Penelope jacucaca* (jacucaca) e *P. pileata* (jacupiranga), *Crax blumenbachii* (mutum-de-bico-vermelho) e *C. globulosa* (mutum-de-fava), *Psophia obscura* (jacamim-de-costas-escuras), *P. interjecta* (jacamim-do-xingu), *P. viridis* (jacamim-de-costas-verdes) e *P. dextralis* (jacamim-de-costas-marrons), mais duas subespécies, a saber *Penelope s. alagoensis* (jacupemba) e *Crax f. pinima* (mutum-de-penacho ou mutum-pinima).
 
 
 Desses táxons elencados já foram registrados pelo Programa Monitora em uma ou mais unidades de conservação *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*, além da subespécie ameaçada de *Penelope*. Ressaltamos que *Penelope jacucaca*, *P. pileata* e *Nothura minor* foram ou podem ter sido registradas em campo, mas como ocorrem em simpatria com espécies semelhantes, os registros foram validados em nível de gênero. A mesma situação ocorre com *Tinamus tao* (VU). Na Amazônia, avistamentos dessa espécie foram reportados para quase todas as UCs em que a espécie era esperada, mas dada a ocorrência de outras espécies de *Tinamus* nessas áreas esses registros também foram validados em nível de gênero. 
@@ -2142,22 +2195,91 @@ taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
 
 *Ateles marginatus* (macaco-aranha-da-testa-branca) encontra-se ameaçado de extinção na categoria “Em perigo (EN)” (@MMA_2022). Essa espécie ocorre na região do arco do desmatamento, interflúvio Tapajós-Xingu, e no período 2014–2022 foram registrados 110 avistamentos desse táxon em seis unidades de conservação do Programa Monitora: ESEC da Terra do Meio, FLONA do Tapajós, PARNA da Serra do Pardo, RESEX Renascer, RESEX Riozinho do Anfrísio e RESESX Verde para Sempre.  
 
-*Ateles chamek* (macaco-aranha-preto) está ameaçado de extinção na categoria “Vulnerável (VU)” (@MMA_2022), ocorrendo na região da Amazônia ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *A. chamek* apresentou uma maior taxa média de avistamentos por ano do que o *A. marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *A. chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
+*Ateles chamek* (macaco-aranha-preto) está ameaçado de extinção na categoria “Vulnerável (VU)” (@MMA_2022), ocorrendo na região da Amazônia Ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *A. chamek* apresentou uma maior taxa média de avistamentos por ano do que o *A. marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *A. chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
 
 </br>
 
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos}
-#| label: fig-especies-ameacadas-atelideos
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos - sem imagens}
+#| label: fig-especies-ameacadas-atelideos-antigo
 #| echo: false
 #| message: false
+#| include: false
 #| warning: false
 #| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas atelídeos ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+# #| fig.pos: 'H'
+# #| out.width: '70%'
+# #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas atelídeos ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+# 
+# cor_ameacadas2 <- c("#008B8B", "#666666", "#BF8120", "brown")
+# 
+# 
+# 
+# G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Ateles chamek", "Ateles marginatus")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+# 
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#     theme_minimal() +
+#     theme(
+#       panel.grid.minor.y = element_blank(),
+#       #panel.grid.major.y = element_blank(),
+#       panel.grid.minor.x = element_blank(),
+#       panel.grid.major.x = element_blank(),
+#       axis.text=element_text(size=10),
+#       axis.text.x = element_text(size = 12),
+#       axis.text.y = element_text(size = 11),
+#       axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#       axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#       #axis.line.y = element_line(),
+#       #axis.ticks.y = element_line(),
+#       title = element_text(size = 10),
+#       legend.text=element_text(size=10, face = "italic"),
+#       legend.position = "right",
+#       legend.title = element_blank()) +
+#       scale_color_manual(values = cor_ameacadas2) +
+#       scale_y_continuous(limits = c(0, 1.5)) +
+#       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#       labs(title = "Primatas - Atelídeos",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# G_especie_ameacada_ucs_ano_media_primatas_atelideos
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos, height = 4.5, width = 6, units = "in", dpi = 300)
+
+```
+
+
+```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos}
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
+
+
+font_size_nomes_silhuetas <- 6 #Tamanho da fonte dos nomes abaixo das silhuetas
 
 cor_ameacadas2 <- c("#008B8B", "#666666", "#BF8120", "brown")
-
 
 
 G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_ameacadas |>
@@ -2168,7 +2290,7 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_amea
             sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
-
+  
   ggplot(aes(
     x = ano,
     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
@@ -2181,38 +2303,110 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_amea
   geom_line(size = 0.5) +
   geom_point(size = 3, alpha = 0.8) +
   
-    theme_minimal() +
-    theme(
-      panel.grid.minor.y = element_blank(),
-      #panel.grid.major.y = element_blank(),
-      panel.grid.minor.x = element_blank(),
-      panel.grid.major.x = element_blank(),
-      axis.text=element_text(size=10),
-      axis.text.x = element_text(size = 12),
-      axis.text.y = element_text(size = 11),
-      axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-      axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-      #axis.line.y = element_line(),
-      #axis.ticks.y = element_line(),
-      title = element_text(size = 10),
-      legend.text=element_text(size=10, face = "italic"),
-      legend.position = "right",
-      legend.title = element_blank()) +
-      scale_color_manual(values = cor_ameacadas2) +
-      scale_y_continuous(limits = c(0, 1.5)) +
-      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-      labs(title = "Primatas - Atelídeos",
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text=element_text(size=10),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 11),
+    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+    #axis.line.y = element_line(),
+    #axis.ticks.y = element_line(),
+    title = element_text(size = 10),
+    legend.text=element_text(size=10, face = "italic"),
+    legend.position = "right",
+    legend.title = element_blank()) +
+  scale_color_manual(values = cor_ameacadas2) +
+  scale_y_continuous(limits = c(0, 1.5)) +
+  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+  labs(title = "Primatas - Atelídeos",
        x = "Ano",
        y = "Avistamentos/10 km",
        col = NULL)
 
-G_especie_ameacada_ucs_ano_media_primatas_atelideos
+#Imagens das silhuetas
+
+tamanho_imagem_atelideos_ameacados <- 15 #Tamanho em mm
+
+##Carregando a imagem e convertendo-a em grob
+#A. chamek
+chamek <- readPNG("imagens/cap05/silhuetas/chamek.png")
+chamek_grob <- rasterGrob(chamek, interpolate = TRUE, width = unit(tamanho_imagem_atelideos_ameacados, "mm"), height = unit(tamanho_imagem_atelideos_ameacados, "mm"))
+#P. marginatus
+marginatus <- readPNG("imagens/cap05/silhuetas/marginatus.png")
+marginatus_grob <- rasterGrob(marginatus, interpolate = TRUE, width = unit(tamanho_imagem_atelideos_ameacados, "mm"), height = unit(tamanho_imagem_atelideos_ameacados, "mm"))
+
+#Nomes científicos abaixo das silhuetas
+chamek_text_grob <- textGrob("A. chamek", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+marginatus_text_grob <- textGrob("A. marginatus", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+
+#Posição das silhuetas
+distancia_silhueta_atelideos_ameacados <- 0.75     #Distância entre as silhuetas
+largura_silhueta_atelideos_ameacados <- 1
+x_inicial_silhueta_atelideos_ameacados <- 2014     #Posição x inicial da 1ª silhueta
+y_min_silhueta_atelideos_ameacados <- 1.1         #y min da 1ª silhueta
+y_max_silhueta_atelideos_ameacados <- 1.6         #y max da 1ª silhueta
+
+#Posição dos nomes das silhuetas
+y_max_nome_silhueta_atelideos_ameacados <- y_max_silhueta_atelideos_ameacados - 0.22       #Em relação a silhueta
+y_min_nome_silhueta_atelideos_ameacados <- y_max_nome_silhueta_atelideos_ameacados - 0.17 #Em relação a silhueta
+
+#Posição das 5 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
+xmin_silhueta_chamek <- x_inicial_silhueta_atelideos_ameacados
+xmax_silhueta_chamek <- xmin_silhueta_chamek + largura_silhueta_atelideos_ameacados
+
+xmin_silhueta_marginatus <- x_inicial_silhueta_atelideos_ameacados + largura_silhueta_atelideos_ameacados + distancia_silhueta_atelideos_ameacados
+xmax_silhueta_marginatus <- xmin_silhueta_marginatus + largura_silhueta_atelideos_ameacados
+
+#Plot G_especie_ameacada_ucs_ano_media_primatas_atelideos com as silhuetas e os nomes. Não requer alteração
+G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas <- G_especie_ameacada_ucs_ano_media_primatas_atelideos +
+  #A. chamek
+  annotation_custom(grob = chamek_grob, #silhueta
+                    xmin = xmin_silhueta_chamek, xmax = xmax_silhueta_chamek,
+                    ymin = y_min_silhueta_atelideos_ameacados, ymax = y_max_silhueta_atelideos_ameacados) +
+  annotation_custom(grob = chamek_text_grob, #texto
+                    xmin = xmin_silhueta_chamek, xmax = xmax_silhueta_chamek,
+                    ymin = y_min_nome_silhueta_atelideos_ameacados, ymax = y_max_nome_silhueta_atelideos_ameacados) +
+  #P. marginatus
+  annotation_custom(grob = marginatus_grob, #silhueta
+                    xmin = xmin_silhueta_marginatus, xmax = xmax_silhueta_marginatus,
+                    ymin = y_min_silhueta_atelideos_ameacados, ymax = y_max_silhueta_atelideos_ameacados) +
+  annotation_custom(grob = marginatus_text_grob, #texto
+                    xmin = xmin_silhueta_marginatus, xmax = xmax_silhueta_marginatus,
+                    ymin = y_min_nome_silhueta_atelideos_ameacados, ymax = y_max_nome_silhueta_atelideos_ameacados)
+
+
+
+```
+
+
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos}
+#| label: fig-especies-ameacadas-atelideos
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas atelídeos ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
+
+
+G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas
 
 # Salvando o gráfico
 
-ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos, height = 4.5, width = 6, units = "in", dpi = 300)
+ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
+
 
 ```
+
+
+
+
 
 </br>
 
@@ -2221,24 +2415,94 @@ Outros Primatas
 
 Os primatas criticamente ameaçados *Cebus kaapori* e  *C. satanas* foram registrados em uma única unidade de conservação, a REBIO do Gurupi, com apenas nove avistamentos de *C. kaapori* e 24 de *C. satanas* no período de 2014-2022. O esforço total realizado no período em relação a essas espécies foi de apenas 175 km, tendo em vista que somente recentemente as três unidades amostrais do alvo mastoaves foram implementadas na REBIO do Gurupi.  
 
-*Chiropotes utahickae* (cuxiú-marrom) é uma espécie da família Pitheciidae que ocorre nos estados do mato Grosso e Pará e encontra-se ameaçada de extinção na categoria Vulnerável “VU” (@MMA_2022). No Programa Monitora essa espécie tem sido registrada na REBIO Tapirapé, sendo que de 2017 a 2022 ocorreram apenas 13 visualizações, com taxas variando de 0,2 a 0,4 avistamentos/10km  (@fig-especies-ameacadas-outros-primatas).  
+*Chiropotes utahickae* (cuxiú-marrom) é uma espécie da família Pitheciidae que ocorre nos estados do Mato Grosso e Pará e encontra-se ameaçada de extinção na categoria Vulnerável “VU” (@MMA_2022). No Programa Monitora essa espécie tem sido registrada na REBIO Tapirapé, sendo que de 2017 a 2022 ocorreram apenas 13 visualizações, com taxas variando de 0,2 a 0,4 avistamentos/10 km  (@fig-especies-ameacadas-outros-primatas).  
 
 
-*Mico rondoni* (sagui-de-rondônia) é um primata de pequeno porte, da família Callitrichidae, que foi descoberto e descrito pela ciência apenas em 2010 (@Ferrari_2010). Está presente apenas no estado de Rondônia e encontra-se ameaçado de extinção, na categoria Vulnerável "VU" (@MMA_2022). Está sendo monitorado em duas unidades de conservação do Programa Monitora, no PARNA de Pacaás Novos e na FLONA do Jamari. Até o momento foram registradas 40 visualizações, de 2015 a 2022, com taxas variando de 0,4 e 0,9 avistamentos/10km (@fig-especies-ameacadas-outros-primatas).  
+*Mico rondoni* (sagui-de-rondônia) é um primata de pequeno porte, da família Callitrichidae, que foi descoberto e descrito pela ciência apenas em 2010 (@Ferrari_2010). Está presente apenas no estado de Rondônia e encontra-se ameaçado de extinção, na categoria Vulnerável "VU" (@MMA_2022). Está sendo monitorado em duas unidades de conservação do Programa Monitora, no PARNA de Pacaás Novos e na FLONA do Jamari. Até o momento foram registradas 40 visualizações, de 2015 a 2022, com taxas variando de 0,4 e 0,9 avistamentos/10 km (@fig-especies-ameacadas-outros-primatas).  
 
 
 </br>
 
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas}
-#| label: fig-especies-ameacadas-outros-primatas
-#| echo: false
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas - sem imagens}
+#| label: fig-especies-ameacadas-outros-primatas-antigo
+#| echo: false 
 #| message: false
+#| include: false
 #| warning: false
 #| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+# <!-- #| fig.pos: 'H' -->
+# <!-- #| out.width: '70%' -->
+# <!-- #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura." -->
+# 
+# 
+# 
+# <!-- cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown") -->
+# 
+# 
+# <!-- G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacadas |> -->
+# <!--   group_by(ano, classe, ordem, taxon_validado, categoria) |>  -->
+# <!--   filter(taxon_validado %in% c("Mico rondoni", "Chiropotes utahickae")) |> -->
+# <!--   summarise(n = n(), -->
+# <!--             taxa_avist_media = mean(taxa_avistamento), -->
+# <!--             sd = sd(taxa_avistamento), -->
+# <!--             ep = sd / sqrt(n), -->
+# <!--             IC_95 = qnorm(.975) * ep) |>  -->
+# 
+# <!--   ggplot(aes( -->
+# <!--     x = ano, -->
+# <!--     y = taxa_avist_media, color = taxon_validado, shape = categoria)) + -->
+# <!--   # geom_errorbar( -->
+# <!--   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95), -->
+# <!--   #   size = 0.8, -->
+# <!--   #   linewidth = 0.5, -->
+# <!--   #   width = 0.1, -->
+# <!--   #   colour = "cyan4") + -->
+# <!--   geom_line(size = 0.5) + -->
+# <!--   geom_point(size = 3, alpha = 0.8) + -->
+# 
+# <!--     theme_minimal() + -->
+# <!--     theme( -->
+# <!--       panel.grid.minor.y = element_blank(), -->
+# <!--       #panel.grid.major.y = element_blank(), -->
+# <!--       panel.grid.minor.x = element_blank(), -->
+# <!--       panel.grid.major.x = element_blank(), -->
+# <!--       axis.text=element_text(size=10), -->
+# <!--       axis.text.x = element_text(size = 12), -->
+# <!--       axis.text.y = element_text(size = 11), -->
+# <!--       axis.title.y = element_text(size = 11, margin = margin(r = 10)), -->
+# <!--       axis.title.x = element_text(size = 11, margin = margin(t = 10)), -->
+# <!--       #axis.line.y = element_line(), -->
+# <!--       #axis.ticks.y = element_line(), -->
+# <!--       title = element_text(size = 10), -->
+# <!--       legend.text=element_text(size=10, face = "italic"), -->
+# <!--       legend.position = "right", -->
+# <!--       legend.title = element_blank()) + -->
+# <!--       scale_color_manual(values = cor_ameacadas1) + -->
+# <!--       scale_y_continuous(limits = c(0, 1.5)) + -->
+# <!--       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) + -->
+# <!--       labs(title = "Outros Primatas", -->
+# <!--        x = "Ano", -->
+# <!--        y = "Avistamentos/10 km", -->
+# <!--        col = NULL) -->
+# 
+# <!-- G_especie_ameacada_ucs_ano_media_outros_primatas -->
+# 
+# 
+# <!-- # Salvando o gráfico -->
+# 
+# <!-- ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas,  height = 4.5, width = 6, units = "in", dpi = 300) -->
 
+```
+
+
+
+
+```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas}
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
 
 
 cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
@@ -2252,7 +2516,7 @@ G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacad
             sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
-
+  
   ggplot(aes(
     x = ano,
     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
@@ -2265,39 +2529,107 @@ G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacad
   geom_line(size = 0.5) +
   geom_point(size = 3, alpha = 0.8) +
   
-    theme_minimal() +
-    theme(
-      panel.grid.minor.y = element_blank(),
-      #panel.grid.major.y = element_blank(),
-      panel.grid.minor.x = element_blank(),
-      panel.grid.major.x = element_blank(),
-      axis.text=element_text(size=10),
-      axis.text.x = element_text(size = 12),
-      axis.text.y = element_text(size = 11),
-      axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-      axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-      #axis.line.y = element_line(),
-      #axis.ticks.y = element_line(),
-      title = element_text(size = 10),
-      legend.text=element_text(size=10, face = "italic"),
-      legend.position = "right",
-      legend.title = element_blank()) +
-      scale_color_manual(values = cor_ameacadas1) +
-      scale_y_continuous(limits = c(0, 1.5)) +
-      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-      labs(title = "Outros Primatas",
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text=element_text(size=10),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 11),
+    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+    #axis.line.y = element_line(),
+    #axis.ticks.y = element_line(),
+    title = element_text(size = 10),
+    legend.text=element_text(size=10, face = "italic"),
+    legend.position = "right",
+    legend.title = element_blank()) +
+  scale_color_manual(values = cor_ameacadas1) +
+  scale_y_continuous(limits = c(0, 1.5)) +
+  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+  labs(title = "Outros Primatas",
        x = "Ano",
        y = "Avistamentos/10 km",
        col = NULL)
 
-G_especie_ameacada_ucs_ano_media_outros_primatas
+#Imagens das silhuetas
 
+tamanho_imagem_outros_primatas <- 15 #Tamanho em mm
+
+##Carregando a imagem e convertendo-a em grob
+#C. utahickae
+utahickae <- readPNG("imagens/cap05/silhuetas/utahickae.png")
+utahickae_grob <- rasterGrob(utahickae, interpolate = TRUE, width = unit(tamanho_imagem_outros_primatas, "mm"), height = unit(tamanho_imagem_outros_primatas, "mm"))
+#M. rondoni
+rondoni <- readPNG("imagens/cap05/silhuetas/rondoni.png")
+rondoni_grob <- rasterGrob(rondoni, interpolate = TRUE, width = unit(9, "mm"), height = unit(22, "mm"))
+
+#Nomes científicos abaixo das silhuetas
+utahickae_text_grob <- textGrob("C. utahickae", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+rondoni_text_grob <- textGrob("M. rondoni", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+
+#Posição das silhuetas
+distancia_silhueta_outros_primatas <- 0.55    #Distância entre as silhuetas
+largura_silhueta_outros_primatas <- 1
+x_inicial_silhueta_outros_primatas <- 2015    #Posição x inicial da 1ª silhueta
+y_min_silhueta_outros_primatas <- 1.1         #y min da 1ª silhueta
+y_max_silhueta_outros_primatas <- 1.6         #y max da 1ª silhueta
+
+#Posição dos nomes das silhuetas
+y_max_nome_silhueta_outros_primatas <- y_max_silhueta_outros_primatas - 0.22      #Em relação a silhueta
+y_min_nome_silhueta_outros_primatas <- y_max_nome_silhueta_outros_primatas - 0.17 #Em relação a silhueta
+
+#Posição das 2 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
+xmin_silhueta_utahickae <- x_inicial_silhueta_outros_primatas
+xmax_silhueta_utahickae <- xmin_silhueta_utahickae + largura_silhueta_outros_primatas
+
+xmin_silhueta_rondoni <- x_inicial_silhueta_outros_primatas + largura_silhueta_outros_primatas + distancia_silhueta_outros_primatas
+xmax_silhueta_rondoni <- xmin_silhueta_rondoni + largura_silhueta_outros_primatas
+
+#Plot G_especie_ameacada_ucs_ano_media_outros_primatas com as silhuetas e os nomes. Não requer alteração
+G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas <- G_especie_ameacada_ucs_ano_media_outros_primatas +
+  #C. utahickae
+  annotation_custom(grob = utahickae_grob, #silhueta
+                    xmin = xmin_silhueta_utahickae, xmax = xmax_silhueta_utahickae,
+                    ymin = y_min_silhueta_outros_primatas, ymax = y_max_silhueta_outros_primatas) +
+  annotation_custom(grob = utahickae_text_grob, #texto
+                    xmin = xmin_silhueta_utahickae, xmax = xmax_silhueta_utahickae,
+                    ymin = y_min_nome_silhueta_outros_primatas, ymax = y_max_nome_silhueta_outros_primatas) +
+  #M. rondoni
+  annotation_custom(grob = rondoni_grob, #silhueta
+                    xmin = xmin_silhueta_rondoni, xmax = xmax_silhueta_rondoni,
+                    ymin = y_min_silhueta_outros_primatas - 0.49, ymax = y_max_silhueta_outros_primatas + 0.1) +
+  annotation_custom(grob = rondoni_text_grob, #texto
+                    xmin = xmin_silhueta_rondoni + 0.20, xmax = xmax_silhueta_rondoni + 0.4,
+                    ymin = y_min_nome_silhueta_outros_primatas, ymax = y_max_nome_silhueta_outros_primatas)
+
+
+```
+
+
+
+
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas}
+#| label: fig-especies-ameacadas-outros-primatas
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
+
+G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas
 
 # Salvando o gráfico
 
-ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas,  height = 4.5, width = 6, units = "in", dpi = 300)
+ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas_silhuetas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas,  height = 4.5, width = 6, units = "in", dpi = 300)
+
 
 ```
+
 
 </br>
 
@@ -2307,16 +2639,83 @@ As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) v
 </br>
 
 
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá}
-#| label: fig-especies-ameacadas-tamandua
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá - sem imagens}
+#| label: fig-especies-ameacadas-tamandua-antigo
 #| echo: false
 #| message: false
+#| include: false
 #| warning: false
 #| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-#| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+# #| fig.pos: 'H'
+# #| out.width: '70%'
+# #| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
+# 
+# 
+# 
+# cor_ameacadas3 <- c("cyan4")
+# 
+# G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Myrmecophaga tridactyla")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+# 
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#     theme_minimal() +
+#     theme(
+#       panel.grid.minor.y = element_blank(),
+#       #panel.grid.major.y = element_blank(),
+#       panel.grid.minor.x = element_blank(),
+#       panel.grid.major.x = element_blank(),
+#       axis.text=element_text(size=10),
+#       axis.text.x = element_text(size = 12),
+#       axis.text.y = element_text(size = 11),
+#       axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#       axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#       #axis.line.y = element_line(),
+#       #axis.ticks.y = element_line(),
+#       title = element_text(size = 10),
+#       legend.text=element_text(size=10, face = "italic"),
+#       legend.position = "right",
+#       legend.title = element_blank()) +
+#       scale_color_manual(values = cor_ameacadas3) +
+#       scale_y_continuous(limits = c(0, 0.5)) +
+#       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#       labs(title = "Outros mamíferos",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# G_especie_ameacada_ucs_ano_media_tamandua
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua, height = 4.5, width = 6, units = "in", dpi = 300)
 
+```
+
+
+```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá}
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
 
 
 cor_ameacadas3 <- c("cyan4")
@@ -2329,7 +2728,7 @@ G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
             sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
-
+  
   ggplot(aes(
     x = ano,
     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
@@ -2342,57 +2741,167 @@ G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
   geom_line(size = 0.5) +
   geom_point(size = 3, alpha = 0.8) +
   
-    theme_minimal() +
-    theme(
-      panel.grid.minor.y = element_blank(),
-      #panel.grid.major.y = element_blank(),
-      panel.grid.minor.x = element_blank(),
-      panel.grid.major.x = element_blank(),
-      axis.text=element_text(size=10),
-      axis.text.x = element_text(size = 12),
-      axis.text.y = element_text(size = 11),
-      axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-      axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-      #axis.line.y = element_line(),
-      #axis.ticks.y = element_line(),
-      title = element_text(size = 10),
-      legend.text=element_text(size=10, face = "italic"),
-      legend.position = "right",
-      legend.title = element_blank()) +
-      scale_color_manual(values = cor_ameacadas3) +
-      scale_y_continuous(limits = c(0, 0.5)) +
-      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-      labs(title = "Outros mamíferos",
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text=element_text(size=10),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 11),
+    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+    #axis.line.y = element_line(),
+    #axis.ticks.y = element_line(),
+    title = element_text(size = 10),
+    legend.text=element_text(size=10, face = "italic"),
+    legend.position = "right",
+    legend.title = element_blank()) +
+  scale_color_manual(values = cor_ameacadas3) +
+  scale_y_continuous(limits = c(0, 0.5)) +
+  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+  labs(title = "Outros mamíferos",
        x = "Ano",
        y = "Avistamentos/10 km",
        col = NULL)
 
-G_especie_ameacada_ucs_ano_media_tamandua
+#Imagem da silhueta
 
+##Carregando a imagem e convertendo-a em grob
+#M. tridactyla
+tridactyla <- readPNG("imagens/cap05/silhuetas/tridactyla.png")
+tridactyla_grob <- rasterGrob(tridactyla, interpolate = TRUE, width = unit(30, "mm"), height = unit(12, "mm"))
 
-# Salvando o gráfico
+#Nome científico abaixo da silhueta
+tridactyla_text_grob <- textGrob("M. tridactyla", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
 
-ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua, height = 4.5, width = 6, units = "in", dpi = 300)
+#Plot G_especie_ameacada_ucs_ano_media_tamandua com a silhueta e os nome. Não requer alteração
+G_especie_ameacada_ucs_ano_media_tamandua_silhuetas <- G_especie_ameacada_ucs_ano_media_tamandua +
+  #M. tridactyla
+  annotation_custom(grob = tridactyla_grob, #silhueta
+                    xmin = 2014.5, xmax = 2016,
+                    ymin = 0.31, ymax = 0.61) +
+  annotation_custom(grob = tridactyla_text_grob, #texto
+                    xmin = 2014.5, xmax = 2016,
+                    ymin = 0.43, ymax = 0.53)
+
 
 ```
 
-</b>
 
-Na @fig-especies-ameacadas-aves é possível visualizar os valores e suas flutuações para a abundância relativa de cinco espécies de aves amazônicas ameaçadas, *Aburria cujubi* (cujubi) e quatro espécies de *Psophia*  (jacamins), para o conjunto de UCs do Programa Monitora. Dessas UCs, 13 apresentam ocorrência de *A. cujubi* (cujubi - VU), 11 de *Psophia viridis* (jacamim-de-costas-verdes - VU), oito de *P. dextralis* (jacamim-de-costas-marrons - VU), duas de *P. interjecta* (jacamim-do-xingu - EN) e uma de *P. obscura* (jacamim-de-costas-escuras - CR). 
 
-A taxa média anual de avistamento entre as unidades de conservação para *A. cujubi* variou de 0,27 a 0,71 encontros/10km para o gênero *Psophia*. Essa variação ocorreu entre os limiares de 0,19 para *P. obscura* em 2019 a 1,20 para *P. interjecta* no mesmo ano. A despeito de se observar uma variação nas abundâncias ao longo dos anos, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas. **Dúvida nessa frase... contradiz o texto anterior!*** Considerando que parte da flutuação observada pode ser atribuída à variação no número de unidades de conservação com o protocolo em execução para cada ano.  
-
-</b>
-
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo - aves}
-#| label: fig-especies-ameacadas-aves
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá}
+#| label: fig-especies-ameacadas-tamandua
 #| echo: false
 #| message: false
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de aves ameaçadas. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura. "
+#| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
+
+
+G_especie_ameacada_ucs_ano_media_tamandua_silhuetas
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
+
+```
+
+
+
+
+
+</br>
+
+Na @fig-especies-ameacadas-aves é possível visualizar os valores e suas flutuações para a abundância relativa de cinco espécies de aves amazônicas ameaçadas, *Aburria cujubi* (cujubi) e quatro espécies de *Psophia*  (jacamins), para o conjunto de UCs do Programa Monitora. Dessas UCs, 13 apresentam ocorrência de *A. cujubi* (cujubi - VU), 11 de *Psophia viridis* (jacamim-de-costas-verdes - VU), oito de *P. dextralis* (jacamim-de-costas-marrons - VU), duas de *P. interjecta* (jacamim-do-xingu - EN) e uma de *P. obscura* (jacamim-de-costas-escuras - CR). 
+
+A taxa média anual de avistamento entre as unidades de conservação para *A. cujubi* variou de 0,27 a 0,71 encontros/10km para o gênero *Psophia*. Essa variação ocorreu entre os limiares de 0,19 para *P. obscura* em 2019 a 1,20 para *P. interjecta* no mesmo ano. A despeito de se observar uma variação nas abundâncias ao longo dos anos, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas. Parte da flutuação observada pode ser atribuída à variação no número de unidades de conservação com o protocolo em execução em cada ano.  
+
+</b>
+
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo - aves - sem imagens}
+#| label: fig-especies-ameacadas-aves-antigo
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
+# #| fig.pos: 'H'
+# #| out.width: '70%'
+# #| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de aves ameaçadas. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura. "
+# 
+# 
+# cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
+# 
+# 
+# 
+# G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Aburria cujubi", "Psophia obscura", "Psophia dextralis", "Psophia interjecta", "Psophia viridis")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+# 
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#     theme_minimal() +
+#     theme(
+#       panel.grid.minor.y = element_blank(),
+#       #panel.grid.major.y = element_blank(),
+#       panel.grid.minor.x = element_blank(),
+#       panel.grid.major.x = element_blank(),
+#       axis.text=element_text(size=10),
+#       axis.text.x = element_text(size = 12),
+#       axis.text.y = element_text(size = 11),
+#       axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#       axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#       #axis.line.y = element_line(),
+#       #axis.ticks.y = element_line(),
+#       title = element_text(size = 10),
+#       legend.text=element_text(size=10, face = "italic"),
+#       legend.position = "right",
+#       legend.title = element_blank()) +
+#       scale_color_manual(values = cor_ameacadas1) +
+#       scale_y_continuous(limits = c(0, 1.5)) +
+#       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#       labs(title = "Aves ameaçadas",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# G_especie_ameacada_ucs_ano_media_aves_selecionadas
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_spp_ameacadas_aves.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas,  height = 4.5, width = 6, units = "in", dpi = 300)
+
+```
+
+</br>
+
+
+```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo - aves}
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
 
 
 cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
@@ -2407,7 +2916,7 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameac
             sd = sd(taxa_avistamento),
             ep = sd / sqrt(n),
             IC_95 = qnorm(.975) * ep) |> 
-
+  
   ggplot(aes(
     x = ano,
     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
@@ -2420,39 +2929,145 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameac
   geom_line(size = 0.5) +
   geom_point(size = 3, alpha = 0.8) +
   
-    theme_minimal() +
-    theme(
-      panel.grid.minor.y = element_blank(),
-      #panel.grid.major.y = element_blank(),
-      panel.grid.minor.x = element_blank(),
-      panel.grid.major.x = element_blank(),
-      axis.text=element_text(size=10),
-      axis.text.x = element_text(size = 12),
-      axis.text.y = element_text(size = 11),
-      axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-      axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-      #axis.line.y = element_line(),
-      #axis.ticks.y = element_line(),
-      title = element_text(size = 10),
-      legend.text=element_text(size=10, face = "italic"),
-      legend.position = "right",
-      legend.title = element_blank()) +
-      scale_color_manual(values = cor_ameacadas1) +
-      scale_y_continuous(limits = c(0, 1.5)) +
-      scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-      labs(title = "Aves ameaçadas",
+  theme_minimal() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    #panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text=element_text(size=10),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 11),
+    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+    #axis.line.y = element_line(),
+    #axis.ticks.y = element_line(),
+    title = element_text(size = 10),
+    legend.text=element_text(size=10, face = "italic"),
+    legend.position = "right",
+    legend.title = element_blank()) +
+  scale_color_manual(values = cor_ameacadas1) +
+  scale_y_continuous(limits = c(0, 1.5)) +
+  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+  labs(title = "Aves ameaçadas",
        x = "Ano",
        y = "Avistamentos/10 km",
        col = NULL)
 
-G_especie_ameacada_ucs_ano_media_aves_selecionadas
+#Imagens das silhuetas
 
+tamanho_imagem_aves_ameacadas <- 10 #Tamanho em mm
 
-# Salvando o gráfico
+##Carregando a imagem e convertendo-a em grob
+#A. cujubi
+cujubi <- readPNG("imagens/cap05/silhuetas/cujubi.png")
+cujubi_grob <- rasterGrob(cujubi, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas + 9, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+#P. dextralis
+dextralis <- readPNG("imagens/cap05/silhuetas/dextralis.png")
+dextralis_grob <- rasterGrob(dextralis, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+#P. interjecta
+interjecta <- readPNG("imagens/cap05/silhuetas/interjecta.png")
+interjecta_grob <- rasterGrob(interjecta, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas - 2, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+#P. obscura
+obscura <- readPNG("imagens/cap05/silhuetas/obscura.png")
+obscura_grob <- rasterGrob(obscura, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+#P. virridis
+virridis <- readPNG("imagens/cap05/silhuetas/virridis.png")
+virridis_grob <- rasterGrob(virridis, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas - 3, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
 
-ggsave("imagens/cap05/ma_taxa_spp_ameacadas_aves.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas,  height = 4.5, width = 6, units = "in", dpi = 300)
+#Nomes científicos abaixo das silhuetas
+cujubi_text_grob <- textGrob("A. cujubi", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+dextralis_text_grob <- textGrob("P. dextralis", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+interjecta_text_grob <- textGrob("P. interjecta", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+obscura_text_grob <- textGrob("P. obscura", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+virridis_text_grob <- textGrob("P. virridis", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+
+#Posição das silhuetas
+distancia_silhueta_aves_ameacadas <- 0.65     #Distância entre as silhuetas
+largura_silhueta_aves_ameacadas <- 1
+x_inicial_silhueta_aves_ameacadas <- 2014.2     #Posição x inicial da 1ª silhueta
+y_min_silhueta_aves_ameacadas <- 1.15         #y min da 1ª silhueta
+y_max_silhueta_aves_ameacadas <- 1.65         #y max da 1ª silhueta
+
+#Posição dos nomes das silhuetas
+y_max_nome_silhueta_aves_ameacadas <- y_max_silhueta_aves_ameacadas - 0.2       #Em relação a silhueta
+y_min_nome_silhueta_aves_ameacadas <- y_max_nome_silhueta_aves_ameacadas - 0.15 #Em relação a silhueta
+
+#Posição das 5 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
+xmin_silhueta_cujubi <- x_inicial_silhueta_aves_ameacadas
+xmax_silhueta_cujubi <- xmin_silhueta_cujubi + largura_silhueta_aves_ameacadas
+
+xmin_silhueta_dextralis <- x_inicial_silhueta_aves_ameacadas + largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas + 0.2
+xmax_silhueta_dextralis <- xmin_silhueta_dextralis + largura_silhueta_aves_ameacadas
+
+xmin_silhueta_interjecta <- x_inicial_silhueta_aves_ameacadas + 2*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas) + 0.2
+xmax_silhueta_interjecta <- xmin_silhueta_interjecta + largura_silhueta_aves_ameacadas
+
+xmin_silhueta_obscura <- x_inicial_silhueta_aves_ameacadas + 3*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas) + 0.2
+xmax_silhueta_obscura <- xmin_silhueta_obscura + largura_silhueta_aves_ameacadas
+
+xmin_silhueta_virridis <- x_inicial_silhueta_aves_ameacadas + 4*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas)
+xmax_silhueta_virridis <- xmin_silhueta_virridis + largura_silhueta_aves_ameacadas
+
+#Plot G_especie_ameacada_ucs_ano_media_aves_selecionadas com as silhuetas e os nomes. Não requer alteração
+G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas <- G_especie_ameacada_ucs_ano_media_aves_selecionadas +
+  #A. cujubi
+  annotation_custom(grob = cujubi_grob, #silhueta
+                    xmin = xmin_silhueta_cujubi, xmax = xmax_silhueta_cujubi,
+                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+  annotation_custom(grob = cujubi_text_grob, #texto
+                    xmin = xmin_silhueta_cujubi, xmax = xmax_silhueta_cujubi,
+                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+  #P. dextralis
+  annotation_custom(grob = dextralis_grob, #silhueta
+                    xmin = xmin_silhueta_dextralis, xmax = xmax_silhueta_dextralis,
+                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+  annotation_custom(grob = dextralis_text_grob, #texto
+                    xmin = xmin_silhueta_dextralis, xmax = xmax_silhueta_dextralis,
+                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+  #P. interjecta
+  annotation_custom(grob = interjecta_grob, #silhueta
+                    xmin = xmin_silhueta_interjecta, xmax = xmax_silhueta_interjecta,
+                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+  annotation_custom(grob = interjecta_text_grob, #texto
+                    xmin = xmin_silhueta_interjecta, xmax = xmax_silhueta_interjecta,
+                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+  #P. obscura
+  annotation_custom(grob = obscura_grob, #silhueta
+                    xmin = xmin_silhueta_obscura, xmax = xmax_silhueta_obscura,
+                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+  annotation_custom(grob = obscura_text_grob, #texto
+                    xmin = xmin_silhueta_obscura, xmax = xmax_silhueta_obscura,
+                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+  #P. virridis
+  annotation_custom(grob = virridis_grob, #silhueta
+                    xmin = xmin_silhueta_virridis, xmax = xmax_silhueta_virridis,
+                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+  annotation_custom(grob = virridis_text_grob, #texto
+                    xmin = xmin_silhueta_virridis, xmax = xmax_silhueta_virridis,
+                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas)
+
 
 ```
+
+
+
+```{r gráfico da variação das taxas de espécies ameaçadas no tempo - aves}
+#| label: fig-especies-ameacadas-aves
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de aves ameaçadas. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura. "
+
+G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas
+
+ggsave("imagens/cap05/ma_taxa_app_ameacadas_aves_selecionadas_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
+
+```
+
 
 </br>
 
@@ -2533,7 +3148,7 @@ ggsave("imagens/cap05/ma_media_geometrica.jpg",
 
 </br>
 
-Os mutuns (gêneros *Crax* e *Pauxi*) são as maiores aves florestais terrestres do bioma amazônico. Espécies de ambos os gêneros podem ser encontradas na região, muitas vezes em simpatria. Seu relativo grande tamanho e sua ampla distribuição conferem a este grupo um alto valor cinegético. Sendo assim, parece plausível supor que a frequência relativa deste grupo no total de registros de aves do Programa Monitora possa ser um indicador da intensidade de uso histórico e/ou atual da fauna nas unidades de conservação aqui tratadas.
+Os mutuns (gêneros *Crax* e *Pauxi*) são as maiores aves florestais terrestres do bioma amazônico. Espécies de ambos os gêneros podem ser encontradas na região, muitas vezes em simpatria. Seu relativo grande tamanho e sua ampla distribuição conferem a este grupo um alto valor cinegético. Sendo assim, parece plausível supor que a frequência relativa deste grupo no total de registros de aves do Programa Monitora possa ser um indicador da intensidade de uso histórico ou atual da fauna nas unidades de conservação aqui tratadas.
 
 Considerando que para a maioria das unidades de conservação amostradas o período de monitoramento ainda é pequeno, apresentamos aqui um exercício no sentido de avaliar este indicador (abundância de mutuns) apenas como descritor na dimensão “estado” de conservação, não sendo os resultados apresentados na perspectiva de “tendência” populacional.
 
@@ -2551,7 +3166,7 @@ Nas 42 unidades de conservação amazônicas participantes do Programa Monitora,
 #| out.width: '100%'
 ##| tab-cap: "Frequência relativa de mutuns (Crax spp. e Pauxi spp.) no total de registros de aves das unidades de conservação do Programa Monitora na Amazônia."
 
-tabela_mutuns <- read.csv2("dados/tabelas/mutuns.csv", encoding="UTF-8")
+tabela_mutuns <- read.csv2("dados/tabelas/mastoaves/mutuns.csv", encoding="UTF-8")
 
 tab_mutuns <- kbl(tabela_mutuns,
              booktabs = TRUE,
@@ -2596,21 +3211,27 @@ tab_mutuns
 
 ```
 
-Importante frisar que estes valores são produtos de esforços amostrais pouco uniformes entre as unidades de conservação, seja no número de transecções, seja na extensão da rede formada por essas transecções, ou ainda no seu número de repetições (amostragem), tanto anual quanto para todo o período, o que não torna recomendável a comparação entre unidades de conservação, ao menos neste momento.  
+</br>
 
+Importante frisar que estes valores são produtos de esforços amostrais pouco uniformes entre as unidades de conservação, seja no número de transecções, seja na extensão da rede formada por essas transecções, ou ainda no seu número de repetições (amostragem), tanto anual quanto para todo o período, o que torna não recomendável a comparação entre unidades de conservação, ao menos neste momento.  
 
+</br>
 
 ## Destaques
 
-Quatro espécies (dois cervídeos e dois primatas) categorizadas como Deficientes de Dados (DDs), ou seja, com informações insuficientes para que seja feita uma avaliação adequada do seu estado de conservação, conforme o último ciclo de avaliação do estado de conservação das espécies da fauna brasileira (**referência**) foram registradas no presente esforço.  
+</br>
 
+Quatro espécies (dois cervídeos e dois primatas) categorizadas como Deficientes de Dados (DDs), ou seja, com informações insuficientes para que seja feita uma avaliação adequada do seu estado de conservação, conforme o último ciclo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024) foram registradas no presente esforço.  
+
+</br>
 
 *Cebus kaapori* na REBIO do Gurupi  
 
+</br>
 
-O Programa Monitora tem contribuído regsitros importantes de **Cebus kaapori** (Caiarara), uma espécie de primata Criticamente Ameaçado de Extinção. Essa espécie é endêmica do Brasil e em sua área de distribuição temos apenas uma unidade de conservação de proteção integral, a REBIO do Gurupi.  
+O Programa Monitora tem contribuído com registros importantes de *Cebus kaapori* (Caiarara), uma espécie de primata criticamente ameaçado de extinção. Essa espécie é endêmica do Brasil e em sua pequena área de distribuição temos apenas uma unidade de conservação de proteção integral, a REBIO do Gurupi.  Os registros dessa espécie na REBIO obtidos pelo Programa Monitora fornecem subsídios importantes para planejamento de iniciativas voltadas a sua conservação.
 
-
+</br>
 
 ## Discussão
 

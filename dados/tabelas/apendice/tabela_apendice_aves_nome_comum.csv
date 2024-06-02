@@ -1,0 +1,41 @@
+﻿ordem ;familia;taxon_validado;nome_comum;categoria
+Cariamiformes ;Cariamidae ;Cariama cristata ;seriema;
+Galliformes ;Cracidae ;Aburria cujubi;cujubi;VU
+Galliformes ;Cracidae ;Aburria cumanensis ;cajubi, cujubi-de-barbela-fina, cujubim, jacutinga, jacutinga-de-garganta-azul;
+Galliformes ;Cracidae ;Aburria sp.;cujubi, cajubi, jacutinga;
+Galliformes ;Cracidae ;Cracidae;mutuns;
+Galliformes ;Cracidae ;Crax alector ;mutum-poranga;
+Galliformes ;Cracidae ;Crax fasciolata ;mutum, mutum-de-penacho, mutum-pinima, mutum-poranga ;
+Galliformes ;Cracidae ;Crax globulosa;mutum-açu, mutum-de-assovio, mutum-de-fava, mutum-fava, mutum-piurí ;EN
+Galliformes ;Cracidae ;Crax sp.;mutum;
+Galliformes ;Cracidae ;Nothocrax urumutum ;urumutum;
+Galliformes ;Cracidae ;Ortalis guttata ;aracuã-de-barriga-branca;
+Galliformes ;Cracidae ;Ortalis motmot ;aracuã-pequeno;
+Galliformes ;Cracidae ;Ortalis ruficeps ;aracuãzinho;
+Galliformes ;Cracidae ;Ortalis superciliaris ;aracuã-de-sobrancelhas;
+Galliformes ;Cracidae ;Pauxi tomentosa ;mutum-do-norte;
+Galliformes ;Cracidae ;Pauxi tuberosa ;mutum-cavalo;
+Galliformes ;Cracidae ;Pauxi sp.;mutum;
+Galliformes ;Cracidae ;Penelope jacquacu ;jacu-de-spix;
+Galliformes ;Cracidae ;Penelope marail ;jacumirim;
+Galliformes ;Cracidae ;Penelope obscura ;jacuaçu;
+Galliformes ;Cracidae ;Penelope superciliaris alagoensis;jacu-de-alagoas, jacupemba;CR
+Galliformes ;Cracidae ;Penelope sp.;jacu, jacupemba, jacumirim, jacuaçu;
+Galliformes ;Odontophoridae ;Odontophorus capueira ;uru;
+Galliformes ;Odontophoridae ;Odontophorus gujanensis ;uru-corcovado;
+Galliformes ;Odontophoridae ;Odontophorus stellatus ;uru-de-topete;
+Galliformes ;Odontophoridae ;Odontophorus sp.;uru;
+Gruiformes ;Psophiidae ;Psophia crepitans ;jacamim-de-costas-cinzentas;
+Gruiformes ;Psophiidae ;Psophia dextralis;jacamim-de-costas-marrons;VU
+Gruiformes ;Psophiidae ;Psophia interjecta;jacamim-do-xingu;EN
+Gruiformes ;Psophiidae ;Psophia leucoptera ;jacamim-de-costas-brancas;
+Gruiformes ;Psophiidae ;Psophia obscura;jacamim-de-costas-escuras;CR
+Gruiformes ;Psophiidae ;Psophia ochroptera ;jacamim-de-costas-amarelas;
+Gruiformes ;Psophiidae ;Psophia viridis;jacamim-de-costas-verdes;VU
+Tinamiformes ;Tinamidae ;Crypturellus sp.;inhambu;
+Tinamiformes ;Tinamidae ;Nothura sp.;codorna;
+Tinamiformes ;Tinamidae ;Rhynchotus rufescens ;perdiz;
+Tinamiformes ;Tinamidae ;Tinamidae;codorna, perdiz, inhambu, macuco;
+Tinamiformes ;Tinamidae ;Tinamus major ;inhambu-de-cabeça-vermelha;
+Tinamiformes ;Tinamidae ;Tinamus solitarius ;macuco;
+Tinamiformes ;Tinamidae ;Tinamus sp.;inhambu, macuco;

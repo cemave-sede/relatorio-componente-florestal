@@ -153,7 +153,7 @@ Considera-se que o monitoramento do componente Florestal está consolidado quand
 #| out.width: '70%'
 #| tab-cap: "Número de UCs com as etapas operação e consolidação do monitoramento do componente Florestal do Programa Monitora, durante o período de 2014 a 2022."
 
-tabela_numero_ucs <- read.csv2("dados/tabelas/numero_ucs.csv", encoding="UTF-8")
+tabela_numero_ucs <- read.csv2("dados/tabelas/implementacao/numero_ucs.csv", encoding="UTF-8")
 
 tab_numero_ucs <- kbl(tabela_numero_ucs,
              booktabs = TRUE,
@@ -179,7 +179,7 @@ tab_numero_ucs
 #| out.width: '70%'
 #| tab-cap: "Número de estações e unidades amostrais (EA & UA) em operação no componente Florestal do Programa Monitora, durante o período de 2013 a 2022."
 
-tabela_numero_estacoes <- read.csv2("dados/tabelas/numero_estacoes.csv", encoding="UTF-8")
+tabela_numero_estacoes <- read.csv2("dados/tabelas/implementacao/numero_estacoes.csv", encoding="UTF-8")
 
 tab_numero_estacoes <- kbl(tabela_numero_estacoes,
              booktabs = TRUE,
@@ -210,7 +210,7 @@ Esse início gradativo do monitoramento também é observado quando comparamos o
 #| out.width: '70%'
 #| tab-cap: "Relação das UCs com alvos globais do componente Florestal (M/A = Mamíferos e Aves de médio a grande porte; P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras) monitorados durante o período de 2014 a 2022, com a sinalização do ano que a UC alcançou de consolidação (c) no Programa Monitora."
 
-tabela_ucs_componente_florestal <- read.csv2("dados/tabelas/ucs_componente_florestal.csv", encoding="UTF-8")
+tabela_ucs_componente_florestal <- read.csv2("dados/tabelas/implementacao/ucs_componente_florestal.csv", encoding="UTF-8")
 
 tab_ucs_componente_florestal <- kbl(tabela_ucs_componente_florestal,
              booktabs = TRUE,
