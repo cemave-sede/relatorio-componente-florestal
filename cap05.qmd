@@ -1927,6 +1927,108 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 
 </br>
 
+###### Tendências populacionais de mamíferos e aves em UCs do Programa Monitora 
+
+</br>
+
+A análise de tendências populacionais foi realizada por meio de modelos de espaço de estados (@AugerMethe_2021), tendo como indicador de tendência a taxa de crescimento exponencial *r* (@Daskalova_2020). Basicamente, se *r* > 0, a população está aumentando, se *r* = 0, a população está estável, e se *r* < 0, a população está diminuindo. 
+
+Para garantir a robustez das análises, somente foram incluídas populações com dados suficientes, com base nos seguintes critérios: (1) série temporal de dados ≥ 5 anos; (2) taxa de encontro média ≥ 0,5 encontros/10 km; (3) esforço amostral anual médio suficiente para atingir coeficiente de variação da taxa de encontro ≥ 0,25. 
+
+No total, 89 populações de 36 táxons de mamíferos e 72 populações de 13 táxons de aves, de 21 unidades de conservação, foram selecionadas para análise. A duração do monitoramento para essas populações variou de cinco a nove anos, com média de sete anos. A maioria das populações analisadas (91%, n = 148) permaneceu estável ao longo do monitoramento, com a taxa de crescimento r não diferindo significativamente de zero, enquanto duas populações (1.2%) apresentaram tendência significativa de aumento e 11 (6%) apresentaram tendência significativa de declínio (@fig-variacao-populacional, @tbl-tendencias-populacionais).  
+
+
+</br>
+
+```{r}
+#| label: fig-variacao-populacional
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| fig-align: center
+#| out.width: '70%'
+#| fig-cap: "Taxas de crescimento estimadas para 166 populações analisadas. Os pontos representam a mediana e as barras o intervalo de confiança de 95%. Populações em verde e marrom apresentaram tendência significativa de aumento e de declínio respectivamente."
+
+#----- carregar pacotes
+library(tidyverse)
+
+#----- ler dados
+ssm_results <- readRDS("dados/mastoaves/ssm_results.rds")
+
+#----- grafico taxas de crescimento todas as populacoes
+ssm_results %>%
+  arrange(desc(r_mean50)) %>%
+  mutate(populacao = factor(populacao, levels=populacao)) %>%   # This trick update the factor levels
+  mutate(trend = as.factor(case_when(r_mean975 < 0 ~ "decrease",
+                                     r_mean025 > 0 ~ "increase",
+                                     .default = "stable"))
+  ) %>%
+  rowid_to_column() %>%
+  ggplot(aes(x = rowid, y = r_mean50, color=trend)) +
+  geom_hline(yintercept = 0, alpha=.5) +
+  geom_point(size = 0.8, fill = "white", alpha = 0.8) +
+  geom_errorbar(aes(ymin = r_mean025, ymax = r_mean975), width=.2,
+                position=position_dodge(0.05)) +
+  ylab("Taxa de crescimento (r)") +
+  xlab("População (ranking da taxa de crescimento)") +
+  theme(axis.title.y = element_text(size = 16))  +
+  theme(axis.text.y = element_text(size = 16)) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank()#,element_text(size = 14)
+  ) +
+  ylim(-1.5, 1.5) +
+  theme_classic() +
+  scale_color_manual(values = c("#BF8120", "cyan4", "lightgrey")) +
+  theme(legend.position="none")
+
+```
+
+
+</br>
+
+
+```{r tabela tendencias populacionais}
+#| label: tbl-tendencias-populacionais
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| tab-cap: "Populações com tendências populacionais significativas de declínio ou aumento no período de monitoramento."
+
+tabela_tendencias_populacionais <- read.csv2("dados/tabelas/mastoaves/tabela_tendencias_populacionais.csv")
+
+
+
+# Colorindo as célula na coluna Tendência
+
+tabela_tendencias_populacionais$Tendencia <- ifelse((tabela_tendencias_populacionais$UC == "PARNA do Juruena" & tabela_tendencias_populacionais$Taxon == "Tinamus sp.") | 
+(tabela_tendencias_populacionais$UC == "RESEX Alto Tarauacá" & tabela_tendencias_populacionais$Taxon == "Myoprocta pratti"), 
+                                                      
+                  cell_spec(tabela_tendencias_populacionais$Tendencia, "html", color = "white", background = "#008B8B"), 
+                  cell_spec(tabela_tendencias_populacionais$Tendencia, "html", color = "white", background = "#BF8120"))
+
+tab_tendencias_populacionais <- kbl(tabela_tendencias_populacionais,
+             escape = FALSE,
+             booktabs = TRUE,
+             longtable = TRUE,
+             caption = "Populações com tendências populacionais significativas de declínio ou aumento no período de monitoramento.",
+            col.names = c("Unidade de Conservação", "Táxon", "Tendência"), align = c("l", "l", "c")) %>%
+    column_spec(2, italic = TRUE) %>%
+    column_spec(3, bold = TRUE) %>%
+kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+
+
+tab_tendencias_populacionais
+
+```
+
+
+</br>
+
 ###### Variação espacial na taxa de avistamento média - mamíferos e aves conjuntamente
 
 </br>
@@ -1934,14 +2036,6 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 O tamanho das unidades de conservação do Programa Monitora varia muito entre biomas. No Cerrado e na Mata Atlântica as unidades de conservação são relativamente pequenas, com algumas dezenas de milhares de hectares, enquanto na Amazônia podem ultrapassar um milhão de hectares. Considerando-se que nas unidades do Cerrado e Mata Atlântica a abundância de mamíferos e de aves, expressas pelas taxas de avistamento médias, são inferiores (@fig-taxa-avistamento-geral-mamiferos e @fig-taxa-avistamento-geral-aves), é natural considerar que essas populações apresentem, em geral, uma maior vulnerabilidade demográfica comparada àquela das populações amazônicas. A distribuição espacial da taxa de avistamento média geral (considerando-se conjuntamente mamíferos e aves) é apresentada na @fig-taxa-avistamento-mapa. Dentre as unidades de conservação da Amazônia aquelas localizadas entre os rios Tapajós e Xingu apresentam as maiores abundâncias, à exceção da REBIO do Uatumã, localizada ao norte do Rio Amazonas e que também apresenta uma alta taxa média geral de avistamento (@fig-taxa-avistamento-mapa).
 
 
-<!-- <style> -->
-<!--   #mapa { -->
-<!--     display: flex; -->
-<!--     justify-content: center; -->
-<!--     align-items: center; -->
-<!--     height: 500px; /* Ajuste conforme necessário */ -->
-<!--   } -->
-<!-- </style> -->
 
 </br>
 
@@ -1988,7 +2082,7 @@ mapa <- leaflet(ucs_comp_florestal_unido) |>
     color = "black",
     popup = paste("Nome: ", ucs_comp_florestal_unido$uc, "<br>",
                   "Bioma: ", ucs_comp_florestal_unido$BiomaCRL, "<br>",
-                  "Taxa de avistamento: ", ucs_comp_florestal_unido$taxa_avist_media, "<br>")) |>
+                  "Taxa de avistamento: ", ucs_comp_florestal_unido$taxa_avist_media, "avistamentos/10 km", "<br>")) |>
   
   htmlwidgets::prependContent(backg) |> 
 
@@ -2117,7 +2211,7 @@ taxa_avistamento_trilha_taxon_validado_aves <-
 Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Chrysocyon brachyurus* (lobo-guará), *Lycalopex vetulus* (raposa-do-campo), *Speothos venaticus* (cachorro-vinagre), *Herpailurus yagouaroundi* (jaguarundi), *Leopardus colocolo* (gato-palheiro), *L. guttulus* (gato-do-mato), *L. tigrinus* (gato-do-mato), *L. wiedii* (gato-maracajá), *Panthera onca* (onça-pintada) e *Pteronura brasiliensis* (ariranha). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus* (raposa-do-campo), *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora.  
 
 
-Das 9 espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros para quatro: *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradipus torquatus* (preguiça-de-coleira).  
+Das 9 espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros para quatro: *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradypus torquatus* (preguiça-de-coleira).  
 
 
 Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyidae e Erethizontidae não são esperadas para as unidades de conservação amostradas.  
@@ -2816,9 +2910,9 @@ ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua_silhuetas.jpg", plot = G_es
 
 </br>
 
-Na @fig-especies-ameacadas-aves é possível visualizar os valores e suas flutuações para a abundância relativa de cinco espécies de aves amazônicas ameaçadas, *Aburria cujubi* (cujubi) e quatro espécies de *Psophia*  (jacamins), para o conjunto de UCs do Programa Monitora. Dessas UCs, 13 apresentam ocorrência de *A. cujubi* (cujubi - VU), 11 de *Psophia viridis* (jacamim-de-costas-verdes - VU), oito de *P. dextralis* (jacamim-de-costas-marrons - VU), duas de *P. interjecta* (jacamim-do-xingu - EN) e uma de *P. obscura* (jacamim-de-costas-escuras - CR). 
+Na @fig-especies-ameacadas-aves são apresentadas variações na abundância relativa de cinco espécies de aves amazônicas ameaçadas, *Aburria cujubi* (cujubi - VU) e quatro espécies de *Psophia*  (jacamins), para o conjunto de UCs do Programa Monitora. *Aburria cujubi* ocorre em 13 unidades de conservação, *Psophia viridis* (jacamim-de-costas-verdes - VU) em onze, *P. dextralis* (jacamim-de-costas-marrons - VU) em oito, *P. interjecta* (jacamim-do-xingu - EN) em duas e *P. obscura* (jacamim-de-costas-escuras - CR) em apenas uma. 
 
-A taxa média anual de avistamento entre as unidades de conservação para *A. cujubi* variou de 0,27 a 0,71 encontros/10km para o gênero *Psophia*. Essa variação ocorreu entre os limiares de 0,19 para *P. obscura* em 2019 a 1,20 para *P. interjecta* no mesmo ano. A despeito de se observar uma variação nas abundâncias ao longo dos anos, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas. Parte da flutuação observada pode ser atribuída à variação no número de unidades de conservação com o protocolo em execução em cada ano.  
+A taxa média anual de avistamento de *A. cujubi* nas unidades de conservação  variou de 0,27 a 0,71 encontros/10 km. Para as espécies ameaçadas do gênero *Psophia*, a abundância relativa nas unidades de conservação flutuou de 0,19 a 1,2 para *P. obscura* e *P. interjecta*, respectivamente, no ano de 2019. A despeito de se observar uma variação nas abundâncias ao longo do tempo, em parte explicada pela variação no número de unidades de conservação amostradas em cada ano, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas.  
 
 </b>
 
@@ -3097,10 +3191,13 @@ A média geométrica das abundâncias relativas das populações analisadas perm
 
 # knitr::include_graphics("imagens/cap05/ma_media_geometrica.JPG")
 
-#----- ler dados
-load(here("dados", "mastoaves", "tabela_Gmean.RData"))
+#----- carregar pacotes
+library(tidyverse)
 
-# plotar serie temporal para G
+#----- ler dados
+tabela_Gmean <- readRDS("dados/mastoaves/tabela_Gmean.rds")
+
+#----- plotar serie temporal para media geometrica G
 tabela_Gmean %>%
   group_by(ano) %>%
   mutate(G = G/first(G)) %>% # escala 2014=1
@@ -3112,21 +3209,17 @@ tabela_Gmean %>%
   ggplot(aes(ano, media)) +
   geom_line(color = "#00AFBB", size = 1, alpha=1) + 
   geom_point(shape=21, fill = "white", stroke=1, size = 2, color="cyan4", alpha = 1) +
-  #stat_summary(geom = "line", fun.y = mean) +
-  #stat_summary(geom = "ribbon", fun.data = mean_cl_normal, alpha = 0.3) +
   geom_ribbon(aes(ymin = lower10, ymax = upper90), fill="cyan4", alpha=0.2) +
   geom_ribbon(aes(ymin = lower25, ymax = upper975), fill="cyan4", alpha=0.2) +
   geom_hline(yintercept = 1, linetype = "dashed", alpha=.5) +
-  scale_x_continuous(breaks = tabela_Gmean$ano) +
-  xlab("") +
+  xlab(" ") +
   ylab("Média geométrica") +
   theme_classic() + 
   theme(axis.title.y = element_text(size = 12))  +
   theme(axis.text.x = element_text(size = 12)) +
   theme(axis.text.y = element_text(size = 12)) + 
   theme(legend.position="none") +
-  #theme(axis.line.x=element_blank()) +
-  coord_cartesian(ylim = c(0.75, 1.25)) 
+  coord_cartesian(ylim = c(0.75, 1.25)) #+
 
 
 # Salvando o gráfico
@@ -3139,6 +3232,7 @@ ggsave("imagens/cap05/ma_media_geometrica.jpg",
        height = 70,
        units = "mm",
        dpi = 300)
+
 
 ```
 

@@ -682,13 +682,13 @@ As tribos Preponini, Melanitini, Anaeini, Epicaliini, Epiphilini, Coeini e Satyr
 Embora ainda pouco disseminada em trabalhos acadêmicos, a assinatura de tribos de borboletas tem um papel importante em relatórios técnicos de iniciativas de monitoramento de fauna. É uma maneira viável de analisar e apresentar dados de um grupo com grande riqueza de espécies de uma região megadiversa, amostrado em uma escala tão ampla como o Brasil. 
 
 
-```{r preparação gráficos assinaturas}
-# #| label: prep-graficos-assinaturas
-# #| echo: false
-# #| include: false
-# #| message: false
-# #| warning: false
-# #| cache: true
+```{r preparação gráficos assinaturas2}
+#| label: prep-graficos-assinaturas2
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
 # 
 # # Gráficos de dados Borboletas - Protocolo básico - Amazônia regional - individual
 # ### Tribos com asterisco estão ausentes nos dados
@@ -1377,13 +1377,14 @@ graficos <- lapply(biomas, function(bioma) gerar_grafico_por_bioma(resultado_fin
 </br>
 
 ```{r assinatura cerrado2}
-# #| label: fig-regiao-cerrado
-# #| echo: false
-# #| message: false
-# #| warning: false
-# #| cache: true
-# #| fig.pos: 'H'
-# #| out.width: '70%'
+#| label: fig-regiao-cerrado2
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
 # #| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."
 # 
 # # Gráficos de dados Borboletas - Protocolo básico - Cerrado -

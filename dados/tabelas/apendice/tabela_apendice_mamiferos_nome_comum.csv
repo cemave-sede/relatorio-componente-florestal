@@ -1,6 +1,6 @@
 ﻿ordem;familia;taxon_validado;nome_comum;categoria
 Carnivora ;Canidae ;Atelocynus microtis;cachorro-do-mato-de-orelhas-curtas ;VU
-Carnivora ;Canidae ;Cerdocyon thous ;cachorro do mato, fusquinho, graxaim, graxaim do mato, guancito, guaraxaim, guaraxo, lobete, lobinho, mata-virgem, rabo-fofo, raposa, raposão, raposinha-do-mato ;
+Carnivora ;Canidae ;Cerdocyon thous ;cachorro-do-mato, fusquinho, graxaim, graxaim do mato, guancito, guaraxaim, guaraxo, lobete, lobinho, mata-virgem, rabo-fofo, raposa, raposão, raposinha-do-mato ;
 Carnivora ;Canidae ;Chrysocyon brachyurus;guará, lobão, lobo, lobo-de-crina, lobo-de-juba, lobo-guará, lobo-vermelho ;VU
 Carnivora ;Canidae ;Speothos venaticus;cachorro-do-mato-vinagre, cachorro-vinagre ;VU
 Carnivora ;Felidae ;Herpailurus yagouaroundi;gato-azul, gato-mourisco, gato-vermelho, jaguarundi ;VU
@@ -11,9 +11,9 @@ Carnivora ;Felidae ;Leopardus wiedii;gato-do-mato, gato-maracajá, gato-peludo
 Carnivora ;Felidae ;Panthera onca;canguçu, onça-pintada, onça-preta ;VU
 Carnivora ;Felidae ;Puma concolor ;bodeira, leão-baio, leãozinho-da-cara-suja, onça-do-lombo-preto, onça-parda, onça-vermelha, suçuarana ;
 Carnivora ;Mustelidae ;Eira barbara ;irara, papa-mel ;
-Carnivora ;Mustelidae ;Galictis vittata ;furão grande, furão maior ;
+Carnivora ;Mustelidae ;Galictis vittata ;furão-grande, furão-maior ;
 Carnivora ;Mustelidae ;Lontra longicaudis ;lobinho-de-rio, lontra, lontra neotropical, lontrinha ;
-Carnivora ;Mustelidae ;Pteronura brasiliensis;ariranha, lontra gigante, onça-d’água ;VU
+Carnivora ;Mustelidae ;Pteronura brasiliensis;ariranha, lontra-gigante, onça-d’água ;VU
 Carnivora ;Procyonidae ;Nasua nasua ;coati, quati, quati-de-vara, quati-mundéo ;
 Carnivora ;Procyonidae ;Procyon cancrivorus ;cachorrinho-guaxinim, cachorro-do-mato-guaxinim, cangrejera, guará, guaxinim, jaracambeva, mão-pelada, mapache, lavador, mayuato, meia-noite ;
 Cetartiodactyla ;Cervidae ;Mazama americana ;guassu-pará, guatapará, suaçupita, veado-capoeiro, veado-mateiro, veado-pardo, veado-retovado, veado-vermelho ;DD
@@ -78,7 +78,7 @@ Primates ;Callitrichidae ;Saguinus imperator ;bigodeiro, mono-bigotudo, mono-
 Primates ;Callitrichidae ;Saguinus midas ;sagui-da-mão-dourada ;
 Primates ;Callitrichidae ;Saguinus niger;guaribinha, sagui-una ;
 Primates ;Callitrichidae ;Saguinus sp. ;saguis;
-Primates ;Callitrichidae ;Saguinus weddelli ;sagüi, sagui-preto, sauim, soim, soim preto, soim-vermelho ;
+Primates ;Callitrichidae ;Saguinus weddelli ;sagüi, sagui-preto, sauim, soim, soim-preto, soim-vermelho ;
 Primates ;Cebidae ;Cebus albifrons ;caiarara ;
 Primates ;Cebidae ;Cebus kaapori;caiarara, caiarara-ka’apor, macaco-cara-branca, piticó ;CR
 Primates ;Cebidae ;Cebus olivaceus ;caiarara, cairara, macaco-prego ;
@@ -126,29 +126,29 @@ Rodentia ;Caviidae ;Galea spii ;preá;
 Rodentia ;Caviidae ;Hydrochoerus hydrochaeris ;capivara;
 Rodentia ;Cuniculidae ;Cuniculus paca ;paca;
 Rodentia ;Cuniculidae ;Dinomys paca ;paca-de-rabo, pacarana ;
-Rodentia ;Dasyproctidae ;Dasyprocta azarae ;azara's agouti, cutia ;
-Rodentia ;Dasyproctidae ;Dasyprocta croconota ;amazon red-rumped agouti, cutia, orange agouti ;
-Rodentia ;Dasyproctidae ;Dasyprocta fuliginosa ;black agouti, cutia ;
-Rodentia ;Dasyproctidae ;Dasyprocta iacki ;cutia, cutia-de-garupa-laranja, red-rumped agouti ;
+Rodentia ;Dasyproctidae ;Dasyprocta azarae ;cutia ;
+Rodentia ;Dasyproctidae ;Dasyprocta croconota ;cutia;
+Rodentia ;Dasyproctidae ;Dasyprocta fuliginosa ;cutia ;
+Rodentia ;Dasyproctidae ;Dasyprocta iacki ;cutia, cutia-de-garupa-laranja;
 Rodentia ;Dasyproctidae ;Dasyprocta leporina ;;
-Rodentia ;Dasyproctidae ;Dasyprocta prymnolopha ;black-rumped agouti, cutia ;
+Rodentia ;Dasyproctidae ;Dasyprocta prymnolopha ;cutia ;
 Rodentia ;Dasyproctidae ;Dasyprocta sp. ;cutias;
 Rodentia ;Dasyproctidae ;Myoprocta acouchy ;cotiara, cutiara ;
-Rodentia ;Dasyproctidae ;Myoprocta pratti ;cotiara, cutiara, green acouchi ;
+Rodentia ;Dasyproctidae ;Myoprocta pratti ;cotiara, cutiara;
 Rodentia ;Dasyproctidae ;Myoprocta sp. ;cutiaras;
-Rodentia ;Erethizontidae ;Coendou bicolor ;bicolor-spined porcupine, ouriço-cacheiro ;
+Rodentia ;Erethizontidae ;Coendou bicolor ;ouriço-cacheiro ;
 Rodentia ;Erethizontidae ;Coendou prehensilis ;;
 Rodentia ;Erethizontidae ;Coendou sp. ;ouriços;
-Rodentia ;Sciuridae ;Guerlinguetus aestuans ;caxinguelê, esquilo, guianan squirrel, quatipuru ;
+Rodentia ;Sciuridae ;Guerlinguetus aestuans ;caxinguelê, esquilo, quatipuru ;
 Rodentia ;Sciuridae ;Guerlinguetus gilvigularis ;;
 Rodentia ;Sciuridae ;Guerlinguetus ignitus ;esquilo ;
 Rodentia ;Sciuridae ;Guerlinguetus ingrami ;;
 Rodentia ;Sciuridae ;Guerlinguetus sp. ;esquilos;
-Rodentia ;Sciuridae ;Microsciurus flaviventer ;amazon dwarf squirrel, quatipuruzinho-bigodeiro ;
+Rodentia ;Sciuridae ;Microsciurus flaviventer ;quatipuruzinho-bigodeiro ;
 Rodentia ;Sciuridae ;Microsciurus sp. ;esquilos;
 Rodentia ;Sciuridae ;Sciuridae ;;
-Rodentia ;Sciuridae ;Sciurillus pusillus ;neotropical pygmy squirrel, quatipuruzinho ;
+Rodentia ;Sciuridae ;Sciurillus pusillus ;quatipuruzinho ;
 Rodentia ;Sciuridae ;Sciurillus sp. ;esquilos;
-Rodentia ;Sciuridae ;Urosciurus igniventris ;esquilo, quatipuru, southern amazon red squirrel ;
+Rodentia ;Sciuridae ;Urosciurus igniventris ;esquilo, quatipuru;
 Rodentia ;Sciuridae ;Urosciurus sp. ;esquilos;
-Rodentia ;Sciuridae ;Urosciurus spadiceus ;esquilo, quatipuru, southern amazon red squirrel ;
+Rodentia ;Sciuridae ;Urosciurus spadiceus ;esquilo, quatipuru;
