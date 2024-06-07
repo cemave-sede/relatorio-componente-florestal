@@ -1935,7 +1935,7 @@ A análise de tendências populacionais foi realizada por meio de modelos de esp
 
 Para garantir a robustez das análises, somente foram incluídas populações com dados suficientes, com base nos seguintes critérios: (1) série temporal de dados ≥ 5 anos; (2) taxa de encontro média ≥ 0,5 encontros/10 km; (3) esforço amostral anual médio suficiente para atingir coeficiente de variação da taxa de encontro ≥ 0,25. 
 
-No total, 89 populações de 36 táxons de mamíferos e 72 populações de 13 táxons de aves, de 21 unidades de conservação, foram selecionadas para análise. A duração do monitoramento para essas populações variou de cinco a nove anos, com média de sete anos. A maioria das populações analisadas (91%, n = 148) permaneceu estável ao longo do monitoramento, com a taxa de crescimento r não diferindo significativamente de zero, enquanto duas populações (1.2%) apresentaram tendência significativa de aumento e 11 (6%) apresentaram tendência significativa de declínio (@fig-variacao-populacional, @tbl-tendencias-populacionais).  
+No total, 89 populações de 36 táxons de mamíferos e 72 populações de 13 táxons de aves, de 21 unidades de conservação, foram selecionadas para análise. A duração do monitoramento para essas populações variou de cinco a nove anos, com média de sete anos. A maioria das populações analisadas (91%, n = 148) permaneceu estável ao longo do monitoramento, com a taxa de crescimento *r* não diferindo significativamente de zero, enquanto duas populações (1.2%) apresentaram tendência significativa de aumento e 11 (6%) apresentaram tendência significativa de declínio (@fig-variacao-populacional, @tbl-tendencias-populacionais).  
 
 
 </br>
@@ -2005,7 +2005,7 @@ tabela_tendencias_populacionais <- read.csv2("dados/tabelas/mastoaves/tabela_ten
 
 # Colorindo as célula na coluna Tendência
 
-tabela_tendencias_populacionais$Tendencia <- ifelse((tabela_tendencias_populacionais$UC == "PARNA do Juruena" & tabela_tendencias_populacionais$Taxon == "Tinamus sp.") | 
+tabela_tendencias_populacionais$Tendencia <- ifelse((tabela_tendencias_populacionais$UC == "PARNA do Juruena" & tabela_tendencias_populacionais$Taxon == "Tinamus spp.") | 
 (tabela_tendencias_populacionais$UC == "RESEX Alto Tarauacá" & tabela_tendencias_populacionais$Taxon == "Myoprocta pratti"), 
                                                       
                   cell_spec(tabela_tendencias_populacionais$Tendencia, "html", color = "white", background = "#008B8B"), 
