@@ -1,14 +1,14 @@
-﻿UC;Taxon;Tendencia
-PARNA da Serra da Cutia;Callicebus brunneus;↓
-PARNA da Serra do Divisor;Crypturellus spp.;↓
-PARNA da Serra do Divisor;Dasyprocta fuliginosa;↓
-PARNA do Juruena;Mico melanurus;↓
-PARNA do Juruena;Tinamus spp.;↑ 
-PARNA do Mapinguari;Penelope jacquacu;↓
-PARNA do Mapinguari;Pithecia irrorata;↓
-RESEX Alto Tarauacá;Myoprocta pratti;↑
-RESEX Barreiro das Antas;Tinamus spp.;↓
-RESEX do Cazumbá-Iracema;Tinamus spp.;↓
-RESEX do Cazumbá-Iracema;Urosciurus spadiceus;↓ 
-RESEX Rio Ouro Preto;Crypturellu spp.;↓
-RESEX Rio Ouro Preto;Sapajus apella;↓
+﻿Taxon;UC;Tendencia
+Callicebus brunneus;PARNA da Serra da Cutia;↓
+Crypturellus spp.;PARNA da Serra do Divisor;↓
+Dasyprocta fuliginosa;PARNA da Serra do Divisor;↓
+Mico melanurus;PARNA do Juruena;↓
+Tinamus spp.;PARNA do Juruena;↑ 
+Penelope jacquacu;PARNA do Mapinguari;↓
+Pithecia irrorata;PARNA do Mapinguari;↓
+Myoprocta pratti;RESEX Alto Tarauacá;↑
+Tinamus spp.;RESEX Barreiro das Antas;↓
+Tinamus spp.;RESEX do Cazumbá-Iracema;↓
+Urosciurus spadiceus;RESEX do Cazumbá-Iracema;↓ 
+Crypturellu spp.;RESEX Rio Ouro Preto;↓
+Sapajus apella;RESEX Rio Ouro Preto;↓

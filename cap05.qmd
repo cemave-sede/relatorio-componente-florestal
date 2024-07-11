@@ -1,33 +1,3 @@
-```{r pacotes}
-#| echo: false
-#| include: false
-#| message: false
-#| warning: false
-#| cache: true
-
-library(tidyverse)
-library(data.table)
-library(descr)
-library(RColorBrewer)
-library(kableExtra)
-library(knitr)
-library(DT)
-library(plotly)
-library(ggthemes)
-library(forcats)
-library(leaflet)
-library(sf)
-library(rgdal)
-library(treemapify)
-library(reshape2)
-library(randomcoloR)
-library(gridExtra)
-library(here)
-library(htmlTable)
-library(png)
-library(grid)
-
-```
 
 # Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas
 
@@ -72,12 +42,9 @@ library(grid)
 
 Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas são animais sensíveis à intensa pressão de caça, redução e fragmentação de *habitat*, e por isso são considerados bons indicadores de impactos de origem antrópica. A defaunação das florestas acarreta a chamada “síndrome da floresta vazia”, a ausência de muitas espécies de animais causada pela forte pressão humana e seus efeitos (@Redford_1992).  
 
+A redução das populações animais afeta diretamente a biodiversidade e impacta negativamente a própria estrutura e sobrevivência das florestas, em razão da perda de polinizadores, dispersores de sementes e outros processos ecológicos essenciais.  Populações de grandes herbívoros, por exemplo, apesar de promoverem e regularem a diversidade de plantas e a ciclagem de nutrientes, na ausência de predadores podem crescer de forma descontrolada e gerar uma paisagem de intensa herbivoria, com aumento da supressão vegetal, da predação de sementes e da mortalidade de plântulas, o que reduz a taxa de regeneração da vegetação (@Pires_2023).  
 
-Populações de grandes herbívoros, por exemplo, apesar de promoverem e regularem a diversidade de plantas e a ciclagem de nutrientes, na ausência de predadores podem crescer de forma descontrolada e gerar uma paisagem de intensa herbivoria, com aumento da supressão vegetal, da predação de sementes e da mortalidade de plântulas, o que reduz a taxa de regeneração da vegetação (@Pires_2023).  
-
-
-A redução das populações animais afeta diretamente a biodiversidade e impacta negativamente a própria estrutura e sobrevivência das florestas, em razão da perda de polinizadores, dispersores de sementes e outros processos ecológicos essenciais.  O desequilíbrio na diversidade de espécies em direção a ambientes mais simples, além da redução da biodiversidade em si, pode também contribuir para surtos de doenças e até mesmo a ocorrência de futuras pandemias (@Morse_2012). Nesse contexto, o monitoramento desses dois grupos animais em programas como o Monitora é de fundamental importância para a saúde do meio ambiente e das pessoas.  
-
+O desequilíbrio na diversidade de espécies em direção a ambientes mais simples, além da redução da biodiversidade em si, pode também contribuir para surtos de doenças e até mesmo a ocorrência de futuras pandemias (@Morse_2012). Nesse contexto, o monitoramento desses dois grupos animais em programas como o Monitora é de fundamental importância para a saúde do meio ambiente e das pessoas.  
 
 Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas, sistematizados até o momento pelo Programa. A taxonomia utilizada foi a mesma adotada no processo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024).
 
@@ -87,12 +54,56 @@ Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíf
 
 </br>
 
-De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 53 UCs federais^[Para efeito de análise, a RESEX do Rio Iriri e a ESEC da Terra do Meio foram tratadas como um bloco, de forma que os dados das duas UCs foram analisados de  forma integrada. Portanto, ao longo desse capítulo os resultados apresentados para a ESEC Terra do Meio na verdade expressam os dados das duas UCs.], totalizando 138 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
+De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 53 UCs federais^[Para efeito de análise, a RESEX do Rio Iriri e a ESEC da Terra do Meio foram tratadas como um bloco, de forma que os dados das duas UCs foram analisados de  forma integrada. Portanto, ao longo desse capítulo os resultados apresentados para a ESEC Terra do Meio na verdade expressam os dados das duas UCs.], totalizando 140 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
 
-Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022.  
 
-O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrestres cinegéticas. No total, foram identificadas 131 espécies e 60 gêneros de mamíferos e 29 espécies e 13 gêneros de aves ((@fig-taxons-acumulados-script), Apêndices C e D), com 35 táxons ameaçados de extinção: 29 de mamíferos e 6 de aves, respectivamente. Registros de *Cavia* (preás),  *Crypturellus* (inhambus) e *Nothura* (codornas) foram validados apenas em nível de gênero. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
+O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrestres cinegéticas.
 
+
+```{r pacotes}
+#| echo: false
+#| include: false
+#| message: false
+#| warning: false
+#| cache: true
+
+############################ Script Capítulo 5 - Mastoaves  ###################
+
+# Autores:
+# Arlindo Gomes Filho,
+# Elildo Carvalho Jr, 
+# Marcos de Souza Fialho e
+# Richard Hatakeyama
+
+
+##############################
+
+
+# Carregando pacotes
+
+library(tidyverse)
+library(data.table)
+library(descr)
+library(RColorBrewer)
+library(kableExtra)
+library(knitr)
+library(DT)
+library(plotly)
+library(ggthemes)
+library(forcats)
+library(leaflet)
+library(sf)
+library(rgdal)
+library(treemapify)
+library(reshape2)
+library(randomcoloR)
+library(gridExtra)
+library(here)
+library(htmlTable)
+library(png)
+library(grid)
+
+```
 
 
 ```{r carregamento e processamento dos dados}
@@ -101,6 +112,8 @@ O esforço de amostragem nos nove anos considerados neste relatório corresponde
 #| message: false
 #| warning: false
 #| cache: true
+
+# Carregamento e limpeza dos dados
 
 # Carregando os dados no formato .csv
 
@@ -127,6 +140,15 @@ ucs_grupos <- read_csv2("dados/ucs/ucs_grupos.csv")
 masto_aves <- left_join(masto_aves, ucs_grupos, by = "cnuc")
 
 #View(masto_aves)
+
+
+# Excluindo registros fora do período 2014-2022
+
+masto_aves <- masto_aves |> 
+  filter(ano != 2023)
+
+#unique(masto_aves$ano)
+
 
 # Corrigindo os nomes dos biomas
 
@@ -213,7 +235,7 @@ mutate(
   TRUE ~ ordem)) 
   
 
-unique(masto_aves$ordem)
+#unique(masto_aves$ordem)
   
 
 
@@ -375,6 +397,80 @@ ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
 
 </br>
 
+
+O esforço por UC e por bioma é apresentado na Figura 5.2 e na Figura 5.3.  Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve tanto ao maior número de unidades de conservação integrando o Programa Monitora nesse bioma, quanto ao esforço médio empregado por cada unidade de conservação. As unidades no Cerrado e na Mata Atlântica são menores e nem sempre comportam a rede recomendada de transecções: três estações amostrais de cinco quilômetros cada. Ademais, custear as atividades de campo nesses biomas é geralmente mais difícil, dada a maior disponibilidade de financiamento internacional para programas de monitoramento na Amazônia.  
+
+
+
+```{r gráfico de esforço 3 - Elildo}
+#| label: fig-esforco-total-uc-bioma-script
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '80%'
+#| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano, de 2014 a 2022."
+
+#----- grafico de esforco total e anual por uc/bioma
+
+pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
+
+
+
+monitora %>%
+  filter(ano != 2023) %>%
+  distinct(bioma, uc, ano, ea, data, esforco) %>%
+  group_by(bioma, uc, ano) %>% 
+  summarize(esforco = sum(esforco)) %>% 
+  group_by(uc) %>%
+  mutate(esf_total = sum(esforco)) %>%
+  ungroup() %>%
+  arrange(esf_total) %>%
+  mutate(uc = factor(uc, levels = unique(uc)),
+         ano = factor(ano)) %>% 
+  ggplot(aes(x = uc, y = esforco, group = ano, fill = ano)) +
+  geom_bar(stat = "identity") +
+  facet_grid(rows = vars(desc(bioma)), scales = "free", space = "free_y")  +
+  coord_flip() +
+    
+  theme_classic() +
+  xlab("") +
+  ylab("Esforço total (km)") +
+  theme(
+    #strip.background = element_blank(),
+    strip.text.x = element_blank()
+  ) +
+  scale_fill_manual(values = pallete, name = "Ano", 
+                    guide = guide_legend(reverse = TRUE)) +
+  theme(strip.text.x = element_text(size = 14)) +
+  theme(strip.text.y = element_blank()) +
+  #theme(strip.background = element_blank()) +
+  theme(axis.text.x = element_text(size = 7, face = "bold")) +
+  theme(axis.text.y = element_text(size = 6)) +
+  theme(axis.line.x=element_blank()) +
+  theme(panel.grid.major.x = element_line(color = "lightgray")) 
+
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
+       #plot = last_plot(),
+       device =  "jpeg",
+       scale=0.6,
+       width = 240,
+       height = 300,
+       units = "mm",
+       dpi = 120)
+
+```
+
+</br>
+
+Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022.  
+
+</br>
+
 ```{r gráfico de esforço 2 - Elildo}
 #| label: fig-taxons-acumulados-script
 #| echo: false
@@ -441,71 +537,7 @@ ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
 
 </br>
 
-Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve tanto ao maior número de unidades de conservação integrando o Programa Monitora nesse bioma, quanto ao esforço médio empregado por cada unidade de conservação (@fig-esforco-total-uc-bioma-script). As unidades no Cerrado e na Mata Atlântica são menores e nem sempre comportam a rede recomendada de transecções: três estações amostrais de cinco quilômetros cada. Ademais, custear as atividades de campo nesses biomas geralmente é mais difícil, dada a maior disponibilidade de financiamento internacional para programas de monitoramento na Amazônia.
-
-
-```{r gráfico de esforço 3 - Elildo}
-#| label: fig-esforco-total-uc-bioma-script
-#| echo: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '80%'
-#| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano, de 2014 a 2022."
-
-#----- grafico de esforco total e anual por uc/bioma
-
-pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
-
-
-
-monitora %>%
-  filter(ano != 2023) %>%
-  distinct(bioma, uc, ano, ea, data, esforco) %>%
-  group_by(bioma, uc, ano) %>% 
-  summarize(esforco = sum(esforco)) %>% 
-  group_by(uc) %>%
-  mutate(esf_total = sum(esforco)) %>%
-  ungroup() %>%
-  arrange(esf_total) %>%
-  mutate(uc = factor(uc, levels = unique(uc)),
-         ano = factor(ano)) %>% 
-  ggplot(aes(x = uc, y = esforco, group = ano, fill = ano)) +
-  geom_bar(stat = "identity") +
-  facet_grid(rows = vars(desc(bioma)), scales = "free", space = "free_y")  +
-  coord_flip() +
-    
-  theme_classic() +
-  xlab("") +
-  ylab("Esforço total (km)") +
-  theme(
-    #strip.background = element_blank(),
-    strip.text.x = element_blank()
-  ) +
-  scale_fill_manual(values = pallete, name = "Ano", 
-                    guide = guide_legend(reverse = TRUE)) +
-  theme(strip.text.x = element_text(size = 14)) +
-  theme(strip.text.y = element_blank()) +
-  #theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 7, face = "bold")) +
-  theme(axis.text.y = element_text(size = 6)) +
-  theme(axis.line.x=element_blank()) +
-  theme(panel.grid.major.x = element_line(color = "lightgray")) 
-
-
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
-       #plot = last_plot(),
-       device =  "jpeg",
-       scale=0.6,
-       width = 240,
-       height = 300,
-       units = "mm",
-       dpi = 120)
-
-```
+No total, foram identificadas 131 espécies e 60 gêneros de mamíferos e 29 espécies e 13 gêneros de aves (Apêndices C e D), com 35 táxons ameaçados de extinção: 29 de mamíferos e 6 de aves, respectivamente. Registros de *Cavia* (preás),  *Crypturellus* (inhambus) e *Nothura* (codornas) foram validados sempre em nível de gênero. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
 
 </br>
 
@@ -581,7 +613,7 @@ cor4 <- c("#008B8B", "#BAEBEB", "#259E9E", "#E0FFFF", "#38A8A8", "#95D8D8")
 #| warning: false
 #| cache: true
 
-# Limpando dados da coluna taxon-validado para a contagem do número de 
+# Limpando dados da coluna taxon_validado para a contagem do número de 
 # espécies por ordem (foram excluídos alguns regitros "gênero sp", para os casos
 # em que todas as espécies do gênero já tinham sido registradas)
 
@@ -667,7 +699,7 @@ numero_especies_por_ordem_bioma <- limpeza_registros_numero_especies_por_ordem_b
 
 # Extraindo o número total de espécies de primatas
 
-n_especies_primatas <- numero_especies_por_ordem$n[1]
+# n_especies_primatas <- numero_especies_por_ordem$n[1]
 
 # Avaliação das espécies de primatas
 
@@ -677,7 +709,7 @@ registros_primatas <- limpeza_registros_numero_especies_por_ordem_bioma %>%
   filter(ordem == "Primates")
  
 especies_primatas <- unique(registros_primatas$taxon_validado)
-especies_primatas
+#especies_primatas
 
 # Contagem de táxons - aves
 
@@ -906,7 +938,7 @@ ggsave("imagens/cap05/ma_grafico_composto_ordens.jpg", plot = grafico_composto_o
 
 </br>
 
-Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto para o gênero *Callibella* (sagui-anão), que não ocorre em nenhuma UC do Programa, todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.  
+Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto pelo gênero *Callibella* (sagui-anão), todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.  
 
 Com relação às aves, 29 espécies de 13 gêneros foram registradas (Apêndice D). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria. Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar *Nothura* (codornas), *Penelope* (jacus), *Tinamus* (macucos) e *Crypturellus* (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.  
 
@@ -920,7 +952,7 @@ A variação nas proporções de registros no Cerrado e na Mata Atlântica ao lo
 
 </br>
 
-Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca por apresentar taxas de avistamento mais altas (9,33 e 5,27 avistamentos/10 km, respectivamente), com grande variação tanto para mamíferos (1,76 a 20,12) quanto para aves (2,60 a 10,05). No Cerrado as taxas de avistamento variaram de 1,34 a 9,83 e 0,97 a 8,10 para mamíferos e aves, respectivamente (taxas médias de 4,07 e 3,26). Já na Mata atlântica os resultados variaram de 0,63 a 7,50 mamíferos e de 0,63 a 3,32 aves avistadas a cada 10 km, com valores médios de 3,17 e 1,26 (@fig-taxa-avistamento-bioma).  Observamos que não foram aplicados testes formais para avaliar a existência de diferenças estatisticamente significativas nas comparações realizadas, sendo apresentada aqui apenas uma análise exploratória e descritiva, com uma interpretação baseada nos valores médios e na inspeção visual dos resultados gerados.  
+Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca por apresentar taxas de avistamento médias mais altas (9,45 e 5,32 avistamentos/10 km, respectivamente), com grande variação tanto para mamíferos (1,91 a 20,12) quanto para aves (2,60 a 10,05). No Cerrado as taxas de avistamento variaram de 1,35 a 9,83 e 0,97 a 8,10 para mamíferos e aves, respectivamente (taxas médias de 3,20 e 2,77). Já na Mata atlântica os resultados variaram de 0,63 a 7,50 mamíferos e de 0,63 a 3,32 aves avistadas a cada 10 km, com valores médios de 2,91 e 1,77 (@fig-taxa-avistamento-bioma).  Observamos que não foram aplicados testes formais para avaliar a existência de diferenças estatisticamente significativas nas comparações realizadas, sendo apresentada aqui apenas uma análise exploratória e descritiva, com uma interpretação baseada nos valores médios e na inspeção visual dos resultados gerados.  
 
 
 ```{r estimativas das taxas de avistamento}
@@ -1115,42 +1147,15 @@ mutate(
 aves <- masto_aves |>
   filter(classe == "Aves")
 
-unique(aves$taxon_validado)
+#unique(aves$taxon_validado)
 
 # Contagem de táxons - mamíferos
 
 mamiferos <- masto_aves |>
   filter(classe == "Mammalia")
 
-unique(mamiferos$taxon_validado)
+#unique(mamiferos$taxon_validado)
 
-
-
-
-# masto_aves_2014_2022 <- masto_aves |> 
-#   filter(ano != 2023)
-
-# names(masto_aves)
-# 
-# unique(masto_aves_2014_2022$uc)
-# unique(masto_aves_2014_2022$cnuc)
-# unique(masto_aves_2014_2022$Cnuc)
-# unique(masto_aves_2014_2022$bioma)
-# unique(masto_aves_2014_2022$ano)
-# unique(masto_aves_2014_2022$ea)
-# unique(masto_aves_2014_2022$esforco)
-# unique(masto_aves_2014_2022$data)
-# unique(masto_aves_2014_2022$estacao)
-# unique(masto_aves_2014_2022$classe)
-# unique(masto_aves_2014_2022$ordem)
-# unique(masto_aves_2014_2022$genero)
-# unique(masto_aves_2014_2022$especie)
-# unique(masto_aves_2014_2022$nivel_taxon)
-# unique(masto_aves_2014_2022$taxon_validado)
-# unique(masto_aves_2014_2022$n_animais)
-# unique(masto_aves_2014_2022$cont_tot_par)
-# unique(masto_aves_2014_2022$distancia)
-# unique(masto_aves_2014_2022$plaqueta)
 
 # Busca por valores NA e registros n_animais = 0
 
@@ -1199,7 +1204,8 @@ esforco_dia_trilha_rep <- masto_aves  |> # número amostragens por trilha
 
 esforco_total_trilha <- esforco_dia_trilha |> # esforço total por trilha
   group_by(uc, bioma, grupo, ano, ea) |>
-  summarise(extensao = sum(esforco))
+  summarise(extensao = sum(esforco),
+            transectos = n())
 
 #View(esforco_total_trilha)
 
@@ -1224,12 +1230,24 @@ trilhas_esforco_total_maior_50km <- esforco_total_trilha |>
 #| cache: true
 
 
+### Criando uma coluna auxiliar de número de avistamentos
+### para poder calcular a número de avistamentos considerando
+### os registros (linhas) com valor = zero
+
+masto_aves <- masto_aves %>% 
+  mutate(n_animais_aux = ifelse(n_animais > 0, 1, n_animais))
+
+
+#View(masto_aves)
+
+
+
 #### Calculando o número de registros total
 
 registros_total_trilha <- masto_aves |>
   group_by(uc, bioma, grupo, ano, ea)  |>
-  count() |>
-  drop_na()
+  summarise(avistamentos = sum(n_animais_aux))
+  
 
 #View(registros_total)
 
@@ -1243,9 +1261,39 @@ taxa_avistamento_trilha <-
 # Obs.: A taxa_avistamento_trilha considera todos os registros (aves e mamíferos conjuntamente)
 
 taxa_avistamento_trilha <- taxa_avistamento_trilha |>
-  mutate(taxa_avistamento = (n/extensao) * 10)
+  mutate(taxa_avistamento = (avistamentos/extensao) * 10)
 
 #View(taxa_avistamento_trilha_total)
+
+
+# Calculando a taxa_avistamento média geral e desvio-padrão
+
+media_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
+  pull(taxa_avistamento) %>%
+  mean(na.rm = T)
+
+sd_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
+  pull(taxa_avistamento) %>%
+  sd(na.rm = T)
+
+n_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
+  pull(taxa_avistamento) %>%
+  length()
+
+
+
+## Taxa de avistamento média geral por UC
+
+taxa_avistamento_media_UC <- taxa_avistamento_trilha |>
+  group_by(uc) |>
+  summarise(
+    n = n(),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
+    ep = dp / (sqrt(n))
+  )
+
+
 
 
 # Taxa de avistamento média por UC por ano
@@ -1254,8 +1302,8 @@ taxa_avistamento_trilha_media_uc_ano <- taxa_avistamento_trilha |>
   group_by(uc, bioma, grupo, ano) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n))
   )
 
@@ -1277,8 +1325,8 @@ taxa_avistamento_trilha_media_uc_ano <- taxa_avistamento_trilha |>
 
 registros_total_uc_ano <- masto_aves |>
   group_by(uc, Cnuc, bioma, grupo, ano)  |>
-  count() |>
-  drop_na()
+   summarise(avistamentos = sum(n_animais_aux))
+  
 
 #View(registros_total_uc_ano)
 
@@ -1297,7 +1345,7 @@ taxa_avistamento_geral_uc_ano <-
 #View(taxa_avistamento_geral_uc_ano)
 
 taxa_avistamento_geral_uc_ano <- taxa_avistamento_geral_uc_ano |>
-  mutate(taxa_avistamento = (n / extensao_total) * 10)
+  mutate(taxa_avistamento = (avistamentos / extensao_total) * 10)
 
 #View(taxa_avistamento_geral_uc_ano)
 
@@ -1308,10 +1356,10 @@ taxa_avistamento_geral_uc <- taxa_avistamento_geral_uc_ano |>
   group_by(uc, Cnuc, bioma, grupo) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975)*ep,
+    IC_95 = qnorm(.975)*ep
   )
 
 
@@ -1363,8 +1411,8 @@ ucs_comp_florestal_unido$taxa_avist_media <- round(ucs_comp_florestal_unido$taxa
 
 registros_total_classe_ano <- masto_aves |>
   group_by(uc, bioma, grupo, ano, classe)  |>
-  count() |>
-  drop_na()
+  summarise(avistamentos = sum(n_animais_aux)) %>% 
+  drop_na(classe)
 
 #View(registros_total_classe_ano)
 
@@ -1383,7 +1431,7 @@ taxa_avistamento_total_classe_ano <-
 #View(taxa_avistamento_total_classe_ano)
 
 taxa_avistamento_total_classe_ano <- taxa_avistamento_total_classe_ano |>
-  mutate(taxa_avistamento = (n / extensao_total) * 10)
+  mutate(taxa_avistamento = (avistamentos / extensao_total) * 10)
 
 #View(taxa_avistamento_total_classe_ano)
 
@@ -1393,8 +1441,8 @@ taxa_avistamento_total_classe_uc <- taxa_avistamento_total_classe_ano |>
   group_by(uc, bioma, grupo, classe) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975)*ep 
   )
@@ -1418,7 +1466,7 @@ taxa_avistamento_total_classe_uc <- taxa_avistamento_total_classe_ano |>
 
 registros_classe <- masto_aves |>
   group_by(uc, ano, bioma, ea, classe)  |>
-  count() |>
+  summarise(avistamentos = sum(n_animais_aux)) %>% 
   drop_na(classe)
 
 #View(registros_classe)
@@ -1432,7 +1480,7 @@ taxa_avistamento_trilha_classe <-
 #View(taxa_avistamento_trilha_classe)
 
 taxa_avistamento_trilha_classe <- taxa_avistamento_trilha_classe |>
-  mutate(taxa_avistamento = (n / extensao) * 10)
+  mutate(taxa_avistamento = (avistamentos / extensao) * 10)
 
 #View(taxa_avistamento_trilha_classe)
 
@@ -1444,8 +1492,8 @@ taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
   group_by(uc, bioma, ano, classe) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
   
@@ -1477,7 +1525,7 @@ G_taxa_avistamento_geral_bioma_emparelhado_media_IC <- taxa_avistamento_total_cl
        ep = dp / sqrt(n),
        IC_95 = qnorm(.975) * ep,
        minimo = min(taxa_avist_media, na.rm = TRUE),
-       maximo = max(taxa_avist_media, na.rm = TRUE)) |> 
+       maximo = max(taxa_avist_media, na.rm = TRUE)) %>% 
 
  
 ggplot(aes(
@@ -1491,7 +1539,7 @@ ggplot(aes(
     linewidth = 0.7
   ) +
   geom_point(aes(colour = classe), size = 3, position = position_dodge2(width = 0.5)) +
-  scale_color_manual(values = c("#359780", "#BF8120")) +
+  scale_color_manual(values = c("#359780", "#BF8120"), labels = c("Aves", "Mamíferos")) +
   theme_minimal() +
   theme(axis.line.x=element_blank(),
         axis.line.y=element_blank(),
@@ -1540,7 +1588,6 @@ Considerando a variação da abundância relativa ao longo do tempo, na Amazôni
 # Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 
 G_taxa_avistamento_geral_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
- filter(ano != 2023) |> 
  group_by(ano, classe) |> 
  summarise(
      n = n(),
@@ -1561,8 +1608,8 @@ G_taxa_avistamento_geral_periodo_emparelhado_media_IC <- taxa_avistamento_total_
   scale_color_manual(values = c("#359780", "#BF8120")) +
   geom_point(aes(color = classe), width = 0.5, size = 1.5, position = position_dodge2(width = 0.5)) +
   
-  geom_hline(aes(yintercept = 8.27), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 4.82), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+  geom_hline(aes(yintercept = 8.20), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+  geom_abline(aes(slope = 0, intercept = 4.71), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
   
   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
   
@@ -1593,6 +1640,19 @@ print(G_taxa_avistamento_geral_periodo_emparelhado_media_IC)
 # ggsave("imagens/cap05/G_taxa_avistamento_geral_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
 
+# Cálculo das médias gerais (valores dos interceptos)
+
+# media_geral_mamiferos <- G_taxa_avistamento_geral_periodo_emparelhado_media_IC %>%
+#   filter(classe == "Mammalia")
+# 
+# media_geral_mamiferos <- mean(media_geral_mamiferos$taxa_avist_media)
+# 
+# media_geral_aves <- G_taxa_avistamento_geral_periodo_emparelhado_media_IC %>%
+#   filter(classe == "Aves")
+# 
+# media_geral_aves <- mean(media_geral_aves$taxa_avist_media)
+
+
 ```
 
 
@@ -1609,7 +1669,7 @@ print(G_taxa_avistamento_geral_periodo_emparelhado_media_IC)
 # Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 
 G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
- filter(bioma == "Amazônia" & ano != 2023) |> 
+ filter(bioma == "Amazônia") |> 
  group_by(ano, classe) |> 
  summarise(
      n = n(),
@@ -1630,10 +1690,10 @@ G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC <- taxa_avistamento_tot
     linewidth = 0.7) +
   #scale_color_manual(values = c("#359780", "#BF8120", "red", "blue")) +
   geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
-  geom_hline(aes(yintercept = 9.34), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 5.27), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+  geom_hline(aes(yintercept = 9.45), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+  geom_abline(aes(slope = 0, intercept = 5.32), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
   
-  scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
+  scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120"), labels = c("Aves", "Mamíferos")) +
  
   theme_minimal() +
   theme(axis.line.x=element_blank(),
@@ -1662,6 +1722,20 @@ print(G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
+
+# Cálculo das médias gerais (valores dos interceptos)
+
+# media_amazonia_mamiferos <- G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC %>%
+#   filter(classe == "Mammalia")
+# 
+# media_amazonia_mamiferos <- mean(media_amazonia_mamiferos$taxa_avist_media)
+# 
+# media_amazonia_aves <- G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC %>%
+#   filter(classe == "Aves")
+# 
+# media_amazonia_aves <- mean(media_amazonia_aves$taxa_avist_media)
+
+
 ```
 
 ```{r  G_taxa_avistamento_mamiferos_aves_mata_atlantica_2014-2022_media_IC}
@@ -1674,7 +1748,7 @@ print(G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC)
 # Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 
 G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
- filter(bioma == "Mata Atlântica" & ano != 2023) |> 
+ filter(bioma == "Mata Atlântica") |> 
  group_by(ano, classe) |> 
  summarise(
      n = n(),
@@ -1696,8 +1770,8 @@ G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC <- taxa_avistamen
   scale_color_manual(values = c("#359780", "#BF8120")) +
   geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
   
-  geom_hline(aes(yintercept = 3.17), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 1.84), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+  geom_hline(aes(yintercept = 2.91), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+  geom_abline(aes(slope = 0, intercept = 1.77), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
   
   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
   
@@ -1726,6 +1800,19 @@ print(G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
 
+
+# # Cálculo das médias gerais (valores dos interceptos)
+# 
+# # media_mata_atlantica_mamiferos <- G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Mammalia")
+# # 
+# # media_mata_atlantica_mamiferos <- mean(media_mata_atlantica_mamiferos$taxa_avist_media)
+# # 
+# # media_mata_atlantica_aves <- G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Aves")
+# # 
+# # media_mata_atlantica_aves <- mean(media_mata_atlantica_aves$taxa_avist_media)
+
 ```
 
 ```{r G_taxa_avistamento_mamiferos_aves_cerrado_2014-2022_media_IC}
@@ -1738,7 +1825,7 @@ print(G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC)
 # Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
 
 G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |>
- filter(bioma == "Cerrado" & ano != 2023) |>
+ filter(bioma == "Cerrado") |>
  group_by(ano, classe) |>
  summarise(
      n = n(),
@@ -1760,8 +1847,8 @@ G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC <- taxa_avistamento_tota
   scale_color_manual(values = c("#359780", "#BF8120")) +
   geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
   
-  geom_hline(aes(yintercept = 4.07), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 3.26), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+  geom_hline(aes(yintercept = 3.20), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+  geom_abline(aes(slope = 0, intercept = 2.77), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
   
   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
 
@@ -1791,6 +1878,18 @@ G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC <- taxa_avistamento_tota
 print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
 
 # ggsave("imagens/cap05/G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+
+# Cálculo das médias gerais (valores dos interceptos)
+
+# media_cerrado_mamiferos <- G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC %>%
+#   filter(classe == "Mammalia")
+# 
+# media_cerrado_mamiferos <- mean(media_cerrado_mamiferos$taxa_avist_media)
+# 
+# media_cerrado_aves <- G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC %>%
+#   filter(classe == "Aves")
+# 
+# media_cerrado_aves <- mean(media_cerrado_aves$taxa_avist_media)
 
 ```
 
@@ -1861,7 +1960,7 @@ G_taxa_avistamento_geral_mamiferos_media_IC <- taxa_avistamento_total_classe_uc 
         panel.grid.minor.x = element_blank(),
         #panel.grid.major.x = element_blank(),
         #axis.text=element_text(size=10),
-        axis.text.y = element_text(size = 6, face = "bold"),
+        axis.text.y = element_text(size = 5.5, face = "bold"),
         axis.title.x = element_text(size = 10, margin = unit(c(3, 0, 0, 0), "mm"))) +
         
   labs(title = "Mamíferos", col = NULL)
@@ -1874,6 +1973,7 @@ G_taxa_avistamento_geral_mamiferos_media_IC
 ggsave("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg", plot =  G_taxa_avistamento_geral_mamiferos_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
+</br>
 
 ```{r G_taxa_avistamento_geral_aves_media_IC}
 #| label: fig-taxa-avistamento-geral-aves
@@ -1911,7 +2011,7 @@ G_taxa_avistamento_geral_aves_media_IC <- taxa_avistamento_total_classe_uc |>
         panel.grid.minor.x = element_blank(),
         #panel.grid.major.x = element_blank(),
         #axis.text=element_text(size=10),
-        axis.text.y = element_text(size = 6, face = "bold"),
+        axis.text.y = element_text(size = 5.5, face = "bold"),
         axis.title.x = element_text(size = 10, margin = unit(c(3, 0, 0, 0), "mm"))) +
   
   labs(title = "Aves", col = NULL)
@@ -1927,7 +2027,90 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 
 </br>
 
-###### Tendências populacionais de mamíferos e aves em UCs do Programa Monitora 
+Verificou-se uma correlação positiva (r = 0,75; P < 0,001) entre as abundâncias (taxas médias de avistamento) de mamíferos e aves nas unidades de conservação amostradas (Figura X). Em termos gerais, esse é um resultado relativamente esperado, visto que o impacto das pressões negativas de origem antrópica deve, em linhas gerais, afetar de forma similar esses dois grupos de vertebrados.  
+
+
+```{r correlacao das taxas de avistamento médias de aves e mamíferos}
+#| echo: false
+#| message: false
+#| include: false
+#| warning: false
+#| cache: true
+
+correlacao_taxas_avistamento_mamiferos_aves <- taxa_avistamento_total_classe_uc %>% 
+  select(uc, classe, taxa_avist_media) %>% 
+  spread(key = classe, value = taxa_avist_media) 
+  
+
+# Teste de correlação
+cor_test <- cor.test(correlacao_taxas_avistamento_mamiferos_aves$Mammalia, correlacao_taxas_avistamento_mamiferos_aves$Aves, method = "pearson")
+
+
+
+# Ver resultado do teste de correlação
+print(cor_test)
+
+# Extrair coeficiente de correlação e valor p
+cor_value <- cor_test$estimate
+p_value <- cor_test$p.value
+p_value_1 <- 0.001
+
+
+```
+
+```{r grafico-correlacao-aves-mamiferos}
+#| label: fig-correlacao-taxas-avistamento
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Correlação positiva entre as taxas de avistamento médias de aves e mamíferos das unidades de conservação amostradas."
+
+# Criar o gráfico
+
+G_correlacao_taxas_avistamento_mamiferos_aves <- correlacao_taxas_avistamento_mamiferos_aves %>% 
+  ggplot(aes(x = Mammalia, y = Aves)) +
+  geom_point(color = "cyan4", size = 2) +
+  geom_smooth(method = "lm", col = "darkgrey") +
+  
+  labs(
+    #title = "Correlação taxas de avistamento de mamíferos e aves",
+    x = "Taxa média de avistamentos (mamíferos)",
+    y = "Taxa média de avistamentos (aves)"
+  ) +
+  annotate(
+    "text", x = 2.3, y = 9.5, label = paste("r = 0.75"), color = "black"
+  ) +
+  annotate(
+    "text", x = 2.5, y = 9.0, label = paste("p <", round(p_value_1, 4)), color = "black"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.line = element_line(color = "black"),
+    axis.ticks = element_line(color = "black"),
+    axis.text = element_text(color = "black"),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+  )
+
+G_correlacao_taxas_avistamento_mamiferos_aves 
+
+
+# Salvando o gráfico
+
+ggsave("imagens/cap05/ma_correlacao_aves_mamiferos.jpg", plot =  G_correlacao_taxas_avistamento_mamiferos_aves, height = 4.5, width = 4.5, units = "in", dpi = 300)
+
+```
+
+</br>
+</br>
+
+
+#### Tendências populacionais de mamíferos e aves em unidades de conservação do Programa Monitora 
 
 </br>
 
@@ -2017,7 +2200,7 @@ tab_tendencias_populacionais <- kbl(tabela_tendencias_populacionais,
              longtable = TRUE,
              caption = "Populações com tendências populacionais significativas de declínio ou aumento no período de monitoramento.",
             col.names = c("Unidade de Conservação", "Táxon", "Tendência"), align = c("l", "l", "c")) %>%
-    column_spec(2, italic = TRUE) %>%
+    column_spec(1, italic = TRUE) %>%
     column_spec(3, bold = TRUE) %>%
 kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
 
@@ -2158,8 +2341,8 @@ taxa_avistamento_trilha_taxon_validado_ano <-
   group_by(uc, ano, classe, taxon_validado) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
 
@@ -2175,8 +2358,8 @@ taxa_avistamento_trilha_taxon_validado_mamiferos <-
   group_by(uc, taxon_validado) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
 
@@ -2193,8 +2376,8 @@ taxa_avistamento_trilha_taxon_validado_aves <-
   group_by(uc, taxon_validado) |>
   summarise(
     n = n(),
-    taxa_avist_media = mean(taxa_avistamento),
-    dp = sd(taxa_avistamento),
+    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+    dp = sd(taxa_avistamento, na.rm = T),
     ep = dp / (sqrt(n)),
     IC_95 = qnorm(.975) * ep)
 
@@ -2211,7 +2394,7 @@ taxa_avistamento_trilha_taxon_validado_aves <-
 Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Chrysocyon brachyurus* (lobo-guará), *Lycalopex vetulus* (raposa-do-campo), *Speothos venaticus* (cachorro-vinagre), *Herpailurus yagouaroundi* (jaguarundi), *Leopardus colocolo* (gato-palheiro), *L. guttulus* (gato-do-mato), *L. tigrinus* (gato-do-mato), *L. wiedii* (gato-maracajá), *Panthera onca* (onça-pintada) e *Pteronura brasiliensis* (ariranha). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus* (raposa-do-campo), *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora.  
 
 
-Das 9 espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros para quatro: *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradypus torquatus* (preguiça-de-coleira).  
+Das nove espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros para quatro: *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradypus torquatus* (preguiça-de-coleira).  
 
 
 Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyidae e Erethizontidae não são esperadas para as unidades de conservação amostradas.  
@@ -2267,7 +2450,7 @@ taxa_avistamento_spp_ameacadas <- taxa_avistamento_spp_ameacadas |>
 
 #View(taxa_avistamento_spp_ameacadas)
 
-# Obtendo o total de registros de espécies ameaçadas por uc
+# Obtendo o total de registros por espécie ameaçada por uc
 
 taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
   group_by(uc, taxon_validado) |> 
@@ -2292,75 +2475,6 @@ taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
 *Ateles chamek* (macaco-aranha-preto) está ameaçado de extinção na categoria “Vulnerável (VU)” (@MMA_2022), ocorrendo na região da Amazônia Ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *A. chamek* apresentou uma maior taxa média de avistamentos por ano do que o *A. marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *A. chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
 
 </br>
-
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos - sem imagens}
-#| label: fig-especies-ameacadas-atelideos-antigo
-#| echo: false
-#| message: false
-#| include: false
-#| warning: false
-#| cache: true
-# #| fig.pos: 'H'
-# #| out.width: '70%'
-# #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas atelídeos ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
-# 
-# cor_ameacadas2 <- c("#008B8B", "#666666", "#BF8120", "brown")
-# 
-# 
-# 
-# G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_ameacadas |>
-#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-#   filter(taxon_validado %in% c("Ateles chamek", "Ateles marginatus")) |>
-#   summarise(n = n(),
-#             taxa_avist_media = mean(taxa_avistamento),
-#             sd = sd(taxa_avistamento),
-#             ep = sd / sqrt(n),
-#             IC_95 = qnorm(.975) * ep) |> 
-# 
-#   ggplot(aes(
-#     x = ano,
-#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-#   # geom_errorbar(
-#   #   aes(ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
-#   #   size = 0.8,
-#   #   linewidth = 0.5,
-#   #   width = 0.1,
-#   #   colour = "cyan4") +
-#   geom_line(size = 0.5) +
-#   geom_point(size = 3, alpha = 0.8) +
-#   
-#     theme_minimal() +
-#     theme(
-#       panel.grid.minor.y = element_blank(),
-#       #panel.grid.major.y = element_blank(),
-#       panel.grid.minor.x = element_blank(),
-#       panel.grid.major.x = element_blank(),
-#       axis.text=element_text(size=10),
-#       axis.text.x = element_text(size = 12),
-#       axis.text.y = element_text(size = 11),
-#       axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-#       axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-#       #axis.line.y = element_line(),
-#       #axis.ticks.y = element_line(),
-#       title = element_text(size = 10),
-#       legend.text=element_text(size=10, face = "italic"),
-#       legend.position = "right",
-#       legend.title = element_blank()) +
-#       scale_color_manual(values = cor_ameacadas2) +
-#       scale_y_continuous(limits = c(0, 1.5)) +
-#       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-#       labs(title = "Primatas - Atelídeos",
-#        x = "Ano",
-#        y = "Avistamentos/10 km",
-#        col = NULL)
-# 
-# G_especie_ameacada_ucs_ano_media_primatas_atelideos
-# 
-# # Salvando o gráfico
-# 
-# ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos, height = 4.5, width = 6, units = "in", dpi = 300)
-
-```
 
 
 ```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos}
@@ -2517,79 +2631,6 @@ Os primatas criticamente ameaçados *Cebus kaapori* e  *C. satanas* foram regist
 
 </br>
 
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas - sem imagens}
-#| label: fig-especies-ameacadas-outros-primatas-antigo
-#| echo: false 
-#| message: false
-#| include: false
-#| warning: false
-#| cache: true
-# <!-- #| fig.pos: 'H' -->
-# <!-- #| out.width: '70%' -->
-# <!-- #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura." -->
-# 
-# 
-# 
-# <!-- cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown") -->
-# 
-# 
-# <!-- G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacadas |> -->
-# <!--   group_by(ano, classe, ordem, taxon_validado, categoria) |>  -->
-# <!--   filter(taxon_validado %in% c("Mico rondoni", "Chiropotes utahickae")) |> -->
-# <!--   summarise(n = n(), -->
-# <!--             taxa_avist_media = mean(taxa_avistamento), -->
-# <!--             sd = sd(taxa_avistamento), -->
-# <!--             ep = sd / sqrt(n), -->
-# <!--             IC_95 = qnorm(.975) * ep) |>  -->
-# 
-# <!--   ggplot(aes( -->
-# <!--     x = ano, -->
-# <!--     y = taxa_avist_media, color = taxon_validado, shape = categoria)) + -->
-# <!--   # geom_errorbar( -->
-# <!--   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95), -->
-# <!--   #   size = 0.8, -->
-# <!--   #   linewidth = 0.5, -->
-# <!--   #   width = 0.1, -->
-# <!--   #   colour = "cyan4") + -->
-# <!--   geom_line(size = 0.5) + -->
-# <!--   geom_point(size = 3, alpha = 0.8) + -->
-# 
-# <!--     theme_minimal() + -->
-# <!--     theme( -->
-# <!--       panel.grid.minor.y = element_blank(), -->
-# <!--       #panel.grid.major.y = element_blank(), -->
-# <!--       panel.grid.minor.x = element_blank(), -->
-# <!--       panel.grid.major.x = element_blank(), -->
-# <!--       axis.text=element_text(size=10), -->
-# <!--       axis.text.x = element_text(size = 12), -->
-# <!--       axis.text.y = element_text(size = 11), -->
-# <!--       axis.title.y = element_text(size = 11, margin = margin(r = 10)), -->
-# <!--       axis.title.x = element_text(size = 11, margin = margin(t = 10)), -->
-# <!--       #axis.line.y = element_line(), -->
-# <!--       #axis.ticks.y = element_line(), -->
-# <!--       title = element_text(size = 10), -->
-# <!--       legend.text=element_text(size=10, face = "italic"), -->
-# <!--       legend.position = "right", -->
-# <!--       legend.title = element_blank()) + -->
-# <!--       scale_color_manual(values = cor_ameacadas1) + -->
-# <!--       scale_y_continuous(limits = c(0, 1.5)) + -->
-# <!--       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) + -->
-# <!--       labs(title = "Outros Primatas", -->
-# <!--        x = "Ano", -->
-# <!--        y = "Avistamentos/10 km", -->
-# <!--        col = NULL) -->
-# 
-# <!-- G_especie_ameacada_ucs_ano_media_outros_primatas -->
-# 
-# 
-# <!-- # Salvando o gráfico -->
-# 
-# <!-- ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas,  height = 4.5, width = 6, units = "in", dpi = 300) -->
-
-```
-
-
-
 
 ```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas}
 #| echo: false
@@ -2733,76 +2774,6 @@ As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) v
 </br>
 
 
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá - sem imagens}
-#| label: fig-especies-ameacadas-tamandua-antigo
-#| echo: false
-#| message: false
-#| include: false
-#| warning: false
-#| cache: true
-# #| fig.pos: 'H'
-# #| out.width: '70%'
-# #| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura."
-# 
-# 
-# 
-# cor_ameacadas3 <- c("cyan4")
-# 
-# G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
-#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-#   filter(taxon_validado %in% c("Myrmecophaga tridactyla")) |>
-#   summarise(n = n(),
-#             taxa_avist_media = mean(taxa_avistamento),
-#             sd = sd(taxa_avistamento),
-#             ep = sd / sqrt(n),
-#             IC_95 = qnorm(.975) * ep) |> 
-# 
-#   ggplot(aes(
-#     x = ano,
-#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-#   # geom_errorbar(
-#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
-#   #   size = 0.8,
-#   #   linewidth = 0.5,
-#   #   width = 0.1,
-#   #   colour = "cyan4") +
-#   geom_line(size = 0.5) +
-#   geom_point(size = 3, alpha = 0.8) +
-#   
-#     theme_minimal() +
-#     theme(
-#       panel.grid.minor.y = element_blank(),
-#       #panel.grid.major.y = element_blank(),
-#       panel.grid.minor.x = element_blank(),
-#       panel.grid.major.x = element_blank(),
-#       axis.text=element_text(size=10),
-#       axis.text.x = element_text(size = 12),
-#       axis.text.y = element_text(size = 11),
-#       axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-#       axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-#       #axis.line.y = element_line(),
-#       #axis.ticks.y = element_line(),
-#       title = element_text(size = 10),
-#       legend.text=element_text(size=10, face = "italic"),
-#       legend.position = "right",
-#       legend.title = element_blank()) +
-#       scale_color_manual(values = cor_ameacadas3) +
-#       scale_y_continuous(limits = c(0, 0.5)) +
-#       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-#       labs(title = "Outros mamíferos",
-#        x = "Ano",
-#        y = "Avistamentos/10 km",
-#        col = NULL)
-# 
-# G_especie_ameacada_ucs_ano_media_tamandua
-# 
-# 
-# # Salvando o gráfico
-# 
-# ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua, height = 4.5, width = 6, units = "in", dpi = 300)
-
-```
-
 
 ```{r processamento gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá}
 #| echo: false
@@ -2915,77 +2886,6 @@ Na @fig-especies-ameacadas-aves são apresentadas variações na abundância rel
 A taxa média anual de avistamento de *A. cujubi* nas unidades de conservação  variou de 0,27 a 0,71 encontros/10 km. Para as espécies ameaçadas do gênero *Psophia*, a abundância relativa nas unidades de conservação flutuou de 0,19 a 1,2 para *P. obscura* e *P. interjecta*, respectivamente, no ano de 2019. A despeito de se observar uma variação nas abundâncias ao longo do tempo, em parte explicada pela variação no número de unidades de conservação amostradas em cada ano, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas.  
 
 </b>
-
-```{r gráfico da variação das taxas de espécies ameaçadas no tempo - aves - sem imagens}
-#| label: fig-especies-ameacadas-aves-antigo
-#| echo: false
-#| message: false
-#| include: false
-#| warning: false
-#| cache: true
-# #| fig.pos: 'H'
-# #| out.width: '70%'
-# #| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de aves ameaçadas. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação e o número de registros para cada ano não são apresentados para maior clareza da figura. "
-# 
-# 
-# cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
-# 
-# 
-# 
-# G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameacadas |>
-#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-#   filter(taxon_validado %in% c("Aburria cujubi", "Psophia obscura", "Psophia dextralis", "Psophia interjecta", "Psophia viridis")) |>
-#   summarise(n = n(),
-#             taxa_avist_media = mean(taxa_avistamento),
-#             sd = sd(taxa_avistamento),
-#             ep = sd / sqrt(n),
-#             IC_95 = qnorm(.975) * ep) |> 
-# 
-#   ggplot(aes(
-#     x = ano,
-#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-#   # geom_errorbar(
-#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
-#   #   size = 0.8,
-#   #   linewidth = 0.5,
-#   #   width = 0.1,
-#   #   colour = "cyan4") +
-#   geom_line(size = 0.5) +
-#   geom_point(size = 3, alpha = 0.8) +
-#   
-#     theme_minimal() +
-#     theme(
-#       panel.grid.minor.y = element_blank(),
-#       #panel.grid.major.y = element_blank(),
-#       panel.grid.minor.x = element_blank(),
-#       panel.grid.major.x = element_blank(),
-#       axis.text=element_text(size=10),
-#       axis.text.x = element_text(size = 12),
-#       axis.text.y = element_text(size = 11),
-#       axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-#       axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-#       #axis.line.y = element_line(),
-#       #axis.ticks.y = element_line(),
-#       title = element_text(size = 10),
-#       legend.text=element_text(size=10, face = "italic"),
-#       legend.position = "right",
-#       legend.title = element_blank()) +
-#       scale_color_manual(values = cor_ameacadas1) +
-#       scale_y_continuous(limits = c(0, 1.5)) +
-#       scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-#       labs(title = "Aves ameaçadas",
-#        x = "Ano",
-#        y = "Avistamentos/10 km",
-#        col = NULL)
-# 
-# G_especie_ameacada_ucs_ano_media_aves_selecionadas
-# 
-# 
-# # Salvando o gráfico
-# 
-# ggsave("imagens/cap05/ma_taxa_spp_ameacadas_aves.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas,  height = 4.5, width = 6, units = "in", dpi = 300)
-
-```
 
 </br>
 
@@ -3315,7 +3215,10 @@ Importante frisar que estes valores são produtos de esforços amostrais pouco u
 
 </br>
 
-Quatro espécies (dois cervídeos e dois primatas) categorizadas como Deficientes de Dados (DDs), ou seja, com informações insuficientes para que seja feita uma avaliação adequada do seu estado de conservação, conforme o último ciclo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024) foram registradas no presente esforço.  
+Duas espécies categorizadas como Deficientes de Dados (DDs), ou seja, sem informações suficientes para que seja feita uma avaliação adequada do seu estado de conservação, conforme o último ciclo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024), foram registradas no presente esforço: os cervídeos *Mazama americana* e *M. nemorivaga*.   
+
+O *Mazama americana* foi registrado no Parques Nacional do Iguaçu, no Paraná, e no Parque Nacional de Bodoquena, no Mato Grosso do Sul, unidades de conservação localizadas na Mata Atlântica e Cerrado, respectivamente. Além dessas, 35 outras unidades de conservação na Amazônia apresentaram registros dessa espécie DD. Já *Mazama nemorivaga* foi registrada apenas no bioma amazônico, como esperado, em 32 unidades de conservação. 
+
 
 </br>
 
@@ -3323,7 +3226,7 @@ Quatro espécies (dois cervídeos e dois primatas) categorizadas como Deficiente
 
 </br>
 
-O Programa Monitora tem contribuído com registros importantes de *Cebus kaapori* (Caiarara), uma espécie de primata criticamente ameaçado de extinção. Essa espécie é endêmica do Brasil e em sua pequena área de distribuição temos apenas uma unidade de conservação de proteção integral, a REBIO do Gurupi.  Os registros dessa espécie na REBIO obtidos pelo Programa Monitora fornecem subsídios importantes para planejamento de iniciativas voltadas a sua conservação.
+O Programa Monitora tem contribuído com registros importantes de *Cebus kaapori* (Caiarara), uma espécie de primata criticamente ameaçado de extinção. Essa espécie é endêmica do Brasil e em sua pequena área de distribuição temos apenas uma unidade de conservação de proteção integral, a REBIO do Gurupi.  Os registros dessa espécie na REBIO obtidos pelo Programa Monitora fornecem subsídios importantes para planejamento de iniciativas voltadas a sua conservação.  
 
 </br>
 
@@ -3378,6 +3281,8 @@ Sobre a taxa de avistamento total de aves na Amazônia, os resultados para as un
 
 É importante destacar que muitas espécies da fauna brasileira não possuem densidades populacionais e/ou taxas de avistamento descritas na literatura e, portanto, os dados obtidos pelo Monitora possibilitarão a construção desta linha de base de dados que servirá de subsídio, inclusive, para avaliação do estado de conservação das espécies.  
 
+Proporcionar registros de ocorrência e estimativas de abundância para algumas espécies DDs, a exemplo dos cervídeos apresentados como destaques neste relatório, será determinante para a recategorização desses táxons nos próximos ciclos de avaliação do risco de extinção de espécies brasileiras. Isso porque M. nemorivaga é considerada um complexo de espécies crípticas ainda por serem descritas e que necessita de pesquisas relacionadas a sua distribuição (@SALVE_2024). Alguns autores já sugerem que essa espécie deva ser um novo gênero monofilético em que Passalites nemorivagus é a espécie tipo (@MoralesDonoso_2023). Já M. americana, de forma semelhante, é considerada uma superespécie em que novas espécies poderão no futuro ser descritas (@Salviano_2017), o que dificulta a sua avaliação. 
+
 
 Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monitora, em seu componente Florestal, se propôs a coletar dados no Cerrado, na Mata Atlântica e na Amazônia. Um grande desafio para as unidades de conservação e para o Programa é a continuidade na execução dos protocolos, com coletas anuais contínuas e esforço amostral estável, como recomendado, ao longo dos anos. E, embora os dados para o Cerrado e Mata Atlântica ainda sejam limitados, pelos motivos já mencionados neste relatório, para a Amazônia já é possível traçar um cenário bastante confiável sobre a presença e o estado de conservação de algumas espécies alvo deste protocolo.  
 
@@ -3399,10 +3304,12 @@ Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monito
 
 -   Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;
 
--   Para novas unidades de conservação a participarem do Programa, promover a implantação de todas as unidades amostrais em um mesmo ano;
-As unidades amostrais do Protocolo Básico, em uma determinada Unidade de Conservação, devem ser instaladas em um mesmo interflúvio, considerando que em diferentes interflúvios podemos ter diferentes comunidades animais. Sugere-se seguir essa mesma recomendação para amostragem em blocos de unidades de conservação;  
+-   Para novas unidades de conservação a participarem do Programa, promover a implantação de todas as unidades amostrais em um mesmo ano;  
 
--   Garantir que o método seja aplicado sem erros de procedimento, como por exemplo, assegurar que apenas duas pessoas realizem a amostragem em campo, em velocidade adequada, respeitando os horários estipulados para início e fim das amostragens e medindo corretamente as distâncias dos registros realizados.
+- As unidades amostrais do Protocolo Básico, em uma determinada unidade de conservação, devem ser instaladas em um mesmo interflúvio, considerando que em diferentes interflúvios podemos ter diferentes comunidades animais. Sugere-se seguir essa mesma recomendação para amostragem em blocos de unidades de conservação;  
+
+-   Garantir que o método seja aplicado sem erros de procedimento, como por exemplo, assegurar que apenas duas pessoas realizem a amostragem em campo, em velocidade adequada, respeitando os horários estipulados para início e fim das amostragens e medindo corretamente as distâncias dos registros realizados.  
+
 :::
 
 </b>

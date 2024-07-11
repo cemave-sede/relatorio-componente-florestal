@@ -358,6 +358,56 @@
             "volume": "3"
         },
         {
+            "abstract": "AbstractA new monotypic genus in the “Archeuptychia clade” Xikrin Barbosa, Freitas, Siewert & Marı́n gen. nov. (Nymphalidae: Satyrinae: Euptychiina) is described to accommodate a new species, Xikrin ueharapradoi Freitas & Barbosa gen. et sp. nov., in the highly diverse Satyrinae subtribe Euptychiina, based mainly on molecular data. To date, this species is known only from the region of Carajás, in the eastern Amazon rainforest. The phylogenetic relationship and taxonomy of this new taxon are discussed.",
+            "author": [
+                {
+                    "family": "Barbosa",
+                    "given": "Eduardo P"
+                },
+                {
+                    "family": "Siewert",
+                    "given": "Ricardo R"
+                },
+                {
+                    "family": "Marı́n",
+                    "given": "Mario A"
+                },
+                {
+                    "family": "Machado",
+                    "given": "Patrı́cia A"
+                },
+                {
+                    "family": "Oliveira",
+                    "given": "Isabela F"
+                },
+                {
+                    "family": "Filho",
+                    "given": "José A C"
+                },
+                {
+                    "family": "Freitas",
+                    "given": "André V L"
+                }
+            ],
+            "container-title": "Aust. Entomol.",
+            "id": "Barbosa_2023",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        8
+                    ]
+                ]
+            },
+            "page": "310-322",
+            "publisher": "Wiley",
+            "title": "Description of a new genus and species of euptychiina (lepidoptera: Nymphalidae) from the brazilian amazon rainforest",
+            "title-short": "Description of a new genus and species of euptychiina (lepidoptera",
+            "type": "article-journal",
+            "volume": "62"
+        },
+        {
             "abstract": "SummarySecondary forests growing on cleared lands and tree plantations are becoming increasingly widespread land‐uses in the tropics. Previous studies are divided on the conservation importance of these habitats for tropical forest butterflies.We use a robust sampling design, accounting for both seasonality and vertical stratification, to examine fruit‐feeding butterflies (Nymphalidae) in patches of secondary forest andEucalyptusplantation 2–3 orders of magnitude larger than those previously sampled.We recorded 10 587 butterflies and 128 species in 3200 trap‐days. Species richness was highest in primary forest and lowest in plantations, while butterfly abundance showed the opposite response. All habitats were distinct in terms of community structure.There was a significant interaction between habitat and season based on richness and abundance metrics, although not based on community structure. Secondary forest exhibited higher observed richness than primary forest in the peak of the dry‐season, but not at other times of the year. This observation could explain the lack of consensus in previous studies, as those reporting higher richness in secondary forest only sampled during the dry‐season.In general, habitat quality appeared to be more important than the surrounding landscape in determining butterfly community structure. However, the community structure of the strong‐flying Charaxinae was related to the amount of primary forest in surrounding landscape. There was very poor congruence between the response patterns of richness and abundance among different butterfly subfamilies.Linear regressions between resource availability and butterfly abundance showed a strong influence of leaf phenology in both primary and secondary forest, but no influence of fruit phenology.Synthesis and applications: A lack of seasonal replication and small sampling sizes may have led previous studies to over‐emphasize the conservation importance of secondary forest and plantations for butterflies. We show that these habitats are significantly poorer than primary forest in terms of number of species, and hold distinct butterfly communities. Although quantifying the number of species restricted to primary forest remains difficult, these results cast doubt on the presumption that secondary habitats will provide refuge for many of the species being lost through deforestation. We therefore strongly urge measures that prioritize the conservation of remaining primary forests where they still exist.",
             "author": [
                 {
@@ -1936,6 +1986,34 @@
             "publisher-place": "Arlington, USA",
             "title": "A standardized sampling protocol for fruit-feeding butterflies (nymphalidae)",
             "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "DeVries",
+                    "given": "P."
+                },
+                {
+                    "family": "Walla",
+                    "given": "T. R."
+                }
+            ],
+            "container-title": "Biol. J. Linn. Soc. Lond.",
+            "id": "DeVries_Walla_2001",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001,
+                        9
+                    ]
+                ]
+            },
+            "page": "1-15",
+            "publisher": "Oxford University Press (OUP)",
+            "title": "Species diversity and community structure in neotropical fruit-feeding butterflies",
+            "type": "article-journal",
+            "volume": "74"
         },
         {
             "abstract": "This article reviews the present state of insects, describing their taxonomic position, cost, and value as well as the threats to their well-being. Insects are an important source of both ecosystem services and ecosystem disservices. Recent studies have indicated a worrying decline in insect species, especially in flying insects in the northern temperate region, and this has spawned much media attention. Some decline has occurred, it is clear, due to agricultural intensification, urbanization, overuse of pesticides, and global climate change. A decline would seriously affect the ecosystem services that insects provide. However, there is too little data to warrant the belief that all insects are declining everywhere. There is a pressing need for more basic research on insect diversity in the context of a changing world.",
@@ -4401,6 +4479,147 @@
             "type": "book"
         },
         {
+            "author": [
+                {
+                    "family": "Sampaio",
+                    "given": "A. B."
+                },
+                {
+                    "family": "Alonso",
+                    "given": "A. C."
+                },
+                {
+                    "family": "Agra Iserhard",
+                    "given": "C."
+                },
+                {
+                    "family": "Bandini Ribeiro",
+                    "given": "D."
+                },
+                {
+                    "family": "Carvalho de Andrade",
+                    "given": "D. F."
+                },
+                {
+                    "family": "Carvalho Junior",
+                    "given": "E. A. R."
+                },
+                {
+                    "family": "Buss",
+                    "given": "G."
+                },
+                {
+                    "family": "Souza",
+                    "given": "J. M."
+                },
+                {
+                    "family": "Ribeiro",
+                    "given": "K T."
+                },
+                {
+                    "family": "Mendes",
+                    "given": "K. R."
+                },
+                {
+                    "family": "Reis",
+                    "given": "M. L."
+                },
+                {
+                    "family": "Fialho",
+                    "given": "M. S."
+                },
+                {
+                    "family": "Marini Filho",
+                    "given": "O. J."
+                },
+                {
+                    "family": "Galuppo",
+                    "given": "S. C."
+                },
+                {
+                    "family": "Souza",
+                    "given": "T. C."
+                }
+            ],
+            "id": "Monitora_2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        6
+                    ]
+                ]
+            },
+            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio",
+            "publisher-place": "Brasília, DF",
+            "title": "Programa nacional de monitoramento da biodiversidade: Programa monitora, subprograma terrestre, componente florestal: Relatório 2014-2018",
+            "title-short": "Programa nacional de monitoramento da biodiversidade",
+            "type": "report"
+        },
+        {
+            "DOI": "10.3897/zookeys.1167.100577",
+            "ISSN": "1313-2989",
+            "URL": "http://dx.doi.org/10.3897/zookeys.1167.100577",
+            "author": [
+                {
+                    "family": "Morales-Donoso",
+                    "given": "Jorge Alfonso"
+                },
+                {
+                    "family": "Vacari",
+                    "given": "Gabrielle Queiroz"
+                },
+                {
+                    "family": "Bernegossi",
+                    "given": "Agda Maria"
+                },
+                {
+                    "family": "Sandoval",
+                    "given": "Eluzai Dinai Pinto"
+                },
+                {
+                    "family": "Peres",
+                    "given": "Pedro Henrique Faria"
+                },
+                {
+                    "family": "Galindo",
+                    "given": "David Javier"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Thoisy",
+                    "given": "Benoit"
+                },
+                {
+                    "family": "Vozdova",
+                    "given": "Miluse"
+                },
+                {
+                    "family": "Kubickova",
+                    "given": "Svatava"
+                },
+                {
+                    "family": "Barbanti Duarte",
+                    "given": "José Mauricio"
+                }
+            ],
+            "container-title": "ZooKeys",
+            "id": "MoralesDonoso_2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        6
+                    ]
+                ]
+            },
+            "page": "241-264",
+            "publisher": "Pensoft Publishers",
+            "title": "Revalidation of passalites gloger, 1841 for the amazon brown brocket deer p. Nemorivagus (cuvier, 1817) (mammalia, artiodactyla, cervidae)",
+            "type": "article-journal",
+            "volume": "1167"
+        },
+        {
             "DOI": "10.1590/s1984-46702013000100016",
             "ISSN": "1984-4689",
             "URL": "http://dx.doi.org/10.1590/S1984-46702013000100016",
@@ -5122,6 +5341,113 @@
             "type": "chapter"
         },
         {
+            "abstract": "Essential Biodiversity Variables (EBVs) consolidate information from varied biodiversity observation sources. Here we demonstrate the links between data sources, EBVs and indicators and discuss how different sources of biodiversity observations can be harnessed to inform EBVs. We classify sources of primary observations into four types: extensive and intensive monitoring schemes, ecological field studies and satellite remote sensing. We characterize their geographic, taxonomic and temporal coverage. Ecological field studies and intensive monitoring schemes inform a wide range of EBVs, but the former tend to deliver short-term data, while the geographic coverage of the latter is limited. In contrast, extensive monitoring schemes mostly inform the population abundance EBV, but deliver long-term data across an extensive network of sites. Satellite remote sensing is particularly suited to providing information on ecosystem function and structure EBVs. Biases behind data sources may affect the representativeness of global biodiversity datasets. To improve them, researchers must assess data sources and then develop strategies to compensate for identified gaps. We draw on the population abundance dataset informing the Living Planet Index (LPI) to illustrate the effects of data sources on EBV representativeness. We find that long-term monitoring schemes informing the LPI are still scarce outside of Europe and North America and that ecological field studies play a key role in covering that gap. Achieving representative EBV datasets will depend both on the ability to integrate available data, through data harmonization and modeling efforts, and on the establishment of new monitoring programs to address critical data gaps.",
+            "author": [
+                {
+                    "family": "Proença",
+                    "given": "V."
+                },
+                {
+                    "family": "Martin",
+                    "given": "L. J."
+                },
+                {
+                    "family": "Pereira",
+                    "given": "H. M."
+                },
+                {
+                    "family": "Fernandez",
+                    "given": "M."
+                },
+                {
+                    "family": "McRae",
+                    "given": "L."
+                },
+                {
+                    "family": "Belnap",
+                    "given": "J."
+                },
+                {
+                    "family": "Bohm",
+                    "given": "M."
+                },
+                {
+                    "family": "Brummitt",
+                    "given": "N."
+                },
+                {
+                    "family": "Garcia-Monreno",
+                    "given": "J."
+                },
+                {
+                    "family": "Gregory",
+                    "given": "R. D."
+                },
+                {
+                    "family": "Honrado",
+                    "given": "J. P."
+                },
+                {
+                    "family": "Jürgens",
+                    "given": "N."
+                },
+                {
+                    "family": "Opige",
+                    "given": "M."
+                },
+                {
+                    "family": "Schmeller",
+                    "given": "D. S."
+                },
+                {
+                    "family": "Tiago",
+                    "given": "P."
+                },
+                {
+                    "dropping-particle": "van",
+                    "family": "Swaay",
+                    "given": "C. A. M."
+                }
+            ],
+            "container-title": "Biol. Conserv.",
+            "id": "Proenca_2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        9
+                    ]
+                ]
+            },
+            "page": "256-263",
+            "publisher": "Elsevier BV",
+            "title": "Global biodiversity monitoring: From data sources to essential biodiversity variables",
+            "title-short": "Global biodiversity monitoring",
+            "type": "article-journal",
+            "volume": "213"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "RCoreTeam_2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
             "DOI": "10.2307/1311860",
             "ISSN": "1525-3244",
             "URL": "http://dx.doi.org/10.2307/1311860",
@@ -5593,6 +5919,66 @@
         {
             "author": [
                 {
+                    "family": "Roy",
+                    "given": "D B"
+                },
+                {
+                    "family": "Ploquin",
+                    "given": "E F"
+                },
+                {
+                    "family": "Randle",
+                    "given": "Z"
+                },
+                {
+                    "family": "Risely",
+                    "given": "K"
+                },
+                {
+                    "family": "Botham",
+                    "given": "M S"
+                },
+                {
+                    "family": "Middlebrook",
+                    "given": "I"
+                },
+                {
+                    "family": "Noble",
+                    "given": "D"
+                },
+                {
+                    "family": "Cruickshanks",
+                    "given": "K"
+                },
+                {
+                    "family": "Freeman",
+                    "given": "S N"
+                },
+                {
+                    "family": "Brereton",
+                    "given": "T M"
+                }
+            ],
+            "container-title": "J. Insect Conserv.",
+            "id": "Roy_2015",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015,
+                        4
+                    ]
+                ]
+            },
+            "page": "313-324",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "Comparison of trends in butterfly populations between monitoring schemes",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "author": [
+                {
                     "literal": "Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio"
                 }
             ],
@@ -5608,6 +5994,50 @@
             "publisher": "https://salve.icmbio.gov.br/#/",
             "title": "Sistema de avaliação do risco de extinção da biodiversidade – SALVE",
             "type": ""
+        },
+        {
+            "DOI": "10.1093/biolre/iox041",
+            "ISSN": "1529-7268",
+            "URL": "http://dx.doi.org/10.1093/biolre/iox041",
+            "author": [
+                {
+                    "family": "Salviano",
+                    "given": "Maurício Barbosa"
+                },
+                {
+                    "family": "Cursino",
+                    "given": "Marina Suzuki"
+                },
+                {
+                    "family": "Zanetti",
+                    "given": "Eveline dos Santos"
+                },
+                {
+                    "family": "Abril",
+                    "given": "Vanessa Veltrini"
+                },
+                {
+                    "family": "Duarte",
+                    "given": "José Maurício Barbanti"
+                }
+            ],
+            "container-title": "Biology of Reproduction",
+            "id": "Salviano_2017",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        5
+                    ]
+                ]
+            },
+            "page": "1279-1287",
+            "publisher": "Oxford University Press (OUP)",
+            "title": "Intraspecific chromosome polymorphisms can lead to reproductive isolation and speciation: An example in red brocket deer (mazama americana)",
+            "title-short": "Intraspecific chromosome polymorphisms can lead to reproductive isolation and speciation",
+            "type": "article-journal",
+            "volume": "96"
         },
         {
             "DOI": "10.1590/s1676-06032012000300027",
@@ -5639,84 +6069,6 @@
             "title": "Diversidade de mamíferos de médio e grande porte da região do rio urucu, amazonas, brasil",
             "type": "article-journal",
             "volume": "12"
-        },
-        {
-            "author": [
-                {
-                    "family": "Sampaio",
-                    "given": "A. B."
-                },
-                {
-                    "family": "Alonso",
-                    "given": "A. C."
-                },
-                {
-                    "family": "Agra Iserhard",
-                    "given": "C."
-                },
-                {
-                    "family": "Bandini Ribeiro",
-                    "given": "D."
-                },
-                {
-                    "family": "Carvalho de Andrade",
-                    "given": "D. F."
-                },
-                {
-                    "family": "Carvalho Junior",
-                    "given": "E. A. R."
-                },
-                {
-                    "family": "Buss",
-                    "given": "G."
-                },
-                {
-                    "family": "Souza",
-                    "given": "J. M."
-                },
-                {
-                    "family": "Ribeiro",
-                    "given": "K T."
-                },
-                {
-                    "family": "Mendes",
-                    "given": "K. R."
-                },
-                {
-                    "family": "Reis",
-                    "given": "M. L."
-                },
-                {
-                    "family": "Fialho",
-                    "given": "M. S."
-                },
-                {
-                    "family": "Marini Filho",
-                    "given": "O. J."
-                },
-                {
-                    "family": "Galuppo",
-                    "given": "S. C."
-                },
-                {
-                    "family": "Souza",
-                    "given": "T. C."
-                }
-            ],
-            "id": "Monitora_2021",
-            "issued": {
-                "date-parts": [
-                    [
-                        2021,
-                        6
-                    ]
-                ]
-            },
-            "publisher": "Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio",
-            "publisher-place": "Brasília, DF",
-            "title": "Programa nacional de monitoramento da biodiversidade: Programa monitora, subprograma terrestre, componente florestal: Relatório 2014-2018",
-            "title-short": "Programa nacional de monitoramento da biodiversidade",
-            "type": "report"
         },
         {
             "author": [
@@ -5837,6 +6189,39 @@
             "title": "Long-term persistence of midsized to large-bodied mammals in amazonian landscapes under varying contexts of forest cover",
             "type": "article-journal",
             "volume": "19"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sanderson",
+                    "given": "Chris"
+                },
+                {
+                    "family": "Braby",
+                    "given": "Michael F"
+                },
+                {
+                    "family": "Bond",
+                    "given": "Suzi"
+                }
+            ],
+            "container-title": "Aust. Entomol.",
+            "id": "Sanderson_2021",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        2
+                    ]
+                ]
+            },
+            "page": "111-127",
+            "publisher": "Wiley",
+            "title": "Butterflies australia: A national citizen science database for monitoring changes in the distribution and abundance of australian butterflies",
+            "title-short": "Butterflies australia",
+            "type": "article-journal",
+            "volume": "60"
         },
         {
             "author": [
@@ -6135,6 +6520,34 @@
             "volume": "100"
         },
         {
+            "author": [
+                {
+                    "family": "Staats",
+                    "given": "Wouter T"
+                },
+                {
+                    "family": "Regan",
+                    "given": "Eugenie C"
+                }
+            ],
+            "container-title": "J. Insect Conserv.",
+            "id": "Staats_2014",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        6
+                    ]
+                ]
+            },
+            "page": "365-371",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "Initial population trends from a 5-year butterfly monitoring scheme",
+            "type": "article-journal",
+            "volume": "18"
+        },
+        {
             "DOI": "10.24841/fa.v26i2.428",
             "ISSN": "1018-5674",
             "URL": "http://dx.doi.org/10.24841/fa.v26i2.428",
@@ -6208,6 +6621,134 @@
             "title-short": "Species richness, composition and abundance of fruit‐feeding butterflies in the brazilian atlantic forest",
             "type": "article-journal",
             "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "dropping-particle": "van",
+                    "family": "Swaay",
+                    "given": "Chris A M"
+                },
+                {
+                    "family": "Nowicki",
+                    "given": "Piotr"
+                },
+                {
+                    "family": "Settele",
+                    "given": "Josef"
+                },
+                {
+                    "dropping-particle": "van",
+                    "family": "Strien",
+                    "given": "Arco J"
+                }
+            ],
+            "container-title": "Biodivers. Conserv.",
+            "id": "VanSwaay_2008",
+            "issue": "14",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008,
+                        12
+                    ]
+                ]
+            },
+            "page": "3455-3469",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "Butterfly monitoring in europe: Methods, applications and perspectives",
+            "title-short": "Butterfly monitoring in europe",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
+            "author": [
+                {
+                    "family": "Van Swaay",
+                    "given": "C."
+                },
+                {
+                    "family": "Regan",
+                    "given": "E."
+                },
+                {
+                    "family": "Ling",
+                    "given": "M."
+                },
+                {
+                    "family": "Bozhinovska",
+                    "given": "E."
+                },
+                {
+                    "family": "Fernandez",
+                    "given": "M."
+                },
+                {
+                    "family": "Marini-Filho",
+                    "given": "O. J."
+                },
+                {
+                    "family": "Huertas",
+                    "given": "B."
+                },
+                {
+                    "family": "Phon",
+                    "given": "C.-K."
+                },
+                {
+                    "family": "K”orösi",
+                    "given": "A."
+                },
+                {
+                    "family": "Meerman",
+                    "given": "J."
+                },
+                {
+                    "family": "Pe’er",
+                    "given": "G."
+                },
+                {
+                    "family": "Uehara-Prado",
+                    "given": "M."
+                },
+                {
+                    "family": "Sáfián",
+                    "given": "S."
+                },
+                {
+                    "family": "Sam",
+                    "given": "L."
+                },
+                {
+                    "family": "Shuey",
+                    "given": "J."
+                },
+                {
+                    "family": "Taron",
+                    "given": "D."
+                },
+                {
+                    "family": "Terblanche",
+                    "given": "R."
+                },
+                {
+                    "family": "Underhill",
+                    "given": "L."
+                }
+            ],
+            "id": "VanSwaay_2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "32",
+            "publisher": "Group on Earth Observations Biodiversity Observation Network",
+            "publisher-place": "Leipzig, Germany",
+            "title": "Guidelines for standardised global butterfly monitoring",
+            "type": "book"
         },
         {
             "author": [
@@ -6384,7 +6925,7 @@
                     "given": "D. B."
                 }
             ],
-            "id": "Van_2019",
+            "id": "Van_Swaay_2019",
             "issued": {
                 "date-parts": [
                     [
@@ -6397,95 +6938,6 @@
             "title": "The EU butterfly indicator for grassland species: 1990-2017: Technical report",
             "title-short": "The EU butterfly indicator for grassland species",
             "type": "report"
-        },
-        {
-            "author": [
-                {
-                    "family": "Van Swaay",
-                    "given": "C."
-                },
-                {
-                    "family": "Regan",
-                    "given": "E."
-                },
-                {
-                    "family": "Ling",
-                    "given": "M."
-                },
-                {
-                    "family": "Bozhinovska",
-                    "given": "E."
-                },
-                {
-                    "family": "Fernandez",
-                    "given": "M."
-                },
-                {
-                    "family": "Marini-Filho",
-                    "given": "O. J."
-                },
-                {
-                    "family": "Huertas",
-                    "given": "B."
-                },
-                {
-                    "family": "Phon",
-                    "given": "C.-K."
-                },
-                {
-                    "family": "K”orösi",
-                    "given": "A."
-                },
-                {
-                    "family": "Meerman",
-                    "given": "J."
-                },
-                {
-                    "family": "Pe’er",
-                    "given": "G."
-                },
-                {
-                    "family": "Uehara-Prado",
-                    "given": "M."
-                },
-                {
-                    "family": "Sáfián",
-                    "given": "S."
-                },
-                {
-                    "family": "Sam",
-                    "given": "L."
-                },
-                {
-                    "family": "Shuey",
-                    "given": "J."
-                },
-                {
-                    "family": "Taron",
-                    "given": "D."
-                },
-                {
-                    "family": "Terblanche",
-                    "given": "R."
-                },
-                {
-                    "family": "Underhill",
-                    "given": "L."
-                }
-            ],
-            "id": "VanSwaay_2015",
-            "issued": {
-                "date-parts": [
-                    [
-                        2015
-                    ]
-                ]
-            },
-            "page": "32",
-            "publisher": "Group on Earth Observations Biodiversity Observation Network",
-            "publisher-place": "Leipzig, Germany",
-            "title": "Guidelines for standardised global butterfly monitoring",
-            "type": "book"
         },
         {
             "DOI": "10.1111/j.1365-294x.2012.05687.x",

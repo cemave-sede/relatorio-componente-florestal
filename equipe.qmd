@@ -30,7 +30,6 @@ Rodrigo Pinto Silva Jorge
 
 
  **Implementação do componente florestal**  
-Jumara Marques Souza  
 Marcelo Lima Reis  
 
 
@@ -59,7 +58,6 @@ Rafael Suertegaray Rossato
 Ricardo Sampaio  
 Richard Hatakeyama  
 Thiago Orsi Laranjeiras  
-????  
 
 
 **Análise da sinergia entre alvos**  
@@ -68,7 +66,5 @@ Elildo Alves Ribeiro de Carvalho Junior
 Isabela Freitas Oliveira  
 Marcos de Souza Fialho  
 Onildo João Marini Filho  
-Sérgio ????
-
-Plantas ????  
-Mamíferos ???  
+Sérgio Santorelli Junior
+ 
