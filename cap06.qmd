@@ -1,6 +1,15 @@
+---
+title: "Análise da correspondência e complementariedade dos indicadores"
+bibliography: [referencias_cap06.bib]
+---
 
-# Análise da correspondência e complementariedade dos indicadores
+
+
 
 </br>
 
 Respostas congruentes dos diferentes alvos frente a fenômenos naturais ou impactos antrópicos podem ser entendidas como confirmações da relevância daquele fenômeno ou impacto, seja positiva ou negativa, para a dinâmica daquela comunidade, além de prover uma estimativa de sua amplitude e magnitude. Para uma análise exploratória preliminar da correspondência e complementaridade entre os diferentes grupos de alvos, foi executada uma análise de correspondência canônica (CCA), que é uma técnica estatística multivariada utilizada para identificar e quantificar a relação entre dois conjuntos de variáveis. 
+
+</br>
+
+## Referências

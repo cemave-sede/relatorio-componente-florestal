@@ -1,3 +1,9 @@
+---
+title: "Borboletas frugívoras"
+bibliography: [referencias_cap04.bib]
+---
+
+
 ```{r library, echo=FALSE, message=FALSE, warning=FALSE}
 
 library(tidyverse)
@@ -20,7 +26,6 @@ library(gridExtra)
 ```
 
 
-# Borboletas frugívoras 
 
 </br>
 
@@ -5597,7 +5602,9 @@ As borboletas são amplamente utilizadas como indicadores de mudanças climátic
 
 ## Recomendações
 
+
 </br>
+
 
 ::: callout-tip
 
@@ -5622,3 +5629,8 @@ As borboletas são amplamente utilizadas como indicadores de mudanças climátic
 - Divulgar novamente às UCs os períodos indicados para amostragem nas diferentes regiões, dado que ainda há várias unidades amostrando fora desse período. 
 
 ::: 
+
+</br>
+
+## Referências
+

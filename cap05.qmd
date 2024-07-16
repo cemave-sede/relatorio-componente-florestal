@@ -1,5 +1,8 @@
+---
+title: "Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas"
+bibliography: [referencias_cap05.bib]
+---
 
-# Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas
 
 </br>
 
@@ -102,7 +105,7 @@ library(here)
 library(htmlTable)
 library(png)
 library(grid)
-
+library(openxlsx)
 ```
 
 
@@ -295,6 +298,8 @@ library(RColorBrewer)
 #----- ler dados
 
 load(here("dados", "mastoaves", "monitora.RData"))
+
+#write.csv(monitora, "dados/mastoaves/monitora_elildo.csv", row.names = FALSE)
 
 monitora <- monitora %>%
 mutate(
@@ -972,7 +977,7 @@ Em termos de abundância total de mamíferos e aves, o bioma Amazônico se desta
 # Preenchendo as linhas vazias da coluna esforço
 
 masto_aves <-
-  masto_aves |> 
+  masto_aves |>
   arrange(uc, ano, ea) |>
   fill(esforco)
 
@@ -1132,7 +1137,10 @@ mutate(
     cnuc == "281" ~ "0000.00.0281",
     cnuc == "1633" ~ "0000.00.1633",
     cnuc == "1810" ~ "0000.00.1810"))
-    
+
+
+
+
 #unique(masto_aves$Cnuc)
 #View(masto_aves)
 
@@ -1164,6 +1172,8 @@ mamiferos <- masto_aves |>
 # 
 # masto_aves_2014_2022_uc <- masto_aves |> 
 #    filter(n_animais == 0)
+
+
 
 
 ```
@@ -2324,6 +2334,9 @@ taxa_avistamento_trilha_taxon_validado <-
 #View(taxa_avistamento_trilha_taxon_validado)
 
 
+# write.xlsx(taxa_avistamento_trilha_taxon_validado, file = "dados/mastoaves/taxa_avistamento_trilha_taxon_validado_fialho.xlsx")
+
+
 
 # Calculando a taxa de avistamento
 
@@ -3316,3 +3329,9 @@ Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monito
 
 Sobre a última recomendação acima, cabe salientar que uma análise possível e esperada para os dados obtidos pelo método empregado é a geração de quantitativos populacionais a partir da estimativa da densidade de grupos ou indivíduos. Esta estimativa seria fruto da taxa de encontro e das distâncias perpendiculares entre o grupo ou indivíduo e a transecção, mensuradas em cada avistamento. Contudo, em análises prévias não apresentadas nesse documento foram observados alguns vícios de amostragem que podem comprometer ou tornar as estimativas de densidade menos precisas. Destacamos o efeito *spyke* (número desproporcional de registros sobre a transecção) e o efeito de arredondamento das mensurações (tendência de as medidas serem atribuídas à valores arredondados como 10, 15 ou 20 m) nos dados obtidos de modo generalizado.  
 
+
+</br>
+
+
+
+## Referências

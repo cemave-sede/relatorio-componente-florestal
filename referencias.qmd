@@ -39,7 +39,5 @@ library(ggplot2)
 
 # Referências bibliográficas {#referencias .unnumbered} 
 
-::: {#refs}
 
-:::
 

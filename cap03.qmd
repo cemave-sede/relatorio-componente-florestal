@@ -1,26 +1,9 @@
-```{r library, echo=FALSE, message=FALSE, warning=FALSE}
-
-library(tidyverse)
-library(data.table)
-library(descr)
-library(RColorBrewer)
-library(kableExtra)
-library(knitr)
-library(DT)
-library(plotly)
-library(ggthemes)
-library(forcats)
-library(leaflet)
-library(sf)
-library(rgdal)
-library(treemapify)
-library(reshape2)
-library(randomcoloR)
-library(gridExtra)
-```
+---
+title: "Plantas arbóreas e arborescentes"
+bibliography: [referencias_cap03.bib]
+---
 
 
-# Plantas arbóreas e arborescentes
 
 </br>
 
@@ -161,6 +144,8 @@ O PARNA da Serra do Cipó é um caso especial. Embora a vegetação da unidade a
 
 Ao analisar as variáveis medidas pelo protocolo de plantas e sua variação ao longo do tempo, observamos que as áreas estudadas apresentam bom estado de conservação, que parece estar se mantendo. Porém, essa é uma impressão prematura, pois poucas UCs tiveram mais de uma amostragem ao longo do tempo. Assim, para que se tenha confiabilidade nessa informação são necessárias mais medidas das parcelas implantadas.
 
+</br>
+
 ### Relatório do sistema
 
 O relatório do sistema é uma versão condensada do relatório 2, agrupando as UCs por bioma -- sendo que a Amazônia pode ser apresentada em dois recortes: calha norte e calha sul. Avaliar se outros alvos estão usando outros recortes, para fazer semelhante.
@@ -202,7 +187,7 @@ Biomassa em T0 e T1 -- violin plot
 Figura semelhante a b para biomassa.
 
 
-</b>
+</br>
 
 ### Destaques
 
@@ -210,7 +195,6 @@ Figura semelhante a b para biomassa.
 
 #### Contraste entre o Inventário Florestal Nacional e os dados do protocolo básico de plantas do componente florestal
 
-</br>
 
 A realização do Inventário Florestal Nacional no Brasil (IFN-BR) está prevista no novo Código Florestal1 e é coordenada pelo Serviço Florestal Brasileiro (Decreto 8.975/2017 e Resolução nº. 23 de 18 de fevereiro de 2014 que institui o Manual de Campo do IFN-BR como documento de referência nacional).  
 
@@ -238,7 +222,7 @@ Com abrangência nacional e metodologia única para todos os biomas, a coleta de
 
 O IFN-BR é a principal fonte de informações sobre a quantidade e qualidade dos recursos florestais, sendo o fundamento para políticas e programas relacionados à gestão e uso das florestas, produzindo informações que devem ser utilizadas na conservação e no uso de recursos florestais. A estratégia de implementação do IFN-BR contempla a realização de diversos ciclos para acompanhar a dinâmica de uso do solo, da floresta e seus usos.  
 
-Durante a concepção e estruturação do componente Florestal, iniciada em 2010 (@Cronemberger2023) houve um entendimento de que o Programa Monitora adotaria os procedimentos metodológicos do INF-BR para coleta de dados do alvo Plantas arbóreas e arborescentes.  
+Durante a concepção e estruturação do componente Florestal, iniciada em 2010 (@Cronemberger_2023) houve um entendimento de que o Programa Monitora adotaria os procedimentos metodológicos do INF-BR para coleta de dados do alvo Plantas arbóreas e arborescentes.  
 
 
 </br>
@@ -254,6 +238,8 @@ Durante a concepção e estruturação do componente Florestal, iniciada em 2010
 
 </br>
 
+
+## Referências
 
 
 

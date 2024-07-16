@@ -32,12 +32,12 @@ book:
     - cap05.qmd
     - cap06.qmd
     - cap07.qmd
-    - referencias.qmd
+    #- referencias.qmd
     
   appendices:
     - apendice.qmd
 
-bibliography: referencias.bib
+#bibliography: referencias.bib
 csl: plos.csl
 
 execute: 
@@ -55,10 +55,10 @@ format:
     toc: true
     
   
-  pdf: 
-    documentclass: scrbook
-    include-in-header: preamble.tex
-    fontfamily: libertinus
+  # pdf: 
+  #   documentclass: scrbook
+  #   include-in-header: preamble.tex
+  #   fontfamily: libertinus
     #documentclass: scrreport
     # documentclass: krantz
     # include-in-header: latex/preamble.tex

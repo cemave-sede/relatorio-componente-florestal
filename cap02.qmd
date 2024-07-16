@@ -1,3 +1,7 @@
+---
+title: "Implementação do componente florestal"
+bibliography: [referencias_cap02.bib]
+---
 
 ```{r library, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -17,11 +21,9 @@ library(rgdal)
 library(treemapify)
 library(reshape2)
 library(randomcoloR)
-library(ggplot2)
+library(gridExtra)
 ```
 
-
-# Implementação do Componente Florestal 
 
 </br>
 
@@ -55,6 +57,9 @@ O Monitora está estruturado em subprogramas de acordo com os tipos de ambientes
 knitr::include_graphics("imagens/cap02/alvos_globais.JPG")
 
 ```
+
+
+</br>
 
 
 ## Métodos
@@ -121,6 +126,8 @@ knitr::include_graphics("imagens/cap02/esquema_unidades_amostrais.JPG")
 
 Para Mamíferos e Aves, a coleta de dados é realizada pelo método de transecções lineares, quando percorrendo-se as transecções se registra todos os indivíduos ou grupos das espécies alvo, especialmente sua localização e distância perpendicular da transecção. As amostragens ocorrem sempre nas primeiras horas da manhã a uma velocidade média de 1,5km/h. E o esforço mínimo desejado para cada unidade de conservação é de 150 quilômetros anuais.
 
+</br>
+
 ### Unidades de Conservação
 
 Três biomas brasileiros, Amazônia, Cerrado e Mata Atlântica, já possuem unidades de conservação que aderiram em algum grau ao monitoramento de alvos do componente florestal do Monitora (@fig-unidades-conservacao). A adesão ao componente Florestal do Programa Monitora significa que as UCs com representantes capacitados iniciaram a execução do monitoramento, o que incluiu ações como: reunião com o conselho; capacitação local; solicitação da grade do Serviço Florestal Brasileiro (GNPA) e escolha locacional de EAs/UAs. Durante o período de 2013 a 2022, ?? UCs já alcançaram a fase de operação, ou seja, possuem pelo menos um alvo com coleta de dados de campo (@tbl-numero-ucs).
@@ -140,7 +147,7 @@ knitr::include_graphics("imagens/cap02/mapa_unidades.JPG")
 
 ```
 
-Considera-se que o monitoramento do componente Florestal está consolidado quando as UCs possuem pelo menos três EAs implementadas com todos os alvos de monitoramento com coleta de dados. No final do período de amostragem de 2022, das ?? UCs em operação, ?? já estavam consolidadas (??% -- @tbl-numero-ucs) e, ao todo, o Programa apresentava ?? EAs e ?? UAs com coleta de dados (@tbl-numero-estacoes).
+Considera-se que o monitoramento do componente Florestal está consolidado quando as UCs possuem pelo menos três EAs implementadas com todos os alvos de monitoramento com coleta de dados. 
 
 
 ```{r numero de ucs}
@@ -152,6 +159,9 @@ Considera-se que o monitoramento do componente Florestal está consolidado quand
 #| fig.pos: 'H'
 #| out.width: '70%'
 #| tab-cap: "Número de UCs com as etapas operação e consolidação do monitoramento do componente Florestal do Programa Monitora, durante o período de 2014 a 2022."
+
+
+library(tidyverse)
 
 tabela_numero_ucs <- read.csv2("dados/tabelas/implementacao/numero_ucs.csv", encoding="UTF-8")
 
@@ -192,6 +202,7 @@ tab_numero_estacoes
 
 ```
 
+</br>
 
 Das UCs que já alcançaram a fase de operação, 42 UCs são do bioma Amazônico, seis da Mata Atlântica e seis do Cerrado, e contemplam 18 das 27 unidades federativas do Brasil. Muitas UCs tiveram problemas que causaram descontinuidade no monitoramento (coleta de dados não realizada em um ou mais anos) durante o período 2014-2022. Algumas situações se justificaram pela inadequabilidade dos métodos para o ambiente da UC, especialmente no Cerrado, outras por problemas de ordem logística, pessoal ou financeira. 
 
@@ -229,9 +240,15 @@ tab_ucs_componente_florestal
 
 Para detalhes da implementação dos diferentes protocolos por UC ao longo dos anos veja Apêndice B (verificar com os pontos focais a viabilidade de apresentação desses dados!).  
 
+</br>
 
 
 ## Resultados da implementação 
 
 
-Nos capítulos seguintes (3, 4 e 5) são apresentados resultados gerais obtidos com a implementação do Componente Florestal do Programa Monitora no período de 2014 a 2022, organizados por alvo e segmentados por biomas, além de informações sobre um recorte de espécies ameaçadas. Quando pertinente, resultados parciais e particularidades de algumas unidades de conservação foram também destacadas. Por sua vez, tendo em vista o caráter geral desse relatório, informações complementares e resultados específicos mais completos por alvo para cada unidade de conservação serão apresentados futuramente numa [plataforma *on-line* interativa](https://argofix.shinyapps.io/teste_shp/) atualmente em desenvolvimento. No capítulo 6 são discutidos alguns padrões de respostas congruentes entre os alvos e suas potenciais correlações.
+Nos capítulos seguintes (3, 4 e 5) são apresentados resultados gerais obtidos com a implementação do Componente Florestal do Programa Monitora no período de 2014 a 2022, organizados por alvo e segmentados por biomas, além de informações sobre um algumas espécies ameaçadas. Quando pertinente, resultados parciais e particularidades de algumas unidades de conservação foram também destacadas. Por sua vez, tendo em vista o caráter geral desse relatório, informações complementares e resultados específicos por alvo para cada unidade de conservação serão apresentados futuramente numa [plataforma *on-line* interativa](https://argofix.shinyapps.io/teste_shp/) atualmente em desenvolvimento. No capítulo 6 são discutidos alguns padrões de respostas congruentes entre os alvos e suas potenciais correlações.
+
+</br>
+
+## Referências
+
