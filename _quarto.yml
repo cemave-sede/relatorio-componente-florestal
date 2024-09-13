@@ -11,7 +11,7 @@ book:
   language: custom.yml
   search: true
   sharing: [twitter, facebook, linkedin]
-  # cover-image: "imagens/capa/capafinal.png"
+  # cover-image: "imagens/capa/capa_nova_1.jpeg"
   # repo-url:
   repo-actions: [edit]
   # site-url:
@@ -31,14 +31,14 @@ book:
     - cap04.qmd
     - cap05.qmd
     - cap06.qmd
-    - cap07.qmd
+  
     #- referencias.qmd
     
   appendices:
     - apendice.qmd
 
 #bibliography: referencias.bib
-csl: plos.csl
+csl: ecology_alterado.csl
 
 execute: 
   freese: auto

@@ -49,4 +49,4 @@ library(geobr)
 
 <font color="red">**Atenção! Este documento encontra-se em processo de elaboração. É expressamente proibida a reprodução parcial ou integral de seu conteúdo por qualquer meio ou dispositivo, ficando o infrator sujeito às penalidades dispostas na legislação vigente. Todos os direitos reservados ao Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio.**</font>
 
-<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/capa/capa_rel_monitora_2014_22.png" alt="painel do relatorio" width="600" height="957" align="center" style="margin: 0 0 0 0"/></a>
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/capa/capa_nova_1.jpeg" alt="painel do relatorio" width="600" height="957" align="center" style="margin: 0 0 0 0"/></a>

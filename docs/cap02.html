@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -68,10 +88,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Procurar"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 </head>
@@ -204,13 +220,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cap06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análise da correspondência e complementariedade dos indicadores</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cap07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Considerações finais</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Consideraçõs finais</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -240,13 +250,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#métodos" id="toc-métodos" class="nav-link active" data-scroll-target="#métodos"><span class="header-section-number">2.1</span> Métodos</a>
+  <li><a href="#protocolos-de-amostragem-do-componente-florestal-alvos-globais" id="toc-protocolos-de-amostragem-do-componente-florestal-alvos-globais" class="nav-link active" data-scroll-target="#protocolos-de-amostragem-do-componente-florestal-alvos-globais"><span class="header-section-number">2.1</span> Protocolos de amostragem do componente Florestal – alvos globais</a>
   <ul class="collapse">
-  <li><a href="#a-estação-amostral" id="toc-a-estação-amostral" class="nav-link" data-scroll-target="#a-estação-amostral"><span class="header-section-number">2.1.1</span> A Estação Amostral</a></li>
-  <li><a href="#unidades-de-conservação" id="toc-unidades-de-conservação" class="nav-link" data-scroll-target="#unidades-de-conservação"><span class="header-section-number">2.1.2</span> Unidades de Conservação</a></li>
+  <li><a href="#protocolo-básico-de-monitoramento-do-alvo-global-plantas-arbóreas-e-arborescentes" id="toc-protocolo-básico-de-monitoramento-do-alvo-global-plantas-arbóreas-e-arborescentes" class="nav-link" data-scroll-target="#protocolo-básico-de-monitoramento-do-alvo-global-plantas-arbóreas-e-arborescentes"><span class="header-section-number">2.1.1</span> Protocolo básico de monitoramento do alvo global plantas arbóreas e arborescentes</a></li>
+  <li><a href="#protocolo-básico-de-monitoramento-do-alvo-global-borboletas-frugívoras" id="toc-protocolo-básico-de-monitoramento-do-alvo-global-borboletas-frugívoras" class="nav-link" data-scroll-target="#protocolo-básico-de-monitoramento-do-alvo-global-borboletas-frugívoras"><span class="header-section-number">2.1.2</span> Protocolo básico de monitoramento do alvo global borboletas frugívoras</a></li>
+  <li><a href="#protocolo-básico-de-monitoramento-dos-alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas" id="toc-protocolo-básico-de-monitoramento-dos-alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas" class="nav-link" data-scroll-target="#protocolo-básico-de-monitoramento-dos-alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas"><span class="header-section-number">2.1.3</span> Protocolo básico de monitoramento dos alvos globais mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas</a></li>
   </ul></li>
-  <li><a href="#resultados-da-implementação" id="toc-resultados-da-implementação" class="nav-link" data-scroll-target="#resultados-da-implementação"><span class="header-section-number">2.2</span> Resultados da implementação</a></li>
-  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">2.3</span> Referências</a></li>
+  <li><a href="#esforço-de-implementação" id="toc-esforço-de-implementação" class="nav-link" data-scroll-target="#esforço-de-implementação"><span class="header-section-number">2.2</span> Esforço de implementação</a>
+  <ul class="collapse">
+  <li><a href="#alvo-global-plantas-arbóreas-e-arborescentes" id="toc-alvo-global-plantas-arbóreas-e-arborescentes" class="nav-link" data-scroll-target="#alvo-global-plantas-arbóreas-e-arborescentes"><span class="header-section-number">2.2.1</span> Alvo global plantas arbóreas e arborescentes</a></li>
+  <li><a href="#alvo-global-borboletas-frugívoras" id="toc-alvo-global-borboletas-frugívoras" class="nav-link" data-scroll-target="#alvo-global-borboletas-frugívoras"><span class="header-section-number">2.2.2</span> Alvo global borboletas frugívoras</a></li>
+  <li><a href="#alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas" id="toc-alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas" class="nav-link" data-scroll-target="#alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas"><span class="header-section-number">2.2.3</span> Alvos globais mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas</a></li>
+  </ul></li>
+  <li><a href="#resultados-da-implentação-do-monitoramento" id="toc-resultados-da-implentação-do-monitoramento" class="nav-link" data-scroll-target="#resultados-da-implentação-do-monitoramento"><span class="header-section-number">2.3</span> Resultados da implentação do monitoramento</a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">2.4</span> Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -273,1052 +290,548 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><br></p>
-<p><strong>O texto precisa ser atualizado.</strong></p>
-<p><strong>Jumara Marques de Souza</strong> &amp; <strong>Marcelo Lima Reis</strong></p>
+<p><strong>Marcelo Lima Reis</strong> &amp; <strong>Jumara Marques Souza</strong></p>
 <p>Coordenação de Monitoramento da Biodiversidade - COMOB<br>
 <em>Instituto Chico Mendes de Conservação da Biodiversidade – ICMBio</em><br>
 <em>Complexo Administrativo EQSW 103/104 s/n</em><br>
 <em>70670-350 Brasília, DF</em></p>
 <p><br></p>
-<p>A implementação do Programa Nacional de Monitoramento da Biodiversidade - Monitora por uma unidade de conservação federal passa por etapas. Existe um rito ideal a ser seguido, apresentado no documento <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio/guiadeimplementaodomonitora16032023.pdf">Guia de Implementação do Programa Nacional de Monitoramento da Biodiversidade (2023)</a>. Destaca-se nesse processo a necessidade de envolvimento da UC ou do núcleo de gestão integrada (NGI) e dos demais atores envolvidos, que são: os Centros Nacionais de Pesquisa e Conservação (CNPCs), a Coordenação Geral de Pesquisa e Monitoramento da Biodiversidade (CGPEQ) e a Coordenação de Monitoramento da Biodiversidade (COMOB).</p>
-<p>O Monitora está estruturado em subprogramas de acordo com os tipos de ambientes abrangidos. São três subprogramas: Terrestre, Aquático Continental e Marinho e Costeiro. Cada subprograma possui diferentes ecossistemas relacionados, denominados componentes, contendo seus respectivos alvos de monitoramento, que podem ser grupos taxonômicos, grupos funcionais, formas de vida, sistemas ecológicos, hábitats ou ainda processos ecológicos. Os alvos de monitoramento se classificam em dois tipos: globais (<a href="#fig-alvos-globais" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>) ou complementares. Eles estão susceptíveis a sofrerem mudanças ao longo do tempo em resposta às alterações no meio ambiente e seu potencial de resposta a essas mudanças é medido por meio do que chamamos de indicadores. Neste relatório são apresentados os resultados dos protocolos básicos do componente Florestal.</p>
+<p>O Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora, resultado de um longo processo de aprendizado institucional que contou com a participação de diversas instituições e atores, foi estruturado com base nas seguintes diretrizes:</p>
+<p><strong>Alvos eficazes e viáveis</strong> - estabelecimento de poucos alvos de monitoramento (táxons, grupos taxonômicos, grupos funcionais, formas de vida), criteriosamente selecionados, que desempenham papéis fundamentais nos ecossistemas e atuam como indicadores biológicos. Esses alvos respondem às mudanças ambientais e às diversas pressões em múltiplas escalas. Além disso, representam outros componentes da biodiversidade, possibilitando o seu monitoramento indireto, bem como o dos habitat e processos ecológicos (<span class="citation" data-cites="Costa-Pereira_2013">Costa-Pereira et al. <a href="#ref-Costa-Pereira_2013" role="doc-biblioref">2013</a></span>). Dessa forma, apresentam alta sensibilidade a alterações do ambiente (racionalidade), potencial de aplicação em diferentes situações e ampla distribuição (desempenho) e baixo custo e fácil execução (operacionalidade).</p>
+<p><strong>Modularidade</strong> – possibilidade de monitoramento dos alvos selecionados, inicialmente, por meio de protocolos simplificados (módulo básico), que apresentam menor custo e complexidade de execução, mas fornecem informações valiosas para avaliar o estado de conservação das UCs e a efetividade do sistema. A depender das condições técnicas, logísticas e financeiras de cada UC, é possível implementar protocolos mais complexos ou com maior custo financeiro (módulo avançado) que ofereçam dados adicionais para ampliar as possibilidades de análises e aprimorar os resultados do Programa (<a href="#fig-modularidade-protocolar" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-alvos-globais" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<div id="fig-modularidade-protocolar" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alvos-globais-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="imagens/cap02/alvos_globais.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+<div aria-describedby="fig-modularidade-protocolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_modularidade_protocolar.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alvos-globais-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.1: Representação esquemática da estrutura do Programa Monitora (esta figura precisa ser atualizada!).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modularidade-protocolar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Agregação modular de complexidade protocolar dos alvos globais do componente Florestal.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p><br></p>
-<section id="métodos" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="métodos"><span class="header-section-number">2.1</span> Métodos</h2>
-<section id="a-estação-amostral" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="a-estação-amostral"><span class="header-section-number">2.1.1</span> A Estação Amostral</h3>
-<p>Os métodos aplicados podem ser encontrados em detalhe no <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Protocolos-de-Monitoramento/monitoramento_da_biodiversidade_roteiro_metodologico_de_aplicacao_1.pdf">Monitoramento da biodiversidade: roteiro metodológico de aplicação (2014)</a>. Contudo, apresentamos a seguir um breve resumo dos mesmos.</p>
-<p>A aplicação dos protocolos básicos do componente florestal passa ela implementação das estações amostrais (EAs). Cada EA está relacionada ao desenho amostral de unidades amostrais (UAs) desenhadas para atender aos alvos Plantas, Borboletas e Mamíferos e Aves (<a href="#fig-esquema-estacao-amostral" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>). E cada UC ou bloco/mosaico de UC deve implementar ao menos 3 EAs, respeitando a distância mínima preconizada estas, e realizar a coleta de dados para todos os alvos. A periodicidade de coleta é anual para Borboletas, Mamíferos e Aves, e a cada quinquênio para Plantas.</p>
+<p><strong>Implantação gradativa</strong> - possibilidade de instalação gradual temporal e espacial das estações amostrais (EAs) e unidades amostrais (UAs), iniciando com apenas uma ou duas EAs, conforme condições operacionais específicas de cada UC, mas com meta de consolidar a implantação para cada um dos alvos, isto é, possuir no mínimo três EAs com coletas de dados de todos os alvos globais em até três anos, a partir do início da execução do monitoramento;</p>
+<p><strong>Participativo</strong> - participação de diferentes atores sociais, como gestores, técnicos e analistas ambientais, agentes ambientas temporários (ATAs), brigadistas, colaboradores terceirizados, pesquisadores, estudantes, bolsistas, voluntários e, principalmente, atores locais (comunitários, ribeirinhos, pescadores, indígenas, extrativistas etc.) nas diferentes atividades do Programa Monitora: planejamento; implantação; coleta de dados; análise, interpretação e divulgação dos resultados (<span class="citation" data-cites="Costa-Pereira_2013">Costa-Pereira et al. <a href="#ref-Costa-Pereira_2013" role="doc-biblioref">2013</a></span>; <span class="citation" data-cites="IN_2_2022">ICMBio <a href="#ref-IN_2_2022" role="doc-biblioref">2022</a></span>).</p>
+<p>O componente Florestal foi o primeiro a ser implementado no Programa Monitora, com quatro alvos globais de monitoramento: mamíferos terrestres de médio e grande porte, aves terrícolas cinegéticas, borboletas frugívoras e plantas arbóreas e arborescentes. Alvos de monitoramento globais são aqueles com alta sensibilidade às alterações ambientais e com potencial de representar o estado de conservação de mais de um país, bioma ou região (<span class="citation" data-cites="IN_2_2022">ICMBio <a href="#ref-IN_2_2022" role="doc-biblioref">2022</a></span>). O componente Florestal também possui alvos complementares, cujos dados de monitoramento complementam as informações dos alvos globais e representam condições de conservação local ou de interesse da gestão: castanha-da-Amazônia, espécies cinegéticas em caça de subsistência e mamíferos terrestres e aves de médio e grande porte em áreas de manejo florestal.</p>
+<p>Nesse capítulo será apresentada uma breve descrição dos protocolos de coleta de dados dos alvos globais do componente Florestal (módulo básico) e um resumo do estado de implementação desse componente para o período de 2014 a 2022. Os protocolos descritos aqui são apresentados com mais detalhes na publicação <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio/guiadeimplementaodomonitora16032023.pdf">“Monitoramento da biodiversidade: roteiro metodológico de aplicação”</a> (<span class="citation" data-cites="Nobre_2014">Nobre et al. <a href="#ref-Nobre_2014" role="doc-biblioref">2014</a></span>).</p>
+<p><br></p>
+<section id="protocolos-de-amostragem-do-componente-florestal-alvos-globais" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="protocolos-de-amostragem-do-componente-florestal-alvos-globais"><span class="header-section-number">2.1</span> Protocolos de amostragem do componente Florestal – alvos globais</h2>
+<p><br></p>
+<p>No componente Florestal do Programa Monitora, em cada UC amostrada o monitoramento da biodiversidade é realizado em formações florestais bem preservadas ou naquelas com as melhores condições possíveis de conservação e menor grau de interferência antrópica, denominadas áreas de referência. No interior das áreas de referência são definidas as áreas elegíveis, com base em critérios técnicos (como relevo e hidrografia) e, principalmente, logísticos (como distância da base de campo e condições de acesso), importantes para viabilizar amostragens em longo prazo.</p>
+<p>Nas áreas elegíveis devem ser sorteadas e instaladas pelo menos três estações amostrais (EAs). Cada EA é composta por um conjunto de unidades amostrais (UAs) dos alvos selecionados. Isso inclui uma transecção linear de até 5 km (UA de mamíferos e aves - mastoaves) e ao menos quatro transecções secundárias, com um conjunto de quatro armadilhas de atração por isca (UAs de borboletas frugívoras) e uma parcela permanente em forma de cruz de malta (UA de plantas arbóreas e arborescentes) (<a href="#fig-esquema-estacao-amostral" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-esquema-estacao-amostral" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esquema-estacao-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="imagens/cap02/estacao_amostral.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+<img src="imagens/cap02/fig_estacao_amostral.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esquema-estacao-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.2: Esquema de uma Estação de Estação Amostral padrão dos alvos globais do Componente Florestal. Transecção de cinco quilômetros (mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas); Transecções secundárias com baterias de quatro armadilhas de atração por isca (borboletas frugívoras) e as parcelas permanentes em forma de cruz de malta (plantas lenhosas).
+Figura&nbsp;2.2: Desenho esquemático da estação amostral (EA) padrão dos alvos globais do componente Florestal: transecção linear de 5 km (mamíferos e aves); quatro transecções secundárias com conjuntos de quatro armadilhas de atração por isca (borboletas frugívoras); e parcelas permanentes em forma de cruz de malta (plantas arbóreas e arborescentes).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Para Plantas (<a href="#fig-esquema-unidade-amostral" class="quarto-xref">Figura&nbsp;<span>2.3</span></a>), a métrica escolhida para o monitoramento de plantas lenhosas é a biomassa vegetal. Para isso, é preciso obter os dados de diâmetro e altura estimada das plantas lenhosas. A coleta de dados ocorre preferencialmente na estação seca e todos os indivíduos que apresentarem um DAP (diâmetro na altura do peito = 1,30 m) maior ou igual a 10 cm (circunferência de 31 cm) ou a 30cm do solo (CAS) ≥ 15cm, esse último para plantas localizadas no bioma Cerrado, são registrados e mensurados.</p>
+<p><br></p>
+<p>Os locais de instalação das EAs na área elegível são definidos por sorteio, a partir da Grade Nacional de Pontos Amostrais (GNPA) do Serviço Florestal Brasileiro (SFB), com adensamento de 625 m (seleção do ponto central da cruz de malta). Alternativamente, os locais podem ser definidos dentro de um buffer de 312 m ao redor de trilhas pré-existentes selecionadas.</p>
+<p><br></p>
+<section id="protocolo-básico-de-monitoramento-do-alvo-global-plantas-arbóreas-e-arborescentes" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="protocolo-básico-de-monitoramento-do-alvo-global-plantas-arbóreas-e-arborescentes"><span class="header-section-number">2.1.1</span> Protocolo básico de monitoramento do alvo global plantas arbóreas e arborescentes</h3>
+<p><br></p>
+<p>O alvo global plantas arbóreas e arborescentes inclui a amostragem de indivíduos de espécies de árvores e espécies não arbóreas de porte arborescente, como palmeiras, lianas, bambus, cactos e samambaias. Para a implantação dos protocolos de plantas é necessária uma área mínima de 200 x 200 m em ambiente florestal preservado. O desenho amostral adotado é o da cruz de malta, que consiste em marcar quatro subunidades de 20 x 50 m distribuídas em forma de cruz, orientadas para os quatro pontos cardeais (Norte, Leste, Sul e Oeste). Nenhuma subunidade da cruz de malta pode ser interceptada pela UA de mamíferos e aves (distância mínima de 10 m) e a cruz deve distar a no máximo 312,5 m (metade do adensamento máximo da GNPA) da UA de mastoaves. Cada subunidade é subdividida em 10 parcelas de 10 x 10 m, delimitadas por barbante (<a href="#fig-ua-plantas" class="quarto-xref">Figura&nbsp;<span>2.3</span></a>). O ponto central da cruz de malta, assim como os pontos centrais iniciais e finais de cada subunidade (N, L, S, O) são materializados por meio da fixação no solo de um cano de PVC (diâmetro ≥ 40 mm) preenchido com cimento, sendo suas coordenadas registradas na base de dados do Programa Monitora.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-esquema-unidade-amostral" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<div id="fig-ua-plantas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-esquema-unidade-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="imagens/cap02/unidade_amostral.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+<div aria-describedby="fig-ua-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_ua_plantas.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esquema-unidade-amostral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.3: Esquema da Unidade Amostral para monitoramento de Plantas Arbóreas e arborescentes (adaptado de SFB/Embrapa Florestas, 2012).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ua-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.3: Unidade amostral do protocolo do alvo global plantas arbóreas e arborescentes do componente Florestal (cruz de malta).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>A métrica de indicação biológica selecionada para borboletas frugívoras (<a href="#fig-esquema-borboletas" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>) é a proporção de indivíduos de cada tribo realizada com o auxílio de guias de campo. A identificação de tribos é muito mais simples e viável que a identificação até espécie das borboletas capturadas. Esse cenário aumenta o potencial de implantação e manutenção do monitoramento. Neste protocolo são utilizadas armadilhas do tipo Van Someren-Rydon (VSR) tendo por iscas banana e caldo de cana. As duas campanhas de coleta de dados se dão preferencialmente ao final da estação chuvosa, em cada campanha são realizadas ao menos três vistorias, intercaladas por até 48 horas.</p>
+<p>Em cada parcela são registrados todos os indivíduos arbóreos e arborescentes que apresentem a circunferência do tronco à altura do peito medido a 1,3 m do solo (CAP), maior ou igual a 31 cm ou diâmetro do tronco a altura do peito (DAP) maior ou igual a 10 cm. Todos os indivíduos que atendem ao critério de inclusão (CAP ≥ 31 cm) são marcados com plaquetas de alumínio numeradas (individualizados) e têm sua altura total e CAP registrados. As plaquetas são fixadas na planta 10 cm acima do local da medida do CAP. O ponto central da cruz de malta, assim como os pontos centrais iniciais e finais de cada subunidade (N, L, S, O) são materializados, isto é, fixados no solo com um cano de PVC (diâmetro ≥ 40 mm) preenchido com cimento, sendo suas coordenadas registradas na base de dados do Programa Monitora.</p>
+<p>Para o registro espacial de cada indivíduo marcado na parcela, são registradas as distâncias “X” e “Y” dos indivíduos em relação aos eixos da parcela, ou elaborado um croqui com a posição dos indivíduos na parcela. As amostragens são, preferencialmente, realizadas na época seca, num período máximo de três meses e a intervalos (periodicidade) de cinco anos. As principais métricas empregadas no monitoramento das plantas (protocolo básico) incluem a biomassa vegetal e parâmetros da estrutura da vegetação.</p>
+<p><br></p>
+</section>
+<section id="protocolo-básico-de-monitoramento-do-alvo-global-borboletas-frugívoras" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="protocolo-básico-de-monitoramento-do-alvo-global-borboletas-frugívoras"><span class="header-section-number">2.1.2</span> Protocolo básico de monitoramento do alvo global borboletas frugívoras</h3>
+<p><br></p>
+<p>O alvo global borboletas frugívoras é composto por indivíduos de treze tribos da família Nymphalidae. O protocolo de amostragem utiliza o método de captura-marcação e recaptura de indivíduos por meio de armadilhas de atração por isca do tipo <em>Van Someren-Rydon</em> (VSR) de 100 x 40 cm. As armadilhas são dispostas em quatro linhas perpendiculares à transecção principal (UA de mamíferos e aves). Para garantir a independência amostral, a distância mínima entre as linhas é de 500 m. Cada linha (UA) conta com quatro armadilhas, separadas de 30 a 50 m entre si, e a primeira armadilha deve estar a pelo menos 10 m da trilha principal (<a href="#fig-ua-borboletas" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>).</p>
+<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-esquema-borboletas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<div id="fig-ua-borboletas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-esquema-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="imagens/cap02/esquema_unidades_amostrais.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+<div aria-describedby="fig-ua-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_ua_borboletas.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esquema-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.4: Esquema das Unidades Amostrais para monitoramento de borboletas frugívoras.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ua-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: Unidade amostral (UA) do protocolo do alvo global borboletas frugívoras do componente Florestal.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Para Mamíferos e Aves, a coleta de dados é realizada pelo método de transecções lineares, quando percorrendo-se as transecções se registra todos os indivíduos ou grupos das espécies alvo, especialmente sua localização e distância perpendicular da transecção. As amostragens ocorrem sempre nas primeiras horas da manhã a uma velocidade média de 1,5km/h. E o esforço mínimo desejado para cada unidade de conservação é de 150 quilômetros anuais.</p>
+<p><br></p>
+<p>As coordenadas dos locais onde as UAs de borboletas interceptam a UA de mamíferos e aves (trilha principal) devem ser registradas e enviadas à COMOB em processo SEI, e o local materializado com a fixação no solo de um cano de PVC preenchido com cimento.</p>
+<p>Na instalação as armadilhas são penduradas em galhos de árvores ou outras estruturas, a aproximadamente 1 m do solo e a uma distância mínima de 50 cm de qualquer artefato (tronco, arbusto, galho) que possa permitir o acesso de outros animais. A isca consiste em uma mistura de banana (preferencialmente nanica) e caldo de cana, na proporção de 3 kg x 1 litro (pesada com casca e misturada sem casca). A mistura é dividida e acondicionada em três recipientes com tampa, de no mínimo 1 litro (garrafas pet) e deixadas para fermentar por 48 horas. As garrafas devem ser abertas a aproximadamente cada 8 horas para liberação do gás acumulado durante a fermentação. A isca é, então, colocada em pote específico (copo plástico de 50 ml) na parte inferior da armadilha (plataforma plástica).</p>
+<p>As revisões das armadilhas ocorrem a intervalos de 24 ou 48 horas, sendo a isca trocada, obrigatoriamente, a cada 48 horas. Todos os indivíduos capturados são identificados em nível de tribo, utilizando o guia de campo ilustrado de acordo com a região específica de cada UC (<span class="citation" data-cites="Santos_2015">Santos et al. <a href="#ref-Santos_2015" role="doc-biblioref">2015</a></span>), marcados utilizando caneta de marcação permanente (“X” na parte ventral da asa) e registrados em ficha de campo ou formulário eletrônico (ODK <em>Collect</em>). Em caso de dificuldade na identificação, o indivíduo deve ser fotografado dorsal e ventralmente (registrando-se o número das fotografias na ficha de campo). Após a coleta dos dados, os indivíduos são liberados no local da captura.</p>
+<p>A amostragem de borboletas é realizada em duas campanhas anuais de sete dias cada (1 dia para a instalação das armadilhas e 6 de amostragem), para aumentar as chances de amostrar os picos populacionais. As campanhas são realizadas sempre no período de transição do final da estação chuvosa para o início da estação seca. A segunda campanha deve ser realizada de 14 a 30 dias após o término da primeira. Excepcionalmente, em UCs muito remotas e de difícil acesso e logística, e com a concordância prévia da COMOB e do CBC, pode ser realizada uma campanha única anual de 13 dias (estratégia de expedição).</p>
+<p>A principal métrica de monitoramento utilizada para borboletas é a proporção de indivíduos por Tribo.</p>
 <p><br></p>
 </section>
-<section id="unidades-de-conservação" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="unidades-de-conservação"><span class="header-section-number">2.1.2</span> Unidades de Conservação</h3>
-<p>Três biomas brasileiros, Amazônia, Cerrado e Mata Atlântica, já possuem unidades de conservação que aderiram em algum grau ao monitoramento de alvos do componente florestal do Monitora (<a href="#fig-unidades-conservacao" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>). A adesão ao componente Florestal do Programa Monitora significa que as UCs com representantes capacitados iniciaram a execução do monitoramento, o que incluiu ações como: reunião com o conselho; capacitação local; solicitação da grade do Serviço Florestal Brasileiro (GNPA) e escolha locacional de EAs/UAs. Durante o período de 2013 a 2022, ?? UCs já alcançaram a fase de operação, ou seja, possuem pelo menos um alvo com coleta de dados de campo (<span class="quarto-unresolved-ref">?tbl-numero-ucs</span>).</p>
+<section id="protocolo-básico-de-monitoramento-dos-alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="protocolo-básico-de-monitoramento-dos-alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas"><span class="header-section-number">2.1.3</span> Protocolo básico de monitoramento dos alvos globais mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas</h3>
+<p><br></p>
+<p>No módulo básico para o alvo mamíferos de médio e grande porte, são consideradas todas as espécies dos grupos-alvo passíveis de amostragem e identificação pelo método de observação direta (censo diurno) em transecção linear. Isso inclui não apenas as espécies de mamíferos terrestres de médio e grande porte diurnas e catemerais (com atividade diurna e noturna), mas também as de hábitos noturnos, além de algumas espécies de pequenos mamíferos não voadores (famílias Caviidae e Sciuridae e o gênero Didelphis), que também podem ser amostrados pelo protocolo adotado. Já para o alvo aves cinegéticas terrícolas são consideradas apenas as famílias: Tinamidae, Cracidae, Rheidae, Cariamidae, Psophiidae e Odontophoridae, que possuem um número reduzido de espécies e são relativamente de fácil identificação, pelo menos em nível de gênero. A identificação em campo é feita como auxílio do guia de campo para identificação de espécies alvo de mamíferos e aves (<span class="citation" data-cites="Reis_2015">Reis et al. <a href="#ref-Reis_2015" role="doc-biblioref">2015</a></span>).</p>
+<p>Este método de amostragem baseia-se na visualização direta dos espécimes e no registro da distância perpendicular entre o animal e a trilha. As amostragens são realizadas no período matutino, por uma dupla de observadores registrando apenas as visualizações no trajeto de ida. As transecções lineares podem variar de 2 a 5 km de extensão (<a href="#fig-ua-mastoaves" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>) e devem estar separadas por uma distância mínima de 5 km para garantir independência amostral. Os observadores caminham pelas trilhas de forma silenciosa e cuidadosa, a velocidade variando de 1 a 1,5 km/h, observando todos os estratos da floresta para registrar os animais ao longo do percurso. Todos os animais dos grupos-alvo observados por qualquer um dos monitores são registrados e identificados taxonomicamente com o Guia de Campo (fotos/desenhos). Além da identificação dos animais observados, são registrados o número de indivíduos (total ou parcial), o horário da observação, a distância perpendicular do animal até a trilha principal e o intervalo na transecção (a trilha é demarcada com plaquetas metálicas numeradas 0 a 5000 m, em intervalos de 50 m).</p>
+<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-unidades-conservacao" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<div id="fig-ua-mastoaves" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-unidades-conservacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="imagens/cap02/mapa_unidades.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
+<div aria-describedby="fig-ua-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_ua_mastoaves.JPG" class="img-fluid figure-img" style="width:70.0%" data-fig-pos="H">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unidades-conservacao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.5: Unidades de conservação com dados validados para análises no período de 2014 a 2022 do componente Florestal do Programa Monitora. A numeração das UCs corresponde ao seu cadastro no CNUC.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ua-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.5: UA do protocolo básico dos alvos mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas – transecção linear (trilha) de 5 km.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Considera-se que o monitoramento do componente Florestal está consolidado quando as UCs possuem pelo menos três EAs implementadas com todos os alvos de monitoramento com coleta de dados.</p>
-<div id="tbl-numero-ucs" class="cell anchored" data-tab-cap="Número de UCs com as etapas operação e consolidação do monitoramento do componente Florestal do Programa Monitora, durante o período de 2014 a 2022.">
-<div class="cell-output-display">
-<div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Etapa</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2014</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2015</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2016</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2017</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2018</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2019</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2020</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2021</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2022</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Operação&nbsp;</td>
-<td style="text-align: left;">16&nbsp;</td>
-<td style="text-align: left;">13&nbsp;</td>
-<td style="text-align: left;">25&nbsp;</td>
-<td style="text-align: left;">30&nbsp;</td>
-<td style="text-align: left;">34&nbsp;</td>
-<td style="text-align: left;">38&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Consolidação&nbsp;</td>
-<td style="text-align: left;">0&nbsp;</td>
-<td style="text-align: left;">0&nbsp;</td>
-<td style="text-align: left;">1&nbsp;</td>
-<td style="text-align: left;">6&nbsp;</td>
-<td style="text-align: left;">7&nbsp;</td>
-<td style="text-align: left;">14&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-
-</div>
-</div>
-</div>
 <p><br></p>
-<div id="tbl-numero-estacoes" class="cell anchored" data-tab-cap="Número de estações e unidades amostrais (EA &amp; UA) em operação no componente Florestal do Programa Monitora, durante o período de 2013 a 2022.">
-<div class="cell-output-display">
-<div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2014</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2015</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2016</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2017</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2018</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2019</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2020</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2021</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2022</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">EA&nbsp;</td>
-<td style="text-align: left;">25&nbsp;</td>
-<td style="text-align: left;">30&nbsp;</td>
-<td style="text-align: left;">51&nbsp;</td>
-<td style="text-align: left;">69&nbsp;</td>
-<td style="text-align: left;">85&nbsp;</td>
-<td style="text-align: left;">95&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">UA&nbsp;</td>
-<td style="text-align: left;">44&nbsp;</td>
-<td style="text-align: left;">46&nbsp;</td>
-<td style="text-align: left;">86&nbsp;</td>
-<td style="text-align: left;">143&nbsp;</td>
-<td style="text-align: left;">174&nbsp;</td>
-<td style="text-align: left;">239&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-<td style="text-align: left;">??&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-
-</div>
-</div>
-</div>
-<p><br></p>
-<p>Das UCs que já alcançaram a fase de operação, 42 UCs são do bioma Amazônico, seis da Mata Atlântica e seis do Cerrado, e contemplam 18 das 27 unidades federativas do Brasil. Muitas UCs tiveram problemas que causaram descontinuidade no monitoramento (coleta de dados não realizada em um ou mais anos) durante o período 2014-2022. Algumas situações se justificaram pela inadequabilidade dos métodos para o ambiente da UC, especialmente no Cerrado, outras por problemas de ordem logística, pessoal ou financeira.</p>
-<p>A execução do monitoramento pelas UCs pode ser gradativa, isto é, pode iniciar com apenas a implantação e coleta de dados de uma EA ou UA e, ao longo do tempo, chegar na fase de consolidação, mas com a recomendação de que isso ocorra em até dois anos. Entretanto, verificou-se que a maioria das UCs, principalmente nos primeiros anos do Programa, precisaram de mais tempo (de 3 a 4 anos) para atingir a fase de consolidação. Espera-se que, nos próximos anos, as UCs consigam atingir a consolidação dentro do período recomendado. É importante ressaltar que as UCs podem ter mais de três EAs implantadas e outras podem não atingir essa meta devido a particularidades locais, como algumas unidades do Cerrado e Mata Atlântica, por suas dimensões, e aquelas que estão fazendo o monitoramento em “bloco” (monitoramento espacialmente compartilhado).</p>
-<p>Esse início gradativo do monitoramento também é observado quando comparamos o número de UCs, EAs e UAs em operação ao longo do tempo. No início, a estratégia da maioria das UCs dos biomas Cerrado e Mata Atlântica foi de priorizar a implementação de apenas uma EA com todas as respectivas UAs (alvos), enquanto as UCs amazônicas priorizaram as três EAs, mas não com todos os alvos (trilha ou cruz de malta). A partir de 2016, houve um aumento no esforço de consolidar as EAs com a coleta de dados de todos os alvos, aumentando consideravelmente o número de UAs por UC (Figura x, <span class="quarto-unresolved-ref">?tbl-ucs-componente-florestal</span>). Portanto, da mesma forma espera-se que, nos próximos anos, as UCs consigam aumentar o número de suas EAs e UAs, diminuindo assim a distância entre a linha do acumulado e do esperado.</p>
-<div id="tbl-ucs-componente-florestal" class="cell anchored" data-tab-cap="Relação das UCs com alvos globais do componente Florestal (M/A = Mamíferos e Aves de médio a grande porte; P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras) monitorados durante o período de 2014 a 2022, com a sinalização do ano que a UC alcançou de consolidação (c) no Programa Monitora.">
-<div class="cell-output-display">
-<div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Unidades de Conservação</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Nº no mapa (CNUC)</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Bioma</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2014</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2015</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2016</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2017</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2018</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2019</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2020</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2021</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2022</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">ESEC de Pirapitinga&nbsp;</td>
-<td style="text-align: left;">61&nbsp;</td>
-<td style="text-align: left;">Cerrado&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ESEC Serra Geral do Tocantins&nbsp;</td>
-<td style="text-align: left;">76&nbsp;</td>
-<td style="text-align: left;">Cerrado&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA da Chapada dos Veadeiros&nbsp;</td>
-<td style="text-align: left;">139&nbsp;</td>
-<td style="text-align: left;">Cerrado&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA da Serra da Bodoquena&nbsp;</td>
-<td style="text-align: left;">143&nbsp;</td>
-<td style="text-align: left;">Cerrado&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA da Serra do Cipó&nbsp;</td>
-<td style="text-align: left;">148&nbsp;</td>
-<td style="text-align: left;">Cerrado&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA de Brasília&nbsp;</td>
-<td style="text-align: left;">159&nbsp;</td>
-<td style="text-align: left;">Cerrado&nbsp;</td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">P, B&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA da Serra da Bocaina&nbsp;</td>
-<td style="text-align: left;">142&nbsp;</td>
-<td style="text-align: left;">Mata Atlântica&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA da Serra dos Órgãos&nbsp;</td>
-<td style="text-align: left;">152&nbsp;</td>
-<td style="text-align: left;">Mata Atlântica&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA do Iguaçu&nbsp;</td>
-<td style="text-align: left;">172&nbsp;</td>
-<td style="text-align: left;">Mata Atlântica&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA do Superagui&nbsp;</td>
-<td style="text-align: left;">178&nbsp;</td>
-<td style="text-align: left;">Mata Atlântica&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">REBIO de Una&nbsp;</td>
-<td style="text-align: left;">202&nbsp;</td>
-<td style="text-align: left;">Mata Atlântica&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">REBIO Guaribas&nbsp;</td>
-<td style="text-align: left;">196&nbsp;</td>
-<td style="text-align: left;">Mata Atlântica&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ESEC da Terra do Meio&nbsp;</td>
-<td style="text-align: left;">47&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ESEC de Maracá&nbsp;</td>
-<td style="text-align: left;">57&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ESEC do Jari&nbsp;</td>
-<td style="text-align: left;">67&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ESEC Niquiá&nbsp;</td>
-<td style="text-align: left;">60&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ESEC Rio Acre&nbsp;</td>
-<td style="text-align: left;">68&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">FLONA do Jamari&nbsp;</td>
-<td style="text-align: left;">118&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">FLONA do Tapajós&nbsp;</td>
-<td style="text-align: left;">123&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA Campos Amazônicos&nbsp;</td>
-<td style="text-align: left;">284&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA da Amazônia&nbsp;</td>
-<td style="text-align: left;">136&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA da Serra do Divisor&nbsp;</td>
-<td style="text-align: left;">149&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA da Serra do Pardo&nbsp;</td>
-<td style="text-align: left;">151&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA de Pacaás Novos&nbsp;</td>
-<td style="text-align: left;">163&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA do Cabo Orange&nbsp;</td>
-<td style="text-align: left;">169&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA do Jaú&nbsp;</td>
-<td style="text-align: left;">173&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA do Juruena&nbsp;</td>
-<td style="text-align: left;">281&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA do Monte Roraima&nbsp;</td>
-<td style="text-align: left;">174&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA Nascentes do Lago Jari&nbsp;</td>
-<td style="text-align: left;">1626&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA do Viruá&nbsp;</td>
-<td style="text-align: left;">179&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA Mapinguari&nbsp;</td>
-<td style="text-align: left;">1633&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA Montanhas do Tumucumaque&nbsp;</td>
-<td style="text-align: left;">187&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PARNA Serra da Cutia&nbsp;</td>
-<td style="text-align: left;">188&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PARNA Serra da Mocidade&nbsp;</td>
-<td style="text-align: left;">189&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">REBIO do Gurupi&nbsp;</td>
-<td style="text-align: left;">207&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">REBIO do Jaru&nbsp;</td>
-<td style="text-align: left;">208&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">REBIO do Tapirapé&nbsp;</td>
-<td style="text-align: left;">´211&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">REBIO do Uatumã&nbsp;</td>
-<td style="text-align: left;">213&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX Arapixi&nbsp;</td>
-<td style="text-align: left;">285&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX Barreiro das Antas&nbsp;</td>
-<td style="text-align: left;">221&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX Chico Mendes&nbsp;</td>
-<td style="text-align: left;">222&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX do Alto Tarauacá&nbsp;</td>
-<td style="text-align: left;">274&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX do Cazumbá-Iracema&nbsp;</td>
-<td style="text-align: left;">232&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">P, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX do Lago do Capanã Grande&nbsp;</td>
-<td style="text-align: left;">242&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX do Rio Cautário&nbsp;</td>
-<td style="text-align: left;">238&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX Ipaú-Anilzinho&nbsp;</td>
-<td style="text-align: left;">241&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX Renascer&nbsp;</td>
-<td style="text-align: left;">1810&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX Rio Iriri&nbsp;</td>
-<td style="text-align: left;">280&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX Rio Ouro Preto&nbsp;</td>
-<td style="text-align: left;">256&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX Riozinho da Liberdade&nbsp;</td>
-<td style="text-align: left;">257&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX Riozinho do Anfrízio&nbsp;</td>
-<td style="text-align: left;">258&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RESEX Tapajós-Arapiuns&nbsp;</td>
-<td style="text-align: left;">259&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-<td style="text-align: left;">B, M/A&nbsp;</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">REBIO do Rio Trombetas&nbsp;</td>
-<td style="text-align: left;">210&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">M/A&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">RESEX Verde Para Sempre&nbsp;</td>
-<td style="text-align: left;">260&nbsp;</td>
-<td style="text-align: left;">Amazônia&nbsp;</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">P, B, M/A&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-
-</div>
-</div>
-</div>
-<p><br></p>
-<p>Para detalhes da implementação dos diferentes protocolos por UC ao longo dos anos veja Apêndice B (verificar com os pontos focais a viabilidade de apresentação desses dados!).</p>
+<p>As informações são registradas em ficha de campo ou formulário eletrônico (<em>ODK Collect</em>). As amostragens são realizadas, preferencialmente, na estação seca e com um esforço mínimo de 50 km percorridos por ano para cada EA. Os pontos inicial e final de cada transecção são materializados com cano de PVC de pelo menos 40 mm de diâmetro, preenchido de cimento e fixado no solo e suas coordenadas registradas em banco de dados. Sempre que possível, também são anotadas as coordenadas a cada 50 m (onde há plaquetas numeradas) ou realizado o rastreamento (<em>tracking</em>) da trilha.</p>
+<p>Um das métricas para este indicador é a taxa relativa de abundância, expressa em encontros ou visualizações a cada 10 km percorridos.</p>
+<p>O presente relatório tem como objetivo analisar os resultados do módulo básico dos alvos globais do Componente Florestal do Programa Monitora, mas este capítulo abordará também dados de implementação dos protocolos avançados.</p>
 <p><br></p>
 </section>
 </section>
-<section id="resultados-da-implementação" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="resultados-da-implementação"><span class="header-section-number">2.2</span> Resultados da implementação</h2>
-<p>Nos capítulos seguintes (3, 4 e 5) são apresentados resultados gerais obtidos com a implementação do Componente Florestal do Programa Monitora no período de 2014 a 2022, organizados por alvo e segmentados por biomas, além de informações sobre um algumas espécies ameaçadas. Quando pertinente, resultados parciais e particularidades de algumas unidades de conservação foram também destacadas. Por sua vez, tendo em vista o caráter geral desse relatório, informações complementares e resultados específicos por alvo para cada unidade de conservação serão apresentados futuramente numa <a href="https://argofix.shinyapps.io/teste_shp/">plataforma <em>on-line</em> interativa</a> atualmente em desenvolvimento. No capítulo 6 são discutidos alguns padrões de respostas congruentes entre os alvos e suas potenciais correlações.</p>
+<section id="esforço-de-implementação" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="esforço-de-implementação"><span class="header-section-number">2.2</span> Esforço de implementação</h2>
+<p><br></p>
+<p>Em 2013, após finalizada a elaboração dos protocolos dos quatro alvos globais do componente Florestal, foi proposto um projeto piloto com objetivo de avaliá-los em campo e aprimorá-los. Foram escolhidas 18 UCs, em três biomas:</p>
+<ul>
+<li><p><strong>Amazônia</strong>: PARNA Montanhas do Tumucumaque (AP), PARNA do Cabo Orange (AP), PARNA do Juruena (MT), RESEX do Cazumbá-Iracema (AC), FLONA Jamari (RO) e REBIO do Uatumã (AM).</p></li>
+<li><p><strong>Cerrado</strong>: PARNA de Brasília (DF), PARNA da Chapada dos Veadeiros (GO), PARNA da Serra do Cipó (MG), PARNA da Serra da Bodoquena (MS), PARNA da Chapada dos Guimarães (MT) e ESEC da Serra Geral do Tocantins (TO).</p></li>
+<li><p><strong>Mata Atlântica</strong>: PARNA da Serra dos Órgãos (RJ), PARNA da Bocaina (RJ/SP), PARNA do Iguaçu (PR), PARNA do Superagui (PR), REBIO de Una (BA) e REBIO Guaribas (PB).</p></li>
+</ul>
+<p>As capacitações para a implementação dos protocolos no projeto piloto ocorreram em 2013 e 2014, com as coletas de dados iniciando em 2014 e 2015. O Programa contou com a participação de dezessete das 18 UCs piloto nos dois anos iniciais, que se mantiveram coletando dados (em operação) nesse período.</p>
+<p>Com a adoção dos protocolos de monitoramento do Programa Monitora pelo programa ARPA em 2016, o número de UCs participantes ampliou-se substancialmente. Isso demandou um grande esforço da COMOB para a capacitação de pontos focais e auxílio técnico para elaboração do desenho amostral e seleção dos locais das EAs. Esse esforço resultou em um aumento gradual na adesão de novas UCs ao Programa nos anos seguintes, tendo-se alcançado 47 UCs em operação em 2019.</p>
+<p>Em 2020, devido à pandemia de Covid-19, houve uma queda de quase 50% no número anual de UCs e EAs em operação. Contudo, em 2021 ocorreu uma recuperação e o número de novas UCs no Monitora voltou a crescer em 2022, ultrapassando o patamar de 2019 (<a href="#fig-implementacao-geral" class="quarto-xref">Figura&nbsp;<span>2.6</span></a>).</p>
+<p>A RESEX do Cazumbá-Iracema foi a primeira UC consolidada, tendo alcançado em 2016 três EAs com amostragens de todos os alvos globais. O número de UCs consolidadas cresceu consideravelmente nos dois anos seguintes, chegando a 18 em 2019. De 2020 a 2022, o aumento no número de UCs consolidadas foi mais lento, influenciado pela pandemia, com 24 UCs em 2022 (<a href="#fig-implementacao-geral" class="quarto-xref">Figura&nbsp;<span>2.6</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-implementacao-geral" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-implementacao-geral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_implementacao_geral.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-implementacao-geral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.6: Status de implementação do Programa Monitora (componente Florestal) de 2014 a 2022. Totais anuais e acumulados referentes ao número de UCs integrando o Programa, número de UCs consolidadas e número de Estações Amostrais (EAs)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>A pandemia de Covid-19 afetou negativamente o monitoramento de todos os alvos no ano de 2020, tanto impedindo a implementação prevista do Programa em algumas UCs quanto interrompendo o esforço amostral em algumas UCs que já haviam iniciado sua implementação, implicando também a desmobilização das equipes de campo.</p>
+<p>Nos próximos anos espera-se um aumento no número de novas EAs e UAs em operação, diminuindo a diferença entre os números anuais e acumulados de EAs e UAs. Isso deve também influenciar no número de UCs consolidadas, que deve aumentar. Além disso, com a adesão de todas as UCs com vocação de monitoramento em ambientes florestais do programa ARPA, atualmente o principal financiador do Programa Monitora na Amazônia, prevê-se uma diminuição da entrada de novas UCs no componente Florestal do Programa nos próximos anos.</p>
+<p>No período de 2014 a 2022, 56 UCs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> contaram com amostragens de pelo menos um dos alvos globais, sendo que 41 delas (73%) também participam do programa ARPA. Essas 56 UCs distribuem-se em 18 unidades da federação e três biomas. Destas, 44 (78,6%) estão no bioma amazônico, seis (10,7%) na Mata atlântica e seis (10,7%) no Cerrado. Em relação aos grupos e categorias de UCs, 18 são de uso sustentável e todas estão localizadas no bioma Amazônia (15 RESEXs e três FLONAs), e as demais 38 são de proteção integral, sendo 23 PARNAs, oito ESECs e sete REBIOs (<a href="#tbl-ucs-florestal-geral" class="quarto-xref">Tabela&nbsp;<span>2.1</span></a> e <a href="#fig-mapa-ucs-florestal" class="quarto-xref">Figura&nbsp;<span>2.7</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-mapa-ucs-florestal" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mapa-ucs-florestal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_mapa_ucs_florestal.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mapa-ucs-florestal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.7: Mapa com as unidades de conservação do Programa Monitora – componente Florestal, período de 2014 a 2022.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>De 2014 a 2022, 152 EAs e 789 UAs entraram em operação no Programa Monitora. A maior parte das EAs (109) e das UAs (702) foi implementada no bioma Amazônia, seguido pela Mata Atlântica (23 EAs e 50 UAs) e pelo Cerrado (20 EAs e 37 UAs (<a href="#tbl-ucs-florestal-geral" class="quarto-xref">Tabela&nbsp;<span>2.1</span></a>). Vale lembrar que cada EA possui apenas uma UA de mastoaves e no mínimo, uma UA de plantas e quatro de borboletas.</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ucs-florestal-geral" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ucs-florestal-geral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.1: Número de UCs do Programa Monitora, por grupo e categoria e o número de EAs e UAs em operação, por bioma, de 2014 a 2022.
+</figcaption>
+<div aria-describedby="tbl-ucs-florestal-geral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_ucs_florestal_geral.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>O maior número de UCs em operação na Amazônia em relação aos outros biomas se explica principalmente pela adoção dos protocolos do Programa Monitora pelo ARPA. Além da limitação financeira que o Cerrado e a Mata Atlântica enfrentam para implementar o Programa, há também algumas limitações técnicas para implementação das UAs de mastoaves e plantas, como a escassez de longas áreas florestais contínuas e relevo acentuado. No entanto, adequações nos protocolos estão sendo pensadas para superar esses desafios e, portanto, espera-se que nos próximos anos o número de UCs aumente nesses biomas.</p>
+<p>Ao todo, 152 estações amostrais do componente Florestal foram implementadas em 56 UCs participantes do Programa Monitora de 2014 a 2022. Dessas 56 UCs, 21 (37,5%) contam com uma ou duas EAs e 29 (51%) com três EAs. As 5 UCs restantes possuem de 4 ou mais EAs, com destaque para a RESEX Tapajós-Arapiuns, com nove EAs e 47 UAs (<a href="#tbl-eas-florestal-geral" class="quarto-xref">Tabela&nbsp;<span>2.2</span></a>).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-eas-florestal-geral" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eas-florestal-geral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.2: Número de estações e unidades amostrais (EA &amp; UA) em operação no componente Florestal do Programa Monitora, durante o período de 2013 a 2022.
+</figcaption>
+<div aria-describedby="tbl-eas-florestal-geral-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_eas_florestal_geral.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>De 2014 a 2022, 35 UCs (62,5%) enfrentaram interrupções nas amostragens, seja em algum momento ou para algum alvo. Essas interrupções foram causadas principalmente pela pandemia de Covid-19 em 2020 e 2021, mas também ocorreram devido a problemas logísticos, equívocos na instalação dos protocolos, invasões e conflitos nas UCs (APÊNDICE A). Vale ressaltar que duas UCs, a ESEC Alto Maués e o PARNA do Monte Roraima, executam a estratégia de “expedição” para o monitoramento, na qual o intervalo de amostragem dos alvos globais de mastoaves e borboletas pode variar de dois a cinco anos, mas todas as amostragens são realizadas também com os protocolos avançados. Nesses casos, pode passar a impressão errônea de que o monitoramento nessas UCs está parado, embora esteja em operação (APÊNDICE A).</p>
+<p>Em 2022, a RESEX Renascer foi a única UC considerada como parada, devido à ausência da amostragem nesse ano. Outras quatro UCs permaneceram com status de “interrompidas”, pois não realizaram coleta de dados por pelo menos dois anos consecutivo: REBIO Guaribas (6 anos), PARNA da Serra da Bocaina (4 anos), REBIO do Rio Trombetas (3 anos) e RESEX Chico Mendes (3 anos). Sete UCs retornaram ao Programa em 2022, após estarem paradas em 2021 ou interrompidas: ESEC da Terra do Meio, ESEC de Maracá, PARNA da Serra da Bodoquena, PARNA da Serra do Pardo, PARNA Nascentes do Lago Jari, REBIO Gurupi e RESEX Riozinho do Anfrísio. Além disso, seis novas UCs foram incorporadas ao Programa em 2022: ESEC de Pirapitinga (2 EAs), ESEC do Jari (3 EAs), FLONA de Carajás (1 EA), FLONA de Tapajós (3 EAs), REBIO Una (1 EA) e RESEC Verde para Sempre (2 EAs) (APÊNDICE A).</p>
+<p>Das 56 UCs em operação no período de 2014-22, em apenas 24 (42,8%) estão consolidadas. Dessas, 21 aplicam algum protocolo avançado, todas localizadas na Amazônia. A maioria das UCs em operação (45, 80,3%), incluindo diversas ainda não consolidadas, aumentou a complexidade do monitoramento, implementando pelo menos um protocolo do módulo avançado para algum alvo de monitoramento. Esse cenário se deve à maior viabilidade de execução do protocolo avançado de borboletas, que pode utilizar o registro fotográfico dos indivíduos para a identificação das espécies, e às parcerias com o Jardim Botânico do Rio de Janeiro (JBRJ) e a Empresa Brasileira de Pesquisa Agropecuária (Embrapa) para execução do protocolo avançado de plantas. Em muitos casos, é mais viável realizar o monitoramento do protocolo avançado do que abrir e manter uma nova estação amostral. Apenas nove UCs encontram-se não consolidadas e sem aplicação de ao menos um protocolo do módulo avançado, e apenas três UCs consolidadas ainda não implementaram algum desses protocolos (APÊNDICE A e <a href="#fig-ucs-consolidadas-florestal" class="quarto-xref">Figura&nbsp;<span>2.8</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ucs-consolidadas-florestal" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ucs-consolidadas-florestal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_mapa_ucs_consolidadas_florestal.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ucs-consolidadas-florestal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.8: Mapa com as UCs consolidadas ou com aplicação de módulo avançado do Programa Monitora – componente Florestal, período de 2014 a 2022.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ucs-componente-florestal" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ucs-componente-florestal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.3: Relação das UCs com alvos globais do componente Florestal (M/A = Mamíferos e Aves de médio a grande porte; P = Plantas arbóreas e arborescentes, B = Borboletas frugívoras) monitorados durante o período de 2014 a 2022, com a sinalização do ano que a UC alcançou de consolidação (c) no Programa Monitora.
+</figcaption>
+<div aria-describedby="tbl-ucs-componente-florestal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_ucs_florestal_geral.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Dentre as 56 UCs com amostragens nesse período, 52 amostraram mastoaves, 50 borboletas e 46 plantas. Quatro UCs amostraram apenas um alvo: a REBIO do Rio Trombetas amostrou mastoaves, enquanto a ESEC Alto Maues, a FLONA de Carajás e a RESEX Ituxi amostraram apenas plantas.</p>
+<p>Quanto aos três alvos complementares do componente Florestal, oito UCs executaram os protocolos específicos: RESEX Tapajós-Arapiuns aplicou o protocolo de caça de subsistência (alvo espécies cinegéticas), FLONA Jamari o protocolo de manejo florestal (alvo mamíferos de médio e grande porte e aves cinegéticas terrícolas) e seis UCs aplicaram o protocolo da Castanha-da-Amazônia (dados não consolidados e nem validados).</p>
+<p>Quatro UCs realizaram amostragens contínuas dos alvos globais durante esses nove anos iniciais de monitoramento, embora com variações no número de alvos e de estações amostrais: FLONA do Jamari, PARNA do Jaú, REBIO do Uatumã, RESEX do Cazumbá-Iracema e RESEX Tapajós-Arapiuns. Além disso, 18 UCs amostraram por seis a oito anos, com destaque para EESEC de Niquiá (7 anos), PARNA da Serra da Cutia (7 anos), PARNA da Serra da Mocidade (7 anos), PARNA do Cabo Orange (7 anos), PARNA da Amazônia (6 anos), PARNA Mapinguari (6 anos), REBIO do Jaru (6 anos), RESEX Barreiro das Antas (6 anos), RESEX do Alto Tarauacá (6 anos), todas com monitoramento contínuo sem interrupções (APÊNDICE A).</p>
+<p>Os dados de implementação apresentados a seguir compreendem o esforço amostral das 56 UCs, realizado no período de 2014 a 2022, diferentemente dos capítulos alvo-específicos, que foram produzidos a partir das análises dos dados entregues até maio de 2023. Logo, eventuais discrepâncias no número de EAs, UAs ou registros se explicam por este fato.</p>
+<p><br></p>
+<section id="alvo-global-plantas-arbóreas-e-arborescentes" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="alvo-global-plantas-arbóreas-e-arborescentes"><span class="header-section-number">2.2.1</span> Alvo global plantas arbóreas e arborescentes</h3>
+<p><br></p>
+<p>O início da implantação de UAs de plantas foi bastante promissor, com amostragem realizada em 10 unidades de conservação já no primeiro ano de monitoramento (2014). Porém, nos dois anos subsequentes observou-se uma queda na adesão de novas UCs ao Programa. A partir de 2017, especialmente devido à parceria com o JBRJ, NYBG e a Embrapa, para aplicação do protocolo avançado, houve um aumento significativo na amostragem de plantas, particularmente no número de cruzes de malta (UAs) implementadas. Importante ressaltar também a execução dos cursos de capacitação no protocolo avançado de plantas (parceria COMOB, JBRJ, NYBG, UFPR e IBAMA), que sempre é consorciado com as amostragens do avançado. No entanto, a pandemia de Covid-19 interrompeu esse crescimento, que praticamente estagnou durante o período crítico da crise sanitária. Com a retomada gradual das atividades e já em 2022, os números voltaram a alcançar os patamares observados antes da pandemia (<a href="#fig-status-plantas" class="quarto-xref">Figura&nbsp;<span>2.9</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-status-plantas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-status-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_imp_ucs_plantas.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-status-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.9: Status de implementação do Programa Monitora (componente Florestal) de 2014 a 2022. Totais anuais e acumulados referentes ao número de UCs e número de UAs consolidadas relativas ao alvo plantas arbóreas e arborescentes.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Como no Programa Monitora a implantação das UAs dos alvos pode ser realizada de forma gradativa, as UCs optaram por uma abordagem mais cautelosa para o alvo “plantas” nos primeiros anos do Programa, distribuindo a implantação das cruzes de malta ao longo do tempo (instalação de uma ou duas UAs por ano). Entretanto, a partir de 2017, com o início da aplicação do módulo avançado, as UCs passaram a focar na consolidação das amostragens, implantando as três UAs e aproveitando as atividades desse protocolo para acelerar o processo de monitoramento (<a href="#fig-status-plantas-avancado" class="quarto-xref">Figura&nbsp;<span>2.10</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-status-plantas-avancado" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-status-plantas-avancado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_imp_ucs_plantas_avancado.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-status-plantas-avancado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.10: Status de implementação do Programa Monitora (componente Florestal) de 2014 a 2022. Totais anuais e acumulados referentes ao número de UCs e número de UCs com protocolo avançado implementado relativas ao alvo plantas arbóreas e arborescentes.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>De 2014 a 2022, foram registradas 46 UCs federais em operação para o alvo plantas arbóreas e arborescentes, distribuídas em 16 unidades da federação. Destas UCs, 36 (78%) são apoiadas pelo Programa ARPA e 26 (56,5%) já realizaram amostragens relativas ao módulo avançado de plantas, embora parte dos dados ainda aguarde validação (APÊNDICE B).</p>
+<p>A Amazônia é o bioma com o maior número de UCs monitorando plantas (37 unidades, das quais apenas uma não é financiada pelo Programa ARPA. Em seguida, está o Cerrado com seis UCs e a Mata Atlântica com três. Em relação ao grupo e categorias de manejo, 13 UCs são de uso sustentável, sendo 11 RESEX e duas FLONAs, todas na Amazônia, e 33 de proteção integral, 22 PARNAs (15 na Amazônia, quatro no Cerrado e três na Mata Atlântica), sete ESECs (cinco na Amazônia e duas no Cerrado) e quatro REBIOs (todas na Amazônia).</p>
+<p>No total, o Programa Monitora já possui 110 UAs de plantas (cruzes da malta) em operação: 96 no bioma Amazônico, seis no Cerrado e três na Mata Atlântica (<a href="#tbl-ucs-plantas" class="quarto-xref">Tabela&nbsp;<span>2.4</span></a>).</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ucs-plantas" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ucs-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.4: Número de unidades de conservação com amostragens do alvo plantas arbóreas e arborescentes de 2014 a 2022, em relação ao grupo, categoria e ao número de EA/UA por bioma.
+</figcaption>
+<div aria-describedby="tbl-ucs-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_imp_ucs_plantas.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>A maior parte das UCs (26, 56,5%) que monitoram plantas possuem três ou mais UAs em operação e são consideradas consolidadas em relação a esse alvo. Como nenhuma UC implantou mais de uma cruz de malta por EA, o número de EAs é igual ao número de UAs por UC. As UCs com maior número de UAs são a REBIO do Jaru, com quatro UAs e o PARNA Mapinguari, com seis cruzes de malta em operação (<a href="#tbl-eas-plantas" class="quarto-xref">Tabela&nbsp;<span>2.5</span></a>).</p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-eas-plantas" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eas-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.5: Números de UCs, EAs e UAs com monitoramento de plantas arbóreas e arborescentes em operação no Programa Monitora – componente Florestal, de 2014 a 2022.
+</figcaption>
+<div aria-describedby="tbl-eas-plantas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_imp_eas_plantas.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Em dezesseis UCs já foram realizadas remedições de UAs com periodicidade de cinco ou quatro anos, e em alguns casos, excepcionalmente, de três anos. Seis aprestaram três ou mais UAs: REBIO do Jaru (4 UAs), PARNA do Juruena (3 UAs), PARNA Montanhas do Tumucumaque (3 UAs), RESEX do Cazumbá-Iracema (3 UAs), Parna do Jaú (3 UAs) e RESEX do Rio Ouro Preto (2 UAs) e três UCs possuem duas UAs em operação: PARNA da Serra da Bodoquena, ESEC da Serra Geral do Tocantins e PARNA da Serra dos Órgãos. As outras sete UCs que também já passaram por remedições, mas possuem apenas uma UA: PARNA da Serra do Cipó, PARNA de Brasília, ESEC Niquiá, PARNA Serra da Mocidade<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, PARNA do Superagui, PARNA da Serra da Cutia e PARNA Mapinguari. O PARNA do Jaú e a Resex do Rio Ouro Preto, apesar terem efetuados amostragens em 3 UAs, como ainda apresentam dados incompletos ou foram entregues fora do prazo, não foram incluídos na análise (APÊNDICE B).</p>
+<p>Em 2022, cinco novas UCs entraram em operação com o monitoramento do alvo plantas: ESEC Pirapitinga (1 UA), ESEC Jari (3 UAs), PARNA da Serra do Pardo (2 UAs), RESEX Verde para Sempre (2 UAs) e FLONA Carajás (1 UA). Além disso, oito UCs estavam com as remedições atrasadas. Seis dessas UCs apresentavam atraso de um ano: FLONA Jamari (3 UAs), PARNA do Cabo Orange (3 UAs), PARNA do Superagui (1 UA), REBIO do Tapirapé (3 UAs), REBIO do Uatumã (3 UAs) e REBIO do Gurupi (2 UAS). Outras duas apresentaram atrasos maiores e foram consideradas como “interrompidas” para esse alvo: ESEC da Terra do Meio, com dois anos e o PARNA da Serra da Bocaina, com quatro anos de atraso (APÊNDICE B).</p>
+<p>Algumas UCs no Cerrado, devido à ausência de ambientes florestais, incialmente implantaram as cruzes de malta em áreas savânicas, como no PARNA de Brasília (cerrado <em>sensu stricto</em>), na ESEC da Serra Geral do Tocantins (campo cerrado) e no PARNA da Chapada dos Veadeiros (cerrado <em>sensu stricto</em>). Por isso, foi necessário adaptar a amostragem, realizando as medições de circunferência a 30 cm do solo (CAS). Com a estruturação do componente de áreas abertas (Campestre e Savânico), o monitoramento da vegetação nesses ambientes passou a ser realizado com o protocolo específico para essas formações. No entanto, decidiu-se por continuar o monitoramento das cruzes de malta já estabelecidas, uma vez que essas já contavam com amostragens de remedição e com a aplicação do protocolo avançado, em parceria com a Embrapa. A partir de agora (2022), novas cruzes de malta serão implantadas apenas em áreas florestais, como matas de galeria e cerradão, com algumas adaptações no protocolo.</p>
 <p><br></p>
 </section>
-<section id="referências" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="referências"><span class="header-section-number">2.3</span> Referências</h2>
+<section id="alvo-global-borboletas-frugívoras" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="alvo-global-borboletas-frugívoras"><span class="header-section-number">2.2.2</span> Alvo global borboletas frugívoras</h3>
+<p><br></p>
+<p>A implantação do alvo borboletas frugívoras foi lenta nos dois primeiros anos de monitoramento (2014-16), mas cresceu substancialmente nos anos seguintes, especialmente a partir de 2018, com um aumento no número de EAs e, consequentemente, no número de UCs com monitoramento consolidado nesse alvo. No entanto, houve uma queda brusca em 2020 devido a pandemia de Covid-19, que coincidiu com a época de amostragem de borboletas da maioria das UCs (final do segundo semestre), resultando na coleta de dados em apenas ¼ das UCs com monitoramento de borboletas já em operação. Nos anos seguintes, a recuperação foi gradual, mas tendo já superado os números pré-pandemia em 2022 (<a href="#fig-ucs-borboletas" class="quarto-xref">Figura&nbsp;<span>2.11</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ucs-borboletas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ucs-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_imp_ucs_borboletas.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ucs-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.11: Progressão do número de UCs e EAs em operação com o alvo borboletas frugívoras e UCs consolidadas de 2014 a 2022.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>O mesmo padrão foi observado na progressão do número de UAs. Houve um aumento expressivo nos seis primeiros anos (2014 a 2019), com o número de UAs praticamente dobrando a cada ano, seguido por uma queda acentuada em 2020 devido à pandemia, com a coleta de dados em praticamente apenas ¼ das UAs implantadas até 2019. Entretanto, em 2021 as atividades foram retomadas na maioria das UCs que já estavam coletando antes da pandemia, totalizando 443 UAs e com retomada do crescimento em 2022, com a implantação de 96 novas UAs (<a href="#fig-uas-borboletas" class="quarto-xref">Figura&nbsp;<span>2.12</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-uas-borboletas" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uas-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_imp_uas_borboletas.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uas-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.12: Progressão do número de UAs em operação com o alvo borboletas frugívoras de 2014 a 2022.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>O protocolo básico de amostragem de borboletas frugívoras, com identificação taxonômica no nível de tribo, foi aplicado de 2014 a 2022 em 50 UCs, em 17 unidades da federação. Destas UCs, 37 (74%) são apoiadas pelo Programa ARPA e 31 (62%) já aplicaram o protocolo avançado de borboletas, embora, parte dos dados ainda aguarde validação (APÊNDICE C).</p>
+<p>A maioria dessas UCs (34) é de proteção integral, distribuídas em três categorias (ESEC, PARNA e REBIO) e representando mais que o dobro das UCs de uso sustentável (16), que pertencem a apenas duas categorias (RESEX e FLONA). A categoria mais representada foi PARNA, com 22 UCs, seguida pelas RESEX, com 14 UCs. A maior parte das UCs em operação (39, 78%) localiza-se no bioma Amazônia, seis UCs (12%) estão na Mata Atlântica e cinco UCs (10%) no Cerrado, totalizando 134 EAs e 539 UAs (transecções com quatro armadilhas atrativas do tipo <em>Van Someren-Rydon</em>). Consequentemente, a maior parte EAs e UAs também está na Amazônia, com 117 EAs e 471 UAs (<a href="#tbl-ucs-borboletas" class="quarto-xref">Tabela&nbsp;<span>2.6</span></a>).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ucs-borboletas" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ucs-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.6: Número de unidades de conservação com amostragens do alvo borboletas frugívoras de 2014 a 2022, em relação ao grupo, categoria e ao número de EA/UA por bioma.
+</figcaption>
+<div aria-describedby="tbl-ucs-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_imp_ucs_borboletas.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Das 50 UCs que participaram do Programa Monitora aplicando o protocolo básico de borboletas frugívoras de 2014 a 2022, 19 implementaram apenas uma ou duas EAs, totalizando 29 EAs e 116 UAs. Das 31 UCs restantes, já consolidadas em relação a esse alvo, a maioria (26) implementou três EAs, somando 78 EAs e 315 UAs. A RESEX Tapajós-Arapiuns é a unidade de conservação com o maior número de EAs e UAs implementadas (nove e 36, respectivamente) – (Tabela 6).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-eas-borboletas" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eas-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.7: Números de UCs, EAs e UAs com monitoramento de borboletas frugívoras em operação no Programa Monitora – componente Florestal, de 2014 a 2022.
+</figcaption>
+<div aria-describedby="tbl-eas-borboletas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_imp_eas_borboletas.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Das 50 UCs com o monitoramento do alvo borboletas em operação, somente 13 (26%) amostraram por cinco ou mais anos consecutivos: ESEC de Niquiá, PARNA da Amazônia, PARNA do Jaú, PARNA do Viruá, PARNA Mapinguari, RESEX Tapajós-Arapiuns e RESEX Barreiro das Antas (5 anos), PARNA Serra da Bodoquena, PARNA Serra da Cutia e PARNA da Serra da Mocidade (6 anos), PARNA do Jaru (7 anos) e FLONA de Jamari e REBIO do Uatumã (9 anos). Esse cenário se deve, principalmente, ao impacto da pandemia de Covid-19 sobre as amostragens. Somente seis UCs amostraram em três EAs: PARNA da Amazônia, PARNA Serra da Cutia, PARNA de Pacaás Novos, PARNA Mapinguari, RESEX Barreiro das Antas e REBIO do Uatumã, sendo a última a única com nove anos de amostragem (APÊNDICE C).</p>
+<p>Cabe destacar que 31 UCs (62%) já aplicaram o protocolo avançado de borboletas frugívoras, isto é, amostragens com a identificação taxonômica em nível de espécie ou gênero. A identificação é feita com auxílio de especialistas em campo, por meio da coleta de indivíduos para posterior identificação em coleção científica ou pelo registro fotográfico (foto ventral e dorsal de pelo menos 80% dos indivíduos capturados, excetuando-se as recapturas. Entretanto, como ainda não foi possível efetuar a validação de todos os registros por meio da identificação das fotos, ainda não temos o número final de UCs aplicando o módulo avançado (APÊNDICE C).</p>
+<p>Em 2022, sete novas UCs iniciaram o monitoramento do alvo borboletas frugívoras: ESEC Pirapitinga (1 UA), ESEC do Jari (3 UAs), ESEC Rio Acre (1 EA), FLONA Tapajós (3 EAs), RESEX Nascentes do Lago Jari (3 EAs), REBIO Una (1 EA) e RESEX Verde para Sempre (2 EAs) e cinco retomaram as amostragens (ESEC da Terra do Meio/RESEX Rio Iriri, ESEC de Maracá, PARNA de Brasília, PARNA do Superagui e RESEX Riozinho do Anfrísio. Em apenas uma não houve amostragem (parada), RESEX Renascer, e seis permaneceram como interrompidas (há pelo menos 2 anos consecutivos sem coleta de dados): PARNA da Serra da Bocaina (6 anos), REBIO Guariba (6 anos), PARNA da Serra da Bodoquena (3 anos), PARNA da Serra dos Órgãos (3 anos), PARNA do Juruena (3 anos) e RESEX Chico Mendes (3 anos) (APÊNDICE C).</p>
+<p>No bioma Cerrado, as UAs do PARNA de Brasília (1 EA) e do PARNA da Chapada dos Veadeiros (1 EA) foram inicialmente implantadas em área de savana (Campo Cerrado). No PARNA da Chapada dos Veadeiros com apenas uma amostragem validada (2017) e desde então interrompida, decidiu-se pelo cancelamento do monitoramento do alvo borboletas frugívoras no componente Florestal. Entretanto, no PARNA de Brasília, com vários anos de amostragem, inclusive com dados do protocolo avançado, optou-se pela continuidade do monitoramento de borboletas frugívoras em área savânica, mas passará a ser considerado do componente Campestre e Savânico (protocolo em experimentação). A reativação do monitoramento desse alvo no PARNA no componente Florestal será considerada apenas se futuras unidades amostrais forem implementadas em ambientes de floresta do bioma, como Mata de Galeria ou Cerradão (APÊNDICE C).</p>
+<p>Em 2022, iniciaram os testes de um aplicativo Android de código aberto chamado <em>Open Data Kit</em> (ODK), que visa tornar a coleta de dados em campo mais eficiente e confiável, substituindo os tradicionais formulários em papel. O ODK permite armazenar diversos tipos de informação como textos, dados numéricos, coordenadas geográficas, áudio, imagens, vídeo e códigos de barras, sendo projetado para funcionar mesmo sem conectividade à <em>internet</em> (<em>offline</em>) depois de salvos em dispositivos móveis (celulares ou tabletes).</p>
+<p><br></p>
+</section>
+<section id="alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="alvos-globais-mamíferos-terrestres-de-médio-e-grande-porte-e-aves-cinegéticas-terrícolas"><span class="header-section-number">2.2.3</span> Alvos globais mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas</h3>
+<p><br></p>
+<p>No primeiro ano de monitoramento (2014) muitas EA/UAs de mastoaves foram implantadas (20 UAs em 13 UCs). Esse esforço foi praticamente mantido no ano seguinte, aumentando gradativamente até o ano de 2019, quando se alcançou 109 EAs em 43 UCs, sendo 26 consolidadas. No entanto, em 2020, houve uma queda significativa no número de EA/UAs devido à pandemia de Covid-19, que afetou as atividades de campo, com amostragens ocorrendo apenas no bioma amazônico e com 13 UCs a menos do que no ano anterior. Em 2021, o monitoramento voltou praticamente aos patamares pré-pandemia e o crescimento das atividades foi retomado em 2022 (<a href="#fig-ucs-mastoaves" class="quarto-xref">Figura&nbsp;<span>2.13</span></a>).</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ucs-mastoaves" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ucs-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imagens/cap02/fig_imp_ucs_mastoaves.JPG" class="img-fluid figure-img" style="width:90.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ucs-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.13: status de implementação do Programa Monitora (componente Florestal) de 2014 a 2022. Totais anuais e acumulados referentes ao número de UCs, número de UAs, número de UCs consolidadas relativos ao alvo mamíferos terrestres de médio e grande porte e aves cinegética terrícolas.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>O protocolo básico de censo diurno em transecção linear foi aplicado de 2014 a 2022 em 52 UCs, em 17 unidades da federação (39 delas apoiadas pelo Programa Arpa). Das 52 UCs analisadas para esse alvo 15 (13,4%) já aplicaram algum o protocolo do módulo avançado, oito com o protocolo TEAM e uma UC, a REBIO do Gurupi, amostrada pelo protocolo de Ponto por Escuta (APÊNDICE D).</p>
+<p>Das 52 UCs em operação no período, 36 são de proteção integral (especialmente Parques Nacionais, com 22 unidades) e 16 de uso sustentável (destaque para Reservas Extrativistas, com 14 unidades), todas no bioma Amazônico (<a href="#tbl-ucs-mastoaves" class="quarto-xref">Tabela&nbsp;<span>2.8</span></a>).</p>
+<p>A maioria das UCs (41 UCs - 78,8%) situa-se no bioma Amazônia, seis (11,3%) estão na Mata Atlântica e cinco (9,6%) no Cerrado. No total, há 140 EAs/UAs (transecções lineares – trilhas) em operação, a maior parte na Amazônia (125 EAs/UAs). Vale lembrar que no caso do alvo mastoaves só existe uma UA por EA (<a href="#tbl-ucs-mastoaves" class="quarto-xref">Tabela&nbsp;<span>2.8</span></a>).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-ucs-mastoaves" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ucs-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.8: Número de unidades de conservação com amostragens do alvo mamíferos terrestres de médio e grande porte e aves cinegética terrícolas de 2014 a 2022, em relação ao grupo, categoria e ao número de EA/UA por bioma.
+</figcaption>
+<div aria-describedby="tbl-ucs-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_imp_ucs_mastoaves.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Das 52 UCs do Programa Monitora em operação do alvo mastoaves de 2014 a 2022, 19 implementaram apenas uma ou duas EAs, totalizando 29 EAs e 116 UAs. Das 33 UCs restantes (63,5%), já estão consolidadas para esse alvo e a maioria (26 contam com três EAs, somando 81 EAs/UAs. A RESEX Tapajós-Arapiuns é a unidade de conservação com o maior número de EAs/EAs em operação (oito) (<a href="#tbl-eas-mastoaves" class="quarto-xref">Tabela&nbsp;<span>2.9</span></a>).</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div id="tbl-eas-mastoaves" class="cell quarto-float anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-eas-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;2.9: Número de UCs, EAs e UAs com monitoramento de mamíferos terrestres de médio e grande porte e aves cinegéticas terrícolas em operação no Programa Monitora – componente Florestal, de 2014 a 2022.
+</figcaption>
+<div aria-describedby="tbl-eas-mastoaves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/cap02/tab_imp_eas_mastoaves.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" data-fig-pos="H"></p>
+</figure>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Das 52 UCs com monitoramento de mastoaves, 20 (38%) amostraram por cinco ou mais anos consecutivos. Dessas, quatro UCs coletaram dados em todos os anos desde 2014, totalizando nove anos de amostragem contínua: FLONA de Jamari, REBIO do Uatumã, RSEX do Cazumbá-Iracema e RESEX Tapajós Arapiuns. A pandemia de Covid-19 foi a principal causa de interrupção na coleta de dados, resultando na paralização em 2020 do monitoramento em 15 (42%) das 35 UCs, que estavam em operação em 2019 (APÊNDICE D).</p>
+<p>Por fim, em 2022 cinco novas UCs iniciaram o monitoramento de mastoaves: ESEC Pirapitinga (1 UA), ESEC Jari (3 UAs), FLONA Tapajós (3 UAs), REBIO Una (1 UA) e a RESEX Verde para Sempre (2 UA) e sete UCs (13,5%) retomaram as amostragens. Entretanto, duas UCs não coletaram dados nesse ano (paradas): RESEX Renascer e REBIO Gurupi e seis UCs (11,5%) estão inativas, sem amostragens há pelo menos dois anos consecutivos: RESEX Chico Mendes, REBIO Trombetas, PARNA da Serra dos Órgãos, PARNA da Serra do Pardo (3 anos), PARNA da Serra da Bocaina e REBIO Guaribas (6 anos) (APÊNDICE D).</p>
+<p>Em 2022, iniciaram-se os testes de um aplicativo Android de código aberto chamado <em>Open Data Kit</em> (ODK), que visa tornar a coleta de dados em campo mais eficiente e confiável, substituindo os tradicionais formulários em papel. O ODK permite armazenar diversos tipos de informação como textos, dados numéricos, coordenadas geográficas, áudio, imagens, vídeo e códigos de barras, sendo projetado para funcionar mesmo sem conectividade à <em>internet</em> (<em>offline</em>) depois de salvos em dispositivos móveis (celulares ou tabletes).</p>
+<p>As vantagens do uso do ODK para a coleta de dados em campo são significativas e sua utilização pode trazer os seguintes benefícios:</p>
+<p>· Redução de erros: com campos obrigatórios e fechados, o ODK minimiza erros e ausências de preenchimento, garantindo que todos os dados necessários sejam preenchidos corretamente, incluindo registros nulos que são igualmente validos;</p>
+<ul>
+<li><p>Estruturação dos dados: o ODK permite que as informações sejam registradas separadamente de maneira estruturada e detalhada, ao contrário dos formulários de papel, onde algumas informações são registradas conjuntamente no campo “Observações”;</p></li>
+<li><p>Confirmação e registro automático do local da amostragem: a função de registro de coordenadas geográficas no ODK possibilita a confirmação de que amostragem foi efetuada e o registro de onde foi realizada, facilitando a validação e a rastreabilidade dos dados coletados;</p></li>
+<li><p>Transmissão automática dos dados: a capacidade de enviar os dados diretamente para o Sismonitora, assim que se tenha acesso à internet, elimina a etapa de transferência manual para planilha Excel. Este recurso não apenas acelera o processo de atualização dos dados, mas também reduz o risco de erros de transcrição, aumentando a eficiência do fluxo de trabalho;</p></li>
+<li><p>Registro de imagem: a possiblidade de captura de imagem (foto ou vídeo), associando-as diretamente aos registros correspondentes, permite que especialistas revisem e confirmem as informações no Sismonitora. Esse recurso é particularmente valioso no caso do alvo borboletas, pois contribui bastante na implementação do módulo avançado, possibilitando a identificação taxonômica no nível de espécie ou gênero.</p></li>
+</ul>
+<p><br></p>
+</section>
+</section>
+<section id="resultados-da-implentação-do-monitoramento" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="resultados-da-implentação-do-monitoramento"><span class="header-section-number">2.3</span> Resultados da implentação do monitoramento</h2>
+<p><br></p>
+<p>Nos capítulos seguintes (3, 4 e 5) são apresentados alguns resultados gerais do monitoramento de cada um dos alvos globais do componente Florestal nesses nove anos de implementação do Programa Monitora (2014 a 2022). Quando pertinente, particularidades de algumas unidades de conservação ou de espécies ameaçadas são destacadas. Por sua vez, tendo em vista o caráter geral desse documento, informações adicionais detalhadas e resultados específicos por alvo para cada unidade de conservação são apresentados na <a href="https://argofix.shinyapps.io/teste_shp/">plataforma <em>on-line</em> interativa</a>, que complementa esta publicação.</p>
+<p><br></p>
+</section>
+<section id="referências" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="referências"><span class="header-section-number">2.4</span> Referências</h2>
+<p><br></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Costa-Pereira_2013" class="csl-entry" role="listitem">
+Costa-Pereira, R.; F. O. Roque; P. Constantino; J. Sabino &amp; M. Uehara-Prado. 2013. <a href="https:// ">Monitoramento in situ da biodiversidade: Proposta para um sistema brasileiro de monitoramento da biodiversidade</a>. Page. Instituto Chico Mendes de Conservação da Biodiversidade; Brasília, DF.
+</div>
+<div id="ref-IN_2_2022" class="csl-entry" role="listitem">
+ICMBio. 2022. <a href="https://www.gov.br/icmbio/pt-br/acesso-a-informacao/institucional/legislacao/instrucoes-normativas/Instruesnormativas.pdf">Instrução normativa nº 2/2022/GABIN/ICMBIO, de 28 de janeiro de 2022</a>. Diário Oficial da União - DOU.
+</div>
+<div id="ref-Nobre_2014" class="csl-entry" role="listitem">
+Nobre, R. A.; M. R. Kinouchi; P. A. L. Constantino; R. C. Pereira &amp; M. Uehara-Prado. 2014. Monitoramento da biodiversidade: Roteiro metodológico de aplicação. Instituto Chico Mendes de Conservação da Biodiversidade; Brasília, DF.
+</div>
+<div id="ref-Reis_2015" class="csl-entry" role="listitem">
+Reis, M. L.; D. S. L. Raíces; J. F. Martins; R. Sampaio; T. O. Laranjeira &amp; P. A. L. Constantino. 2015. <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio">Guia de identificação de espécies alvo de aves e mamíferos</a>. Instituto Chico Mendes de Conservação da Biodiversidade; Brasília, DF.
+</div>
+<div id="ref-Santos_2015" class="csl-entry" role="listitem">
+Santos, J. P.; A. V. L. Freitas; P. A. L. Constantino &amp; M. Uehara-Prado. 2015. <a href="https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/conteudo/Materiais-de-Apoio">Guia de identificação de tribos de borboletas frugívoras</a>. Instituto Chico Mendes de Conservação da Biodiversidade; Brasília, DF.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Neste relatório os dados da ESEC da Terra do Meio e da RESEX do Rio Iriri foram agrupados e tratados conjuntamente, como uma única unidade de análise (um bloco).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A ESEC Niquiá e o PARNA Serra da Mocidade, apesar de serem, em princípio, consideradas como bloco para amostragem de Campinarana, não foram consideradas assim nesse relatório. <a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

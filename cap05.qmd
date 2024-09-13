@@ -60,7 +60,7 @@ Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíf
 De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 53 UCs federais^[Para efeito de análise, a RESEX do Rio Iriri e a ESEC da Terra do Meio foram tratadas como um bloco, de forma que os dados das duas UCs foram analisados de  forma integrada. Portanto, ao longo desse capítulo os resultados apresentados para a ESEC Terra do Meio na verdade expressam os dados das duas UCs.], totalizando 140 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
 
 
-O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrestres cinegéticas.
+O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrícolas cinegéticas.
 
 
 ```{r pacotes}
@@ -2037,7 +2037,7 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 
 </br>
 
-Verificou-se uma correlação positiva (r = 0,75; P < 0,001) entre as abundâncias (taxas médias de avistamento) de mamíferos e aves nas unidades de conservação amostradas (Figura X). Em termos gerais, esse é um resultado relativamente esperado, visto que o impacto das pressões negativas de origem antrópica deve, em linhas gerais, afetar de forma similar esses dois grupos de vertebrados.  
+Verificou-se uma correlação positiva (r = 0,75; P < 0,001) entre as abundâncias (taxas médias de avistamento) de mamíferos e aves nas unidades de conservação amostradas (Figura X). Esse resultado não surpreende, visto que o impacto das pressões negativas de origem antrópica deve, em linhas gerais, afetar de forma similar esses dois grupos de vertebrados.  
 
 
 ```{r correlacao das taxas de avistamento médias de aves e mamíferos}

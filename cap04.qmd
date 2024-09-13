@@ -73,18 +73,22 @@ Neste capítulo, serão apresentados os resultados gerais da aplicação do prot
 </br>
 
 
+
 Os métodos de amostragem das borboletas frugívoras seguiram o Roteiro Metodológico do Programa Monitora (@Nobre_2014) e uma breve descrição geral dos procedimentos adotados em campo é apresentada no capítulo 2 deste relatório.  
 
-O protocolo amostral básico de borboletas frugívoras (com identificação taxonômica ao nível de tribo - @Nobre_2014) foi aplicado de 2014 a 2022, de forma integral ou parcial, em 50 Unidades de Conservação (UCs) federais, totalizando 134 estações amostrais (EAs) e 536 unidades amostrais (UAs - transecções com quatro armadilhas atrativas do tipo *Van Someren-Rydon*). As EAs são instaladas em áreas acessíveis e de referência nas UCs, onde a vegetação está mais preservada, e distam pelo menos 5 km entre si, de forma que sejam independentes. Já as UAs são espaçadas pelo menos 500 m umas das outras ao longo das trilhas utilizadas para censos de mamíferos e aves. Em cada UA, as armadilhas são dispostas a intervalos de 30-40 m, de forma que não estejam no raio de atração uma da outra. As amostragens são realizadas sempre no período de transição do final da estação chuvosa para o início da estação seca. São feitas duas campanhas amostrais de uma semana em cada estação amostral (EA), espaçadas de duas a quatro semanas para aumentar as chances de amostrar os picos populacionais.  
-
-A maior parte das amostragens (39 UCs, 78%) foi realizada no bioma Amazônico, seis UCs (12%) foram amostradas na Mata Atlântica e cinco UCs (10%) no Cerrado. Até 2022, das 50 UCs federais com coleta de dados de borboletas frugívoras, 31 (62%) estão consolidadas, com pelo menos três EAs e 12 UAs implantadas: ESEC da Terra do Meio, ESEC de Maracá, ESEC do Jari, FLONA de Tapajós, FLONA do Jamari, PARNA da Amazônia, PARNA da Serra da Cutia, PARNA da Serra do Divisor, PARNA de Pacaás Novos, PARNA do Cabo Orange, PARNA do Jaú, PARNA do Juruena, PARNA do Superagui, PARNA dos Campos Amazônicos, PARNA Mapinguari, PARNA Montanhas do Tumucumaque, PARNA Nascentes do Lago Jari, REBIO do Gurupi, REBIO do Jaru, REBIO do Tapirapé, REBIO do Uatumã, RESEX Arapixi, RESEX Barreiro das Antas, RESEX Chico Mendes, RESEX do Alto Tarauacá, RESEX do Cazumbá-Iracema, RESEX do Rio do Cautário, RESEX Renascer, RESEX Rio Ouro Preto, RESEX Riozinho da Liberdade e RESEX Tapajós-Arapiuns (ver **Tabela xx do Cap. 2 para lista completa das UCs**).  
-
-Das 50 UCs participantes, somente 13 (26%) amostraram por cinco ou mais anos consecutivos: ESEC de Niquiá (2017 a 2022), FLONA de Jamari (2014 a 2022), PARNA da Amazônia (2018 a 2022), PARNA Serra da Bodoquena (2014 a 2019), PARNA Serra da Cutia (2017 a 2022), PARNA da Serra da Mocidade (2017 a 2022), PARNA do Jaú (2014 a 2019), PARNA do Viruá (2018 a 2022), PARNA Mapinguari (2018 a 2022), PARNA do Jaru (2016 a 2022), REBIO do Uatumã (2014 a 2021), RESEX Barreiro das Antas (2018 a 2022), RESEX Tapajós-Arapiuns (2015 a 2019). Muitas UCs tiveram sua sequência de amostragem temporal comprometida devido à pandemia de COVID-19 em 2020 e 2021.  
+</br>
 
 
-Conforme mencionado anteriormente (ver Cap. 2), as amostragens de borboleta frugívoras foram paralisadas ou reduzidas no período mais intenso da pandemia de COVID (2020-21). Em 2020, apenas 13 UCs fizeram coletas, porém, somente o PARNA da Amazônia, PARNA Serra da Cutia, PARNA de Pacaás Novos, PARNA Mapinguari, REBIO do Uatumã e RESEX Barreiro das Antas amostraram nas três EAs. Em 2021, as atividades foram retomadas na maioria das UCs que estavam coletando antes da pandemia, totalizando 31 UCs (@fig-evolucao-implementacao e @fig-esforco-amostral).  
 
-Ao longo dos anos, houve uma progressão no número de UCs e EAs amostradas (excluindo o período de 2020-21). Em 2022, a amostragem de borboletas frugívoras ocorreu nos três biomas florestais e foi realizada em 39 das 50 UCs do Componente Florestal do Programa Monitora, quatro a mais do que 2019, enquanto o número de EAs teve um aumento de 18.9%  (@fig-evolucao-implementacao; Apêndice B1). 
+## Resultados
+
+</br>
+
+Após a correção, limpeza e verificação dos dados foram contabilizadas 85.386 borboletas frugívoras capturadas de 2014 a 2022. Desse total, 915 indivíduos (1%) foram registrados como ‘NA’ em sua tribo, sem a chance de verificação por falta de fotografias. Assim, 84.471 indivíduos foram identificados a nível de tribo pelos monitores. Na Amazônia, foram capturados 76.308 indivíduos, no Cerrado 6.378 e na Mata Atlântica 2.700 indivíduos.  
+
+O esforço amostral de borboletas frugívoras vem aumentando desde o início da implementação do Programa Monitora (exceto em 2020). Entre 2014 e 2019, o esforço amostral aumentou linearmente, tendo atingido um total de cerca de 17.152 armadilhas-dia em 2019. Em 2020, ano com maior impacto da pandemia de Covid-19, houve uma queda de 74% em relação ao ano anterior. No entanto, em 2021, o esforço amostral ainda não havia se recuperado totalmente, tendo voltado a crescer apenas em 2022, com um aumento de 15% em relação a 2019 (@fig-evelucao-implementacao).  
+
+De maneira geral, observou-se que o número de indivíduos amostrados acompanhou o esforço amostral, havendo um aumento na abundância de borboletas com o aumento do esforço amostral. Porém, os últimos anos apresentaram uma abundância menor em relação ao esforço (Figura 4.2). Ao todo, foram capturados 85.386 indivíduos de borboletas, com um esforço amostral de 90.320 armadilhas/dia no período de 2014 a 2022 (@fig-evelucao-implementacao). 
 
 
 </br>
@@ -180,12 +184,6 @@ grafico_amostragens
 ```
 </br>
 
-Para verificar se as amostragens de borboletas frugívoras nas UCs da Amazônia seguiram o protocolo de coleta adequadamente, foi elaborado um *script* em R (@RCoreTeam_2021) para validação automatizada das campanhas realizadas. Três regras de validação do protocolo foram aplicadas às EAs em cada campanha: (1) A amostragem ter sido realizada no período do ano correto para a região, (2) terem sido realizados seis dias de amostragem e (3) ter sido respeitado o intervalo mínimo de 14 e máximo de 30 dias entre campanhas. Todos os 846 registros (= uma estação amostral de uma UC por campanha por ano) foram avaliados. Desses, 238 (28%) violaram alguma regra do protocolo. Em apenas um registro (EA-4 do PARNA Mapinguari na segunda campanha de 2022) as três regras foram violadas (**Tabela X no Apêndice X**).  A coleta fora do período indicado para a região correspondeu a 69% das violações. O número correto de dias de amostragem por campanha não foi cumprido em 13% das EAs,  havendo tanto EAs com mais quanto com menos dias de coleta. O intervalo mínimo de 14 dias entre campanhas não foi respeitado em 7% das EAs e o intervalo máximo de 30 dias não foi respeitado em 20% das EAs.  
-
-
-O esforço amostral de borboletas frugívoras vem aumentando desde o início da implementação do Programa Monitora (exceto em 2020). Entre 2014 e 2019, o esforço amostral aumentou linearmente, tendo atingido um total de cerca de 17.152 armadilhas/dia em 2019. Em 2020, ano com maior impacto da pandemia de COVID-19, houve uma queda de 74% em relação ao ano anterior. No entanto, em 2021, o esforço amostral ainda não havia se recuperado totalmente, tendo voltado a crescer apenas em 2022, com um aumento de 15% em relação a 2019 (@fig-esforco-amostral).  
-
-De maneira geral, observou-se que o número de indivíduos amostrados acompanhou o esforço amostral, havendo um aumento na abundância de borboletas com o aumento do esforço amostral. Porém, os últimos anos apresentaram uma abundância menor em relação ao esforço (@fig-esforco-amostral). Ao todo, foram capturados 85.386 indivíduos de borboletas, com um esforço amostral de 90.320 armadilhas/dia no período de 2014 a 2022 (@fig-esforco-amostral). 
 
 
 </br>
@@ -333,23 +331,12 @@ grafico
 </br>
 
 
-A partir de março de 2023, iniciando com o Parque Nacional de Brasília, 8 UCs (16%) adotaram o *Open Data Kit* (ODK), um aplicativo Android de código aberto que possibilita a coleta de dados em campo de forma mais eficiente e confiável, substituindo os formulários em papel. Ele armazena diversos tipos de informação como textos, dados numéricos, coordenadas geográficas, áudio, imagens, vídeo e códigos de barras, sendo projetado para funcionar mesmo sem conectividade à internet. O ODK favorece o registro de armadilhas com zero capturas, informação muitas vezes desconsiderada quando a amostragem é feita com formulários tradicionais. Além disso, só é possível adicionar as fotos das borboletas no sistema quando as coordenadas da unidade amostral de cada UA são registradas, certificando que a coleta foi, de fato, feita no local correto. Com as fotos das borboletas no sistema, especialistas podem identificar os indivíduos em nível de espécie ou morfoespécie, possibilitando a análise dos dados de acordo com o protocolo avançado. Até o momento (13/07/2024), 3.868 registros (indivíduos ou armadilhas sem borboletas capturadas) já foram carregados no sistema.  
-
-
-
-## Resultados
-
-</br>
-
-Após a correção, limpeza e verificação dos dados foram contabilizadas 85.386 borboletas frugívoras capturadas de 2014 a 2022. Desse total, 915 indivíduos (1%) foram registrados como ‘NA’ em sua tribo, sem a chance de verificação por falta de fotografias. Assim, 84.471 indivíduos foram identificados a nível de tribo pelos monitores. Na Amazônia, foram capturados 76.308 indivíduos, no Cerrado 6.378 e na Mata Atlântica 2.700 indivíduos.  
-
-
 ### Regiões climáticas
 
 </br>
 
 
-Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde há alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas e no período seco (@Barlow_2007; @Checa_2009; @Ribeiro_2010). Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (@Marengo_2001; @Monitora_2021). Com base na identificação dos padrões de chuva em cada região, foram definidas seis regiões climáticas que englobam as Unidades de Conservação participantes do Programa Monitora (@fig-regioes-climaticas). As regiões climáticas são: Sudoeste, Central, Leste, Sudeste, Norte e Noroeste. Isso permite determinar o período mais adequado para a amostragem (@tbl-periodos-amostragem), considerando que o regime de chuvas é uma característica regional relevante para as borboletas frugívoras (@Barlow_2007; @Checa_2009). A definição deste período e sua manutenção ao longo do tempo possibilitam que as comparações interanuais sejam feitas considerando as populações mais abundantes daquele período. 
+Os períodos de amostragem propostos no protocolo do Programa Monitora para borboletas frugívoras na Amazônia seguem a mesma lógica aplicada para as regiões Central e Sudeste do Brasil, onde há alta abundância populacional e maior diversidade de espécies de borboletas frugívoras no final do período de chuvas intensas e no período seco (@Barlow_2007; @Checa_2009; @Ribeiro_2010). No entanto, há algumas exceções que precisam ser avaliadas caso a caso. Os períodos de amostragem para as regiões amazônicas apresentados a seguir baseiam-se na caracterização climática associada ao padrão de chuvas em toda a Amazônia (@Marengo_2001; @Monitora_2021). Com base na identificação dos padrões de chuva em cada região, foram definidas seis regiões climáticas que englobam as Unidades de Conservação participantes do Programa Monitora (@fig-regioes-climaticas). As regiões climáticas são: Sudoeste, Central, Leste, Sudeste, Norte e Noroeste. Isso permite determinar o período mais adequado para a amostragem (@tbl-periodos-amostragem), considerando que o regime de chuvas é uma característica regional relevante para as borboletas frugívoras (@Barlow_2007; @Checa_2009). A definição deste período e sua manutenção ao longo do tempo possibilitam que as comparações interanuais sejam feitas considerando as populações mais abundantes daquele período. 
 
 
 </br>
@@ -383,7 +370,7 @@ tab_periodos_amostragem
 </br>
 
 
-O número de UCs e EAs amostradas varia bastante entre as regiões (@fig-regioes-climaticas). Atualmente, nenhuma UC da região Noroeste da Amazônia participa do Programa Monitora aplicando o protocolo de borboletas frugívoras. No entanto, seria de extrema importância implementar esse protocolo em pelo menos três UCs nessa região: ESEC Juami-Japurá, PARNA do Pico da Neblina e RESEX Auatí-Paraná. Outra região climática em que se faz necessária a inclusão de mais UCs para o protocolo de borboletas frugívoras é a sudeste amazônica. Esta região é de extrema importância por abrigar uma rica diversidade de espécies e estar constantemente ameaçada pelo agronegócio e mineração. Sugere-se a inclusão da ESEC Iquê, REBIO Nascentes da Serra do Cachimbo, FLONA Jamanxim, PARNA Rio Novo e FLONA de Carajás. Além dessas regiões, é importante também a inclusão de UCs mais ao norte da região climática sudoeste. Assim, sugere-se a inclusão de UCs no médio e baixo rio Juruá, como as RESEX Médio Juruá, Baixo Juruá e FLONA de Tefé. 
+O número de UCs e EAs amostradas varia bastante entre as regiões (@fig-regioes-climaticas). Atualmente, nenhuma UC da região Noroeste da Amazônia participa do Programa Monitora aplicando o protocolo de borboletas frugívoras. No entanto, seria de extrema importância implementar esse protocolo em pelo menos três UCs nessa região: ESEC Juami-Japurá, PARNA do Pico da Neblina e RESEX Auatí-Paraná. Outra região climática em que se faz necessária a inclusão de mais UCs para o protocolo de borboletas frugívoras é a sudeste amazônica. Esta região é de extrema importância por abrigar uma rica diversidade de espécies e estar constantemente ameaçada pelo agronegócio e mineração. Assim sugerimos a inclusão da ESEC Iquê, REBIO Nascentes da Serra do Cachimbo, FLONA Jamanxim, PARNA Rio Novo e FLONA de Carajás. Além dessas regiões, é importante também a inclusão de UCs mais ao norte da região climática sudoeste. Assim, sugere-se a inclusão de UCs no médio e baixo rio Juruá, como as RESEX Médio Juruá, Baixo Juruá e FLONA de Tefé. 
 
 
 </br>
@@ -397,7 +384,7 @@ O número de UCs e EAs amostradas varia bastante entre as regiões (@fig-regioes
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '60%'
-#| fig-cap: "Mapa mostrando a proposta de distribuição das UCs participantes do Programa Monitora nos polígonos das regiões climáticas da Amazônia definidos em função do regime de chuvas. As regiões com maiores lacunas de UCs participantes do Programa Monitora são a Noroeste, Sudeste e Sudoeste (porção norte)."
+#| fig-cap: "Mapa mostrando a proposta de distribuição das UCs participantes do Programa Monitora nos polígonos das regiões climáticas da Amazônia definidos em função do regime de chuvas. Note as regiões com maiores lacunas de UCs participantes do Programa Monitora: Noroeste, Sudeste e porção norte da região Sudoeste."
 
 knitr::include_graphics("imagens/cap04/bo_mapa_ucs.jpeg")
 
@@ -687,7 +674,7 @@ knitr::include_graphics("imagens/cap04/bo-ucs-eas-combinados.png")
 </br>
 
 
-Para maior confiabilidade das informações apresentadas neste relatório, foi estabelecido um esforço amostral mínimo por ano para os biomas. Para cada região Amazônica foi considerada uma boa amostragem um esforço amostral de 1.728 armadilhas/dia, equivalendo a pelo menos 18 EAs amostradas no ano (9 por campanha). Dessa forma, uma mesma EA devidamente amostrada nas duas campanhas do ano foi contabilizada duas vezes. Por exemplo, a REBIO do Uatumã foi a única UC da região da Amazônia Central com amostragens em 2014, totalizando seis EAs amostradas (três por  campanha). Porém, houve casos em que o protocolo amostral não foi atendido, com uma ou mais EAs amostradas apenas uma vez no ano (uma campanha). 
+Para maior confiabilidade das informações apresentadas neste relatório, foi estabelecido um esforço amostral mínimo por ano para os biomas. Para cada região Amazônica foram consideradas amostragens suficientemente boas aquelas que tiveram esforço amostral de pelo menos 1.728 armadilhas*dia, equivalendo a nove EAs amostradas no ano, considerando duas campanhas amostrais por EA/ano.   
 
 
 </br>
@@ -1064,7 +1051,7 @@ resultado_final$tribo <- gsub("\\*", "", resultado_final$tribo)
 </br>
 
 
-Na região climática Sudoeste amazônica foram amostradas 36.918 borboletas frugívoras, sendo 354 delas não identificadas e desconsideradas nas análises. Assim, 36.564 indivíduos foram identificados em nível de tribo, sendo as mais abundantes: Satyrini (48%), Brassolini (11%), Epicaliini (9%) e Ageroniiini (9%). A região Sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini a foi responsável por esse padrão, especialmente em 2019. É importante salientar que, apesar de Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, algumas espécies do gênero *Hamadryas* (e.g., *Hamadryas alicia*, *H. belladonna*, *H. velutina*) e do gênero Batesia estão geralmente presentes em florestas maduras e bem conservadas. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies nas tribos que utilizam regularmente florestas abertas/perturbadas, como por exemplo *Hamadryas februa*, *H. feronia*, *H. amphinome*, *H. arinome* e *Ectima iona*, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (@Jenkins_1983). 
+Na região climática Sudoeste amazônica foram amostradas 36.918 borboletas frugívoras, sendo 354 delas não identificadas e desconsideradas nas análises. Assim, 36.564 indivíduos foram identificados em nível de tribo, sendo as mais abundantes: Satyrini (48%), Brassolini (11%), Epicaliini (9%) e Ageroniiini (9%). A região Sudoeste apresentou a maior proporção de tribos indicadoras de florestas abertas/perturbadas dentre as regiões da Amazônia. No caso, a tribo Ageroniini a foi responsável por esse padrão, especialmente em 2019. É importante salientar que, apesar da tribo Ageroniini ser classificada como uma tribo indicadora de florestas abertas/perturbadas, algumas espécies do gênero *Hamadryas* (e.g., *Hamadryas alicia*, *H. belladonna*, *H. velutina*) e do gênero Batesia estão geralmente presentes em florestas maduras e bem conservadas, como ocorre na RESEX Arapixi e UCs da região. Dessa forma, torna-se ainda mais necessária a aplicação do protocolo avançado nas UCs para que, com as fotografias dos indivíduos, seja possível separar espécies nas tribos que utilizam regularmente florestas abertas/perturbadas, como por exemplo *Hamadryas februa*, *H. feronia*, *H. amphinome*, *H. arinome* e *Ectima iona*, das espécies anteriormente citadas, habitantes de florestas fechadas/preservadas (@Jenkins_1983). 
 
 Seguindo os padrões de diversidade da fauna e flora amazônicas (@Ribas_2019; @Luize_2024), a região Sudoeste apresentou os maiores valores de números de indivíduos por esforço amostral. Apesar de tratar-se de contagem de indivíduos, é de se esperar que a riqueza e diversidade de espécies acompanhem este padrão (@DeVries_2016). O esforço realizado entre 2014 e 2016 nesta região foi inferior ao considerado adequado para caracterizar a abundância relativa de tribos, tendo este atingido a suficiência amostral somente a partir de 2017 (@fig-regiao-climatica-sudoeste-amazonica). 
 
@@ -1078,7 +1065,7 @@ Seguindo os padrões de diversidade da fauna e flora amazônicas (@Ribas_2019; @
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática sudoeste. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática Sudoeste. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de campanhas realizadas naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "sudoeste"
@@ -1117,7 +1104,7 @@ As tribos Satyrini e Brassolini foram predominantes em praticamente todos os ano
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática central amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática Central. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de campanhas realizadas naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "central"
@@ -1154,7 +1141,7 @@ O padrão da proporção da abundância das tribos foi bastante estável, com po
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática leste amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. "
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática Leste. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de campanhas realizadas naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "leste"
@@ -1176,7 +1163,7 @@ ggsave(filename = "bo_regional_leste.jpg",  # Escolha um nome adequado para o ar
 
 
 
-Na região climática sudeste amazônica a amostragem não atingiu o valor mínimo do esforço amostral estabelecido para as análises. Esta é uma região com somente duas UCs aplicando o protocolo de borboletas frugívoras e se faz necessário o aumento no número de UCs participantes.  
+Na região climática sudeste amazônica a amostragem não atingiu o valor mínimo do esforço amostral estabelecido para as análises. Esta é uma região com somente duas UCs, PARNA do Juruena e REBIO do Tapirapé, aplicando o protocolo de borboletas frugívoras e se faz necessário o aumento no número de UCs participantes.  
 
 
 Ao todo, foram amostrados 5.042 indivíduos de borboletas frugívoras na região sudeste amazônica. Desses, 48 indivíduos foram descartados na análise por não terem sido identificados. Assim, 4.994 borboletas frugívoras foram identificadas em nível de tribo. Dentre as mais abundantes destacaram-se Satyrini (58%), Epicaliini (11%) e Morphini (11%). O padrão da proporção das tribos ao longo dos anos variou pouco (@fig-regiao-climatica-sudeste-amazonica), provavelmente pelo baixo número de UCs, visto que amostragens em diferentes UCs tendem a capturar diferentes padrões, mesmo numa mesma região (e.g., região sudoeste).  
@@ -1192,7 +1179,7 @@ Ao todo, foram amostrados 5.042 indivíduos de borboletas frugívoras na região
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2016 a 2022 na região climática sudeste amazônica. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática Sudeste. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de campanhas realizadas naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "sudeste"
@@ -1229,7 +1216,7 @@ O padrão da assinatura das tribos nos anos não variou drasticamente. Porém, o
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2017 a 2022 na região climática norte amazônica. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem. "
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 na região climática Norte. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de campanhas realizadas naquele ano."
 
 # Definir a região de interesse - colocar as regiões 'norte', 'sudoeste', 'sudeste', 'leste', 'central'
 regiao_interesse <- "norte"
@@ -1272,7 +1259,7 @@ Os padrões anuais apresentaram grandes variações na proporção das tribos in
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2014 a 2022 no Cerrado. Não houve amostragem em 2020. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."
 
 # Gráficos de dados Borboletas - Protocolo básico - Cerrado -
 ### Tribos com asterisco estão ausentes nos dados
@@ -1631,7 +1618,7 @@ Houve uma grande variação das tribos entre anos, especialmente de Brassolini, 
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2015 a 2022 na Mata Atlântica. Não houve amostragem em 2020. Os números acima das barras indicam indivíduos registrados e os números entre parêntesis abaixo das barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."
+#| fig-cap: "Abundância relativa de tribos de borboletas frugívoras de 2015 a 2022 na Mata Atlântica. Não houve amostragem em 2020. Os números sobre as barras indicam indivíduos registrados e os números entre parênteses sob as barras se referem ao número de estações amostrais inspecionadas naquele ano. O asterisco indica tribo ausente na amostragem."
 
 
 ##### Gráficos de dados Borboletas - Protocolo básico - Mata Atlantica
