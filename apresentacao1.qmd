@@ -27,26 +27,29 @@ library(randomcoloR)
 
 # Apresentação {#apresentacao .unnumbered}
 
-<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/capa/capafinal.png" alt="painel do relatorio" width="500" height="675" align="right" style="margin: 0 0 0 0"/></a> O Brasil é um país megadiverso que abriga mais de 13% da riqueza de espécies do globo. É o terceiro país em número de espécies de aves. Das 1.971 espécies atualmente registradas pelo Comitê Brasileiro de Registros Ornitológicos, pouco mais de 10% são atualmente definidas como migratórias, mas este número ainda pode aumentar conforme cresça o conhecimento sobre o grupo.
+</br>
 
-Ao longo de sua rota migratória, as aves utilizam diversas áreas para descanso e alimentação. Sem essas áreas, as aves não são capazes de atingir o seu destino final, deixando de completar seu ciclo de vida. Algumas espécies migratórias têm suas rotas restritas ao território nacional; outras deslocam-se por diversos países vizinhos; outras possuem uma área de distribuição que pode se estender de polo a polo. Essa interconexão notável entre ambientes, biomas, países, continentes e hemisférios executada pelas espécies migratórias torna o Brasil essencial para atendimento dos compromissos de conservação da biodiversidade.
 
-Como esperado, o Brasil é signatário de acordos internacionais relacionados à proteção de espécies migratórias e dos *habitat* por elas utilizados, como a Convenção Internacional para Conservação da Fauna, Flora e Belezas Cênicas das Américas (Convenção de Washington), que trata de espécies migratórias em um dos seus capítulos; a Convenção de Ramsar, relativa à conservação de ambientes aquáticos; a Rede Hemisférica de Reservas para Aves Limícolas; o Acordo Internacional para a Conservação de Albatrozes e Petréis -- ACAP; o Memorando de Entendimento para a Conservação de Espécies de Aves Migratórias dos Campos Naturais da América do Sul e de seus *habitat* e a Convenção de Bonn ou Convenção sobre a Conservação das Espécies Migratórias de Animais Silvestres (CMS).
+Presente em 115 Unidades de Conservação federais e dividido em três subprogramas (Terrestre, Aquático Continental e Marinho e Costeiro), que monitoram 21 alvos de conservação, o Programa Monitora é a maior iniciativa de monitoramento de biodiversidade in situ da América Latina.   
 
-Apesar de todos esses instrumentos voltados para a conservação das espécies migratórias, há uma redução drástica e muitas vezes irreversível de suas áreas críticas de alimentação, reprodução e descanso. Mesmo quando a área crítica não é perdida por completo, ela pode vir a sofrer tal degradação ambiental que seu uso pelas espécies migratórias mais sensíveis se torna inviável. Neste sentido, é importante reconhecer estas áreas críticas e envidar esforços para o uso sustentável desses espaços e seus recursos.
+O componente Florestal do Subprograma Terrestre foi o primeiro a ser estruturado. As coletas de dados dos protocolos básicos de plantas arbóreas e arbustivas, borboletas frugívoras, aves cinegéticas terrícolas e mamíferos terrestres de médio e grande porte diurnos se iniciaram em 2014, em um teste piloto em 16 UCs.  
 
-A implantação de parques eólicos têm contribuído cada vez mais para a formação de uma matriz energética nacional mais limpa e renovável. A geração de energia a partir dos ventos é considerada de baixo impacto ao meio ambiente, mas pode representar uma ameaça a grupos específicos como aves e morcegos. Nessa perspectiva, o Conselho Nacional do Meio Ambiente (CONAMA) publicou a Resolução n° 462, de 24 de julho de 2014, estabelecendo os procedimentos para o licenciamento ambiental de empreendimentos de geração de energia elétrica a partir de fonte eólica em superfície terrestre (*onshore*), no território brasileiro. Essa resolução prevê que o órgão licenciador deve exigir estudos e relatório de impacto ambiental e realizar audiências públicas quando o empreendimento estiver localizado em áreas de concentração ou rota de aves migratórias, aqui chamadas de Áreas de Concentração de Aves Migratórias, cabendo ao CEMAVE/ICMBio indicá-las, em território nacional, por meio de um relatório, sendo essa sua quarta edição.
+Este terceiro relatório do componente Florestal do Programa Monitora apresenta os resultados da aplicação dos protocolos básicos em 56 UCs no período de 2014 a 2022. É uma enorme satisfação perceber como um estudo piloto evoluiu para um programa sólido, em constante aprimoramento e capaz de gerar resultados relevantes para a conservação da biodiversidade.  
 
-A sua elaboração foi baseada em dados e informações disponíveis na literatura científica, em bancos de dados abertos, no processo de avaliação do estado de conservação da avifauna brasileira, nos Planos de Ação Nacionais, nos registros do Sistema Nacional de Anilhamento de Aves Silvestres (SNA) e em consulta *on-line* direcionada à comunidade de ornitólogos e na priorização espacial desses registros.
+O monitoramento de biodiversidade deve ser um processo contínuo, pois é preciso acumular séries temporais para a detecção de tendências. O Programa Monitora foi desenhado como um monitoramento do estado de conservação das áreas protegidas, com a expectativa de registrar essas tendências e gerar alertas para as situações que requerem atenção, e, eventualmente, intervenção. Pela primeira vez, a quantidade de dados acumulados nos permitiu fazer análises populacionais para aves e mamíferos e apontar populações bem conservadas e outras que requerem atenção. Quanto a borboletas, os resultados apontam um possível efeito da diminuição da cobertura florestal em nível regional, na região conhecida como arco do desmatamento, sobre a qualidade das florestas protegidas. No caso de plantas, que são amostradas a cada cinco anos, a quantidade de dados acumulada ainda é pequena, mas já indica a resiliência das florestas protegidas.  
 
-Esta publicação, além do seu objetivo primário, traz capítulos autorais temáticos visando contextualizar o leitor nas diferentes dimensões do tema, como o estado de implantação da geração de energia eólica no país, quais são as aves migratórias que ocorrem no Brasil, as áreas de ocorrência de espécies de aves ameaçadas, o que torna as espécies vulneráveis a esse tipo de empreendimento, recomendações de medidas preventivas ou operacionais visando mitigar seu potencial impacto e diretrizes para o monitoramento. Há um capítulo com informações sobre a fauna de morcegos no Brasil e o risco de colisão deste grupo com estruturas associadas a empreendimentos eólicos, contribuição de pesquisadores da Universidade Federal de Pernambuco. Também foi disponibilizado, de forma inédita, um capítulo sobre a nova fronteira energética do país, a geração de energia eólica *offshore*, buscando apontar aspectos que devem receber a atenção de técnicos e gestores para um bom uso dessa fonte de energia.
+Este relatório apresenta algumas análises aplicáveis aos dados existentes, mas há inúmeras outras possiblidades analíticas. Ao divulgar estes resultados, esperamos também atrair outros olhares sobre o Programa Monitora. Uma novidade que apresentamos aqui e que complementa este relatório geral é o painel dinâmico dos resultados do monitoramento, onde o usuário pode extrair informações a partir de análises pré-definidas ou baixar os dados e realizar suas próprias análises. Neste painel, destaca-se o quadro síntese, que sumariza visualmente as respostas à pergunta que move todos os participantes do Programa Monitora: nossas unidades de conservação conservam de fato a biodiversidade?  
+ 
+</br>
 
-Este documento também apresenta um mapa com as áreas de ocorrência de espécies de aves ameaçadas de extinção, que poderá ser utilizado como referência pelos órgãos licenciadores.
+Boa leitura!  
 
-Por fim, este relatório se alinha ao modelo de desenvolvimento responsável e não deve ser considerado como obstáculo aos empreendimentos eólicos, na medida em que indica áreas que requerem, pela sua importância biológica, a realização de estudos ambientais robustos. Deve, portanto, ser entendido como um qualificador do processo, enfatizando a necessidade e a possibilidade de se alcançar o crescimento econômico e social sem negligenciar a conservação da biodiversidade.
+</br>
 
-<br>
+**Coordenadora Geral de Pesquisa e Monitoramento da Biodiversidade**   
+  (e coletora de dados do Programa Monitora)  
+Instituto Chico Mendes de Conservação da Biodiversidade 
+
+</br>
   
-  **Priscilla Prudente do Amaral**\
-*Coordenadora*\
-*CEMAVE/ICMBio*
+ 

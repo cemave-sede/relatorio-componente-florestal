@@ -41,7 +41,17 @@ bibliography: [referencias_cap05.bib]
     *69301-140 Boa Vista, RR*  
     
 
-<br>
+</br>
+
+<p><font size="2">
+
+<b>Como citar</b>: Gomes-Filho, A.; Carvalho-Jr., E. A. R.; Buss, G.; Reis, M. L.; Fialho, J.  M. S.; Rossato, R. S.; Sampaio, R.; Hatakeyama, R. & Laranjeiras, T. O. Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas. In:  Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024. Pp: xx 
+
+</font></p>
+
+
+</br>
+
 
 Mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas são animais sensíveis à intensa pressão de caça, redução e fragmentação de *habitat*, e por isso são considerados bons indicadores de impactos de origem antrópica. A defaunação das florestas acarreta a chamada “síndrome da floresta vazia”, a ausência de muitas espécies de animais causada pela forte pressão humana e seus efeitos (@Redford_1992).  
 
@@ -49,7 +59,7 @@ A redução das populações animais afeta diretamente a biodiversidade e impact
 
 O desequilíbrio na diversidade de espécies em direção a ambientes mais simples, além da redução da biodiversidade em si, pode também contribuir para surtos de doenças e até mesmo a ocorrência de futuras pandemias (@Morse_2012). Nesse contexto, o monitoramento desses dois grupos animais em programas como o Monitora é de fundamental importância para a saúde do meio ambiente e das pessoas.  
 
-Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas, sistematizados até o momento pelo Programa. A taxonomia utilizada foi a mesma adotada no processo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024).
+Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas, sistematizados até o momento pelo Programa Monitora. A taxonomia utilizada foi a mesma adotada no processo de avaliação do risco de extinção das espécies da fauna brasileira (@ICMBio_2024).
 
 </br>
 
@@ -57,11 +67,30 @@ Nesse capítulo apresentamos alguns resultados gerais do monitoramento de mamíf
 
 </br>
 
-De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado de forma integral ou parcial em 53 UCs federais^[Para efeito de análise, a RESEX do Rio Iriri e a ESEC da Terra do Meio foram tratadas como um bloco, de forma que os dados das duas UCs foram analisados de  forma integrada. Portanto, ao longo desse capítulo os resultados apresentados para a ESEC Terra do Meio na verdade expressam os dados das duas UCs.], totalizando 140 UAs (transecções lineares) em operação, distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica.  
+De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diurno em transecção linear) foi aplicado em 53 UCs federais^[Para efeito de análise, a RESEX do Rio Iriri e a ESEC da Terra do Meio foram tratadas como um bloco, de forma que os dados das duas UCs foram analisados de  forma integrada. Portanto, ao longo desse capítulo os resultados apresentados para a ESEC Terra do Meio na verdade expressam os dados das duas UCs, sendo então considerado um total de 52 UCs nos resultados apresentados], distribuídas nos biomas Amazônia, Cerrado e Mata Atlântica, totalizando 140 unidades amostrais, que neste protocolo também correspondem às estaçõs amostrais (EAs). Das UCs amostradas, 33 (63%) já estão consolidadas, com pelo menos três estações amostrais em operação (@fig-mapa-mastoaves). Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão com atividades do Monitora interrompidas (há mais de dois anos consecutivos sem amostragem) e duas (4%) não coletaram dados em 2022 (estão inoperantes).  
 
+</br>
+
+```{r figura - mapa mastoaves}
+#| label: fig-mapa-mastoaves
+#| echo: false
+#| message: false
+#| warning: false
+#| cache: true
+#| fig.pos: 'H'
+#| out.width: '70%'
+#| fig-cap: "Distribuição das unidades de conservação com amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas no Componente Florestal do Programa Monitora – 2014 a 2022."
+
+knitr::include_graphics("imagens/cap05/ma_mapa_mastoaves.jpeg")
+
+```
+
+
+</br>
 
 O esforço de amostragem nos nove anos considerados neste relatório correspondeu a 5.356 dias de campo (transecção/dia) e 25.602,55 km percorridos (@fig-esforco-acumulado-script), resultando em 22.985 registros de mamíferos de médio e grande porte e em 12.995 de aves terrícolas cinegéticas.
 
+</br>
 
 ```{r pacotes}
 #| echo: false
@@ -403,9 +432,9 @@ ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
 </br>
 
 
-O esforço por UC e por bioma é apresentado na Figura 5.2 e na Figura 5.3.  Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve tanto ao maior número de unidades de conservação integrando o Programa Monitora nesse bioma, quanto ao esforço médio empregado por cada unidade de conservação. As unidades no Cerrado e na Mata Atlântica são menores e nem sempre comportam a rede recomendada de transecções: três estações amostrais de cinco quilômetros cada. Ademais, custear as atividades de campo nesses biomas é geralmente mais difícil, dada a maior disponibilidade de financiamento internacional para programas de monitoramento na Amazônia.  
+O esforço por UC e por bioma é apresentado na Figura 5.2 e na Figura 5.3.  Mais de 95% do esforço de amostragem ocorreu no bioma Amazônico. Isso se deve tanto ao maior número de unidades de conservação integrando o Programa Monitora nesse bioma, quanto ao esforço médio empregado em cada unidade de conservação. As unidades de conservação no Cerrado e na Mata Atlântica são menores e nem sempre comportam a rede recomendada de transecções: três estações amostrais de cinco quilômetros cada. Ademais, custear as atividades de campo nesses biomas é geralmente mais difícil, dada a maior disponibilidade de financiamento internacional para programas de monitoramento na Amazônia.  
 
-
+</br>
 
 ```{r gráfico de esforço 3 - Elildo}
 #| label: fig-esforco-total-uc-bioma-script
@@ -472,7 +501,7 @@ ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
 
 </br>
 
-Das UCs amostradas, 34 (67%) já estão consolidadas, com pelo menos três unidades amostrais (transecções lineares) em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022.  
+Das UCs amostradas, 33 (63%) já estão consolidadas, com pelo menos três estações amostrais em operação. Seis UCs (12%) retomaram as amostragens em 2022, sete UCs (13%) estão inativas (há mais de dois anos consecutivos sem amostragem) e duas UCs (4%) não coletaram dados em 2022.  
 
 </br>
 
@@ -542,7 +571,7 @@ ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
 
 </br>
 
-No total, foram identificadas 131 espécies e 60 gêneros de mamíferos e 29 espécies e 13 gêneros de aves (Apêndices C e D), com 35 táxons ameaçados de extinção: 29 de mamíferos e 6 de aves, respectivamente. Registros de *Cavia* (preás),  *Crypturellus* (inhambus) e *Nothura* (codornas) foram validados sempre em nível de gênero. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
+No total, foram identificadas 131 espécies e 60 gêneros de mamíferos e 29 espécies e 13 gêneros de aves (Apêndices H e I), com 35 táxons ameaçados de extinção: 29 de mamíferos e seis de aves, respectivamente. Registros de *Cavia* (preás),  *Crypturellus* (inhambus) e *Nothura* (codornas) foram validados sempre em nível de gênero. O esforço por UC e por bioma (Mata Atlântica, Cerrado e Amazônia) é apresentado na (@fig-esforco-total-uc-bioma-script).  
 
 </br>
 
@@ -554,7 +583,7 @@ No total, foram identificadas 131 espécies e 60 gêneros de mamíferos e 29 esp
 
 </br>
 
-A maioria dos registros (56%) do protocolo básico de monitoramento de mamíferos e aves correspondeu a primatas e roedores (@fig-registros-ordem). Esse resultado se deve, em parte, ao fato de o método ser mais eficiente na detecção desses grupos. Espécies noturnas e esquivas, como a maior parte dos carnívoros, são pouco registradas.
+A maioria dos registros (56%) do protocolo básico de monitoramento de mamíferos e aves correspondeu a primatas e roedores (Dasyproctidae e Sciuridae) (@fig-registros-ordem). Esse resultado se deve, em parte, ao fato de o método ser mais eficiente na detecção desses grupos (espécies diurnas). Espécies noturnas e esquivas, como a maior parte dos carnívoros, são pouco registradas.
 
 
 ```{r paletas de cores}
@@ -916,6 +945,7 @@ G_especies_registros_ordem_bioma_cerrado
 
 ```
 
+</br>
 
 ```{r juntanto os gráficos de ordem e espécies}
 #| label: fig-registros-ordem
@@ -943,9 +973,9 @@ ggsave("imagens/cap05/ma_grafico_composto_ordens.jpg", plot = grafico_composto_o
 
 </br>
 
-Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto pelo gênero *Callibella* (sagui-anão), todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção e duas apresentam deficiência de dados (DD) para avaliação.  
+Dentre os mamíferos, os primatas destacaram-se como o grupo preponderante em número de registros e, exceto pelo gênero *Callibella* (sagui-anão), todos os demais gêneros de primatas com ocorrência no Brasil foram registrados. Setenta e duas espécies foram detectadas, sendo que 18 espécies são consideradas ameaçadas de extinção (Apêndice H). As espécies *Callicebus vieirai* (*Plecturocebus vieirai*) e *Pithecia irrorata*, que eram classificadas como deficientes de dados (DD), passaram a ser categorizadas como “menos preocupante” (LC) no ciclo avaliativo de 2019 (@ICMBio_2024).  
 
-Com relação às aves, 29 espécies de 13 gêneros foram registradas (Apêndice D). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria. Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar *Nothura* (codornas), *Penelope* (jacus), *Tinamus* (macucos) e *Crypturellus* (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice D), conforme a Portaria MMA nº 148/22.  
+Com relação às aves, 29 espécies de 13 gêneros foram registradas (Apêndice I). Durante as amostragens busca-se a identificação dos indivíduos observados no nível específico. Contudo, em algumas unidades de conservação duas, três ou mais espécies muito semelhantes, de um mesmo gênero, ocorrem em simpatria. Nessas situações, por segurança, esses registros são validados taxonomicamente em nível de gênero. Como exemplos podemos citar *Nothura* (codornas), *Penelope* (jacus), *Tinamus* (macucos) e *Crypturellus* (inhambus), todos gêneros com um ou mais táxons ameaçados de extinção (Apêndice I), conforme a Portaria MMA nº 148/2022.  
 
 A maioria dos registros de aves distribui-se quase que igualmente entre as ordens Galliformes e Tinamiformes. Esse resultado se deve ao fato de o método ser eficiente na detecção desses grupos e em razão dos Gruiformes (jacamins) ocorrerem apenas no bioma Amazônico, nunca com mais de uma espécie por localidade, enquanto os Cariamiformes, com uma única espécie (*Cariama cristata* - seriema), são típicos de ambientes abertos e praticamente não foram avistados (@fig-registros-ordem).
 
@@ -959,6 +989,7 @@ A variação nas proporções de registros no Cerrado e na Mata Atlântica ao lo
 
 Em termos de abundância total de mamíferos e aves, o bioma Amazônico se destaca por apresentar taxas de avistamento médias mais altas (9,45 e 5,32 avistamentos/10 km, respectivamente), com grande variação tanto para mamíferos (1,91 a 20,12) quanto para aves (2,60 a 10,05). No Cerrado as taxas de avistamento variaram de 1,35 a 9,83 e 0,97 a 8,10 para mamíferos e aves, respectivamente (taxas médias de 3,20 e 2,77). Já na Mata atlântica os resultados variaram de 0,63 a 7,50 mamíferos e de 0,63 a 3,32 aves avistadas a cada 10 km, com valores médios de 2,91 e 1,77 (@fig-taxa-avistamento-bioma).  Observamos que não foram aplicados testes formais para avaliar a existência de diferenças estatisticamente significativas nas comparações realizadas, sendo apresentada aqui apenas uma análise exploratória e descritiva, com uma interpretação baseada nos valores médios e na inspeção visual dos resultados gerados.  
 
+</br>
 
 ```{r estimativas das taxas de avistamento}
 #| echo: false
@@ -1512,7 +1543,7 @@ taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
 ```
 
 
-
+</br>
 
 ```{r G_taxa_avistamento_geral_bioma_emparelhado_media_IC}
 #| label: fig-taxa-avistamento-bioma
@@ -1584,8 +1615,9 @@ ggsave("imagens/cap05/ma_taxa_avistamento_media_bioma.jpg",
 
 </br>
 
-Considerando a variação da abundância relativa ao longo do tempo, na Amazônia os primeiros anos apresentam uma maior dispersão dos resultados, explicada pelo número proporcionalmente reduzido de UCs participantes e consequente menor esforço amostral na fase inicial do Programa, além de um leve decréscimo nas abundâncias em 2021 e 2022 (@fig-taxa-avistamento-tempo). Para a Mata Atlântica os resultados são irregulares devido à descontinuidade de amostragem e à grande variação no esforço entre os anos. Já para o Cerrado, o padrão observado se justifica pelo fato das duas UCs com dados coletados em 2022, o PARNA da Serra da Bodoquena e a ESEC de Pirapitinga, serem distintas das demais, com matriz florestal e, consequentemente, com maior taxa de avistamento. 
+Considerando a variação da abundância relativa ao longo do tempo, na Amazônia os primeiros anos apresentam uma maior dispersão dos resultados, explicada pelo número proporcionalmente reduzido de UCs participantes e consequente menor esforço amostral na fase inicial do Programa, além de um leve decréscimo nas abundâncias em 2021 e 2022 (@fig-taxa-avistamento-tempo). Para a Mata Atlântica os resultados são irregulares devido à descontinuidade de amostragem e à grande variação no esforço entre os anos. Já para o Cerrado, o padrão observado se justifica pelo fato das duas UCs, o PARNA da Serra da Bodoquena e a ESEC de Pirapitinga, serem distintas das demais, com matriz florestal e, consequentemente, com maior taxa de avistamento. 
 
+</br>
 
 ```{r G_taxa_avistamento_geral_mamiferos_aves_2014-2022_media_IC}
 #| echo: false
@@ -1903,6 +1935,8 @@ print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
 
 ```
 
+</br>
+
 ```{r juntanto os gráficos taxas de encontro ao longo do tempo por bioma}
 #| label: fig-taxa-avistamento-tempo
 #| echo: false
@@ -1932,6 +1966,7 @@ ggsave("imagens/cap05/ma_taxas_biomas_tempo.jpg", plot = grafico_taxas_biomas_te
 
 Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-se a REBIO do Uatumã, a RESEX Verde para Sempre e a ESEC da Terra do Meio (@fig-taxa-avistamento-geral-mamiferos). Essas três UCs também estão entre as quatro com maiores taxas totais de avistamento de aves (@fig-taxa-avistamento-geral-aves). Contudo, a posição da RESEX Verde para Sempre deve ser considerada com cautela, visto que representa um único ano de amostragem (2022).  
 
+</br>
 
 ```{r G_taxa_avistamento_geral_mamiferos_media_IC}
 #| label: fig-taxa-avistamento-geral-mamiferos
@@ -2037,8 +2072,6 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 
 </br>
 
-Verificou-se uma correlação positiva (r = 0,75; P < 0,001) entre as abundâncias (taxas médias de avistamento) de mamíferos e aves nas unidades de conservação amostradas (Figura X). Esse resultado não surpreende, visto que o impacto das pressões negativas de origem antrópica deve, em linhas gerais, afetar de forma similar esses dois grupos de vertebrados.  
-
 
 ```{r correlacao das taxas de avistamento médias de aves e mamíferos}
 #| echo: false
@@ -2117,6 +2150,10 @@ ggsave("imagens/cap05/ma_correlacao_aves_mamiferos.jpg", plot =  G_correlacao_ta
 ```
 
 </br>
+
+Verificou-se uma correlação positiva (r = 0,75; P < 0,001) entre as abundâncias (taxas médias de avistamento) de mamíferos e de aves nas unidades de conservação amostradas (@fig-correlacao-taxas-avistamento). Esse resultado não surpreende, visto que o impacto das pressões negativas de origem antrópica deve, em linhas gerais, afetar de forma similar esses dois grupos de vertebrados.  
+
+
 </br>
 
 
@@ -2128,8 +2165,7 @@ A análise de tendências populacionais foi realizada por meio de modelos de esp
 
 Para garantir a robustez das análises, somente foram incluídas populações com dados suficientes, com base nos seguintes critérios: (1) série temporal de dados ≥ 5 anos; (2) taxa de encontro média ≥ 0,5 encontros/10 km; (3) esforço amostral anual médio suficiente para atingir coeficiente de variação da taxa de encontro ≥ 0,25. 
 
-No total, 89 populações de 36 táxons de mamíferos e 72 populações de 13 táxons de aves, de 21 unidades de conservação, foram selecionadas para análise. A duração do monitoramento para essas populações variou de cinco a nove anos, com média de sete anos. A maioria das populações analisadas (91%, n = 148) permaneceu estável ao longo do monitoramento, com a taxa de crescimento *r* não diferindo significativamente de zero, enquanto duas populações (1.2%) apresentaram tendência significativa de aumento e 11 (6%) apresentaram tendência significativa de declínio (@fig-variacao-populacional, @tbl-tendencias-populacionais).  
-
+No total, 89 populações de 36 táxons de mamíferos e 72 populações de 13 táxons de aves, de 21 unidades de conservação, foram selecionadas para análise. A duração do monitoramento para essas populações variou de cinco a nove anos, com média de sete anos. A maioria das populações analisadas (91%, n = 148) permaneceu estável ao longo do monitoramento, com a taxa de crescimento *r* não diferindo significativamente de zero, enquanto duas populações (1,2%) apresentaram tendência significativa de aumento e 11 (6%) apresentaram tendência significativa de declínio (@fig-variacao-populacional, @tbl-tendencias-populacionais).  
 
 </br>
 
@@ -2222,7 +2258,7 @@ tab_tendencias_populacionais
 
 </br>
 
-###### Variação espacial na taxa de avistamento média - mamíferos e aves conjuntamente
+#### Variação espacial na taxa de avistamento média - mamíferos e aves conjuntamente
 
 </br>
 
@@ -2404,10 +2440,12 @@ taxa_avistamento_trilha_taxon_validado_aves <-
 
 </br>
 
-Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Chrysocyon brachyurus* (lobo-guará), *Lycalopex vetulus* (raposa-do-campo), *Speothos venaticus* (cachorro-vinagre), *Herpailurus yagouaroundi* (jaguarundi), *Leopardus colocolo* (gato-palheiro), *L. guttulus* (gato-do-mato), *L. tigrinus* (gato-do-mato), *L. wiedii* (gato-maracajá), *Panthera onca* (onça-pintada) e *Pteronura brasiliensis* (ariranha). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus* (raposa-do-campo), *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora.  
+Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Chrysocyon brachyurus* (lobo-guará), *Lycalopex vetulus* (raposa-do-campo), *Speothos venaticus* (cachorro-vinagre), *Herpailurus yagouaroundi* (jaguarundi), *Leopardus colocolo* (gato-palheiro), *L. guttulus* (gato-do-mato), *L. tigrinus* (gato-do-mato), *L. wiedii* (gato-maracajá), *Panthera onca* (onça-pintada) e *Pteronura brasiliensis* (ariranha). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus*, *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora, sendo que os dois primeiros são prioritariamente de ambientes abertos.  
 
 
-Das nove espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros para quatro: *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradypus torquatus* (preguiça-de-coleira).  
+Das nove espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros de *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradypus torquatus* (preguiça-de-coleira).  
+
+A ausência dessas espécies pode ser decorrência do baixo esforço amostral nas unidades de conservação onde elas ocorrem. Algumas espécies possuem hábitos noturnos e são crípticas, como a preguiça-de-coleira, que ocorre na REBIO de UNA, ou seus registros podem ter sido validados apenas no nível de gênero, como Mazama nana no PARNA do Iguaçu. Além disso, espécies como o tatu-bola (ESEC da Serra Geral do Tocantins) e o cervo-do-pantanal estão mais associadas a áreas abertas. O registro do cervo no PARNA da Chapada dos Veadeiros, inclusive, pode ser um equívoco.  
 
 
 Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyidae e Erethizontidae não são esperadas para as unidades de conservação amostradas.  
@@ -2416,14 +2454,13 @@ Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyid
 Para a ordem Primates, 18 espécies ameaçadas já foram registradas: *Alouatta belzebul* (guariba-de-mãos-ruivas), *A. discolor* (guariba-de-mãos-ruivas), *A. guariba clamitans* (bugio-ruivo), *Ateles belzebuth* (macaco-aranha), *A. chamek* (macaco-aranha-da-cara-preta), *A. marginatus* (coatá-da-testa-branca), *Brachyteles arachnoides* (muriqui-do-sul), *Chiropotes satanas* (cuxiú-preto), *C. utahickae* (cuxiú-marrom), *Lagothrix lagotricha cana* (macaco-barrigudo), *L. lagotricha poeppigii* (macaco-barrigudo), *Callithrix aurita* (sagui-da-serra-escuro), *Leontopithecus chrysomelas* (mico-leão-da-cara-dourada), *Mico rondoni* (mico-de-Rondônia), *Cebus kaapori* (cairara), *Saguinus niger* (sagui-una), *Sapajus cay* (macaco-prego) e *S. xanthosternos* (macaco-prego-do-peito-amarelo).  
 
 
-Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor* (codorna-mineira), *Taoniscus nanus* (codorna-carapé), *Crypturellus zabele* (zabelê), *Tinamus tao* (azulona), *Aburria jacutinga* (jacutinga) e *A. cujubi* (cujubi), *Penelope jacucaca* (jacucaca) e *P. pileata* (jacupiranga), *Crax blumenbachii* (mutum-de-bico-vermelho) e *C. globulosa* (mutum-de-fava), *Psophia obscura* (jacamim-de-costas-escuras), *P. interjecta* (jacamim-do-xingu), *P. viridis* (jacamim-de-costas-verdes) e *P. dextralis* (jacamim-de-costas-marrons), mais duas subespécies, a saber *Penelope s. alagoensis* (jacupemba) e *Crax f. pinima* (mutum-de-penacho ou mutum-pinima).
+Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor* (codorna-mineira), *Taoniscus nanus* (codorna-carapé), *Crypturellus zabele* (zabelê), *Tinamus tao* (azulona), *Aburria jacutinga* (jacutinga) e *A. cujubi* (cujubi), *Penelope jacucaca* (jacucaca) e *P. pileata* (jacupiranga), *Crax blumenbachii* (mutum-de-bico-vermelho) e *C. globulosa* (mutum-de-fava), *Psophia obscura* (jacamim-de-costas-escuras), *P. interjecta* (jacamim-do-xingu), *P. viridis* (jacamim-de-costas-verdes) e *P. dextralis* (jacamim-de-costas-marrons), mais duas subespécies, a saber *Penelope s. alagoensis* (jacupemba) e *Crax f. pinima* (mutum-de-penacho ou mutum-pinima).  
 
+Desses táxons elencados já foram registrados pelo Programa Monitora em uma ou mais unidades de conservação *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*, além da subespécie ameaçada de *Penelope*. Ressaltamos que *Penelope jacucaca*, *P. pileata* e *Nothura minor* foram ou podem ter sido registradas em campo, mas como ocorrem em simpatria com espécies semelhantes, os registros foram validados em nível de gênero. A mesma situação ocorre com *Tinamus tao* (VU). Na Amazônia, avistamentos dessa espécie foram reportados para quase todas as UCs em que a espécie era esperada, mas dada a ocorrência de outras espécies de *Tinamus* nessas áreas esses registros também foram validados em nível de gênero.  
 
-Desses táxons elencados já foram registrados pelo Programa Monitora em uma ou mais unidades de conservação *Aburria cujubi*, *Crax globulosa* e as quatro espécies ameaçadas de *Psophia*, além da subespécie ameaçada de *Penelope*. Ressaltamos que *Penelope jacucaca*, *P. pileata* e *Nothura minor* foram ou podem ter sido registradas em campo, mas como ocorrem em simpatria com espécies semelhantes, os registros foram validados em nível de gênero. A mesma situação ocorre com *Tinamus tao* (VU). Na Amazônia, avistamentos dessa espécie foram reportados para quase todas as UCs em que a espécie era esperada, mas dada a ocorrência de outras espécies de *Tinamus* nessas áreas esses registros também foram validados em nível de gênero. 
+*Crax globulosa* (EN) foi registrado em três unidades de conservação. Mas considerando a raridade desta espécie, a falta de registros prévios em localidades próximas e o fato dos ambientes onde ocorreram as visualizações não serem aqueles considerados típicos para a espécie (floresta de várzea), esses dados estão sendo considerados com cautela. Já *Crax f. pinima* (CR), que seguramente ocorre na REBIO do Gurupi, não foi observado em nenhum momento.  
 
-*Crax globulosa* (EN) foi registrado em três unidades de conservação. Mas considerando a raridade desta espécie, a falta de registros prévios em localidades próximas e o fato dos ambientes onde ocorreram as visualizações não serem aqueles considerados típicos para a espécie (floresta de várzea), esses dados estão sendo considerados com cautela. Já *Crax f. pinima* (CR), que seguramente ocorre na REBIO do Gurupi, não foi observado em nenhum momento. 
-
-*Taoniscus nanus* (EN), uma espécie monotípica e exclusiva deste bioma, não foi registrada.  
+*Taoniscus nanus* (EN), uma espécie monotípica e exclusiva do Cerrado, não foi registrada.  
 
 No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros para *Penelope s. alagoensis* (CR). Porém, infelizmente as amostragens nessa unidade de conservação foram interrompidas. Ainda neste bioma, eventuais registros de *Crypturellus zabele* (VU) podem ter sido atribuídos a *Crypturellus* spp.(inhambus). Importante destacar a ausência de registros de *A. jacutinga*, que seria esperada para unidades de conservação da Mata Atlântica dada sua distribuição geográfica original. 
 
@@ -2475,7 +2512,7 @@ taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
 
 </br>
 
-#### Abundância para algumas espécies ameaçadas de mamíferos e aves
+#### Abundância de algumas espécies ameaçadas de mamíferos e aves
 
 </br>
 
@@ -2604,6 +2641,7 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas <- G_especie_ameac
 
 ```
 
+</br>
 
 ```{r gráfico da variação das taxas de espécies ameaçadas no tempo - primatas Atelídeos}
 #| label: fig-especies-ameacadas-atelideos
@@ -2757,6 +2795,7 @@ G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas <- G_especie_ameacada
 ```
 
 
+</br>
 
 
 ```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - outros primatas}
@@ -2868,6 +2907,7 @@ G_especie_ameacada_ucs_ano_media_tamandua_silhuetas <- G_especie_ameacada_ucs_an
 ```
 
 
+</br>
 
 ```{r gráfico da variação das taxas de espécies ameaçadas no tempo  - tamanduá}
 #| label: fig-especies-ameacadas-tamandua
@@ -2898,7 +2938,6 @@ Na @fig-especies-ameacadas-aves são apresentadas variações na abundância rel
 
 A taxa média anual de avistamento de *A. cujubi* nas unidades de conservação  variou de 0,27 a 0,71 encontros/10 km. Para as espécies ameaçadas do gênero *Psophia*, a abundância relativa nas unidades de conservação flutuou de 0,19 a 1,2 para *P. obscura* e *P. interjecta*, respectivamente, no ano de 2019. A despeito de se observar uma variação nas abundâncias ao longo do tempo, em parte explicada pela variação no número de unidades de conservação amostradas em cada ano, parece haver uma tendência evidente de estabilidade demográfica das populações de cada táxon para o sistema formado por 21 unidades de conservação participantes do Programa Monitora onde essas espécies são encontradas.  
 
-</b>
 
 </br>
 
@@ -3058,6 +3097,7 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas <- G_especie_ameaca
 ```
 
 
+</br>
 
 ```{r gráfico da variação das taxas de espécies ameaçadas no tempo - aves}
 #| label: fig-especies-ameacadas-aves
@@ -3224,39 +3264,33 @@ Importante frisar que estes valores são produtos de esforços amostrais pouco u
 
 </br>
 
-## Destaques
+## Destaque
 
 </br>
 
-Duas espécies categorizadas como Deficientes de Dados (DDs), ou seja, sem informações suficientes para que seja feita uma avaliação adequada do seu estado de conservação, conforme o último ciclo de avaliação do estado de conservação das espécies da fauna brasileira (@SALVE_2024), foram registradas no presente esforço: os cervídeos *Mazama americana* e *M. nemorivaga*.   
+Duas espécies de cervídeos (*Mazama americana* e *M. nemorivaga*) categorizadas como Deficientes de Dados (DDs), ou seja, sem informações suficientes para que fosse feita uma avaliação adequada do seu estado de conservação no último ciclo avaliativo de espécies ameaçadas (@ICMBio_2024), foram registradas pelo Programa Monitora. 
 
-O *Mazama americana* foi registrado no Parques Nacional do Iguaçu, no Paraná, e no Parque Nacional de Bodoquena, no Mato Grosso do Sul, unidades de conservação localizadas na Mata Atlântica e Cerrado, respectivamente. Além dessas, 35 outras unidades de conservação na Amazônia apresentaram registros dessa espécie DD. Já *Mazama nemorivaga* foi registrada apenas no bioma amazônico, como esperado, em 32 unidades de conservação. 
+*Mazama americana* foi observada em 37 UCs. Com exceção dos registros no PARNA do Iguaçu, na Mata Atlântica, e no PARNA da Bodoquena, no Cerrado, todos os demais ocorreram em UCs na Amazônia. Já *M. nemorivaga* foi registrada em 35 UCs, todas também no bioma Amazônico. 
 
-
-</br>
-
-*Cebus kaapori* na REBIO do Gurupi  
 
 </br>
 
-O Programa Monitora tem contribuído com registros importantes de *Cebus kaapori* (Caiarara), uma espécie de primata criticamente ameaçado de extinção. Essa espécie é endêmica do Brasil e em sua pequena área de distribuição temos apenas uma unidade de conservação de proteção integral, a REBIO do Gurupi.  Os registros dessa espécie na REBIO obtidos pelo Programa Monitora fornecem subsídios importantes para planejamento de iniciativas voltadas a sua conservação.  
-
-</br>
 
 ## Discussão
 
 </br>
 
-Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Herpailurus yagouaroundi* (jaguarundi) e *Speothos venaticus* (cachorro-vinagre) foram registradas menos de dez vezes e *Chrysocyon brachiurus* (lobo-guará), somente uma — cabendo destacar a atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* (irara) e *Nasua nasua* (quati), conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implantação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação.  
+Apesar do método de amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas (protocolo básico) ser aplicado no período diurno, todas as espécies ameaçadas e esperadas da ordem Carnivora foram registradas ao menos uma vez, num total de 114 registros. Contudo, três espécies, *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Herpailurus yagouaroundi* (jaguarundi) e *Speothos venaticus* (cachorro-vinagre) foram registradas menos de dez vezes e *Chrysocyon brachiurus* (lobo-guará), somente uma — cabendo destacar a atual baixa representatividade das UCs do Cerrado no Programa. Não obstante, duas espécies evidentemente diurnas e não ameaçadas, *Eira barbara* (irara) e *Nasua nasua* (quati), conjuntamente representaram dois terços (67%) do total de registros de Carnivora. Isso demonstra a dificuldade de amostragem de espécies noturnas e raras, em grande parte superada pela implantação do protocolo avançado, que usa armadilhas fotográficas. Dessa forma, o protocolo básico fornece informações preliminares dessa ordem, que podem ser complementadas posteriormente conforme as necessidades, a capacidade e as estratégias de gestão de cada unidade de conservação com a implantação do módulo avançado.   
 
 Assim como para a ordem Carnivora, muitas espécies noturnas e abundantes de outras ordens também foram pouco registradas, especialmente para Lagomorpha (tapitis) e Cingulata (tatus), enquanto espécies da ordem Cetartiodactyla (cervos e porcos-do-mato) estiveram bem representadas.  
 
 
 
 ::: callout-note
-## Nota
+## Nota  
 
-Ressalta-se que a presença de cães domésticos foi registrada apenas quatro vezes e não houve registro de gatos domésticos. Esse resultado pode ser apenas um reflexo da recomendação do protocolo básico de não instalação das estações amostrais em locais sob influência mais direta de atividades humanas, como nas proximidades de áreas urbanas ou núcleos populacionais.
+Sobre o registro de espécies exóticas e/ou invasoras, o Callithrix jacchus (sagui-de-tufos-brancos), espécie típica do Nordeste brasileiro, foi registrada em UCs da Mata Atlântica da região Sudeste. Ressalta-se que a presença de cães foi registrada apenas quatro vezes e não houve registro de gatos domésticos. Esse resultado pode ser um reflexo da recomendação de não instalação das estações amostrais em locais sob influência mais direta de atividades humanas, como nas proximidades de áreas urbanas ou núcleos populacionais. 
+
 :::
 
 
@@ -3265,14 +3299,14 @@ Ressalta-se que a presença de cães domésticos foi registrada apenas quatro ve
 **Riqueza**  
 
 
-Em relação à riqueza, alguns estudos na Amazônia também utilizaram transectos lineares para a amostragem de mamíferos alvos do componente Florestal do Programa Monitora (@Calouro_1999, @Pontes_2010, @Abreu_Junior_2017). Contudo, o protocolo utilizado pelo ICMBio apresenta algumas particularidades e comparações devem ser realizadas com cautela. De forma geral, as espécies amostradas pelo Programa Monitora foram as mesmas registradas nesses estudos, exceto por algumas ausências como *Bassaricyon beddardi* (gogó-de-sola) (@Pontes_2010, @Melo_2012); *Lycalopex vetulus* (raposa-do-campo) na ESEC Serra Geral do Tocantins (@Carmignotto_2011), *Mustela africana* (doninha-amazônica) (@Emmons_2016: distribuição geográfica incerta na Amazônia); *Galictis cuja* (furão-pequeno) no PARNA Serra do Cipó (@Oliveira_2009); *Conepatus chinga* (zorrilho) no PARNA Iguaçu (@Caceres_2004); *Potos flavus* (jupará) (@Helgen_2016). Já os marsupiais, ordem Didelphimorphia, por serem majoritariamente de hábitos noturnos, de pequeno porte e pouco conhecidos, foram registradas apenas algumas espécies de maior porte pertencentes ao gênero *Didelphis*. Essa observação anterior também se aplica aos roedores, ordem Rodentia, em que famílias inteiras com representantes muito pequenos não foram registradas, tais como Cricetidae, Dinomydae e Echimyidae, os quais exigem a captura para a sua identificação específica. Em relação aos tatus, ordem Cingulata, não foram registrados *Dasypus septemcinctus* (tatu-galinha-pequeno), *Dasypus beniensis* (tatu-e-quinze-quilos), *Euphractus sexcinctus* (tatupeba) e *Cabassous tatouay* (tatu-de-rabo-mole-grande), que têm distribuição provável em várias regiões (@Feijo_2018, @Abba_2014, @Rocha_2022).  
+Em relação à riqueza, alguns estudos na Amazônia também utilizaram transectos lineares para a amostragem de mamíferos alvos do componente Florestal do Programa Monitora (@Calouro_1999, @Pontes_2010, @Abreu_Junior_2017). Contudo, o protocolo utilizado pelo ICMBio apresenta algumas particularidades e comparações devem ser realizadas com cautela. De forma geral, as espécies amostradas pelo Programa Monitora foram as mesmas registradas nesses estudos, exceto por algumas ausências como *Bassaricyon beddardi* (olingo) (@Pontes_2010, @Melo_2012); *Mustela africana* (doninha-amazônica) (@Emmons_2016) e *Potos flavus* (jupará) (@Helgen_2016). No Cerrado houve registros de *Galictis cuja* (furão-pequeno) no PARNA Serra do Cipó (@Oliveira_2009) e de *Lycalopex vetulus* (raposa-do-campo) na ESEC Serra Geral do Tocantins (@Carmignotto_2011) e, na Mata Atlântica, *Conepatus chinga* (zorrilho) no PARNA Iguaçu (@Caceres_2004).  
+
+Para os marsupiais, ordem Didelphimorphia, majoritariamente de hábitos noturnos e de pequeno porte, foram consideradas apenas algumas espécies maiores do gênero *Didelphis*. Essa observação também se aplica aos roedores, ordem Rodentia, em que famílias inteiras com representantes muito pequenos não foram consideradas, tais como Cricetidae, Dinomydae e Echimyidae. Em relação aos tatus, ordem Cingulata, não foram registrados *Dasypus septemcinctus* (tatu-galinha-pequeno), *Dasypus beniensis* (tatu-e-quinze-quilos), *Euphractus sexcinctus* (tatupeba) e *Cabassous tatouay* (tatu-de-rabo-mole-grande), espécies com ampla distribuição (@Feijo_2018, @Abba_2014, @Rocha_2022).  
+
+Uma importante contribuição do Programa Monitora é o registro de ocorrência e a obtenção de dados de abundância das espécies de primatas ameaçados de extinção. Com relação aos táxons criticamente ameaçados *Cebus kaapori* (cairara) e *Chiropotes satanas* (cuxiú-preto) o esforço de monitoramento deve ser intensificado a fim de gerar dados robustos sobre a abundância dessas espécies na REBIO do Gurupi. Essa unidade de conservação é extremamente importante para conservação dessas espécies de primatas (@Lopes_2000, @Buss_2017), uma vez que *Cebus kaapori* é uma das 25 espécies de primatas mais ameaçadas do mundo (@Buss_2022).  
 
 
-
-Uma importante contribuição do Programa Monitora é o registro de ocorrência e a obtenção de dados de abundância das espécies de primatas ameaçados de extinção. Com relação aos táxons criticamente ameaçados *Cebus kaapori* (cairara) e *Chiropotes satanas* (cuxiú-preto) o esforço de monitoramento deve ser intensificado a fim de gerar dados robustos sobre a abundância dessas espécies na REBIO do Gurupi. Essa unidade de conservação é extremamente importante para conservação dessas espécies de primatas (@Lopes_2000, @Buss_2017), uma vez que *Cebus kaapori* é uma das 25 espécies de primatas mais ameaçados do mundo (@Buss_2022).  
-
-
-Muitas das espécies ausentes têm hábitos noturnos e apresentam baixa detectabilidade pelo método utilizado, voltado a animais diurnos. Apesar de transectos lineares noturnos poderem aumentar a detecção de espécies não diurnas, pode haver pouco benefício nessa abordagem em razão de problemas como a falta de visibilidade, dificuldade de movimentar-se em silêncio pela trilha e dificuldade de discernir auditivamente os animais em movimentação (@Munari_2011). Assim, o protocolo avançado com armadilhas fotográficas ainda é a melhor opção para a amostragem de algumas espécies raras e/ou de hábitos noturnos (@Munari_2011), mas outros métodos com enfoque em registros indiretos podem elevar consideravelmente a detecção de espécies (@Sampaio_2010, @Ponce_Martins_2022).  
+Muitas das espécies ausentes têm hábitos noturnos e apresentam baixa detectabilidade pelo método utilizado, voltado a animais diurnos. Apesar de transectos lineares noturnos poderem aumentar a detecção de espécies não diurnas, pode haver pouco benefício nessa abordagem em razão de problemas como a falta de visibilidade, dificuldade de movimentar-se em silêncio pela trilha e dificuldade de discernir auditivamente os animais em movimentação (@Munari_2011). Assim, o protocolo avançado com armadilhas fotográficas ainda é a melhor opção para a amostragem de algumas espécies raras e/ou de hábitos noturnos (@Munari_2011).
 
 </br>
 
@@ -3288,16 +3322,16 @@ Já para a Mata Atlântica, em 62 estudos realizados em diversas fitofisionomias
 No Cerrado, as taxas de avistamento de mamíferos também foram no geral menores, embora a ESEC de Pirapitinga tenha apresentado uma taxa bem superior às demais do bioma. Isso se refletiu em alguns estudos no Cerrado que apresentaram taxas também bem distintas: 0,5 na Bahia (@Bocchiglieri_2010); 9,71 no PARNA da Serra do Cipó (@Oliveira_2009); e 16,92 em Minas Gerais (@Alves_2010).  
 
 
-Embora marcados pela ausência de registros importantes (*Taoniscus nanus* - codorna-carapé - no Cerrado, *Aburria  jacutinga* - jacutinga - na Mata Atlântica e *Crax f pinima* - mutum-pinima - na Amazônia), a despeito do esforço amostral considerável, os resultados parecem apontar para uma estabilidade demográfica no período considerado (2014-2022), inclusive para os táxons ameaçados.  
+Embora marcados pela ausência de registros importantes (*Taoniscus nanus* - codorna-carapé - no Cerrado, *Aburria  jacutinga* - jacutinga - na Mata Atlântica e *Crax f. pinima* - mutum-pinima - na Amazônia), a despeito do esforço amostral considerável, os resultados parecem apontar para uma estabilidade demográfica no período considerado (2014-2022), inclusive para os táxons ameaçados.  
 
 Sobre a taxa de avistamento total de aves na Amazônia, os resultados para as unidades de conservação do Programa apresentaram em sua maioria valores superiores ao observado para as florestas do Lago Uauaçú, no baixo Purús, uma região de “água preta”, caracterizada pela baixa produtividade, mas com baixa pressão de caça, ainda que não seja uma área protegida (@Haugaasen_2008). Nesta região, a partir de um esforço de 4.612,45 km, superior ao de qualquer unidade de conservação participante do Programa Monitora, distribuídos nos ambientes de floresta de terra firme, várzea e igapó, foi obtida uma taxa de 2,7 aves/10km percorridos para o conjunto comum de táxons de aves. Na ESEC da Terra do Meio, unidade com a maior abundância de aves, este valor chega a ser superior a 10 encontros para o conjunto de aves das espécies alvo por 10 km percorridos, o que pode ser entendido como um indicativo de que o grupo de aves alvo apresenta nas unidades de conservação, de forma genérica, uma maior abundância. Já a frequência relativa de *Crax* e *Pauxi* (mutuns) foi muito semelhante entre este estudo (25%) e aos maiores valores observados nas unidades de conservação participantes do Programa (25,4%) (@Haugaasen_2008).  
 
 É importante destacar que muitas espécies da fauna brasileira não possuem densidades populacionais e/ou taxas de avistamento descritas na literatura e, portanto, os dados obtidos pelo Monitora possibilitarão a construção desta linha de base de dados que servirá de subsídio, inclusive, para avaliação do estado de conservação das espécies.  
 
-Proporcionar registros de ocorrência e estimativas de abundância para algumas espécies DDs, a exemplo dos cervídeos apresentados como destaques neste relatório, será determinante para a recategorização desses táxons nos próximos ciclos de avaliação do risco de extinção de espécies brasileiras. Isso porque M. nemorivaga é considerada um complexo de espécies crípticas ainda por serem descritas e que necessita de pesquisas relacionadas a sua distribuição (@SALVE_2024). Alguns autores já sugerem que essa espécie deva ser um novo gênero monofilético em que Passalites nemorivagus é a espécie tipo (@MoralesDonoso_2023). Já M. americana, de forma semelhante, é considerada uma superespécie em que novas espécies poderão no futuro ser descritas (@Salviano_2017), o que dificulta a sua avaliação. 
+Proporcionar registros de ocorrência e estimativas de abundância para algumas espécies com insuficiência de dados (DDs), a exemplo dos cervídeos apresentados como destaques neste relatório, será determinante para a recategorização desses táxons nos próximos ciclos de avaliação do risco de extinção de espécies brasileiras. Isso porque *M. nemorivaga* é considerada um complexo de espécies crípticas ainda por serem descritas e que necessita de pesquisas relacionadas a sua distribuição (@ICMBio_2024). Alguns autores já sugerem que essa espécie deva ser um novo gênero monofilético em que *Passalites nemorivagus* é a espécie tipo (@MoralesDonoso_2023). Já *M. americana*, de forma semelhante, é considerada uma superespécie em que novas espécies poderão no futuro ser descritas (@Salviano_2017), o que dificulta a sua avaliação.  
 
 
-Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monitora, em seu componente Florestal, se propôs a coletar dados no Cerrado, na Mata Atlântica e na Amazônia. Um grande desafio para as unidades de conservação e para o Programa é a continuidade na execução dos protocolos, com coletas anuais contínuas e esforço amostral estável, como recomendado, ao longo dos anos. E, embora os dados para o Cerrado e Mata Atlântica ainda sejam limitados, pelos motivos já mencionados neste relatório, para a Amazônia já é possível traçar um cenário bastante confiável sobre a presença e o estado de conservação de algumas espécies alvo deste protocolo.  
+Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monitora, em seu Componente Florestal, se propôs a coletar dados no Cerrado, na Mata Atlântica e na Amazônia. Um grande desafio para as unidades de conservação e para o Programa é a continuidade na execução dos protocolos, com coletas anuais contínuas e esforço amostral estável ao longo dos anos.  Embora, pelos motivos apresentados neste relatório, os dados para o Cerrado e Mata Atlântica ainda sejam limitados, para algumas UCs da Amazônia já foi possível obter resultados confiáveis acerca da riqueza, composição e abundância das espécies-alvo e do estado de conservação dessas áreas.  
 
 
 </br>
@@ -3307,15 +3341,17 @@ Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monito
 </br>
 
 ::: callout-tip
-## Boas práticas para aprimorar o Programa
+## Boas práticas para aprimorar o Programa  
 
 </br>
 
--   Consolidar a implantação do protocolo básico de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas naquelas unidades de conservação ainda não consolidadas, de forma que as UCs contem com pelo menos três estações amostrais implantadas e em operação;
+-   Consolidar a implantação do protocolo básico de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas naquelas unidades de conservação ainda não consolidadas, de forma que as UCs contem com pelo menos três estações amostrais implantadas e em operação;  
 
--   Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral e no projeto de amostragem, em especial quanto ao respeito ao esforço amostral;
+- Manter a continuidade das amostragens após o seu início, evitando interrupções na série temporal;  
 
--   Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;
+-   Assegurar que durante as campanhas de campo as amostragens sejam realizadas de acordo com as diretrizes estabelecidas no protocolo amostral e no projeto de amostragem, em especial quanto ao respeito ao esforço amostral;  
+
+-   Assegurar que os dados coletados sejam repassados à COMOB de acordo com as orientações definidas pela Coordenação e num prazo razoável após a realização da campanha de campo;  
 
 -   Para novas unidades de conservação a participarem do Programa, promover a implantação de todas as unidades amostrais em um mesmo ano;  
 
@@ -3325,7 +3361,7 @@ Poucas iniciativas de monitoramento abrangem mais de um bioma. O Programa Monito
 
 :::
 
-</b>
+</br>
 
 Sobre a última recomendação acima, cabe salientar que uma análise possível e esperada para os dados obtidos pelo método empregado é a geração de quantitativos populacionais a partir da estimativa da densidade de grupos ou indivíduos. Esta estimativa seria fruto da taxa de encontro e das distâncias perpendiculares entre o grupo ou indivíduo e a transecção, mensuradas em cada avistamento. Contudo, em análises prévias não apresentadas nesse documento foram observados alguns vícios de amostragem que podem comprometer ou tornar as estimativas de densidade menos precisas. Destacamos o efeito *spyke* (número desproporcional de registros sobre a transecção) e o efeito de arredondamento das mensurações (tendência de as medidas serem atribuídas à valores arredondados como 10, 15 ou 20 m) nos dados obtidos de modo generalizado.  
 

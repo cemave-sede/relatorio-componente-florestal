@@ -2,12 +2,27 @@
 
 # Apresentação {#apresentacao .unnumbered}
 
-Sugestão do Fialho:  (inserir texto assinado pela Coordenação Geral de Pesquisa)  
+</br>
 
-<font color="red">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</font>  
+Presente em 115 Unidades de Conservação federais e dividido em três subprogramas (Terrestre, Aquático Continental e Marinho e Costeiro), que monitoram 21 alvos de conservação, o Programa Monitora é a maior iniciativa de monitoramento de biodiversidade in situ da América Latina.   
+
+O componente Florestal do Subprograma Terrestre foi o primeiro a ser estruturado. As coletas de dados dos protocolos básicos de plantas arbóreas e arbustivas, borboletas frugívoras, aves cinegéticas terrícolas e mamíferos terrestres de médio e grande porte diurnos se iniciaram em 2014, em um teste piloto em 16 UCs.  
+
+Este terceiro relatório do componente Florestal do Programa Monitora apresenta os resultados da aplicação dos protocolos básicos em 56 UCs no período de 2014 a 2022. É uma enorme satisfação perceber como um estudo piloto evoluiu para um programa sólido, em constante aprimoramento e capaz de gerar resultados relevantes para a conservação da biodiversidade.  
+
+O monitoramento de biodiversidade deve ser um processo contínuo, pois é preciso acumular séries temporais para a detecção de tendências. O Programa Monitora foi desenhado como um monitoramento do estado de conservação das áreas protegidas, com a expectativa de registrar essas tendências e gerar alertas para as situações que requerem atenção, e, eventualmente, intervenção. Pela primeira vez, a quantidade de dados acumulados nos permitiu fazer análises populacionais para aves e mamíferos e apontar populações bem conservadas e outras que requerem atenção. Quanto a borboletas, os resultados apontam um possível efeito da diminuição da cobertura florestal em nível regional, na região conhecida como arco do desmatamento, sobre a qualidade das florestas protegidas. No caso de plantas, que são amostradas a cada cinco anos, a quantidade de dados acumulada ainda é pequena, mas já indica a resiliência das florestas protegidas.  
+
+Este relatório apresenta algumas análises aplicáveis aos dados existentes, mas há inúmeras outras possiblidades analíticas. Ao divulgar estes resultados, esperamos também atrair outros olhares sobre o Programa Monitora. Uma novidade que apresentamos aqui e que complementa este relatório geral é o painel dinâmico dos resultados do monitoramento, onde o usuário pode extrair informações a partir de análises pré-definidas ou baixar os dados e realizar suas próprias análises. Neste painel, destaca-se o quadro síntese, que sumariza visualmente as respostas à pergunta que move todos os participantes do Programa Monitora: nossas unidades de conservação conservam de fato a biodiversidade?  
+
+Boa leitura!  
 
 
-  **Cecília Cronemberger de Faria**\
-*Coordenadora Geral de Pesquisa e Monitoramento da Biodiversidade - CGPEQ*\  
+<center>
 
 
+Coordenadora Geral de Pesquisa e Monitoramento da Biodiversidade  
+<font color="gray">(*e coletora de dados do Programa Monitora*)</font>  
+**Cecília Cronemberger de Faria**\
+  
+
+</center>
