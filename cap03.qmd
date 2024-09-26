@@ -62,7 +62,7 @@ O monitoramento de plantas arbóreas e arborescentes do Componente Florestal do 
 
 Por constituir a base da cadeia trófica, alterações na estrutura da vegetação podem implicar mudanças deletérias no habitat para a fauna, no desequilíbrio das interações ecológicas e no funcionamento dos ecossistemas (@Tews_2004). Da mesma forma, a perda ou alteração na abundância de organismos-chave para a saúde da floresta, como herbívoros, dispersores e polinizadores, e o aumento de pragas e doenças que atacam as plantas, podem afetar a estrutura e a dinâmica das florestas e das savanas (@Wilkie_2011).  
 
-Por se tratar de um protocolo que estabelece reamostragens a cada cinco anos, o processo do monitoramento para o alvo de plantas está em fase inicial e a maioria das unidades de conservação (UCs) ainda não implementou o número mínimo de três unidades amostrais (UAs) a serem remedidas a cada cinco anos, conforme previsto no protocolo. Apenas quatro unidades de conservação, de um universo de 46, implementaram completamente o protocolo de plantas e disponibilizaram os dados para elaboração do presente relatório (@fig-mapa-ucs-amostradas). Além dessas quatro UC, há três UC que possuem somente duas UAs remedidas e outras 10 UC com apenas uma UA remedida, o que limita bastante as análises. As demais 29 UC não tiveram remedição.  
+Por se tratar de um protocolo que estabelece reamostragens a cada cinco anos, o processo do monitoramento para o alvo de plantas está em fase inicial e a maioria das unidades de conservação (UCs) ainda não implementou o número mínimo de três unidades amostrais (UAs) a serem remedidas a cada cinco anos, conforme previsto no protocolo. Apenas quatro unidades de conservação, de um universo de 46, implementaram completamente o protocolo de plantas e disponibilizaram os dados para elaboração do presente relatório (@fig-mapa-ucs-amostradas). Além dessas quatro UCs, há três UCs que possuem somente duas UAs remedidas e outras sete com apenas uma UA remedida, o que limita bastante as análises. As demais 30 UCs não tiveram remedição.  
 
 </br>
 
@@ -563,6 +563,7 @@ Para os próximos relatórios, sobre o alvo plantas arbóreas e arborescentes, e
 
 ## Boas práticas para aprimorar o Programa  
 
+</br>
 
 - Consolidar a implantação do protocolo básico de plantas naquelas unidades de conservação ainda não consolidadas, de forma que todas as UCs contenham pelo menos três unidades amostrais sendo reamostradas;  
 
