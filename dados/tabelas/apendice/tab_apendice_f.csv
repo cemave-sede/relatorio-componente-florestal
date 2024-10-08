@@ -1,0 +1,143 @@
+﻿UC ;Bioma ;CNUC ;UA ;Ano;Altura;Circunferência;Densidade;Cobertura;Biomassa;Área  Basal;Liocourt
+ESEC Alto Maues ;Amazônia ;3131 ;1 ;2019 ;0 ;55,2 ;672,5 ;0,03 ;8,7 ;19,31 ;1,1 
+ESEC Alto Maues ;Amazônia ;3131 ;2 ;2019 ;0 ;59,9 ;650 ;0,03 ;8,4 ;22,57 ;1,1 
+ESEC da Terra do Meio ;Amazônia ;47 ;1 ;2016 ;10 ;71 ;507,5 ;0,07 ;296,1 ;35,77 ;1,1 
+ESEC de Maracá ;Amazônia ;57 ;1 ;2017 ;14,8 ;63,9 ;450 ;0,04 ;109,1 ;18,84 ;1,3 
+ESEC de Maracá ;Amazônia ;57 ;2 ;2019 ;16,2 ;73,1 ;457,5 ;0,06 ;216,7 ;27,26 ;1,3 
+ESEC de Maracá ;Amazônia ;57 ;3 ;2019 ;17,3 ;80,6 ;345 ;0,07 ;200,4 ;24,8 ;1,3 
+ESEC de Niquiá ;Amazônia ;60 ;1 ;2016 ;13 ;47,2 ;1002,5 ;0,02 ;117,6 ;19,6 ;1,1 
+ESEC de Niquiá ;Amazônia ;60 ;1 ;2021 ;12,2 ;49 ;990 ;0,02 ;128,3 ;20,83 ;1,1 
+ESEC de Pirapitinga ;Amazônia ;61 ;1 ;2022 ;8,4 ;57,7 ;280 ;0,03 ;59,4 ;8,58 ;0,6 
+ESEC do Jari ;Amazônia ;67 ;1 ;2022 ;18 ;83,4 ;550 ;0,42 ;305,2 ;229,17 ;1,3 
+ESEC do Jari ;Amazônia ;67 ;2 ;2022 ;17,2 ;69,4 ;462,5 ;0,06 ;230,8 ;28,26 ;1,3 
+ESEC do Jari ;Amazônia ;67 ;3 ;2022 ;14,5 ;65,2 ;460 ;0,05 ;192 ;24,14 ;1,3 
+FLONA de Carajás ;Amazônia ;88 ;1 ;2022 ;13,7 ;69,6 ;435 ;0,05 ;181,9 ;23,5 ;1,6 
+FLONA do Jamari ;Amazônia ;118 ;1 ;2017 ;14,2 ;63,7 ;472,5 ;0,04 ;112,4 ;19,1 ;1,1 
+FLONA do Jamari ;Amazônia ;118 ;2 ;2014 ;0 ;66,8 ;407,5 ;0,05 ;132,7 ;18,74 ;1,1 
+FLONA do Jamari ;Amazônia ;118 ;2 ;2017 ;17,2 ;64,8 ;440 ;0,04 ;123,5 ;18,72 ;1,1 
+FLONA do Jamari ;Amazônia ;118 ;4 ;2017 ;15,5 ;61,6 ;475 ;0,04 ;144,7 ;19,84 ;1,1 
+PARNA da Amazônia  ;Amazônia ;136 ;1 ;2018 ;14,1 ;65 ;472,5 ;0,04 ;144,9 ;20,13 ;1,7 
+PARNA da Amazônia  ;Amazônia ;136 ;2 ;2018 ;12 ;57,7 ;437,5 ;0,03 ;100,5 ;14,24 ;1,7 
+PARNA da Amazônia  ;Amazônia ;136 ;3 ;2018 ;13,8 ;59,9 ;487,5 ;0,04 ;126,1 ;17,73 ;1,7 
+PARNA da Serra da Cutia  ;Amazônia ;188 ;1 ;2016 ;9,1 ;56 ;667,5 ;0,03 ;148,4 ;21,52 ;1,1 
+PARNA da Serra do Pardo ;Amazônia ;151 ;1 ;2022 ;14,4 ;56,2 ;257,5 ;0,03 ;39,7 ;7,72 ;1,2 
+PARNA da Serra do Pardo ;Amazônia ;151 ;2 ;2022 ;12,6 ;61,1 ;205 ;0,04 ;33,8 ;7,4 ;1,2 
+PARNA de Pacaas Novos ;Amazônia ;163 ;1 ;2019 ;9,6 ;64,3 ;555 ;0,05 ;175,1 ;25,73 ;1,3 
+PARNA de Pacaas Novos ;Amazônia ;163 ;2 ;2019 ;12,8 ;63,2 ;530 ;0,04 ;152 ;22,16 ;1,3 
+PARNA de Pacaas Novos ;Amazônia ;163 ;3 ;2019 ;11,5 ;84,2 ;410 ;0,1 ;299,3 ;39,64 ;1,3 
+PARNA do Cabo Orange ;Amazônia ;169 ;1 ;2017 ;16 ;62,1 ;605 ;0,04 ;178,5 ;24,6 ;1,4 
+PARNA do Cabo Orange ;Amazônia ;169 ;2 ;2017 ;15,7 ;69,8 ;412,5 ;0,06 ;178,6 ;23 ;1,4 
+PARNA do Cabo Orange ;Amazônia ;169 ;3 ;2017 ;14,3 ;60,4 ;642,5 ;0,04 ;191,2 ;25,86 ;1,4 
+PARNA do Juruena ;Amazônia ;281 ;1 ;2017 ;16 ;59,5 ;555 ;0,04 ;126,9 ;20,72 ;1,5 
+PARNA do Juruena ;Amazônia ;281 ;1 ;2022 ;16,6 ;61,2 ;522,5 ;0,04 ;141,2 ;21,39 ;1,5 
+PARNA do Juruena ;Amazônia ;281 ;2 ;2017 ;13,8 ;56,4 ;510 ;0,03 ;107,6 ;16,16 ;1,5 
+PARNA do Juruena ;Amazônia ;281 ;2 ;2022 ;14,1 ;58 ;520 ;0,03 ;118,9 ;17,61 ;1,5 
+PARNA do Juruena ;Amazônia ;281 ;3 ;2017 ;14,7 ;62 ;545 ;0,05 ;187 ;24,81 ;1,5 
+PARNA do Juruena ;Amazônia ;281 ;3 ;2022 ;14,6 ;62,8 ;532,5 ;0,05 ;191 ;25,16 ;1,5 
+PARNA do Monte Roraima ;Amazônia ;174 ;1 ;2019 ;16,3 ;58,3 ;710 ;0,03 ;170,2 ;24,43 ;1,4 
+PARNA dos Campos Amazônicos ;Amazônia ;284 ;1 ;2019 ;12,4 ;64,2 ;515 ;0,04 ;155,5 ;22,29 ;1,5 
+PARNA Mapinguari ;Amazônia ;1633 ;1 ;2017 ;13,1 ;64,3 ;537,5 ;0,04 ;90,5 ;21,82 ;1,4 
+PARNA Mapinguari ;Amazônia ;1633 ;1 ;2022 ;;62,7 ;460 ;0,04 ;70,5 ;17,77 ;1,4 
+PARNA Mapinguari ;Amazônia ;1633 ;2 ;2018 ;15,7 ;60,9 ;682,5 ;0,04 ;183,5 ;26,44 ;1,4 
+PARNA Mapinguari ;Amazônia ;1633 ;3 ;2018 ;17,1 ;64 ;620 ;0,04 ;183,1 ;26,76 ;1,4 
+PARNA Mapinguari ;Amazônia ;1633 ;4 ;2021 ;12,2 ;63,7 ;510 ;0,04 ;147,9 ;21,53 ;1,4 
+PARNA Mapinguari ;Amazônia ;1633 ;5 ;2021 ;11,8 ;64,9 ;532,5 ;0,04 ;170,4 ;23,92 ;1,4 
+PARNA Mapinguari ;Amazônia ;1633 ;6 ;2021 ;11,3 ;61,2 ;540 ;0,04 ;123,4 ;19,21 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;1 ;2014 ;21,8 ;71,1 ;505 ;0,06 ;224,9 ;28,41 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;1 ;2017 ;17,6 ;72,4 ;487,5 ;0,06 ;224,9 ;28,37 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;1 ;2021 ;20,2 ;76,3 ;372,5 ;0,07 ;199,1 ;24,62 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;2 ;2015 ;21,5 ;83,1 ;510 ;0,12 ;611,8 ;63,65 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;2 ;2017 ;22 ;81 ;510 ;0,11 ;544,7 ;58,22 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;2 ;2021 ;22,4 ;83,4 ;482,5 ;0,12 ;548,1 ;58,17 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;3 ;2017 ;21,5 ;82,3 ;560 ;0,1 ;486 ;55,13 ;1,4 
+PARNA Montanhas do Tumucumaque ;Amazônia ;187 ;3 ;2021 ;22,8 ;81,8 ;555 ;0,1 ;464,1 ;52,91 ;1,4 
+PARNA Nascentes do Lago Jari ;Amazônia ;1626 ;1 ;2019 ;14,8 ;64,7 ;697,5 ;0,05 ;236,4 ;32,2 ;1,2 
+PARNA Nascentes do Lago Jari ;Amazônia ;1626 ;2 ;2019 ;15,3 ;64,7 ;815 ;0,06 ;368,2 ;44,86 ;1,2 
+PARNA Nascentes do Lago Jari ;Amazônia ;1626 ;3 ;2019 ;15,4 ;67,6 ;565 ;0,05 ;234,2 ;30,37 ;1,2 
+PARNA Serra da Mocidade ;Amazônia ;189 ;2 ;2016 ;15,8 ;55,5 ;722,5 ;0,03 ;148,9 ;21,81 ;1,3 
+PARNA Serra da Mocidade ;Amazônia ;189 ;2 ;2021 ;14 ;55,8 ;707,5 ;0,03 ;148 ;21,56 ;1,3 
+PARNA Serra do Divisor ;Amazônia ;149 ;1 ;2018 ;34,1 ;63,1 ;577,5 ;0,04 ;182,7 ;24,83 ;1,5 
+PARNA Serra do Divisor ;Amazônia ;149 ;2 ;2019 ;16,9 ;67,6 ;647,5 ;0,06 ;329,8 ;40,24 ;1,5 
+PARNA Serra do Divisor ;Amazônia ;149 ;2 ;2022 ;16 ;64,7 ;692,5 ;0,06 ;350,4 ;42,01 ;1,5 
+PARNA Serra do Divisor ;Amazônia ;149 ;3 ;2020 ;22,7 ;62,5 ;530 ;0,04 ;130,1 ;19,52 ;1,5 
+PARNA Serra do Divisor ;Amazônia ;149 ;3 ;2022 ;15,2 ;59,5 ;630 ;0,03 ;140,1 ;21,39 ;1,5 
+PARNA Viruá ;Amazônia ;179 ;1 ;2019 ;16,7 ;52,8 ;740 ;0,03 ;122,4 ;18,67 ;0,8 
+REBIO do Jarú ;Amazônia ;208 ;1 ;2017 ;15,9 ;64,4 ;507,5 ;0,06 ;231,6 ;28,81 ;1,4 
+REBIO do Jarú ;Amazônia ;208 ;1 ;2022 ;15,4 ;65,4 ;532,5 ;0,06 ;261,4 ;32 ;1,5 
+REBIO do Jarú ;Amazônia ;208 ;2 ;2017 ;16,8 ;67,9 ;572,5 ;0,05 ;220,6 ;29,77 ;1,4 
+REBIO do Jarú ;Amazônia ;208 ;2 ;2022 ;17,1 ;70,1 ;562,5 ;0,06 ;247,6 ;32,78 ;1,5 
+REBIO do Jarú ;Amazônia ;208 ;3 ;2017 ;14,4 ;59,5 ;585 ;0,04 ;176 ;23,64 ;1,4 
+REBIO do Jarú ;Amazônia ;208 ;3 ;2022 ;14,2 ;58,3 ;647,5 ;0,04 ;179,4 ;24,86 ;1,5 
+REBIO do Jarú ;Amazônia ;208 ;4 ;2017 ;15,3 ;65,6 ;535 ;0,05 ;183,5 ;26,31 ;1,4 
+REBIO do Jarú ;Amazônia ;208 ;4 ;2022 ;15,6 ;65,8 ;537,5 ;0,05 ;181,8 ;26,45 ;1,5 
+REBIO do Tapirapé ;Amazônia ;211 ;1 ;2016 ;10,1 ;56,6 ;502,5 ;0,03 ;114,9 ;16,48 ;1 
+REBIO do Tapirapé ;Amazônia ;211 ;1 ;2017 ;11,1 ;56,6 ;500 ;0,03 ;109,2 ;16,01 ;1 
+REBIO do Tapirapé ;Amazônia ;211 ;2 ;2017 ;13,6 ;64,3 ;430 ;0,05 ;158,8 ;20,72 ;1 
+REBIO do Tapirapé ;Amazônia ;211 ;3 ;2017 ;14,5 ;61,7 ;517,5 ;0,04 ;156,2 ;21,38 ;1 
+REBIO do Uatumã ;Amazônia ;213 ;1 ;2014 ;12,8 ;59,2 ;585 ;0,04 ;157,1 ;21,43 ;1,1 
+REBIO do Uatumã ;Amazônia ;213 ;1 ;2017 ;15,1 ;60,1 ;550 ;0,04 ;145,1 ;20,52 ;1,1 
+REBIO do Uatumã ;Amazônia ;213 ;2 ;2017 ;16,3 ;65,1 ;630 ;0,05 ;217,3 ;29,51 ;1,1 
+REBIO do Uatumã ;Amazônia ;213 ;3 ;2017 ;14 ;54,7 ;680 ;0,03 ;138,8 ;20,92 ;1,1 
+REBIO Gurupi ;Amazônia ;207 ;1 ;2016 ;22,4 ;67 ;562,5 ;0,05 ;205,8 ;27,05 ;1,1 
+REBIO Gurupi ;Amazônia ;207 ;2 ;2017 ;13,1 ;57,9 ;527,5 ;0,04 ;135,8 ;18,61 ;1,1 
+RESEX Alto Tauaracá ;Amazônia ;274 ;1 ;2018 ;11,7 ;65,4 ;490 ;0,04 ;121,8 ;20,24 ;1,5 
+RESEX Alto Tauaracá ;Amazônia ;274 ;2 ;2018 ;12,8 ;69,8 ;435 ;0,05 ;168,1 ;23,67 ;1,5 
+RESEX Alto Tauaracá ;Amazônia ;274 ;3 ;2018 ;10,6 ;68,2 ;455 ;0,05 ;142,5 ;21,36 ;1,5 
+RESEX Arapixi ;Amazônia ;285 ;1 ;2019 ;21,9 ;67 ;557,5 ;0,05 ;192,9 ;28,68 ;1,5 
+RESEX Arapixi ;Amazônia ;285 ;2 ;2019 ;18,6 ;53,6 ;605 ;0,03 ;120 ;17,93 ;1,5 
+RESEX Barreiro das Antas ;Amazônia ;221 ;1 ;2017 ;10,3 ;64,3 ;507,5 ;0,06 ;232,7 ;28,5 ;1,3 
+RESEX Barreiro das Antas ;Amazônia ;221 ;2 ;2018 ;11,4 ;56 ;445 ;0,03 ;97,3 ;14,98 ;1,3 
+RESEX Barreiro das Antas ;Amazônia ;221 ;3 ;2018 ;10,6 ;54,1 ;460 ;0,03 ;85,3 ;12,8 ;1,3 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;1 ;2014 ;10,7 ;60,9 ;457,5 ;0,05 ;160,4 ;21,65 ;1,6 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;1 ;2017 ;14,6 ;59,8 ;417,5 ;0,04 ;114,2 ;16,69 ;1,6 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;1 ;2019 ;13,6 ;58,9 ;482,5 ;0,04 ;129,7 ;18,89 ;1,8 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;2 ;2014 ;10,7 ;72,8 ;447,5 ;0,06 ;150,5 ;25,71 ;1,6 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;2 ;2017 ;14,5 ;66,5 ;507,5 ;0,05 ;136,3 ;24,26 ;1,6 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;2 ;2019 ;14,8 ;69,3 ;502,5 ;0,05 ;154,4 ;26,44 ;1,8 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;3 ;2014 ;16,3 ;59,9 ;270 ;0,04 ;77 ;10,57 ;1,6 
+RESEX do Cazumbá Iracema ;Amazônia ;232 ;3 ;2019 ;11,7 ;54,5 ;347,5 ;0,04 ;97 ;12,86 ;1,8 
+RESEX Ipau Anilzinho ;Amazônia ;241 ;1 ;2019 ;19,2 ;71,8 ;380 ;0,06 ;169,3 ;21,48 ;1,6 
+RESEX Ituxi ;Amazônia ;1628 ;1 ;2019 ;16,8 ;65,6 ;532,5 ;0,05 ;190,9 ;25,15 ;1,7 
+RESEX Ituxi ;Amazônia ;1628 ;2 ;2019 ;16,5 ;67,3 ;596,67 ;0,05 ;167,1 ;29,2 ;1,7 
+RESEX Ituxi ;Amazônia ;1628 ;3 ;2019 ;18 ;61,7 ;672,5 ;0,04 ;198,2 ;26,96 ;1,7 
+RESEX Renascer  ;Amazônia ;1018 ;1 ;2018 ;15,5 ;61,4 ;525 ;0,04 ;152,9 ;21,54 ;1,5 
+RESEX Renascer  ;Amazônia ;1018 ;2 ;2018 ;18,2 ;60,2 ;530 ;0,04 ;166,7 ;22 ;1,5 
+RESEX Renascer  ;Amazônia ;1018 ;3 ;2018 ;16,4 ;63,6 ;480 ;0,05 ;168,5 ;21,88 ;1,5 
+RESEX Rio Ouro Preto ;Amazônia ;256 ;1 ;2017 ;14,8 ;61 ;412,5 ;0,04 ;106,9 ;15,34 ;1,8 
+RESEX Rio Ouro Preto ;Amazônia ;256 ;2 ;2017 ;9,3 ;62,6 ;510 ;0,04 ;169,7 ;22,69 ;1,8 
+RESEX Rio Ouro Preto ;Amazônia ;256 ;3 ;2017 ;10,2 ;65,1 ;407,5 ;0,05 ;122,2 ;18,76 ;1,8 
+RESEX Riozinho da Liberdade ;Amazônia ;257 ;1 ;2020 ;18,2 ;71,4 ;590 ;0,05 ;213,1 ;30,9 ;1,5 
+RESEX Riozinho da Liberdade ;Amazônia ;257 ;2 ;2020 ;17,6 ;66,2 ;582,5 ;0,05 ;209,3 ;29,19 ;1,5 
+RESEX Riozinho da Liberdade ;Amazônia ;257 ;3 ;2022 ;15 ;67 ;562,5 ;0,05 ;217,7 ;29,19 ;1,5 
+RESEX Tapajós Arapiuns ;Amazônia ;259 ;4 ;2018 ;13,4 ;65,5 ;455 ;0,05 ;164,5 ;21,63 ;1,4 
+RESEX Tapajós Arapiuns ;Amazônia ;259 ;7 ;2018 ;13,9 ;69,9 ;387,5 ;0,06 ;168,9 ;21,69 ;1,4 
+RESEX Tapajós Arapiuns ;Amazônia ;259 ;8 ;2018 ;14,1 ;65,1 ;442,5 ;0,04 ;143 ;19,4 ;1,4 
+RESEX Verde Para Sempre  ;Amazônia ;260 ;1 ;2022 ;13,1 ;63,1 ;497,5 ;0,05 ;198 ;25 ;1,4 
+RESEX Verde Para Sempre  ;Amazônia ;260 ;2 ;2022 ;11,1 ;57,7 ;552,5 ;0,04 ;136,4 ;20,15 ;1,4 
+ESEC Serra Geral do Tocantins ;Cerrado ;76 ;1 ;2015 ;3,7 ;30 ;1005 ;0,01 ;6,8 ;8,98 ;0,8 
+ESEC Serra Geral do Tocantins ;Cerrado ;76 ;1 ;2018 ;3,7 ;30,3 ;780 ;0,01 ;6,1 ;7,18 ;0,8 
+ESEC Serra Geral do Tocantins ;Cerrado ;76 ;2 ;2015 ;3,9 ;36,5 ;450 ;0,01 ;4,1 ;5,86 ;0,8 
+ESEC Serra Geral do Tocantins ;Cerrado ;76 ;2 ;2018 ;4,2 ;31,5 ;515 ;0,01 ;4,1 ;5,13 ;0,8 
+PARNA Chapada dos Veadeiros ;Cerrado ;139 ;1 ;2018 ;3,1 ;23,2 ;2290 ;0 ;6,6 ;11,29 ;1,2 
+PARNA de Brasília ;Cerrado ;159 ;1 ;2014 ;3,3 ;24,8 ;2482,5 ;0,01 ;3,8 ;14,45 ;0,6 
+PARNA de Brasília ;Cerrado ;159 ;1 ;2018 ;3,8 ;25,8 ;2995 ;0,01 ;3,8 ;19,52 ;0,6 
+PARNA Serra da Bodoquena ;Cerrado ;143 ;1 ;2014 ;19,3 ;58,5 ;685 ;0,04 ;93,6 ;24,24 ;1,4 
+PARNA Serra da Bodoquena ;Cerrado ;143 ;1 ;2019 ;15,4 ;59,1 ;672,5 ;0,04 ;77,7 ;24,49 ;1,4 
+PARNA Serra da Bodoquena ;Cerrado ;143 ;2 ;2015 ;9,4 ;56,8 ;420 ;0,03 ;26,1 ;13,96 ;1,4 
+PARNA Serra da Bodoquena ;Cerrado ;143 ;2 ;2019 ;10,5 ;58 ;422,5 ;0,04 ;33,3 ;15,06 ;1,4 
+PARNA Serra do Cipó ;Cerrado ;148 ;1 ;2014 ;7,4 ;56,2 ;320 ;0,03 ;76,3 ;10,65 ;0,7 
+PARNA Serra do Cipó ;Cerrado ;148 ;1 ;2018 ;7,1 ;57,2 ;317,5 ;0,03 ;79,2 ;10,92 ;0,7 
+PARNA da Serra dos Órgãos ;Mata Atlântica ;152 ;1 ;2014 ;8,8 ;66,8 ;810 ;0,05 ;45,5 ;38,28 ;1,6 
+PARNA da Serra dos Órgãos ;Mata Atlântica ;152 ;1 ;2019 ;9 ;63,4 ;866,67 ;0,04 ;43,9 ;36,49 ;1,6 
+PARNA da Serra dos Órgãos ;Mata Atlântica ;152 ;2 ;2016 ;10,4 ;54,2 ;582,5 ;0,03 ;30,7 ;17,25 ;1,6 
+PARNA da Serra dos Órgãos ;Mata Atlântica ;152 ;2 ;2019 ;10,4 ;55 ;552,5 ;0,03 ;28 ;16,58 ;1,6 
+PARNA do Superagui  ;Mata Atlântica ;178 ;1 ;2016 ;11,3 ;60,1 ;485 ;0,04 ;28,1 ;19,09 ;1,3 
+PARNA do Superagui  ;Mata Atlântica ;178 ;2 ;2017 ;10,2 ;60,6 ;860 ;0,04 ;28,2 ;31,68 ;1,3 
+PARNA do Superagui  ;Mata Atlântica ;178 ;2 ;2018 ;6,9 ;52,8 ;965 ;0,03 ;15,7 ;26,63 ;1,3 
+PARNA do Superagui  ;Mata Atlântica ;178 ;3 ;2019 ;8,2 ;47,8 ;805 ;0,02 ;22,7 ;17,37 ;1,3 
+PARNA Serra da Bocaina ;Mata Atlântica ;142 ;1 ;2014 ;11,4 ;51,1 ;866,67 ;0,02 ;21,9 ;20,05 ;1,2 
+PARNA do Jaú;Amazônia ;173;1;2014;12,7;62,6;720;0,06;;;
+PARNA do Jaú;Amazônia ;173;2;2014;11,8;60,6;740;0,04;;;
+PARNA do Jaú;Amazônia ;173;1;2017;14,7;61,9;575;0,05;;;
+PARNA do Jaú;Amazônia ;173;2;2017;15,2;59,8;612;0,04;132,8;28,1;
+PARNA do Jaú;Amazônia ;173;3;2017;15,4;62,9;676;0,05;132,8;36,5;

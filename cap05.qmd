@@ -145,161 +145,161 @@ library(openxlsx)
 #| warning: false
 #| cache: true
 
-# Carregamento e limpeza dos dados
-
-# Carregando os dados no formato .csv
-
-masto_aves_csv <- read_csv2("dados/mastoaves/base_masto_aves_esforco_corrigido.csv")
-
-# No arquivo "base_masto_aves_eforco_corrigido.csv" a coluna de esforço 
-# foi corrigida, visto que os valores estavam sem o ponto decimal, 
-# indicando quantidades 10 vezes superiores ao valor real (ex.: 45 km e vez de 4.5 km)
-
-# Convertendo os dados para o formato .rds
-
-saveRDS(masto_aves_csv, file = "dados/mastoaves/masto_aves.rds")
-
-masto_aves <- readRDS("dados/mastoaves/masto_aves.rds")
-
-# Carregando a planilha com a UCs classificadas por grupo - proteção integral x
-# uso sustentável
-
-ucs_grupos <- read_csv2("dados/ucs/ucs_grupos.csv")
-
-
-# Juntando a planilha ucs_grupos com a planilha masto_aves
-
-masto_aves <- left_join(masto_aves, ucs_grupos, by = "cnuc")
-
-#View(masto_aves)
-
-
-# Excluindo registros fora do período 2014-2022
-
-masto_aves <- masto_aves |> 
-  filter(ano != 2023)
-
-#unique(masto_aves$ano)
-
-
-# Corrigindo os nomes dos biomas
-
-masto_aves <- masto_aves %>% 
-mutate(
-  bioma = case_when(
-    uc == "Esec de Pirapitinga" ~ "Cerrado",
-    uc == "Esec Serra Geral do Tocantins" ~ "Cerrado",
-    uc == "Parna da Chapada dos Veadeiros" ~ "Cerrado",
-    uc == "Parna da Serra da Bodoquena" ~ "Cerrado",
-    uc == "Parna da Serra do Cipó" ~ "Cerrado",
-    uc == "Parna da Serra da Bocaina" ~ "Mata Atlântica",
-    uc == "Parna da Serra dos Órgãos" ~ "Mata Atlântica",
-    uc == "Parna do Iguaçu" ~ "Mata Atlântica",
-    uc == "Parna do Superagui" ~ "Mata Atlântica",
-    uc == "Rebio Guaribas" ~ "Mata Atlântica",
-    uc == "Rebio de Una" ~ "Mata Atlântica",
-    TRUE ~ "Amazônia"))
-
-#View(masto_aves)
-
-#unique(masto_aves$bioma)
-
-# Contando o número de UCs por bioma
-
-ucs_bioma <- masto_aves |> 
-  group_by(bioma) |> 
-  distinct(uc) |> 
-  summarise(ucs = n())
-
-# Corrigindo a lista de primatas - alterando registros na coluna "taxon_validado": 
-# Mico spp para Mico sp e "Callicebus spp" para "Callicebus sp"
-
-masto_aves <- masto_aves %>% 
-mutate(
-  taxon_validado = case_when(
-    taxon_validado == "Mico spp" ~ "Mico sp",
-    taxon_validado == "Callicebus spp" ~ "Callicebus sp",
-    taxon_validado == "Lagothrix cana" ~ "Lagothrix lagothricha cana",
-    taxon_validado == "Lagothrix poeppigii" ~ "Lagothrix lagothricha poeppigii",
-    TRUE ~ taxon_validado))
-
-
-
-# Alterando o nome da espécie de veado na ESEC de Maracá de Ozotocerus para Mazama
-
-masto_aves <- masto_aves %>% 
-mutate(
-  taxon_validado = case_when(
-    uc == "Esec de Maracá" & taxon_validado == "Ozotocerus bezoarticus" ~ "Mazama sp",
-    TRUE ~ taxon_validado))
-
-
-
-# Corrigindo validação de Ortalis motmot para algumas UCs -> Ortalis rucifeps
-
-masto_aves <- masto_aves %>%
-mutate(
-  taxon_validado = case_when(
-    uc == "Esec da Terra do Meio" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
-    uc == "Parna da Serra do Pardo" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
-    uc == "Rebio do Tapirapé" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
-    uc == "Resex Renascer" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
-    uc == "Resex Riozinho do Anfrísio" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
-    uc == "Resex Verde para Sempre" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
-  TRUE ~ taxon_validado))
-
-
-# Checando o ajuste de Ortalis ruficeps
-
-# aves1 <- masto_aves |>
-#   filter(classe == "Aves")
+# # Carregamento e limpeza dos dados
 # 
-# unique(aves1$taxon_validado)
-
-
-
-# Alterando o nome da ordem de Artiodactyla para Cetartiodactyla
-
-masto_aves <- masto_aves %>%
-mutate(
-  ordem = case_when(
-    ordem == "Artiodactyla" ~  "Cetartiodactyla",
-  TRUE ~ ordem)) 
-  
-
-#unique(masto_aves$ordem)
-  
-
-
-# Ajustando nomes na coluna "especie" - corrigindo espécies com sp. para sp
-
-masto_aves <- masto_aves %>%
-mutate(
-  especie = case_when(
-    especie == "Aotus sp." ~  "Aotus sp",
-    especie == "Dasyprocta sp." ~  "Dasyprocta sp",
-    especie == "Psophia sp." ~  "Psophia sp",
-    especie == "Galea sp." ~  "Galea sp",
-    especie == "Galictis sp." ~  "Galictis sp",
-  TRUE ~ especie)) 
-
-
-# Checando táxons de primatas
-
-# list_primatas <- masto_aves |>
-#   filter(ordem == "Primates")
+# # Carregando os dados no formato .csv
 # 
-# unique(list_primatas$taxon_validado)
-
-# Convertendo a classe de algumas variáveis para fator
-
-masto_aves$uc <- as.factor(masto_aves$uc)
-masto_aves$bioma <- as.factor(masto_aves$bioma)
-masto_aves$uc_ca <- as.factor(masto_aves$uc_ca)
-masto_aves$categoria <- as.factor(masto_aves$categoria)
-masto_aves$grupo <- as.factor(masto_aves$grupo)
-
-#glimpse(masto_aves)
+# masto_aves_csv <- read_csv2("dados/mastoaves/base_masto_aves_esforco_corrigido.csv")
+# 
+# # No arquivo "base_masto_aves_eforco_corrigido.csv" a coluna de esforço
+# # foi corrigida, visto que os valores estavam sem o ponto decimal,
+# # indicando quantidades 10 vezes superiores ao valor real (ex.: 45 km e vez de 4.5 km)
+# 
+# # Convertendo os dados para o formato .rds
+# 
+# saveRDS(masto_aves_csv, file = "dados/mastoaves/masto_aves.rds")
+# 
+# masto_aves <- readRDS("dados/mastoaves/masto_aves.rds")
+# 
+# # Carregando a planilha com a UCs classificadas por grupo - proteção integral x
+# # uso sustentável
+# 
+# ucs_grupos <- read_csv2("dados/ucs/ucs_grupos.csv")
+# 
+# 
+# # Juntando a planilha ucs_grupos com a planilha masto_aves
+# 
+# masto_aves <- left_join(masto_aves, ucs_grupos, by = "cnuc")
+# 
+# #View(masto_aves)
+# 
+# 
+# # Excluindo registros fora do período 2014-2022
+# 
+# masto_aves <- masto_aves |>
+#   filter(ano != 2023)
+# 
+# #unique(masto_aves$ano)
+# 
+# 
+# # Corrigindo os nomes dos biomas
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   bioma = case_when(
+#     uc == "Esec de Pirapitinga" ~ "Cerrado",
+#     uc == "Esec Serra Geral do Tocantins" ~ "Cerrado",
+#     uc == "Parna da Chapada dos Veadeiros" ~ "Cerrado",
+#     uc == "Parna da Serra da Bodoquena" ~ "Cerrado",
+#     uc == "Parna da Serra do Cipó" ~ "Cerrado",
+#     uc == "Parna da Serra da Bocaina" ~ "Mata Atlântica",
+#     uc == "Parna da Serra dos Órgãos" ~ "Mata Atlântica",
+#     uc == "Parna do Iguaçu" ~ "Mata Atlântica",
+#     uc == "Parna do Superagui" ~ "Mata Atlântica",
+#     uc == "Rebio Guaribas" ~ "Mata Atlântica",
+#     uc == "Rebio de Una" ~ "Mata Atlântica",
+#     TRUE ~ "Amazônia"))
+# 
+# #View(masto_aves)
+# 
+# #unique(masto_aves$bioma)
+# 
+# # Contando o número de UCs por bioma
+# 
+# ucs_bioma <- masto_aves |>
+#   group_by(bioma) |>
+#   distinct(uc) |>
+#   summarise(ucs = n())
+# 
+# # Corrigindo a lista de primatas - alterando registros na coluna "taxon_validado":
+# # Mico spp para Mico sp e "Callicebus spp" para "Callicebus sp"
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   taxon_validado = case_when(
+#     taxon_validado == "Mico spp" ~ "Mico sp",
+#     taxon_validado == "Callicebus spp" ~ "Callicebus sp",
+#     taxon_validado == "Lagothrix cana" ~ "Lagothrix lagothricha cana",
+#     taxon_validado == "Lagothrix poeppigii" ~ "Lagothrix lagothricha poeppigii",
+#     TRUE ~ taxon_validado))
+# 
+# 
+# 
+# # Alterando o nome da espécie de veado na ESEC de Maracá de Ozotocerus para Mazama
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   taxon_validado = case_when(
+#     uc == "Esec de Maracá" & taxon_validado == "Ozotocerus bezoarticus" ~ "Mazama sp",
+#     TRUE ~ taxon_validado))
+# 
+# 
+# 
+# # Corrigindo validação de Ortalis motmot para algumas UCs -> Ortalis rucifeps
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   taxon_validado = case_when(
+#     uc == "Esec da Terra do Meio" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
+#     uc == "Parna da Serra do Pardo" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
+#     uc == "Rebio do Tapirapé" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
+#     uc == "Resex Renascer" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
+#     uc == "Resex Riozinho do Anfrísio" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
+#     uc == "Resex Verde para Sempre" & taxon_validado == "Ortalis motmot" ~ "Ortalis ruficeps",
+#   TRUE ~ taxon_validado))
+# 
+# 
+# # Checando o ajuste de Ortalis ruficeps
+# 
+# # aves1 <- masto_aves |>
+# #   filter(classe == "Aves")
+# #
+# # unique(aves1$taxon_validado)
+# 
+# 
+# 
+# # Alterando o nome da ordem de Artiodactyla para Cetartiodactyla
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   ordem = case_when(
+#     ordem == "Artiodactyla" ~  "Cetartiodactyla",
+#   TRUE ~ ordem))
+# 
+# 
+# #unique(masto_aves$ordem)
+# 
+# 
+# 
+# # Ajustando nomes na coluna "especie" - corrigindo espécies com sp. para sp
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   especie = case_when(
+#     especie == "Aotus sp." ~  "Aotus sp",
+#     especie == "Dasyprocta sp." ~  "Dasyprocta sp",
+#     especie == "Psophia sp." ~  "Psophia sp",
+#     especie == "Galea sp." ~  "Galea sp",
+#     especie == "Galictis sp." ~  "Galictis sp",
+#   TRUE ~ especie))
+# 
+# 
+# # Checando táxons de primatas
+# 
+# # list_primatas <- masto_aves |>
+# #   filter(ordem == "Primates")
+# #
+# # unique(list_primatas$taxon_validado)
+# 
+# # Convertendo a classe de algumas variáveis para fator
+# 
+# masto_aves$uc <- as.factor(masto_aves$uc)
+# masto_aves$bioma <- as.factor(masto_aves$bioma)
+# masto_aves$uc_ca <- as.factor(masto_aves$uc_ca)
+# masto_aves$categoria <- as.factor(masto_aves$categoria)
+# masto_aves$grupo <- as.factor(masto_aves$grupo)
+# 
+# #glimpse(masto_aves)
 
 ```
 
@@ -319,113 +319,116 @@ masto_aves$grupo <- as.factor(masto_aves$grupo)
 # Scripts Gráfico 1 de esforço 
 # Autores: Elildo Carvalho Jr & Marcos Fialho
 
-library(here)
-library(tidyverse)
-library(RColorBrewer)
+# library(here)
+# library(tidyverse)
+# library(RColorBrewer)
 
 
 #----- ler dados
 
-load(here("dados", "mastoaves", "monitora.RData"))
+# load(here("dados", "mastoaves", "monitora.RData"))
+# 
+# #write.csv(monitora, "dados/mastoaves/monitora_elildo.csv", row.names = FALSE)
+# 
+# monitora <- monitora %>%
+# mutate(
+#   uc = case_when(
+#     uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
+#     uc  == "Esec de Maracá" ~ "ESEC de Maracá",
+#     uc  == "Esec de Niquiá" ~ "ESEC de Niquiá",
+#     uc  == "Esec de Pirapitinga" ~ "ESEC de Pirapitinga",
+#     uc  == "Esec do Jari" ~ "ESEC do Jari",
+#     uc  == "Esec do Rio Acre" ~ "ESEC do Rio Acre",
+#     uc  == "Esec Serra Geral do Tocantins" ~ "ESEC Serra Geral do Tocantins",
+#     uc  == "Flona de Tapajós" ~ "FLONA de Tapajós",
+#     uc  == "Flona do Jamari" ~ "FLONA do Jamari",
+#     uc  == "Parna da Amazônia" ~ "PARNA da Amazônia",
+#     uc  == "Parna da Chapada dos Veadeiros" ~ "PARNA da Chapada dos Veadeiros",
+#     uc  == "Parna da Serra da Bocaina" ~ "PARNA da Serra da Bocaina",
+#     uc  == "Parna da Serra da Bodoquena" ~ "PARNA da Serra da Bodoquena",
+#     uc  == "Parna da Serra da Cutia" ~ "PARNA da Serra da Cutia",
+#     uc  == "Parna da Serra do Cipó" ~ "PARNA da Serra do Cipó",
+#     uc  == "Parna da Serra do Divisor" ~ "PARNA da Serra do Divisor",
+#     uc  == "Parna da Serra do Pardo" ~ "PARNA da Serra do Pardo",
+#     uc  == "Parna da Serra dos Órgãos" ~ "PARNA da Serra dos Órgãos",
+#     uc  == "Parna de Pacaás Novos" ~ "PARNA de Pacaás Novos",
+#     uc  == "Parna do Cabo Orange" ~ "PARNA do Cabo Orange",
+#     uc  == "Parna do Iguaçu" ~ "PARNA do Iguaçu",
+#     uc  == "Parna do Jaú" ~ "PARNA do Jaú",
+#     uc  == "Parna do Juruena" ~ "PARNA do Juruena",
+#     uc  == "Parna do Monte Roraima" ~ "PARNA do Monte Roraima",
+#     uc  == "Parna do Superagui" ~ "PARNA do Superagui",
+#     uc  == "Parna do Viruá" ~ "PARNA do Viruá",
+#     uc  == "Parna dos Campos Amazônicos" ~ "PARNA dos Campos Amazônicos",
+#     uc  == "Parna Mapinguari" ~ "PARNA Mapinguari",
+#     uc  == "Parna Montanhas do Tumucumaque" ~ "PARNA Montanhas do Tumucumaque",
+#     uc  == "Parna Nascentes do Lago Jari" ~ "PARNA Nascentes do Lago Jari",
+#     uc  == "Parna Serra da Mocidade" ~ "PARNA Serra da Mocidade",
+#     uc  == "Rebio de Una" ~ "REBIO de Una",
+#     uc  == "Rebio do Gurupi" ~ "REBIO do Gurupi",
+#     uc  == "Rebio do Jaru" ~ "REBIO do Jaru",
+#     uc  == "Rebio do Tapirapé" ~ "REBIO do Tapirapé",
+#     uc  == "Rebio do Uatumã" ~ "REBIO do Uatumã",
+#     uc  == "Rebio Guaribas" ~ "REBIO Guaribas",
+#     uc  == "Rebio Trombetas" ~ "REBIO Trombetas",
+#     uc  == "Resex Arapixi" ~ "RESEX Arapixi",
+#     uc  == "Resex Barreiro das Antas" ~ "RESEX Barreiro das Antas",
+#     uc  == "Resex Chico Mendes" ~ "RESEX Chico Mendes",
+#     uc  == "Resex do Alto Tarauacá" ~ "RESEX do Alto Tarauacá",
+#     uc  == "Resex do Cazumbá-Iracema" ~ "RESEX do Cazumbá-Iracema",
+#     uc  == "Resex do Lago do Capanã Grande" ~ "RESEX do Lago do Capanã Grande",
+#     uc  == "Resex do Rio do Cautário" ~ "RESEX do Rio do Cautário",
+#     uc  == "Resex Ipaú-Anilzinho" ~ "RESEX Ipaú-Anilzinho",
+#     uc  == "Resex Renascer" ~ "RESEX Renascer",
+#     uc  == "Resex Rio Ouro Preto" ~ "RESEX Rio Ouro Preto",
+#     uc  == "Resex Riozinho da Liberdade" ~ "RESEX Riozinho da Liberdade",
+#     uc  == "Resex Riozinho do Anfrísio" ~ "RESEX Riozinho do Anfrísio",
+#     uc  == "Resex Tapajós-Arapiuns" ~ "RESEX Tapajós-Arapiuns",
+#     uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
+#       TRUE ~ uc))
+# 
+# 
+# #unique(monitora$uc)
+#   
+# 
+# #----- gráfico de esforco anual e acumulado por bioma
+# 
+# monitora %>%
+#   filter(ano != 2023) %>%
+#   distinct(bioma, uc, ano, ea, data, esforco) %>%
+#   group_by(bioma, ano) %>%
+#   summarise(esforco_anual = sum(esforco),
+#             ucs = n_distinct(uc),
+#             taxa = n()/esforco_anual) %>%
+#   mutate(esf_acumulado = cumsum(esforco_anual)) %>%
+#   relocate(esf_acumulado, .after = esforco_anual) %>%
+#   ggplot(aes(x=ano)) +
+#   geom_line(aes(y = esf_acumulado), colour = "cyan4", linewidth = 1) +
+#   geom_line(aes(y = esforco_anual), colour = "#BF8120", linewidth = 1) +
+#   ylab("Esforço (km)") +
+#   xlab("") +
+#   theme_classic() +
+#   #scale_y_continuous(limits = c(0, NA), expand = c(0, 0)) +
+#   theme(strip.text.x = element_text(size = 12)) +
+#   theme(strip.background = element_blank()) +
+#   theme(axis.text.x = element_text(size = 8)) +
+#   theme(axis.text.y = element_text(size = 8)) +
+#   facet_wrap(~ bioma, scales = "free") +
+#   labs(x = "Ano")
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
+#        #plot = last_plot(),
+#        device =  "jpeg",
+#        scale=1.5,
+#        width = 210,
+#        height = 70,
+#        units = "mm",
+#        dpi = 120)
 
-#write.csv(monitora, "dados/mastoaves/monitora_elildo.csv", row.names = FALSE)
 
-monitora <- monitora %>%
-mutate(
-  uc = case_when(
-    uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
-    uc  == "Esec de Maracá" ~ "ESEC de Maracá",
-    uc  == "Esec de Niquiá" ~ "ESEC de Niquiá",
-    uc  == "Esec de Pirapitinga" ~ "ESEC de Pirapitinga",
-    uc  == "Esec do Jari" ~ "ESEC do Jari",
-    uc  == "Esec do Rio Acre" ~ "ESEC do Rio Acre",
-    uc  == "Esec Serra Geral do Tocantins" ~ "ESEC Serra Geral do Tocantins",
-    uc  == "Flona de Tapajós" ~ "FLONA de Tapajós",
-    uc  == "Flona do Jamari" ~ "FLONA do Jamari",
-    uc  == "Parna da Amazônia" ~ "PARNA da Amazônia",
-    uc  == "Parna da Chapada dos Veadeiros" ~ "PARNA da Chapada dos Veadeiros",
-    uc  == "Parna da Serra da Bocaina" ~ "PARNA da Serra da Bocaina",
-    uc  == "Parna da Serra da Bodoquena" ~ "PARNA da Serra da Bodoquena",
-    uc  == "Parna da Serra da Cutia" ~ "PARNA da Serra da Cutia",
-    uc  == "Parna da Serra do Cipó" ~ "PARNA da Serra do Cipó",
-    uc  == "Parna da Serra do Divisor" ~ "PARNA da Serra do Divisor",
-    uc  == "Parna da Serra do Pardo" ~ "PARNA da Serra do Pardo",
-    uc  == "Parna da Serra dos Órgãos" ~ "PARNA da Serra dos Órgãos",
-    uc  == "Parna de Pacaás Novos" ~ "PARNA de Pacaás Novos",
-    uc  == "Parna do Cabo Orange" ~ "PARNA do Cabo Orange",
-    uc  == "Parna do Iguaçu" ~ "PARNA do Iguaçu",
-    uc  == "Parna do Jaú" ~ "PARNA do Jaú",
-    uc  == "Parna do Juruena" ~ "PARNA do Juruena",
-    uc  == "Parna do Monte Roraima" ~ "PARNA do Monte Roraima",
-    uc  == "Parna do Superagui" ~ "PARNA do Superagui",
-    uc  == "Parna do Viruá" ~ "PARNA do Viruá",
-    uc  == "Parna dos Campos Amazônicos" ~ "PARNA dos Campos Amazônicos",
-    uc  == "Parna Mapinguari" ~ "PARNA Mapinguari",
-    uc  == "Parna Montanhas do Tumucumaque" ~ "PARNA Montanhas do Tumucumaque",
-    uc  == "Parna Nascentes do Lago Jari" ~ "PARNA Nascentes do Lago Jari",
-    uc  == "Parna Serra da Mocidade" ~ "PARNA Serra da Mocidade",
-    uc  == "Rebio de Una" ~ "REBIO de Una",
-    uc  == "Rebio do Gurupi" ~ "REBIO do Gurupi",
-    uc  == "Rebio do Jaru" ~ "REBIO do Jaru",
-    uc  == "Rebio do Tapirapé" ~ "REBIO do Tapirapé",
-    uc  == "Rebio do Uatumã" ~ "REBIO do Uatumã",
-    uc  == "Rebio Guaribas" ~ "REBIO Guaribas",
-    uc  == "Rebio Trombetas" ~ "REBIO Trombetas",
-    uc  == "Resex Arapixi" ~ "RESEX Arapixi",
-    uc  == "Resex Barreiro das Antas" ~ "RESEX Barreiro das Antas",
-    uc  == "Resex Chico Mendes" ~ "RESEX Chico Mendes",
-    uc  == "Resex do Alto Tarauacá" ~ "RESEX do Alto Tarauacá",
-    uc  == "Resex do Cazumbá-Iracema" ~ "RESEX do Cazumbá-Iracema",
-    uc  == "Resex do Lago do Capanã Grande" ~ "RESEX do Lago do Capanã Grande",
-    uc  == "Resex do Rio do Cautário" ~ "RESEX do Rio do Cautário",
-    uc  == "Resex Ipaú-Anilzinho" ~ "RESEX Ipaú-Anilzinho",
-    uc  == "Resex Renascer" ~ "RESEX Renascer",
-    uc  == "Resex Rio Ouro Preto" ~ "RESEX Rio Ouro Preto",
-    uc  == "Resex Riozinho da Liberdade" ~ "RESEX Riozinho da Liberdade",
-    uc  == "Resex Riozinho do Anfrísio" ~ "RESEX Riozinho do Anfrísio",
-    uc  == "Resex Tapajós-Arapiuns" ~ "RESEX Tapajós-Arapiuns",
-    uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
-      TRUE ~ uc))
-
-
-#unique(monitora$uc)
-  
-
-#----- gráfico de esforco anual e acumulado por bioma
-
-monitora %>%
-  filter(ano != 2023) %>%
-  distinct(bioma, uc, ano, ea, data, esforco) %>%
-  group_by(bioma, ano) %>%
-  summarise(esforco_anual = sum(esforco),
-            ucs = n_distinct(uc),
-            taxa = n()/esforco_anual) %>%
-  mutate(esf_acumulado = cumsum(esforco_anual)) %>%
-  relocate(esf_acumulado, .after = esforco_anual) %>%
-  ggplot(aes(x=ano)) +
-  geom_line(aes(y = esf_acumulado), colour = "cyan4", linewidth = 1) +
-  geom_line(aes(y = esforco_anual), colour = "#BF8120", linewidth = 1) +
-  ylab("Esforço (km)") +
-  xlab("") +
-  theme_classic() +
-  #scale_y_continuous(limits = c(0, NA), expand = c(0, 0)) +
-  theme(strip.text.x = element_text(size = 12)) +
-  theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(axis.text.y = element_text(size = 8)) +
-  facet_wrap(~ bioma, scales = "free") +
-  labs(x = "Ano")
-
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_esforco_acumulado.jpg",
-       #plot = last_plot(),
-       device =  "jpeg",
-       scale=1.5,
-       width = 210,
-       height = 70,
-       units = "mm",
-       dpi = 120)
+knitr::include_graphics("imagens/cap05/ma_esforco_acumulado.jpg")
 
 ```
 
@@ -446,56 +449,58 @@ O esforço por UC e por bioma é apresentado na Figura 5.2 e na Figura 5.3.  Mai
 #| out.width: '80%'
 #| fig-cap: "Esforço em quilômetros percorridos por unidade de conservação por bioma por ano, de 2014 a 2022."
 
-#----- grafico de esforco total e anual por uc/bioma
+# #----- grafico de esforco total e anual por uc/bioma
+# 
+# pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
+# 
+# 
+# 
+# monitora %>%
+#   filter(ano != 2023) %>%
+#   distinct(bioma, uc, ano, ea, data, esforco) %>%
+#   group_by(bioma, uc, ano) %>% 
+#   summarize(esforco = sum(esforco)) %>% 
+#   group_by(uc) %>%
+#   mutate(esf_total = sum(esforco)) %>%
+#   ungroup() %>%
+#   arrange(esf_total) %>%
+#   mutate(uc = factor(uc, levels = unique(uc)),
+#          ano = factor(ano)) %>% 
+#   ggplot(aes(x = uc, y = esforco, group = ano, fill = ano)) +
+#   geom_bar(stat = "identity") +
+#   facet_grid(rows = vars(desc(bioma)), scales = "free", space = "free_y")  +
+#   coord_flip() +
+#     
+#   theme_classic() +
+#   xlab("") +
+#   ylab("Esforço total (km)") +
+#   theme(
+#     #strip.background = element_blank(),
+#     strip.text.x = element_blank()
+#   ) +
+#   scale_fill_manual(values = pallete, name = "Ano", 
+#                     guide = guide_legend(reverse = TRUE)) +
+#   theme(strip.text.x = element_text(size = 14)) +
+#   theme(strip.text.y = element_blank()) +
+#   #theme(strip.background = element_blank()) +
+#   theme(axis.text.x = element_text(size = 7, face = "bold")) +
+#   theme(axis.text.y = element_text(size = 6)) +
+#   theme(axis.line.x=element_blank()) +
+#   theme(panel.grid.major.x = element_line(color = "lightgray")) 
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
+#        #plot = last_plot(),
+#        device =  "jpeg",
+#        scale=0.6,
+#        width = 240,
+#        height = 300,
+#        units = "mm",
+#        dpi = 120)
 
-pallete <- RColorBrewer::brewer.pal(length(unique(monitora$ano)), "Spectral")
-
-
-
-monitora %>%
-  filter(ano != 2023) %>%
-  distinct(bioma, uc, ano, ea, data, esforco) %>%
-  group_by(bioma, uc, ano) %>% 
-  summarize(esforco = sum(esforco)) %>% 
-  group_by(uc) %>%
-  mutate(esf_total = sum(esforco)) %>%
-  ungroup() %>%
-  arrange(esf_total) %>%
-  mutate(uc = factor(uc, levels = unique(uc)),
-         ano = factor(ano)) %>% 
-  ggplot(aes(x = uc, y = esforco, group = ano, fill = ano)) +
-  geom_bar(stat = "identity") +
-  facet_grid(rows = vars(desc(bioma)), scales = "free", space = "free_y")  +
-  coord_flip() +
-    
-  theme_classic() +
-  xlab("") +
-  ylab("Esforço total (km)") +
-  theme(
-    #strip.background = element_blank(),
-    strip.text.x = element_blank()
-  ) +
-  scale_fill_manual(values = pallete, name = "Ano", 
-                    guide = guide_legend(reverse = TRUE)) +
-  theme(strip.text.x = element_text(size = 14)) +
-  theme(strip.text.y = element_blank()) +
-  #theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 7, face = "bold")) +
-  theme(axis.text.y = element_text(size = 6)) +
-  theme(axis.line.x=element_blank()) +
-  theme(panel.grid.major.x = element_line(color = "lightgray")) 
-
-
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_esforco_total_uc_bioma.jpg",
-       #plot = last_plot(),
-       device =  "jpeg",
-       scale=0.6,
-       width = 240,
-       height = 300,
-       units = "mm",
-       dpi = 120)
+knitr::include_graphics("imagens/cap05/ma_esforco_total_uc_bioma.jpg")
 
 ```
 
@@ -517,55 +522,58 @@ Das UCs amostradas, 33 (63%) já estão consolidadas, com pelo menos três esta�
 
 #----- grafico com numero de UCs ativas e numero acumulado de encontros por ano
 
-monitora %>%
-  filter(ano != 2023) %>%
-  distinct(bioma, uc, ano, ea, data, esforco) %>%
-  group_by(bioma, ano) %>%
-  summarise(esforco_anual = sum(esforco),
-            ucs = n_distinct(uc)) %>%
-  left_join(monitora %>%
-              arrange(ano) %>%
-              distinct(taxon_validado, .keep_all = TRUE) %>%
-              group_by(bioma, ano) %>%
-              count() %>%
-              ungroup() %>%
-              rename(taxa_registrados = n),
-            by = c("bioma", "ano")) %>%
-  mutate(taxon_acumulado = cumsum(taxa_registrados)) %>%
-  relocate(taxon_acumulado, .after = esforco_anual) %>%
-  mutate(taxon_acumulado = case_when(is.na(taxon_acumulado) ~ max(taxon_acumulado, na.rm = TRUE),
-                                     .default = taxon_acumulado)) %>%
-  ggplot(aes(x=ano)) +
-  geom_bar(aes(y = ucs*10), stat = "identity", 
-           fill = "cyan4", colour = "cyan4") +
-  geom_line(aes(y = taxon_acumulado), stat = "identity", colour = "#95D8D8", linewidth = 0.8) +
-  scale_y_continuous(
-    name = "Táxons validados (acumulado)",  # features of first axis
-    sec.axis = sec_axis(~.*0.1, name="Número de UCs"), # add second axis and specify its features
-    expand = c(0, 0)
-  ) +
-  scale_x_continuous(breaks = seq(2014, 2022, 2)) +
-  theme_classic() +
-  theme(strip.text.x = element_text(size = 12)) +
-  theme(strip.background = element_blank()) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(axis.text.y = element_text(size = 8)) +
-  facet_wrap(~ bioma, scales = "free") +
-  # theme(aspect.ratio = 3/4,  # Ajustar o painel para uma relação 3/4 laltura/largura
-  #   plot.background = element_rect(fill = "white")) +
-  labs(x = "Ano")
+# monitora %>%
+#   filter(ano != 2023) %>%
+#   distinct(bioma, uc, ano, ea, data, esforco) %>%
+#   group_by(bioma, ano) %>%
+#   summarise(esforco_anual = sum(esforco),
+#             ucs = n_distinct(uc)) %>%
+#   left_join(monitora %>%
+#               arrange(ano) %>%
+#               distinct(taxon_validado, .keep_all = TRUE) %>%
+#               group_by(bioma, ano) %>%
+#               count() %>%
+#               ungroup() %>%
+#               rename(taxa_registrados = n),
+#             by = c("bioma", "ano")) %>%
+#   mutate(taxon_acumulado = cumsum(taxa_registrados)) %>%
+#   relocate(taxon_acumulado, .after = esforco_anual) %>%
+#   mutate(taxon_acumulado = case_when(is.na(taxon_acumulado) ~ max(taxon_acumulado, na.rm = TRUE),
+#                                      .default = taxon_acumulado)) %>%
+#   ggplot(aes(x=ano)) +
+#   geom_bar(aes(y = ucs*10), stat = "identity", 
+#            fill = "cyan4", colour = "cyan4") +
+#   geom_line(aes(y = taxon_acumulado), stat = "identity", colour = "#95D8D8", linewidth = 0.8) +
+#   scale_y_continuous(
+#     name = "Táxons validados (acumulado)",  # features of first axis
+#     sec.axis = sec_axis(~.*0.1, name="Número de UCs"), # add second axis and specify its features
+#     expand = c(0, 0)
+#   ) +
+#   scale_x_continuous(breaks = seq(2014, 2022, 2)) +
+#   theme_classic() +
+#   theme(strip.text.x = element_text(size = 12)) +
+#   theme(strip.background = element_blank()) +
+#   theme(axis.text.x = element_text(size = 8)) +
+#   theme(axis.text.y = element_text(size = 8)) +
+#   facet_wrap(~ bioma, scales = "free") +
+#   # theme(aspect.ratio = 3/4,  # Ajustar o painel para uma relação 3/4 laltura/largura
+#   #   plot.background = element_rect(fill = "white")) +
+#   labs(x = "Ano")
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
+#        #plot = last_plot(),
+#        device =  "jpeg",
+#        scale=1.5,
+#        width = 210,
+#        height = 70,
+#        units = "mm",
+#        dpi = 120)
 
 
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg",
-       #plot = last_plot(),
-       device =  "jpeg",
-       scale=1.5,
-       width = 210,
-       height = 70,
-       units = "mm",
-       dpi = 120)
+knitr::include_graphics("imagens/cap05/ma_ucs_ativas_taxa_acumulado.jpg")
 
 ```
 
@@ -593,48 +601,48 @@ A maioria dos registros (56%) do protocolo básico de monitoramento de mamífero
 #| warning: false
 #| cache: true
 
-# Criando paletas de cores
-
-cor1 <- c(Primates = "#008B8B",
-      Rodentia = "#4AB1B1",
-      Tinamiformes = "#70C4C4",
-      Galliformes = "#95D8D8",
-      Artiodactyla = "#CDF5F5",
-      Gruiformes = "#D9D9D9",
-      Carnivora = "#CCCCCC",
-      Pilosa = "#B2B2B2",
-      Perissodactyla = "#999999",
-      Cingulata = "#666666",
-      Didelphimorphia = "#FEE6CE",
-      Lagomorpha = "#FDAE6B",
-      Cariamiformes = "#E6550D")
-
-
-cor2 <- c("#008B8B",
-          "#CDF5F5",
-          "#D9D9D9",
-          "#70C4C4",
-          "#666666"
-          )
-
-cor3 <-c(
-    "#008B8B",
-    "#129494",
-    "#008B8B",
-    "#38A8A8",
-    "#4AB1B1",
-    "#5DBBBB",
-    "#70C4C4",
-    "#82CECE",
-    "#95D8D8",
-    "#A8E2E2",
-    "#BAEBEB",
-    "#CDF5F5",
-    "#E0FFFF"
-    )
-
-
-cor4 <- c("#008B8B", "#BAEBEB", "#259E9E", "#E0FFFF", "#38A8A8", "#95D8D8")
+# # Criando paletas de cores
+# 
+# cor1 <- c(Primates = "#008B8B",
+#       Rodentia = "#4AB1B1",
+#       Tinamiformes = "#70C4C4",
+#       Galliformes = "#95D8D8",
+#       Artiodactyla = "#CDF5F5",
+#       Gruiformes = "#D9D9D9",
+#       Carnivora = "#CCCCCC",
+#       Pilosa = "#B2B2B2",
+#       Perissodactyla = "#999999",
+#       Cingulata = "#666666",
+#       Didelphimorphia = "#FEE6CE",
+#       Lagomorpha = "#FDAE6B",
+#       Cariamiformes = "#E6550D")
+# 
+# 
+# cor2 <- c("#008B8B",
+#           "#CDF5F5",
+#           "#D9D9D9",
+#           "#70C4C4",
+#           "#666666"
+#           )
+# 
+# cor3 <-c(
+#     "#008B8B",
+#     "#129494",
+#     "#008B8B",
+#     "#38A8A8",
+#     "#4AB1B1",
+#     "#5DBBBB",
+#     "#70C4C4",
+#     "#82CECE",
+#     "#95D8D8",
+#     "#A8E2E2",
+#     "#BAEBEB",
+#     "#CDF5F5",
+#     "#E0FFFF"
+#     )
+# 
+# 
+# cor4 <- c("#008B8B", "#BAEBEB", "#259E9E", "#E0FFFF", "#38A8A8", "#95D8D8")
 
 ```
 
@@ -647,42 +655,42 @@ cor4 <- c("#008B8B", "#BAEBEB", "#259E9E", "#E0FFFF", "#38A8A8", "#95D8D8")
 #| warning: false
 #| cache: true
 
-# Limpando dados da coluna taxon_validado para a contagem do número de 
-# espécies por ordem (foram excluídos alguns regitros "gênero sp", para os casos
-# em que todas as espécies do gênero já tinham sido registradas)
-
-
-limpeza_registros_numero_especies_por_ordem <-  masto_aves %>%
-  filter(!(masto_aves$taxon_validado  == "Aburria sp" |
-             masto_aves$taxon_validado  == "Crax sp" |
-             masto_aves$taxon_validado  == "Odonthophorus sp" |
-             masto_aves$taxon_validado  == "Pauxi sp" |
-             masto_aves$taxon_validado  == "Coendou sp" |
-             masto_aves$taxon_validado  == "Myoprocta sp" |
-             masto_aves$taxon_validado  == "Dasyprocta sp" |
-             masto_aves$taxon_validado  == "Microsciurus sp" |
-             masto_aves$taxon_validado  == "Sciurillus sp" |
-             masto_aves$taxon_validado  == "Urosciurus sp" |
-             masto_aves$taxon_validado  == "Guerlinguetus sp" |
-             masto_aves$taxon_validado  == "Mazama sp" |
-             masto_aves$taxon_validado  == "Leopardus sp" |
-             masto_aves$taxon_validado  == "Cacajao sp" |
-             masto_aves$taxon_validado  == "Callicebus sp" |
-             masto_aves$taxon_validado  == "Callithrix sp" |
-             masto_aves$taxon_validado  == "Cebus sp" |
-             masto_aves$taxon_validado  == "Saimiri sp" 
-             )) |> 
-  filter(!is.na(ordem)) |>
-  filter(!is.na(taxon_validado)) |> 
-  group_by(taxon_validado, ordem) |> 
-  summarise(count = n()) 
-
-# Contagem do número de espécies por ordem
-
-numero_especies_por_ordem <- limpeza_registros_numero_especies_por_ordem |> 
-  group_by(ordem) |> 
-  count() |> 
-  arrange(desc(n))
+# # Limpando dados da coluna taxon_validado para a contagem do número de 
+# # espécies por ordem (foram excluídos alguns regitros "gênero sp", para os casos
+# # em que todas as espécies do gênero já tinham sido registradas)
+# 
+# 
+# limpeza_registros_numero_especies_por_ordem <-  masto_aves %>%
+#   filter(!(masto_aves$taxon_validado  == "Aburria sp" |
+#              masto_aves$taxon_validado  == "Crax sp" |
+#              masto_aves$taxon_validado  == "Odonthophorus sp" |
+#              masto_aves$taxon_validado  == "Pauxi sp" |
+#              masto_aves$taxon_validado  == "Coendou sp" |
+#              masto_aves$taxon_validado  == "Myoprocta sp" |
+#              masto_aves$taxon_validado  == "Dasyprocta sp" |
+#              masto_aves$taxon_validado  == "Microsciurus sp" |
+#              masto_aves$taxon_validado  == "Sciurillus sp" |
+#              masto_aves$taxon_validado  == "Urosciurus sp" |
+#              masto_aves$taxon_validado  == "Guerlinguetus sp" |
+#              masto_aves$taxon_validado  == "Mazama sp" |
+#              masto_aves$taxon_validado  == "Leopardus sp" |
+#              masto_aves$taxon_validado  == "Cacajao sp" |
+#              masto_aves$taxon_validado  == "Callicebus sp" |
+#              masto_aves$taxon_validado  == "Callithrix sp" |
+#              masto_aves$taxon_validado  == "Cebus sp" |
+#              masto_aves$taxon_validado  == "Saimiri sp" 
+#              )) |> 
+#   filter(!is.na(ordem)) |>
+#   filter(!is.na(taxon_validado)) |> 
+#   group_by(taxon_validado, ordem) |> 
+#   summarise(count = n()) 
+# 
+# # Contagem do número de espécies por ordem
+# 
+# numero_especies_por_ordem <- limpeza_registros_numero_especies_por_ordem |> 
+#   group_by(ordem) |> 
+#   count() |> 
+#   arrange(desc(n))
 
 ```
 
@@ -695,69 +703,69 @@ numero_especies_por_ordem <- limpeza_registros_numero_especies_por_ordem |>
 #| warning: false
 #| cache: true
 
-# Limpeza de registros do número de espécies por ordem por bioma
-
-limpeza_registros_numero_especies_por_ordem_bioma <-  masto_aves %>%
-  filter(!(masto_aves$taxon_validado  == "Aburria sp" |
-             masto_aves$taxon_validado  == "Crax sp" |
-             masto_aves$taxon_validado  == "Odonthophorus sp" |
-             masto_aves$taxon_validado  == "Pauxi sp" |
-             masto_aves$taxon_validado  == "Coendou sp" |
-             masto_aves$taxon_validado  == "Myoprocta sp" |
-             masto_aves$taxon_validado  == "Dasyprocta sp" |
-             masto_aves$taxon_validado  == "Microsciurus sp" |
-             masto_aves$taxon_validado  == "Sciurillus sp" |
-             masto_aves$taxon_validado  == "Urosciurus sp" |
-             masto_aves$taxon_validado  == "Guerlinguetus sp" |
-             masto_aves$taxon_validado  == "Mazama sp" |
-             masto_aves$taxon_validado  == "Leopardus sp" |
-             masto_aves$taxon_validado  == "Cacajao sp" |
-             masto_aves$taxon_validado  == "Callicebus sp" |
-             masto_aves$taxon_validado  == "Callithrix sp" |
-             masto_aves$taxon_validado  == "Cebus sp" |
-             masto_aves$taxon_validado  == "Saimiri sp" 
-             )) |> 
-  filter(!is.na(ordem)) %>%
-  filter(!is.na(taxon_validado)) |> 
-  group_by(taxon_validado, ordem, bioma) %>%
-  summarise(count = n()) 
-
-
-# Contagem do número de espécies por ordem por bioma
-
-numero_especies_por_ordem_bioma <- limpeza_registros_numero_especies_por_ordem_bioma |> 
-  group_by(bioma, ordem) |> 
-  count() |> 
-  arrange(desc(n))
-
-
-# Extraindo o número total de espécies de primatas
-
-# n_especies_primatas <- numero_especies_por_ordem$n[1]
-
-# Avaliação das espécies de primatas
-
-registros_primatas <- limpeza_registros_numero_especies_por_ordem_bioma %>%
-  select(ordem, taxon_validado) |> 
-  filter(!is.na(ordem)) |> 
-  filter(ordem == "Primates")
- 
-especies_primatas <- unique(registros_primatas$taxon_validado)
-#especies_primatas
-
-# Contagem de táxons - aves
-
-# aves <- masto_aves |> 
-#   filter(classe == "Aves")
-
-# unique(aves$taxon_validado)
-
-# Contagem de táxons - mamíferos
-
-# mamiferos <- masto_aves |>
-#   filter(classe == "Mammalia")
-
-# unique(mamiferos$taxon_validado)
+# # Limpeza de registros do número de espécies por ordem por bioma
+# 
+# limpeza_registros_numero_especies_por_ordem_bioma <-  masto_aves %>%
+#   filter(!(masto_aves$taxon_validado  == "Aburria sp" |
+#              masto_aves$taxon_validado  == "Crax sp" |
+#              masto_aves$taxon_validado  == "Odonthophorus sp" |
+#              masto_aves$taxon_validado  == "Pauxi sp" |
+#              masto_aves$taxon_validado  == "Coendou sp" |
+#              masto_aves$taxon_validado  == "Myoprocta sp" |
+#              masto_aves$taxon_validado  == "Dasyprocta sp" |
+#              masto_aves$taxon_validado  == "Microsciurus sp" |
+#              masto_aves$taxon_validado  == "Sciurillus sp" |
+#              masto_aves$taxon_validado  == "Urosciurus sp" |
+#              masto_aves$taxon_validado  == "Guerlinguetus sp" |
+#              masto_aves$taxon_validado  == "Mazama sp" |
+#              masto_aves$taxon_validado  == "Leopardus sp" |
+#              masto_aves$taxon_validado  == "Cacajao sp" |
+#              masto_aves$taxon_validado  == "Callicebus sp" |
+#              masto_aves$taxon_validado  == "Callithrix sp" |
+#              masto_aves$taxon_validado  == "Cebus sp" |
+#              masto_aves$taxon_validado  == "Saimiri sp" 
+#              )) |> 
+#   filter(!is.na(ordem)) %>%
+#   filter(!is.na(taxon_validado)) |> 
+#   group_by(taxon_validado, ordem, bioma) %>%
+#   summarise(count = n()) 
+# 
+# 
+# # Contagem do número de espécies por ordem por bioma
+# 
+# numero_especies_por_ordem_bioma <- limpeza_registros_numero_especies_por_ordem_bioma |> 
+#   group_by(bioma, ordem) |> 
+#   count() |> 
+#   arrange(desc(n))
+# 
+# 
+# # Extraindo o número total de espécies de primatas
+# 
+# # n_especies_primatas <- numero_especies_por_ordem$n[1]
+# 
+# # Avaliação das espécies de primatas
+# 
+# registros_primatas <- limpeza_registros_numero_especies_por_ordem_bioma %>%
+#   select(ordem, taxon_validado) |> 
+#   filter(!is.na(ordem)) |> 
+#   filter(ordem == "Primates")
+#  
+# especies_primatas <- unique(registros_primatas$taxon_validado)
+# #especies_primatas
+# 
+# # Contagem de táxons - aves
+# 
+# # aves <- masto_aves |> 
+# #   filter(classe == "Aves")
+# 
+# # unique(aves$taxon_validado)
+# 
+# # Contagem de táxons - mamíferos
+# 
+# # mamiferos <- masto_aves |>
+# #   filter(classe == "Mammalia")
+# 
+# # unique(mamiferos$taxon_validado)
 
 
 ```
@@ -771,39 +779,39 @@ especies_primatas <- unique(registros_primatas$taxon_validado)
 #| warning: false
 #| cache: true
 
-# Gráfico do número de espécies e de registros por ordem - geral
-
-registros_especies_geral <- masto_aves %>%
-  filter(!is.na(ordem)) |> 
-  group_by(ordem) %>%
-  summarise(count = n()) |> 
-  arrange(desc(count))
-  
-G_especies_registros_ordem_geral <- numero_especies_por_ordem  |> 
-  ggplot() +
-  geom_col(data = registros_especies_geral, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
-  geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
-  geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
-  coord_flip() +
-  scale_fill_manual(
-    values = c("darkcyan","#A8E2E2")) +
-  scale_x_discrete(name = "") +
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6, face = "bold"),
-    plot.title = element_text(size = 11),
-    legend.position = "none",
-    axis.title = element_text(size = 8, margin = margin(t = 10))
-  ) +
-  scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
-  labs(title = "      Geral",
-       y = "Número de espécies e de registros por ordem")
-
-G_especies_registros_ordem_geral
+# # Gráfico do número de espécies e de registros por ordem - geral
+# 
+# registros_especies_geral <- masto_aves %>%
+#   filter(!is.na(ordem)) |> 
+#   group_by(ordem) %>%
+#   summarise(count = n()) |> 
+#   arrange(desc(count))
+#   
+# G_especies_registros_ordem_geral <- numero_especies_por_ordem  |> 
+#   ggplot() +
+#   geom_col(data = registros_especies_geral, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
+#   geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
+#   geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
+#   coord_flip() +
+#   scale_fill_manual(
+#     values = c("darkcyan","#A8E2E2")) +
+#   scale_x_discrete(name = "") +
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     #panel.grid.major.x = element_blank(),
+#     axis.text = element_text(size = 6, face = "bold"),
+#     plot.title = element_text(size = 11),
+#     legend.position = "none",
+#     axis.title = element_text(size = 8, margin = margin(t = 10))
+#   ) +
+#   scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
+#   labs(title = "      Geral",
+#        y = "Número de espécies e de registros por ordem")
+# 
+# G_especies_registros_ordem_geral
 
 ```
 
@@ -814,41 +822,41 @@ G_especies_registros_ordem_geral
 #| warning: false
 #| cache: true
 
-# Gráfico do número de espécies e de registros por ordem - bioma amazônia
-
-registros_especies_amazonia <- masto_aves %>%
-  filter(!is.na(ordem)) |>
-  filter(bioma == "Amazônia") |> 
-  group_by(ordem) |> 
-  summarise(count = n()) |> 
-  arrange(desc(count))
-  
-G_especies_registros_ordem_bioma_amazonia <- numero_especies_por_ordem_bioma  |> 
-  filter(bioma == "Amazônia") |> 
-  ggplot() +
-  geom_col(data = registros_especies_amazonia, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
-  geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
-  geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
-  coord_flip() +
-  scale_fill_manual(
-    values = c("darkcyan","#A8E2E2")) +
-  scale_x_discrete(name = "") +
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6, face = "bold"),
-    plot.title = element_text(size = 11),
-    legend.position = "none",
-    axis.title.x = element_text(size = 11, margin = margin(t = 10))
-  ) +
-  scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
-  labs(title = "      Amazônia",
-       y = "Número de espécies e de registros por ordem")
-
-G_especies_registros_ordem_bioma_amazonia
+# # Gráfico do número de espécies e de registros por ordem - bioma amazônia
+# 
+# registros_especies_amazonia <- masto_aves %>%
+#   filter(!is.na(ordem)) |>
+#   filter(bioma == "Amazônia") |> 
+#   group_by(ordem) |> 
+#   summarise(count = n()) |> 
+#   arrange(desc(count))
+#   
+# G_especies_registros_ordem_bioma_amazonia <- numero_especies_por_ordem_bioma  |> 
+#   filter(bioma == "Amazônia") |> 
+#   ggplot() +
+#   geom_col(data = registros_especies_amazonia, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
+#   geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
+#   geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
+#   coord_flip() +
+#   scale_fill_manual(
+#     values = c("darkcyan","#A8E2E2")) +
+#   scale_x_discrete(name = "") +
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     #panel.grid.major.x = element_blank(),
+#     axis.text = element_text(size = 6, face = "bold"),
+#     plot.title = element_text(size = 11),
+#     legend.position = "none",
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10))
+#   ) +
+#   scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
+#   labs(title = "      Amazônia",
+#        y = "Número de espécies e de registros por ordem")
+# 
+# G_especies_registros_ordem_bioma_amazonia
 
 
 ```
@@ -860,41 +868,41 @@ G_especies_registros_ordem_bioma_amazonia
 #| warning: false
 #| cache: true
 
-# Gráfico do número de espécies e de registros por ordem - bioma mata atlântica
-
-registros_especies_mata_atlantica <- masto_aves %>%
-  filter(!is.na(ordem)) |>
-  filter(bioma == "Mata Atlântica") |> 
-  group_by(ordem) |> 
-  summarise(count = n()) |> 
-  arrange(desc(count))
-  
-G_especies_registros_ordem_bioma_mata_atlantica <- numero_especies_por_ordem_bioma  |> 
-  filter(bioma == "Mata Atlântica") |> 
-  ggplot() +
-  geom_col(data = registros_especies_mata_atlantica, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
-  geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
-  geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
-  coord_flip() +
-  scale_fill_manual(
-    values = c("darkcyan","#A8E2E2")) +
-  scale_x_discrete(name = "") +
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6, face = "bold"),
-    plot.title = element_text(size = 11),
-    legend.position = "none",
-    axis.title.x = element_text(size = 11, margin = margin(t = 10))
-  ) +
-  scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
-  labs(title = "     Mata Atlântica",
-       y = "Número de espécies e de registros por ordem")
-
-G_especies_registros_ordem_bioma_mata_atlantica
+# # Gráfico do número de espécies e de registros por ordem - bioma mata atlântica
+# 
+# registros_especies_mata_atlantica <- masto_aves %>%
+#   filter(!is.na(ordem)) |>
+#   filter(bioma == "Mata Atlântica") |> 
+#   group_by(ordem) |> 
+#   summarise(count = n()) |> 
+#   arrange(desc(count))
+#   
+# G_especies_registros_ordem_bioma_mata_atlantica <- numero_especies_por_ordem_bioma  |> 
+#   filter(bioma == "Mata Atlântica") |> 
+#   ggplot() +
+#   geom_col(data = registros_especies_mata_atlantica, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
+#   geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
+#   geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
+#   coord_flip() +
+#   scale_fill_manual(
+#     values = c("darkcyan","#A8E2E2")) +
+#   scale_x_discrete(name = "") +
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     #panel.grid.major.x = element_blank(),
+#     axis.text = element_text(size = 6, face = "bold"),
+#     plot.title = element_text(size = 11),
+#     legend.position = "none",
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10))
+#   ) +
+#   scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
+#   labs(title = "     Mata Atlântica",
+#        y = "Número de espécies e de registros por ordem")
+# 
+# G_especies_registros_ordem_bioma_mata_atlantica
 
 ```
 
@@ -905,42 +913,42 @@ G_especies_registros_ordem_bioma_mata_atlantica
 #| warning: false
 #| cache: true
 
-# Gráfico do número de espécies e de registros por ordem - bioma cerrado
-
-registros_especies_cerrado <- masto_aves %>%
-  filter(!is.na(ordem)) |>
-  filter(bioma == "Cerrado") |> 
-  group_by(ordem) |> 
-  summarise(count = n()) |> 
-  arrange(desc(count))
-  
-G_especies_registros_ordem_bioma_cerrado <- numero_especies_por_ordem_bioma  |> 
-  filter(bioma == "Cerrado") |> 
-  ggplot() +
-  geom_col(data = registros_especies_cerrado, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
-  geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
-  geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
-  coord_flip() +
-  scale_fill_manual(
-    values = c("darkcyan","#A8E2E2")) +
-  scale_x_discrete(name = "") +
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    #panel.grid.major.x = element_blank(),
-    axis.text = element_text(size = 6, face = "bold"),
-    plot.title = element_text(size = 11),
-    
-    legend.position = "none",
-    axis.title.x = element_text(size = 11, margin = margin(t = 10))
-  ) +
-  scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
-  labs(title = "     Cerrado",
-       y = "Número de espécies e de registros por ordem")
-
-G_especies_registros_ordem_bioma_cerrado
+# # Gráfico do número de espécies e de registros por ordem - bioma cerrado
+# 
+# registros_especies_cerrado <- masto_aves %>%
+#   filter(!is.na(ordem)) |>
+#   filter(bioma == "Cerrado") |> 
+#   group_by(ordem) |> 
+#   summarise(count = n()) |> 
+#   arrange(desc(count))
+#   
+# G_especies_registros_ordem_bioma_cerrado <- numero_especies_por_ordem_bioma  |> 
+#   filter(bioma == "Cerrado") |> 
+#   ggplot() +
+#   geom_col(data = registros_especies_cerrado, aes(x = fct_reorder(ordem, count, .desc = F), y = count, fill = "darkgreen")) +
+#   geom_col(aes(x = fct_reorder(ordem, n, .desc = F), y = n, fill = "darkcyan")) +
+#   geom_text(aes(ordem, n, label = n, alpha = 0.5, hjust = -0.1), size = 2) +
+#   coord_flip() +
+#   scale_fill_manual(
+#     values = c("darkcyan","#A8E2E2")) +
+#   scale_x_discrete(name = "") +
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     #panel.grid.major.x = element_blank(),
+#     axis.text = element_text(size = 6, face = "bold"),
+#     plot.title = element_text(size = 11),
+#     
+#     legend.position = "none",
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10))
+#   ) +
+#   scale_y_log10(name = "", labels = scales::number_format(big.mark = ".")) +
+#   labs(title = "     Cerrado",
+#        y = "Número de espécies e de registros por ordem")
+# 
+# G_especies_registros_ordem_bioma_cerrado
 
 
 ```
@@ -957,17 +965,18 @@ G_especies_registros_ordem_bioma_cerrado
 #| out.width: '80%'
 #| fig-cap: "Representatividade das principais ordens de mamíferos amostradas no Programa Monitora, durante o período de 2014 a 2022. As barras em verde escuro representam o número de espécies registradas na ordem e as barras em verde claro o número de registros."
 
-# Juntando os 4 gráficos numa única figura
+# # Juntando os 4 gráficos numa única figura
+# 
+# grafico_composto_ordens <- grid.arrange(G_especies_registros_ordem_geral, G_especies_registros_ordem_bioma_amazonia, G_especies_registros_ordem_bioma_mata_atlantica, G_especies_registros_ordem_bioma_cerrado,
+#              layout_matrix = matrix(c(1, 2, 3, 4), 
+#                                     byrow = TRUE, nrow = 2, ncol = 2))
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_grafico_composto_ordens.jpg", plot = grafico_composto_ordens, height = 4.5, width = 6, units = "in", dpi = 300)
 
-grafico_composto_ordens <- grid.arrange(G_especies_registros_ordem_geral, G_especies_registros_ordem_bioma_amazonia, G_especies_registros_ordem_bioma_mata_atlantica, G_especies_registros_ordem_bioma_cerrado,
-             layout_matrix = matrix(c(1, 2, 3, 4), 
-                                    byrow = TRUE, nrow = 2, ncol = 2))
 
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_grafico_composto_ordens.jpg", plot = grafico_composto_ordens, height = 4.5, width = 6, units = "in", dpi = 300)
-
-
+knitr::include_graphics("imagens/cap05/ma_grafico_composto_ordens.jpg")
 
 ```
 
@@ -999,210 +1008,210 @@ Em termos de abundância total de mamíferos e aves, o bioma Amazônico se desta
 #| cache: true
 
 
-#### Cálculo das taxas de avistamento 
-
-# Checando os nomes das colunas
-
-#names(masto_aves) 
-
-# Preenchendo as linhas vazias da coluna esforço
-
-masto_aves <-
-  masto_aves |>
-  arrange(uc, ano, ea) |>
-  fill(esforco)
-
-
-
-# View(masto_aves) 
-
-# Alterando o nome das categorias para letras maiúsculas
-
-masto_aves <- masto_aves %>%
-mutate(
-  uc = case_when(
-    uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
-    uc  == "Esec de Maracá" ~ "ESEC de Maracá",
-    uc  == "Esec de Niquiá" ~ "ESEC de Niquiá",
-    uc  == "Esec de Pirapitinga" ~ "ESEC de Pirapitinga",
-    uc  == "Esec do Jari" ~ "ESEC do Jari",
-    uc  == "Esec do Rio Acre" ~ "ESEC do Rio Acre",
-    uc  == "Esec Serra Geral do Tocantins" ~ "ESEC Serra Geral do Tocantins",
-    uc  == "Flona de Tapajós" ~ "FLONA de Tapajós",
-    uc  == "Flona do Jamari" ~ "FLONA do Jamari",
-    uc  == "Parna da Amazônia" ~ "PARNA da Amazônia",
-    uc  == "Parna da Chapada dos Veadeiros" ~ "PARNA da Chapada dos Veadeiros",
-    uc  == "Parna da Serra da Bocaina" ~ "PARNA da Serra da Bocaina",
-    uc  == "Parna da Serra da Bodoquena" ~ "PARNA da Serra da Bodoquena",
-    uc  == "Parna da Serra da Cutia" ~ "PARNA da Serra da Cutia",
-    uc  == "Parna da Serra do Cipó" ~ "PARNA da Serra do Cipó",
-    uc  == "Parna da Serra do Divisor" ~ "PARNA da Serra do Divisor",
-    uc  == "Parna da Serra do Pardo" ~ "PARNA da Serra do Pardo",
-    uc  == "Parna da Serra dos Órgãos" ~ "PARNA da Serra dos Órgãos",
-    uc  == "Parna de Pacaás Novos" ~ "PARNA de Pacaás Novos",
-    uc  == "Parna do Cabo Orange" ~ "PARNA do Cabo Orange",
-    uc  == "Parna do Iguaçu" ~ "PARNA do Iguaçu",
-    uc  == "Parna do Jaú" ~ "PARNA do Jaú",
-    uc  == "Parna do Juruena" ~ "PARNA do Juruena",
-    uc  == "Parna do Monte Roraima" ~ "PARNA do Monte Roraima",
-    uc  == "Parna do Superagui" ~ "PARNA do Superagui",
-    uc  == "Parna do Viruá" ~ "PARNA do Viruá",
-    uc  == "Parna dos Campos Amazônicos" ~ "PARNA dos Campos Amazônicos",
-    uc  == "Parna Mapinguari" ~ "PARNA Mapinguari",
-    uc  == "Parna Montanhas do Tumucumaque" ~ "PARNA Montanhas do Tumucumaque",
-    uc  == "Parna Nascentes do Lago Jari" ~ "PARNA Nascentes do Lago Jari",
-    uc  == "Parna Serra da Mocidade" ~ "PARNA Serra da Mocidade",
-    uc  == "Rebio de Una" ~ "REBIO de Una",
-    uc  == "Rebio do Gurupi" ~ "REBIO do Gurupi",
-    uc  == "Rebio do Jaru" ~ "REBIO do Jaru",
-    uc  == "Rebio do Tapirapé" ~ "REBIO do Tapirapé",
-    uc  == "Rebio do Uatumã" ~ "REBIO do Uatumã",
-    uc  == "Rebio Guaribas" ~ "REBIO Guaribas",
-    uc  == "Rebio Trombetas" ~ "REBIO Trombetas",
-    uc  == "Resex Arapixi" ~ "RESEX Arapixi",
-    uc  == "Resex Barreiro das Antas" ~ "RESEX Barreiro das Antas",
-    uc  == "Resex Chico Mendes" ~ "RESEX Chico Mendes",
-    uc  == "Resex do Alto Tarauacá" ~ "RESEX do Alto Tarauacá",
-    uc  == "Resex do Cazumbá-Iracema" ~ "RESEX do Cazumbá-Iracema",
-    uc  == "Resex do Lago do Capanã Grande" ~ "RESEX do Lago do Capanã Grande",
-    uc  == "Resex do Rio do Cautário" ~ "RESEX do Rio do Cautário",
-    uc  == "Resex Ipaú-Anilzinho" ~ "RESEX Ipaú-Anilzinho",
-    uc  == "Resex Renascer" ~ "RESEX Renascer",
-    uc  == "Resex Rio Ouro Preto" ~ "RESEX Rio Ouro Preto",
-    uc  == "Resex Riozinho da Liberdade" ~ "RESEX Riozinho da Liberdade",
-    uc  == "Resex Riozinho do Anfrísio" ~ "RESEX Riozinho do Anfrísio",
-    uc  == "Resex Tapajós-Arapiuns" ~ "RESEX Tapajós-Arapiuns",
-    uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
-      TRUE ~ uc))
-
-# Checando nomes alterados
-
-#unique(masto_aves$uc)
-
-
-# Limpando a planilha - selecionando apenas colunas relevantes
-
-masto_aves <- masto_aves |>
-  select(
-    cnuc,
-    uc,
-    bioma,
-    ano,
-    ea,
-    everything(),
-    -c(
-      h_fim,
-      cond_clim,
-      populacao,
-      tempo_censo,
-      observadores,
-      problema_amostragem,
-      nome_ea,
-      h_inicio,
-      velocidade,
-      n_guia,
-      h_avistamento,
-      observacoes
-    )
-   )
-
-#glimpse(masto_aves)
-
-
-#### Ajustando os códigos CNUC para o formato padrão --------------
-
-masto_aves$cnuc <- as.character(masto_aves$cnuc)
-
-masto_aves <- masto_aves %>% 
-mutate(
-  Cnuc = case_when(
-    cnuc == "284" ~ "0000.00.0284",
-    cnuc == "1626" ~ "0000.00.1626",
-    cnuc == "179" ~ "0000.00.0179",
-    cnuc == "189" ~ "0000.00.0189",
-    cnuc == "207" ~ "0000.00.0207",
-    cnuc == "232" ~ "0000.00.0232",
-    cnuc == "238" ~ "0000.00.0238",
-    cnuc == "241" ~ "0000.00.0241",
-    cnuc == "242" ~ "0000.00.0242",
-    cnuc == "257" ~ "0000.00.0257",
-    cnuc == "285" ~ "0000.00.0285",
-    cnuc == "169" ~ "0000.00.0169",
-    cnuc == "174" ~ "0000.00.0174",
-    cnuc == "210" ~ "0000.00.0210",
-    cnuc == "258" ~ "0000.00.0258",
-    cnuc == "260" ~ "0000.00.0260",
-    cnuc == "163" ~ "0000.00.0163",
-    cnuc ==  "67" ~ "0000.00.0067",
-    cnuc == "118" ~ "0000.00.0118",
-    cnuc == "136" ~ "0000.00.0136",
-    cnuc ==  "47" ~ "0000.00.0047",
-    cnuc ==  "57" ~ "0000.00.0057",
-    cnuc ==  "60" ~ "0000.00.0060",
-    cnuc ==  "61" ~ "0000.00.0061",
-    cnuc ==  "68" ~ "0000.00.0068",
-    cnuc == "123" ~ "0000.00.0123",
-    cnuc ==  "76" ~ "0000.00.0076",
-    cnuc == "139" ~ "0000.00.0139",
-    cnuc == "142" ~ "0000.00.0142",
-    cnuc == "143" ~ "0000.00.0143",
-    cnuc == "148" ~ "0000.00.0148",
-    cnuc == "149" ~ "0000.00.0149",
-    cnuc == "151" ~ "0000.00.0151",
-    cnuc == "152" ~ "0000.00.0152",
-    cnuc == "172" ~ "0000.00.0172",
-    cnuc == "173" ~ "0000.00.0173",
-    cnuc == "178" ~ "0000.00.0178",
-    cnuc == "187" ~ "0000.00.0187",
-    cnuc == "188" ~ "0000.00.0188",
-    cnuc == "196" ~ "0000.00.0196",
-    cnuc == "202" ~ "0000.00.0202",
-    cnuc == "208" ~ "0000.00.0208",
-    cnuc == "211" ~ "0000.00.0211",
-    cnuc == "213" ~ "0000.00.0213",
-    cnuc == "221" ~ "0000.00.0221",
-    cnuc == "222" ~ "0000.00.0222",
-    cnuc == "256" ~ "0000.00.0256",
-    cnuc == "259" ~ "0000.00.0259",
-    cnuc == "274" ~ "0000.00.0274",
-    cnuc == "281" ~ "0000.00.0281",
-    cnuc == "1633" ~ "0000.00.1633",
-    cnuc == "1810" ~ "0000.00.1810"))
-
-
-
-
-#unique(masto_aves$Cnuc)
-#View(masto_aves)
-
-# cnuc <- masto_aves |>
-#   distinct(uc, Cnuc) |>
-#   arrange()
+# #### Cálculo das taxas de avistamento 
 # 
-# cnuc
-
-# Contagem de táxons - aves
-
-aves <- masto_aves |>
-  filter(classe == "Aves")
-
-#unique(aves$taxon_validado)
-
-# Contagem de táxons - mamíferos
-
-mamiferos <- masto_aves |>
-  filter(classe == "Mammalia")
-
-#unique(mamiferos$taxon_validado)
-
-
-# Busca por valores NA e registros n_animais = 0
-
-# masto_aves_2014_2022_uc <- masto_aves |> 
-#    filter(is_NA(ordem))
+# # Checando os nomes das colunas
 # 
-# masto_aves_2014_2022_uc <- masto_aves |> 
-#    filter(n_animais == 0)
+# #names(masto_aves) 
+# 
+# # Preenchendo as linhas vazias da coluna esforço
+# 
+# masto_aves <-
+#   masto_aves |>
+#   arrange(uc, ano, ea) |>
+#   fill(esforco)
+# 
+# 
+# 
+# # View(masto_aves) 
+# 
+# # Alterando o nome das categorias para letras maiúsculas
+# 
+# masto_aves <- masto_aves %>%
+# mutate(
+#   uc = case_when(
+#     uc  == "Esec da Terra do Meio" ~ "ESEC da Terra do Meio",
+#     uc  == "Esec de Maracá" ~ "ESEC de Maracá",
+#     uc  == "Esec de Niquiá" ~ "ESEC de Niquiá",
+#     uc  == "Esec de Pirapitinga" ~ "ESEC de Pirapitinga",
+#     uc  == "Esec do Jari" ~ "ESEC do Jari",
+#     uc  == "Esec do Rio Acre" ~ "ESEC do Rio Acre",
+#     uc  == "Esec Serra Geral do Tocantins" ~ "ESEC Serra Geral do Tocantins",
+#     uc  == "Flona de Tapajós" ~ "FLONA de Tapajós",
+#     uc  == "Flona do Jamari" ~ "FLONA do Jamari",
+#     uc  == "Parna da Amazônia" ~ "PARNA da Amazônia",
+#     uc  == "Parna da Chapada dos Veadeiros" ~ "PARNA da Chapada dos Veadeiros",
+#     uc  == "Parna da Serra da Bocaina" ~ "PARNA da Serra da Bocaina",
+#     uc  == "Parna da Serra da Bodoquena" ~ "PARNA da Serra da Bodoquena",
+#     uc  == "Parna da Serra da Cutia" ~ "PARNA da Serra da Cutia",
+#     uc  == "Parna da Serra do Cipó" ~ "PARNA da Serra do Cipó",
+#     uc  == "Parna da Serra do Divisor" ~ "PARNA da Serra do Divisor",
+#     uc  == "Parna da Serra do Pardo" ~ "PARNA da Serra do Pardo",
+#     uc  == "Parna da Serra dos Órgãos" ~ "PARNA da Serra dos Órgãos",
+#     uc  == "Parna de Pacaás Novos" ~ "PARNA de Pacaás Novos",
+#     uc  == "Parna do Cabo Orange" ~ "PARNA do Cabo Orange",
+#     uc  == "Parna do Iguaçu" ~ "PARNA do Iguaçu",
+#     uc  == "Parna do Jaú" ~ "PARNA do Jaú",
+#     uc  == "Parna do Juruena" ~ "PARNA do Juruena",
+#     uc  == "Parna do Monte Roraima" ~ "PARNA do Monte Roraima",
+#     uc  == "Parna do Superagui" ~ "PARNA do Superagui",
+#     uc  == "Parna do Viruá" ~ "PARNA do Viruá",
+#     uc  == "Parna dos Campos Amazônicos" ~ "PARNA dos Campos Amazônicos",
+#     uc  == "Parna Mapinguari" ~ "PARNA Mapinguari",
+#     uc  == "Parna Montanhas do Tumucumaque" ~ "PARNA Montanhas do Tumucumaque",
+#     uc  == "Parna Nascentes do Lago Jari" ~ "PARNA Nascentes do Lago Jari",
+#     uc  == "Parna Serra da Mocidade" ~ "PARNA Serra da Mocidade",
+#     uc  == "Rebio de Una" ~ "REBIO de Una",
+#     uc  == "Rebio do Gurupi" ~ "REBIO do Gurupi",
+#     uc  == "Rebio do Jaru" ~ "REBIO do Jaru",
+#     uc  == "Rebio do Tapirapé" ~ "REBIO do Tapirapé",
+#     uc  == "Rebio do Uatumã" ~ "REBIO do Uatumã",
+#     uc  == "Rebio Guaribas" ~ "REBIO Guaribas",
+#     uc  == "Rebio Trombetas" ~ "REBIO Trombetas",
+#     uc  == "Resex Arapixi" ~ "RESEX Arapixi",
+#     uc  == "Resex Barreiro das Antas" ~ "RESEX Barreiro das Antas",
+#     uc  == "Resex Chico Mendes" ~ "RESEX Chico Mendes",
+#     uc  == "Resex do Alto Tarauacá" ~ "RESEX do Alto Tarauacá",
+#     uc  == "Resex do Cazumbá-Iracema" ~ "RESEX do Cazumbá-Iracema",
+#     uc  == "Resex do Lago do Capanã Grande" ~ "RESEX do Lago do Capanã Grande",
+#     uc  == "Resex do Rio do Cautário" ~ "RESEX do Rio do Cautário",
+#     uc  == "Resex Ipaú-Anilzinho" ~ "RESEX Ipaú-Anilzinho",
+#     uc  == "Resex Renascer" ~ "RESEX Renascer",
+#     uc  == "Resex Rio Ouro Preto" ~ "RESEX Rio Ouro Preto",
+#     uc  == "Resex Riozinho da Liberdade" ~ "RESEX Riozinho da Liberdade",
+#     uc  == "Resex Riozinho do Anfrísio" ~ "RESEX Riozinho do Anfrísio",
+#     uc  == "Resex Tapajós-Arapiuns" ~ "RESEX Tapajós-Arapiuns",
+#     uc  == "Resex Verde para Sempre" ~ "RESEX Verde para Sempre",
+#       TRUE ~ uc))
+# 
+# # Checando nomes alterados
+# 
+# #unique(masto_aves$uc)
+# 
+# 
+# # Limpando a planilha - selecionando apenas colunas relevantes
+# 
+# masto_aves <- masto_aves |>
+#   select(
+#     cnuc,
+#     uc,
+#     bioma,
+#     ano,
+#     ea,
+#     everything(),
+#     -c(
+#       h_fim,
+#       cond_clim,
+#       populacao,
+#       tempo_censo,
+#       observadores,
+#       problema_amostragem,
+#       nome_ea,
+#       h_inicio,
+#       velocidade,
+#       n_guia,
+#       h_avistamento,
+#       observacoes
+#     )
+#    )
+# 
+# #glimpse(masto_aves)
+# 
+# 
+# #### Ajustando os códigos CNUC para o formato padrão --------------
+# 
+# masto_aves$cnuc <- as.character(masto_aves$cnuc)
+# 
+# masto_aves <- masto_aves %>% 
+# mutate(
+#   Cnuc = case_when(
+#     cnuc == "284" ~ "0000.00.0284",
+#     cnuc == "1626" ~ "0000.00.1626",
+#     cnuc == "179" ~ "0000.00.0179",
+#     cnuc == "189" ~ "0000.00.0189",
+#     cnuc == "207" ~ "0000.00.0207",
+#     cnuc == "232" ~ "0000.00.0232",
+#     cnuc == "238" ~ "0000.00.0238",
+#     cnuc == "241" ~ "0000.00.0241",
+#     cnuc == "242" ~ "0000.00.0242",
+#     cnuc == "257" ~ "0000.00.0257",
+#     cnuc == "285" ~ "0000.00.0285",
+#     cnuc == "169" ~ "0000.00.0169",
+#     cnuc == "174" ~ "0000.00.0174",
+#     cnuc == "210" ~ "0000.00.0210",
+#     cnuc == "258" ~ "0000.00.0258",
+#     cnuc == "260" ~ "0000.00.0260",
+#     cnuc == "163" ~ "0000.00.0163",
+#     cnuc ==  "67" ~ "0000.00.0067",
+#     cnuc == "118" ~ "0000.00.0118",
+#     cnuc == "136" ~ "0000.00.0136",
+#     cnuc ==  "47" ~ "0000.00.0047",
+#     cnuc ==  "57" ~ "0000.00.0057",
+#     cnuc ==  "60" ~ "0000.00.0060",
+#     cnuc ==  "61" ~ "0000.00.0061",
+#     cnuc ==  "68" ~ "0000.00.0068",
+#     cnuc == "123" ~ "0000.00.0123",
+#     cnuc ==  "76" ~ "0000.00.0076",
+#     cnuc == "139" ~ "0000.00.0139",
+#     cnuc == "142" ~ "0000.00.0142",
+#     cnuc == "143" ~ "0000.00.0143",
+#     cnuc == "148" ~ "0000.00.0148",
+#     cnuc == "149" ~ "0000.00.0149",
+#     cnuc == "151" ~ "0000.00.0151",
+#     cnuc == "152" ~ "0000.00.0152",
+#     cnuc == "172" ~ "0000.00.0172",
+#     cnuc == "173" ~ "0000.00.0173",
+#     cnuc == "178" ~ "0000.00.0178",
+#     cnuc == "187" ~ "0000.00.0187",
+#     cnuc == "188" ~ "0000.00.0188",
+#     cnuc == "196" ~ "0000.00.0196",
+#     cnuc == "202" ~ "0000.00.0202",
+#     cnuc == "208" ~ "0000.00.0208",
+#     cnuc == "211" ~ "0000.00.0211",
+#     cnuc == "213" ~ "0000.00.0213",
+#     cnuc == "221" ~ "0000.00.0221",
+#     cnuc == "222" ~ "0000.00.0222",
+#     cnuc == "256" ~ "0000.00.0256",
+#     cnuc == "259" ~ "0000.00.0259",
+#     cnuc == "274" ~ "0000.00.0274",
+#     cnuc == "281" ~ "0000.00.0281",
+#     cnuc == "1633" ~ "0000.00.1633",
+#     cnuc == "1810" ~ "0000.00.1810"))
+# 
+# 
+# 
+# 
+# #unique(masto_aves$Cnuc)
+# #View(masto_aves)
+# 
+# # cnuc <- masto_aves |>
+# #   distinct(uc, Cnuc) |>
+# #   arrange()
+# # 
+# # cnuc
+# 
+# # Contagem de táxons - aves
+# 
+# aves <- masto_aves |>
+#   filter(classe == "Aves")
+# 
+# #unique(aves$taxon_validado)
+# 
+# # Contagem de táxons - mamíferos
+# 
+# mamiferos <- masto_aves |>
+#   filter(classe == "Mammalia")
+# 
+# #unique(mamiferos$taxon_validado)
+# 
+# 
+# # Busca por valores NA e registros n_animais = 0
+# 
+# # masto_aves_2014_2022_uc <- masto_aves |> 
+# #    filter(is_NA(ordem))
+# # 
+# # masto_aves_2014_2022_uc <- masto_aves |> 
+# #    filter(n_animais == 0)
 
 
 
@@ -1219,44 +1228,44 @@ mamiferos <- masto_aves |>
 #| cache: true
 
 
-#### Calculando o esforço por trilha (ea)
-
-
-# Visualizando o esforço por trilha por dia em cada ano e UC
-
-#unique(masto_aves$esforco) # Valores únicos de esforço
-
-esforco_dia_trilha <- masto_aves  |> 
-  distinct(uc, bioma, grupo, ano, ea, data, esforco) 
-  
-#View(esforco_dia_trilha)
-
-
-
-
-
-esforco_dia_trilha_rep <- masto_aves  |> # número amostragens por trilha
-  distinct(uc, bioma, grupo, ano, ea, data, esforco) |> 
-  count(uc, bioma, grupo, ano, ea, esforco)
-
-#View(esforco_dia_trilha_rep)
-
-## Estimando o esforço total naquela trilha por ano por UC
-
-esforco_total_trilha <- esforco_dia_trilha |> # esforço total por trilha
-  group_by(uc, bioma, grupo, ano, ea) |>
-  summarise(extensao = sum(esforco),
-            transectos = n())
-
-#View(esforco_total_trilha)
-
-# Checando trilhas com esforço > 50 km
-
-trilhas_esforco_total_maior_50km <- esforco_total_trilha |>
-  filter(extensao > 50)
-
-# print(trilhas_esforco_total_maior_50km, n = 70)
-# View(trilhas_esforco_total_maior_50km)
+# #### Calculando o esforço por trilha (ea)
+# 
+# 
+# # Visualizando o esforço por trilha por dia em cada ano e UC
+# 
+# #unique(masto_aves$esforco) # Valores únicos de esforço
+# 
+# esforco_dia_trilha <- masto_aves  |> 
+#   distinct(uc, bioma, grupo, ano, ea, data, esforco) 
+#   
+# #View(esforco_dia_trilha)
+# 
+# 
+# 
+# 
+# 
+# esforco_dia_trilha_rep <- masto_aves  |> # número amostragens por trilha
+#   distinct(uc, bioma, grupo, ano, ea, data, esforco) |> 
+#   count(uc, bioma, grupo, ano, ea, esforco)
+# 
+# #View(esforco_dia_trilha_rep)
+# 
+# ## Estimando o esforço total naquela trilha por ano por UC
+# 
+# esforco_total_trilha <- esforco_dia_trilha |> # esforço total por trilha
+#   group_by(uc, bioma, grupo, ano, ea) |>
+#   summarise(extensao = sum(esforco),
+#             transectos = n())
+# 
+# #View(esforco_total_trilha)
+# 
+# # Checando trilhas com esforço > 50 km
+# 
+# trilhas_esforco_total_maior_50km <- esforco_total_trilha |>
+#   filter(extensao > 50)
+# 
+# # print(trilhas_esforco_total_maior_50km, n = 70)
+# # View(trilhas_esforco_total_maior_50km)
 
 ```
 
@@ -1271,84 +1280,84 @@ trilhas_esforco_total_maior_50km <- esforco_total_trilha |>
 #| cache: true
 
 
-### Criando uma coluna auxiliar de número de avistamentos
-### para poder calcular a número de avistamentos considerando
-### os registros (linhas) com valor = zero
-
-masto_aves <- masto_aves %>% 
-  mutate(n_animais_aux = ifelse(n_animais > 0, 1, n_animais))
-
-
-#View(masto_aves)
-
-
-
-#### Calculando o número de registros total
-
-registros_total_trilha <- masto_aves |>
-  group_by(uc, bioma, grupo, ano, ea)  |>
-  summarise(avistamentos = sum(n_animais_aux))
-  
-
-#View(registros_total)
-
-# Juntanto as tabelas esforco_total_trilha + registros_total_trilha
-
-taxa_avistamento_trilha <-
-  left_join(registros_total_trilha, esforco_total_trilha, c("uc", "bioma", "grupo", "ano", "ea"))
-
-#View(taxa_avistamento_trilha)
-
-# Obs.: A taxa_avistamento_trilha considera todos os registros (aves e mamíferos conjuntamente)
-
-taxa_avistamento_trilha <- taxa_avistamento_trilha |>
-  mutate(taxa_avistamento = (avistamentos/extensao) * 10)
-
-#View(taxa_avistamento_trilha_total)
-
-
-# Calculando a taxa_avistamento média geral e desvio-padrão
-
-media_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
-  pull(taxa_avistamento) %>%
-  mean(na.rm = T)
-
-sd_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
-  pull(taxa_avistamento) %>%
-  sd(na.rm = T)
-
-n_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
-  pull(taxa_avistamento) %>%
-  length()
-
-
-
-## Taxa de avistamento média geral por UC
-
-taxa_avistamento_media_UC <- taxa_avistamento_trilha |>
-  group_by(uc) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n))
-  )
-
-
-
-
-# Taxa de avistamento média por UC por ano
-
-taxa_avistamento_trilha_media_uc_ano <- taxa_avistamento_trilha |>
-  group_by(uc, bioma, grupo, ano) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n))
-  )
-
-#View(taxa_avistamento_trilha_media_uc_ano)
+# ### Criando uma coluna auxiliar de número de avistamentos
+# ### para poder calcular a número de avistamentos considerando
+# ### os registros (linhas) com valor = zero
+# 
+# masto_aves <- masto_aves %>% 
+#   mutate(n_animais_aux = ifelse(n_animais > 0, 1, n_animais))
+# 
+# 
+# #View(masto_aves)
+# 
+# 
+# 
+# #### Calculando o número de registros total
+# 
+# registros_total_trilha <- masto_aves |>
+#   group_by(uc, bioma, grupo, ano, ea)  |>
+#   summarise(avistamentos = sum(n_animais_aux))
+#   
+# 
+# #View(registros_total)
+# 
+# # Juntanto as tabelas esforco_total_trilha + registros_total_trilha
+# 
+# taxa_avistamento_trilha <-
+#   left_join(registros_total_trilha, esforco_total_trilha, c("uc", "bioma", "grupo", "ano", "ea"))
+# 
+# #View(taxa_avistamento_trilha)
+# 
+# # Obs.: A taxa_avistamento_trilha considera todos os registros (aves e mamíferos conjuntamente)
+# 
+# taxa_avistamento_trilha <- taxa_avistamento_trilha |>
+#   mutate(taxa_avistamento = (avistamentos/extensao) * 10)
+# 
+# #View(taxa_avistamento_trilha_total)
+# 
+# 
+# # Calculando a taxa_avistamento média geral e desvio-padrão
+# 
+# media_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
+#   pull(taxa_avistamento) %>%
+#   mean(na.rm = T)
+# 
+# sd_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
+#   pull(taxa_avistamento) %>%
+#   sd(na.rm = T)
+# 
+# n_geral_taxa_avistamento <- taxa_avistamento_trilha %>%
+#   pull(taxa_avistamento) %>%
+#   length()
+# 
+# 
+# 
+# ## Taxa de avistamento média geral por UC
+# 
+# taxa_avistamento_media_UC <- taxa_avistamento_trilha |>
+#   group_by(uc) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n))
+#   )
+# 
+# 
+# 
+# 
+# # Taxa de avistamento média por UC por ano
+# 
+# taxa_avistamento_trilha_media_uc_ano <- taxa_avistamento_trilha |>
+#   group_by(uc, bioma, grupo, ano) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n))
+#   )
+# 
+# #View(taxa_avistamento_trilha_media_uc_ano)
 
 ```
 
@@ -1362,51 +1371,51 @@ taxa_avistamento_trilha_media_uc_ano <- taxa_avistamento_trilha |>
 #| warning: false
 #| cache: true
 
-## Calculando o número de registros total
-
-registros_total_uc_ano <- masto_aves |>
-  group_by(uc, Cnuc, bioma, grupo, ano)  |>
-   summarise(avistamentos = sum(n_animais_aux))
-  
-
-#View(registros_total_uc_ano)
-
-esforco_total_uc_ano <- esforco_total_trilha |> 
-  group_by(uc, bioma, grupo, ano) |>
-  summarise(extensao_total = sum(extensao))
-
-#View(esforco_total_uc_ano)
-  
-
-# Juntanto tabelas esforco_total_uc_ano + registros_total_uc_ano
-
-taxa_avistamento_geral_uc_ano <-
-  left_join(registros_total_uc_ano, esforco_total_uc_ano, c("uc", "bioma", "grupo", "ano"))
-
-#View(taxa_avistamento_geral_uc_ano)
-
-taxa_avistamento_geral_uc_ano <- taxa_avistamento_geral_uc_ano |>
-  mutate(taxa_avistamento = (avistamentos / extensao_total) * 10)
-
-#View(taxa_avistamento_geral_uc_ano)
-
-
-# Calculando a taxa de avistamento geral média para cada UC - média das taxas anuais
-
-taxa_avistamento_geral_uc <- taxa_avistamento_geral_uc_ano |>
-  group_by(uc, Cnuc, bioma, grupo) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975)*ep
-  )
-
-
-#View(taxa_avistamento_geral_uc)
-
-write.csv(taxa_avistamento_geral_uc, "dados/mastoaves/taxa_avistamento_geral_uc.csv", row.names = FALSE)
+# ## Calculando o número de registros total
+# 
+# registros_total_uc_ano <- masto_aves |>
+#   group_by(uc, Cnuc, bioma, grupo, ano)  |>
+#    summarise(avistamentos = sum(n_animais_aux))
+#   
+# 
+# #View(registros_total_uc_ano)
+# 
+# esforco_total_uc_ano <- esforco_total_trilha |> 
+#   group_by(uc, bioma, grupo, ano) |>
+#   summarise(extensao_total = sum(extensao))
+# 
+# #View(esforco_total_uc_ano)
+#   
+# 
+# # Juntanto tabelas esforco_total_uc_ano + registros_total_uc_ano
+# 
+# taxa_avistamento_geral_uc_ano <-
+#   left_join(registros_total_uc_ano, esforco_total_uc_ano, c("uc", "bioma", "grupo", "ano"))
+# 
+# #View(taxa_avistamento_geral_uc_ano)
+# 
+# taxa_avistamento_geral_uc_ano <- taxa_avistamento_geral_uc_ano |>
+#   mutate(taxa_avistamento = (avistamentos / extensao_total) * 10)
+# 
+# #View(taxa_avistamento_geral_uc_ano)
+# 
+# 
+# # Calculando a taxa de avistamento geral média para cada UC - média das taxas anuais
+# 
+# taxa_avistamento_geral_uc <- taxa_avistamento_geral_uc_ano |>
+#   group_by(uc, Cnuc, bioma, grupo) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n)),
+#     IC_95 = qnorm(.975)*ep
+#   )
+# 
+# 
+# #View(taxa_avistamento_geral_uc)
+# 
+# write.csv(taxa_avistamento_geral_uc, "dados/mastoaves/taxa_avistamento_geral_uc.csv", row.names = FALSE)
 
 ```
 
@@ -1448,48 +1457,48 @@ ucs_comp_florestal_unido$taxa_avist_media <- round(ucs_comp_florestal_unido$taxa
 #| warning: false
 #| cache: true
 
-## Calculando o número de registros por classe por ano
-
-registros_total_classe_ano <- masto_aves |>
-  group_by(uc, bioma, grupo, ano, classe)  |>
-  summarise(avistamentos = sum(n_animais_aux)) %>% 
-  drop_na(classe)
-
-#View(registros_total_classe_ano)
-
-esforco_total_uc_ano <- esforco_total_trilha |> 
-  group_by(uc, bioma, grupo, ano) |>
-  summarise(extensao_total = sum(extensao))
-
-#View(esforco_total_uc_ano)
-  
-
-# Juntanto as tabelas esforco_total_uc_ano + registros_total_classe_ano
-
-taxa_avistamento_total_classe_ano <-
-  left_join(registros_total_classe_ano, esforco_total_uc_ano, c("uc", "bioma", "grupo", "ano"))
-
-#View(taxa_avistamento_total_classe_ano)
-
-taxa_avistamento_total_classe_ano <- taxa_avistamento_total_classe_ano |>
-  mutate(taxa_avistamento = (avistamentos / extensao_total) * 10)
-
-#View(taxa_avistamento_total_classe_ano)
-
-# Calculando a taxa de avistamento por classe por uc
-
-taxa_avistamento_total_classe_uc <- taxa_avistamento_total_classe_ano |>
-  group_by(uc, bioma, grupo, classe) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975)*ep 
-  )
-
-
-#View(taxa_avistamento_total_classe_uc)
+# ## Calculando o número de registros por classe por ano
+# 
+# registros_total_classe_ano <- masto_aves |>
+#   group_by(uc, bioma, grupo, ano, classe)  |>
+#   summarise(avistamentos = sum(n_animais_aux)) %>% 
+#   drop_na(classe)
+# 
+# #View(registros_total_classe_ano)
+# 
+# esforco_total_uc_ano <- esforco_total_trilha |> 
+#   group_by(uc, bioma, grupo, ano) |>
+#   summarise(extensao_total = sum(extensao))
+# 
+# #View(esforco_total_uc_ano)
+#   
+# 
+# # Juntanto as tabelas esforco_total_uc_ano + registros_total_classe_ano
+# 
+# taxa_avistamento_total_classe_ano <-
+#   left_join(registros_total_classe_ano, esforco_total_uc_ano, c("uc", "bioma", "grupo", "ano"))
+# 
+# #View(taxa_avistamento_total_classe_ano)
+# 
+# taxa_avistamento_total_classe_ano <- taxa_avistamento_total_classe_ano |>
+#   mutate(taxa_avistamento = (avistamentos / extensao_total) * 10)
+# 
+# #View(taxa_avistamento_total_classe_ano)
+# 
+# # Calculando a taxa de avistamento por classe por uc
+# 
+# taxa_avistamento_total_classe_uc <- taxa_avistamento_total_classe_ano |>
+#   group_by(uc, bioma, grupo, classe) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n)),
+#     IC_95 = qnorm(.975)*ep 
+#   )
+# 
+# 
+# #View(taxa_avistamento_total_classe_uc)
 
 ```
 
@@ -1503,42 +1512,42 @@ taxa_avistamento_total_classe_uc <- taxa_avistamento_total_classe_ano |>
 #| cache: true
 
 
-## Calculando o número de registros por classe, por trilha, por ano e por UC
-
-registros_classe <- masto_aves |>
-  group_by(uc, ano, bioma, ea, classe)  |>
-  summarise(avistamentos = sum(n_animais_aux)) %>% 
-  drop_na(classe)
-
-#View(registros_classe)
-
-
-# Juntanto as tabelas esforco_total_trilha + registros_classe
-
-taxa_avistamento_trilha_classe <-
-  left_join(registros_classe, esforco_total_trilha, c("uc", "bioma", "ano", "ea"))
-
-#View(taxa_avistamento_trilha_classe)
-
-taxa_avistamento_trilha_classe <- taxa_avistamento_trilha_classe |>
-  mutate(taxa_avistamento = (avistamentos / extensao) * 10)
-
-#View(taxa_avistamento_trilha_classe)
-
-
-
-# Cálculo da taxa de avistamento por classe por ano
-
-taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
-  group_by(uc, bioma, ano, classe) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975) * ep)
-  
-#View(taxa_avistamento_classe_ano)
+# ## Calculando o número de registros por classe, por trilha, por ano e por UC
+# 
+# registros_classe <- masto_aves |>
+#   group_by(uc, ano, bioma, ea, classe)  |>
+#   summarise(avistamentos = sum(n_animais_aux)) %>% 
+#   drop_na(classe)
+# 
+# #View(registros_classe)
+# 
+# 
+# # Juntanto as tabelas esforco_total_trilha + registros_classe
+# 
+# taxa_avistamento_trilha_classe <-
+#   left_join(registros_classe, esforco_total_trilha, c("uc", "bioma", "ano", "ea"))
+# 
+# #View(taxa_avistamento_trilha_classe)
+# 
+# taxa_avistamento_trilha_classe <- taxa_avistamento_trilha_classe |>
+#   mutate(taxa_avistamento = (avistamentos / extensao) * 10)
+# 
+# #View(taxa_avistamento_trilha_classe)
+# 
+# 
+# 
+# # Cálculo da taxa de avistamento por classe por ano
+# 
+# taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
+#   group_by(uc, bioma, ano, classe) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n)),
+#     IC_95 = qnorm(.975) * ep)
+#   
+# #View(taxa_avistamento_classe_ano)
 
 ```
 
@@ -1555,57 +1564,64 @@ taxa_avistamento_classe_ano <- taxa_avistamento_trilha_classe |>
 #| out.width: '70%'
 #| fig-cap: "Taxa de avistamento média de aves e mamíferos por bioma para o período de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
-# Taxa de encontro geral mamíferos e aves por bioma - emparelhado
+# # Taxa de encontro geral mamíferos e aves por bioma - emparelhado
+# 
+# G_taxa_avistamento_geral_bioma_emparelhado_media_IC <- taxa_avistamento_total_classe_uc |> 
+#  group_by(bioma, classe) |> 
+#  summarise(
+#      n = n(),
+#      taxa_avist_media_bioma = mean(taxa_avist_media),
+#        dp = sd(taxa_avist_media, na.rm = TRUE),
+#        ep = dp / sqrt(n),
+#        IC_95 = qnorm(.975) * ep,
+#        minimo = min(taxa_avist_media, na.rm = TRUE),
+#        maximo = max(taxa_avist_media, na.rm = TRUE)) %>% 
+# 
+#  
+# ggplot(aes(
+#     x = fct_reorder(bioma, taxa_avist_media_bioma, .desc = T),
+#     y = taxa_avist_media_bioma), color = classe) +
+#   geom_pointrange(
+#     aes(color = classe, ymin = taxa_avist_media_bioma - IC_95, ymax =             taxa_avist_media_bioma + IC_95), 
+#     position = position_dodge2(width = 0.5),
+#     width = 0.5,
+#     #size = 0.5,
+#     linewidth = 0.7
+#   ) +
+#   geom_point(aes(colour = classe), size = 3, position = position_dodge2(width = 0.5)) +
+#   scale_color_manual(values = c("#359780", "#BF8120"), labels = c("Aves", "Mamíferos")) +
+#   theme_minimal() +
+#   theme(axis.line.x=element_blank(),
+#         axis.line.y=element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.ticks.x = element_blank(),
+#         panel.grid.minor.y = element_blank(),
+#         #panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         panel.grid.major.x = element_blank(),
+#         legend.text = element_text(size = 10),
+#         legend.title = element_blank(),
+#         legend.position = c(0.75, 0.8),
+#         axis.text=element_text(size=13),
+#         axis.title.y = element_text(size = 13, margin = margin(r = 20))) +
+#         scale_x_discrete(name = " ") +
+#         scale_y_continuous(limits = c(0, 15)) +
+#   labs(title = " ", x = " ", y = "Avistamentos/10 km")
+# 
+# 
+# G_taxa_avistamento_geral_bioma_emparelhado_media_IC
 
-G_taxa_avistamento_geral_bioma_emparelhado_media_IC <- taxa_avistamento_total_classe_uc |> 
- group_by(bioma, classe) |> 
- summarise(
-     n = n(),
-     taxa_avist_media_bioma = mean(taxa_avist_media),
-       dp = sd(taxa_avist_media, na.rm = TRUE),
-       ep = dp / sqrt(n),
-       IC_95 = qnorm(.975) * ep,
-       minimo = min(taxa_avist_media, na.rm = TRUE),
-       maximo = max(taxa_avist_media, na.rm = TRUE)) %>% 
-
- 
-ggplot(aes(
-    x = fct_reorder(bioma, taxa_avist_media_bioma, .desc = T),
-    y = taxa_avist_media_bioma), color = classe) +
-  geom_pointrange(
-    aes(color = classe, ymin = taxa_avist_media_bioma - IC_95, ymax =             taxa_avist_media_bioma + IC_95), 
-    position = position_dodge2(width = 0.5),
-    width = 0.5,
-    #size = 0.5,
-    linewidth = 0.7
-  ) +
-  geom_point(aes(colour = classe), size = 3, position = position_dodge2(width = 0.5)) +
-  scale_color_manual(values = c("#359780", "#BF8120"), labels = c("Aves", "Mamíferos")) +
-  theme_minimal() +
-  theme(axis.line.x=element_blank(),
-        axis.line.y=element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        #panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        legend.text = element_text(size = 10),
-        legend.title = element_blank(),
-        legend.position = c(0.75, 0.8),
-        axis.text=element_text(size=13),
-        axis.title.y = element_text(size = 13, margin = margin(r = 20))) +
-        scale_x_discrete(name = " ") +
-        scale_y_continuous(limits = c(0, 15)) +
-  labs(title = " ", x = " ", y = "Avistamentos/10 km")
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_avistamento_media_bioma.jpg",
+#        height = 4.5, width = 6, units = "in", dpi = 300)
 
 
-G_taxa_avistamento_geral_bioma_emparelhado_media_IC
 
-# Salvando o gráfico
 
-ggsave("imagens/cap05/ma_taxa_avistamento_media_bioma.jpg",
-       height = 4.5, width = 6, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_taxa_avistamento_media_bioma.jpg")
+
+
 
 ```
 
@@ -1627,72 +1643,72 @@ Considerando a variação da abundância relativa ao longo do tempo, na Amazôni
 #| cache: true
 
 
-# Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
-
-G_taxa_avistamento_geral_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
- group_by(ano, classe) |> 
- summarise(
-     n = n(),
-     taxa_avist_media = mean(taxa_avistamento),
-       dp = sd(taxa_avistamento, na.rm = TRUE),
-       ep = dp / sqrt(n),
-       IC_95 = qnorm(.975) * ep) |> 
-
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media), color = classe) +
-  geom_pointrange(
-    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
-    position = position_dodge2(width = 0.5),
-    width = 0.5,
-    #size = 1.5,
-    linewidth = 0.7) +
-  scale_color_manual(values = c("#359780", "#BF8120")) +
-  geom_point(aes(color = classe), width = 0.5, size = 1.5, position = position_dodge2(width = 0.5)) +
-  
-  geom_hline(aes(yintercept = 8.20), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 4.71), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
-  
-  scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
-  
-  theme_minimal() +
-  theme(axis.line.x=element_blank(),
-        axis.line.y=element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        #legend.title = element_blank(),
-        #legend.title = element_text(size = 9),
-        #legend.position = c(0.87, 0.80),
-        legend.position = "none",
-        plot.title = element_text(size = 10),
-        axis.text=element_text(size=8),
-        axis.text.x = element_blank(),
-        axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
-        #scale_x_discrete(name = " ") +
-        scale_y_continuous(limits = c(0, 20)) +
-  labs(title = "Geral", colour = "Geral", x = NULL, y = "Avistamentos/10 km")
-
-
-print(G_taxa_avistamento_geral_periodo_emparelhado_media_IC)
-
-# ggsave("imagens/cap05/G_taxa_avistamento_geral_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
-
-
-# Cálculo das médias gerais (valores dos interceptos)
-
-# media_geral_mamiferos <- G_taxa_avistamento_geral_periodo_emparelhado_media_IC %>%
-#   filter(classe == "Mammalia")
+# # Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 # 
-# media_geral_mamiferos <- mean(media_geral_mamiferos$taxa_avist_media)
+# G_taxa_avistamento_geral_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
+#  group_by(ano, classe) |> 
+#  summarise(
+#      n = n(),
+#      taxa_avist_media = mean(taxa_avistamento),
+#        dp = sd(taxa_avistamento, na.rm = TRUE),
+#        ep = dp / sqrt(n),
+#        IC_95 = qnorm(.975) * ep) |> 
 # 
-# media_geral_aves <- G_taxa_avistamento_geral_periodo_emparelhado_media_IC %>%
-#   filter(classe == "Aves")
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media), color = classe) +
+#   geom_pointrange(
+#     aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
+#     position = position_dodge2(width = 0.5),
+#     width = 0.5,
+#     #size = 1.5,
+#     linewidth = 0.7) +
+#   scale_color_manual(values = c("#359780", "#BF8120")) +
+#   geom_point(aes(color = classe), width = 0.5, size = 1.5, position = position_dodge2(width = 0.5)) +
+#   
+#   geom_hline(aes(yintercept = 8.20), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+#   geom_abline(aes(slope = 0, intercept = 4.71), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+#   
+#   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
+#   
+#   theme_minimal() +
+#   theme(axis.line.x=element_blank(),
+#         axis.line.y=element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.ticks.x = element_blank(),
+#         panel.grid.minor.y = element_blank(),
+#         panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         panel.grid.major.x = element_blank(),
+#         #legend.title = element_blank(),
+#         #legend.title = element_text(size = 9),
+#         #legend.position = c(0.87, 0.80),
+#         legend.position = "none",
+#         plot.title = element_text(size = 10),
+#         axis.text=element_text(size=8),
+#         axis.text.x = element_blank(),
+#         axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
+#         #scale_x_discrete(name = " ") +
+#         scale_y_continuous(limits = c(0, 20)) +
+#   labs(title = "Geral", colour = "Geral", x = NULL, y = "Avistamentos/10 km")
 # 
-# media_geral_aves <- mean(media_geral_aves$taxa_avist_media)
+# 
+# print(G_taxa_avistamento_geral_periodo_emparelhado_media_IC)
+# 
+# # ggsave("imagens/cap05/G_taxa_avistamento_geral_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# 
+# 
+# # Cálculo das médias gerais (valores dos interceptos)
+# 
+# # media_geral_mamiferos <- G_taxa_avistamento_geral_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Mammalia")
+# # 
+# # media_geral_mamiferos <- mean(media_geral_mamiferos$taxa_avist_media)
+# # 
+# # media_geral_aves <- G_taxa_avistamento_geral_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Aves")
+# # 
+# # media_geral_aves <- mean(media_geral_aves$taxa_avist_media)
 
 
 ```
@@ -1708,74 +1724,74 @@ print(G_taxa_avistamento_geral_periodo_emparelhado_media_IC)
 #| warning: false
 #| cache: true
 
-# Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
-
-G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
- filter(bioma == "Amazônia") |> 
- group_by(ano, classe) |> 
- summarise(
-     n = n(),
-     taxa_avist_media = mean(taxa_avistamento),
-       dp = sd(taxa_avistamento, na.rm = TRUE),
-       ep = dp / sqrt(n),
-       IC_95 = qnorm(.975) * ep) |> 
-
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media)) +
-  geom_pointrange(
-    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
-    #position = "dodge2",
-    position = position_dodge2(width = 0.5),
-    width = 0.5,
-    #size = 0.6,
-    linewidth = 0.7) +
-  #scale_color_manual(values = c("#359780", "#BF8120", "red", "blue")) +
-  geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
-  geom_hline(aes(yintercept = 9.45), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 5.32), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
-  
-  scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120"), labels = c("Aves", "Mamíferos")) +
- 
-  theme_minimal() +
-  theme(axis.line.x=element_blank(),
-        axis.line.y=element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        legend.title = element_blank(),
-        #legend.title = element_text(size = 9),
-        legend.position = c(0.75, 0.87),
-        legend.text = element_text(size = 9),
-        #legend.position = "none",
-        plot.title = element_text(size = 10),
-        axis.text=element_text(size=8),
-        axis.text.x = element_blank(),
-        axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
-        #scale_x_discrete(name = " ") +
-        scale_y_continuous(limits = c(0, 20)) +
-  labs(title = "Amazônia", colour = "Amazônia", x = NULL, y = NULL)
-
-
-print(G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC)
-
-# ggsave("imagens/cap05/G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
-
-
-# Cálculo das médias gerais (valores dos interceptos)
-
-# media_amazonia_mamiferos <- G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC %>%
-#   filter(classe == "Mammalia")
+# # Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 # 
-# media_amazonia_mamiferos <- mean(media_amazonia_mamiferos$taxa_avist_media)
+# G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
+#  filter(bioma == "Amazônia") |> 
+#  group_by(ano, classe) |> 
+#  summarise(
+#      n = n(),
+#      taxa_avist_media = mean(taxa_avistamento),
+#        dp = sd(taxa_avistamento, na.rm = TRUE),
+#        ep = dp / sqrt(n),
+#        IC_95 = qnorm(.975) * ep) |> 
 # 
-# media_amazonia_aves <- G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC %>%
-#   filter(classe == "Aves")
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media)) +
+#   geom_pointrange(
+#     aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
+#     #position = "dodge2",
+#     position = position_dodge2(width = 0.5),
+#     width = 0.5,
+#     #size = 0.6,
+#     linewidth = 0.7) +
+#   #scale_color_manual(values = c("#359780", "#BF8120", "red", "blue")) +
+#   geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
+#   geom_hline(aes(yintercept = 9.45), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+#   geom_abline(aes(slope = 0, intercept = 5.32), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+#   
+#   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120"), labels = c("Aves", "Mamíferos")) +
+#  
+#   theme_minimal() +
+#   theme(axis.line.x=element_blank(),
+#         axis.line.y=element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.ticks.x = element_blank(),
+#         panel.grid.minor.y = element_blank(),
+#         panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         panel.grid.major.x = element_blank(),
+#         legend.title = element_blank(),
+#         #legend.title = element_text(size = 9),
+#         legend.position = c(0.75, 0.87),
+#         legend.text = element_text(size = 9),
+#         #legend.position = "none",
+#         plot.title = element_text(size = 10),
+#         axis.text=element_text(size=8),
+#         axis.text.x = element_blank(),
+#         axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
+#         #scale_x_discrete(name = " ") +
+#         scale_y_continuous(limits = c(0, 20)) +
+#   labs(title = "Amazônia", colour = "Amazônia", x = NULL, y = NULL)
 # 
-# media_amazonia_aves <- mean(media_amazonia_aves$taxa_avist_media)
+# 
+# print(G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC)
+# 
+# # ggsave("imagens/cap05/G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# 
+# 
+# # Cálculo das médias gerais (valores dos interceptos)
+# 
+# # media_amazonia_mamiferos <- G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Mammalia")
+# # 
+# # media_amazonia_mamiferos <- mean(media_amazonia_mamiferos$taxa_avist_media)
+# # 
+# # media_amazonia_aves <- G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Aves")
+# # 
+# # media_amazonia_aves <- mean(media_amazonia_aves$taxa_avist_media)
 
 
 ```
@@ -1787,73 +1803,73 @@ print(G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC)
 #| warning: false
 #| cache: true
 
-# Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
-
-G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
- filter(bioma == "Mata Atlântica") |> 
- group_by(ano, classe) |> 
- summarise(
-     n = n(),
-     taxa_avist_media = mean(taxa_avistamento),
-       dp = sd(taxa_avistamento, na.rm = TRUE),
-       ep = dp / sqrt(n),
-       IC_95 = qnorm(.975) * ep) |> 
-
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media)) +
-  geom_pointrange(
-    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
-    #position = "dodge2",
-    position = position_dodge2(width = 0.5),
-    width = 0.5,
-    #size = 0.6,
-    linewidth = 0.7) +
-  scale_color_manual(values = c("#359780", "#BF8120")) +
-  geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
-  
-  geom_hline(aes(yintercept = 2.91), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 1.77), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
-  
-  scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
-  
-  theme_minimal() +
-  theme(axis.line.x=element_blank(),
-        axis.line.y=element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        #legend.title = element_blank(),
-        #legend.title = element_text(size = 9),
-        #legend.position = c(0.77, 0.80),
-        legend.position = "none",
-        plot.title = element_text(size = 10),
-        axis.text=element_text(size=8),
-        axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
-        #scale_x_discrete(name = " ") +
-        scale_y_continuous(limits = c(-5, 15)) +
-        scale_x_continuous(breaks = taxa_avistamento_trilha_classe$ano) +
-  labs(title = "Mata Atlântica", colour = "Mata Atlântica", x = "Ano", y = "Avistamentos/10 km")
-  
-print(G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC)
-
-# ggsave("imagens/cap05/G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
-
-
-# # Cálculo das médias gerais (valores dos interceptos)
+# # Taxa de avistamento geral mamíferos e aves emparelhado - 2014-2022
 # 
-# # media_mata_atlantica_mamiferos <- G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC %>%
-# #   filter(classe == "Mammalia")
+# G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |> 
+#  filter(bioma == "Mata Atlântica") |> 
+#  group_by(ano, classe) |> 
+#  summarise(
+#      n = n(),
+#      taxa_avist_media = mean(taxa_avistamento),
+#        dp = sd(taxa_avistamento, na.rm = TRUE),
+#        ep = dp / sqrt(n),
+#        IC_95 = qnorm(.975) * ep) |> 
+# 
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media)) +
+#   geom_pointrange(
+#     aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
+#     #position = "dodge2",
+#     position = position_dodge2(width = 0.5),
+#     width = 0.5,
+#     #size = 0.6,
+#     linewidth = 0.7) +
+#   scale_color_manual(values = c("#359780", "#BF8120")) +
+#   geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
+#   
+#   geom_hline(aes(yintercept = 2.91), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+#   geom_abline(aes(slope = 0, intercept = 1.77), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+#   
+#   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
+#   
+#   theme_minimal() +
+#   theme(axis.line.x=element_blank(),
+#         axis.line.y=element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.ticks.x = element_blank(),
+#         panel.grid.minor.y = element_blank(),
+#         panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         panel.grid.major.x = element_blank(),
+#         #legend.title = element_blank(),
+#         #legend.title = element_text(size = 9),
+#         #legend.position = c(0.77, 0.80),
+#         legend.position = "none",
+#         plot.title = element_text(size = 10),
+#         axis.text=element_text(size=8),
+#         axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
+#         #scale_x_discrete(name = " ") +
+#         scale_y_continuous(limits = c(-5, 15)) +
+#         scale_x_continuous(breaks = taxa_avistamento_trilha_classe$ano) +
+#   labs(title = "Mata Atlântica", colour = "Mata Atlântica", x = "Ano", y = "Avistamentos/10 km")
+#   
+# print(G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC)
+# 
+# # ggsave("imagens/cap05/G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# 
+# 
+# # # Cálculo das médias gerais (valores dos interceptos)
 # # 
-# # media_mata_atlantica_mamiferos <- mean(media_mata_atlantica_mamiferos$taxa_avist_media)
-# # 
-# # media_mata_atlantica_aves <- G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC %>%
-# #   filter(classe == "Aves")
-# # 
-# # media_mata_atlantica_aves <- mean(media_mata_atlantica_aves$taxa_avist_media)
+# # # media_mata_atlantica_mamiferos <- G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC %>%
+# # #   filter(classe == "Mammalia")
+# # # 
+# # # media_mata_atlantica_mamiferos <- mean(media_mata_atlantica_mamiferos$taxa_avist_media)
+# # # 
+# # # media_mata_atlantica_aves <- G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC %>%
+# # #   filter(classe == "Aves")
+# # # 
+# # # media_mata_atlantica_aves <- mean(media_mata_atlantica_aves$taxa_avist_media)
 
 ```
 
@@ -1864,74 +1880,74 @@ print(G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC)
 #| warning: false
 #| cache: true
 
-# Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
-
-G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |>
- filter(bioma == "Cerrado") |>
- group_by(ano, classe) |>
- summarise(
-     n = n(),
-     taxa_avist_media = mean(taxa_avistamento),
-       dp = sd(taxa_avistamento, na.rm = TRUE),
-       ep = dp / sqrt(n),
-       IC_95 = qnorm(.975) * ep) |>
-  
-    ggplot(aes(
-    x = ano,
-    y = taxa_avist_media)) +
-  geom_pointrange(
-    aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
-    #position = "dodge2",
-    position = position_dodge2(width = 0.5),
-    width = 0.5,
-    #size = 0.6,
-    linewidth = 0.7) +
-  scale_color_manual(values = c("#359780", "#BF8120")) +
-  geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
-  
-  geom_hline(aes(yintercept = 3.20), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
-  geom_abline(aes(slope = 0, intercept = 2.77), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
-  
-  scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
-
-  
-  theme_minimal() +
-  theme(axis.line.x=element_blank(),
-        axis.line.y=element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        #legend.title = element_blank(),
-        #legend.title = element_text(size = 9),
-        #legend.position = c(0.75, 0.84),
-        legend.position = "none",
-        plot.title = element_text(size = 10),
-        axis.text=element_text(size=8),
-        axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
-        #scale_x_discrete(name = " ") +
-        scale_y_continuous(limits = c(-5, 15)) +
-        scale_x_continuous(breaks = taxa_avistamento_trilha_classe$ano) +
-        
-  labs(title = "Cerrado", colour = "Cerrado", x = "Ano", y = NULL)
-
-print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
-
-# ggsave("imagens/cap05/G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
-
-# Cálculo das médias gerais (valores dos interceptos)
-
-# media_cerrado_mamiferos <- G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC %>%
-#   filter(classe == "Mammalia")
+# # Taxa de encontro geral mamíferos e aves emparelhado - 2014-2022
 # 
-# media_cerrado_mamiferos <- mean(media_cerrado_mamiferos$taxa_avist_media)
+# G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC <- taxa_avistamento_total_classe_ano |>
+#  filter(bioma == "Cerrado") |>
+#  group_by(ano, classe) |>
+#  summarise(
+#      n = n(),
+#      taxa_avist_media = mean(taxa_avistamento),
+#        dp = sd(taxa_avistamento, na.rm = TRUE),
+#        ep = dp / sqrt(n),
+#        IC_95 = qnorm(.975) * ep) |>
+#   
+#     ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media)) +
+#   geom_pointrange(
+#     aes(color = classe, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95), 
+#     #position = "dodge2",
+#     position = position_dodge2(width = 0.5),
+#     width = 0.5,
+#     #size = 0.6,
+#     linewidth = 0.7) +
+#   scale_color_manual(values = c("#359780", "#BF8120")) +
+#   geom_point(aes(colour = classe), size = 1.5, position = position_dodge2(width = 0.5)) +
+#   
+#   geom_hline(aes(yintercept = 3.20), colour = "#BF8120", show.legend = FALSE, linewidth = 0.5) +
+#   geom_abline(aes(slope = 0, intercept = 2.77), colour = "#359780", show.legend = FALSE, linewidth = 0.5) +
+#   
+#   scale_color_manual(values = c("#359780", "#BF8120", "#359780", "#BF8120")) +
 # 
-# media_cerrado_aves <- G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC %>%
-#   filter(classe == "Aves")
+#   
+#   theme_minimal() +
+#   theme(axis.line.x=element_blank(),
+#         axis.line.y=element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.ticks.x = element_blank(),
+#         panel.grid.minor.y = element_blank(),
+#         panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         panel.grid.major.x = element_blank(),
+#         #legend.title = element_blank(),
+#         #legend.title = element_text(size = 9),
+#         #legend.position = c(0.75, 0.84),
+#         legend.position = "none",
+#         plot.title = element_text(size = 10),
+#         axis.text=element_text(size=8),
+#         axis.title.y = element_text(size = 9, margin = margin(r = 10))) +
+#         #scale_x_discrete(name = " ") +
+#         scale_y_continuous(limits = c(-5, 15)) +
+#         scale_x_continuous(breaks = taxa_avistamento_trilha_classe$ano) +
+#         
+#   labs(title = "Cerrado", colour = "Cerrado", x = "Ano", y = NULL)
 # 
-# media_cerrado_aves <- mean(media_cerrado_aves$taxa_avist_media)
+# print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
+# 
+# # ggsave("imagens/cap05/G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC.png", height = 4.5, width = 6, units = "in", dpi = 300)
+# 
+# # Cálculo das médias gerais (valores dos interceptos)
+# 
+# # media_cerrado_mamiferos <- G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Mammalia")
+# # 
+# # media_cerrado_mamiferos <- mean(media_cerrado_mamiferos$taxa_avist_media)
+# # 
+# # media_cerrado_aves <- G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC %>%
+# #   filter(classe == "Aves")
+# # 
+# # media_cerrado_aves <- mean(media_cerrado_aves$taxa_avist_media)
 
 ```
 
@@ -1947,14 +1963,17 @@ print(G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC)
 #| out.width: '85%'
 #| fig-cap: "Variação anual na taxa de avistamento média de mamíferos e aves de 2014 a 2022 (geral e por bioma). As linhas verticais indicam o intervalo de confiança de 95% e as linhas horizontais representam a taxa de avistamento média para cada grupo considerando todo o período amostral."
 
-grafico_taxas_biomas_tempo <- grid.arrange(G_taxa_avistamento_geral_periodo_emparelhado_media_IC, G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC, G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC, G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC,
-             layout_matrix = matrix(c(1, 2, 3, 4), 
-                                    byrow = TRUE, nrow = 2, ncol = 2))
+# grafico_taxas_biomas_tempo <- grid.arrange(G_taxa_avistamento_geral_periodo_emparelhado_media_IC, G_taxa_avistamento_amazonia_periodo_emparelhado_media_IC, G_taxa_avistamento_mata_atlantica_periodo_emparelhado_media_IC, G_taxa_avistamento_cerrado_periodo_emparelhado_media_IC,
+#              layout_matrix = matrix(c(1, 2, 3, 4), 
+#                                     byrow = TRUE, nrow = 2, ncol = 2))
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxas_biomas_tempo.jpg", plot = grafico_taxas_biomas_tempo, height = 4.5, width = 6, units = "in", dpi = 300)
 
 
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_taxas_biomas_tempo.jpg", plot = grafico_taxas_biomas_tempo, height = 4.5, width = 6, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_taxas_biomas_tempo.jpg")
 
 ```
 
@@ -1978,44 +1997,49 @@ Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-s
 #| out.width: '70%'
 #| fig-cap: "Taxa média de avistamento de mamíferos por unidade de conservação de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
-# Gráfico da taxa de avistamento total de mamíferos - média e IC
+# # Gráfico da taxa de avistamento total de mamíferos - média e IC
+# 
+# cores_biomas <- c("cyan4", "#BF8120", "#95D8D8")
+# 
+# G_taxa_avistamento_geral_mamiferos_media_IC <- taxa_avistamento_total_classe_uc |>
+#   filter(classe == "Mammalia") |> 
+# 
+#   ggplot(aes(
+#     x = fct_reorder(uc, taxa_avist_media, .desc = F),
+#     y = taxa_avist_media)) +
+#   geom_point(size = 1) +
+#   geom_pointrange(
+#     aes(color = bioma, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
+#     size = 0.3,
+#     linewidth = 0.4) +
+#     #colour = "#BF8120") +
+#   
+#   coord_flip() +
+#   scale_x_discrete(name = " ") +
+#   scale_y_continuous(name = "Avistamentos/10 km") +
+#   scale_color_manual(values = cores_biomas) +
+#   theme_minimal() +
+#   theme(#panel.grid.minor.y = element_blank(),
+#         #panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         #panel.grid.major.x = element_blank(),
+#         #axis.text=element_text(size=10),
+#         axis.text.y = element_text(size = 5.5, face = "bold"),
+#         axis.title.x = element_text(size = 10, margin = unit(c(3, 0, 0, 0), "mm"))) +
+#         
+#   labs(title = "Mamíferos", col = NULL)
+# 
+# G_taxa_avistamento_geral_mamiferos_media_IC
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg", plot =  G_taxa_avistamento_geral_mamiferos_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
 
-cores_biomas <- c("cyan4", "#BF8120", "#95D8D8")
-
-G_taxa_avistamento_geral_mamiferos_media_IC <- taxa_avistamento_total_classe_uc |>
-  filter(classe == "Mammalia") |> 
-
-  ggplot(aes(
-    x = fct_reorder(uc, taxa_avist_media, .desc = F),
-    y = taxa_avist_media)) +
-  geom_point(size = 1) +
-  geom_pointrange(
-    aes(color = bioma, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
-    size = 0.3,
-    linewidth = 0.4) +
-    #colour = "#BF8120") +
-  
-  coord_flip() +
-  scale_x_discrete(name = " ") +
-  scale_y_continuous(name = "Avistamentos/10 km") +
-  scale_color_manual(values = cores_biomas) +
-  theme_minimal() +
-  theme(#panel.grid.minor.y = element_blank(),
-        #panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        #panel.grid.major.x = element_blank(),
-        #axis.text=element_text(size=10),
-        axis.text.y = element_text(size = 5.5, face = "bold"),
-        axis.title.x = element_text(size = 10, margin = unit(c(3, 0, 0, 0), "mm"))) +
-        
-  labs(title = "Mamíferos", col = NULL)
-
-G_taxa_avistamento_geral_mamiferos_media_IC
 
 
-# Salvando o gráfico
+knitr::include_graphics("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg")
 
-ggsave("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg", plot =  G_taxa_avistamento_geral_mamiferos_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
 
 ```
 </br>
@@ -2030,43 +2054,46 @@ ggsave("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg", plot =  G_taxa_avistam
 #| out.width: '70%'
 #| fig-cap: "Taxa média de avistamento de aves por unidade de conservação de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
-# Gráfico da taxa de avistamento total de aves - média e IC
+# # Gráfico da taxa de avistamento total de aves - média e IC
+# 
+# 
+# G_taxa_avistamento_geral_aves_media_IC <- taxa_avistamento_total_classe_uc |>
+#   filter(classe == "Aves") |>
+# 
+#     ggplot(aes(
+#     x = fct_reorder(uc, taxa_avist_media, .desc = F),
+#     y = taxa_avist_media
+#   )) +
+#   geom_point(size = 1) +
+#   geom_pointrange(
+#     aes(color = bioma, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
+#     size = 0.3,
+#     linewidth = 0.4) +
+#     
+#   coord_flip() +
+#   scale_x_discrete(name = " ") +
+#   scale_y_continuous(limits = c(0, 15), name = "Avistamentos/10 km") +
+#   scale_color_manual(values = cores_biomas) +
+#   theme_minimal() +
+#   theme(#panel.grid.minor.y = element_blank(),
+#         #panel.grid.major.y = element_blank(),
+#         panel.grid.minor.x = element_blank(),
+#         #panel.grid.major.x = element_blank(),
+#         #axis.text=element_text(size=10),
+#         axis.text.y = element_text(size = 5.5, face = "bold"),
+#         axis.title.x = element_text(size = 10, margin = unit(c(3, 0, 0, 0), "mm"))) +
+#   
+#   labs(title = "Aves", col = NULL)
+# 
+# G_taxa_avistamento_geral_aves_media_IC
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_geral_aves_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
 
 
-G_taxa_avistamento_geral_aves_media_IC <- taxa_avistamento_total_classe_uc |>
-  filter(classe == "Aves") |>
-
-    ggplot(aes(
-    x = fct_reorder(uc, taxa_avist_media, .desc = F),
-    y = taxa_avist_media
-  )) +
-  geom_point(size = 1) +
-  geom_pointrange(
-    aes(color = bioma, ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
-    size = 0.3,
-    linewidth = 0.4) +
-    
-  coord_flip() +
-  scale_x_discrete(name = " ") +
-  scale_y_continuous(limits = c(0, 15), name = "Avistamentos/10 km") +
-  scale_color_manual(values = cores_biomas) +
-  theme_minimal() +
-  theme(#panel.grid.minor.y = element_blank(),
-        #panel.grid.major.y = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        #panel.grid.major.x = element_blank(),
-        #axis.text=element_text(size=10),
-        axis.text.y = element_text(size = 5.5, face = "bold"),
-        axis.title.x = element_text(size = 10, margin = unit(c(3, 0, 0, 0), "mm"))) +
-  
-  labs(title = "Aves", col = NULL)
-
-G_taxa_avistamento_geral_aves_media_IC
-
-
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_geral_aves_media_IC, height = 4.5, width = 6, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_taxa_avistamento_aves.jpg")
 
 ```
 
@@ -2080,23 +2107,23 @@ ggsave("imagens/cap05/ma_taxa_avistamento_aves.jpg", plot = G_taxa_avistamento_g
 #| warning: false
 #| cache: true
 
-correlacao_taxas_avistamento_mamiferos_aves <- taxa_avistamento_total_classe_uc %>% 
-  select(uc, classe, taxa_avist_media) %>% 
-  spread(key = classe, value = taxa_avist_media) 
-  
-
-# Teste de correlação
-cor_test <- cor.test(correlacao_taxas_avistamento_mamiferos_aves$Mammalia, correlacao_taxas_avistamento_mamiferos_aves$Aves, method = "pearson")
-
-
-
-# Ver resultado do teste de correlação
-print(cor_test)
-
-# Extrair coeficiente de correlação e valor p
-cor_value <- cor_test$estimate
-p_value <- cor_test$p.value
-p_value_1 <- 0.001
+# correlacao_taxas_avistamento_mamiferos_aves <- taxa_avistamento_total_classe_uc %>% 
+#   select(uc, classe, taxa_avist_media) %>% 
+#   spread(key = classe, value = taxa_avist_media) 
+#   
+# 
+# # Teste de correlação
+# cor_test <- cor.test(correlacao_taxas_avistamento_mamiferos_aves$Mammalia, correlacao_taxas_avistamento_mamiferos_aves$Aves, method = "pearson")
+# 
+# 
+# 
+# # Ver resultado do teste de correlação
+# print(cor_test)
+# 
+# # Extrair coeficiente de correlação e valor p
+# cor_value <- cor_test$estimate
+# p_value <- cor_test$p.value
+# p_value_1 <- 0.001
 
 
 ```
@@ -2111,41 +2138,44 @@ p_value_1 <- 0.001
 #| out.width: '70%'
 #| fig-cap: "Correlação positiva entre as taxas de avistamento médias de aves e mamíferos das unidades de conservação amostradas."
 
-# Criar o gráfico
+# # Criar o gráfico
+# 
+# G_correlacao_taxas_avistamento_mamiferos_aves <- correlacao_taxas_avistamento_mamiferos_aves %>% 
+#   ggplot(aes(x = Mammalia, y = Aves)) +
+#   geom_point(color = "cyan4", size = 2) +
+#   geom_smooth(method = "lm", col = "darkgrey") +
+#   
+#   labs(
+#     #title = "Correlação taxas de avistamento de mamíferos e aves",
+#     x = "Taxa média de avistamentos (mamíferos)",
+#     y = "Taxa média de avistamentos (aves)"
+#   ) +
+#   annotate(
+#     "text", x = 2.3, y = 9.5, label = paste("r = 0.75"), color = "black"
+#   ) +
+#   annotate(
+#     "text", x = 2.5, y = 9.0, label = paste("p <", round(p_value_1, 4)), color = "black"
+#   ) +
+#   theme_minimal() +
+#   theme(
+#     axis.line = element_line(color = "black"),
+#     axis.ticks = element_line(color = "black"),
+#     axis.text = element_text(color = "black"),
+#     panel.grid.minor.y = element_blank(),
+#     panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     panel.grid.major.x = element_blank(),
+#   )
+# 
+# G_correlacao_taxas_avistamento_mamiferos_aves 
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_correlacao_aves_mamiferos.jpg", plot =  G_correlacao_taxas_avistamento_mamiferos_aves, height = 4.5, width = 4.5, units = "in", dpi = 300)
+# 
 
-G_correlacao_taxas_avistamento_mamiferos_aves <- correlacao_taxas_avistamento_mamiferos_aves %>% 
-  ggplot(aes(x = Mammalia, y = Aves)) +
-  geom_point(color = "cyan4", size = 2) +
-  geom_smooth(method = "lm", col = "darkgrey") +
-  
-  labs(
-    #title = "Correlação taxas de avistamento de mamíferos e aves",
-    x = "Taxa média de avistamentos (mamíferos)",
-    y = "Taxa média de avistamentos (aves)"
-  ) +
-  annotate(
-    "text", x = 2.3, y = 9.5, label = paste("r = 0.75"), color = "black"
-  ) +
-  annotate(
-    "text", x = 2.5, y = 9.0, label = paste("p <", round(p_value_1, 4)), color = "black"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.line = element_line(color = "black"),
-    axis.ticks = element_line(color = "black"),
-    axis.text = element_text(color = "black"),
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-  )
-
-G_correlacao_taxas_avistamento_mamiferos_aves 
-
-
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_correlacao_aves_mamiferos.jpg", plot =  G_correlacao_taxas_avistamento_mamiferos_aves, height = 4.5, width = 4.5, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_correlacao_aves_mamiferos.jpg")
 
 ```
 
@@ -2180,37 +2210,56 @@ No total, 89 populações de 36 táxons de mamíferos e 72 populações de 13 t�
 #| out.width: '70%'
 #| fig-cap: "Taxas de crescimento estimadas para 166 populações analisadas. Os pontos representam a mediana e as barras o intervalo de confiança de 95%. Populações em verde e marrom apresentaram tendência significativa de aumento e de declínio respectivamente."
 
-#----- carregar pacotes
-library(tidyverse)
+# #----- carregar pacotes
+# library(tidyverse)
+# 
+# #----- ler dados
+# ssm_results <- readRDS("dados/mastoaves/ssm_results.rds")
+# 
+# #----- grafico taxas de crescimento todas as populacoes
+# ssm_results %>%
+#   arrange(desc(r_mean50)) %>%
+#   mutate(populacao = factor(populacao, levels=populacao)) %>%   # This trick update the factor levels
+#   mutate(trend = as.factor(case_when(r_mean975 < 0 ~ "decrease",
+#                                      r_mean025 > 0 ~ "increase",
+#                                      .default = "stable"))
+#   ) %>%
+#   rowid_to_column() %>%
+#   ggplot(aes(x = rowid, y = r_mean50, color=trend)) +
+#   geom_hline(yintercept = 0, alpha=.5) +
+#   geom_point(size = 0.8, fill = "white", alpha = 0.8) +
+#   geom_errorbar(aes(ymin = r_mean025, ymax = r_mean975), width=.2,
+#                 position=position_dodge(0.05)) +
+#   ylab("Taxa de crescimento (r)") +
+#   xlab("População (ranking da taxa de crescimento)") +
+#   theme(axis.title.y = element_text(size = 16))  +
+#   theme(axis.text.y = element_text(size = 16)) +
+#   theme(axis.ticks.x = element_blank(),
+#         axis.text.x = element_blank()#,element_text(size = 14)
+#   ) +
+#   ylim(-1.5, 1.5) +
+#   theme_classic() +
+#   scale_color_manual(values = c("#BF8120", "cyan4", "lightgrey")) +
+#   theme(legend.position="none")
 
-#----- ler dados
-ssm_results <- readRDS("dados/mastoaves/ssm_results.rds")
 
-#----- grafico taxas de crescimento todas as populacoes
-ssm_results %>%
-  arrange(desc(r_mean50)) %>%
-  mutate(populacao = factor(populacao, levels=populacao)) %>%   # This trick update the factor levels
-  mutate(trend = as.factor(case_when(r_mean975 < 0 ~ "decrease",
-                                     r_mean025 > 0 ~ "increase",
-                                     .default = "stable"))
-  ) %>%
-  rowid_to_column() %>%
-  ggplot(aes(x = rowid, y = r_mean50, color=trend)) +
-  geom_hline(yintercept = 0, alpha=.5) +
-  geom_point(size = 0.8, fill = "white", alpha = 0.8) +
-  geom_errorbar(aes(ymin = r_mean025, ymax = r_mean975), width=.2,
-                position=position_dodge(0.05)) +
-  ylab("Taxa de crescimento (r)") +
-  xlab("População (ranking da taxa de crescimento)") +
-  theme(axis.title.y = element_text(size = 16))  +
-  theme(axis.text.y = element_text(size = 16)) +
-  theme(axis.ticks.x = element_blank(),
-        axis.text.x = element_blank()#,element_text(size = 14)
-  ) +
-  ylim(-1.5, 1.5) +
-  theme_classic() +
-  scale_color_manual(values = c("#BF8120", "cyan4", "lightgrey")) +
-  theme(legend.position="none")
+# Salvando o gráfico
+
+# ggsave("imagens/cap05/ssm_results.jpg", plot =  ssm_results, height = 4.5, width = 6.0, units = "in", dpi = 300)
+
+
+# ggsave("imagens/cap05/ma_variacao_populacional.jpg",
+#        plot = last_plot(),
+#        device =  "jpeg",
+#        scale=1.5,
+#        width = 6.0,
+#        height = 4.5,
+#        units = "in",
+#        dpi = 300)
+
+
+knitr::include_graphics("imagens/cap05/ma_variacao_populacional.jpg")
+
 
 ```
 
@@ -2350,100 +2399,100 @@ mapa
 #| cache: true
 
 
-## Calculando o número de registros por espécie, por trilha, por ano e por UC
-
-registros_taxon_validado <- masto_aves |>
-  group_by(uc, ano, ea, classe, taxon_validado) |>
-  count() |>
-  drop_na(taxon_validado)
-
-# View(registros_taxon_validado)
-
-
-# Juntanto as tabelas esforco_total_trilha + registros_taxon_validado
-
-taxa_avistamento_trilha_taxon_validado <-
-  left_join(registros_taxon_validado,
-            esforco_total_trilha,
-            c("uc", "ano", "ea"))
-
-#View(taxa_avistamento_trilha_taxon_validado)
-
-
-# write.xlsx(taxa_avistamento_trilha_taxon_validado, file = "dados/mastoaves/taxa_avistamento_trilha_taxon_validado_fialho.xlsx")
-
-
-
-# Calculando a taxa de avistamento
-
-taxa_avistamento_trilha_taxon_validado <-
-  taxa_avistamento_trilha_taxon_validado |>
-  mutate(taxa_avistamento = (n / extensao) * 10)
-
-#View(taxa_avistamento_trilha_taxon_validado)
-
-
-# Taxa de avistamento de espécies por UC e por ano
-
-taxa_avistamento_trilha_taxon_validado_ano <-
-  taxa_avistamento_trilha_taxon_validado |>
-  group_by(uc, ano, classe, taxon_validado) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975) * ep)
-
-
-#View(taxa_avistamento_trilha_taxon_validado_ano)
-
-
-# Taxa de avistamento de espécies de mamíferos por UC
-
-taxa_avistamento_trilha_taxon_validado_mamiferos <-
-  taxa_avistamento_trilha_taxon_validado |>
-  filter(classe == "Mammalia") |>
-  group_by(uc, taxon_validado) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975) * ep)
-
-#View(taxa_avistamento_trilha_taxon_validado_mamiferos)
-
-
-
-
-# Taxa de encontro de espécies de aves por UC
-
-taxa_avistamento_trilha_taxon_validado_aves <-
-  taxa_avistamento_trilha_taxon_validado |>
-  filter(classe == "Aves") |>
-  group_by(uc, taxon_validado) |>
-  summarise(
-    n = n(),
-    taxa_avist_media = mean(taxa_avistamento, na.rm = T),
-    dp = sd(taxa_avistamento, na.rm = T),
-    ep = dp / (sqrt(n)),
-    IC_95 = qnorm(.975) * ep)
-
-#View(taxa_avistamento_trilha_taxon_validado_aves)
+# ## Calculando o número de registros por espécie, por trilha, por ano e por UC
+# 
+# registros_taxon_validado <- masto_aves |>
+#   group_by(uc, ano, ea, classe, taxon_validado) |>
+#   count() |>
+#   drop_na(taxon_validado)
+# 
+# # View(registros_taxon_validado)
+# 
+# 
+# # Juntanto as tabelas esforco_total_trilha + registros_taxon_validado
+# 
+# taxa_avistamento_trilha_taxon_validado <-
+#   left_join(registros_taxon_validado,
+#             esforco_total_trilha,
+#             c("uc", "ano", "ea"))
+# 
+# #View(taxa_avistamento_trilha_taxon_validado)
+# 
+# 
+# # write.xlsx(taxa_avistamento_trilha_taxon_validado, file = "dados/mastoaves/taxa_avistamento_trilha_taxon_validado_fialho.xlsx")
+# 
+# 
+# 
+# # Calculando a taxa de avistamento
+# 
+# taxa_avistamento_trilha_taxon_validado <-
+#   taxa_avistamento_trilha_taxon_validado |>
+#   mutate(taxa_avistamento = (n / extensao) * 10)
+# 
+# #View(taxa_avistamento_trilha_taxon_validado)
+# 
+# 
+# # Taxa de avistamento de espécies por UC e por ano
+# 
+# taxa_avistamento_trilha_taxon_validado_ano <-
+#   taxa_avistamento_trilha_taxon_validado |>
+#   group_by(uc, ano, classe, taxon_validado) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n)),
+#     IC_95 = qnorm(.975) * ep)
+# 
+# 
+# #View(taxa_avistamento_trilha_taxon_validado_ano)
+# 
+# 
+# # Taxa de avistamento de espécies de mamíferos por UC
+# 
+# taxa_avistamento_trilha_taxon_validado_mamiferos <-
+#   taxa_avistamento_trilha_taxon_validado |>
+#   filter(classe == "Mammalia") |>
+#   group_by(uc, taxon_validado) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n)),
+#     IC_95 = qnorm(.975) * ep)
+# 
+# #View(taxa_avistamento_trilha_taxon_validado_mamiferos)
+# 
+# 
+# 
+# 
+# # Taxa de encontro de espécies de aves por UC
+# 
+# taxa_avistamento_trilha_taxon_validado_aves <-
+#   taxa_avistamento_trilha_taxon_validado |>
+#   filter(classe == "Aves") |>
+#   group_by(uc, taxon_validado) |>
+#   summarise(
+#     n = n(),
+#     taxa_avist_media = mean(taxa_avistamento, na.rm = T),
+#     dp = sd(taxa_avistamento, na.rm = T),
+#     ep = dp / (sqrt(n)),
+#     IC_95 = qnorm(.975) * ep)
+# 
+# #View(taxa_avistamento_trilha_taxon_validado_aves)
 
 ```
 
 </br>
 
-### Considerações sobre algumas espécie ameaçadas
+### Considerações sobre algumas espécie ameaçadas de extinção
 
 </br>
 
-Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas), *Chrysocyon brachyurus* (lobo-guará), *Lycalopex vetulus* (raposa-do-campo), *Speothos venaticus* (cachorro-vinagre), *Herpailurus yagouaroundi* (jaguarundi), *Leopardus colocolo* (gato-palheiro), *L. guttulus* (gato-do-mato), *L. tigrinus* (gato-do-mato), *L. wiedii* (gato-maracajá), *Panthera onca* (onça-pintada) e *Pteronura brasiliensis* (ariranha). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus*, *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora, sendo que os dois primeiros são prioritariamente de ambientes abertos.  
+Do conjunto de táxons da ordem Carnivora deste protocolo, 11 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Atelocynus microtis* (cachorro-do-mato-de-orelhas-curtas, VU), *Chrysocyon brachyurus* (lobo-guará, VU), *Lycalopex vetulus* (raposa-do-campo, VU), *Speothos venaticus* (cachorro-vinagre, VU), *Herpailurus yagouaroundi* (jaguarundi, VU), *Leopardus colocolo* (gato-palheiro, VU), *L. guttulus* (gato-do-mato, VU), *L. tigrinus* (gato-do-mato, EN), *L. wiedii* (gato-maracajá, VU), *Panthera onca* (onça-pintada, VU) e *Pteronura brasiliensis* (ariranha, VU). Apenas uma espécie de mamífero carnívoro ameaçada, *Leopardus geoffroyi* (gato-do-mato-grande, VU) não tem ocorrência esperada nas unidades amostradas. Desses táxons elencados, apenas *L. vetulus*, *L. colocolo* e *L. guttulus* não foram registrados no Programa Monitora, sendo que os dois primeiros são prioritariamente de ambientes abertos.  
 
 
-Das nove espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro), *Tayassu pecari* (queixada), *Priodontes maximus* (tatu-canastra), *Tapirus terrestris* (anta) e *Myrmecophaga tridactyla*. Não houve registros de *Blastocerus dichotomus* (cervo-do-pantanal), *Mazama nana* (veado-de-mão-curta), *Tolypeutes tricinctus* (tatu-bola) e *Bradypus torquatus* (preguiça-de-coleira).  
+Das nove espécies ameaçadas das ordens Cetartiodactyla, Perissodactyla, Cingulata e Pilosa com ocorrência esperada nas 53 unidades de conservação analisadas, cinco foram registradas: *Ozotocerus bezoarticus* (veado-campeiro, VU), *Tayassu pecari* (queixada, VU), *Priodontes maximus* (tatu-canastra, VU), *Tapirus terrestris* (anta, VU) e *Myrmecophaga tridactyla* (tamanduá-bandeira, VU). Não houve registros de *Blastocerus dichotomus* (cervo-do-pantanal, VU), *Mazama nana* (veado-de-mão-curta, VU), *Tolypeutes tricinctus* (tatu-bola, EN) e *Bradypus torquatus* (preguiça-de-coleira, VU).  
 
 A ausência dessas espécies pode ser decorrência do baixo esforço amostral nas unidades de conservação onde elas ocorrem. Algumas espécies possuem hábitos noturnos e são crípticas, como a preguiça-de-coleira, que ocorre na REBIO de UNA, ou seus registros podem ter sido validados apenas no nível de gênero, como Mazama nana no PARNA do Iguaçu. Além disso, espécies como o tatu-bola (ESEC da Serra Geral do Tocantins) e o cervo-do-pantanal estão mais associadas a áreas abertas. O registro do cervo no PARNA da Chapada dos Veadeiros, inclusive, pode ser um equívoco.  
 
@@ -2451,7 +2500,7 @@ A ausência dessas espécies pode ser decorrência do baixo esforço amostral na
 Para a ordem Rodentia, as espécies ameaçadas das famílias Caviidae, Ctenomyidae e Erethizontidae não são esperadas para as unidades de conservação amostradas.  
 
 
-Para a ordem Primates, 18 espécies ameaçadas já foram registradas: *Alouatta belzebul* (guariba-de-mãos-ruivas), *A. discolor* (guariba-de-mãos-ruivas), *A. guariba clamitans* (bugio-ruivo), *Ateles belzebuth* (macaco-aranha), *A. chamek* (macaco-aranha-da-cara-preta), *A. marginatus* (coatá-da-testa-branca), *Brachyteles arachnoides* (muriqui-do-sul), *Chiropotes satanas* (cuxiú-preto), *C. utahickae* (cuxiú-marrom), *Lagothrix lagotricha cana* (macaco-barrigudo), *L. lagotricha poeppigii* (macaco-barrigudo), *Callithrix aurita* (sagui-da-serra-escuro), *Leontopithecus chrysomelas* (mico-leão-da-cara-dourada), *Mico rondoni* (mico-de-Rondônia), *Cebus kaapori* (cairara), *Saguinus niger* (sagui-una), *Sapajus cay* (macaco-prego) e *S. xanthosternos* (macaco-prego-do-peito-amarelo).  
+Para a ordem Primates, 18 espécies ameaçadas já foram registradas: *Alouatta belzebul* (guariba-de-mãos-ruivas, VU), *A. discolor* (guariba-de-mãos-ruivas, VU), *A. guariba clamitans* (bugio-ruivo, VU), *Ateles belzebuth* (macaco-aranha, VU), *A. chamek* (macaco-aranha-da-cara-preta, VU), *A. marginatus* (coatá-da-testa-branca), *Brachyteles arachnoides* (muriqui-do-sul), *Chiropotes satanas* (cuxiú-preto), *C. utahickae* (cuxiú-marrom), *Lagothrix lagotricha cana* (macaco-barrigudo), *L. lagotricha poeppigii* (macaco-barrigudo), *Callithrix aurita* (sagui-da-serra-escuro), *Leontopithecus chrysomelas* (mico-leão-da-cara-dourada), *Mico rondoni* (mico-de-Rondônia), *Cebus kaapori* (cairara), *Saguinus niger* (sagui-una), *Sapajus cay* (macaco-prego) e *S. xanthosternos* (macaco-prego-do-peito-amarelo).  
 
 
 Do conjunto de aves alvo deste protocolo, 14 espécies ameaçadas já foram registradas ou têm sua ocorrência esperada nas 53 unidades de conservação analisadas: *Nothura minor* (codorna-mineira), *Taoniscus nanus* (codorna-carapé), *Crypturellus zabele* (zabelê), *Tinamus tao* (azulona), *Aburria jacutinga* (jacutinga) e *A. cujubi* (cujubi), *Penelope jacucaca* (jacucaca) e *P. pileata* (jacupiranga), *Crax blumenbachii* (mutum-de-bico-vermelho) e *C. globulosa* (mutum-de-fava), *Psophia obscura* (jacamim-de-costas-escuras), *P. interjecta* (jacamim-do-xingu), *P. viridis* (jacamim-de-costas-verdes) e *P. dextralis* (jacamim-de-costas-marrons), mais duas subespécies, a saber *Penelope s. alagoensis* (jacupemba) e *Crax f. pinima* (mutum-de-penacho ou mutum-pinima).  
@@ -2474,39 +2523,39 @@ No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros 
 #| cache: true
 
 
-lista_spp_ameacadas_salve <- read_csv2("dados/spp_ameacadas/lista_spp_ameacadas_salve_ajustada_cemave_cpb_13.12.2023.csv")
-
-#View(lista_spp_ameacadas_salve)
-
-
-# Alterando do nome da coluna nome_cientifico para taxon_validado
-
-lista_spp_ameacadas_salve <- lista_spp_ameacadas_salve |>
-  rename(taxon_validado = nome_cientifico)
-
-# Juntando as tabelas taxa_avistamento_trilha_taxon_validado + lista_spp_ameacadas_salve e gerando a planilha de taxa de avistamento das espécies ameaçadas
-
-taxa_avistamento_spp_ameacadas <- left_join(taxa_avistamento_trilha_taxon_validado, lista_spp_ameacadas_salve, by = "taxon_validado")
-
-#View(taxa_avistamento_spp_ameacadas)
-
-# Limpando a planilha
-
-taxa_avistamento_spp_ameacadas <- taxa_avistamento_spp_ameacadas |>
-  select(-classe.y) |> 
-  rename(classe = classe.x) |> 
-  filter(!is.na(categoria))
-
-
-#View(taxa_avistamento_spp_ameacadas)
-
-# Obtendo o total de registros por espécie ameaçada por uc
-
-taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
-  group_by(uc, taxon_validado) |> 
-  count()
-
-#View(taxa_avistamento_spp_ameacadas_uc)
+# lista_spp_ameacadas_salve <- read_csv2("dados/spp_ameacadas/lista_spp_ameacadas_salve_ajustada_cemave_cpb_13.12.2023.csv")
+# 
+# #View(lista_spp_ameacadas_salve)
+# 
+# 
+# # Alterando do nome da coluna nome_cientifico para taxon_validado
+# 
+# lista_spp_ameacadas_salve <- lista_spp_ameacadas_salve |>
+#   rename(taxon_validado = nome_cientifico)
+# 
+# # Juntando as tabelas taxa_avistamento_trilha_taxon_validado + lista_spp_ameacadas_salve e gerando a planilha de taxa de avistamento das espécies ameaçadas
+# 
+# taxa_avistamento_spp_ameacadas <- left_join(taxa_avistamento_trilha_taxon_validado, lista_spp_ameacadas_salve, by = "taxon_validado")
+# 
+# #View(taxa_avistamento_spp_ameacadas)
+# 
+# # Limpando a planilha
+# 
+# taxa_avistamento_spp_ameacadas <- taxa_avistamento_spp_ameacadas |>
+#   select(-classe.y) |> 
+#   rename(classe = classe.x) |> 
+#   filter(!is.na(categoria))
+# 
+# 
+# #View(taxa_avistamento_spp_ameacadas)
+# 
+# # Obtendo o total de registros por espécie ameaçada por uc
+# 
+# taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
+#   group_by(uc, taxon_validado) |> 
+#   count()
+# 
+# #View(taxa_avistamento_spp_ameacadas_uc)
 
 ```
 
@@ -2520,9 +2569,9 @@ taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
 **Primatas Atelídeos** 
 
 
-*Ateles marginatus* (macaco-aranha-da-testa-branca) encontra-se ameaçado de extinção na categoria “Em perigo (EN)” (@MMA_2022). Essa espécie ocorre na região do arco do desmatamento, interflúvio Tapajós-Xingu, e no período 2014–2022 foram registrados 110 avistamentos desse táxon em seis unidades de conservação do Programa Monitora: ESEC da Terra do Meio, FLONA do Tapajós, PARNA da Serra do Pardo, RESEX Renascer, RESEX Riozinho do Anfrísio e RESESX Verde para Sempre.  
+*Ateles marginatus* (macaco-aranha-da-testa-branca) encontra-se ameaçado de extinção na categoria “Em perigo (EN)” (@Brasil_2022). Essa espécie ocorre na região do arco do desmatamento, interflúvio Tapajós-Xingu, e no período 2014–2022 foram registrados 110 avistamentos desse táxon em seis unidades de conservação do Programa Monitora: ESEC da Terra do Meio, FLONA do Tapajós, PARNA da Serra do Pardo, RESEX Renascer, RESEX Riozinho do Anfrísio e RESESX Verde para Sempre.  
 
-*Ateles chamek* (macaco-aranha-preto) está ameaçado de extinção na categoria “Vulnerável (VU)” (@MMA_2022), ocorrendo na região da Amazônia Ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *A. chamek* apresentou uma maior taxa média de avistamentos por ano do que o *A. marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *A. chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
+*Ateles chamek* (macaco-aranha-preto) está ameaçado de extinção na categoria “Vulnerável (VU)” (@Brasil_2022), ocorrendo na região da Amazônia Ocidental. A espécie foi registrada em 15 unidades de conservação, com 638 avistamentos no período 2014-2022. Além de estar presente em maior número de unidades de conservação do Programa, *A. chamek* apresentou uma maior taxa média de avistamentos por ano do que o *A. marginatus* (@fig-especies-ameacadas-atelideos). A taxa de avistamento anual dessa espécie no Programa Monitora variou de 0,6 a 1,3 avistamentos/10 km, corroborando estudos com taxas de avistamento de  *A. chamek* em diferentes áreas, que variam de 0,2 avistamentos/10km (@Martins_2010) a 2,2 avistamentos/10 km (@Borges_2014). As maiores densidades populacionais são correlacionadas com a heterogeneidade de *habitat* e com a ausência ou baixa intensidade de caça (@Alves_2013, @Konstant_2013).  
 
 </br>
 
@@ -2535,107 +2584,107 @@ taxa_avistamento_spp_ameacadas_uc <- taxa_avistamento_spp_ameacadas |>
 #| cache: true
 
 
-font_size_nomes_silhuetas <- 6 #Tamanho da fonte dos nomes abaixo das silhuetas
-
-cor_ameacadas2 <- c("#008B8B", "#666666", "#BF8120", "brown")
-
-
-G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_ameacadas |>
-  group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-  filter(taxon_validado %in% c("Ateles chamek", "Ateles marginatus")) |>
-  summarise(n = n(),
-            taxa_avist_media = mean(taxa_avistamento),
-            sd = sd(taxa_avistamento),
-            ep = sd / sqrt(n),
-            IC_95 = qnorm(.975) * ep) |> 
-  
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-  # geom_errorbar(
-  #   aes(ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
-  #   size = 0.8,
-  #   linewidth = 0.5,
-  #   width = 0.1,
-  #   colour = "cyan4") +
-  geom_line(size = 0.5) +
-  geom_point(size = 3, alpha = 0.8) +
-  
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    #panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    axis.text=element_text(size=10),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 11),
-    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-    #axis.line.y = element_line(),
-    #axis.ticks.y = element_line(),
-    title = element_text(size = 10),
-    legend.text=element_text(size=10, face = "italic"),
-    legend.position = "right",
-    legend.title = element_blank()) +
-  scale_color_manual(values = cor_ameacadas2) +
-  scale_y_continuous(limits = c(0, 1.5)) +
-  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-  labs(title = "Primatas - Atelídeos",
-       x = "Ano",
-       y = "Avistamentos/10 km",
-       col = NULL)
-
-#Imagens das silhuetas
-
-tamanho_imagem_atelideos_ameacados <- 15 #Tamanho em mm
-
-##Carregando a imagem e convertendo-a em grob
-#A. chamek
-chamek <- readPNG("imagens/cap05/silhuetas/chamek.png")
-chamek_grob <- rasterGrob(chamek, interpolate = TRUE, width = unit(tamanho_imagem_atelideos_ameacados, "mm"), height = unit(tamanho_imagem_atelideos_ameacados, "mm"))
-#P. marginatus
-marginatus <- readPNG("imagens/cap05/silhuetas/marginatus.png")
-marginatus_grob <- rasterGrob(marginatus, interpolate = TRUE, width = unit(tamanho_imagem_atelideos_ameacados, "mm"), height = unit(tamanho_imagem_atelideos_ameacados, "mm"))
-
-#Nomes científicos abaixo das silhuetas
-chamek_text_grob <- textGrob("A. chamek", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-marginatus_text_grob <- textGrob("A. marginatus", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-
-#Posição das silhuetas
-distancia_silhueta_atelideos_ameacados <- 0.75     #Distância entre as silhuetas
-largura_silhueta_atelideos_ameacados <- 1
-x_inicial_silhueta_atelideos_ameacados <- 2014     #Posição x inicial da 1ª silhueta
-y_min_silhueta_atelideos_ameacados <- 1.1         #y min da 1ª silhueta
-y_max_silhueta_atelideos_ameacados <- 1.6         #y max da 1ª silhueta
-
-#Posição dos nomes das silhuetas
-y_max_nome_silhueta_atelideos_ameacados <- y_max_silhueta_atelideos_ameacados - 0.22       #Em relação a silhueta
-y_min_nome_silhueta_atelideos_ameacados <- y_max_nome_silhueta_atelideos_ameacados - 0.17 #Em relação a silhueta
-
-#Posição das 5 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
-xmin_silhueta_chamek <- x_inicial_silhueta_atelideos_ameacados
-xmax_silhueta_chamek <- xmin_silhueta_chamek + largura_silhueta_atelideos_ameacados
-
-xmin_silhueta_marginatus <- x_inicial_silhueta_atelideos_ameacados + largura_silhueta_atelideos_ameacados + distancia_silhueta_atelideos_ameacados
-xmax_silhueta_marginatus <- xmin_silhueta_marginatus + largura_silhueta_atelideos_ameacados
-
-#Plot G_especie_ameacada_ucs_ano_media_primatas_atelideos com as silhuetas e os nomes. Não requer alteração
-G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas <- G_especie_ameacada_ucs_ano_media_primatas_atelideos +
-  #A. chamek
-  annotation_custom(grob = chamek_grob, #silhueta
-                    xmin = xmin_silhueta_chamek, xmax = xmax_silhueta_chamek,
-                    ymin = y_min_silhueta_atelideos_ameacados, ymax = y_max_silhueta_atelideos_ameacados) +
-  annotation_custom(grob = chamek_text_grob, #texto
-                    xmin = xmin_silhueta_chamek, xmax = xmax_silhueta_chamek,
-                    ymin = y_min_nome_silhueta_atelideos_ameacados, ymax = y_max_nome_silhueta_atelideos_ameacados) +
-  #P. marginatus
-  annotation_custom(grob = marginatus_grob, #silhueta
-                    xmin = xmin_silhueta_marginatus, xmax = xmax_silhueta_marginatus,
-                    ymin = y_min_silhueta_atelideos_ameacados, ymax = y_max_silhueta_atelideos_ameacados) +
-  annotation_custom(grob = marginatus_text_grob, #texto
-                    xmin = xmin_silhueta_marginatus, xmax = xmax_silhueta_marginatus,
-                    ymin = y_min_nome_silhueta_atelideos_ameacados, ymax = y_max_nome_silhueta_atelideos_ameacados)
+# font_size_nomes_silhuetas <- 6 #Tamanho da fonte dos nomes abaixo das silhuetas
+# 
+# cor_ameacadas2 <- c("#008B8B", "#666666", "#BF8120", "brown")
+# 
+# 
+# G_especie_ameacada_ucs_ano_media_primatas_atelideos <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Ateles chamek", "Ateles marginatus")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+#   
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_avist_media - IC_95, ymax = taxa_avist_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     #panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     panel.grid.major.x = element_blank(),
+#     axis.text=element_text(size=10),
+#     axis.text.x = element_text(size = 12),
+#     axis.text.y = element_text(size = 11),
+#     axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#     #axis.line.y = element_line(),
+#     #axis.ticks.y = element_line(),
+#     title = element_text(size = 10),
+#     legend.text=element_text(size=10, face = "italic"),
+#     legend.position = "right",
+#     legend.title = element_blank()) +
+#   scale_color_manual(values = cor_ameacadas2) +
+#   scale_y_continuous(limits = c(0, 1.5)) +
+#   scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#   labs(title = "Primatas - Atelídeos",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# #Imagens das silhuetas
+# 
+# tamanho_imagem_atelideos_ameacados <- 15 #Tamanho em mm
+# 
+# ##Carregando a imagem e convertendo-a em grob
+# #A. chamek
+# chamek <- readPNG("imagens/cap05/silhuetas/chamek.png")
+# chamek_grob <- rasterGrob(chamek, interpolate = TRUE, width = unit(tamanho_imagem_atelideos_ameacados, "mm"), height = unit(tamanho_imagem_atelideos_ameacados, "mm"))
+# #P. marginatus
+# marginatus <- readPNG("imagens/cap05/silhuetas/marginatus.png")
+# marginatus_grob <- rasterGrob(marginatus, interpolate = TRUE, width = unit(tamanho_imagem_atelideos_ameacados, "mm"), height = unit(tamanho_imagem_atelideos_ameacados, "mm"))
+# 
+# #Nomes científicos abaixo das silhuetas
+# chamek_text_grob <- textGrob("A. chamek", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# marginatus_text_grob <- textGrob("A. marginatus", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# 
+# #Posição das silhuetas
+# distancia_silhueta_atelideos_ameacados <- 0.75     #Distância entre as silhuetas
+# largura_silhueta_atelideos_ameacados <- 1
+# x_inicial_silhueta_atelideos_ameacados <- 2014     #Posição x inicial da 1ª silhueta
+# y_min_silhueta_atelideos_ameacados <- 1.1         #y min da 1ª silhueta
+# y_max_silhueta_atelideos_ameacados <- 1.6         #y max da 1ª silhueta
+# 
+# #Posição dos nomes das silhuetas
+# y_max_nome_silhueta_atelideos_ameacados <- y_max_silhueta_atelideos_ameacados - 0.22       #Em relação a silhueta
+# y_min_nome_silhueta_atelideos_ameacados <- y_max_nome_silhueta_atelideos_ameacados - 0.17 #Em relação a silhueta
+# 
+# #Posição das 5 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
+# xmin_silhueta_chamek <- x_inicial_silhueta_atelideos_ameacados
+# xmax_silhueta_chamek <- xmin_silhueta_chamek + largura_silhueta_atelideos_ameacados
+# 
+# xmin_silhueta_marginatus <- x_inicial_silhueta_atelideos_ameacados + largura_silhueta_atelideos_ameacados + distancia_silhueta_atelideos_ameacados
+# xmax_silhueta_marginatus <- xmin_silhueta_marginatus + largura_silhueta_atelideos_ameacados
+# 
+# #Plot G_especie_ameacada_ucs_ano_media_primatas_atelideos com as silhuetas e os nomes. Não requer alteração
+# G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas <- G_especie_ameacada_ucs_ano_media_primatas_atelideos +
+#   #A. chamek
+#   annotation_custom(grob = chamek_grob, #silhueta
+#                     xmin = xmin_silhueta_chamek, xmax = xmax_silhueta_chamek,
+#                     ymin = y_min_silhueta_atelideos_ameacados, ymax = y_max_silhueta_atelideos_ameacados) +
+#   annotation_custom(grob = chamek_text_grob, #texto
+#                     xmin = xmin_silhueta_chamek, xmax = xmax_silhueta_chamek,
+#                     ymin = y_min_nome_silhueta_atelideos_ameacados, ymax = y_max_nome_silhueta_atelideos_ameacados) +
+#   #P. marginatus
+#   annotation_custom(grob = marginatus_grob, #silhueta
+#                     xmin = xmin_silhueta_marginatus, xmax = xmax_silhueta_marginatus,
+#                     ymin = y_min_silhueta_atelideos_ameacados, ymax = y_max_silhueta_atelideos_ameacados) +
+#   annotation_custom(grob = marginatus_text_grob, #texto
+#                     xmin = xmin_silhueta_marginatus, xmax = xmax_silhueta_marginatus,
+#                     ymin = y_min_nome_silhueta_atelideos_ameacados, ymax = y_max_nome_silhueta_atelideos_ameacados)
 
 
 
@@ -2654,11 +2703,14 @@ G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas <- G_especie_ameac
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas atelídeos ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
 
 
-G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas
+# G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
 
-# Salvando o gráfico
 
-ggsave("imagens/cap05/ma_taxas_spp_ameacadas_atelideos_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_primatas_atelideos_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_taxas_spp_ameacadas_atelideos_silhuetas.jpg")
 
 
 ```
@@ -2674,10 +2726,10 @@ Outros Primatas
 
 Os primatas *Cebus kaapori* e  *C. satanas*, categorizados como Criticamente em Perigo (CR), foram registrados em uma única unidade de conservação, a REBIO do Gurupi, com apenas nove avistamentos de *C. kaapori* e 24 de *C. satanas* no período de 2014-2022. O esforço total realizado no período em relação a essas espécies foi de apenas 175 km, tendo em vista que somente recentemente as três unidades amostrais do alvo mastoaves foram implementadas na REBIO do Gurupi.  
 
-*Chiropotes utahickae* (cuxiú-marrom) é uma espécie da família Pitheciidae que ocorre nos estados do Mato Grosso e Pará e encontra-se ameaçada de extinção na categoria Vulnerável “VU” (@MMA_2022). No Programa Monitora essa espécie tem sido registrada na REBIO Tapirapé, sendo que de 2017 a 2022 ocorreram apenas 13 visualizações, com taxas variando de 0,2 a 0,4 avistamentos/10 km  (@fig-especies-ameacadas-outros-primatas).  
+*Chiropotes utahickae* (cuxiú-marrom) é uma espécie da família Pitheciidae que ocorre nos estados do Mato Grosso e Pará e encontra-se ameaçada de extinção na categoria Vulnerável “VU” (@Brasil_2022). No Programa Monitora essa espécie tem sido registrada na REBIO Tapirapé, sendo que de 2017 a 2022 ocorreram apenas 13 visualizações, com taxas variando de 0,2 a 0,4 avistamentos/10 km  (@fig-especies-ameacadas-outros-primatas).  
 
 
-*Mico rondoni* (sagui-de-rondônia) é um primata de pequeno porte, da família Callitrichidae, que foi descoberto e descrito pela ciência apenas em 2010 (@Ferrari_2010). Está presente apenas no estado de Rondônia e encontra-se ameaçado de extinção, na categoria Vulnerável "VU" (@MMA_2022). Está sendo monitorado em duas unidades de conservação do Programa Monitora, no PARNA de Pacaás Novos e na FLONA do Jamari. Até o momento foram registradas 40 visualizações, de 2015 a 2022, com taxas variando de 0,4 e 0,9 avistamentos/10 km (@fig-especies-ameacadas-outros-primatas).  
+*Mico rondoni* (sagui-de-rondônia) é um primata de pequeno porte, da família Callitrichidae, que foi descoberto e descrito pela ciência apenas em 2010 (@Ferrari_2010). Está presente apenas no estado de Rondônia e encontra-se ameaçado de extinção, na categoria Vulnerável "VU" (@Brasil_2022). Está sendo monitorado em duas unidades de conservação do Programa Monitora, no PARNA de Pacaás Novos e na FLONA do Jamari. Até o momento foram registradas 40 visualizações, de 2015 a 2022, com taxas variando de 0,4 e 0,9 avistamentos/10 km (@fig-especies-ameacadas-outros-primatas).  
 
 
 </br>
@@ -2691,105 +2743,105 @@ Os primatas *Cebus kaapori* e  *C. satanas*, categorizados como Criticamente em 
 #| cache: true
 
 
-cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
-
-
-G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacadas |>
-  group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-  filter(taxon_validado %in% c("Mico rondoni", "Chiropotes utahickae")) |>
-  summarise(n = n(),
-            taxa_avist_media = mean(taxa_avistamento),
-            sd = sd(taxa_avistamento),
-            ep = sd / sqrt(n),
-            IC_95 = qnorm(.975) * ep) |> 
-  
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-  # geom_errorbar(
-  #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
-  #   size = 0.8,
-  #   linewidth = 0.5,
-  #   width = 0.1,
-  #   colour = "cyan4") +
-  geom_line(size = 0.5) +
-  geom_point(size = 3, alpha = 0.8) +
-  
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    #panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    axis.text=element_text(size=10),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 11),
-    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-    #axis.line.y = element_line(),
-    #axis.ticks.y = element_line(),
-    title = element_text(size = 10),
-    legend.text=element_text(size=10, face = "italic"),
-    legend.position = "right",
-    legend.title = element_blank()) +
-  scale_color_manual(values = cor_ameacadas1) +
-  scale_y_continuous(limits = c(0, 1.5)) +
-  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-  labs(title = "Outros Primatas",
-       x = "Ano",
-       y = "Avistamentos/10 km",
-       col = NULL)
-
-#Imagens das silhuetas
-
-tamanho_imagem_outros_primatas <- 15 #Tamanho em mm
-
-##Carregando a imagem e convertendo-a em grob
-#C. utahickae
-utahickae <- readPNG("imagens/cap05/silhuetas/utahickae.png")
-utahickae_grob <- rasterGrob(utahickae, interpolate = TRUE, width = unit(tamanho_imagem_outros_primatas, "mm"), height = unit(tamanho_imagem_outros_primatas, "mm"))
-#M. rondoni
-rondoni <- readPNG("imagens/cap05/silhuetas/rondoni.png")
-rondoni_grob <- rasterGrob(rondoni, interpolate = TRUE, width = unit(9, "mm"), height = unit(22, "mm"))
-
-#Nomes científicos abaixo das silhuetas
-utahickae_text_grob <- textGrob("C. utahickae", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-rondoni_text_grob <- textGrob("M. rondoni", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-
-#Posição das silhuetas
-distancia_silhueta_outros_primatas <- 0.55    #Distância entre as silhuetas
-largura_silhueta_outros_primatas <- 1
-x_inicial_silhueta_outros_primatas <- 2015    #Posição x inicial da 1ª silhueta
-y_min_silhueta_outros_primatas <- 1.1         #y min da 1ª silhueta
-y_max_silhueta_outros_primatas <- 1.6         #y max da 1ª silhueta
-
-#Posição dos nomes das silhuetas
-y_max_nome_silhueta_outros_primatas <- y_max_silhueta_outros_primatas - 0.22      #Em relação a silhueta
-y_min_nome_silhueta_outros_primatas <- y_max_nome_silhueta_outros_primatas - 0.17 #Em relação a silhueta
-
-#Posição das 2 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
-xmin_silhueta_utahickae <- x_inicial_silhueta_outros_primatas
-xmax_silhueta_utahickae <- xmin_silhueta_utahickae + largura_silhueta_outros_primatas
-
-xmin_silhueta_rondoni <- x_inicial_silhueta_outros_primatas + largura_silhueta_outros_primatas + distancia_silhueta_outros_primatas
-xmax_silhueta_rondoni <- xmin_silhueta_rondoni + largura_silhueta_outros_primatas
-
-#Plot G_especie_ameacada_ucs_ano_media_outros_primatas com as silhuetas e os nomes. Não requer alteração
-G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas <- G_especie_ameacada_ucs_ano_media_outros_primatas +
-  #C. utahickae
-  annotation_custom(grob = utahickae_grob, #silhueta
-                    xmin = xmin_silhueta_utahickae, xmax = xmax_silhueta_utahickae,
-                    ymin = y_min_silhueta_outros_primatas, ymax = y_max_silhueta_outros_primatas) +
-  annotation_custom(grob = utahickae_text_grob, #texto
-                    xmin = xmin_silhueta_utahickae, xmax = xmax_silhueta_utahickae,
-                    ymin = y_min_nome_silhueta_outros_primatas, ymax = y_max_nome_silhueta_outros_primatas) +
-  #M. rondoni
-  annotation_custom(grob = rondoni_grob, #silhueta
-                    xmin = xmin_silhueta_rondoni, xmax = xmax_silhueta_rondoni,
-                    ymin = y_min_silhueta_outros_primatas - 0.49, ymax = y_max_silhueta_outros_primatas + 0.1) +
-  annotation_custom(grob = rondoni_text_grob, #texto
-                    xmin = xmin_silhueta_rondoni + 0.20, xmax = xmax_silhueta_rondoni + 0.4,
-                    ymin = y_min_nome_silhueta_outros_primatas, ymax = y_max_nome_silhueta_outros_primatas)
+# cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
+# 
+# 
+# G_especie_ameacada_ucs_ano_media_outros_primatas <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Mico rondoni", "Chiropotes utahickae")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+#   
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     #panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     panel.grid.major.x = element_blank(),
+#     axis.text=element_text(size=10),
+#     axis.text.x = element_text(size = 12),
+#     axis.text.y = element_text(size = 11),
+#     axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#     #axis.line.y = element_line(),
+#     #axis.ticks.y = element_line(),
+#     title = element_text(size = 10),
+#     legend.text=element_text(size=10, face = "italic"),
+#     legend.position = "right",
+#     legend.title = element_blank()) +
+#   scale_color_manual(values = cor_ameacadas1) +
+#   scale_y_continuous(limits = c(0, 1.5)) +
+#   scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#   labs(title = "Outros Primatas",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# #Imagens das silhuetas
+# 
+# tamanho_imagem_outros_primatas <- 15 #Tamanho em mm
+# 
+# ##Carregando a imagem e convertendo-a em grob
+# #C. utahickae
+# utahickae <- readPNG("imagens/cap05/silhuetas/utahickae.png")
+# utahickae_grob <- rasterGrob(utahickae, interpolate = TRUE, width = unit(tamanho_imagem_outros_primatas, "mm"), height = unit(tamanho_imagem_outros_primatas, "mm"))
+# #M. rondoni
+# rondoni <- readPNG("imagens/cap05/silhuetas/rondoni.png")
+# rondoni_grob <- rasterGrob(rondoni, interpolate = TRUE, width = unit(9, "mm"), height = unit(22, "mm"))
+# 
+# #Nomes científicos abaixo das silhuetas
+# utahickae_text_grob <- textGrob("C. utahickae", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# rondoni_text_grob <- textGrob("M. rondoni", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# 
+# #Posição das silhuetas
+# distancia_silhueta_outros_primatas <- 0.55    #Distância entre as silhuetas
+# largura_silhueta_outros_primatas <- 1
+# x_inicial_silhueta_outros_primatas <- 2015    #Posição x inicial da 1ª silhueta
+# y_min_silhueta_outros_primatas <- 1.1         #y min da 1ª silhueta
+# y_max_silhueta_outros_primatas <- 1.6         #y max da 1ª silhueta
+# 
+# #Posição dos nomes das silhuetas
+# y_max_nome_silhueta_outros_primatas <- y_max_silhueta_outros_primatas - 0.22      #Em relação a silhueta
+# y_min_nome_silhueta_outros_primatas <- y_max_nome_silhueta_outros_primatas - 0.17 #Em relação a silhueta
+# 
+# #Posição das 2 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
+# xmin_silhueta_utahickae <- x_inicial_silhueta_outros_primatas
+# xmax_silhueta_utahickae <- xmin_silhueta_utahickae + largura_silhueta_outros_primatas
+# 
+# xmin_silhueta_rondoni <- x_inicial_silhueta_outros_primatas + largura_silhueta_outros_primatas + distancia_silhueta_outros_primatas
+# xmax_silhueta_rondoni <- xmin_silhueta_rondoni + largura_silhueta_outros_primatas
+# 
+# #Plot G_especie_ameacada_ucs_ano_media_outros_primatas com as silhuetas e os nomes. Não requer alteração
+# G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas <- G_especie_ameacada_ucs_ano_media_outros_primatas +
+#   #C. utahickae
+#   annotation_custom(grob = utahickae_grob, #silhueta
+#                     xmin = xmin_silhueta_utahickae, xmax = xmax_silhueta_utahickae,
+#                     ymin = y_min_silhueta_outros_primatas, ymax = y_max_silhueta_outros_primatas) +
+#   annotation_custom(grob = utahickae_text_grob, #texto
+#                     xmin = xmin_silhueta_utahickae, xmax = xmax_silhueta_utahickae,
+#                     ymin = y_min_nome_silhueta_outros_primatas, ymax = y_max_nome_silhueta_outros_primatas) +
+#   #M. rondoni
+#   annotation_custom(grob = rondoni_grob, #silhueta
+#                     xmin = xmin_silhueta_rondoni, xmax = xmax_silhueta_rondoni,
+#                     ymin = y_min_silhueta_outros_primatas - 0.49, ymax = y_max_silhueta_outros_primatas + 0.1) +
+#   annotation_custom(grob = rondoni_text_grob, #texto
+#                     xmin = xmin_silhueta_rondoni + 0.20, xmax = xmax_silhueta_rondoni + 0.4,
+#                     ymin = y_min_nome_silhueta_outros_primatas, ymax = y_max_nome_silhueta_outros_primatas)
 
 
 ```
@@ -2808,11 +2860,14 @@ G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas <- G_especie_ameacada
 #| out.width: '70%'
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
 
-G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas
+# G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas_silhuetas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas,  height = 4.5, width = 6, units = "in", dpi = 300)
 
-# Salvando o gráfico
 
-ggsave("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas_silhuetas.jpg", plot =  G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas,  height = 4.5, width = 6, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_taxa_spp_ameacadas_outros_primatas_silhuetas.jpg")
 
 
 ```
@@ -2835,74 +2890,74 @@ As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) v
 #| cache: true
 
 
-cor_ameacadas3 <- c("cyan4")
-
-G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
-  group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-  filter(taxon_validado %in% c("Myrmecophaga tridactyla")) |>
-  summarise(n = n(),
-            taxa_avist_media = mean(taxa_avistamento),
-            sd = sd(taxa_avistamento),
-            ep = sd / sqrt(n),
-            IC_95 = qnorm(.975) * ep) |> 
-  
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-  # geom_errorbar(
-  #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
-  #   size = 0.8,
-  #   linewidth = 0.5,
-  #   width = 0.1,
-  #   colour = "cyan4") +
-  geom_line(size = 0.5) +
-  geom_point(size = 3, alpha = 0.8) +
-  
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    #panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    axis.text=element_text(size=10),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 11),
-    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-    #axis.line.y = element_line(),
-    #axis.ticks.y = element_line(),
-    title = element_text(size = 10),
-    legend.text=element_text(size=10, face = "italic"),
-    legend.position = "right",
-    legend.title = element_blank()) +
-  scale_color_manual(values = cor_ameacadas3) +
-  scale_y_continuous(limits = c(0, 0.5)) +
-  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-  labs(title = "Outros mamíferos",
-       x = "Ano",
-       y = "Avistamentos/10 km",
-       col = NULL)
-
-#Imagem da silhueta
-
-##Carregando a imagem e convertendo-a em grob
-#M. tridactyla
-tridactyla <- readPNG("imagens/cap05/silhuetas/tridactyla.png")
-tridactyla_grob <- rasterGrob(tridactyla, interpolate = TRUE, width = unit(30, "mm"), height = unit(12, "mm"))
-
-#Nome científico abaixo da silhueta
-tridactyla_text_grob <- textGrob("M. tridactyla", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-
-#Plot G_especie_ameacada_ucs_ano_media_tamandua com a silhueta e os nome. Não requer alteração
-G_especie_ameacada_ucs_ano_media_tamandua_silhuetas <- G_especie_ameacada_ucs_ano_media_tamandua +
-  #M. tridactyla
-  annotation_custom(grob = tridactyla_grob, #silhueta
-                    xmin = 2014.5, xmax = 2016,
-                    ymin = 0.31, ymax = 0.61) +
-  annotation_custom(grob = tridactyla_text_grob, #texto
-                    xmin = 2014.5, xmax = 2016,
-                    ymin = 0.43, ymax = 0.53)
-
+# cor_ameacadas3 <- c("cyan4")
+# 
+# G_especie_ameacada_ucs_ano_media_tamandua <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Myrmecophaga tridactyla")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+#   
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     #panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     panel.grid.major.x = element_blank(),
+#     axis.text=element_text(size=10),
+#     axis.text.x = element_text(size = 12),
+#     axis.text.y = element_text(size = 11),
+#     axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#     #axis.line.y = element_line(),
+#     #axis.ticks.y = element_line(),
+#     title = element_text(size = 10),
+#     legend.text=element_text(size=10, face = "italic"),
+#     legend.position = "right",
+#     legend.title = element_blank()) +
+#   scale_color_manual(values = cor_ameacadas3) +
+#   scale_y_continuous(limits = c(0, 0.5)) +
+#   scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#   labs(title = "Outros mamíferos",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# #Imagem da silhueta
+# 
+# ##Carregando a imagem e convertendo-a em grob
+# #M. tridactyla
+# tridactyla <- readPNG("imagens/cap05/silhuetas/tridactyla.png")
+# tridactyla_grob <- rasterGrob(tridactyla, interpolate = TRUE, width = unit(30, "mm"), height = unit(12, "mm"))
+# 
+# #Nome científico abaixo da silhueta
+# tridactyla_text_grob <- textGrob("M. tridactyla", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# 
+# #Plot G_especie_ameacada_ucs_ano_media_tamandua com a silhueta e os nome. Não requer alteração
+# G_especie_ameacada_ucs_ano_media_tamandua_silhuetas <- G_especie_ameacada_ucs_ano_media_tamandua +
+#   #M. tridactyla
+#   annotation_custom(grob = tridactyla_grob, #silhueta
+#                     xmin = 2014.5, xmax = 2016,
+#                     ymin = 0.31, ymax = 0.61) +
+#   annotation_custom(grob = tridactyla_text_grob, #texto
+#                     xmin = 2014.5, xmax = 2016,
+#                     ymin = 0.43, ymax = 0.53)
+# 
 
 ```
 
@@ -2920,11 +2975,14 @@ G_especie_ameacada_ucs_ano_media_tamandua_silhuetas <- G_especie_ameacada_ucs_an
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
 
 
-G_especie_ameacada_ucs_ano_media_tamandua_silhuetas
+# G_especie_ameacada_ucs_ano_media_tamandua_silhuetas
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
 
-# Salvando o gráfico
 
-ggsave("imagens/cap05/ma_taxa_app_ameacadas_tamandua_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_tamandua_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_taxa_app_ameacadas_tamandua_silhuetas.jpg")
 
 ```
 
@@ -2954,144 +3012,144 @@ cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
 
 
 
-G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameacadas |>
-  group_by(ano, classe, ordem, taxon_validado, categoria) |> 
-  filter(taxon_validado %in% c("Aburria cujubi", "Psophia obscura", "Psophia dextralis", "Psophia interjecta", "Psophia viridis")) |>
-  summarise(n = n(),
-            taxa_avist_media = mean(taxa_avistamento),
-            sd = sd(taxa_avistamento),
-            ep = sd / sqrt(n),
-            IC_95 = qnorm(.975) * ep) |> 
-  
-  ggplot(aes(
-    x = ano,
-    y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
-  # geom_errorbar(
-  #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
-  #   size = 0.8,
-  #   linewidth = 0.5,
-  #   width = 0.1,
-  #   colour = "cyan4") +
-  geom_line(size = 0.5) +
-  geom_point(size = 3, alpha = 0.8) +
-  
-  theme_minimal() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    #panel.grid.major.y = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.x = element_blank(),
-    axis.text=element_text(size=10),
-    axis.text.x = element_text(size = 12),
-    axis.text.y = element_text(size = 11),
-    axis.title.y = element_text(size = 11, margin = margin(r = 10)),
-    axis.title.x = element_text(size = 11, margin = margin(t = 10)),
-    #axis.line.y = element_line(),
-    #axis.ticks.y = element_line(),
-    title = element_text(size = 10),
-    legend.text=element_text(size=10, face = "italic"),
-    legend.position = "right",
-    legend.title = element_blank()) +
-  scale_color_manual(values = cor_ameacadas1) +
-  scale_y_continuous(limits = c(0, 1.5)) +
-  scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
-  labs(title = "Aves ameaçadas",
-       x = "Ano",
-       y = "Avistamentos/10 km",
-       col = NULL)
-
-#Imagens das silhuetas
-
-tamanho_imagem_aves_ameacadas <- 10 #Tamanho em mm
-
-##Carregando a imagem e convertendo-a em grob
-#A. cujubi
-cujubi <- readPNG("imagens/cap05/silhuetas/cujubi.png")
-cujubi_grob <- rasterGrob(cujubi, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas + 9, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
-#P. dextralis
-dextralis <- readPNG("imagens/cap05/silhuetas/dextralis.png")
-dextralis_grob <- rasterGrob(dextralis, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
-#P. interjecta
-interjecta <- readPNG("imagens/cap05/silhuetas/interjecta.png")
-interjecta_grob <- rasterGrob(interjecta, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas - 2, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
-#P. obscura
-obscura <- readPNG("imagens/cap05/silhuetas/obscura.png")
-obscura_grob <- rasterGrob(obscura, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
-#P. virridis
-virridis <- readPNG("imagens/cap05/silhuetas/virridis.png")
-virridis_grob <- rasterGrob(virridis, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas - 3, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
-
-#Nomes científicos abaixo das silhuetas
-cujubi_text_grob <- textGrob("A. cujubi", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-dextralis_text_grob <- textGrob("P. dextralis", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-interjecta_text_grob <- textGrob("P. interjecta", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-obscura_text_grob <- textGrob("P. obscura", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-virridis_text_grob <- textGrob("P. virridis", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
-
-#Posição das silhuetas
-distancia_silhueta_aves_ameacadas <- 0.65     #Distância entre as silhuetas
-largura_silhueta_aves_ameacadas <- 1
-x_inicial_silhueta_aves_ameacadas <- 2014.2     #Posição x inicial da 1ª silhueta
-y_min_silhueta_aves_ameacadas <- 1.15         #y min da 1ª silhueta
-y_max_silhueta_aves_ameacadas <- 1.65         #y max da 1ª silhueta
-
-#Posição dos nomes das silhuetas
-y_max_nome_silhueta_aves_ameacadas <- y_max_silhueta_aves_ameacadas - 0.2       #Em relação a silhueta
-y_min_nome_silhueta_aves_ameacadas <- y_max_nome_silhueta_aves_ameacadas - 0.15 #Em relação a silhueta
-
-#Posição das 5 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
-xmin_silhueta_cujubi <- x_inicial_silhueta_aves_ameacadas
-xmax_silhueta_cujubi <- xmin_silhueta_cujubi + largura_silhueta_aves_ameacadas
-
-xmin_silhueta_dextralis <- x_inicial_silhueta_aves_ameacadas + largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas + 0.2
-xmax_silhueta_dextralis <- xmin_silhueta_dextralis + largura_silhueta_aves_ameacadas
-
-xmin_silhueta_interjecta <- x_inicial_silhueta_aves_ameacadas + 2*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas) + 0.2
-xmax_silhueta_interjecta <- xmin_silhueta_interjecta + largura_silhueta_aves_ameacadas
-
-xmin_silhueta_obscura <- x_inicial_silhueta_aves_ameacadas + 3*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas) + 0.2
-xmax_silhueta_obscura <- xmin_silhueta_obscura + largura_silhueta_aves_ameacadas
-
-xmin_silhueta_virridis <- x_inicial_silhueta_aves_ameacadas + 4*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas)
-xmax_silhueta_virridis <- xmin_silhueta_virridis + largura_silhueta_aves_ameacadas
-
-#Plot G_especie_ameacada_ucs_ano_media_aves_selecionadas com as silhuetas e os nomes. Não requer alteração
-G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas <- G_especie_ameacada_ucs_ano_media_aves_selecionadas +
-  #A. cujubi
-  annotation_custom(grob = cujubi_grob, #silhueta
-                    xmin = xmin_silhueta_cujubi, xmax = xmax_silhueta_cujubi,
-                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
-  annotation_custom(grob = cujubi_text_grob, #texto
-                    xmin = xmin_silhueta_cujubi, xmax = xmax_silhueta_cujubi,
-                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
-  #P. dextralis
-  annotation_custom(grob = dextralis_grob, #silhueta
-                    xmin = xmin_silhueta_dextralis, xmax = xmax_silhueta_dextralis,
-                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
-  annotation_custom(grob = dextralis_text_grob, #texto
-                    xmin = xmin_silhueta_dextralis, xmax = xmax_silhueta_dextralis,
-                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
-  #P. interjecta
-  annotation_custom(grob = interjecta_grob, #silhueta
-                    xmin = xmin_silhueta_interjecta, xmax = xmax_silhueta_interjecta,
-                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
-  annotation_custom(grob = interjecta_text_grob, #texto
-                    xmin = xmin_silhueta_interjecta, xmax = xmax_silhueta_interjecta,
-                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
-  #P. obscura
-  annotation_custom(grob = obscura_grob, #silhueta
-                    xmin = xmin_silhueta_obscura, xmax = xmax_silhueta_obscura,
-                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
-  annotation_custom(grob = obscura_text_grob, #texto
-                    xmin = xmin_silhueta_obscura, xmax = xmax_silhueta_obscura,
-                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
-  #P. virridis
-  annotation_custom(grob = virridis_grob, #silhueta
-                    xmin = xmin_silhueta_virridis, xmax = xmax_silhueta_virridis,
-                    ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
-  annotation_custom(grob = virridis_text_grob, #texto
-                    xmin = xmin_silhueta_virridis, xmax = xmax_silhueta_virridis,
-                    ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas)
+# G_especie_ameacada_ucs_ano_media_aves_selecionadas <- taxa_avistamento_spp_ameacadas |>
+#   group_by(ano, classe, ordem, taxon_validado, categoria) |> 
+#   filter(taxon_validado %in% c("Aburria cujubi", "Psophia obscura", "Psophia dextralis", "Psophia interjecta", "Psophia viridis")) |>
+#   summarise(n = n(),
+#             taxa_avist_media = mean(taxa_avistamento),
+#             sd = sd(taxa_avistamento),
+#             ep = sd / sqrt(n),
+#             IC_95 = qnorm(.975) * ep) |> 
+#   
+#   ggplot(aes(
+#     x = ano,
+#     y = taxa_avist_media, color = taxon_validado, shape = categoria)) +
+#   # geom_errorbar(
+#   #   aes(ymin = taxa_enc_media - IC_95, ymax = taxa_enc_media + IC_95),
+#   #   size = 0.8,
+#   #   linewidth = 0.5,
+#   #   width = 0.1,
+#   #   colour = "cyan4") +
+#   geom_line(size = 0.5) +
+#   geom_point(size = 3, alpha = 0.8) +
+#   
+#   theme_minimal() +
+#   theme(
+#     panel.grid.minor.y = element_blank(),
+#     #panel.grid.major.y = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     panel.grid.major.x = element_blank(),
+#     axis.text=element_text(size=10),
+#     axis.text.x = element_text(size = 12),
+#     axis.text.y = element_text(size = 11),
+#     axis.title.y = element_text(size = 11, margin = margin(r = 10)),
+#     axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+#     #axis.line.y = element_line(),
+#     #axis.ticks.y = element_line(),
+#     title = element_text(size = 10),
+#     legend.text=element_text(size=10, face = "italic"),
+#     legend.position = "right",
+#     legend.title = element_blank()) +
+#   scale_color_manual(values = cor_ameacadas1) +
+#   scale_y_continuous(limits = c(0, 1.5)) +
+#   scale_x_continuous(breaks = taxa_avistamento_spp_ameacadas$ano) +
+#   labs(title = "Aves ameaçadas",
+#        x = "Ano",
+#        y = "Avistamentos/10 km",
+#        col = NULL)
+# 
+# #Imagens das silhuetas
+# 
+# tamanho_imagem_aves_ameacadas <- 10 #Tamanho em mm
+# 
+# ##Carregando a imagem e convertendo-a em grob
+# #A. cujubi
+# cujubi <- readPNG("imagens/cap05/silhuetas/cujubi.png")
+# cujubi_grob <- rasterGrob(cujubi, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas + 9, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+# #P. dextralis
+# dextralis <- readPNG("imagens/cap05/silhuetas/dextralis.png")
+# dextralis_grob <- rasterGrob(dextralis, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+# #P. interjecta
+# interjecta <- readPNG("imagens/cap05/silhuetas/interjecta.png")
+# interjecta_grob <- rasterGrob(interjecta, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas - 2, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+# #P. obscura
+# obscura <- readPNG("imagens/cap05/silhuetas/obscura.png")
+# obscura_grob <- rasterGrob(obscura, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+# #P. virridis
+# virridis <- readPNG("imagens/cap05/silhuetas/virridis.png")
+# virridis_grob <- rasterGrob(virridis, interpolate = TRUE, width = unit(tamanho_imagem_aves_ameacadas - 3, "mm"), height = unit(tamanho_imagem_aves_ameacadas, "mm"))
+# 
+# #Nomes científicos abaixo das silhuetas
+# cujubi_text_grob <- textGrob("A. cujubi", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# dextralis_text_grob <- textGrob("P. dextralis", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# interjecta_text_grob <- textGrob("P. interjecta", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# obscura_text_grob <- textGrob("P. obscura", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# virridis_text_grob <- textGrob("P. virridis", x = unit(0.5, "npc"), y = unit(-0.2, "npc"), gp = gpar(fontface = "italic", fontsize = font_size_nomes_silhuetas))
+# 
+# #Posição das silhuetas
+# distancia_silhueta_aves_ameacadas <- 0.65     #Distância entre as silhuetas
+# largura_silhueta_aves_ameacadas <- 1
+# x_inicial_silhueta_aves_ameacadas <- 2014.2     #Posição x inicial da 1ª silhueta
+# y_min_silhueta_aves_ameacadas <- 1.15         #y min da 1ª silhueta
+# y_max_silhueta_aves_ameacadas <- 1.65         #y max da 1ª silhueta
+# 
+# #Posição dos nomes das silhuetas
+# y_max_nome_silhueta_aves_ameacadas <- y_max_silhueta_aves_ameacadas - 0.2       #Em relação a silhueta
+# y_min_nome_silhueta_aves_ameacadas <- y_max_nome_silhueta_aves_ameacadas - 0.15 #Em relação a silhueta
+# 
+# #Posição das 5 silhuetas geradas automaticamente conforme as entradas anteriores. Não requer alteração
+# xmin_silhueta_cujubi <- x_inicial_silhueta_aves_ameacadas
+# xmax_silhueta_cujubi <- xmin_silhueta_cujubi + largura_silhueta_aves_ameacadas
+# 
+# xmin_silhueta_dextralis <- x_inicial_silhueta_aves_ameacadas + largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas + 0.2
+# xmax_silhueta_dextralis <- xmin_silhueta_dextralis + largura_silhueta_aves_ameacadas
+# 
+# xmin_silhueta_interjecta <- x_inicial_silhueta_aves_ameacadas + 2*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas) + 0.2
+# xmax_silhueta_interjecta <- xmin_silhueta_interjecta + largura_silhueta_aves_ameacadas
+# 
+# xmin_silhueta_obscura <- x_inicial_silhueta_aves_ameacadas + 3*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas) + 0.2
+# xmax_silhueta_obscura <- xmin_silhueta_obscura + largura_silhueta_aves_ameacadas
+# 
+# xmin_silhueta_virridis <- x_inicial_silhueta_aves_ameacadas + 4*(largura_silhueta_aves_ameacadas + distancia_silhueta_aves_ameacadas)
+# xmax_silhueta_virridis <- xmin_silhueta_virridis + largura_silhueta_aves_ameacadas
+# 
+# #Plot G_especie_ameacada_ucs_ano_media_aves_selecionadas com as silhuetas e os nomes. Não requer alteração
+# G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas <- G_especie_ameacada_ucs_ano_media_aves_selecionadas +
+#   #A. cujubi
+#   annotation_custom(grob = cujubi_grob, #silhueta
+#                     xmin = xmin_silhueta_cujubi, xmax = xmax_silhueta_cujubi,
+#                     ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+#   annotation_custom(grob = cujubi_text_grob, #texto
+#                     xmin = xmin_silhueta_cujubi, xmax = xmax_silhueta_cujubi,
+#                     ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+#   #P. dextralis
+#   annotation_custom(grob = dextralis_grob, #silhueta
+#                     xmin = xmin_silhueta_dextralis, xmax = xmax_silhueta_dextralis,
+#                     ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+#   annotation_custom(grob = dextralis_text_grob, #texto
+#                     xmin = xmin_silhueta_dextralis, xmax = xmax_silhueta_dextralis,
+#                     ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+#   #P. interjecta
+#   annotation_custom(grob = interjecta_grob, #silhueta
+#                     xmin = xmin_silhueta_interjecta, xmax = xmax_silhueta_interjecta,
+#                     ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+#   annotation_custom(grob = interjecta_text_grob, #texto
+#                     xmin = xmin_silhueta_interjecta, xmax = xmax_silhueta_interjecta,
+#                     ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+#   #P. obscura
+#   annotation_custom(grob = obscura_grob, #silhueta
+#                     xmin = xmin_silhueta_obscura, xmax = xmax_silhueta_obscura,
+#                     ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+#   annotation_custom(grob = obscura_text_grob, #texto
+#                     xmin = xmin_silhueta_obscura, xmax = xmax_silhueta_obscura,
+#                     ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas) +
+#   #P. virridis
+#   annotation_custom(grob = virridis_grob, #silhueta
+#                     xmin = xmin_silhueta_virridis, xmax = xmax_silhueta_virridis,
+#                     ymin = y_min_silhueta_aves_ameacadas, ymax = y_max_silhueta_aves_ameacadas) +
+#   annotation_custom(grob = virridis_text_grob, #texto
+#                     xmin = xmin_silhueta_virridis, xmax = xmax_silhueta_virridis,
+#                     ymin = y_min_nome_silhueta_aves_ameacadas, ymax = y_max_nome_silhueta_aves_ameacadas)
 
 
 ```
@@ -3109,9 +3167,12 @@ G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas <- G_especie_ameaca
 #| out.width: '70%'
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de aves ameaçadas. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura. "
 
-G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas
+# G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas
+# 
+# ggsave("imagens/cap05/ma_taxa_app_ameacadas_aves_selecionadas_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
 
-ggsave("imagens/cap05/ma_taxa_app_ameacadas_aves_selecionadas_silhuetas.jpg", plot = G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas, height = 4.5, width = 6, units = "in", dpi = 300)
+
+knitr::include_graphics("imagens/cap05/ma_taxa_app_ameacadas_aves_selecionadas_silhuetas.jpg")
 
 ```
 
@@ -3122,7 +3183,7 @@ ggsave("imagens/cap05/ma_taxa_app_ameacadas_aves_selecionadas_silhuetas.jpg", pl
 
 </b>
 
-A média geométrica das abundâncias relativas é uma medida de escolha para monitoramento de tendências da biodiversidade em diversos programas (@Buckland_2005, @Green_2019). Esse índice reflete tendências na abundância e equitabilidade entre as populações, e não é afetado pelo ano base escolhido nem por variações inter-populacionais na detectabilidade, por ser baseado em tendências intra-populacionais (@Buckland_2011, @Van_Strien_2012). Para o cálculo da média geométrica, utilizamos dados de 160 populações em 22 UCs. Somente foram incluídas populações com pelo menos cinco anos de monitoramento, taxa de encontro média \> 0.5 encontros a cada 10 km, e com esforço amostral suficiente para atingir um coeficiente de variação da taxa de encontro ≥ 0.25. A média geométrica e seu intervalo de confiança foram estimados por *bootstrap* seguindo as recomendações de (@Buckland_2005, @Buckland_2011).
+A média geométrica das abundâncias relativas é uma medida de escolha para monitoramento de tendências da biodiversidade em diversos programas (@Buckland_2005, @Green_2019). Esse índice reflete tendências na abundância e equitabilidade entre as populações, e não é afetado pelo ano base escolhido nem por variações inter-populacionais na detectabilidade, por ser baseado em tendências intra-populacionais (@Buckland_2011, @Van_Strien_2012). Para o cálculo da média geométrica, utilizamos dados de 161 incluídas na análise de tendências populacionais descrita mais acima. A média geométrica e seu intervalo de confiança foram estimados por *bootstrap* seguindo as recomendações de (@Buckland_2005, @Buckland_2011).
 
 </br>
 
@@ -3144,47 +3205,50 @@ A média geométrica das abundâncias relativas das populações analisadas perm
 
 # knitr::include_graphics("imagens/cap05/ma_media_geometrica.JPG")
 
-#----- carregar pacotes
-library(tidyverse)
+# #----- carregar pacotes
+# library(tidyverse)
+# 
+# #----- ler dados
+# tabela_Gmean <- readRDS("dados/mastoaves/tabela_Gmean.rds")
+# 
+# #----- plotar serie temporal para media geometrica G
+# tabela_Gmean %>%
+#   group_by(ano) %>%
+#   mutate(G = G/first(G)) %>% # escala 2014=1
+#   summarize(media = mean(G),
+#             lower10 = quantile(G, prob= 0.1),
+#             lower25 =  quantile(G, prob= 0.25),
+#             upper90 =  quantile(G, prob= 0.9),
+#             upper975 =  quantile(G, prob= 0.975)) %>%
+#   ggplot(aes(ano, media)) +
+#   geom_line(color = "#00AFBB", size = 1, alpha=1) + 
+#   geom_point(shape=21, fill = "white", stroke=1, size = 2, color="cyan4", alpha = 1) +
+#   geom_ribbon(aes(ymin = lower10, ymax = upper90), fill="cyan4", alpha=0.2) +
+#   geom_ribbon(aes(ymin = lower25, ymax = upper975), fill="cyan4", alpha=0.2) +
+#   geom_hline(yintercept = 1, linetype = "dashed", alpha=.5) +
+#   xlab(" ") +
+#   ylab("Média geométrica") +
+#   theme_classic() + 
+#   theme(axis.title.y = element_text(size = 12))  +
+#   theme(axis.text.x = element_text(size = 12)) +
+#   theme(axis.text.y = element_text(size = 12)) + 
+#   theme(legend.position="none") +
+#   coord_cartesian(ylim = c(0.75, 1.25)) #+
+# 
+# 
+# # Salvando o gráfico
+# 
+# ggsave("imagens/cap05/ma_media_geometrica.jpg",
+#        #plot = last_plot(),
+#        device =  "jpeg",
+#        scale=1.5,
+#        width = 210,
+#        height = 70,
+#        units = "mm",
+#        dpi = 300)
 
-#----- ler dados
-tabela_Gmean <- readRDS("dados/mastoaves/tabela_Gmean.rds")
 
-#----- plotar serie temporal para media geometrica G
-tabela_Gmean %>%
-  group_by(ano) %>%
-  mutate(G = G/first(G)) %>% # escala 2014=1
-  summarize(media = mean(G),
-            lower10 = quantile(G, prob= 0.1),
-            lower25 =  quantile(G, prob= 0.25),
-            upper90 =  quantile(G, prob= 0.9),
-            upper975 =  quantile(G, prob= 0.975)) %>%
-  ggplot(aes(ano, media)) +
-  geom_line(color = "#00AFBB", size = 1, alpha=1) + 
-  geom_point(shape=21, fill = "white", stroke=1, size = 2, color="cyan4", alpha = 1) +
-  geom_ribbon(aes(ymin = lower10, ymax = upper90), fill="cyan4", alpha=0.2) +
-  geom_ribbon(aes(ymin = lower25, ymax = upper975), fill="cyan4", alpha=0.2) +
-  geom_hline(yintercept = 1, linetype = "dashed", alpha=.5) +
-  xlab(" ") +
-  ylab("Média geométrica") +
-  theme_classic() + 
-  theme(axis.title.y = element_text(size = 12))  +
-  theme(axis.text.x = element_text(size = 12)) +
-  theme(axis.text.y = element_text(size = 12)) + 
-  theme(legend.position="none") +
-  coord_cartesian(ylim = c(0.75, 1.25)) #+
-
-
-# Salvando o gráfico
-
-ggsave("imagens/cap05/ma_media_geometrica.jpg",
-       #plot = last_plot(),
-       device =  "jpeg",
-       scale=1.5,
-       width = 210,
-       height = 70,
-       units = "mm",
-       dpi = 300)
+knitr::include_graphics("imagens/cap05/ma_media_geometrica.jpg")
 
 
 ```
@@ -3317,7 +3381,7 @@ Estudos na Amazônia usando transectos lineares registraram taxas de avistamento
 
 Em outras regiões tropicais, como por exemplo a Costa Rica, foram registradas taxas de 7 a 35 avistamentos/10 km (@Carrillo_2000).
 
-Já para a Mata Atlântica, em 62 estudos realizados em diversas fitofisionomias usando transectos lineares (@Souza_2019) a taxa de avistamentos/10 km variou de 0,01 a 7,29, com uma mediana de 0,47 indivíduos. Esses valores são condizentes com os resultados do Programa Monitora e retratam a reduzida taxa de encontro com mamíferos, em comparação ao bioma Amazônia; 3,81 no Paraguai (@Hill_1997: apenas registros diretos).  
+Já para a Mata Atlântica, em 62 estudos realizados em diversas fitofisionomias usando transectos lineares (@Souza_2019) a taxa de avistamentos/10 km variou de 0,01 a 7,29, com uma mediana de 0,47 indivíduos. Esses valores são condizentes com os resultados do Programa Monitora e retratam a reduzida taxa de encontro com mamíferos, em comparação ao bioma Amazônia.  
 
 No Cerrado, as taxas de avistamento de mamíferos também foram no geral menores se comparadas com as da Amazônia, embora a ESEC de Pirapitinga tenha apresentado uma taxa bem superior às demais do bioma, com um valor comparável ao das UCs amazônicas. Esse resultado corrobora alguns estudos no Cerrado que apresentaram taxas também bem distintas: 0,5 na Bahia (@Bocchiglieri_2010); 9,71 no PARNA da Serra do Cipó (@Oliveira_2009); e 16,92 em Minas Gerais (@Alves_2010).  
 

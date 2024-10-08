@@ -1,0 +1,55 @@
+Nº;UC;Bioma;UF;ARPA;2014;2015;2016;2017;2018;2019;2020;2021;2022;Nº de EAs/UAs;Consolidada;Protocolo Avançado
+1;ESEC da Terra do Meio/RESEX Rio Iriri;Amz;PA;X;1,2;1,2;1,2,3*;1,3*;1,3*;1,2,3*;1,2,3;1,2,3;4,5,6*;6;X;Team
+2;ESEC de Maracá;Amz;RR;X;;;;;1,2;1,2,3*;1,2,3*;1,2,3*;1,3;3;X;Team
+3;ESEC de Niquiá;Amz;RR;X;;;;1;1;1;1;1;1;1;;Trilha
+4;ESEC de Pirapitinga;Cerd;MG;;;;;;;;;;1;1;;
+5;ESEC do Jari;Amz;AP/PA;X;;;;;;;;;1,2,3;3;X;
+6;ESEC Rio Acre;Amz;AC;X;;;;;;;;1*;1;1;;
+7;ESEC Serra Geral do Tocantins;Cerd;TO;;1, 2;1,2*;1,2;1,2;1,2;1,2;1,2;1,2;1,2;2;;
+8;FLONA de Tapajós;Amz;PA;;;;;;;;;;1,2,3*;3;X;Team
+9;FLONA do Jamari;Amz;RO;;1,2;2;1,2,3*;1,2,3*;2,3,4*;2,3,4*;2.4*;2,3,4*;2,4;4;X;Team
+10;PARNA da Amazônia;Amz;PA;X;;;;1,2,3;1,2,3;1,2,3;1,2,3;2,3,4;2,3,4;4;X;Trilha
+11;PARNA da Chapada dos Veadeiros;Cerd;GO;;1*;1*;1;1;1;1;1;1;1;1;;
+12;PARNA da Serra da Bocaina;Matl;SP/RJ;;1;1;1;1;1;1;1;1;1;1;;
+13;PARNA da Serra da Bodoquena;Cerd;MS;;1;1, 2;1,2;1,2;1,2;1,2;1,2;1,2;1,2;2;;
+14;PARNA da Serra da Cutia;Amz;RO;X;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+15;PARNA da Serra do Cipó;Cerd;MG;;1;1;1;1;1;1;1;1;1;1;;
+16;PARNA da Serra do Divisor;Amz;AC;X;;;;;1;1, 2;2, 3;1,2,3;1,2,3;3;X;
+17;PARNA da Serra do Pardo;Amz;PA;X;;;1,2,3;1,2,3;1,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+18;PARNA da Serra dos Órgãos;Matl;RJ;;1;1;1,2;2;1,2;1,2;1,2*;1,2;1,2;2;;Team
+19;PARNA de Pacaás Novos;Amz;RO;X;;;;;;;1,2,3;1,2,3;2,3;3;X;
+20;PARNA do Cabo Orange;Amz;AP;X;;;1,2;1,2;1,2,3;1,2,3;1,2,3*;1,2,3;1,2,3;3;X;Team
+21;PARNA do Iguaçu;Matl;PR;;;;1;1;1;1;1;1;1;1;;
+22;PARNA do Jaú;Amz;AM;X;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+23;PARNA do Juruena;Amz;MT;X;;;1,2,3*;1,2,3*;1,2,3*;1,2,3*;1,2,3*;1,2,3;1,2,3*;3;X;Team e Tr
+24;PARNA do Monte Roraima;Amz;RR;X;;;;;;2;;3;3;2;;
+25;PARNA do Superagui;Matl;PR;;1;1;1;1;1,2;1,2;1,2;1,2;2;2;;
+26;PARNA do Viruá;Amz;RR;X;;;;;1;1;1;1;1, 2;2;;
+27;PARNA dos Campos Amazonicos ;Amz;AM;X;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+28;PARNA Mapinguari;Amz;AM/RO;X;;;;1;1,2,3;1,2,3*;4,5,6*;1,2,3,4,5,6*;1,2,3,4,5,6;6;X;Team
+29;PARNA Montanhas do Tumucumaque;Amz;AP;X;1;1, 2;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3*;1,2,3*;3;X;Team
+30;PARNA Nascentes do Lago Jari;Amz;AM;X;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+31;PARNA Serra da Mocidade;Amz;RR;X;;;;1;1;1;1;1;1;1;;Trilha
+32;REBIO de Una;Matl;BA;;;;;;;;;;1;1;;
+33;REBIO do Gurupi;Amz;MA;X;;1;1*;1*;1, 2*;1,2*;1,2*;1,2,3*;1,2,3*;3;X;Team
+34;REBIO do Jaru;Amz;RO;X;;;1,2,3;1,2,3;1,2,3,4;1,2,3,4;4;4;1,2,3,4;4;X;Trilha
+35;REBIO do Rio Trombetas;Amz;PA;X;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+36;REBIO do Tapirapé;Amz;PA;X;;;1;1, 2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;Trilha
+37;REBIO do Uatumã;Amz;AM;X;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+38;REBIO Guaribas;Matl;PB;;;;1;1;1;1;1;1;1;1;;Trilha
+39;RESEX Arapixi;Amz;AM;X;;;;;;1,2;1,2;1,2;1,2,3;3;X;
+40;RESEX Barreiro das Antas;Amz;RO;X;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+41;RESEX Chico Mendes;Amz;AC;X;;;;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+42;RESEX do Alto Tarauacá;Amz;AC;X;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+43;RESEX do Cazumbá-Iracema;Amz;AC;X;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+44;RESEX do Lago do Capanã Grande;Amz;AM;X;;;;;;;;1;1;1;;
+45;RESEX do Rio Cautário;Amz;RO;X;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+46;RESEX Ipaú-Anilzinho;Amz;PA;X;;;;;;1;1;1;1, 2;2;;
+47;RESEX Renascer;Amz;PA;X;;;;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+48;RESEX Rio Ouro Preto;Amz;RO;X;;;;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;X;
+49;RESEX Riozinho da Liberdade;Amz;AC;X;;;;;;;1;1,2,3;1,2,3;3;X;
+50;RESEX Riozinho do Anfrísio;Amz;PA;X;;;1;1,2,3;1,2;1,2;1,2;1,2;1,2;3;X;
+51;RESEX Tapajós Arapiuns;Amz;PA;X;2;1,2,3,4,6,7,8;1,2,3,4,6,7,8;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;8;X;Trilha
+52;RESEX Verde para Sempre;Amz;PA;X;;;;;;;;;1,2;2;;
+;Total;;17;39;;;;;;;;;;140;33;17
+

@@ -1,0 +1,170 @@
+﻿Nº;UC;Bioma;UF;ARPA;Alvo;2014;2015;2016;2017;2018;2019;2020;2021;2022;EA por alvo;EA por UC;UA por alvo;UA por UC;Consolidada;Protocolo Avançado
+1;ESEC Alto Maués;Amz;AM;x;MaAv;;;;;;;;;;;2;;2;;
+;ESEC Alto Maués;;;;Borbo;;;;;;;;;;;;;;;
+;ESEC Alto Maués;;;;Plan;;;;;;1,2*;;;;2;;2;;;x
+2;ESEC da Terra do Meio/RESEX Rio Iriri;Amz;PA;x;MaAv;1,2;1,2;1,2,3*;1,3;1,3;1,2,3;1,2,3;1,2,3;4,5,6;6;6;6;23;;Team
+;ESEC da Terra do Meio/RESEX Rio Iriri;;;;Borbo;;;;1;1;1;1;1;4,5,6*;4;;16;;;x
+;ESEC da Terra do Meio/RESEX Rio Iriri;;;;Plan;;;1;;;;;1;1;1;;1;;;
+3;ESEC de Maracá;Amz;RR;x;MaAv;;;;;1,2;1,2,3*;1,2,3;1,2,3;1,3;3;3;3;18;x;Team
+;ESEC de Maracá;;;;Borbo;;;;;1,2*;1,2,3*;1,2,3;1,2,3;1,3*;3;;12;;;x
+;ESEC de Maracá;;;;Plan;;;;1;;1,2,3*;;;;3;;3;;;x
+4;ESEC de Niquiá;Amz;RR;x;MaAv;;;;1;1;1*;1;1;1;1;1;1;6;;Trilha
+;ESEC de Niquiá;;;;Borbo;;;;1;1*;1*;1*;1*;1*;1;;4;;;x
+;ESEC de Niquiá;;;;Plan;;;1;;;;;1*;;1;;1;;;x
+5;ESEC de Pirapitinga;Cerd;MG;;MaAv;;;;;;;;;1;1;2;1;10;;
+;ESEC de Pirapitinga;;;;Borbo;;;;;;;;;1,2*;2;;8;;;x
+;ESEC de Pirapitinga;;;;Plan;;;;;;;;;1;1;;1;;;
+6;ESEC do Jari;Amz;AP/PA;x;MaAv;;;;;;;;;1,2,3;3;3;3;18;x;
+;ESEC do Jari;;;;Borbo;;;;;;;;;1,2,3*;3;;12;;;x
+;ESEC do Jari;;;;Plan;;;;;;;;;1,2,3*;3;;3;;;x
+7;ESEC Rio Acre;Amz;AC;x;MaAv;;;;;;;;1;1;1;1;1;5;;
+;ESEC Rio Acre;;;;Borbo;;;;;;;;;1;1;;4;;;
+;ESEC Rio Acre;;;;Plan;;;;;;;;;;;;;;;
+8;ESEC Serra Geral do Tocantins;Cerd;TO;;MaAv;1, 2;1,2;1,2;1,2;1,2;1,2;1,2;1,2;1,2;2;2;2;4;;
+;ESEC Serra Geral do Tocantins;;;;Borbo;;;;;;;;;;;;;;;
+;ESEC Serra Geral do Tocantins;;;;Plan;;1,2;;;1,2*;;;;;2;;2;;;x
+9;FLONA de Carajás;Amz;PA;;MaAv;;;;;;;;;;;1;;1;;
+;FLONA de Carajás;;;;Borbo;;;;;;;;;;;;;;;
+;FLONA de Carajás;;;;Plan;;;;;;;;;1*;1;;1;;;x
+11;FLONA de Tapajós;Amz;PA;;MaAv;;;;;;;;;1,2,3*;3;3;3;15;;Team
+;FLONA de Tapajós;;;;Borbo;;;;;;;;;1,2,3*;3;;12;;;x
+;FLONA de Tapajós;;;;Plan;;;;;;;;;;;;;;;
+10;FLONA do Jamari;Amz;RO;;MaAv;1,2;2;1,2,3*;1,2,3;2,3,4;2,3,4;2,4*;2,3,4;2,4;4;4;4;23;x;Team
+;FLONA do Jamari;;;;Borbo;1,2;2;2, 3*;1,2,3*;1,2,3,4*;2,3,4*;3*;2,3*;1,2,3,4*;4;;16;;;x
+;FLONA do Jamari;;;;Plan;2;;;1,2,4*;;;;;1,2,4;3;;3;;;x
+12;PARNA da Amazônia;Amz;PA;x;MaAv;;;;1,2,3*;1,2,3;1,2,3;1,2,3;2,3,4;2,3,4;4;4;4;19;x;Trilha
+;PARNA da Amazônia;;;;Borbo;;;;;1,2,3;1,2,3;1,2,3;1,2.3;1,2.3;3;;12;;;x
+;PARNA da Amazônia;;;;Plan;;;;;1,2,3*;;;;;3;;3;;;x
+13;PARNA da Chapada dos Veadeiros;Cerd;GO;;MaAv;1*;1*;1;1;1;1;1;1;1;1;1;1;6;;
+;PARNA da Chapada dos Veadeiros;;;;Borbo;;;;1;1;1;1;1;1;1;;4;;;
+;PARNA da Chapada dos Veadeiros;;;;Plan;;;;;1*;;;;;1;;1;;;x
+14;PARNA da Serra da Bocaina;Matl;SP/RJ;;MaAv;1;1;1;1;1;1;1;1;1;1;1;1;6;;
+;PARNA da Serra da Bocaina;;;;Borbo;;1;1;1;1;1;1;1;1;1;;4;;;
+;PARNA da Serra da Bocaina;;;;Plan;1;;;;;1;1;1;1;1;;1;;;
+15;PARNA da Serra da Bodoquena;Cerd;MS;;MaAv;1;1,2;1,2;1,2;1,2;1,2;1,2;1,2;1,2;2;2;2;12;;
+;PARNA da Serra da Bodoquena;;;;Borbo;1;2;1, 2;1,2;1,2;1,2;1,2;1,2;1,2;2;;8;;;
+;PARNA da Serra da Bodoquena;;;;Plan;1;2;;;;1,2*;;;;2;;2;;;x
+16;PARNA da Serra da Cutia;Amz;RO;x;MaAv;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;PARNA da Serra da Cutia;;;;Borbo;;;;1;1,2,3*;1,2,3*;1,2,3*;1,2,3;1,2,3*;3;;12;;;x
+;PARNA da Serra da Cutia;;;;Plan;;;1;;2,3;;;1;1;3;;3;;;
+17;PARNA da Serra do Cipó;Cerd;MG;;MaAv;1;1;1*;1*;1*;1;1;1;1;1;2;1;10;;
+;PARNA da Serra do Cipó;;;;Borbo;;;;1;1*;1;1;1, 2*;1,2*;2;;8;;;x
+;PARNA da Serra do Cipó;;;;Plan;1;;;;1*;;;;;1;;1;;;x
+18;PARNA da Serra do Divisor;Amz;AC;x;MaAv;;;;;1;1, 2;2, 3;1,2,3;1,2,3;3;3;3;18;x;
+;PARNA da Serra do Divisor;;;;Borbo;;;;;1;1 ,2;1,2;1,2,3;1,2,3;3;;12;;;
+;PARNA da Serra do Divisor;;;;Plan;;;;;1;2;3;;2,3*;3;;3;;;x
+19;PARNA da Serra do Pardo;Amz;PA;x;MaAv;;;1,2,3;1,2,3;1,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;5;;
+;PARNA da Serra do Pardo;;;;Borbo;;;;;;;;;;;;;;;
+;PARNA da Serra do Pardo;;;;Plan;;;;;;;;;1,2*;2;;2;;;x
+20;PARNA da Serra dos Órgãos;Matl;RJ;;MaAv;1*;1*;1*,2;2*;1,2;1,2;1,2;1,2;1,2;2;2;2;12;;x
+;PARNA da Serra dos Órgãos;;;;Borbo;;;1;1, 2;1,2;1,2;1,2;1,2;1,2;2;;8;;;
+;PARNA da Serra dos Órgãos;;;;Plan;1;;2;;;1,2*;;;;2;;2;;;x
+21;PARNA de Brasília ;Cerd;DF;;MaAv;;;;;;;;;;;1;;5;;
+;PARNA de Brasília *;;;;Borbo;;;;1;1;1;1;1;1*;1;;4;;;x
+;PARNA de Brasília;;;;Plan;1;;;;1*;;;;;1;;1;;;x
+22;PARNA de Pacaás Novos;Amz;RO;x;MaAv;;;;;;;1,2,3;1,2,3;2,3;3;3;3;18;x;
+;PARNA de Pacaás Novos;;;;Borbo;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;;12;;;
+;PARNA de Pacaás Novos;;;;Plan;;;;;;1,2,3;;;;3;;3;;;
+23;PARNA do Cabo Orange;Amz;AP;x;MaAv;;;1,2;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;x
+;PARNA do Cabo Orange;;;;Borbo;;;1,2;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;;12;;;
+;PARNA do Cabo Orange;;;;Plan;;;;1,2,3*;;;;;1,2,3;3;;3;;;x
+24;PARNA do Iguaçu;Matl;PR;;MaAv;;;1;1;1;1;1;1;1;1;1;1;5;;
+;PARNA do Iguaçu;;;;Borbo;;;1;1;1*;1;1;1;1*;1;;4;;;x
+;PARNA do Iguaçu;;;;Plan;;;;;;;;;;;;;;;
+25;PARNA do Jaú;Amz;AM;x;MaAv;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;PARNA do Jaú;;;;Borbo;;1,2,3;1,2,3;1,2,3;1,2,3*;1,2,3*;1,2,3;1,2,3*;1,2,3*;3;;12;;;x
+;PARNA do Jaú;;;;Plan;1,2;;;1,2,3*;;;;;1,2,3;3;;3;;;x
+26;PARNA do Juruena;Amz;MT;x;MaAv;;;1,2,3;1,2,3*;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;Team e Tr
+;PARNA do Juruena;;;;Borbo;;;;1,2,3*;1,2,3*;1,2,3;1,2,3;1,2,3;1,2,3;3;;12;;;x
+;PARNA do Juruena;;;;Plan;;;;1,2,3*;;;;;1,2,3;3;;3;;;x
+27;PARNA do Monte Roraima;Amz;RR;x;MaAv;;;;;;2;;3;3;2;2;2;11;;
+;PARNA do Monte Roraima;;;;Borbo;;;;;;1*;;3*;3*;2;;8;;;x
+;PARNA do Monte Roraima;;;;Plan;;;;;;1;;;;1;;1;;;
+28;PARNA do Superagui;Matl;PR;;MaAv;1;1;1;1;1,2;1,2;1,2;1,2;2;2;3;2;17;;
+;PARNA do Superagui;;;;Borbo;;;1;1;1, 2;1,2;1,2;1,2;1,2,3;3;;12;;;
+;PARNA do Superagui;;;;Plan;;;1;;2;3;;1;;3;;3;;;
+29;PARNA Viruá;Amz;RR;x;MaAv;;;;;1;1;1;1;1, 2;2;2;2;11;;
+;PARNA Viruá;;;;Borbo;;;;;1*;1*;1*;1*;1, 2*;2;;8;;;x
+;PARNA Viruá;;;;Plan;;;;;;1;;;;1;;1;;;
+30;PARNA dos Campos Amazonicos ;Amz;AM;x;MaAv;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;PARNA dos Campos Amazônicos;;;;Borbo;;;;;;;;1,2,3*;1,2,3*;3;;12;;;x
+;PARNA dos Campos Amazônicos;;;;Plan;;;;;;1,2,3;;;;3;;3;;;
+31;PARNA Mapinguari;Amz;AM/RO;x;MaAv;;;;1;1,2,3;1,2,3;4,5,6;1,2,3,4,5,6;1,2,3,4,5,6;6;6;6;36;x;Team
+;PARNA Mapinguari;;;;Borbo;;;;;1,2*;1,2,3*;4,5,6*;1,2,3,4,5,6*;1,2,3,4,5,6*;6;;24;;;x
+;PARNA Mapinguari;;;;Plan;;;;1;1,2,3*;;;4,5,6;1;6;;6;;;x
+32;PARNA Montanhas do Tumucumaque;Amz;AP;x;MaAv;1;1, 2;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;Team
+;PARNA Montanhas do Tumucumaque;;;;Borbo;;;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;;12;;;
+;PARNA Montanhas do Tumucumaque;;;;Plan;1;2;;1,2,3;;;;1,2,3;;3;;3;;;x
+33;PARNA Nascentes do Lago Jari;Amz;AM;x;MaAv;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;PARNA Nascentes do Lago Jari;;;;Borbo;;;;;;;;;1,2,3*;3;;12;;;x
+;PARNA Nascentes do Lago Jari;;;;Plan;;;;;;1,2,3;;;;3;;3;;;
+34;PARNA Serra da Mocidade;Amz;RR;x;MaAv;;;;1;1;1;1;1;1;1;1;1;6;;Trilha
+;PARNA Serra da Mocidade;;;;Borbo;;;;1;1*;1*;1*;1*;1*;1;;4;;;x
+;PARNA Serra da Mocidade;;;;Plan;;;1;;;;;1*;;1;;1;;;x
+35;REBIO de Una;Matl;BA;;MaAv;;;;;;;;;1;1;1;1;5;;
+;REBIO de Una;;;;Borbo;;;;;;;;;1;1;;4;;;
+;REBIO de Una;;;;Plan;;;;;;;;;;;;;;;
+41;REBIO do Gurupi;Amz;MA;x;MaAv;;1;1;1*;1, 2;1,2;1,2;1,2,3;1,2,3;3;3;3;17;;Team e Av
+;REBIO do Gurupi;;;;Borbo;;;1;1;1, 2;1,2;1,2;1,2,3;1,2,3*;3;;12;;;x
+;REBIO do Gurupi;;;;Plan;;;1;1,2*;;;;1;1,2;2;;2;;;x
+36;REBIO do Jaru;Amz;RO;x;MaAv;;;1,2,3;1,2,3;1,2,3,4;1,2,3,4;4;4;1,2,3,4;4;4;4;24;x;Trilha
+;REBIO do Jaru;;;;Borbo;;;1,2,3;1,2,3;1,2,3,4;1,2,3,4*;4;4;1,2,3,4;4;;16;;;
+;REBIO do Jaru;;;;Plan;;;;1,2,3,4*;;;;;1,2,3,4;4;;4;;;x
+37;REBIO do Rio Trombetas;Amz;PA;x;MaAv;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;3;;
+;REBIO do Rio Trombetas;;;;Borbo;;;;;;;;;;;;;;;
+;REBIO do Rio Trombetas;;;;Plan;;;;;;;;;;;;;;;
+38;REBIO do Tapirapé;Amz;PA;x;MaAv;;;1;1, 2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;21;x;Trilha
+;REBIO do Tapirapé;;;;Borbo;;;1;1, 2;1,2,3*;1,2,3*;1,2,3;1,2,3*;1,2,3*;3;;15;;;x
+;REBIO do Tapirapé;;;;Plan;;;1;1,2,3*;;;;;1,2,3;3;;3;;;x
+39;REBIO do Uatumã;Amz;AM;x;MaAv;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;REBIO do Uatumã;;;;Borbo;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3*;1,2,3;1,2,3;1,2,3;3;;12;;;x
+;REBIO do Uatumã;;;;Plan;1;;;1,2,3*;;;;;1,2,3;3;;3;;;x
+40;REBIO Guaribas;Matl;PB;;MaAv;;;1;1;1;1;1;1;1;1;1;1;5;;Trilha
+;REBIO Guaribas;;;;Borbo;;;1;1;1;1;1;1;1;1;;4;;;
+;REBIO Guaribas;;;;Plan;;;;;;;;;;;;;;;
+43;RESEX Arapixi;Amz;AM;x;MaAv;;;;;;1,2;1,2;1,2;1,2,3;3;3;3;17;;
+;RESEX Arapixi;;;;Borbo;;;;;;1,2*;1,2;1,2;1,2,3*;3;;12;;;x
+;RESEX Arapixi;;;;Plan;;;;;;1,2;;;;2;;2;;;
+44;RESEX Barreiro das Antas;Amz;RO;x;MaAv;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;RESEX Barreiro das Antas;;;;Borbo;;;;;1,2,3*;1,2,3*;1,2,3*;1*;1,2,3*;3;;12;;;x
+;RESEX Barreiro das Antas;;;;Plan;;;;1;2,3;;;;;3;;3;;;
+45;RESEX Chico Mendes;Amz;AC;x;MaAv;;;;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;15;;
+;RESEX Chico Mendes;;;;Borbo;;;;;1;1,2,3*;1,2,3;1,2,3;1,2,3;3;;12;;;x
+;RESEX Chico Mendes;;;;Plan;;;;;;;;;;;;;;;
+42;RESEX do Alto Tarauacá;Amz;AC;x;MaAv;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;RESEX Alto Tarauacá;;;;Borbo;;;;1;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;;12;;;
+;RESEX Alto Tauaracá;;;;Plan;;;;;1,2,3;;;;;3;;3;;;
+46;RESEX do Cazumbá-Iracema;Amz;AC;x;MaAv;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;RESEX do Cazumbá-Iracema;;;;Borbo;;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;;12;;;
+;RESEX do Cazumbá-Iracema;;;;Plan;1,2,3;;;1,2*;;1,2,3*;;;;3;;3;;;x
+47;RESEX do Lago do Capanã Grande;Amz;AM;x;MaAv;;;;;;;;1;1;1;2;1;9;;
+;RESEX do Lago do Capanã Grande;;;;Borbo;;;;;;;;1;1, 2;2;;8;;;
+;RESEX do Lago do Capanã Grande;;;;Plan;;;;;;;;;;;;;;;
+48;RESEX do Rio Cautário;Amz;RO;x;MaAv;;;;;;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;15;;
+;RESEX do Rio Cautário;;;;Borbo;;;;;;1,2,3*;1,2,3;1,2,3;1,2,3;3;;12;;;x
+;RESEX do Rio Cautário;;;;Plan;;;;;;;;;;;;;;;
+49;RESEX Ipaú-Anilzinho;Amz;PA;x;MaAv;;;;;;1;1;1;1, 2;2;2;2;11;;
+;RESEX Ipaú-Anilzinho;;;;Borbo;;;;;;1*;1*;1*;1, 2*;2;;8;;;x
+;RESEX Ipaú-Anilzinho;;;;Plan;;;;;;1;;;;1;;1;;;
+50;RESEX Ituxí;Amz;AM;x;MaAv;;;;;;;;;;;3;;3;;
+;RESEX Ituxí;;;;Borbo;;;;;;;;;;;;;;;
+;RESEX Ituxí;;;;Plan;;;;;;1,2,3;;;;3;;3;;;
+51;RESEX Renascer;Amz;PA;x;MaAv;;;;;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;RESEX Renascer;;;;Borbo;;;;;1,2,3;1,2,3;1,2,3;1,2,3*;1,2,3;3;;12;;;x
+;RESEX Renascer;;;;Plan;;;;;1,2,3;;;;;3;;3;;;
+52;RESEX Rio Ouro Preto;Amz;RO;x;MaAv;;;;1,2;1,2,3;1,2,3;1,2,3;1,2,3;1,2,3;3;3;3;18;x;
+;RESEX Rio Ouro Preto;;;;Borbo;;;;1,2*;1,2,3*;1,2,3*;1,2,3;1,2,3*;1,2,3*;3;;12;;;x
+;RESEX Rio Ouro Preto;;;;Plan;;;;1,2,3;;;;;1,2,3;3;;3;;;
+53;RESEX Riozinho da Liberdade;Amz;AC;x;MaAv;;;;;;;1;1,2,3;1,2,3;3;3;3;18;x;
+;RESEX Riozinho da Liberdade;;;;Borbo;;;;;;;1;1,2,3;1,2,3*;3;;12;;;
+;RESEX Riozinho da Liberdade;;;;Plan;;;;;;;1,2;;3;3;;3;;;
+54;RESEX Riozinho do Anfrísio;Amz;PA;x;MaAv;;;1;1,2,3;1,2;1,2;1,2;1,2;1,2;3;3;3;11;;
+;RESEX Riozinho do Anfrisio;;;;Borbo;;;;;;1,2;1,2;1,2;1,2*;2;;8;;;x
+;RESEX Riozinho do Anfrisio;;;;Plan;;;;;;;;;;;;;;;
+55;RESEX Tapajós Arapiuns;Amz;PA;x;MaAv;2;1,2,3,4,6,7,8;1,2,3,4,6,7,8;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;8;9;8;47;x;Trilha
+;RESEX Tapajós Arapiuns;;;;Borbo;;1,2,4,5;1,2,3,4,8;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,3,4,6,7,8,9;1,2,4,6,7,8,9;1,2,3,4,6,7,8,9;9;;36;;;x
+;RESEX Tapajós-Arapiuns;;;;Plan;;;;;2,4,8* ;;;;;3;;3;;;x
+56;RESEX Verde para Sempre;Amz;PA;x;MaAv;;;;;;;;;1,2;2;2;2;12;;
+;RESEX Verde para Sempre;;;;Borbo;;;;;;;;;1,2;2;;8;;;
+;RESEX Verde para Sempre;;;;Plan;;;;;;;;;1,2;2;;2;;;
+;Totais;;18 UF;41;;;;;;;;;;;384;152;789;789;24;45 UCs

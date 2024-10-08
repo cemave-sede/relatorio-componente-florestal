@@ -38,7 +38,7 @@ book:
     - apendice.qmd
 
 #bibliography: referencias.bib
-csl: ecology_alterado.csl
+csl: ecology_alterado2.csl
 
 execute: 
   freese: auto
