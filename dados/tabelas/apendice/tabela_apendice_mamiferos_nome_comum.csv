@@ -15,7 +15,7 @@ Carnivora ;Mustelidae ;Galictis vittata ;furão-grande, furão-maior ;
 Carnivora ;Mustelidae ;Lontra longicaudis ;lobinho-de-rio, lontra, lontra neotropical, lontrinha ;
 Carnivora ;Mustelidae ;Pteronura brasiliensis;ariranha, lontra-gigante, onça-d’água ;VU
 Carnivora ;Procyonidae ;Nasua nasua ;coati, quati, quati-de-vara, quati-mundéo ;
-Carnivora ;Procyonidae ;Procyon cancrivorus ;cachorrinho-guaxinim, cachorro-do-mato-guaxinim, cangrejera, guará, guaxinim, jaracambeva, mão-pelada, mapache, lavador, mayuato, meia-noite ;
+Carnivora ;Procyonidae ;Procyon cancrivorus ;cachorrinho-guaxinim, cachorro-do-mato-guaxinim, cangrejera, guará, guaxinim, jaracambeva, mão-pelada, mapache, lavador, mayuato, meia-noite, anda-só;
 Cetartiodactyla ;Cervidae ;Mazama americana ;guassu-pará, guatapará, suaçupita, veado-capoeiro, veado-mateiro, veado-pardo, veado-retovado, veado-vermelho ;DD
 Cetartiodactyla ;Cervidae ;Mazama gouazoubira ;corça, veado-catingueiro ;
 Cetartiodactyla ;Cervidae ;Mazama nemorivaga ;fuboca, veado-branco, veado-da-amazônia, veado-roxo ;DD
@@ -23,7 +23,7 @@ Cetartiodactyla ;Cervidae ;Mazama sp. ;cervos;
 Cetartiodactyla ;Cervidae ;Ozotocerus bezoarticus ;veado-branco, veado-campeiro, veado-galheiro ;
 Cetartiodactyla ;Tayassuidae ;Pecari tajacu ;caititu, cateto ;
 Cetartiodactyla ;Tayassuidae ;Tayassu pecari;queixada ;VU
-Cingulata ;Dasypodidae ;Cabassous unicinctus ;cabassú (variação de capacou - tatu em galibi - grupo indígena da guiana francesa), tatu-de-rabo-mole, tatu-de-rabo-mole-pequeno, tatu-rabo-de-couro ;
+Cingulata ;Dasypodidae ;Cabassous unicinctus ;cabassú (variação de capacou - tatu em galibi - grupo indígena da guiana francesa), tatu-de-rabo-mole, tatu-de-rabo-mole-pequeno, tatu-rabo-de-couro ;
 Cingulata ;Dasypodidae ;Dasypus kappleri ;tatu-açu, tatu-canastra, tatu-quinze-quilos, tatu-tinga, tatu-verdadeiro ;
 Cingulata ;Dasypodidae ;Dasypus novemcinctus ;tatu-asa-branca, tatuetê, tatu-folha, tatu-galinha, tatu-nove-bandas, tatu-veado, tatu-verdadeiro ;
 Cingulata ;Dasypodidae ;Dasypus sp. ;tatus;
@@ -32,7 +32,7 @@ Didelphimorphia ;Didelphidae ;Didelphis albiventris ;gambá-de-orelha-branca,
 Didelphimorphia ;Didelphidae ;Didelphis aurita ;gambá, gambá-de-orelha-preta ;
 Didelphimorphia ;Didelphidae ;Didelphis marsupialis ;gambá-de-orelha-preta, mucura ;
 Didelphimorphia ;Didelphidae ;Didelphis sp. ;gambás;
-Lagomorpha ;Leporidae ;Sylvilagus brasiliensis ;coelho ;
+Lagomorpha ;Leporidae ;Sylvilagus brasiliensis ;coelho, tapiti, tapeti;
 Perissodactyla ;Tapiridae ;Tapirus terrestris;anta;VU
 Pilosa ;Bradypodidae ;Bradypus sp. ;preguiças;
 Pilosa ;Bradypodidae ;Bradypus tridactylus ;preguiça-de-bentinho, preguiça-de-garganta-amarela, preguiça-de-três-dedos ;
@@ -120,7 +120,7 @@ Primates ;Pitheciidae ;Pithecia irrorata;macaco-cabeludo, macaco-velho, paraua
 Primates ;Pitheciidae ;Pithecia monachus ;macaco-velho, macaco-voador, parauacu, parauacu-monge ;
 Primates ;Pitheciidae ;Pithecia pithecia ;parauacu-da-cara-branca ;
 Primates ;Pitheciidae ;Pithecia vanzolinii ;macaco-velho, parauacu ;
-Primates ;Pitheciidae ;Plecturocebus toppini ;;
+Primates ;Pitheciidae ;Plecturocebus toppini ;-;
 Rodentia ;Caviidae ;Cavia sp. ;preás;
 Rodentia ;Caviidae ;Galea spii ;preá;
 Rodentia ;Caviidae ;Hydrochoerus hydrochaeris ;capivara;
@@ -130,17 +130,17 @@ Rodentia ;Dasyproctidae ;Dasyprocta azarae ;cutia ;
 Rodentia ;Dasyproctidae ;Dasyprocta croconota ;cutia;
 Rodentia ;Dasyproctidae ;Dasyprocta fuliginosa ;cutia ;
 Rodentia ;Dasyproctidae ;Dasyprocta iacki ;cutia, cutia-de-garupa-laranja;
-Rodentia ;Dasyproctidae ;Dasyprocta leporina ;;
+Rodentia ;Dasyproctidae ;Dasyprocta leporina ;cutia;
 Rodentia ;Dasyproctidae ;Dasyprocta prymnolopha ;cutia ;
 Rodentia ;Dasyproctidae ;Dasyprocta sp. ;cutias;
 Rodentia ;Dasyproctidae ;Myoprocta acouchy ;cotiara, cutiara ;
 Rodentia ;Dasyproctidae ;Myoprocta pratti ;cotiara, cutiara;
 Rodentia ;Dasyproctidae ;Myoprocta sp. ;cutiaras;
 Rodentia ;Erethizontidae ;Coendou bicolor ;ouriço-cacheiro ;
-Rodentia ;Erethizontidae ;Coendou prehensilis ;;
+Rodentia ;Erethizontidae ;Coendou prehensilis ;ouriço-cacheiro, porco-espinho ;
 Rodentia ;Erethizontidae ;Coendou sp. ;ouriços;
-Rodentia ;Sciuridae ;Guerlinguetus aestuans ;caxinguelê, esquilo, quatipuru ;
-Rodentia ;Sciuridae ;Guerlinguetus gilvigularis ;;
+Rodentia ;Sciuridae ;Guerlinguetus aestuans ;caxinguelê, esquilo, quatipuru, caticoro, serelepe;
+Rodentia ;Sciuridae ;Guerlinguetus gilvigularis ;quatipuru;
 Rodentia ;Sciuridae ;Guerlinguetus ignitus ;esquilo ;
 Rodentia ;Sciuridae ;Guerlinguetus ingrami ;;
 Rodentia ;Sciuridae ;Guerlinguetus sp. ;esquilos;

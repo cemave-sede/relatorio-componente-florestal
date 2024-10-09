@@ -35,11 +35,14 @@ bibliography: [referencias_cap03.bib]
 *Rua Jardim Botânico, 1008*  
 *Jardim Botânico*  
 *22460-030 Rio de Janeiro, RJ*  
+*Bolsista de produtividade do CNPq - 303059/2020-6*  
+*Cientista do Nosso Estado da FAPERJ - E‐26/200.967/2022*  
 
 6. Universidade Federal do Paraná  
 *Departamento de Botânica*  
 *Caixa Postal 19031*  
 *81531-980 Curitiba, PR*  
+*Bolsista de produtividade do CNPq - 303330/2022-8*  
 
 7. Parque Nacional do Descobrimento  
 *Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio*  
@@ -62,7 +65,7 @@ O monitoramento de plantas arbóreas e arborescentes do Componente Florestal do 
 
 Por constituir a base da cadeia trófica, alterações na estrutura da vegetação podem implicar mudanças deletérias no habitat para a fauna, no desequilíbrio das interações ecológicas e no funcionamento dos ecossistemas (@Tews_2004). Da mesma forma, a perda ou alteração na abundância de organismos-chave para a saúde da floresta, como herbívoros, dispersores e polinizadores, e o aumento de pragas e doenças que atacam as plantas, podem afetar a estrutura e a dinâmica das florestas e das savanas (@Wilkie_2011).  
 
-Por se tratar de um protocolo que estabelece reamostragens a cada cinco anos, o processo do monitoramento para o alvo de plantas está em fase inicial e a maioria das unidades de conservação (UCs) ainda não implementou o número mínimo de três unidades amostrais (UAs) a serem remedidas a cada cinco anos, conforme previsto no protocolo. Apenas quatro unidades de conservação, de um universo de 46, implementaram completamente o protocolo de plantas e disponibilizaram os dados para elaboração do presente relatório (@fig-mapa-ucs-amostradas). Além dessas quatro UCs, há três UCs que possuem somente duas UAs remedidas e outras sete com apenas uma UA remedida, o que limita bastante as análises. As demais 30 UCs não tiveram remedição.  
+Por se tratar de um protocolo que estabelece reamostragens a cada cinco anos, o processo do monitoramento para o alvo de plantas está em fase inicial e um pouco mais da metade (56,5%) das unidades de conservação (UCs) ainda não implementou o número mínimo de três unidades amostrais (UAs) a serem remedidas a cada cinco anos, conforme previsto no protocolo. Apenas quatro unidades de conservação, de um universo de 46, implementaram completamente o protocolo de plantas e disponibilizaram os dados para elaboração do presente relatório (@fig-mapa-ucs-amostradas). Além dessas quatro UCs, há três UCs que possuem somente duas UAs remedidas e outras sete com apenas uma UA remedida, o que limita bastante as análises. As demais 30 UCs não tiveram remedição.  
 
 </br>
 
@@ -87,7 +90,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.1_ucs_amostradas.JPG")
 
 ## Métodos  
 
-Os dados aqui analisados foram coletados segundo os métodos anteriormente descritos (veja capítulo 2), nos quais as plantas arbóreas e arborescentes (árvores, palmeiras, lianas ou cipós, samambaias, cactos etc.) são amostradas em parcelas permanentes do tipo cruz de malta (3 UAs por UC). Os indivíduos que se enquadram nos critérios mínimos de inclusão (circunferência medida a 1,3 m do solo (CAP) >= 31 cm, em ambientes florestais; e circunferência à 30 cm do solo (CAS) >= 15 cm, em formações savânicas)  são identificados com plaquetas metálicas e suas medidas de diâmetro do tronco e altura são registradas. No bioma Cerrado foram amostradas formações florestais (nos Parques Nacionais da Serra do Cipó e Serra da Bodoquena e na Estação Ecológica de Pirapitinga) e formações savânicas (na Estação Ecológica da Serra Geral do Tocantins e nos Parques Nacional de Brasília e da Chapada dos Veadeiros). Na Amazônia e Mata Atlântica foram amostradas apenas formações florestais em todas as UCs.  
+Os dados aqui analisados foram coletados segundo os métodos anteriormente descritos (veja descrição detalhada no capítulo 2), nos quais as plantas arbóreas e arborescentes (árvores, palmeiras, lianas ou cipós, samambaias, cactos etc.) são amostradas em parcelas permanentes do tipo cruz de malta (3 UAs por UC). Os indivíduos que se enquadram nos critérios mínimos de inclusão (circunferência medida a 1,3 m do solo (CAP) >= 31 cm, em ambientes florestais; e circunferência à 30 cm do solo (CAS) >= 15 cm, em formações savânicas)  são identificados com plaquetas metálicas e suas medidas de diâmetro do tronco e altura são registradas. No bioma Cerrado foram amostradas formações florestais (nos Parques Nacionais da Serra do Cipó e Serra da Bodoquena e na Estação Ecológica de Pirapitinga) e formações savânicas (na Estação Ecológica da Serra Geral do Tocantins e nos Parques Nacional de Brasília e da Chapada dos Veadeiros). Na Amazônia e Mata Atlântica foram amostradas apenas formações florestais em todas as UCs.  
 
 As variáveis consideradas nas análises, todas realizadas no ambiente R (@RCoreTeam_2023), foram: altura média (m), circunferência média (cm), área basal (m²/ha), densidade de indivíduos (indivíduos/ha), valor de cobertura vegetal (área basal (ha)/densidade), valor do quociente “q” de *Liocourt*  e biomassa (Apêndice F). Cipós, samambaias e palmeiras foram amostrados, mas essas informações não foram consideradas neste relatório.  
 
@@ -172,7 +175,7 @@ Até 2022 o Programa Monitora possuía 110 UAs de plantas (cruzes da malta) impl
 
 </br>
 
-De 2014 até 2022, apenas quatro UCs amostraram três unidades amostrais (UAs) em pelo menos dois momentos, atendendo as diretrizes do protocolo do Componente Florestal do Programa Monitora: os PARNAs Montanhas do Tumucumaque e do Juruena, a REBIO do Jaru e a RESEX do Cazumbá-Iracema. Note ainda que os períodos de amostragem das UCs foram distintos e, no caso do PARNA Montanhas do Tumucumaque, o tempo entre amostragens foi de quatro anos em vez de cinco, como estabelecido no protocolo.  
+De 2014 até 2022, apenas quatro UCs amostraram três unidades amostrais (UAs) em pelo menos dois momentos, atendendo as diretrizes do protocolo do Componente Florestal do Programa Monitora: os PARNAs Montanhas do Tumucumaque e do Juruena, a REBIO do Jaru e a RESEX do Cazumbá-Iracema.    
 
 </br>
 
@@ -264,7 +267,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.4_densidade.JPG")
 
 </br>
 
-As maiores médias de área basal foram observadas no PARNA Montanhas do Tumucumaque ( 45 a 50 m2/ha) (@fig-area-basal-3m). As demais UCs apresentaram médias abaixo de 35 m²/ha. Em nenhuma UC as diferenças nos valores de área basal entre anos amostrados foram estatisticamente significativas (p > 0,05). 
+As maiores médias de área basal foram observadas no PARNA Montanhas do Tumucumaque (45 a 50 m^2^/ha) (@fig-area-basal-3m). As demais UCs apresentaram médias abaixo de 35 m²/ha. Em nenhuma UC as diferenças nos valores de área basal entre anos amostrados foram estatisticamente significativas (p > 0,05). 
 
 </br>
 
@@ -285,7 +288,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.5_area_basal.JPG")
 
 </br>
 
-Em relação ao valor de cobertura, o PARNA Montanhas do Tumucumaque também apresentou as maiores médias (@fig-cobertura-3m), indicando uma floresta com um maior número de árvores maiores e em menor densidade. As demais UCs apresentaram médias em torno de 0,05, indicando florestas bem diferentes daquelas encontradas no PARNA Montanhas do Tumucumaque. Nenhuma UC apresentou valores de cobertura estatisticamente diferentes entre os anos amostrados (p > 0,05).  
+Em relação ao valor de cobertura, o PARNA Montanhas do Tumucumaque também apresentou as maiores médias (@fig-cobertura-3m), indicando uma floresta com maior número de árvores maiores e em menor densidade. As demais UCs apresentaram médias em torno de 0,05, indicando florestas bem diferentes daquelas encontradas no PARNA Montanhas do Tumucumaque. Nenhuma UC apresentou valores de cobertura estatisticamente diferentes entre os anos amostrados (p > 0,05).  
 
 
 
@@ -364,7 +367,7 @@ As UAs nos PARNAs da Serra dos Órgãos e Bodoquena, ambas formações florestai
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Circunferência das árvores por unidade amostral (UA) nas unidades de conservação com duas UA reamostradas entre 2014 e 2022."
+#| fig-cap: "Circunferência das árvores por unidade amostral (UA) nas unidades de conservação com duas UAs reamostradas entre 2014 e 2022."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.8_circunferencia.JPG")
 
@@ -388,7 +391,7 @@ Os maiores valores do quociente “q” de *Liocourt* foram encontrados no PARNA
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Quociente “q” de Liocourt por unidade amostral (UA) nas unidades de conservação com duas UA reamostradas entre 2014 e 2022."
+#| fig-cap: "Quociente “q” de Liocourt por unidade amostral (UA) nas unidades de conservação com duas UAs reamostradas entre 2014 e 2022."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.9_Liocourt.JPG")
 
@@ -414,7 +417,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.9_Liocourt.JPG")
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Densidade de árvores por unidade amostral (UA) nas unidades de conservação com duas UA reamostradas entre 2014 e 2022."
+#| fig-cap: "Densidade de árvores por unidade amostral (UA) nas unidades de conservação com duas UAs reamostradas entre 2014 e 2022."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.10_densidade.JPG")
 
@@ -441,7 +444,7 @@ As UAs nos PARNAs da Serra dos Órgãos e Serra da Bodoquena, ambas formações 
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Área basal por estação amostral por unidade amostral (UA) nas unidades de conservação com duas UA reamostradas entre 2014 e 2022."
+#| fig-cap: "Área basal por estação amostral por unidade amostral (UA) nas unidades de conservação com duas UAs reamostradas entre 2014 e 2022."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.11_area_basal.JPG")
 
@@ -467,7 +470,7 @@ As UAs nos PARNAs da Serra dos Órgãos e da Serra da Bodoquena, ambas formaçõ
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Cobertura vegetal por unidade amostral (UA) nas unidades de conservação com duas UA reamostradas entre 2014 e 2022."
+#| fig-cap: "Cobertura vegetal por unidade amostral (UA) nas unidades de conservação com duas UAs reamostradas entre 2014 e 2022."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.12_cobertura.JPG")
 
@@ -481,7 +484,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.12_cobertura.JPG")
 </br>
 
 
- Aparentemente, a biomassa variou ao longo dos anos no PARNA da Serra dos Órgãos, onde a UA 1 mostrou redução e a UA 2 aumento (@fig-biomassa-2m). As demais UAs nas outras duas UCs (PARNA da Serra da Bodoquena e ESEC Serra Geral do Tocantins), aparentemente, não apresentaram variação. A ESEC Serra Geral do Tocantins apresentou os menores valores de biomassa, o que é esperado pelas características de sua fitofisionomia savânica (@Morandi_2020), em contraste com as outras duas UCs florestais. As diferenças aqui descritas não foram testadas estatisticamente dada à insuficiência amostral.  
+ Aparentemente, a biomassa variou ao longo dos anos no PARNA da Serra dos Órgãos, onde a UA 1 mostrou redução e a UA 2 aumento (@fig-biomassa-2m). As demais UAs nas outras duas UCs (PARNA da Serra da Bodoquena e ESEC Serra Geral do Tocantins), aparentemente, não apresentaram variação. A ESEC Serra Geral do Tocantins apresentou os menores valores de biomassa, o que é esperado pelas características de sua fitofisionomia savânica (@Morandi_2018), em contraste com as outras duas UCs florestais. As diferenças aqui descritas não foram testadas estatisticamente dada à insuficiência amostral.  
  
  
 </br>
@@ -494,7 +497,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.12_cobertura.JPG")
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Biomassa por unidade por unidade amostral (UA) nas unidades de conservação com duas UA reamostradas entre 2014 e 2022."
+#| fig-cap: "Biomassa por unidade por unidade amostral (UA) nas unidades de conservação com duas UAs reamostradas entre 2014 e 2022."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.13_biomassa.JPG")
 

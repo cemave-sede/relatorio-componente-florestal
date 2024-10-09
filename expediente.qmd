@@ -31,12 +31,13 @@ Rodrigo Silva Pinto Jorge
 Centro Nacional de Avaliação da Biodiversidade e Pesquisa e Conservação do Cerrado (CBC)  
 Centro Nacional de Pesquisa e Conservação de Aves Silvestres (CEMAVE)  
 Centro Nacional de Pesquisa e Conservação da Biodiversidade de Mamíferos Carnívoros (CENAP)  
-Centro Nacional de Pesquisa e Conservação de Primatas Brasileiros (CPB) 
+Centro Nacional de Pesquisa e Conservação de Primatas Brasileiros (CPB)  
 
 
 Diretoria de Pesquisa, Avaliação e Monitoramento da Biodiversidade\
-Centro Administrativo Setor Sudoeste - EQSW 103/104 Bloco D - 1º andar\
-70670-350 - Brasília, DF\
+Centro Administrativo Setor Sudoeste\
+EQSW 103/104 Bloco D - 1º andar\
+70670-350 Brasília, DF\
 Tel: 61 3341-9055 - Fax: 61 3341-9068\
 www.icmbio.gov.br
 
@@ -73,8 +74,7 @@ Denys Sousa
   
   Programa Nacional de Monitoramento da Biodiversidade : programa monitora,
   subprograma terrrestre, componente florestal : relatório 2014-2022 / Monitora. --
-  Brasília, DF : Instituto Chico Mendes - 
-  ICMBio, 2024.
+  Brasília, DF : Instituto Chico Mendes - ICMBio, 2024.
   
   Vários autores.
   Vários colaboradores.

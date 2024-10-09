@@ -700,7 +700,7 @@ tab_mamiferos
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '100%'
-#| tab-cap: "Táxons de aves registrados registrados nas amostragens diurnas em transecções lineares do Componente Florestal do Programa Monitora (2014-2022)."
+#| tab-cap: "Táxons de aves registrados nas amostragens diurnas em transecções lineares do Componente Florestal do Programa Monitora (2014-2022)."
 
 tabela_aves <- read.csv2("dados/tabelas/apendice/tabela_apendice_aves_nome_comum.csv", encoding="UTF-8")
 

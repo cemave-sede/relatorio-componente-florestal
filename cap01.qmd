@@ -49,16 +49,16 @@ library(gridExtra)
 </br>
 
 
+O Brasil é um dos países com maior dimensão territorial e riqueza de seres vivos do planeta (@Mittermeier_2005), apresentando 10-15% da biodiversidade mundial (@Brasil_2023), abrigada num dos maiores sistemas de áreas protegidas do mundo (@Roque_2018). O Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio) é o órgão governamental responsável pela gestão das 340 unidades de conservação (UCs) federais do Brasil, que cobrem 10% do território continental brasileiro e 26% de seu território marinho. 
+
+Muitos estudos têm mostrado os efeitos positivos das UCs na conservação de espécies e paisagens, decorrentes de seu importante papel na redução da perda de *habitat* (@Jusys_2016; @Shah_2021) e da extinção de espécies (@Butchart_2012). A Lei nº 11.516/2007 (@Brasil_2007), que dispõe sobre a criação do ICMBio, em seu artigo primeiro prevê, dentre as suas finalidades, que cabe ao Instituto executar ações da política nacional de unidades de conservação da natureza, referentes às atribuições federais relativas ao monitoramento das unidades de conservação instituídas pela União, assim como fomentar e desenvolver programas de pesquisa sobre a biodiversidade.  
+
+</b>
+
 ## IMPACTO DO PROGRAMA MONITORA NA GERAÇÃO DE CONHECIMENTO PARA GESTÃO DAS UNIDADES DE CONSERVAÇÃO E DA BIODIVERSIDADE  
-
-
 
 </br>
 
-
-O Brasil é um dos países com maior dimensão territorial e riqueza de seres vivos do planeta (@Mittermeier_2005), apresentando 10-15% da biodiversidade mundial (@Brasil_2023), abrigada num dos maiores sistemas de áreas protegidas do mundo (@Roque_2018). O Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio) é o órgão governamental responsável pela gestão das 340 unidades de conservação (UCs) federais do Brasil, que cobrem 10% do território continental brasileiro e 26% de seu território marinho. 
-
-Muitos estudos têm mostrado os efeitos positivos das UCs na conservação de espécies e paisagens, decorrentes de seu importante papel na redução da perda de *habitat* (@Jusys_2016; @Shah_2021) e da extinção de espécies (@Butchart_2012). A Lei nº 11.516/2007 (@Brasil_2007), que dispõe sobre a criação do ICMBio, em seu artigo primeiro prevê, dentre as suas finalidades, que cabe ao Instituto executar ações da política nacional de unidades de conservação da natureza, referentes às atribuições federais relativas ao monitoramento das unidades de conservação instituídas pela União, assim como fomentar e desenvolver programas de pesquisa sobre a biodiversidade. 
 
 O ICMBio executa o monitoramento da biodiversidade por meio de um programa contínuo de aferição de indicadores (alvos) do estado de conservação dos ambientes monitorados. Esse esforço sistemático, ao longo do tempo, possibilita avaliações que podem indicar a necessidade e orientar a adoção de medidas gerenciais por parte do Instituto. O monitoramento busca respostas para questões simples no longo prazo, do tipo: “A variação deste indicador (alvo), do início de sua aferição até os dias atuais, sugere a necessidade de uma ou mais ações”? Já a pesquisa fomentada pelo ICMBio busca responder diversas questões difusas no curto prazo, que aportem subsídios à tomada de decisão em questões pontuais e em menor escala. Existe uma intersecção do monitoramento com a pesquisa, podendo haver influência mútua. Um programa de monitoramento pode ensejar pesquisas e os projetos de pesquisa desenvolvidos podem suscitar demandas de monitoramento. 
 
