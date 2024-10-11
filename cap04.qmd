@@ -96,7 +96,7 @@ O protocolo básico de amostragem de borboletas frugívoras, com identificação
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '95%'
 #| fig-cap: "Distribuição das unidades de conservação com amostragem de borboletas frugívoras no Componente Florestal do Programa Monitora – 2014 a 2022."
 
 knitr::include_graphics("imagens/cap04/bo_mapa_distribuicao-ucs-borboletas.jpeg")
@@ -124,7 +124,7 @@ De maneira geral, observou-se que o número de indivíduos amostrados acompanhou
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '80%'
 #| fig-cap: "Variação no número de registros de borboletas frugívoras e esforço amostral (número de armadilhas * número de dias de amostragem) acumulados por ano do Programa Monitora."
 
 
@@ -319,7 +319,7 @@ O número de UCs amostradas varia bastante entre as regiões (@fig-regioes-clima
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '60%'
+#| out.width: '85%'
 #| fig-cap: "Distribuição das UCs do Programa Monitora com amostragens de borboletas frugívoras nos polígonos das regiões climáticas da Amazônia definidos em função do regime de chuvas. Note as regiões com maiores lacunas de UCs participantes do Programa Monitora: Noroeste, Sudeste e porção norte da região Sudoeste. Cada UC está indicada pelo seu código no Cadastro Nacional de Unidades de Conservação - CNUC."
 
 knitr::include_graphics("imagens/cap04/bo_mapa_ucs.jpeg")
@@ -2605,7 +2605,7 @@ As tribos indicadoras de florestas abertas/perturbadas apresentaram, em sua maio
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '90%'
 #| fig-cap: "Variação no índice de tendência populacional analisando a abundância das tribos de borboletas frugívoras do bioma Amazônico em relação ao primeiro ano de ocorrência. Tribos de borboletas indicadoras de florestas fechadas/preservadas (Brassolini, Morphini e Haeterini) estão somadas e representadas pela linha contínua verde. As tribos de borboletas indicadoras de florestas abertas/perturbadas (Callicorini, Biblidini e Ageroniini) estão somadas e representadas pela linha pontilhada ocre."
 
 
@@ -3161,7 +3161,7 @@ Na região climática Norte amazônica os grupos indicadores apresentaram um nú
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '90%'
 #| fig-cap: "Variação no Índice de variação instantânea das tribos de borboletas frugívoras do bioma Amazônico em relação ao ano anterior. Tribos de borboletas indicadoras de florestas fechadas/preservadas (Brassolini, Morphini e Haeterini) estão somadas e representadas pela linha contínua verde. As tribos de borboletas indicadoras de florestas abertas/perturbadas (Callicorini, Biblidini e Ageroniini) estão somadas e representadas pela linha pontilhada ocre."
 
 

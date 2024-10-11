@@ -77,7 +77,7 @@ Por se tratar de um protocolo que estabelece reamostragens a cada cinco anos, o 
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '95%'
 #| fig-cap: "Distribuição das unidades de conservação que integram o Componente Florestal do Programa Monitora. Os símbolos indicam o estágio de implementação e o tipo de protocolo amostral de plantas arbóreas e arborescentes (básico e/ou avançado) em aplicação em cada UC."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.1_ucs_amostradas.JPG")

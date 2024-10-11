@@ -78,7 +78,7 @@ De 2014 a 2022 o protocolo básico de amostragem de mamíferos e aves (censo diu
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '90%'
 #| fig-cap: "Distribuição das unidades de conservação com amostragem de mamíferos terrestres de médio e grande porte e aves terrícolas cinegéticas no Componente Florestal do Programa Monitora – 2014 a 2022."
 
 knitr::include_graphics("imagens/cap05/ma_mapa_mastoaves.jpeg")
@@ -312,7 +312,7 @@ library(openxlsx)
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '90%'
 #| fig-cap: "Esforço por ano (linha marrom) e acumulado (linha verde) em quilômetros percorridos de 2014 a 2022 nas unidades de conservação do Programa Monitora."
 
 
@@ -517,7 +517,7 @@ Das UCs amostradas, 33 (63%) já estão consolidadas, com pelo menos três esta�
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '90%'
 #| fig-cap: "Táxons^[Táxons são as categorias hierárquicas usadas no sistema de nomenclatura zoológica] registrados acumulados (linha) e número de unidades de conservação (barras verticais) com protocolo básico de mamíferos e aves executado de 2014 a 2022."
 
 #----- grafico com numero de UCs ativas e numero acumulado de encontros por ano
@@ -962,7 +962,7 @@ A maioria dos registros (56%) do protocolo básico de monitoramento de mamífero
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '80%'
+#| out.width: '90%'
 #| fig-cap: "Representatividade das principais ordens de mamíferos amostradas no Programa Monitora, durante o período de 2014 a 2022. As barras em verde escuro representam o número de espécies registradas na ordem e as barras em verde claro o número de registros."
 
 # # Juntando os 4 gráficos numa única figura
@@ -1994,7 +1994,7 @@ Dentre as UCs com maiores taxas de avistamento totais para mamíferos destacam-s
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '85%'
 #| fig-cap: "Taxa média de avistamento de mamíferos por unidade de conservação de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
 # # Gráfico da taxa de avistamento total de mamíferos - média e IC
@@ -2051,7 +2051,7 @@ knitr::include_graphics("imagens/cap05/ma_taxa_avistamento_mamiferos.jpg")
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '85%'
 #| fig-cap: "Taxa média de avistamento de aves por unidade de conservação de 2014 a 2022. As linhas verticais indicam o intervalo de confiança de 95%."
 
 # # Gráfico da taxa de avistamento total de aves - média e IC
@@ -2135,7 +2135,7 @@ knitr::include_graphics("imagens/cap05/ma_taxa_avistamento_aves.jpg")
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '60%'
 #| fig-cap: "Correlação positiva entre as taxas de avistamento médias de aves e mamíferos das unidades de conservação amostradas."
 
 # # Criar o gráfico
@@ -2699,7 +2699,7 @@ No extremo norte da Mata Atlântica, na REBIO Guaribas, foram obtidos registros 
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '85%'
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas atelídeos ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
 
 
@@ -2857,7 +2857,7 @@ Os primatas *Cebus kaapori* e  *C. satanas*, categorizados como Criticamente em 
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '85%'
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para duas espécies de primatas ameaçados. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
 
 # G_especie_ameacada_ucs_ano_media_outros_primatas_silhuetas
@@ -2971,7 +2971,7 @@ As taxas de avistamento de *Myrmecophaga tridactyla* (tamanduá-bandeira - VU) v
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '85%'
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para a espécie ameaçada  *Myrmecophaga tridactyla* (tamanduá-bandeira). Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura."
 
 
@@ -3164,7 +3164,7 @@ cor_ameacadas1 <- c("#008B8B", "#70C4C4", "#666666", "#BF8120", "brown")
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '70%'
+#| out.width: '85%'
 #| fig-cap: "Taxas médias de avistamento estimadas por ano para cinco espécies de aves ameaçadas. Os pontos representam valores médios obtidos a partir das taxas registradas para diferentes unidades de conservação. As barras de variação para cada ano não são apresentadas para maior clareza da figura. "
 
 # G_especie_ameacada_ucs_ano_media_aves_selecionadas_silhuetas

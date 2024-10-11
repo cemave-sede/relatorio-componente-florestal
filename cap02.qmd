@@ -283,7 +283,7 @@ No período de 2014 a 2022, 56 UCs^[Neste relatório os dados da ESEC da Terra d
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '80%'
+#| out.width: '95%'
 #| fig-cap: "Mapa com as unidades de conservação do Programa Monitora – componente Florestal, período de 2014 a 2022."
 
 knitr::include_graphics("imagens/cap02/fig_mapa_ucs_florestal.JPG")
@@ -370,7 +370,7 @@ Das 56 UCs em operação no período de 2014-22, em apenas 24 (42,8%) estão con
 #| warning: false
 #| cache: true
 #| fig.pos: 'H'
-#| out.width: '80%'
+#| out.width: '95%'
 #| fig-cap: "Mapa com as UCs consolidadas ou com aplicação de módulo avançado do Programa Monitora – componente Florestal, período de 2014 a 2022."
 
 knitr::include_graphics("imagens/cap02/fig_mapa_ucs_consolidadas_florestal.JPG")
@@ -455,7 +455,7 @@ No total, o Programa Monitora já possui 110 UAs de plantas (cruzes da malta) em
 #| cache: true
 #| fig.pos: 'H'
 #| fig.align: "center"
-#| out.width: '80%'
+#| out.width: '90%'
 #| tbl-cap: "Número de unidades de conservação com amostragens do alvo plantas arbóreas e arborescentes de 2014 a 2022, em relação ao grupo, categoria e ao número de EA/UA por bioma."
 
 
