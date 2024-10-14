@@ -704,9 +704,9 @@ As vantagens do uso do ODK para a coleta de dados em campo são significativas e
 
 - Confirmação e registro automático do local da amostragem: a função de registro de coordenadas geográficas no ODK possibilita a confirmação de que amostragem foi efetuada e o registro de onde foi realizada, facilitando a validação e a rastreabilidade dos dados coletados;  
 
-- Transmissão automática dos dados: a capacidade de enviar os dados diretamente para o Sismonitora^[O Sismonitora é o Sistema para Gestão de Dados do Programa Monitora], assim que se tenha acesso à internet, elimina a etapa de transferência manual para planilha Excel. Este recurso não apenas acelera o processo de atualização dos dados, mas também reduz o risco de erros de transcrição, aumentando a eficiência do fluxo de trabalho;  
+- Transmissão automática dos dados: a capacidade de enviar os dados diretamente para o SISMonitora^[O SISMonitora é o Sistema para Gestão de Dados do Programa Monitora], assim que se tenha acesso à internet, elimina a etapa de transferência manual para planilha Excel. Este recurso não apenas acelera o processo de atualização dos dados, mas também reduz o risco de erros de transcrição, aumentando a eficiência do fluxo de trabalho;  
 
-- Registro de imagem: a possiblidade de captura de imagem (foto ou vídeo), associando-as diretamente aos registros correspondentes, permite que especialistas revisem e confirmem as informações no Sismonitora. Esse recurso é particularmente valioso no caso do alvo borboletas, pois contribui bastante na implementação do módulo avançado, possibilitando a identificação taxonômica no nível de espécie ou gênero.  
+- Registro de imagem: a possiblidade de captura de imagem (foto ou vídeo), associando-as diretamente aos registros correspondentes, permite que especialistas revisem e confirmem as informações no SISMonitora. Esse recurso é particularmente valioso no caso do alvo borboletas, pois contribui bastante na implementação do módulo avançado, possibilitando a identificação taxonômica no nível de espécie ou gênero.  
 
  
 </br>
