@@ -53,7 +53,7 @@ bibliography: [referencias_cap03.bib]
 
 <p><font size="2">
 
-<b>Como citar</b>: Sampaio, A. B.; Sandy, B. L.; Andrade, D. F. C.; Obermüller, F. A.; Medeiros, H.; Landeiro, M.; Labiak, P. H. & Forzza, R. C. Plantas arbóreas e arborescentes. In:  Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024. Pp: xx 
+<b>Como citar</b>: Sampaio, A. B.; Sandy, B. L.; Andrade, D. F. C.; Obermüller, F. A.; Medeiros, H.; Landeiro, M.; Labiak, P. H. & Forzza, R. C. Plantas arbóreas e arborescentes. In:  Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024.  
 
 </font></p>
 

@@ -39,7 +39,7 @@ Coordenação de Monitoramento da Biodiversidade - COMOB
 
 <p><font size="2">
 
-<b>Como citar</b>: Reis, M. L. & Souza, J. M. Implementação do Componente Florestal. In:  Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024. Pp: xx 
+<b>Como citar</b>: Reis, M. L. & Souza, J. M. Implementação do Componente Florestal. In:  Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024.  
 
 </font></p>
 
@@ -715,7 +715,7 @@ As vantagens do uso do ODK para a coleta de dados em campo são significativas e
 
 </br>
 
-Nos capítulos seguintes (3, 4 e 5) são apresentados alguns resultados gerais do monitoramento de cada um dos alvos globais do componente Florestal nesses nove anos de implementação do Programa Monitora (2014 a 2022). Quando pertinente, particularidades de algumas unidades de conservação ou de espécies ameaçadas são destacadas. Por sua vez, tendo em vista o caráter geral desse documento, informações adicionais detalhadas e resultados específicos por alvo para cada unidade de conservação são apresentados na [plataforma *on-line* interativa](https://argofix.shinyapps.io/teste_shp/), que complementa esta publicação. 
+Nos capítulos seguintes (3, 4 e 5) são apresentados alguns resultados gerais do monitoramento de cada um dos alvos globais do componente Florestal nesses nove anos de implementação do Programa Monitora (2014 a 2022). Quando pertinente, particularidades de algumas unidades de conservação ou de espécies ameaçadas são destacadas. Por sua vez, tendo em vista o caráter geral desse documento, informações adicionais detalhadas e resultados específicos por alvo para cada unidade de conservação são apresentados na [plataforma *on-line* interativa](https://www.gov.br/icmbio/pt-br/assuntos/monitoramento/painel-interativo-relatorio-florestal), que complementa esta publicação. 
 
 </br>
 
