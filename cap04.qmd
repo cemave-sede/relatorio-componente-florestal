@@ -616,7 +616,7 @@ Para maior confiabilidade das informações apresentadas neste relatório, foi e
 </br>
 
 
-## Assinatura das tribos de borboletas ao longo dos anos  
+### Assinatura das tribos de borboletas ao longo dos anos  
 
 </br>
 
@@ -806,7 +806,7 @@ Embora ainda pouco disseminada em trabalhos acadêmicos, a assinatura de tribos 
 
 
 
-### Amazônia 
+#### Amazônia 
 
 
 </br>
@@ -1011,7 +1011,7 @@ knitr::include_graphics("imagens/cap04/bo_regional_norte.png")
 </br>
 
 
-### Cerrado e Mata Atlântica  
+#### Cerrado e Mata Atlântica  
 
 </br>
 

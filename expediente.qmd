@@ -67,7 +67,7 @@ Denys Sousa
   <center>FICHA CATALOGRÁFICA</center>  
 
                 
-  <center>**Dados internacionais de Caralogação na Publicação (CIP)**</center>
+  <center>**Dados Internacionais de Catalogação na Publicação (CIP)**</center>
   <center>**(Câmara Brasileira do Livro, SP, Brasil)**</center>
   
   <br>
