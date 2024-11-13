@@ -1,30 +1,43 @@
 # Lista de siglas {#lista .unnumbered}  
 
-```{r lista siglas}
-#| label: tbl-lista-siglas
-#| echo: false
-#| message: false
-#| warning: false
-#| cache: true
-#| fig.pos: 'H'
-#| out.width: '70%'
-##| tab-cap: "Lista de siglas."
+<!-- #```{r lista siglas} -->
+<!-- # # | label: tbl-lista-siglas -->
+<!-- # # | echo: false -->
+<!-- # # | message: false -->
+<!-- # # | warning: false -->
+<!-- # # | cache: true -->
+<!-- # # | fig.pos: 'H' -->
+<!-- # # | out.width: '70%' -->
+<!-- # #| tab-cap: "Lista de siglas." -->
 
-library(tidyverse)
-library(DT)
-library(kableExtra)
+<!-- # library(tidyverse) -->
+<!-- # library(DT) -->
+<!-- # library(kableExtra) -->
+<!-- #  -->
+<!-- # siglas <- read.csv2("dados/tabelas/siglas/siglas.csv", encoding="UTF-8") -->
+<!-- #  -->
+<!-- # tab_siglas <- kbl(siglas, -->
+<!-- #              booktabs = TRUE, -->
+<!-- #              longtable = TRUE, -->
+<!-- #              # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*", -->
+<!-- #             col.names = c("Sigla", "Descrição")) %>% -->
+<!-- #     column_spec(2, italic = FALSE) %>%  -->
+<!-- # kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}") -->
+<!-- #  -->
+<!-- # tab_siglas -->
 
-siglas <- read.csv2("dados/tabelas/siglas/siglas.csv", encoding="UTF-8")
 
-tab_siglas <- kbl(siglas,
-             booktabs = TRUE,
-             longtable = TRUE,
-             # caption = "Espécies de aves migratórias e seus respectivos escores de vulnerabilidade usados na análise do Zonation.*",
-            col.names = c("Sigla", "Descrição")) %>%
-    column_spec(2, italic = FALSE) %>% 
-kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"), latex_options = c("repeat_header"), repeat_header_text = "\\textit{(continuação)}")
+<!-- #``` -->
 
-tab_siglas
+<center>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/lista_siglas/lista_siglas.JPG" alt="painel do relatorio" width="600" height="840" align="center" style="margin: 0 0 0 0"/></a>
+
+</br>
 
 
-```
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/sumario/p4.JPG" alt="painel do relatorio" width="700" height="980" align="center" style="margin: 0 0 0 0"/></a>
+
+</br>
+
+</center>

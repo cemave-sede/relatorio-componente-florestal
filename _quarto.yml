@@ -11,7 +11,7 @@ book:
   language: custom.yml
   search: true
   sharing: [twitter, facebook, linkedin]
-  # cover-image: "imagens/capa/capa_nova_1.jpeg"
+  # cover-image: "imagens/capa/capa_final.JPG"
   # repo-url:
   repo-actions: [edit]
   # site-url:
@@ -21,9 +21,9 @@ book:
   chapters:
     - index.qmd
     - expediente.qmd
-    - equipe.qmd
     - agradecimentos.qmd
     - lista_siglas.qmd
+    - sumario.qmd
     - apresentacao.qmd
     - cap01.qmd
     - cap02.qmd
@@ -38,7 +38,7 @@ book:
     - apendice.qmd
 
 #bibliography: referencias.bib
-csl: ecology_alterado2.csl
+csl: ecology_alterado.csl
 
 execute: 
   freese: auto
@@ -48,7 +48,7 @@ opts_chunk:
 format:
   html:
     theme:
-      - cosmo
+      - minty
       - custom.scss
     callout-appearance: simple
     #template-partials: [toc.html, title-block.html]

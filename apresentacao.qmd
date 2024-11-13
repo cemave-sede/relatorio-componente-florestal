@@ -4,11 +4,11 @@
 
 </br>
 
-Presente em 115 Unidades de Conservação Federais e dividido em três subprogramas (Terrestre, Aquático Continental e Marinho e Costeiro), que monitoram 21 alvos de conservação, o Programa Monitora é a maior iniciativa de monitoramento de biodiversidade *in situ* da América Latina.   
+Presente em 115 unidades de conservação federais e dividido em três subprogramas (Terrestre, Aquático Continental e Marinho e Costeiro), que monitoram 21 alvos de conservação, o Programa Monitora é a maior iniciativa de monitoramento de biodiversidade *in situ* da América Latina.   
 
-O componente Florestal do Subprograma Terrestre foi o primeiro a ser estruturado. As coletas de dados dos protocolos básicos de plantas arbóreas e arbustivas, borboletas frugívoras, aves cinegéticas terrícolas e mamíferos terrestres de médio e grande porte diurnos se iniciaram em 2014, em um teste piloto em 16 unidades de conservação.  
+O Componente Florestal do Subprograma Terrestre foi o primeiro a ser estruturado. As coletas de dados dos protocolos básicos de plantas arbóreas e arbustivas, borboletas frugívoras, aves cinegéticas terrícolas e mamíferos terrestres de médio e grande porte diurnos se iniciaram em 2014, em um teste piloto em 16 unidades de conservação.  
 
-Este terceiro relatório do componente Florestal do Programa Monitora apresenta os resultados da aplicação dos protocolos básicos em 56 unidades no período de 2014 a 2022. É uma enorme satisfação perceber como um estudo piloto evoluiu para um programa sólido, em constante aprimoramento e capaz de gerar resultados relevantes para a conservação da biodiversidade.  
+Este terceiro relatório do Componente Florestal do Programa Monitora apresenta os resultados da aplicação dos protocolos básicos em 56 unidades no período de 2014 a 2022. É uma enorme satisfação perceber como um estudo piloto evoluiu para um programa sólido, em constante aprimoramento e capaz de gerar resultados relevantes para a conservação da biodiversidade.  
 
 O monitoramento de biodiversidade deve ser um processo contínuo, pois é preciso acumular séries temporais para a detecção de tendências. O Programa Monitora foi desenhado como um monitoramento do estado de conservação das áreas protegidas, com a expectativa de registrar essas tendências e gerar alertas para as situações que requerem atenção e, eventualmente, intervenção. Pela primeira vez, a quantidade de dados acumulados nos permitiu fazer análises populacionais para aves e mamíferos e apontar populações bem conservadas e outras que requerem atenção. Quanto às borboletas, os resultados apontam um possível efeito da diminuição da cobertura florestal em nível regional, na região conhecida como arco do desmatamento, sobre a qualidade das florestas protegidas. No caso de plantas, que são amostradas a cada cinco anos, a quantidade de dados acumulada ainda é pequena, mas já indica a resiliência das florestas protegidas.  
 
@@ -19,10 +19,20 @@ Boa leitura!
 
 <center>
 
-
+*Cecília Cronemberger de Faria*  
 Coordenadora Geral de Pesquisa e Monitoramento da Biodiversidade  
 <font color="gray">(*e coletora de dados do Programa Monitora*)</font>  
-**Instituto Chico Mendes de Conservação da Biodiversidade**\
-  
+Instituto Chico Mendes de Conservação da Biodiversidade\
 
 </center>
+
+</br>
+
+<center>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/apresentacao/p6a.JPG" alt="painel do relatorio" width="700" height="980" align="center" style="margin: 0 0 0 0"/></a>
+
+
+</center>
+
+

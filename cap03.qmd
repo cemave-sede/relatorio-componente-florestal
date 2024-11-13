@@ -53,7 +53,7 @@ bibliography: [referencias_cap03.bib]
 
 <p><font size="2">
 
-<b>Como citar</b>: Sampaio, A. B.; Sandy, B. L.; Andrade, D. F. C.; Obermüller, F. A.; Medeiros, H.; Landeiro, M.; Labiak, P. H. & Forzza, R. C. Plantas arbóreas e arborescentes. In:  Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024.  
+<b>Como citar</b>: Sampaio, A. B.; Sandy, B. L.; Andrade, D. F. C.; Obermüller, F. A.; Medeiros, H.; Landeiro, M.; Labiak, P. H. & Forzza, R. C. Plantas arbóreas e arborescentes. In:  *Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022*. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024.  
 
 </font></p>
 
@@ -63,7 +63,7 @@ bibliography: [referencias_cap03.bib]
 
 O monitoramento de plantas arbóreas e arborescentes do Componente Florestal do Programa Monitora foi inicialmente concebido para prover dados e informações sobre a variação da biomassa florestal frente às mudanças do clima. Dez variáveis têm sido monitoradas a partir dos dados obtidos em campo, o que nos permite, também, avaliar a estrutura florestal e sua dinâmica ao longo do tempo, além dos efeitos indiretos do desmatamento regional (@Werth_2002). Este protocolo de monitoramento vem sendo aplicado em florestas nos biomas Amazônia, Cerrado e Mata Atlântica.  
 
-Por constituir a base da cadeia trófica, alterações na estrutura da vegetação podem implicar mudanças deletérias no habitat para a fauna, no desequilíbrio das interações ecológicas e no funcionamento dos ecossistemas (@Tews_2004). Da mesma forma, a perda ou alteração na abundância de organismos-chave para a saúde da floresta, como herbívoros, dispersores e polinizadores, e o aumento de pragas e doenças que atacam as plantas, podem afetar a estrutura e a dinâmica das florestas e das savanas (@Wilkie_2011).  
+Por constituir a base da cadeia trófica, alterações na estrutura da vegetação podem implicar mudanças deletérias no *habitat* para a fauna, no desequilíbrio das interações ecológicas e no funcionamento dos ecossistemas (@Tews_2004). Da mesma forma, a perda ou alteração na abundância de organismos-chave para a saúde da floresta, como herbívoros, dispersores e polinizadores, e o aumento de pragas e doenças que atacam as plantas, podem afetar a estrutura e a dinâmica das florestas e das savanas (@Wilkie_2011).  
 
 Por se tratar de um protocolo que estabelece reamostragens a cada cinco anos, o processo do monitoramento para o alvo de plantas está em fase inicial e um pouco mais da metade (56,5%) das unidades de conservação (UCs) ainda não implementou o número mínimo de três unidades amostrais (UAs) a serem remedidas a cada cinco anos, conforme previsto no protocolo. Apenas quatro unidades de conservação, de um universo de 46, implementaram completamente o protocolo de plantas e disponibilizaram os dados para elaboração do presente relatório (@fig-mapa-ucs-amostradas). Além dessas quatro UCs, há três UCs que possuem somente duas UAs remedidas e outras sete com apenas uma UA remedida, o que limita bastante as análises. As demais 30 UCs não tiveram remedição.  
 
@@ -90,9 +90,9 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.1_ucs_amostradas.JPG")
 
 ## Métodos  
 
-Os dados aqui analisados foram coletados segundo os métodos anteriormente descritos (veja descrição detalhada no capítulo 2), nos quais as plantas arbóreas e arborescentes (árvores, palmeiras, lianas ou cipós, samambaias, cactos etc.) são amostradas em parcelas permanentes do tipo cruz de malta (3 UAs por UC). Os indivíduos que se enquadram nos critérios mínimos de inclusão (circunferência medida a 1,3 m do solo (CAP) >= 31 cm, em ambientes florestais; e circunferência à 30 cm do solo (CAS) >= 15 cm, em formações savânicas)  são identificados com plaquetas metálicas e suas medidas de diâmetro do tronco e altura são registradas. No bioma Cerrado foram amostradas formações florestais (nos Parques Nacionais da Serra do Cipó e Serra da Bodoquena e na Estação Ecológica de Pirapitinga) e formações savânicas (na Estação Ecológica da Serra Geral do Tocantins e nos Parques Nacional de Brasília e da Chapada dos Veadeiros). Na Amazônia e Mata Atlântica foram amostradas apenas formações florestais em todas as UCs.  
+Os dados aqui analisados foram coletados segundo os métodos anteriormente descritos (veja descrição detalhada no capítulo 2), nos quais as plantas arbóreas e arborescentes (árvores, palmeiras, lianas ou cipós, samambaias, cactos etc.) são amostradas em parcelas permanentes do tipo cruz-de-malta (3 UAs por UC). Os indivíduos que se enquadram nos critérios mínimos de inclusão (circunferência medida a 1,3m do solo (CAP) >= 31cm, em ambientes florestais; e circunferência à 30cm do solo (CAS) >= 15cm, em formações savânicas)  são identificados com plaquetas metálicas e suas medidas de diâmetro do tronco e altura são registradas. No bioma Cerrado foram amostradas formações florestais (nos Parques Nacionais da Serra do Cipó e Serra da Bodoquena e na Estação Ecológica de Pirapitinga) e formações savânicas (na Estação Ecológica da Serra Geral do Tocantins e nos Parques Nacional de Brasília e da Chapada dos Veadeiros). Na Amazônia e Mata Atlântica foram amostradas apenas formações florestais em todas as UCs.  
 
-As variáveis consideradas nas análises, todas realizadas no ambiente R (@RCoreTeam_2023), foram: altura média (m), circunferência média (cm), área basal (m²/ha), densidade de indivíduos (indivíduos/ha), valor de cobertura vegetal (área basal (ha)/densidade), valor do quociente “q” de *Liocourt*  e biomassa (Apêndice F). Cipós, samambaias e palmeiras foram amostrados, mas essas informações não foram consideradas neste relatório.  
+As variáveis consideradas nas análises, todas realizadas no ambiente R (@RCoreTeam_2023), foram: altura média (m), circunferência média (cm), área basal (m²/ha), densidade de indivíduos (indivíduos/ha), valor de cobertura vegetal (área basal (ha)/densidade), valor do quociente “q” de Liocourt  e biomassa (Apêndice F). Cipós, samambaias e palmeiras foram amostrados, mas essas informações não foram consideradas neste relatório.  
 
 As fórmulas para o cálculo das variáveis avaliadas são apresentadas a seguir:  
 
@@ -114,7 +114,7 @@ Biomassa = exp (-1.754 + 2.665 * ln(D)): Para DAP <= 20 cm
 Biomassa = exp (-0.151 + 2.170 * ln(D)): Para DAP >= 20 cm 
 Carbono (C) = 0.2859 * P  
 	 
-*Onde*:  
+Onde:  
 
 P = é a biomassa (kg)  
 D = é o diâmetro das árvores na altura do peito (DAP) em centímetros (cm)  
@@ -123,7 +123,7 @@ D = é o diâmetro das árvores na altura do peito (DAP) em centímetros (cm)
 - Biomassa por UA no bioma Mata Atlântica (@Scolforo_2008):  
 
 Biomassa = Ps = exp (-10,6409194002 + 2,1533324963 * ln(DAP) + 0,8248143766 + ln(H))  
-*Onde*:  
+Onde:  
 
 Ps = peso seco em toneladas (ton)  
 DAP = diâmetro na altura do peito (cm)  
@@ -134,29 +134,29 @@ H = altura (m)
 
 PS = -0.49129 + 0.02912 * (d²) * H  
 	 
-*Onde*:  
+Onde:  
 
 Ps = peso seco em toneladas (ton)  
 d = diâmetro de base (cm)    
 H = altura (m)  
 
 
-- Valor do quociente "q" de *Liocourt*, com base na distribuição de frequência das classes ajustadas, utilizando o modelo linear de Meyer (@Alves_Junior_2010):   
+- Valor do quociente "q" de Liocourt, com base na distribuição de frequência das classes ajustadas, utilizando o modelo linear de Meyer (@Alves_Junior_2010):   
 
 ln(N) = e  
 β0+β1∗CC  
 	 
-*Onde*:  
+Onde:  
 
 ln = Log normal  
 N = número de indivíduos por hectare. Em função do   e = exponencial de β0+β1  
 vezes o CC = centro de classe   
   
 
-O valor do quociente “q” de *Liocourt* varia de zero a dois e é uma medida de relação entre a frequência de árvores, distribuídas em classes consecutivas de circunferência do tronco. Valores próximos de zero indicam que as árvores da floresta podem não estar se regenerando e crescendo da forma esperada, enquanto valores próximos a dois indicam que a floresta apresenta dinâmica conforme esperado para uma floresta saudável.  Seguindo as diretrizes de @Alves_Junior_2010, os indivíduos de árvores foram categorizados de acordo com as primeiras 10 classes de circunferência (classes com 10 cm de amplitude). A primeira classe representa os indivíduos com 10 a 20 cm e assim sucessivamente, até o limite superior de 110 cm.  
+O valor do quociente “q” de Liocourt varia de zero a dois e é uma medida de relação entre a frequência de árvores, distribuídas em classes consecutivas de circunferência do tronco. Valores próximos de zero indicam que as árvores da floresta podem não estar se regenerando e crescendo da forma esperada, enquanto valores próximos a dois indicam que a floresta apresenta dinâmica conforme esperado para uma floresta saudável.  Seguindo as diretrizes de @Alves_Junior_2010, os indivíduos de árvores foram categorizados conforme as primeiras 10 classes de circunferência (classes com 10cm de amplitude). A primeira classe representa os indivíduos com 10 a 20cm e assim sucessivamente, até o limite superior de 110cm.  
 
 
-As análises foram estruturadas de acordo com o número de UAs reamostradas em cada UC, que foi categorizada em um dos dois grupos: UCs com três UAs ou com duas UAs reamostradas ao longo do tempo. As médias são apresentadas com seus respectivos desvios-padrões. A média de cada variável medida nas três UA em cada UC foi comparada entre os anos amostrados por meio de uma ANOVA de um fator (*one way*) para medidas repetidas. 
+As análises foram estruturadas de acordo com o número de UAs reamostradas em cada UC, que foi categorizada em um dos dois grupos: UCs com três UAs ou com duas UAs reamostradas ao longo do tempo. As médias são apresentadas com seus respectivos desvios-padrão. A média de cada variável medida nas três UA em cada UC foi comparada entre os anos amostrados por meio de uma ANOVA de um fator (*one way*) para medidas repetidas. 
 
  
 </br>
@@ -167,7 +167,7 @@ As análises foram estruturadas de acordo com o número de UAs reamostradas em c
 
 </br>
 
-Até 2022 o Programa Monitora possuía 110 UAs de plantas (cruzes da malta) implementadas (96 na Amazônia, seis no Cerrado e três na Mata Atlântica) com 20.744 indivíduos tendo sido medidos na última amostragem realizada (Apêndice F).  
+Até 2022 o Programa Monitora possuía 110 UAs de plantas (cruzes-de-malta) implementadas (96 na Amazônia, seis no Cerrado e três na Mata Atlântica), com 20.744 indivíduos tendo sido medidos na última amostragem realizada (Apêndice F).  
 
 </br>
 
@@ -183,7 +183,7 @@ De 2014 até 2022, apenas quatro UCs amostraram três unidades amostrais (UAs) e
 
 </br>
 
-A circunferência média não variou entre os anos de amostragem (p < 0,05, @fig-circunferencia-3m). O PARNA Montanhas do Tumucumaque apresentou os maiores valores médios de circunferência (> 80 cm - Apêndice F), enquanto o PARNA do Juruena, a REBIO Jarú e a RESEX do Cazumbá-Iracema apresentaram as menores médias (de 60 a 70 cm). As árvores com maior circunferência (> 300 cm) foram registradas na REBIO do Jarú em 2022, seguida do PARNA do Juruena (> 250 cm), PARNA Tumucumaque (> 200 cm) e, por último, na RESEX do Cazumbá-Iracema (< 200 cm) (Apêndice F).  O menor porte das árvores na RESEX do Cazumbá-Iracema era esperado, pois esta UC é caracterizada por uma fitofisionomia predominante de floresta ombrófila aberta com bambu. Nesse tipo de floresta o dossel é aberto, com menos árvores de grande porte e menor densidade arbórea (@Silveira_2001).  
+A circunferência média não variou entre os anos de amostragem (p > 0,05, @fig-circunferencia-3m). O PARNA Montanhas do Tumucumaque apresentou os maiores valores médios de circunferência (> 80cm - Apêndice F), enquanto o PARNA do Juruena, a REBIO Jarú e a RESEX do Cazumbá-Iracema apresentaram as menores médias (de 60 a 70cm). O menor porte das árvores na RESEX do Cazumbá-Iracema era esperado, pois esta UC é caracterizada por uma fitofisionomia predominante de floresta ombrófila aberta com bambu. Nesse tipo de floresta o dossel é aberto, com menos árvores de grande porte e menor densidade arbórea (@Silveira_2001).  
 
 </br>
 
@@ -210,7 +210,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.2_circunferencia.JPG")
 </br>
 
 
-O valor do quociente “q” de *Liocourt*, que representa a estrutura de tamanho das árvores, variou de 1,25 a 1,75 para as UCs com três UAs amostradas de 2014 a 2022 (@fig-tamanho-3m). A RESEX do Cazumbá-Iracema apresentou o maior valor médio do quociente de *Liocourt* (1,7). Os PARNAs Montanhas do Tumucumaque e do Juruena, juntamente com a REBIO do Jaru, apresentaram valores abaixo de 1,5.  Em nenhuma UC as diferenças entre os valores do quociente “q” de *Liocourt* foram significativas (p > 0,05). Estes resultados indicam, com base na estrutura, que as áreas apresentam recrutamento dentro do esperado para florestas maduras e sem perturbações severas e que esta condição tem se mantido com pouca alteração ao longo do tempo.  
+O valor do quociente “q” de Liocourt, que representa a estrutura de tamanho das árvores, variou de 1,25 a 1,75 para as UCs com três UAs amostradas de 2014 a 2022 (@fig-tamanho-3m). A RESEX do Cazumbá-Iracema apresentou o maior valor médio do quociente de Liocourt (1,7). Os PARNAs Montanhas do Tumucumaque e do Juruena, juntamente com a REBIO do Jaru, apresentaram valores abaixo de 1,5.  Em nenhuma UC as diferenças entre os valores do quociente “q” de Liocourt foram significativas (p > 0,05). Estes resultados indicam, com base na estrutura, que as áreas apresentam recrutamento dentro do esperado para florestas maduras e sem perturbações severas e que esta condição tem se mantido com pouca alteração ao longo do tempo.  
 
  
 </br>
@@ -260,14 +260,11 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.4_densidade.JPG")
 </br>
 
 
-</br>
-
-
 #### Área basal  
 
 </br>
 
-As maiores médias de área basal foram observadas no PARNA Montanhas do Tumucumaque (45 a 50 m^2^/ha) (@fig-area-basal-3m). As demais UCs apresentaram médias abaixo de 35 m²/ha. Em nenhuma UC as diferenças nos valores de área basal entre anos amostrados foram estatisticamente significativas (p > 0,05). 
+As maiores médias de área basal foram observadas no PARNA Montanhas do Tumucumaque (45 a 50m^2^/ha) (@fig-area-basal-3m). As demais UCs apresentaram médias abaixo de 35m²/ha. Em nenhuma UC, as diferenças nos valores de área basal entre anos amostrados foram estatisticamente significativas (p > 0,05). 
 
 </br>
 
@@ -288,7 +285,9 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.5_area_basal.JPG")
 
 </br>
 
-Em relação ao valor de cobertura, o PARNA Montanhas do Tumucumaque também apresentou as maiores médias (@fig-cobertura-3m), indicando uma floresta com maior número de árvores maiores e em menor densidade. As demais UCs apresentaram médias em torno de 0,05, indicando florestas bem diferentes daquelas encontradas no PARNA Montanhas do Tumucumaque. Nenhuma UC apresentou valores de cobertura estatisticamente diferentes entre os anos amostrados (p > 0,05).  
+Em relação ao valor de cobertura, o PARNA Montanhas do Tumucumaque também apresentou as maiores médias (@fig-cobertura-3m), indicando uma floresta com maior número de árvores maiores e em menor densidade. As demais UCs apresentaram médias em torno de 0,05, indicando florestas com menor número de árvores com maior circunferência de
+tronco e em maior densidade em relação ao PARNA Montanhas do Tumucumaque. Nenhuma UC
+apresentou valores de cobertura estatisticamente diferentes entre os anos amostrados (p > 0,05).  
 
 
 
@@ -314,7 +313,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.6_cobertura.JPG")
 
 #### Biomassa  
 
- 
+</br> 
 
 O PARNA Montanhas do Tumucumaque apresentou biomassa média em torno de 450 toneladas por hectare (ton/ha) (@fig-biomassa-3m). As demais UCs apresentaram médias abaixo de 250 ton/ha. Para nenhuma das UCs as diferenças verificadas nos valores médios de biomassa entre anos foram significativas (p > 0,05).  
 
@@ -344,7 +343,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.7_biomassa.JPG")
 </br>
  
 
-No Componente Florestal do Programa Monitora três UCs com duas UAs foram reamostradas: ESEC Serra Geral do Tocantins, PARNA Serra da Bodoquena e PARNA da Serra dos Órgãos. Dada a amostragem de apenas duas UAs, não foi possível realizar testes estatísticos para essas UC. Aqui é apresentada apenas uma descrição dos resultados para cada UA reamostrada. Note ainda que os períodos de amostragem foram distintos entre as UCs e UAs, em alguns casos não atendendo o intervalo de cinco anos, como recomendado pelo protocolo. 
+No Componente Florestal do Programa Monitora, três UCs com duas UAs foram reamostradas: ESEC Serra Geral do Tocantins, PARNA Serra da Bodoquena e PARNA da Serra dos Órgãos. Dada a amostragem de apenas duas UAs, não foi possível realizar testes estatísticos para essas UCs. Aqui é apresentada apenas uma descrição dos resultados para cada UA reamostrada. Note ainda que os períodos de amostragem foram distintos entre as UCs e UAs, em alguns casos não atendendo o intervalo de cinco anos, como recomendado pelo protocolo. 
 
  
 </br>
@@ -355,7 +354,7 @@ No Componente Florestal do Programa Monitora três UCs com duas UAs foram reamos
 
 </br>
 
-As UAs nos PARNAs da Serra dos Órgãos e Bodoquena, ambas formações florestais, apresentaram os maiores valores médios de circunferência do tronco e baixa variação ao longo dos anos (@fig-circunferencia-2m). Como esperado, na ESEC Serra Geral do Tocantins, com vegetação de cerrado típico, foram encontrados os menores valores de circunferência (abaixo de 40 cm), também com pequena variação entre os anos amostrados (Figura 3.8).  
+As UAs nos PARNAs da Serra dos Órgãos e Bodoquena, ambas formações florestais, apresentaram os maiores valores médios de circunferência do tronco e baixa variação ao longo dos anos (@fig-circunferencia-2m). Como esperado, na ESEC Serra Geral do Tocantins, com vegetação de cerrado típico, foram encontrados os menores valores de circunferência (abaixo de 40cm), também com pequena variação entre os anos amostrados (Figura 3.8).  
 
 </br>
 
@@ -379,7 +378,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.8_circunferencia.JPG")
 
 </br>
 
-Os maiores valores do quociente “q” de *Liocourt* foram encontrados no PARNA da Serra da Bodoquena. O PARNA Serra da Bodoquena e a ESEC Serra Geral do Tocantins apresentaram importante tendência de diminuição do quociente “q” de *Liocourt* e o PARNA da Serra dos Órgãos tendência de aumento. Porém, com apenas duas UAs não é possível avaliar se esta variação é significativa (@fig-tamanho-2m).  
+Os maiores valores do quociente “q” de Liocourt foram encontrados no PARNA da Serra da Bodoquena. O PARNA Serra da Bodoquena e a ESEC Serra Geral do Tocantins apresentaram importante tendência de diminuição do quociente “q” de Liocourt e o PARNA da Serra dos Órgãos tendência de aumento. Porém, com apenas duas UAs não é possível avaliar se esta variação é significativa (@fig-tamanho-2m).  
 
 </br>
 
@@ -484,7 +483,7 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.12_cobertura.JPG")
 </br>
 
 
- Aparentemente, a biomassa variou ao longo dos anos no PARNA da Serra dos Órgãos, onde a UA 1 mostrou redução e a UA 2 aumento (@fig-biomassa-2m). As demais UAs nas outras duas UCs (PARNA da Serra da Bodoquena e ESEC Serra Geral do Tocantins), aparentemente, não apresentaram variação. A ESEC Serra Geral do Tocantins apresentou os menores valores de biomassa, o que é esperado pelas características de sua fitofisionomia savânica (@Morandi_2018), em contraste com as outras duas UCs florestais. As diferenças aqui descritas não foram testadas estatisticamente dada à insuficiência amostral.  
+ Aparentemente, a biomassa variou ao longo dos anos no PARNA da Serra dos Órgãos, onde a UA 1 mostrou redução e a UA 2 aumento (@fig-biomassa-2m). As demais UAs nas outras duas UCs (PARNA da Serra da Bodoquena e ESEC Serra Geral do Tocantins) parecem não ter apresentado variação. A ESEC Serra Geral do Tocantins apresentou os menores valores de biomassa, o que é esperado pelas características de sua fitofisionomia savânica (@Morandi_2018), em contraste com as outras duas UCs florestais. As diferenças aqui descritas não foram testadas estatisticamente, dada à insuficiência amostral.  
  
  
 </br>
@@ -509,9 +508,10 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.13_biomassa.JPG")
 
  </br>
 
-Ao todo foram remedidas 30 UAs em 17 UCs no período de 2014 a 2022 (@fig-mapa-ucs-amostradas). Dessas, 10 tiveram apenas uma UA remedida. Pela avaliação conjunta de todas as UAs remedidas e todas as variáveis analisadas podemos observar que a maior parte apresentou pouca variação ao longo do tempo (@fig-variacao-percentual, Apêndice F). Todas as variáveis apresentaram mediana da variação percentual próxima de zero. A variável com maior variação percentual foi biomassa, associada à variação de densidade e área basal. A altura média das árvores também variou consideravelmente ao longo do tempo, mas isso pode estar relacionado também com erros de medida decorrentes do método de mensuração, que utiliza, predominantemente, estimativas visuais. Isso parece ser verdade, pois a circunferência média das árvores variou pouco ao longo do tempo e está diretamente relacionada à altura. A densidade e área basal variaram proporcionalmente em cada UC, resultando em variação muito baixa do valor de cobertura. Por fim, a estrutura de tamanho das árvores também se manteve ao longo do tempo, representada pela pequena variação do quociente "q" de *Liocourt*, indicando uma estabilidade na estrutura das florestas e a ausência de impactos severos nas áreas amostradas.  
+Ao todo, foram remedidas 30 UAs em 17 UCs no período de 2014 a 2022 (@fig-mapa-ucs-amostradas). Dessas, 10 tiveram apenas uma UA remedida. Pela avaliação conjunta de todas as UAs remedidas e todas as variáveis analisadas, podemos observar que a maior parte apresentou pouca variação ao longo do tempo (@fig-variacao-percentual, Apêndice F). Todas as variáveis apresentaram mediana da variação percentual próxima de zero. A variável com maior variação percentual foi biomassa, associada à variação de densidade e área basal. A altura média das árvores também variou consideravelmente ao longo do tempo, mas isso pode estar relacionado também com erros de medida decorrentes do método de mensuração realizado por estimativas visuais, já que a circunferência média das árvores varia pouco ao longo do tempo e está diretamente relacionada aos dados de altura. A densidade e área basal variaram proporcionalmente em cada UC, resultando em variação muito baixa do valor de cobertura. Por fim, a estrutura de tamanho das árvores também se manteve ao longo do tempo, representada pela pequena variação do quociente "q" de Liocourt, indicando uma estabilidade na estrutura das florestas e a ausência de impactos severos nas áreas amostradas.  
 
-Apesar da maior parte das UAs amostradas apresentar baixa variação ao longo do tempo, especialmente para as variáveis valor de cobertura e quociente "q" de *Liocourt*, várias UAs apresentaram variações bastante consideráveis, em alguns casos chegando até a 80% (@fig-variacao-percentual, Apêndice F). A UA remedida no PARNA Superagui apresentou as maiores variações proporcionais entre as medidas realizadas (remedida após um ano) para todas as variáveis, exceto para o quociente "q" de *Liocourt* (Apêndice F). Apesar dessas variações ao longo do tempo chamarem a atenção e merecerem ser mais bem avaliadas, não há ainda como sabermos se são variações significativas, pois foram obtidas com menos de três UAs por UC. Para as quatro UCs com as três UAs remedidas não houve variação significativa, apesar de algumas variáveis em algumas UAs terem variado consideravelmente entre os anos medidos.  
+A maioria das UAs amostradas apresentou baixa variação no intervalo amostral considerado, ou seja, cinco anos, especialmente para as variáveis valor de cobertura e quociente "q" de Liocourt (@fig-variacao-percentual, Apêndice F). Entretanto, a UA remedida no PARNA Superagui apresentou as maiores variações proporcionais entre as medidas realizadas (remedida após um ano) para todas as variáveis, exceto para o quociente "q" de Liocourt (Apêndice F). Essas variações ao longo do tempo merecem destaque e necessitam ser avaliadas com maior detalhamento. Vale ressaltar que, devido ao fato destas unidades de conservação possuírem menos de três UAs por
+UC, não há como saber se são significativas. As unidades de conservação que possuem as três UAs remedidas não apresentaram diferenças significativas (p > 0,05) entre os anos aferidos para as métricas consideradas nas análises.
 
 
 </br>
@@ -524,7 +524,7 @@ Apesar da maior parte das UAs amostradas apresentar baixa variação ao longo do
 #| cache: true
 #| fig.pos: 'H'
 #| out.width: '70%'
-#| fig-cap: "Variação percentual (box-plot) de todas as variáveis analisadas neste relatório considerando as 29 UAs remedidas em 16 UC de 2014 a 2022. O valor representa a variação percentual da segunda medida em relação à primeira para cada UA durante o período de 5 anos. Aquelas UAs remedidas em período iinferior a cinco anos tiveram os valores extrapolados para cinco anos. As variáveis apresentadas são: biomassa (biom); circunferência média das árvores (circ); densidade de indivíduos arbóreos (dens); valor de cobertura (área basal dividido por densidade - cobert); área basal (ab); altura média das árvores (alt); e quociente 'q' de Liocourt (lioc). A UA remedida após um ano no Parna Superagui apresentou valores de variação percentual extremos (outliers), para algumas das variáveis acima de 100% (ver Apêndice F), e foi excluída do gráfico para melhor visualização dos demais dados. A exclusão dessa UA/UC pouco altera a distribuição geral dos dados apresentados."
+#| fig-cap: "Variação percentual (box-plot) de todas as variáveis analisadas neste relatório considerando as 29 UAs remedidas em 16 UC de 2014 a 2022. O valor representa a variação percentual da segunda medida em relação à primeira para cada UA durante o período de 5 anos. Aquelas UAs remedidas em período iinferior a cinco anos tiveram os valores extrapolados para cinco anos. As variáveis apresentadas são: biomassa (biom); circunferência média das árvores (circ); densidade de indivíduos arbóreos (dens); valor de cobertura (área basal dividido por densidade - cobert); área basal (ab); altura média das árvores (alt); e quociente 'q' de Liocourt (lioc). A UA remedida após um ano no PARNA Superagui apresentou valores de variação percentual extremos (outliers), para algumas das variáveis acima de 100% (ver Apêndice F), e foi excluída do gráfico para melhor visualização dos demais dados. A exclusão dessa UA/UC pouco altera a distribuição geral dos dados apresentados."
 
 knitr::include_graphics("imagens/cap03/pl_fig_3.14_variacao_percentual.JPG")
 
@@ -539,32 +539,32 @@ knitr::include_graphics("imagens/cap03/pl_fig_3.14_variacao_percentual.JPG")
 </br>
 
 
-Os resultados obtidos indicam que para as quatro UCs em que foi possível realizar análises estatísticas, todas as variáveis avaliadas permaneceram estáveis, sugerindo que as florestas, de forma geral, se mantiveram com as mesmas características em termos de estrutura ao longo do período de monitoramento (2014-2022). Por outro lado, há variações que podem estar acontecendo, como indicado por algumas variáveis para algumas UAs e em algumas UCs, que chamam atenção e precisam ser mais bem avaliadas. Para isso será necessário completar o número de UAs, mínimo três por UC, e continuar o monitoramento. Além disso, em relação à análise teremos que estabelecer limites de variação da estrutura da vegetação para indicar um estado de alerta para uma determinada área durante o monitoramento. Isso é uma necessidade, pois os métodos estatísticos aqui usados não são a melhor forma para indicar o alerta, devido à alta variabilidade das variáveis e o baixo poder de detecção de mudanças, dado o baixo número de UAs por UCs.  
+Os resultados obtidos indicam que, para as quatro UCs em que foi possível realizar análises estatísticas, todas as variáveis avaliadas permaneceram estáveis, sugerindo que as florestas, de forma geral, se mantiveram com as mesmas características em termos de estrutura ao longo do período de monitoramento (2014-2022). Por outro lado, foram notadas pequenas variações nasmétricas analisadas, podendo ser consideradas como dinâmicas naturais do ambiente. Para isso, será necessário implantar o número mínimo de três UAs por UC e realizar a coleta de dados de longo
+prazo, ou seja, ter no mínimo cinco intervalos amostrais, completando 25 anos de monitoramento contínuo. Além disso, em relação à análise estatística, é necessário estabelecer limites de variação da estrutura da vegetação, de modo que sejam capazes de indicar um estado de alerta com relação a uma determinada área, durante o monitoramento. Esta necessidade existe devido ao pouco tempo de monitoramento, uma vez que os métodos estatísticos aqui usados não foram capazes de indicar o alerta. Isto ocorreu devido à reduzida variação dos dados entre os anos de 2014 e 2022,
+resultando assim em um baixo poder de detecção de mudanças, dado ao insuficiente número de UAs por UCs. 
 
 Eventos climáticos cíclicos e/ou pontuais podem ter uma série de influências na estrutura dos ambientes florestais. Dentre eles podemos citar os eventos de El Niño, intensificando períodos de seca e chuva (@Laurance_2009; @daCosta_2010; @Vilanova_2018); o aumento da concentração de CO~2~ e temperatura, e as tempestades de ventos (*blowdown*) (@Nelson_1994). Essas variáveis, sozinhas ou em conjunto, podem desencadear mudanças drásticas na vegetação como, por exemplo, mudanças nos períodos reprodutivos (fenologia), o favorecimento de espécies de lianas (@Van_der_Heijden_2009) e bambus (@Castro_2013), o crescimento acentuado das árvores (@Pan_2013) tornando-as mais susceptíveis a quedas (@McDowell_2018), e o aumento de pragas e espécies invasoras. Todos estes fatores podem causar variações na estrutura da vegetação.  
 
-Em relação às diferenças nos parâmetros de estrutura encontrados para as diferentes vegetações monitoradas nas UCs, estas podem ser resultado de fatores climáticos, edáficos e biogeográficos (@Banin_2014). As espécies de árvores variam suas respostas em termos de crescimento e acúmulo de biomassa em relação aos fatores ambientais aos quais são expostas (@Banin_2014). Outro fator que pode determinar as variações estruturais encontradas nas diferentes áreas de floresta na Amazônia são os eventos de incêndios pré-históricos, de 500 a 1500 anos atrás, que alteram permanentemente a capacidade de absorção de água e disponibilidade de nutrientes dos solos, e podem estar conferindo maior resiliência às florestas que se desenvolveram nessas áreas frente às secas extremas (@Vedovato_2023).  
+Em relação às diferenças nos parâmetros de estrutura encontrados para as diferentes vegetações monitoradas nas UCs, estas podem ser resultado de fatores climáticos, edáficos e biogeográficos (@Banin_2014). As espécies de árvores variam suas respostas em termos de crescimento e acúmulo de biomassa em relação aos fatores ambientais aos quais são expostas (@Banin_2014). Outro fator que pode determinar as variações estruturais encontradas nas diferentes áreas de floresta na Amazônia são os eventos de incêndios pré-históricos, de 500 a 1.500 anos atrás, que alteram permanentemente a capacidade de absorção de água e disponibilidade de nutrientes dos solos, e podem estar conferindo maior resiliência às florestas que se desenvolveram nessas áreas frente às secas extremas (@Vedovato_2023).  
 
 Florestas mais resilientes e menos susceptíveis aos impactos diretos das ações humanas têm um importante papel no sequestro e estoque de carbono (@Funk_2019). Os resultados do presente relatório demonstram que a estrutura das florestas monitoradas não sofreu alterações significativas ao longo do monitoramento, indicando a efetividade das unidades de conservação em proteger a biodiversidade.  
 
-De forma geral, as políticas públicas têm sido direcionadas para reduzir as taxas de desmatamentos onde o processo de degradação já está implantado e possibilitar a restauração ecológica em áreas onde as florestas já foram convertidas para outras formas de uso e ocupação do solo. Frente a este cenário, de minimização de danos e altos investimentos em restauração ecológica, é fundamental que se valorize a vegetação protegida pelas unidades de conservação. Garantir recursos suficientes para conservação e promoção do uso consciente e responsável das florestas, protegendo ainda mais estas áreas de possíveis impactos, como a extração ilegal de madeira, incêndios, e a completa remoção da vegetação para atividades de mineração ou agropecuária é imperativo no século XXI (@Funk_2019).  
+De forma geral, as políticas públicas têm sido direcionadas para reduzir as taxas de desmatamentos onde o processo de degradação já está implantado e possibilitar a restauração ecológica em áreas onde as florestas já foram convertidas para outras formas de uso e ocupação do solo. Frente a este cenário, de minimização de danos e altos investimentos em restauração ecológica, é fundamental que se valorize a vegetação protegida pelas unidades de conservação. Garantir recursos suficientes para conservação e promoção do uso consciente e responsável das florestas, protegendo ainda mais estas áreas de possíveis impactos, como a extração ilegal de madeira, incêndios, e a completa remoção da vegetação para atividades de mineração ou agropecuária, é imperativo no século XXI (@Funk_2019).  
 
 Os investimentos realizados por programas e projetos voltados à conservação da Amazônia, como, por exemplo, o Programa Áreas Protegidas da Amazônia (ARPA), que financia parte considerável das coletas de dados do Programa Monitora e outras ações de proteção das unidades de conservação da Amazônia, devem ser intensificados e expandidos para todos os biomas, como o recente Programa em implantação Áreas Protegidas da Caatinga (ARCA).  
 
 Ao planejar o futuro, é importante resgatar o histórico de implementação das coletas de dados do Componente Florestal do Programa Monitora, com estruturação iniciada em 2010 (@Cronemberger_2023), quando houve um entendimento de que seriam adotados os procedimentos metodológicos do Inventário Florestal Nacional (IFN) para o alvo plantas arbóreas e arborescentes. Naquela época, esperava-se que a utilização de metodologia similar permitiria a análise integrada dos dados e a busca por sinergias na gestão e nos procedimentos de amostragem nas unidades de conservação. O tempo passou e, finalmente, essa possibilidade começa a se materializar, com a iminente formalização de um Acordo de Cooperação Técnica (ACT) entre o Instituto Chico Mendes de Conservação da Biodiversidade, Serviço Florestal Brasileiro e o Jardim Botânico do Rio de Janeiro, cujo objeto é a execução de pesquisas, monitoramento, conservação e valorização da flora em UCs federais. A experiência de implementação do Monitora e do IFN trouxe aprendizados e maturidade aos processos que permitem, finalmente, a integração.  
 
-Para os próximos relatórios, sobre o alvo plantas arbóreas e arborescentes, esperamos que a aproximação com o Serviço Florestal Brasileiro nos permita buscar soluções para problemas comuns relacionados à identificação botânica das espécies e ao desenvolvimento de funcionalidades nos sistemas de gestão e análise de dados do Programa Monitora e do IFN. Com isso teremos melhores possibilidades de avaliar os resultados do monitoramento de plantas, integrando os dados dos protocolos básico e avançado e os dados do IFN, possibilitando, respostas de interesse local, regional e nacional.  
+Para os próximos relatórios, sobre o alvo plantas arbóreas e arborescentes, esperamos que a aproximação com o Serviço Florestal Brasileiro nos permita buscar soluções para problemas comuns relacionados à identificação botânica das espécies e ao desenvolvimento de funcionalidades nos sistemas de gestão e análise de dados do Programa Monitora e do IFN. Com isso teremos melhores possibilidades de avaliar os resultados do monitoramento de plantas, integrando os dados dos protocolos básico e avançado e os dados do IFN, possibilitando respostas de interesse local, regional e nacional.  
 
 </br>
  
 
-## Recomendações  
+### Recomendações  
 
 </br>
 
 ::: callout-tip
-
-## Boas práticas para aprimorar o Programa  
 
 </br>
 
@@ -584,7 +584,11 @@ Para os próximos relatórios, sobre o alvo plantas arbóreas e arborescentes, e
 
 </br>
 
- 
+<center>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/cap03/img_65.JPG" alt="painel do relatorio" width="700" height="980" align="center" style="margin: 0 0 0 0"/></a>
+
+</center>
  
 ## Referências
 

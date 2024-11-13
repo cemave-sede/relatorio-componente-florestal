@@ -1,5 +1,7 @@
 # Expediente {#expediente .unnumbered}
 
+<center>
+
 **REPÚBLICA FEDERATIVA DO BRASIL**
   
   *Presidente*\
@@ -28,74 +30,104 @@ Cecília Cronemberger de Faria
 Rodrigo Silva Pinto Jorge
 
 *Centros Nacionais de Pesquisa e Conservação*\
-Centro Nacional de Avaliação da Biodiversidade e Pesquisa e Conservação do Cerrado (CBC)  
+Centro Nacional de Pesquisa e Conservação em Biodiversidade e Restauração Ecológica (CBC)  
 Centro Nacional de Pesquisa e Conservação de Aves Silvestres (CEMAVE)  
-Centro Nacional de Pesquisa e Conservação da Biodiversidade de Mamíferos Carnívoros (CENAP)  
+Centro Nacional de Pesquisa e Conservação de Mamíferos Carnívoros (CENAP)  
 Centro Nacional de Pesquisa e Conservação de Primatas Brasileiros (CPB)  
 
 
 Diretoria de Pesquisa, Avaliação e Monitoramento da Biodiversidade\
 Centro Administrativo Setor Sudoeste\
 EQSW 103/104 Bloco D - 1º andar\
-70670-350 Brasília, DF\
-Tel: 61 3341-9055 - Fax: 61 3341-9068\
-www.icmbio.gov.br
+70670-350 - Brasília, DF\
+Tel: 61 3341-9055\
+www.icmbio.gov.br  
+
+</center>
+
+<center>
 
 *Programa Nacional de Monitoramento da Biodiversidade - Programa Monitora* 
 *Subprograma Terrestre, Componente Florestal - Relatório 2014-2022 | 2024*
   
   ------------------------------------------------------------------------
   
-Sinopse  
+**Sinopse**  
 
 O relatório do Componente Florestal, subprograma Terrestre do Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, apresenta os resultados da aplicação dos protocolos básicos de monitoramento, de 2014 a 2022, para quatro alvos globais: plantas árboreas e arborescentes, borboletas frugívoras, mamíferos terrrestres de médio e grande porte e aves terrícolas cinegéticas.  
 
+   -------------------------------------------------------------------
 
-SUPERVISÃO TÉCNICA E REVISÃO FINAL\
-Rodrigo Silva Pinto Jorge  
-Dárlison Fernandes Carvalho de Andrade  
-
-CATALOGAÇÃO E NORMALIZAÇÃO BIBLIOGRÁFICA\
-Lucia Lanari Ozolins ??????
-
-CAPA\
-Denys Sousa 
-
-------------------------------------------------------------------------  
+</center>
 
 
-  <center>FICHA CATALOGRÁFICA</center>  
+**Supervisão técnica e revisão final**\
+*Rodrigo Silva Pinto Jorge*  
+*Dárlison Fernandes Carvalho de Andrade*  
 
-                
-  <center>**Dados Internacionais de Catalogação na Publicação (CIP)**</center>
-  <center>**(Câmara Brasileira do Livro, SP, Brasil)**</center>
-  
-  <br>
-  
-  Programa Nacional de Monitoramento da Biodiversidade : programa monitora,
-  subprograma terrrestre, componente florestal : relatório 2014-2022 / Monitora. --
-  Brasília, DF : Instituto Chico Mendes - ICMBio, 2024.
-  
-  Vários autores.
-  Vários colaboradores.
-  Bibliografia.
-  ISBN 978-65-5693-024-4
-  
-  1. Biodiversidade - Brasil 2. Biodiversidade - Conservação 3. Conservação da
-  natureza 4. Meio Ambiente 5. Monitoramento ambiental 
-  6. Sustentabilidade ambiental I. Monitora.
-  II. Título.
-  
-  21-91938                                           CDD-577.5
-  
-  ------------------------------------------------------------------------
-  <center>**Índice para catálogo sistemático**</center>
-  
-  1. Biodiversidade : Aspectos ambientais ; Ecologia
-      577.5
-      
+
+**Organização**  
+*Programa Monitora*  
+*Arlindo Gomes Filho*  
+*Bruno Lenhaverde Sandy*  
+*Dárlison Fernandes Carvalho de Andrade*  
+*Elildo Alves Ribeiro de Carvalho Junior*  
+*Marcelo Lima Reis*  
+*Marcos de Souza Fialho*  
+*Onildo João Marini Filho*  
+*Rodrigo Silva Pinto Jorge*  
+
+
+**Projeto gráfico, diagramação e capa**\
+*Denys Márcio de Sousa*  
+
+
+**Revisão de texto**\
+*Bruna Eduarda Duarte de Freitas* 
+
+------------------------------------------------------------------------   
+
+<center>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/expediente/creditos_fotos.JPG" alt="painel do relatorio" width="600" height="300" align="center" style="margin: 0 0 0 0"/></a>
+
+</center>
+
   ------------------------------------------------------------------------
   
-  *Copyright* ICMBio 2024. *O conteúdo desta publicação não pode ser reproduzido, guardado pelo sistema "retrieval" ou transmitido de qualquer modo por qualquer outro meio, seja eletrônico, mecânico, de fotocópia, de gravação ou outros, sem mencionar a fonte.*
+<center>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/expediente/ficha_catalografica.JPG" alt="painel do relatorio" width="600" height="450" align="center" style="margin: 0 0 0 0"/></a>
+
+</center>
+
+  ------------------------------------------------------------------------
+  
+  <center>
+  
+  *Copyright* ICMBio 2024. O conteúdo desta publicação não pode ser reproduzido, guardado pelo sistema "retrieval" ou transmitido de qualquer modo por qualquer outro meio, seja eletrônico, mecânico, de fotocópia, de gravação ou outros, sem mencionar a fonte.
   
 ------------------------------------------------------------------------ 
+
+</center>  
+
+
+
+**Como citar a obra**:
+Programa Monitora; Gomes-Filho, A.; Sandy, B. L.; Andrade, D. F. C.; Carvalho-Jr., E. A. R.; Reis, M. L.; Fialho, M. S.; Marini-Filho, O. J. & Jorge, R. S. P. *Programa Nacional de Monitoramento da Biodiversidade – Programa Monitora, Subprograma Terrestre, Componente Florestal. Relatório 2014-2022*. Instituto Chico Mendes de Conservação da Biodiversidade, Brasília, 2024.
+
+</br>
+
+<center>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/expediente/p1.JPG" alt="painel do relatorio" width="700" height="980" align="center" style="margin: 0 0 0 0"/></a>
+
+</br>
+
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/expediente/p2.JPG" alt="painel do relatorio" width="700" height="980" align="center" style="margin: 0 0 0 0"/></a>
+
+</br>
+
+</center>
+
+
