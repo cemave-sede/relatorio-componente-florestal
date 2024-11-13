@@ -888,7 +888,7 @@ Sobre a última recomendação acima, cabe salientar que uma análise possível 
 
 <center>
 
-<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/cap05/img_109.JPG" alt="painel do relatorio" width="700" height="980" align="center" style="margin: 0 0 0 0"/></a>
+<a href="https://cemave-sede.github.io/painel4/"><img src="imagens/cap05/img_139.JPG" alt="painel do relatorio" width="700" height="800" align="center" style="margin: 0 0 0 0"/></a>
 
 </center>
 
